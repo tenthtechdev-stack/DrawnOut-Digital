@@ -1,5 +1,7 @@
 # DrawnOut Digital
 
+**Phase 1 visual review:** [Open the Afterglow screenshot gallery](artifacts/phase-1/README.md) for all 390px, 768px, and 1440px full-page and component views, including the mobile menu. The existing Phase 1 implementation is ready for visual approval; Phase 2 has not begun.
+
 **Design review:** [Open the Phase 0 screenshot gallery](artifacts/README.md). All four full-resolution desktop/mobile concepts render directly on GitHub. [Publishing recovery notes](docs/PUBLISHING_RECOVERY.md) explain the preserved checkpoint.
 
 [Post-push validation results](docs/PUBLISHING_VALIDATION.md) record the current build, TypeScript, lint, formatting, tests, and remote screenshot integrity checks.
