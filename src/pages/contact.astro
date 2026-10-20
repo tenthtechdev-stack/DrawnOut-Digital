@@ -1,0 +1,28 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import RouteIntro from '../components/RouteIntro.astro';
+---
+
+<SiteLayout
+  title="Contact — DrawnOut Digital"
+  description="Have a good idea? Let's make it better. You don't need a perfect brief. You just need somewhere to start."
+>
+  <RouteIntro
+    eyebrow="Tell Us What You're Thinking"
+    title="Have a good idea? Let's make it better."
+    description="You don't need a perfect brief. You just need somewhere to start."
+  />
+  <p class="contact-status page-frame">
+    The enquiry channel is being prepared. Direct contact details will appear here once confirmed by
+    the studio.
+  </p>
+</SiteLayout>
+<style>
+  .contact-status {
+    font-size: var(--type-small);
+    color: var(--muted);
+    line-height: var(--leading-body);
+    padding-bottom: var(--space-6);
+    margin-block: 0;
+  }
+</style>

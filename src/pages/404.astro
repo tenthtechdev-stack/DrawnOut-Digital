@@ -1,0 +1,30 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import RouteIntro from '../components/RouteIntro.astro';
+import Button from '../components/Button.astro';
+---
+
+<SiteLayout
+  title="Page not found — DrawnOut Digital"
+  description="This page could not be found. Return to DrawnOut Digital."
+>
+  <RouteIntro
+    eyebrow="404 / A little off the page"
+    title="Let's draw you back."
+    description="The page you're looking for isn't here."
+  />
+  <div class="page-frame recovery">
+    <Button href="/">Back to Home</Button>
+    <Button href="/work" variant="text">
+      Explore Our Work
+    </Button>
+  </div>
+</SiteLayout>
+<style>
+  .recovery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: var(--space-6);
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import SectionIntro from './SectionIntro.astro';
+const PreviewWork = import.meta.env.DEV ? (await import('./PreviewWork.astro')).default : undefined;
+interface Props {
+  intro?: boolean;
+}
+const { intro = true } = Astro.props;
+---
+
+<section class="work-foundation page-frame" data-work aria-label="Selected-work foundation">
+  {intro && (
+    <SectionIntro
+      id="work-title"
+      eyebrow="01 / Selected work"
+      title="The work speaks."
+      accent="We'll let it."
+      note="Every project starts with a question. Every outcome has a reason."
+    />
+  )}
+  {PreviewWork ? (
+    <PreviewWork />
+  ) : (
+    <p class="empty-work">
+      Project stories are being prepared. Selected work will appear here after studio approval.
+    </p>
+  )}
+</section>
+<style>
+  .work-foundation {
+    padding-block: var(--space-6) var(--space-7);
+  }
+  .empty-work {
+    border-top: 1px solid var(--line);
+    padding-top: var(--space-4);
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+    max-width: 680px;
+  }
+</style>

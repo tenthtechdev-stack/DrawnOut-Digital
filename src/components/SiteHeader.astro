@@ -1,0 +1,375 @@
+---
+import Brand from './Brand.astro';
+import Arrow from './Arrow.astro';
+import { navigation } from '../data/site';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+---
+
+<div class="header-sentinel" data-header-sentinel aria-hidden="true"></div>
+<header class="site-header" data-site-header>
+  <div class="header-inner">
+    <Brand />
+    <p class="header-descriptor">
+      Independent thinking.
+      <br />
+      Distinctive creative.
+    </p>
+    <nav class="primary-nav" aria-label="Main navigation">
+      {navigation.map(({ href, label }) => (
+        <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>
+          {label}
+        </a>
+      ))}
+    </nav>
+    <div class="header-actions">
+      <a class="header-cta" href="/contact" aria-label="Have Something in Mind?">
+        <span>Have Something in Mind?</span>
+        <Arrow />
+      </a>
+      <button
+        class="menu-trigger"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="site-menu"
+        aria-haspopup="dialog"
+        data-menu-trigger
+        hidden
+      >
+        <span>Menu</span>
+        <span class="menu-symbol" aria-hidden="true">
+          <i></i>
+          <i></i>
+        </span>
+      </button>
+    </div>
+  </div>
+  <dialog id="site-menu" class="site-menu" aria-labelledby="menu-title" data-site-menu>
+    <div class="menu-panel">
+      <div class="menu-heading">
+        <p id="menu-title" class="eyebrow">
+          Navigation
+        </p>
+        <button class="menu-close" type="button" data-menu-close autofocus aria-label="Close menu">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <nav aria-label="Mobile navigation" class="mobile-nav">
+        {navigation.map(({ href, label }, index) => (
+          <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>
+            <span class="menu-number" aria-hidden="true">
+              0{index + 1}
+            </span>
+            <span>{label}</span>
+            <Arrow />
+          </a>
+        ))}
+      </nav>
+      <div class="menu-invitation">
+        <p>
+          From the first scribble
+          <br />
+          to the final scroll.
+        </p>
+        <a href="/contact">
+          Have Something in Mind? <Arrow />
+        </a>
+      </div>
+    </div>
+  </dialog>
+</header>
+
+<script>
+  import '../scripts/navigation';
+</script>
+
+<style>
+  .header-sentinel {
+    height: 1px;
+    margin-top: -1px;
+    pointer-events: none;
+  }
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    color: var(--ink, #20201e);
+    background: var(--paper, #f7f5f1);
+    border-bottom: 1px solid var(--line, #d6d1c7);
+  }
+  .site-header[data-scrolled] {
+    box-shadow: 0 8px 25px #20201e08;
+    border-bottom-color: #bdb7aa;
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 3vw, 48px);
+    width: 100%;
+    max-width: var(--page-max, 1600px);
+    min-height: 104px;
+    padding: 17px var(--gutter, 4.2vw);
+    margin-inline: auto;
+  }
+  .header-descriptor {
+    flex-shrink: 0;
+    font-size: 11px;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .primary-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 2vw, 34px);
+    margin-left: auto;
+  }
+  .primary-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 13px;
+    text-decoration: none;
+    position: relative;
+  }
+  .primary-nav a::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    height: 1px;
+    content: '';
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 160ms ease;
+  }
+  .primary-nav a:hover::after,
+  .primary-nav a:focus-visible::after,
+  .primary-nav a[aria-current]::after {
+    transform: scaleX(1);
+  }
+  .primary-nav a[aria-current] {
+    color: var(--accent-strong, #a83d1a);
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 21px;
+    min-height: 44px;
+    border-bottom: 1px solid currentColor;
+    text-decoration: none;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .header-cta :global(svg) {
+    width: 19px;
+    height: 19px;
+  }
+  .header-cta:hover {
+    color: var(--accent-strong, #a83d1a);
+  }
+  .menu-trigger {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    min-height: 44px;
+    padding: 0 14px;
+    color: inherit;
+    background: transparent;
+    border: 1px solid var(--line, #d6d1c7);
+    border-radius: 2px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .menu-trigger[hidden] {
+    display: none;
+  }
+  .menu-symbol {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 17px;
+  }
+  .menu-symbol i {
+    display: block;
+    width: 17px;
+    height: 1px;
+    background: currentColor;
+  }
+  .site-menu {
+    width: min(92vw, 38rem);
+    max-width: 100%;
+    height: 100dvh;
+    max-height: none;
+    inset: 0 0 0 auto;
+    margin: 0 0 0 auto;
+    padding: 0;
+    border: 0;
+    color: var(--ink, #20201e);
+    background: var(--paper, #f7f5f1);
+    overscroll-behavior: contain;
+  }
+  .site-menu:not([open]) {
+    display: none;
+  }
+  .site-menu::backdrop {
+    background: #20201e70;
+  }
+  .menu-panel {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 28px clamp(24px, 5vw, 48px) 40px;
+  }
+  .menu-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 34px;
+  }
+  .menu-heading p {
+    max-width: 170px;
+    margin: 0;
+    font-size: 10px;
+  }
+  .menu-close {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: inherit;
+    background: transparent;
+    border: 1px solid var(--line, #d6d1c7);
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .menu-close span {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    line-height: 1;
+  }
+  .mobile-nav {
+    display: grid;
+  }
+  .mobile-nav a {
+    display: grid;
+    grid-template-columns: 22px 1fr 24px;
+    align-items: center;
+    gap: 15px;
+    min-height: 82px;
+    padding-block: 17px;
+    border-top: 1px solid var(--line, #d6d1c7);
+    text-decoration: none;
+    font-size: clamp(30px, 5.5vw, 44px);
+    letter-spacing: -0.05em;
+  }
+  .menu-number {
+    font-size: 10px;
+    letter-spacing: 0.03em;
+    color: #625f57;
+  }
+  .mobile-nav a[aria-current] {
+    color: var(--accent-strong, #a83d1a);
+  }
+  .mobile-nav a:hover {
+    color: var(--accent-strong, #a83d1a);
+  }
+  .mobile-nav :global(svg) {
+    width: 21px;
+    height: 21px;
+  }
+  .menu-invitation {
+    margin-top: auto;
+    padding-top: 55px;
+  }
+  .menu-invitation p {
+    margin: 0 0 24px;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+  }
+  .menu-invitation a {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 44px;
+    border-bottom: 1px solid currentColor;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .menu-invitation :global(svg) {
+    width: 18px;
+    height: 18px;
+  }
+  @media (max-width: 75rem) {
+    .header-descriptor {
+      display: none;
+    }
+  }
+  @media (max-width: 63.999rem) {
+    .header-inner {
+      min-height: 88px;
+      padding-block: 14px;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+    }
+    .header-actions {
+      margin-left: auto;
+    }
+    .header-cta {
+      width: 44px;
+      height: 44px;
+      justify-content: center;
+      border: 1px solid var(--line, #d6d1c7);
+      border-radius: 50%;
+    }
+    .header-cta > span {
+      display: none;
+    }
+    .primary-nav {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px 22px;
+      margin-left: 0;
+      order: 3;
+    }
+    .primary-nav a {
+      font-size: 13px;
+    }
+    .site-header[data-enhanced] .primary-nav {
+      display: none;
+    }
+    .site-header[data-enhanced] .menu-trigger:not([hidden]) {
+      display: inline-flex;
+    }
+  }
+  @media (max-width: 359px) {
+    .header-inner {
+      column-gap: 10px;
+    }
+    .header-actions {
+      gap: 8px;
+    }
+    .menu-trigger {
+      padding-inline: 10px;
+      gap: 10px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .primary-nav a::after {
+      transition: none;
+    }
+  }
+</style>

@@ -1,0 +1,96 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import MediaSlot from './MediaSlot.astro';
+interface Props {
+  project: CollectionEntry<'projects'>;
+  index: number;
+  layout?: 'lead' | 'paired';
+}
+const { project, index, layout = 'paired' } = Astro.props;
+---
+
+<article
+  class:list={['project-card', `project-card--${layout}`]}
+  data-project-card
+  aria-labelledby={`project-${project.id}`}
+>
+  <div class="project-meta">
+    <div>
+      <p class="eyebrow project-number">0{index + 1}</p>
+      <h3 id={`project-${project.id}`}>{project.data.title}</h3>
+    </div>
+    <p class="project-context">
+      Portfolio presentation
+      <br />
+      Pending studio review
+    </p>
+  </div>
+  <MediaSlot
+    poster={project.data.cover}
+    alt={project.data.coverAlt}
+    aspectRatio={`${project.data.cover.width} / ${project.data.cover.height}`}
+    sizes={layout === 'lead' ? '(max-width: 767px) 90vw, 69vw' : '(max-width: 767px) 90vw, 44vw'}
+  />
+</article>
+<style>
+  .project-card {
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    min-width: 0;
+  }
+  .project-card--lead {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 30px;
+  }
+  .project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+  .project-card--lead .project-meta {
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 0;
+  }
+  .project-number {
+    color: var(--muted);
+    margin: 0 0 14px;
+    font-size: 10px;
+  }
+  h3 {
+    margin: 0;
+    font-weight: 550;
+    font-size: clamp(22px, 2.1vw, 31px);
+    line-height: 1.15;
+    letter-spacing: -0.045em;
+  }
+  .project-context {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .project-card--paired .project-context {
+    text-align: right;
+  }
+  .project-card--paired :global(.media-slot) {
+    border-radius: 0 0 var(--radius-editorial) 0;
+  }
+  @media (max-width: 767px) {
+    .project-card--lead {
+      display: block;
+    }
+    .project-card--lead .project-meta {
+      flex-direction: row;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+    .project-context {
+      font-size: 10px;
+      text-align: right;
+    }
+  }
+</style>

@@ -1,0 +1,17 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import RouteIntro from '../components/RouteIntro.astro';
+import WorkFoundation from '../components/WorkFoundation.astro';
+---
+
+<SiteLayout
+  title="Work — DrawnOut Digital"
+  description="Selected identities and creative explorations. Project stories are being prepared for studio review."
+>
+  <RouteIntro
+    eyebrow="The work"
+    title="The work speaks. We'll let it."
+    description="Every project starts with a question. Every outcome has a reason."
+  />
+  <WorkFoundation intro={false} />
+</SiteLayout>

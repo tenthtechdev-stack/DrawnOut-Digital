@@ -1,0 +1,25 @@
+---
+import logo from '../assets/brand/drawnout-logo-provided.png';
+---
+
+<a href="/" class="brand" aria-label="DrawnOut Digital home">
+  <img src={logo.src} width="1920" height="1080" alt="DrawnOUT Digital" />
+</a>
+<style>
+  .brand {
+    display: block;
+    width: 132px;
+    height: 59px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .brand img {
+    position: absolute;
+    max-width: none;
+    width: 180px;
+    height: auto;
+    left: -15px;
+    top: -23px;
+  }
+</style>

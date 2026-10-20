@@ -1,0 +1,231 @@
+---
+import Button from './Button.astro';
+import Star from './Star.astro';
+import { site } from '../data/site';
+---
+
+<section class="hero" data-hero aria-labelledby="hero-title">
+  <div class="hero-atmosphere" data-ambient-layer aria-hidden="true">
+    <div class="orbit"></div>
+  </div>
+  <div class="page-frame hero-inner">
+    <p class="eyebrow hero-kicker">
+      <Star /> Design. Strategy. Storytelling. Digital.
+    </p>
+    <h1 id="hero-title">
+      <span data-type-line>We make ideas</span> <span data-type-line>impossible</span>{' '}
+      <span class="accent-line" data-type-line>
+        to ignore.
+      </span>
+    </h1>
+    <div class="hero-bottom">
+      <p>{site.heroDescription}</p>
+      <div class="hero-actions">
+        <Button href="/work" variant="text">
+          Explore Our Work
+        </Button>
+        <a class="hero-enquiry" href="/contact">
+          Have Something in Mind?
+        </a>
+      </div>
+    </div>
+    <aside class="hero-note" aria-label="Studio philosophy">
+      <Star />
+      <p>
+        Good design gets attention.
+        <br />
+        Great thinking gives people
+        <br />a reason to stay.
+      </p>
+    </aside>
+    <div class="hero-baseline">
+      <span>From the first scribble to the final scroll.</span>
+      <span>
+        Independent creative &amp; digital studio <span aria-hidden="true">+</span>
+      </span>
+    </div>
+  </div>
+</section>
+<style>
+  .hero {
+    position: relative;
+    isolation: isolate;
+  }
+  .hero-atmosphere {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 94% 77%, #ff8a4c 0, #ffc7a5 19%, transparent 49%),
+      radial-gradient(ellipse at 69% 100%, #e0cbdc 0, transparent 50%), var(--paper);
+  }
+  .orbit {
+    position: absolute;
+    width: min(40vw, 600px);
+    aspect-ratio: 1;
+    border: 1px solid #a4532c33;
+    border-radius: 50%;
+    right: -2%;
+    top: 12%;
+  }
+  .hero-inner {
+    position: relative;
+    padding-top: var(--space-5);
+    min-height: clamp(690px, 82svh, 890px);
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+  }
+  .hero-kicker :global(svg) {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-strong);
+    flex-shrink: 0;
+  }
+  h1 {
+    margin: 36px 0 40px;
+    max-width: 80%;
+    font-size: var(--type-display);
+    font-weight: 550;
+    line-height: 1.01;
+    letter-spacing: var(--tracking-display);
+  }
+  h1 > span {
+    display: block;
+  }
+  .accent-line {
+    color: var(--accent-strong);
+  }
+  .hero-bottom {
+    display: flex;
+    align-items: end;
+    gap: clamp(45px, 8vw, 145px);
+  }
+  .hero-bottom > p {
+    max-width: 355px;
+    margin: 0;
+    font-size: var(--type-small);
+    line-height: var(--leading-body);
+  }
+  .hero-note {
+    position: absolute;
+    right: var(--gutter);
+    top: 43%;
+  }
+  .hero-actions {
+    display: grid;
+    gap: 12px;
+    align-items: start;
+  }
+  .hero-enquiry {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 12px;
+    text-decoration-thickness: 1px;
+  }
+  .hero-enquiry:hover {
+    color: var(--accent-strong);
+  }
+  .hero-note :global(svg) {
+    display: block;
+    width: 68px;
+    height: 68px;
+    color: var(--accent-strong);
+    margin-bottom: 25px;
+  }
+  .hero-note p {
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .hero-baseline {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: auto;
+    padding-block: 42px 25px;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+  .hero-baseline > span:last-child > span {
+    font-size: 20px;
+    margin-left: 20px;
+  }
+  @media (max-width: 1023px) {
+    .hero-inner {
+      min-height: 690px;
+    }
+    h1 {
+      max-width: 100%;
+      font-size: clamp(4rem, 10vw, 6.5rem);
+    }
+    .hero-note {
+      display: none;
+    }
+  }
+  @media (max-width: 639px) {
+    .hero-inner {
+      min-height: 635px;
+      padding-top: 36px;
+    }
+    .hero-kicker {
+      font-size: 10px;
+      letter-spacing: 0.025em;
+      gap: 9px;
+    }
+    .hero-kicker :global(svg) {
+      width: 18px;
+      height: 18px;
+    }
+    h1 {
+      margin: 38px 0 31px;
+      font-size: var(--type-display);
+      letter-spacing: -0.065em;
+    }
+    .hero-bottom {
+      flex-direction: column;
+      align-items: start;
+      gap: 23px;
+    }
+    .hero-bottom > p {
+      max-width: 320px;
+      font-size: 14px;
+    }
+    .hero-baseline {
+      font-size: 10px;
+      padding-top: 44px;
+      gap: 18px;
+    }
+    .hero-baseline > span {
+      max-width: 170px;
+    }
+    .hero-baseline > span:last-child {
+      text-align: right;
+      max-width: 125px;
+    }
+    .hero-baseline > span:last-child > span {
+      display: none;
+    }
+    .orbit {
+      width: 400px;
+      right: -265px;
+      top: 20%;
+    }
+  }
+  @media (max-width: 359px) {
+    .hero-kicker {
+      font-size: 8.5px;
+    }
+    .hero-inner {
+      min-height: 610px;
+    }
+  }
+</style>

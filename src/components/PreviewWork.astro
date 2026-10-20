@@ -1,0 +1,50 @@
+---
+import { getDraftPreviewProjects } from '../lib/projects';
+import ProjectCard from './ProjectCard.astro';
+const all = await getDraftPreviewProjects();
+const projects = ['bunzo', 'triarch', 'sol-community-center'].flatMap(
+  (slug) => all.find((project) => project.data.slug === slug) ?? [],
+);
+---
+
+<div class="preview-projects">
+  {projects[0] && <ProjectCard project={projects[0]} index={0} layout="lead" />}
+  <div class="paired-projects">
+    {projects.slice(1).map((project, index) => (
+      <ProjectCard project={project} index={index + 1} />
+    ))}
+  </div>
+  <p class="preview-context">
+    Portfolio stills for local visual review. Project scope, credits, and publication permissions
+    await confirmation.
+  </p>
+</div>
+<style>
+  .paired-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+    margin-top: var(--space-5);
+    align-items: start;
+  }
+  .paired-projects :global(.project-card:last-child) {
+    margin-top: 100px;
+  }
+  .preview-context {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin: 30px 0 0;
+    max-width: 620px;
+  }
+  @media (max-width: 767px) {
+    .paired-projects {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .paired-projects :global(.project-card:last-child) {
+      margin-top: 0;
+    }
+  }
+</style>

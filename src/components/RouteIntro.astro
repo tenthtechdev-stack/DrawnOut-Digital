@@ -1,0 +1,37 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+}
+const { eyebrow, title, description } = Astro.props;
+---
+
+<section class="route-intro page-frame">
+  <p class="eyebrow">{eyebrow}</p>
+  <h1>{title}</h1>
+  <p class="route-description">{description}</p>
+</section>
+<style>
+  .route-intro {
+    padding-block: var(--space-6);
+  }
+  .eyebrow {
+    margin: 0 0 32px;
+    color: var(--accent-strong);
+  }
+  h1 {
+    margin: 0;
+    max-width: 1100px;
+    font-size: clamp(3rem, 6.5vw, 7rem);
+    line-height: 1.06;
+    letter-spacing: var(--tracking-display);
+    font-weight: 500;
+  }
+  .route-description {
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+    max-width: 650px;
+    margin: 35px 0 0;
+  }
+</style>

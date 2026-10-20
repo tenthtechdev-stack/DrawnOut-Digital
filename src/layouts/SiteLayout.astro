@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../data/site';
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'DrawnOut Digital — Independent creative & digital studio',
+  description = site.description,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#f7f5f1" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    {import.meta.env.DEV && (
+      <aside class="phase-notice" aria-label="Design review status">
+        <div class="page-frame">
+          <span>
+            <i aria-hidden="true"></i> Afterglow / Phase 1
+          </span>
+          <span>Design foundation review</span>
+        </div>
+      </aside>
+    )}
+    <SiteHeader />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
+<style>
+  .phase-notice {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .phase-notice > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    min-height: 36px;
+    font-size: 10px;
+  }
+  .phase-notice span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .phase-notice i {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--amber);
+  }
+  .phase-notice span:last-child {
+    color: var(--inverse-muted);
+  }
+  @media (max-width: 359px) {
+    .phase-notice span:last-child {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+import Arrow from './Arrow.astro';
+interface Props {
+  href: string;
+  variant?: 'solid' | 'text';
+}
+const { href, variant = 'solid' } = Astro.props;
+---
+
+<a href={href} class:list={['button', `button--${variant}`]}>
+  <span>
+    <slot />
+  </span>
+  <Arrow />
+</a>
+<style>
+  .button {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    min-height: 48px;
+    padding: 14px 19px;
+    font-size: var(--type-small);
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: var(--radius-control);
+    transition:
+      background-color var(--duration-ui) var(--ease-ui),
+      color var(--duration-ui) var(--ease-ui);
+  }
+  .button :global(svg) {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .button--solid {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .button--solid:hover {
+    background: var(--accent-strong);
+  }
+  .button--text {
+    padding-inline: 0;
+    border-radius: 0;
+    border-bottom-color: currentColor;
+  }
+  .button--text:hover {
+    color: var(--accent-strong);
+  }
+  :global([data-theme='dark']) .button--solid {
+    background: var(--cream);
+    color: var(--ink);
+  }
+  :global([data-theme='dark']) .button--solid:hover {
+    background: var(--amber);
+  }
+  :global([data-theme='dark']) .button--text:hover {
+    color: var(--amber);
+  }
+</style>

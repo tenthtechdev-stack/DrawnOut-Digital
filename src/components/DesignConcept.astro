@@ -1,0 +1,1085 @@
+---
+import ReviewLayout from '../layouts/ReviewLayout.astro';
+import ReviewBar from './ReviewBar.astro';
+import Brand from './Brand.astro';
+import Arrow from './Arrow.astro';
+import Star from './Star.astro';
+import MediaSlot from './MediaSlot.astro';
+import { getDraftPreviewProjects } from '../lib/projects';
+
+interface Props {
+  variant: 'a' | 'b';
+}
+const { variant } = Astro.props;
+const isA = variant === 'a';
+const projects = await getDraftPreviewProjects();
+const order = isA
+  ? ['bunzo', 'triarch', 'sol-community-center']
+  : ['triarch', 'bunzo', 'churros', 'feed-n-seed'];
+const selected = order.flatMap(
+  (slug) => projects.find((project) => project.data.slug === slug) ?? [],
+);
+const feature = projects.find((project) => project.data.slug === 'bunzo');
+const capabilities = [
+  'Brand Identity & Design',
+  'Digital Design',
+  'Marketing & Campaigns',
+  'Words & Storytelling',
+  'Creative Direction',
+];
+---
+
+<ReviewLayout title={`DrawnOut Digital — ${isA ? 'Afterglow' : 'Studio Edit'} design study`}>
+  <div class:list={['concept', isA ? 'concept-a' : 'concept-b']}>
+    <ReviewBar variant={variant} />
+    <header class="site-header">
+      <Brand />
+      <span class="header-caption">
+        Independent thinking.
+        <br />
+        Distinctive creative.
+      </span>
+      <nav aria-label="Design study navigation">
+        <a href="#work">Work</a>
+        <a class="optional-nav" href="#direction">
+          The studio
+        </a>
+        <a class="header-cta" href="#conversation">
+          Have Something in Mind? <Arrow />
+        </a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="atmosphere" aria-hidden="true">
+          <div class="orbit"></div>
+        </div>
+        <div class="hero-copy">
+          <div class="hero-kicker eyebrow">
+            <span class="small-cross" aria-hidden="true">
+              <Star />
+            </span>{' '}
+            Design. Strategy. Storytelling. Digital.
+          </div>
+          <h1 id="hero-title">
+            We make ideas
+            <br />
+            <span class="impossible">impossible</span>
+            <br />
+            <span class="last-line">
+              to ignore<span class="full-stop">.</span>
+            </span>
+          </h1>
+          <div class="hero-bottom">
+            <p>
+              We turn raw ideas into distinctive brands, meaningful experiences, and creative work
+              with something to say.
+            </p>
+            <a href="#work" class="explore-link">
+              Explore Our Work{' '}
+              <span class="round-arrow" aria-hidden="true">
+                ↓
+              </span>
+            </a>
+          </div>
+        </div>
+        {isA ? (
+          <div class="hero-aside">
+            <span class="asterisk" aria-hidden="true">
+              <Star />
+            </span>
+            <p>
+              Good design gets attention.
+              <br />
+              Great thinking gives people
+              <br />a reason to stay.
+            </p>
+          </div>
+        ) : (
+          feature && (
+            <figure class="hero-feature">
+              <div class="feature-top eyebrow">
+                <span>A little less ordinary.</span>
+                <span class="feature-arrow" aria-hidden="true">
+                  <Arrow />
+                </span>
+              </div>
+              <div class="feature-poster">
+                <MediaSlot poster={feature.data.cover} alt={feature.data.coverAlt} priority />
+              </div>
+              <figcaption>
+                <span>{feature.data.title}</span>
+                <span>Portfolio still / draft</span>
+              </figcaption>
+              <p class="feature-signoff">
+                Think it through.
+                <br />
+                Draw it out.
+                <br />
+                <strong>Make it matter.</strong>
+              </p>
+            </figure>
+          )
+        )}
+        <div class="hero-baseline">
+          <span>From the first scribble to the final scroll.</span>
+          <span>
+            {isA ? 'A / Afterglow' : 'B / Studio Edit'}
+            <span class="baseline-plus" aria-hidden="true">
+              {' '}
+              +
+            </span>
+          </span>
+        </div>
+      </section>
+
+      {!isA && (
+        <section class="capability-strip" aria-label="Proposed service pillars">
+          <p class="eyebrow">
+            We think beyond
+            <br />
+            the brief.
+          </p>
+          <ul>
+            {capabilities.map((capability, index) => (
+              <li>
+                <span>0{index + 1}</span>
+                {capability}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <section id="work" class="work-section" aria-labelledby="work-title">
+        <div class="section-top">
+          <p class="eyebrow">01 / Selected explorations</p>
+          <p class="eyebrow preview-note">Portfolio stills · draft preview only</p>
+        </div>
+        <div class="work-intro">
+          <h2 id="work-title">
+            The work speaks.
+            <br />
+            <span>We'll let it.</span>
+          </h2>
+          <p>
+            Every project starts with a question.
+            <br />
+            Every outcome has a reason.
+          </p>
+        </div>
+        <div class="project-grid">
+          {selected.map((project, index) => (
+            <article class="project" aria-labelledby={`project-${project.id}`}>
+              <div class="project-meta">
+                <div>
+                  <p class="project-number eyebrow">0{index + 1}</p>
+                  <h3 id={`project-${project.id}`}>{project.data.title}</h3>
+                </div>
+                <p class="project-status">
+                  Portfolio presentation
+                  <br />
+                  Pending studio review
+                </p>
+              </div>
+              <MediaSlot
+                poster={project.data.cover}
+                alt={project.data.coverAlt}
+                aspectRatio={`${project.data.cover.width} / ${project.data.cover.height}`}
+              />
+            </article>
+          ))}
+        </div>
+        <p class="work-disclaimer">
+          A study in how the work could live. Project scope, credits, and publication permissions
+          are still to be confirmed.
+        </p>
+      </section>
+
+      <section id="direction" class="direction-section" aria-labelledby="direction-title">
+        <p class="eyebrow">02 / The point of view</p>
+        <div class="direction-copy">
+          <h2 id="direction-title">
+            Pretty isn't
+            <br />
+            <span>the point.</span>
+          </h2>
+          <div>
+            <p>
+              We care about the connection between how something looks, what it means, and what it
+              accomplishes.
+            </p>
+            <p class="direction-footnote">
+              From the supplied studio copy. Final service scope and brand details await
+              confirmation.
+            </p>
+          </div>
+        </div>
+        {isA && (
+          <ul class="capability-list" aria-label="Proposed service pillars">
+            {capabilities.map((capability, index) => (
+              <li>
+                <span class="eyebrow">0{index + 1}</span>
+                <span>{capability}</span>
+                <span aria-hidden="true">
+                  <Arrow />
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <section id="conversation" class="conversation" aria-labelledby="conversation-title">
+        <p class="eyebrow">Start with a thought.</p>
+        <h2 id="conversation-title">
+          Have a good idea?
+          <br />
+          Let's make it <span>better.</span>
+        </h2>
+        <a href="#review-notes" class="conversation-link">
+          Tell Us What You're Thinking <Arrow />
+        </a>
+        <p class="conversation-note">
+          You don't need a perfect brief. You just need somewhere to start.
+        </p>
+      </section>
+    </main>
+    <footer id="review-notes" class="review-footer" tabindex="-1">
+      <div>
+        <p class="eyebrow">{isA ? 'Afterglow / Direction A' : 'Studio Edit / Direction B'}</p>
+        <p>
+          {isA
+            ? 'Atmosphere first. A warm, expansive hero, oversized type, and generous editorial work.'
+            : 'Ideas and imagery in conversation. A split hero, compact service index, and paired work.'}
+        </p>
+      </div>
+      <div>
+        <p class="eyebrow">What comes next</p>
+        <p>
+          Choose a direction in chat to begin the design foundation. Contact delivery and the
+          signature animated footer follow in later phases.
+        </p>
+        <a href={isA ? '/concepts/b' : '/concepts/a'}>
+          Compare {isA ? 'Studio Edit' : 'Afterglow'} <Arrow />
+        </a>
+      </div>
+      <div class="footer-signoff">
+        <span>DrawnOut Digital</span>
+        <span>Think it through. Draw it out. Make it matter.</span>
+        <span>Local design proof · not a published website</span>
+      </div>
+    </footer>
+  </div>
+</ReviewLayout>
+
+<style>
+  .concept {
+    overflow: clip;
+  }
+  .site-header {
+    display: flex;
+    align-items: center;
+    min-height: 104px;
+    padding: 17px var(--gutter);
+    gap: 48px;
+    border-bottom: 1px solid #d7d4cc;
+  }
+  .header-caption {
+    font-size: 10px;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+  .site-header nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    margin-left: auto;
+  }
+  .site-header nav a {
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .site-header nav a:hover {
+    text-decoration: underline;
+  }
+  .header-cta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #49463e;
+    padding: 12px 0;
+  }
+  .header-cta svg {
+    width: 17px;
+  }
+  .hero {
+    position: relative;
+    isolation: isolate;
+    padding: 52px var(--gutter) 0;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+  }
+  .atmosphere {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 91% 75%, #ff7d3a 0, #ffc29a 19%, transparent 48%),
+      radial-gradient(ellipse at 70% 100%, #d8bdde 0, transparent 51%), #f7f5f1;
+  }
+  .orbit {
+    position: absolute;
+    width: 530px;
+    height: 530px;
+    border: 1px solid #9e57384a;
+    border-radius: 50%;
+    right: -25px;
+    top: 70px;
+    box-shadow:
+      0 0 100px 40px #ffe1c826,
+      inset 0 0 70px #fff4dc45;
+  }
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 0.08em;
+  }
+  .small-cross {
+    color: #a73914;
+    font-size: 22px;
+    line-height: 1;
+  }
+  .small-cross :global(svg) {
+    width: 19px;
+    height: 19px;
+    display: block;
+  }
+  h1 {
+    margin: 29px 0 34px;
+    font-size: clamp(64px, 8.5vw, 155px);
+    font-weight: 550;
+    line-height: 0.99;
+    letter-spacing: -0.075em;
+  }
+  .impossible {
+    letter-spacing: -0.08em;
+  }
+  .last-line {
+    color: #a63b1c;
+  }
+  .full-stop {
+    color: #a63b1c;
+  }
+  .hero-bottom {
+    display: flex;
+    align-items: end;
+    gap: clamp(40px, 8vw, 150px);
+  }
+  .hero-bottom p {
+    max-width: 340px;
+    font-size: 13px;
+    line-height: 1.75;
+    margin: 0;
+  }
+  .explore-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 6px 0;
+  }
+  .round-arrow {
+    border: 1px solid #3b3933;
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+  }
+  .explore-link:hover .round-arrow {
+    background: #252522;
+    color: #fff;
+  }
+  .hero-aside {
+    position: absolute;
+    right: var(--gutter);
+    top: 43%;
+  }
+  .asterisk {
+    display: block;
+    font-size: 72px;
+    line-height: 1;
+    color: #9f3716;
+    margin-bottom: 26px;
+  }
+  .asterisk :global(svg) {
+    width: 72px;
+    height: 72px;
+  }
+  .hero-aside p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+  .hero-baseline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    margin-top: auto;
+    padding: 34px 0 20px;
+  }
+  .baseline-plus {
+    font-size: 18px;
+    margin-left: 12px;
+  }
+  .work-section {
+    padding: 80px var(--gutter) 90px;
+    background: #f7f5f1;
+  }
+  .section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #d5d2cb;
+    padding-top: 19px;
+  }
+  .section-top p {
+    margin: 0;
+  }
+  .preview-note {
+    color: #646158;
+    font-size: 9px;
+    letter-spacing: 0.045em;
+  }
+  .work-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin: 42px 0 56px;
+  }
+  h2 {
+    font-size: clamp(40px, 4.6vw, 78px);
+    line-height: 1.08;
+    font-weight: 500;
+    letter-spacing: -0.065em;
+    margin: 0;
+  }
+  .work-intro h2 span {
+    color: #7f7a70;
+  }
+  .work-intro > p {
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 0 4vw 7px 0;
+  }
+  .project-grid {
+    display: grid;
+    gap: 64px;
+  }
+  .project {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 28px;
+    border-top: 1px solid #d5d2cb;
+    padding-top: 20px;
+  }
+  .project-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 8px;
+  }
+  .project-number {
+    margin: 0 0 20px;
+    color: #7f7a70;
+  }
+  .project h3 {
+    font-size: clamp(19px, 2vw, 30px);
+    font-weight: 550;
+    line-height: 1.2;
+    letter-spacing: -0.045em;
+    margin: 0;
+  }
+  .project-status {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1.7;
+    color: #646158;
+  }
+  .concept-a .project:nth-child(2) {
+    grid-template-columns: 1fr 2fr;
+    margin-left: 16.66%;
+  }
+  .concept-a .project:nth-child(2) :global(.media-slot) {
+    border-radius: 0 0 72px 0;
+  }
+  .concept-a .project:nth-child(3) {
+    max-width: 83.33%;
+  }
+  .work-disclaimer {
+    margin: 30px 0 0;
+    max-width: 600px;
+    color: #646158;
+    font-size: 10px;
+    line-height: 1.8;
+  }
+  .direction-section {
+    padding: 70px var(--gutter) 85px;
+    background: #e9e5dc;
+  }
+  .direction-copy {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 46px;
+    align-items: center;
+  }
+  .direction-copy h2 span {
+    color: #9d3d20;
+  }
+  .direction-copy p {
+    max-width: 420px;
+    font-size: 19px;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .direction-copy .direction-footnote {
+    font-size: 10px;
+    color: #646158;
+    margin-top: 25px;
+    line-height: 1.8;
+  }
+  .capability-list {
+    list-style: none;
+    padding: 0;
+    margin: 65px 0 0;
+  }
+  .capability-list li {
+    display: grid;
+    grid-template-columns: 50px 1fr 40px;
+    padding: 20px 0;
+    border-top: 1px solid #c8c3b8;
+    align-items: center;
+    gap: 18px;
+  }
+  .capability-list li > span:nth-child(2) {
+    font-size: clamp(17px, 2vw, 25px);
+    letter-spacing: -0.035em;
+  }
+  .capability-list li > span:last-child {
+    text-align: right;
+    display: flex;
+    justify-content: end;
+  }
+  .conversation {
+    padding: 80px var(--gutter) 75px;
+    color: #fff8ee;
+    background: #252522;
+  }
+  .conversation h2 {
+    margin: 36px 0;
+    font-size: clamp(42px, 6vw, 96px);
+  }
+  .conversation h2 > span {
+    color: #ff9a60;
+  }
+  .conversation-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 13px;
+    text-decoration: none;
+    border-bottom: 1px solid #aa9d8c;
+    padding: 16px 0;
+  }
+  .conversation-link:focus-visible {
+    outline-color: #ff9a60;
+  }
+  .conversation-note {
+    font-size: 11px;
+    color: #c4bfb4;
+    margin-top: 25px;
+    line-height: 1.7;
+  }
+  .review-footer {
+    padding: 48px var(--gutter) 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px 80px;
+  }
+  .review-footer > div > p:not(.eyebrow) {
+    max-width: 460px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .review-footer a {
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .review-footer a :global(svg),
+  .capability-list :global(svg) {
+    width: 16px;
+    height: 16px;
+  }
+  .feature-arrow :global(svg) {
+    width: 12px;
+    height: 12px;
+    transform: rotate(90deg);
+  }
+  .footer-signoff {
+    grid-column: 1 / -1;
+    border-top: 1px solid #d5d2cb;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding-top: 22px;
+    font-size: 9px;
+    color: #646158;
+  }
+  .concept-b .hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    column-gap: 7%;
+    min-height: auto;
+    padding-top: 48px;
+    background: #f7f5f1;
+  }
+  .concept-b .atmosphere {
+    display: none;
+  }
+  .concept-b h1 {
+    font-size: clamp(62px, 7vw, 124px);
+    margin-top: 37px;
+    line-height: 1.01;
+  }
+  .concept-b .hero-bottom {
+    display: block;
+  }
+  .concept-b .hero-bottom p {
+    max-width: 320px;
+  }
+  .concept-b .explore-link {
+    margin-top: 20px;
+  }
+  .concept-b .hero-baseline {
+    grid-column: 1 / -1;
+    padding-top: 40px;
+  }
+  .hero-feature {
+    margin: 0;
+    align-self: stretch;
+    border-radius: 5px 5px 90px 5px;
+    padding: 24px;
+    background: #e96a3b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .feature-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    margin-bottom: 30px;
+  }
+  .feature-poster {
+    box-shadow: 0 18px 35px #79361c30;
+  }
+  .hero-feature figcaption {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 9px;
+    margin-top: 15px;
+  }
+  .feature-signoff {
+    font-size: clamp(26px, 3vw, 47px);
+    font-weight: 450;
+    letter-spacing: -0.06em;
+    line-height: 1.2;
+    margin: 38px 0 0;
+  }
+  .feature-signoff strong {
+    font-weight: 600;
+  }
+  .capability-strip {
+    display: flex;
+    padding: 26px var(--gutter);
+    border-top: 1px solid #d5d2cb;
+    border-bottom: 1px solid #d5d2cb;
+    gap: 30px;
+  }
+  .capability-strip > p {
+    min-width: 155px;
+    margin: 0;
+    font-size: 9px;
+  }
+  .capability-strip ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .capability-strip li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 11px;
+  }
+  .capability-strip li > span {
+    font-size: 9px;
+    color: #7f7a70;
+  }
+  .concept-b .work-section {
+    padding-top: 50px;
+  }
+  .concept-b .project-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 64px;
+  }
+  .concept-b .project {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    border: 0;
+    padding: 0;
+    justify-content: end;
+  }
+  .concept-b .project-meta {
+    flex-direction: row;
+    align-items: end;
+  }
+  .concept-b .project:nth-child(even) {
+    margin-top: 85px;
+  }
+  .concept-b .project-number {
+    margin-bottom: 10px;
+  }
+  .concept-b .project h3 {
+    font-size: 23px;
+  }
+  .concept-b .project-status {
+    font-size: 9px;
+    text-align: right;
+  }
+  .concept-b .project:nth-child(3) {
+    align-self: start;
+  }
+  .concept-b .direction-section {
+    background: #f0a076;
+  }
+  @media (min-width: 1650px) {
+    .hero {
+      min-height: 850px;
+    }
+    .hero-aside {
+      right: 8vw;
+    }
+    .concept-b .hero {
+      padding-bottom: 0;
+    }
+  }
+  @media (max-width: 1100px) {
+    .site-header {
+      gap: 25px;
+    }
+    .header-caption {
+      display: none;
+    }
+    .hero {
+      min-height: 670px;
+    }
+    .hero-aside {
+      right: 35px;
+      top: 45%;
+    }
+    .hero-aside p {
+      font-size: 10px;
+    }
+    .hero-bottom {
+      gap: 45px;
+    }
+    .hero-bottom p {
+      max-width: 290px;
+    }
+    .concept-b .hero {
+      column-gap: 5%;
+    }
+    .concept-b .hero-kicker {
+      font-size: 9px;
+    }
+    .hero-feature {
+      padding: 20px;
+    }
+    .capability-strip > p {
+      min-width: 120px;
+    }
+    .capability-strip ul {
+      gap: 15px;
+    }
+    .capability-strip li {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 767px) {
+    .site-header {
+      min-height: 88px;
+      padding-block: 14px;
+      gap: 12px;
+    }
+    .site-header nav {
+      gap: 24px;
+    }
+    .site-header nav a {
+      font-size: 11px;
+    }
+    .site-header .optional-nav {
+      display: none;
+    }
+    .header-cta {
+      gap: 10px;
+      max-width: 145px;
+      line-height: 1.5;
+    }
+    .header-cta svg {
+      min-width: 17px;
+    }
+    .hero {
+      padding-top: 38px;
+      min-height: 620px;
+    }
+    .hero-kicker {
+      font-size: 9px;
+      letter-spacing: 0.035em;
+    }
+    h1 {
+      margin-top: 36px;
+      font-size: clamp(57px, 11.6vw, 87px);
+    }
+    .hero-aside {
+      display: none;
+    }
+    .orbit {
+      width: 420px;
+      height: 420px;
+      right: -240px;
+      top: 70px;
+    }
+    .hero-bottom {
+      flex-direction: column;
+      align-items: start;
+      gap: 19px;
+    }
+    .hero-bottom p {
+      max-width: 310px;
+      font-size: 12px;
+    }
+    .explore-link {
+      font-size: 11px;
+      gap: 23px;
+    }
+    .round-arrow {
+      width: 38px;
+      height: 38px;
+    }
+    .hero-baseline {
+      padding-top: 40px;
+      font-size: 8px;
+      gap: 12px;
+      align-items: end;
+    }
+    .hero-baseline > span:first-child {
+      max-width: 180px;
+      line-height: 1.8;
+    }
+    .hero-baseline > span:last-child {
+      white-space: nowrap;
+    }
+    .work-section {
+      padding-top: 48px;
+      padding-bottom: 50px;
+    }
+    .section-top {
+      gap: 20px;
+      align-items: start;
+    }
+    .section-top .eyebrow {
+      font-size: 9px;
+    }
+    .section-top .preview-note {
+      font-size: 8px;
+      max-width: 145px;
+      text-align: right;
+    }
+    .work-intro {
+      margin-top: 32px;
+      margin-bottom: 34px;
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+    }
+    h2 {
+      font-size: clamp(36px, 8vw, 54px);
+    }
+    .work-intro > p {
+      font-size: 11px;
+    }
+    .project-grid {
+      gap: 36px;
+    }
+    .project,
+    .concept-a .project:nth-child(2) {
+      grid-template-columns: 1fr;
+      gap: 17px;
+      margin-left: 0;
+    }
+    .concept-a .project:nth-child(3) {
+      max-width: none;
+    }
+    .project-meta {
+      flex-direction: row;
+      align-items: end;
+      padding-bottom: 0;
+    }
+    .project-meta > div {
+      min-width: 0;
+    }
+    .project h3 {
+      font-size: 23px;
+    }
+    .project-number {
+      margin-bottom: 8px;
+      font-size: 9px;
+    }
+    .project-status {
+      font-size: 8px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .concept-a .project:nth-child(2) :global(.media-slot) {
+      border-radius: 0 0 35px 0;
+    }
+    .direction-section {
+      padding-block: 45px;
+    }
+    .direction-copy {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .direction-copy p {
+      font-size: 16px;
+    }
+    .capability-list {
+      margin-top: 40px;
+    }
+    .capability-list li {
+      grid-template-columns: 25px 1fr 20px;
+      gap: 10px;
+    }
+    .capability-list li > span:nth-child(2) {
+      font-size: 17px;
+    }
+    .conversation {
+      padding-block: 50px;
+    }
+    .conversation h2 {
+      font-size: clamp(35px, 8.6vw, 61px);
+      margin-block: 30px;
+    }
+    .conversation-link {
+      font-size: 11px;
+    }
+    .review-footer {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      padding-top: 30px;
+    }
+    .footer-signoff {
+      flex-direction: column;
+      gap: 12px;
+      line-height: 1.6;
+    }
+    .concept-b .hero {
+      display: flex;
+      min-height: auto;
+      padding-top: 35px;
+    }
+    .concept-b h1 {
+      font-size: clamp(57px, 11.6vw, 87px);
+      margin-top: 30px;
+    }
+    .concept-b .hero-bottom p {
+      max-width: 310px;
+    }
+    .hero-feature {
+      margin-top: 35px;
+      border-radius: 4px 4px 55px 4px;
+    }
+    .feature-top {
+      margin-bottom: 20px;
+    }
+    .feature-signoff {
+      font-size: 29px;
+      margin-top: 27px;
+    }
+    .concept-b .hero-baseline {
+      padding-top: 24px;
+    }
+    .capability-strip {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .capability-strip > p br {
+      display: none;
+    }
+    .capability-strip ul {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 20px;
+    }
+    .capability-strip li {
+      font-size: 11px;
+    }
+    .concept-b .project-grid {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+    .concept-b .project:nth-child(even) {
+      margin-top: 0;
+    }
+  }
+  @media (max-width: 374px) {
+    .site-header nav > a:first-child {
+      display: none;
+    }
+    h1,
+    .concept-b h1 {
+      font-size: 11.5vw;
+    }
+    .hero-kicker,
+    .concept-b .hero-kicker {
+      font-size: 8px;
+      gap: 7px;
+    }
+    .hero {
+      min-height: 580px;
+    }
+  }
+</style>

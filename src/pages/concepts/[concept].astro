@@ -1,0 +1,11 @@
+---
+const DesignConcept = import.meta.env.DEV
+  ? (await import('../../components/DesignConcept.astro')).default
+  : undefined;
+export function getStaticPaths() {
+  return import.meta.env.DEV ? [{ params: { concept: 'a' } }, { params: { concept: 'b' } }] : [];
+}
+const variant = Astro.params.concept === 'b' ? 'b' : 'a';
+---
+
+{DesignConcept && <DesignConcept variant={variant} />}

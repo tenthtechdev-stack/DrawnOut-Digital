@@ -1,0 +1,96 @@
+---
+import { capabilities } from '../data/site';
+import Arrow from './Arrow.astro';
+---
+
+<section class="capabilities" data-capabilities aria-labelledby="capabilities-title">
+  <div class="page-frame capability-inner">
+    <h2 class="eyebrow" id="capabilities-title">
+      We think beyond <br />
+      the brief.
+    </h2>
+    <ul>
+      {capabilities.map((item, index) => (
+        <li>
+          <a href={`/services#${item.id}`}>
+            <span class="capability-number">0{index + 1}</span>
+            <span>{item.title}</span>
+            <Arrow />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+<style>
+  .capabilities {
+    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .capability-inner {
+    padding-block: 30px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: var(--space-4);
+  }
+  h2 {
+    margin: 0;
+    line-height: 1.7;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+  }
+  a {
+    min-height: 65px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-content: start;
+    gap: 11px 4px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  a:hover {
+    color: var(--accent-strong);
+  }
+  .capability-number {
+    grid-column: 1 / -1;
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  a :global(svg) {
+    width: 13px;
+    height: 13px;
+    margin-top: 3px;
+  }
+  @media (max-width: 1199px) {
+    .capability-inner {
+      grid-template-columns: 1fr;
+      gap: 26px;
+    }
+    h2 br {
+      display: none;
+    }
+  }
+  @media (max-width: 639px) {
+    .capability-inner {
+      padding-block: 26px;
+    }
+    ul {
+      grid-template-columns: 1fr 1fr;
+      gap: 22px 25px;
+    }
+    a {
+      font-size: 13px;
+      min-height: 70px;
+    }
+  }
+</style>

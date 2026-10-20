@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+interface Props {
+  poster: ImageMetadata;
+  alt: string;
+  priority?: boolean;
+  aspectRatio?: string;
+  availability?: 'placeholder' | 'approved';
+  sizes?: string;
+}
+const {
+  poster,
+  alt,
+  priority = false,
+  aspectRatio = '1440 / 811',
+  availability = 'placeholder',
+  sizes = '(max-width: 640px) 90vw, (max-width: 1023px) 85vw, 70vw',
+} = Astro.props;
+---
+
+<div class="media-slot" style={`--media-ratio: ${aspectRatio}`}>
+  <Image
+    src={poster}
+    alt={alt}
+    widths={[480, 800, 1200, 1440]}
+    sizes={sizes}
+    loading={priority ? 'eager' : 'lazy'}
+    fetchpriority={priority ? 'high' : 'auto'}
+    format="webp"
+  />
+  {availability === 'placeholder' && <span class="preview-tag">Visual preview</span>}
+</div>
+<style>
+  .media-slot {
+    position: relative;
+    aspect-ratio: var(--media-ratio);
+    overflow: hidden;
+    background: #e7e4dd;
+  }
+  .media-slot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .preview-tag {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    padding: 5px 9px;
+    border-radius: 3px;
+    background: #fffef4;
+    color: #302e29;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+</style>
