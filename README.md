@@ -2,6 +2,8 @@
 
 **Design review:** [Open the Phase 0 screenshot gallery](artifacts/README.md). All four full-resolution desktop/mobile concepts render directly on GitHub. [Publishing recovery notes](docs/PUBLISHING_RECOVERY.md) explain the preserved checkpoint.
 
+[Post-push validation results](docs/PUBLISHING_VALIDATION.md) record the current build, TypeScript, lint, formatting, tests, and remote screenshot integrity checks.
+
 Phase 1 design foundation for the supplied DrawnOut Codex Master Pack v1.0, using the approved **A — Afterglow** direction. Astro 7, strict TypeScript, Tailwind 4, and Git-backed Astro Content Collections. This milestone is a visual review of the shared system; later storytelling, motion, case studies, and contact delivery remain separate phases.
 
 ## Develop

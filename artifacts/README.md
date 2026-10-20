@@ -40,6 +40,7 @@ Split hero, compact capability index, and paired portfolio presentation. Preserv
 
 - [Phase 0 implementation handoff](../docs/PHASE_0_HANDOFF.md)
 - [Original Phase 0 validation](../docs/VALIDATION.md)
+- [Post-push publishing validation](../docs/PUBLISHING_VALIDATION.md)
 - [Publishing recovery and current verification](../docs/PUBLISHING_RECOVERY.md)
 - [Repository setup and current implementation](../README.md)
 
