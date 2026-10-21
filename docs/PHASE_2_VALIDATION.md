@@ -65,7 +65,9 @@ Windows/PowerShell is not installed here, so no native Windows run is claimed. N
 
 Remote `main` remains at `fe15b550542e32ef224e506dcd2c5ff13eb3ba10`; no force-push, merge, or public application deployment occurred. The final delivery SHA may include an additional documentation-only commit recording these observed results.
 
-Git transport is working. GitHub API access is currently blocked by the environment's enforced restricted network policy: `api.github.com` is absent from its allowed hosts. A configured GitHub token binding is present; no token value was read. The read-only API command failed with:
+### Earlier API failure — resolved
+
+Git transport worked during initial publication, but GitHub API access was blocked because `api.github.com` was absent from the environment's allowed hosts. A configured GitHub token binding was present; no token value was read. The initial read-only API command failed with:
 
 ```text
 gh api repos/tenthtech/drawnout-digital --jq '{default_branch,private,permissions}'
@@ -79,15 +81,14 @@ gh pr create --draft --repo tenthtech/drawnout-digital --base main --head phase2
 Post "https://api.github.com/graphql": Forbidden
 ```
 
-**No pull request was created.** [Open the GitHub comparison](https://github.com/tenthtech/drawnout-digital/compare/main...phase2/afterglow-storytelling?expand=1) to review the pushed branch. This is a comparison/create page, not an existing PR URL. The [prepared PR description](PHASE_2_PULL_REQUEST.md) is committed so this step can be retried without reconstructing the review package:
+That failed attempt did not create a pull request. The user subsequently authorized the `api.github.com` hostname addition; it was saved without replacing existing network presets. After the configuration change, `gh api repos/tenthtech/drawnout-digital` succeeded with the existing connection. No replacement credential was required.
 
-```sh
-gh pr create --draft --repo tenthtech/drawnout-digital \
-  --base main --head phase2/afterglow-storytelling \
-  --title "Build Afterglow Phase 2 homepage storytelling" \
-  --body-file docs/PHASE_2_PULL_REQUEST.md
-```
+### Final PR verification
 
-Add `api.github.com` through the managed environment network settings while retaining existing destinations, then retry the existing connection; current evidence does not establish that a replacement credential is needed.
+[Draft pull request #1 — Build Afterglow Phase 2 homepage storytelling](https://github.com/tenthtech/drawnout-digital/pull/1) is **OPEN** and **draft**, targets `main`, and uses `phase2/afterglow-storytelling`. It already existed when the successful retry listed the branch's pull requests; no duplicate was created. Its verified implementation head was `50267934c4ba436e3a136d3786575dcb419515fd` before this documentation-only delivery update.
+
+The PR description links the correct branch's gallery, handoff, asset audit, and validation report, and preserves the Phase 2 approval boundary. GitHub reports no configured PR status checks (`statusCheckRollup: []`); the 55 passing automated tests above are the observed local validation results, not hosted CI results. Application source and screenshots are unchanged by this delivery update. The final branch SHA and push are verified after committing the resolved-access notes.
+
+Direct GitHub API verification also passed at that head: all 37 relative gallery links resolve to committed files, and all 28 PNG blobs were retrieved successfully (12,611,718 bytes). Every image matches the local committed Git hash and workspace bytes, decodes as PNG, and has the expected dimensions. This confirms image retrieval independently of the earlier fresh-clone check.
 
 **Phase 2 stops for visual approval. No merge, deployment, or Phase 3 work is authorized.**
