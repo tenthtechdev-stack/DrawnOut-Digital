@@ -1,0 +1,627 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Arrow from '../Arrow.astro';
+import MediaSlot from '../MediaSlot.astro';
+import CaseGallery from './CaseGallery.astro';
+import { getProjectNeighbors, projectCategoryLabels } from '../../lib/portfolio';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  projects: CollectionEntry<'projects'>[];
+  preview?: boolean;
+}
+const { project, projects, preview = false } = Astro.props;
+const { data } = project;
+const { previous, next } = getProjectNeighbors(projects, data.slug);
+const href = (slug: string) => `${preview ? '/_preview/work' : '/work'}/${slug}`;
+const verified = data.contentVerified;
+const portrait = data.cover.width < data.cover.height;
+const narratives = verified
+  ? [
+      { title: 'The challenge', text: data.challenge },
+      { title: 'The concept', text: data.concept },
+      { title: 'The creative approach', text: data.approach },
+    ].filter((item) => item.text)
+  : [];
+const categoryText = data.categories.map((category) => projectCategoryLabels[category]).join(' / ');
+---
+
+<article
+  class:list={['case-study', `case-study--${data.presentation}`]}
+  data-case-study
+  data-project-slug={data.slug}
+>
+  <header class="case-intro page-frame" data-text-reveal>
+    <div class="case-breadcrumb">
+      <a href="/work" class="back-link">
+        <span aria-hidden="true">↙</span> All work
+      </a>
+      <span class="eyebrow">{preview ? 'Local artwork review' : 'Selected work'}</span>
+    </div>
+    {preview && (
+      <aside class="draft-note" data-case-draft aria-label="Private draft status">
+        <span class="draft-dot" aria-hidden="true"></span>
+        Private draft · Local development only · Publication and credits await studio approval
+      </aside>
+    )}
+    <div class="case-heading-row">
+      <div class="case-title-block">
+        {categoryText && <p class="eyebrow case-categories">{categoryText}</p>}
+        <h1>
+          {data.title}
+          <span aria-hidden="true">.</span>
+        </h1>
+      </div>
+      <p class="case-summary">{data.summary}</p>
+    </div>
+    <div class="case-opening-line">
+      <span class="eyebrow">{preview ? 'A closer look at the artwork' : 'The project'}</span>
+      <a href="#case-overview" aria-label="Read project overview">
+        <span>Scroll to explore</span> <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </header>
+
+  <div class:list={['case-hero page-frame', { 'case-hero--portrait': portrait }]} data-case-hero>
+    {portrait && (
+      <p class="hero-side-note" aria-hidden="true">
+        Small details.
+        <br />
+        <span>Big picture.</span>
+      </p>
+    )}
+    <div class="hero-artwork" data-image-reveal data-expansion-frame>
+      <MediaSlot
+        poster={data.cover}
+        alt={data.coverAlt}
+        priority
+        aspectRatio={`${data.cover.width} / ${data.cover.height}`}
+        sizes={portrait ? '(max-width: 767px) 90vw, 58vw' : '92vw'}
+      />
+    </div>
+  </div>
+
+  <section
+    class="case-overview page-frame"
+    data-case-overview
+    id="case-overview"
+    aria-labelledby="overview-title"
+  >
+    <div>
+      <p class="eyebrow">01 / In view</p>
+      <h2 class="section-heading" id="overview-title">
+        {preview ? 'The visual story.' : 'Project overview.'}
+      </h2>
+    </div>
+    <div class="overview-content">
+      <p class="overview-lead">{data.overview ?? data.summary}</p>
+      {preview && (
+        <p class="overview-note">
+          A study of the supplied presentation artwork. Descriptive categories refer to what is
+          visible in the images; they do not confirm commissioned services, project scope, or
+          results.
+        </p>
+      )}
+      {verified && (
+        <dl class="case-facts" data-case-facts>
+          {data.projectType !== 'unknown' && (
+            <div>
+              <dt>Project type</dt>
+              <dd>{data.projectType}</dd>
+            </div>
+          )}
+          {data.clientName && (
+            <div>
+              <dt>Organization</dt>
+              <dd>{data.clientName}</dd>
+            </div>
+          )}
+          {data.year && (
+            <div>
+              <dt>Year</dt>
+              <dd>{data.year}</dd>
+            </div>
+          )}
+          {data.industry && (
+            <div>
+              <dt>Industry</dt>
+              <dd>{data.industry}</dd>
+            </div>
+          )}
+          {data.role && (
+            <div>
+              <dt>Our role</dt>
+              <dd>{data.role}</dd>
+            </div>
+          )}
+          {data.services.length > 0 && (
+            <div>
+              <dt>Services</dt>
+              <dd>{data.services.join(', ')}</dd>
+            </div>
+          )}
+        </dl>
+      )}
+    </div>
+  </section>
+
+  {narratives.length > 0 && (
+    <section
+      class="case-narratives page-frame"
+      data-case-narrative
+      aria-label="Verified project narrative"
+    >
+      {narratives.map((item, index) => (
+        <div class="narrative-block" data-text-reveal>
+          <p class="eyebrow">0{index + 2} / The thinking</p>
+          <h2>{item.title}</h2>
+          <p>{item.text}</p>
+        </div>
+      ))}
+    </section>
+  )}
+
+  <div class="page-frame">
+    <CaseGallery images={data.gallery} heroSource={data.cover.src} />
+  </div>
+
+  {verified && (data.deliverables?.length || data.results?.length || data.credits?.length) && (
+    <section
+      class="case-evidence page-frame"
+      data-case-evidence
+      aria-label="Confirmed project details"
+    >
+      {data.deliverables && data.deliverables.length > 0 && (
+        <div>
+          <h2>What was delivered.</h2>
+          <ul>
+            {data.deliverables.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {data.results && data.results.length > 0 && (
+        <div>
+          <h2>Documented outcomes.</h2>
+          <dl>
+            {data.results.map((result) => (
+              <div>
+                <dt>{result.label}</dt>
+                <dd>
+                  {result.value}
+                  <span class="evidence-source">Source: {result.evidenceSource}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      )}
+      {data.credits && data.credits.length > 0 && (
+        <div>
+          <h2>Credits.</h2>
+          <ul>
+            {data.credits.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
+  )}
+
+  {(previous || next) && (
+    <nav class="case-navigation page-frame" data-case-navigation aria-label="More projects">
+      <div class="navigation-intro">
+        <p class="eyebrow">Keep looking</p>
+        <h2 class="section-heading">
+          Another point <br />
+          of view.
+        </h2>
+        <a href="/work" class="all-work">
+          Return to all work <Arrow />
+        </a>
+      </div>
+      <div class="project-directions">
+        {previous && (
+          <a href={href(previous.data.slug)} class="neighbor neighbor--previous" data-case-previous>
+            <span class="eyebrow">Previous project</span>
+            <span class="neighbor-title">{previous.data.title}</span>
+            <span class="neighbor-arrow" aria-hidden="true">
+              ↙
+            </span>
+          </a>
+        )}
+        {next && (
+          <a
+            href={href(next.data.slug)}
+            class="neighbor neighbor--next"
+            data-case-next
+            data-project-transition
+          >
+            <div class="next-image" data-expansion-frame>
+              <MediaSlot
+                poster={next.data.cover}
+                alt={next.data.coverAlt}
+                aspectRatio={`${next.data.cover.width} / ${next.data.cover.height}`}
+                sizes="(max-width: 767px) 90vw, 42vw"
+              />
+            </div>
+            <div class="next-meta">
+              <div>
+                <span class="eyebrow">Next project</span>
+                <span class="neighbor-title">{next.data.title}</span>
+              </div>
+              <Arrow />
+            </div>
+          </a>
+        )}
+      </div>
+    </nav>
+  )}
+</article>
+
+<style>
+  .case-intro {
+    padding-top: 40px;
+  }
+  .case-breadcrumb,
+  .case-opening-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .case-breadcrumb > .eyebrow {
+    color: var(--muted);
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 44px;
+    font-size: var(--type-small);
+    text-decoration: none;
+  }
+  .back-link:hover,
+  .case-opening-line a:hover,
+  .all-work:hover {
+    color: var(--accent-strong);
+  }
+  .back-link > span {
+    font-size: 22px;
+  }
+  .draft-note {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .draft-dot {
+    width: 5px;
+    height: 5px;
+    background: var(--accent-strong);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .case-heading-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.7fr);
+    gap: clamp(30px, 6vw, 90px);
+    align-items: end;
+    padding-block: var(--space-6);
+  }
+  .case-categories {
+    margin: 0 0 28px;
+    color: var(--muted);
+  }
+  h1 {
+    margin: 0;
+    max-width: 12ch;
+    font-size: clamp(3.5rem, 8vw, 8.5rem);
+    font-weight: 500;
+    line-height: 1.03;
+    letter-spacing: var(--tracking-display);
+    overflow-wrap: anywhere;
+  }
+  h1 > span {
+    color: var(--accent-strong);
+  }
+  .case-summary {
+    max-width: 410px;
+    margin: 0 0 5px;
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+    color: var(--muted);
+  }
+  .case-opening-line {
+    padding-bottom: 25px;
+  }
+  .case-opening-line a {
+    display: inline-flex;
+    gap: 30px;
+    align-items: center;
+    min-height: 44px;
+    font-size: 11px;
+    text-decoration: none;
+  }
+  .case-opening-line a > span:last-child {
+    font-size: 22px;
+  }
+  .case-hero {
+    position: relative;
+  }
+  .hero-artwork {
+    min-width: 0;
+  }
+  .hero-artwork :global(.media-slot) {
+    border-radius: 4px;
+  }
+  .case-hero--portrait {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    gap: 65px;
+    align-items: end;
+  }
+  .hero-side-note {
+    font-size: clamp(2rem, 3.8vw, 4rem);
+    line-height: 1.15;
+    letter-spacing: -0.055em;
+    margin: 0 0 15px;
+  }
+  .hero-side-note span {
+    color: var(--accent-strong);
+  }
+  .case-overview {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(30px, 9vw, 140px);
+    padding-block: var(--space-7);
+  }
+  .case-overview .eyebrow {
+    color: var(--muted);
+    margin: 0 0 30px;
+  }
+  .overview-lead {
+    font-size: clamp(1.35rem, 2.2vw, 2rem);
+    line-height: 1.65;
+    letter-spacing: -0.035em;
+    margin: 0;
+  }
+  .overview-note {
+    max-width: 490px;
+    color: var(--muted);
+    font-size: var(--type-small);
+    line-height: 1.9;
+    margin: 30px 0 0;
+  }
+  .case-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 45px 0 0;
+  }
+  .case-facts div {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  dt {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  dd {
+    margin: 10px 0 0;
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+  }
+  .case-narratives {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 50px;
+    padding-bottom: var(--space-6);
+  }
+  .narrative-block {
+    border-top: 1px solid var(--line);
+    padding-top: 25px;
+  }
+  .narrative-block .eyebrow {
+    margin: 0 0 30px;
+    color: var(--muted);
+  }
+  .narrative-block h2,
+  .case-evidence h2 {
+    font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.045em;
+    margin: 0 0 25px;
+  }
+  .narrative-block > p:last-child,
+  .case-evidence li {
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+    color: var(--muted);
+  }
+  .case-evidence {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 50px;
+    padding-bottom: var(--space-7);
+  }
+  .case-evidence ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+  .case-evidence li + li {
+    margin-top: 10px;
+  }
+  .case-evidence dl {
+    margin: 0;
+  }
+  .case-evidence dl > div + div {
+    margin-top: 25px;
+  }
+  .evidence-source {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+  .case-navigation {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    gap: clamp(40px, 10vw, 160px);
+    border-top: 1px solid var(--line);
+    padding-block: var(--space-6) var(--space-7);
+  }
+  .navigation-intro .eyebrow {
+    margin: 0 0 30px;
+    color: var(--muted);
+  }
+  .all-work {
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+    min-height: 44px;
+    margin-top: 35px;
+    font-size: var(--type-small);
+    text-decoration: none;
+  }
+  .all-work :global(svg) {
+    width: 18px;
+    height: 18px;
+  }
+  .project-directions {
+    min-width: 0;
+  }
+  .neighbor {
+    display: block;
+    text-decoration: none;
+  }
+  .neighbor--previous {
+    position: relative;
+    padding-block: 0 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--line);
+  }
+  .neighbor .eyebrow {
+    color: var(--muted);
+  }
+  .neighbor-title {
+    display: block;
+    margin-top: 12px;
+    font-size: clamp(1.35rem, 2.3vw, 2rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.2;
+  }
+  .neighbor-arrow {
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+    font-size: 25px;
+  }
+  .neighbor--previous .neighbor-title {
+    padding-right: 40px;
+  }
+  .next-image {
+    overflow: hidden;
+    border-radius: 0 0 45px 0;
+  }
+  .next-image :global(img) {
+    transition: transform 220ms var(--ease-ui);
+  }
+  .neighbor--next:is(:hover, :focus-visible) .next-image :global(img) {
+    transform: scale(1.015);
+  }
+  .neighbor:is(:hover, :focus-visible) .neighbor-title {
+    color: var(--accent-strong);
+  }
+  .next-meta {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 25px;
+    padding-top: 20px;
+  }
+  .next-meta :global(svg) {
+    flex-shrink: 0;
+    width: 27px;
+    height: 27px;
+  }
+  @media (max-width: 767px) {
+    .case-intro {
+      padding-top: 20px;
+    }
+    .case-breadcrumb > .eyebrow {
+      font-size: 9px;
+    }
+    .case-heading-row {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding-block: 45px;
+    }
+    .case-categories {
+      margin-bottom: 23px;
+    }
+    h1 {
+      font-size: clamp(2.8rem, 13vw, 5rem);
+      max-width: 13ch;
+    }
+    .case-summary {
+      font-size: 15px;
+    }
+    .case-opening-line {
+      gap: 15px;
+    }
+    .case-opening-line > .eyebrow {
+      max-width: 160px;
+      font-size: 9px;
+    }
+    .case-opening-line a {
+      gap: 15px;
+      font-size: 10px;
+    }
+    .case-hero--portrait {
+      display: block;
+    }
+    .hero-side-note {
+      display: none;
+    }
+    .case-overview,
+    .case-navigation {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+    .case-overview {
+      padding-block: 55px;
+    }
+    .case-overview .eyebrow {
+      margin-bottom: 25px;
+    }
+    .overview-lead {
+      font-size: 1.35rem;
+      line-height: 1.7;
+    }
+    .overview-note {
+      margin-top: 25px;
+    }
+    .case-facts {
+      gap: 25px;
+    }
+    .case-navigation {
+      padding-top: 45px;
+    }
+    .case-navigation .section-heading {
+      font-size: 2.4rem;
+    }
+  }
+</style>

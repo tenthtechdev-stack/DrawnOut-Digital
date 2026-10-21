@@ -1,18 +1,14 @@
 # DrawnOut Digital
 
-**Phase 2 review:** [Open the Afterglow homepage storytelling gallery](artifacts/phase-2/README.md). Work is isolated on `phase2/afterglow-storytelling` from asset commit `fe15b550542e32ef224e506dcd2c5ff13eb3ba10`. [Phase 2 handoff](docs/PHASE_2_HANDOFF.md) describes the scope and review boundary.
+**Phase 3 review:** [Open the Work and case-study gallery](artifacts/phase-3/README.md). Branch `phase3/editorial-portfolio` extends the approved Phase 2 merge `b3dc19602963a86b55942294ee85d7fd025d1dc6`. See [the handoff](docs/PHASE_3_HANDOFF.md), [validation](docs/PHASE_3_VALIDATION.md), and [Codex portfolio workflow](docs/PORTFOLIO_WORKFLOW.md).
 
-**Approved Phase 1 archive:** [Open the Afterglow screenshot gallery](artifacts/phase-1/README.md) for the original 390px, 768px, and 1440px full-page and component views, including the mobile menu.
+The approved **Afterglow** homepage is preserved. Earlier galleries remain available: [Phase 2](artifacts/phase-2/README.md), [Phase 1](artifacts/phase-1/README.md), and [Phase 0](artifacts/README.md). Original briefs remain unchanged in `docs/source-pack/`.
 
-**Design review:** [Open the Phase 0 screenshot gallery](artifacts/README.md). All four full-resolution desktop/mobile concepts render directly on GitHub. [Publishing recovery notes](docs/PUBLISHING_RECOVERY.md) explain the preserved checkpoint.
-
-[Historical publishing validation](docs/PUBLISHING_VALIDATION.md) records the earlier recovery checkpoint. [Phase 2 validation](docs/PHASE_2_VALIDATION.md) records the current implementation checks.
-
-Phase 2 homepage storytelling for the supplied DrawnOut Codex Master Pack v1.0, extending the approved **A — Afterglow** desktop/mobile foundation. Astro 7, strict TypeScript, Tailwind 4, and Git-backed Astro Content Collections. Motion, published case studies, and contact delivery remain later phases.
+Astro 7, strict TypeScript, Tailwind 4, locally licensed Manrope, and typed Git-backed project collections. There is no custom admin dashboard. Cinematic motion, actual portfolio publication, and contact delivery remain later work.
 
 ## Develop
 
-Use Node 24 (minimum 22.22) and npm. No credentials or external services are needed.
+Use Node 24 (minimum 22.22) and npm. Local development requires no external service credentials.
 
 ```sh
 cd /workspace/drawnout-digital
@@ -20,46 +16,46 @@ npm ci --cache /workspace/.cache/npm
 npm run dev -- --port 4321
 ```
 
-The existing checkout is already isolated for a cloud task; use it directly. Do not create a Git worktree unless explicitly requested. Live processes must be restarted after a restored environment.
+Use the existing isolated cloud checkout; do not create a Git worktree unless explicitly requested. Restart live processes after an environment restore.
 
-Development opens the Phase 2 homepage at `/`, with five original-derived portfolio previews, studio philosophy, service propositions, strategic approach, four-step process, ideal-client positioning, and the retained static footer. `/work`, `/services`, `/about`, and `/contact` remain minimal route foundations. The Phase 0 studies remain at `/concepts/a` and `/concepts/b` for reference. Core content and fallback navigation work without browser JavaScript. Keep development access local/private: noindex is an indexing hint, not authentication. No publicly deployed development preview is authorized.
+Development preserves the approved homepage at `/`. `/work` presents the editorial portfolio with category filters, and `/_preview/work/<slug>` provides reusable private detail previews. Eleven canonical records drive these views; no per-project page code is needed. `/services`, `/about`, and `/contact` remain route foundations. `/concepts/a` and `/concepts/b` preserve the initial studies. Core content and fallback navigation work without JavaScript.
 
-All four Astro entry scripts use maintained `cross-env` to set telemetry configuration on Windows PowerShell/npm and Linux. Keep Node 24 or a supported Node version (minimum 22.22). Linux entry points and environment/exit-code propagation were verified; an actual Windows/PowerShell execution is not available in this cloud machine.
+Keep the development server local/private: noindex is an indexing hint, not access control. A public application preview is not authorized. Only the branch, PR, and review gallery are authorized for publication.
 
-`npm run build` generates six noindex foundation routes: Home, Work, Services, About, Contact, and 404. It excludes concept pages, draft case routes, and draft portfolio media. The production Work foundation shows an intentional empty state until publication approvals exist. `npm run preview` serves this safe build. Nothing has been deployed.
+All four Astro entry scripts use maintained `cross-env` for Windows PowerShell and Linux. Linux behavior is verified; native Windows execution is unavailable in this cloud machine.
 
-## Checks
+`npm run build` currently emits six noindex routes: Home, Work, Services, About, Contact, and 404. It excludes concepts, private previews, unapproved case routes, metadata, and artwork. Production Work has an intentional empty state until publication approvals exist. Approved records automatically generate Work cards, filters, `/work/<slug>` pages, and case navigation. `npm run preview` serves this safe build. Nothing has been deployed.
+
+Run standalone checks/builds before starting development, or stop and restart the development server afterward. The publication-aware loader intentionally generates different public/development image-import maps in Astro's content directory; restarting restores the complete local review collection after a mode change.
+
+## Validate
 
 ```sh
 npm run verify
 npm run test:build
-npm run test:browser
+npm run test:publication
 npm run format:check
 ```
 
-`verify` runs Astro type checks, ESLint, content/contrast/original-asset tests, and a production build in sequence. `test:build` inspects all built pages and text/assets for draft leakage. The browser suite includes retained concept/navigation checks plus Phase 2 text, image art-direction, responsive, keyboard, and no-JavaScript/reduced-motion coverage. Phase 2 captures are produced at 390, 768, and 1440px, with additional overflow checks at 320 and larger desktop widths.
+`verify` combines Astro/TypeScript checks, ESLint, unit/content/contrast/original-asset tests, and a production build. `test:build` inspects output for draft leakage. `test:publication` makes three isolated builds with a synthetic record to verify automatic case generation, factual-content gating, and withdrawal; real project approvals are untouched.
 
-Browser screenshot paths are relative to the runner working directory. To preserve committed Phase 0/1 screenshots, run the existing suite from a temporary output directory with the repository configuration, then copy only the Phase 2 outputs into `artifacts/phase-2/`. See `docs/PHASE_2_VALIDATION.md` for the exact validation invocation. Avoid treating regenerated old-phase captures as historical evidence.
+The browser suite covers retained homepage/navigation behavior, Work filters and URL history, case navigation, responsive images, keyboard use, no JavaScript, and reduced motion. To preserve archived screenshots, run it from a temporary directory using the absolute repository config, then copy only current Phase 3 captures into `artifacts/phase-3/`. See [validation](docs/PHASE_3_VALIDATION.md) for the exact invocation. `npm run test:browser` is available, but its screenshot paths are relative to the command's working directory.
 
-The cloud machine provides Chromium at `/usr/bin/chromium`. Set `CHROMIUM_PATH` to another installed Chromium executable elsewhere; the package does not download a browser implicitly. Browser checks do not establish iOS Safari/Android hardware performance, WCAG conformance, or production Core Web Vitals.
+Chromium is installed at `/usr/bin/chromium`; set `CHROMIUM_PATH` for another executable. Browser packages do not download a browser implicitly. Recorded checks do not establish hardware Safari/Android performance, comprehensive WCAG conformance, or production Core Web Vitals.
 
 ## Content and media
 
-- `src/content/projects/*.json` is the single source of project metadata. Seven supplied records are all draft/private, unknown commissioning status, and have no publication or credit approval.
-- `src/lib/project-schema.ts` validates safe slugs, descriptive media alternatives, provenance, and evidence-backed results. `canPublish` requires published + public + publication approval + credit approval + a known project type. These flags record human decisions; they cannot establish rights by themselves.
-- All future public routes, related work, filters, feeds, and sitemaps must consume `getPublicProjects()` from `src/lib/projects.ts`. Do not query raw collection records in public features.
-- `getDraftPreviewProjects()` only returns data in development. Preview route modules use development-only imports to keep draft artwork out of the production asset graph.
-- `MediaSlot.astro` reserves dimensions, creates responsive WebP images, and labels temporary stills. There are no fake play buttons or implied videos. Final video controls/source switching belong to the later media phase.
-- Existing supplied WebPs remain preserved alongside the new original-derived portfolio media. The supplied raster logo is displayed with CSS whitespace framing on a light background; its proportions, lettering, and colors are preserved.
+- `src/content/projects/*.json` is canonical. All eleven current records are private drafts, with unknown commissioning status, false publication/credit/factual approval, and empty services.
+- `project-schema.ts` validates safe slugs, descriptions, source provenance, categories, image compositions, and evidence-backed outcomes. `canPublish` requires published + public + publication approval + credit approval + known project type. Flags record human decisions; they cannot establish rights themselves.
+- Public consumers use `getPublicProjects()` / `getPublicWorkProjects()`. Draft selectors and route imports are development-only. `project-loader.ts` also gates entries before Astro registers image assets and clears prior cached entries; route filtering alone cannot protect Astro's collection-wide asset map.
+- Artwork categories describe visible formats, separately from confirmed service scope. Case facts, narratives, services, credits, and results render only when `contentVerified` is explicitly true and corresponding fields exist.
+- `workOrder` controls the index and previous/next independently of approved homepage curation. `presentation` and gallery `layout` configure composition through the record.
+- `MediaSlot` reserves responsive geometry and generates source-capped WebP candidates. Current views use supplied stills without fake video controls or autoplay. Its optional approved-video interface remains ready for later footage.
 
-The authoritative original portfolio is `design-assets/portfolio-originals/` (15 folders, 46 PNGs) from the supplied asset commit. Phase 2 creates 11 WebP derivatives under `src/assets/portfolio/` without changing originals; see [the complete asset audit](docs/PHASE_2_ASSET_AUDIT.md). The canonical draft records now reference those derivatives. Panoramic desktop details switch to full-context boards on mobile, with reserved responsive aspect ratios. Image candidate widths never exceed the source width. `MediaSlot` accepts optional approved MP4/WebM/caption sources for later replacement, with native controls and a retained poster; absent/unapproved video sources render only the still, with no fake play button or autoplay.
+The immutable original archive contains 15 folders / 46 PNGs. Phase 3 adds 26 WebPs alongside the 11 Phase 2 derivatives; see [the asset audit](docs/PHASE_3_ASSET_AUDIT.md). Future originals belong under `design-assets/project-sources/<slug>/`, outside the historical archive and `public/`. [The portfolio workflow](docs/PORTFOLIO_WORKFLOW.md) documents adding, editing, ordering, publishing, and withdrawing projects with Codex.
 
-Manrope is locally served under the SIL Open Font License, included in `licenses/`. Shared spacing, type, surface, contrast, and interaction tokens live in `src/styles/global.css`; bright orange is atmospheric while strong orange supports readable text. The header, buttons, hero, capability index, section headings, project cards, route intro, and static footer are reusable components. GSAP remains deferred to the motion phases.
+The supplied raster logo retains its proportions and light-background framing. Manrope's SIL Open Font License is in `licenses/`. Shared design tokens remain in `src/styles/global.css`. Native scrolling, accessible navigation, the approved hero, and the static footer are retained. Future text/image reveals, expansion frames, and project transitions have explicit component boundaries; no GSAP cinematic system is implemented.
 
-## Review and next phase
+## Review boundary
 
-See [Phase 2 handoff](docs/PHASE_2_HANDOFF.md), the earlier [Phase 1 handoff](docs/PHASE_1_HANDOFF.md) and [Phase 0 handoff](docs/PHASE_0_HANDOFF.md), [asset audit](docs/ASSET_AUDIT.md), and the unmodified original briefs in `docs/source-pack/`. Current design evidence lives in `artifacts/phase-2/`; earlier galleries remain preserved.
-
-Afterglow is approved for desktop and mobile. Phase 2 now awaits visual review; do not begin Phase 3 or merge/deploy without explicit approval. The static footer has independent artwork/content layers, the hero has semantic line groups, and portfolio scenes have separate expansion frames for later motion. No cinematic timeline or hand/logo animation is implemented. Project rights, service scope, final brand masters, contact/domain/social details, forms/privacy, and real videos still need confirmation before publication.
-
-The dedicated branch and GitHub review gallery are authorized for publication. Merging, public application deployment, contact delivery, and analytics integration remain outside this phase.
+Phase 2 is approved and merged. Phase 3 stops for visual approval. Do not merge, deploy publicly, or begin cinematic motion automatically. Project rights, verified scope/credits/outcomes, final brand/footer masters, videos/captions, contact/domain/social details, and forms/privacy still require the corresponding approvals before release.

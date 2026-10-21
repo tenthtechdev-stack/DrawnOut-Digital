@@ -1,9 +1,9 @@
 import { defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
 import { projectSchema } from './lib/project-schema';
+import { projectLoader } from './lib/project-loader';
 
 const projects = defineCollection({
-  loader: glob({ pattern: '*.json', base: './src/content/projects' }),
+  loader: projectLoader(),
   schema: ({ image }) => projectSchema(image()),
 });
 

@@ -3,7 +3,8 @@ import Brand from './Brand.astro';
 import Arrow from './Arrow.astro';
 import { navigation } from '../data/site';
 
-const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const pathname =
+  Astro.url.pathname.replace(/^\/_preview(?=\/work\/)/, '').replace(/\/$/, '') || '/';
 const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 ---
 

@@ -1,11 +1,16 @@
 import { z } from 'astro/zod';
 
+/** Describes visible artwork formats; these tags never verify commissioned services. */
+export const projectCategories = ['identity', 'packaging', 'digital', 'print'] as const;
+export type ProjectCategory = (typeof projectCategories)[number];
+
 /** One schema shared by Astro's image resolver and the standalone content tests. */
 export function projectSchema<T extends z.ZodType>(imageSchema: T) {
   const captionedImage = z.object({
     src: imageSchema,
     alt: z.string().trim().min(1),
     caption: z.string().trim().min(1).optional(),
+    layout: z.enum(['full', 'inset', 'pair']).default('full'),
   });
 
   return z.object({
@@ -26,6 +31,16 @@ export function projectSchema<T extends z.ZodType>(imageSchema: T) {
     industry: z.string().trim().min(1).optional(),
     role: z.string().trim().min(1).optional(),
     services: z.array(z.string().trim().min(1)).default([]),
+    categories: z
+      .array(z.enum(projectCategories))
+      .refine((categories) => new Set(categories).size === categories.length, {
+        message: 'Artwork categories must be unique.',
+      })
+      .default([]),
+    workOrder: z.number().int().nonnegative().optional(),
+    presentation: z.enum(['wide', 'split', 'portrait', 'offset']).default('wide'),
+    contentVerified: z.boolean().default(false),
+    overview: z.string().trim().min(1).optional(),
     featured: z.boolean().default(false),
     featuredOrder: z.number().int().nonnegative().optional(),
     cover: imageSchema,

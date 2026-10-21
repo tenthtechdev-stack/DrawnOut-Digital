@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
+import { canPublish } from '../src/lib/project-schema.ts';
 
 async function files(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -16,8 +17,33 @@ async function files(directory) {
   ).flat();
 }
 
-test('production emits the six foundation routes without concept or draft case routes', async () => {
+async function projectRecords() {
+  const directory = 'src/content/projects';
+  const names = (await readdir(directory)).filter((name) => name.endsWith('.json'));
+  return Promise.all(
+    names.map(async (name) => JSON.parse(await readFile(path.join(directory, name), 'utf8'))),
+  );
+}
+
+function escapePattern(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function mediaSources(record) {
+  return [record.cover, ...record.gallery.map((media) => media.src)];
+}
+
+function casePathPattern(slug) {
+  return new RegExp(`/work/${escapePattern(slug)}(?:["'/\\s?#]|$)`);
+}
+
+test('production emits foundation routes and approved cases without private preview or draft routes', async () => {
   const output = await files('dist');
+  const records = await projectRecords();
+  const drafts = records.filter((record) => !canPublish(record));
+  const approved = records.filter(canPublish);
+  const publicTitles = new Set(approved.map((record) => record.title));
+  assert.ok(records.length >= 11, 'The complete supplied collection must be inspected.');
   const htmlFiles = output.filter((file) => file.endsWith('.html'));
   assert.deepEqual(
     htmlFiles.map((file) => path.relative('dist', file).split(path.sep).join('/')).sort(),
@@ -28,7 +54,8 @@ test('production emits the six foundation routes without concept or draft case r
       'index.html',
       'services/index.html',
       'work/index.html',
-    ],
+      ...approved.map((record) => `work/${record.slug}/index.html`),
+    ].sort(),
   );
   for (const file of htmlFiles) {
     const html = await readFile(file, 'utf8');
@@ -36,11 +63,21 @@ test('production emits the six foundation routes without concept or draft case r
     assert.match(html, /<title>[^<]+<\/title>/, `${file} needs a useful title`);
     assert.match(html, /name="description"\s+content="[^"]+"/, `${file} needs a description`);
     assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1, `${file} needs one H1`);
-    assert.doesNotMatch(
-      html,
-      /Bunzo|Triarch|SOL Community|Churros|Feed N Seed|Abacus Immigration|By Tech Group|Visual preview/i,
-      `${file} must exclude unapproved portfolio content`,
-    );
+    assert.doesNotMatch(html, /\/_preview\/work\//i);
+    for (const record of drafts) {
+      if (!publicTitles.has(record.title)) {
+        assert.doesNotMatch(
+          html,
+          new RegExp(escapePattern(record.title)),
+          `${file} must exclude unapproved project ${record.title}.`,
+        );
+      }
+      assert.doesNotMatch(
+        html,
+        casePathPattern(record.slug),
+        `${file} must not link a draft case.`,
+      );
+    }
   }
   const home = await readFile('dist/index.html', 'utf8');
   assert.match(home, /We make ideas/);
@@ -65,24 +102,62 @@ test('production emits the six foundation routes without concept or draft case r
 
 test('production asset output excludes every draft project image', async () => {
   const output = await files('dist');
+  const records = await projectRecords();
+  const approvedSources = new Set(records.filter(canPublish).flatMap(mediaSources));
+  const privateSources = records
+    .filter((record) => !canPublish(record))
+    .flatMap(mediaSources)
+    .filter((source) => !approvedSources.has(source));
   assert.ok(
-    !output.some((file) =>
-      /bunzo|triarch|churros|feed-n-seed|sol-community|abacus|by-tech|portfolio-originals|design-assets|\.webp$/i.test(
-        file,
-      ),
-    ),
-    'Draft project media must not be emitted into any production asset directory',
+    !output.some((file) => /portfolio-originals|design-assets|_preview/i.test(file)),
+    'Original archives and private preview routes must remain outside production.',
   );
+  for (const source of privateSources) {
+    const stem = path.parse(source).name;
+    const pattern = new RegExp(`(?:^|/)${escapePattern(stem)}(?:[._-])`);
+    assert.ok(
+      !output.some((file) => pattern.test(file)),
+      `Unapproved image ${stem} must not appear in production asset filenames.`,
+    );
+  }
+  if (records.every((record) => !canPublish(record))) {
+    assert.ok(!output.some((file) => file.endsWith('.webp')), 'No project WebPs are approved yet.');
+  }
 });
 
 test('production text and generated assets do not expose original portfolio files or draft metadata', async () => {
   const output = await files('dist');
-  for (const file of output.filter((name) => /\.(?:html|css|js|json)$/.test(name))) {
+  const records = await projectRecords();
+  const drafts = records.filter((record) => !canPublish(record));
+  const approved = records.filter(canPublish);
+  const publicTitles = new Set(approved.map((record) => record.title));
+  const approvedSources = new Set(approved.flatMap(mediaSources));
+  for (const file of output.filter((name) => /\.(?:html|css|js|json|xml)$/.test(name))) {
     const payload = await readFile(file, 'utf8');
     assert.doesNotMatch(
       payload,
-      /portfolio-originals|design-assets\/portfolio|Bunzo|Triarch|SOL Community Center|Churros Dessert Shop|By Tech Group|Feed N Seed|Abacus Immigration/i,
+      /portfolio-originals|design-assets\/portfolio|\/_preview\/work\//i,
       `${file} must not leak unapproved project content.`,
     );
+    for (const record of drafts) {
+      if (!publicTitles.has(record.title)) {
+        assert.ok(!payload.includes(record.title), `${file} leaked project title ${record.title}.`);
+      }
+      assert.doesNotMatch(
+        payload,
+        casePathPattern(record.slug),
+        `${file} leaked a draft case URL.`,
+      );
+      assert.ok(
+        !payload.includes(record.assetSource),
+        `${file} leaked original provenance metadata.`,
+      );
+      for (const source of mediaSources(record).filter((source) => !approvedSources.has(source))) {
+        assert.ok(
+          !payload.includes(path.basename(source)),
+          `${file} leaked draft image ${path.basename(source)}.`,
+        );
+      }
+    }
   }
 });

@@ -1,0 +1,28 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import CaseStudy from '../../components/case/CaseStudy.astro';
+import { getPublicWorkProjects } from '../../lib/projects';
+
+export const getStaticPaths = (async () => {
+  const projects = await getPublicWorkProjects();
+  return projects.map((project) => ({
+    params: { slug: project.data.slug },
+    props: { project, projects },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  projects: CollectionEntry<'projects'>[];
+}
+const { project, projects } = Astro.props;
+---
+
+<SiteLayout
+  title={project.data.seoTitle ?? `${project.data.title} — DrawnOut Digital`}
+  description={project.data.seoDescription ?? project.data.summary}
+>
+  <CaseStudy project={project} projects={projects} />
+</SiteLayout>

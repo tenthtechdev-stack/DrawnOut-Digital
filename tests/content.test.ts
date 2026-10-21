@@ -129,35 +129,56 @@ test('the public selector excludes drafts and applies deterministic featured ord
   assert.equal(entries[0]?.id, 'b', 'selection must not reorder source content');
 });
 
-test('all seven supplied project records are valid drafts with existing local media', async () => {
+test('project records retain the supplied collection, safe local media and publication safeguards', async () => {
   const directory = new URL('../src/content/projects/', import.meta.url);
   const filenames = (await readdir(directory)).filter((name) => name.endsWith('.json'));
-  assert.equal(filenames.length, 7);
+  assert.ok(filenames.length >= 11);
+  for (const original of [
+    'abacus-immigration',
+    'bunzo',
+    'by-tech-group',
+    'churros',
+    'feed-n-seed',
+    'sol-community-center',
+    'triarch',
+    'capture',
+    'khalo',
+    'fk-technology',
+    'u-wanna-smoothie',
+  ]) {
+    assert.ok(filenames.includes(`${original}.json`), `${original} must remain available.`);
+  }
   const records = [];
   for (const filename of filenames) {
     const path = new URL(filename, directory);
     const record = schema.parse(JSON.parse(await readFile(path, 'utf8')));
-    assert.equal(record.status, 'draft');
-    assert.equal(record.visibility, 'private');
-    assert.equal(record.projectType, 'unknown');
-    assert.equal(record.publicationApproved, false);
-    assert.equal(record.creditApproved, false);
-    assert.equal(record.services.length, 0, 'no service scope is inferred from the artwork');
+    if (!canPublish(record)) {
+      assert.equal(record.visibility, 'private', `${filename} must remain private until approved.`);
+      assert.ok(
+        record.status === 'draft' || record.status === 'review',
+        `${filename} must not claim publication before all approvals are present.`,
+      );
+    }
     assert.equal(record.slug, filename.replace(/\.json$/, ''));
-    const coverPath = new URL(record.cover, path);
-    const localAssetPath = relative(
-      fileURLToPath(new URL('../src/assets/', import.meta.url)),
-      fileURLToPath(coverPath),
-    );
-    assert.ok(
-      localAssetPath !== '..' &&
-        !localAssetPath.startsWith(`..${sep}`) &&
-        !isAbsolute(localAssetPath),
-      'Project media must remain inside src/assets.',
-    );
-    assert.ok((await readFile(coverPath)).length > 0);
+    for (const source of [record.cover, ...record.gallery.map((media) => media.src)]) {
+      const mediaPath = new URL(source, path);
+      const localAssetPath = relative(
+        fileURLToPath(new URL('../src/assets/', import.meta.url)),
+        fileURLToPath(mediaPath),
+      );
+      assert.ok(
+        localAssetPath !== '..' &&
+          !localAssetPath.startsWith(`..${sep}`) &&
+          !isAbsolute(localAssetPath),
+        'Project media must remain inside src/assets.',
+      );
+      assert.ok((await readFile(mediaPath)).length > 0);
+    }
     records.push({ id: record.slug, data: record });
   }
-  assert.equal(new Set(records.map(({ id }) => id)).size, 7);
-  assert.deepEqual(selectPublicProjects(records), []);
+  assert.equal(new Set(records.map(({ id }) => id)).size, filenames.length);
+  assert.deepEqual(
+    new Set(selectPublicProjects(records).map(({ id }) => id)),
+    new Set(records.filter(({ data }) => canPublish(data)).map(({ id }) => id)),
+  );
 });
