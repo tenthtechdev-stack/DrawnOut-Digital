@@ -34,7 +34,7 @@ Linux environment propagation, child exit-code preservation, and all four CLI en
 
 See [Phase 2 validation](PHASE_2_VALIDATION.md) and [the screenshot gallery](../artifacts/phase-2/README.md). Original Phase 0/1 screenshots remain preserved; fresh test captures are isolated in temporary output directories.
 
-The GitHub pull request requires API access to `api.github.com` in addition to the working Git connection. If this hostname remains blocked by the cloud network policy, branch/gallery publication can complete but PR creation remains a precisely identified delivery blocker; no PR URL should be fabricated.
+The branch and all 28 gallery PNGs were pushed and retrieved successfully through a fresh GitHub clone. Pull-request creation failed with `Post "https://api.github.com/graphql": Forbidden`: the cloud policy blocks `api.github.com`. No PR exists yet. The [prepared PR description](PHASE_2_PULL_REQUEST.md) and exact retry command in the validation report preserve this final delivery step. Existing Git history and remote `main` remain unchanged.
 
 Remaining DrawnOut inputs: actual videos and meaningful-video captions; final clean hand/frame/emblem/landscape/mobile artwork; approved brand masters; project provenance, credits and publication permission; verified contact/social/domain/form/privacy details. These do not prevent Phase 2 static review.
 

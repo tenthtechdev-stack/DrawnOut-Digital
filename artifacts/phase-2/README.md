@@ -98,6 +98,7 @@ The 390px menu capture accompanies keyboard, Escape, focus-restoration, and redu
 
 - [Phase 2 implementation handoff](../../docs/PHASE_2_HANDOFF.md)
 - [Phase 2 validation results](../../docs/PHASE_2_VALIDATION.md)
+- [Prepared pull-request description and review scope](../../docs/PHASE_2_PULL_REQUEST.md)
 - [Original portfolio and derivative asset audit](../../docs/PHASE_2_ASSET_AUDIT.md)
 - [Repository setup and current implementation](../../README.md)
 - [Phase 1 visual foundation](../phase-1/README.md)
