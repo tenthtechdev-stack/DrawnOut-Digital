@@ -61,7 +61,7 @@ for (const width of [320, 360, 390, 768, 1024, 1440, 1920]) {
       await expect(capabilities.getByText(capability, { exact: true })).toBeVisible();
     }
     const work = page.locator('[data-work]');
-    await expect(work.locator('img')).toHaveCount(3);
+    await expect(work.locator('img')).toHaveCount(5);
     await expect(work.locator('a[href^="/work/"]')).toHaveCount(0);
     await expect(page.locator('[data-site-footer]')).toBeVisible();
     await loadPosters(page);

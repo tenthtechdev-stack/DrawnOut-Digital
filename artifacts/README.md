@@ -1,5 +1,7 @@
 # Phase 0 visual review gallery
 
+The current homepage storytelling work is in the [Phase 2 Afterglow gallery](./phase-2/README.md) on its dedicated review branch. This page preserves Phase 0.
+
 For the completed Phase 1 foundation, open the [Afterglow Phase 1 review gallery](./phase-1/README.md). This page preserves the original Phase 0 alternatives.
 
 These are the existing, full-resolution concept screenshots from the recovered DrawnOut Digital workspace. Open an image to inspect the entire page at its original size. The relative image paths below work directly in GitHub; no cloud workspace access or running development server is needed.

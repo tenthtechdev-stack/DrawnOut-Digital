@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 interface Props {
   poster: ImageMetadata;
@@ -8,6 +8,8 @@ interface Props {
   aspectRatio?: string;
   availability?: 'placeholder' | 'approved';
   sizes?: string;
+  video?: { mp4?: string; webm?: string; captions?: string };
+  mobilePoster?: ImageMetadata;
 }
 const {
   poster,
@@ -16,19 +18,68 @@ const {
   aspectRatio = '1440 / 811',
   availability = 'placeholder',
   sizes = '(max-width: 640px) 90vw, (max-width: 1023px) 85vw, 70vw',
+  video,
+  mobilePoster,
 } = Astro.props;
+const widths = [...new Set([480, 800, 1200, 1440, poster.width])]
+  .filter((width) => width <= poster.width)
+  .sort((a, b) => a - b);
+const hasApprovedVideo = availability === 'approved' && Boolean(video?.mp4 || video?.webm);
+const mobileSources = mobilePoster
+  ? await Promise.all(
+      [480, 800]
+        .filter((width) => width <= mobilePoster.width)
+        .map(async (width) => {
+          const image = await getImage({ src: mobilePoster, width, format: 'webp' });
+          return `${image.src} ${width}w`;
+        }),
+    )
+  : [];
 ---
 
-<div class="media-slot" style={`--media-ratio: ${aspectRatio}`}>
-  <Image
-    src={poster}
-    alt={alt}
-    widths={[480, 800, 1200, 1440]}
-    sizes={sizes}
-    loading={priority ? 'eager' : 'lazy'}
-    fetchpriority={priority ? 'high' : 'auto'}
-    format="webp"
-  />
+<div
+  class="media-slot"
+  data-media-slot
+  style={`--media-ratio: ${aspectRatio}; --mobile-media-ratio: ${mobilePoster ? `${mobilePoster.width} / ${mobilePoster.height}` : aspectRatio}`}
+>
+  <picture>
+    {mobilePoster && (
+      <source
+        media="(max-width: 639px)"
+        type="image/webp"
+        srcset={mobileSources.join(', ')}
+        sizes={sizes}
+        width={mobilePoster.width}
+        height={mobilePoster.height}
+      />
+    )}
+    <Image
+      src={poster}
+      alt={hasApprovedVideo ? '' : alt}
+      widths={widths}
+      sizes={sizes}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : 'auto'}
+      format="webp"
+    />
+  </picture>
+  {hasApprovedVideo && (
+    <video
+      class="media-video"
+      controls
+      playsinline
+      preload="none"
+      poster={poster.src}
+      aria-label={alt}
+    >
+      {video?.webm && <source src={video.webm} type="video/webm" />}
+      {video?.mp4 && <source src={video.mp4} type="video/mp4" />}
+      {video?.captions && (
+        <track kind="captions" src={video.captions} srclang="en" label="English" default />
+      )}
+      Your browser cannot play this video. The portfolio poster remains available.
+    </video>
+  )}
   {availability === 'placeholder' && <span class="preview-tag">Visual preview</span>}
 </div>
 <style>
@@ -44,6 +95,14 @@ const {
     height: 100%;
     object-fit: contain;
   }
+  .media-slot picture {
+    display: contents;
+  }
+  @media (max-width: 639px) {
+    .media-slot {
+      aspect-ratio: var(--mobile-media-ratio);
+    }
+  }
   .preview-tag {
     position: absolute;
     right: 14px;
@@ -55,5 +114,12 @@ const {
     font-size: 9px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+  }
+  .media-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 </style>

@@ -1,10 +1,15 @@
 ---
 import SectionIntro from './SectionIntro.astro';
-const PreviewWork = import.meta.env.DEV ? (await import('./PreviewWork.astro')).default : undefined;
 interface Props {
   intro?: boolean;
+  storytelling?: boolean;
 }
-const { intro = true } = Astro.props;
+const { intro = true, storytelling = false } = Astro.props;
+const PreviewWork = import.meta.env.DEV
+  ? storytelling
+    ? (await import('./EditorialWork.astro')).default
+    : (await import('./PreviewWork.astro')).default
+  : undefined;
 ---
 
 <section class="work-foundation page-frame" data-work aria-label="Selected-work foundation">
@@ -14,7 +19,11 @@ const { intro = true } = Astro.props;
       eyebrow="01 / Selected work"
       title="The work speaks."
       accent="We'll let it."
-      note="Every project starts with a question. Every outcome has a reason."
+      note={
+        storytelling
+          ? 'We believe a portfolio should do more than display attractive images. It should reveal the thinking behind them.'
+          : 'Every project starts with a question. Every outcome has a reason.'
+      }
     />
   )}
   {PreviewWork ? (

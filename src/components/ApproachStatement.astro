@@ -1,0 +1,83 @@
+<section class="approach" data-approach aria-labelledby="approach-title">
+  <div class="page-frame">
+    <p class="eyebrow">04 / Design with a reason</p>
+    <div class="approach-grid">
+      <h2 id="approach-title">
+        Pretty isn't <br />
+        the <span>point.</span>
+      </h2>
+      <div>
+        <p>
+          We care about the connection between how something looks, what it means, and what it
+          accomplishes.
+        </p>
+        <p class="approach-detail">
+          Our process brings together curiosity, strategic thinking, creative exploration, and
+          purposeful execution.
+        </p>
+      </div>
+    </div>
+    <p class="approach-signoff">
+      The goal isn't simply to make something different.
+      <br />
+      <strong>It's to make something different for a reason.</strong>
+    </p>
+  </div>
+</section>
+<style>
+  .approach {
+    background: #f0a779;
+    padding-block: var(--space-6);
+  }
+  .approach .eyebrow {
+    margin: 0 0 45px;
+  }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  h2 {
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    line-height: 1.02;
+    font-weight: 500;
+    letter-spacing: -0.07em;
+    margin: 0;
+  }
+  h2 span {
+    color: #773019;
+  }
+  .approach-grid p {
+    max-width: 510px;
+    font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .approach-grid .approach-detail {
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 0;
+    margin-top: 25px;
+  }
+  .approach-signoff {
+    margin: var(--space-6) 0 0;
+    padding-top: 30px;
+    border-top: 1px solid #713d2947;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .approach-signoff strong {
+    font-weight: 650;
+  }
+  @media (max-width: 767px) {
+    .approach-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    h2 {
+      font-size: clamp(3rem, 12vw, 5rem);
+    }
+  }
+</style>
