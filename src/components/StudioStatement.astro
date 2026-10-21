@@ -1,0 +1,102 @@
+---
+import Button from './Button.astro';
+import Star from './Star.astro';
+---
+
+<section class="studio" data-studio aria-labelledby="studio-title">
+  <div class="page-frame">
+    <p class="eyebrow">02 / The studio</p>
+    <div class="studio-grid">
+      <h2 id="studio-title" class="section-heading">
+        Not another <br />
+        <span>creative agency.</span>
+      </h2>
+      <div class="studio-copy">
+        <p class="studio-lead">
+          Ideas with character.
+          <br />
+          Design with intention.
+          <br />
+          Stories worth remembering.
+        </p>
+        <p>
+          DrawnOut is an independent creative and digital studio built for brands that want to stand
+          apart, communicate clearly, and mean something beyond the surface.
+        </p>
+        <Button href="/about" variant="text">
+          About the studio
+        </Button>
+      </div>
+    </div>
+    <div class="studio-signature">
+      <Star />
+      <p>
+        We don't start with templates.
+        <br />
+        <strong>We start with questions.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+<style>
+  .studio {
+    background: var(--surface);
+    padding-block: var(--space-6);
+  }
+  .studio .eyebrow {
+    margin: 0 0 45px;
+  }
+  .studio-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(40px, 7vw, 120px);
+  }
+  h2 > span {
+    color: var(--accent-strong);
+  }
+  .studio-copy > p {
+    max-width: 490px;
+    font-size: var(--type-body);
+    line-height: 1.8;
+    margin: 0 0 30px;
+  }
+  .studio-copy > .studio-lead {
+    font-size: clamp(1.35rem, 2.1vw, 2rem);
+    line-height: 1.5;
+    letter-spacing: -0.035em;
+  }
+  .studio-signature {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-top: var(--space-6);
+    padding-top: 30px;
+    border-top: 1px solid #c8c2b7;
+  }
+  .studio-signature :global(svg) {
+    width: 45px;
+    height: 45px;
+    color: var(--accent-strong);
+    flex-shrink: 0;
+  }
+  .studio-signature p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .studio-signature strong {
+    font-weight: 600;
+  }
+  @media (max-width: 767px) {
+    .studio-grid {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+    .studio .eyebrow {
+      margin-bottom: 30px;
+    }
+    .studio-signature {
+      gap: 20px;
+    }
+  }
+</style>

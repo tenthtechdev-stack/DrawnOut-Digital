@@ -1,12 +1,16 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import MediaSlot from './MediaSlot.astro';
+import type { ImageMetadata } from 'astro';
 interface Props {
   project: CollectionEntry<'projects'>;
   index: number;
-  layout?: 'lead' | 'paired';
+  layout?: 'lead' | 'paired' | 'panorama';
+  media?: { src: ImageMetadata; alt: string; caption?: string };
 }
-const { project, index, layout = 'paired' } = Astro.props;
+const { project, index, layout = 'paired', media } = Astro.props;
+const poster = media?.src ?? project.data.cover;
+const alt = media?.alt ?? project.data.coverAlt;
 ---
 
 <article
@@ -26,11 +30,19 @@ const { project, index, layout = 'paired' } = Astro.props;
     </p>
   </div>
   <MediaSlot
-    poster={project.data.cover}
-    alt={project.data.coverAlt}
-    aspectRatio={`${project.data.cover.width} / ${project.data.cover.height}`}
-    sizes={layout === 'lead' ? '(max-width: 767px) 90vw, 69vw' : '(max-width: 767px) 90vw, 44vw'}
+    poster={poster}
+    mobilePoster={media ? project.data.cover : undefined}
+    alt={alt}
+    aspectRatio={`${poster.width} / ${poster.height}`}
+    sizes={
+      layout === 'lead'
+        ? '(max-width: 767px) 90vw, 69vw'
+        : layout === 'panorama'
+          ? '92vw'
+          : '(max-width: 767px) 90vw, 48vw'
+    }
   />
+  {media?.caption && <p class="media-caption">{media.caption}</p>}
 </article>
 <style>
   .project-card {
@@ -78,6 +90,25 @@ const { project, index, layout = 'paired' } = Astro.props;
   }
   .project-card--paired :global(.media-slot) {
     border-radius: 0 0 var(--radius-editorial) 0;
+  }
+  .project-card--panorama {
+    border-top: none;
+    padding-top: 0;
+  }
+  .project-card--panorama .project-meta {
+    margin-bottom: 25px;
+  }
+  .project-card--panorama :global(.media-slot) {
+    border-radius: 4px;
+  }
+  .media-caption {
+    margin: 15px 0 0;
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  .project-card--lead .media-caption {
+    grid-column: 2;
   }
   @media (max-width: 767px) {
     .project-card--lead {

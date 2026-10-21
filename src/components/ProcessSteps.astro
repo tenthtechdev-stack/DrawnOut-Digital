@@ -1,0 +1,107 @@
+---
+const steps = [
+  {
+    title: 'First, we ask why.',
+    body: "We get to know your business, your audience, your ambitions, and the problem we're actually solving.",
+  },
+  {
+    title: 'Then, we find the idea.',
+    body: 'We explore directions, challenge assumptions, and develop a concept with a clear point of view.',
+  },
+  {
+    title: 'Next, we make it real.',
+    body: 'We turn the thinking into a thoughtful visual system, a compelling story, or a digital experience.',
+  },
+  {
+    title: 'Finally, we make it work.',
+    body: 'We refine, deliver, and help your creative work show up consistently wherever your audience meets your brand.',
+  },
+];
+---
+
+<section class="process page-frame" data-process aria-labelledby="process-title">
+  <div class="process-heading">
+    <p class="eyebrow">05 / How we get there</p>
+    <h2 id="process-title" class="section-heading">
+      Small details. <br />
+      <span>Big picture.</span>
+    </h2>
+  </div>
+  <ol>
+    {steps.map((step, index) => (
+      <li>
+        <span class="step-number">0{index + 1}</span>
+        <h3>{step.title}</h3>
+        <p>{step.body}</p>
+      </li>
+    ))}
+  </ol>
+  <p class="process-signoff">
+    No creativity for creativity's sake. No strategy that never makes it into the work.
+  </p>
+</section>
+<style>
+  .process {
+    padding-block: var(--space-7);
+  }
+  .process-heading > .eyebrow {
+    margin: 0 0 30px;
+  }
+  h2 span {
+    color: var(--muted);
+  }
+  ol {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0 0;
+    gap: 35px;
+  }
+  li {
+    min-width: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 25px;
+  }
+  .step-number {
+    display: block;
+    color: var(--accent-strong);
+    font-size: 12px;
+    margin-bottom: 35px;
+  }
+  h3 {
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+    line-height: 1.3;
+    font-weight: 550;
+    letter-spacing: -0.04em;
+    margin: 0 0 20px;
+  }
+  li p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+    color: var(--muted);
+  }
+  .process-signoff {
+    margin: 45px 0 0;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  @media (max-width: 1023px) {
+    ol {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+  }
+  @media (max-width: 639px) {
+    ol {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .step-number {
+      margin-bottom: 20px;
+    }
+  }
+</style>

@@ -1,0 +1,174 @@
+---
+import { getDraftPreviewProjects } from '../lib/projects';
+import ProjectCard from './ProjectCard.astro';
+import Button from './Button.astro';
+const records = await getDraftPreviewProjects();
+const find = (slug: string) => records.find((project) => project.data.slug === slug);
+const bunzo = find('bunzo');
+const sol = find('sol-community-center');
+const triarch = find('triarch');
+const churros = find('churros');
+const byTech = find('by-tech-group');
+---
+
+<div class="editorial-work" data-editorial-work>
+  <p class="review-caption">
+    <span class="review-dot" aria-hidden="true"></span> Local portfolio preview · artwork supplied
+    by DrawnOut
+  </p>
+  {bunzo && (
+    <div class="work-scene work-scene--opening" data-expansion-frame>
+      <ProjectCard project={bunzo} index={0} layout="panorama" media={bunzo.data.gallery[0]} />
+    </div>
+  )}
+  <div class="editorial-pair" data-portfolio-pair>
+    {sol && (
+      <div class="work-scene work-scene--community" data-expansion-frame>
+        <ProjectCard project={sol} index={1} />
+      </div>
+    )}
+    {triarch && (
+      <div class="work-scene work-scene--architecture" data-expansion-frame>
+        <ProjectCard project={triarch} index={2} />
+      </div>
+    )}
+  </div>
+  <div class="work-interlude">
+    <p>
+      Every project starts <br />
+      with a <span>question.</span>
+    </p>
+    <span class="eyebrow">
+      Every outcome
+      <br />
+      has a reason.
+    </span>
+  </div>
+  {churros && (
+    <div class="work-scene work-scene--dessert" data-expansion-frame>
+      <ProjectCard project={churros} index={3} layout="panorama" media={churros.data.gallery[0]} />
+    </div>
+  )}
+  {byTech && (
+    <div class="work-scene work-scene--technology" data-expansion-frame>
+      <ProjectCard project={byTech} index={4} layout="lead" />
+    </div>
+  )}
+  <div class="work-outro">
+    <p>
+      Project scope, credits, and publication permission await studio confirmation. These stills are
+      development-only previews, not published case studies.
+    </p>
+    <Button href="/work" variant="text">
+      Explore Selected Work
+    </Button>
+  </div>
+</div>
+<style>
+  .review-caption {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin: 0 0 28px;
+  }
+  .review-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-strong);
+    flex-shrink: 0;
+  }
+  .work-scene {
+    min-width: 0;
+  }
+  .editorial-pair {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(35px, 8vw, 125px);
+    margin-top: var(--space-6);
+    align-items: start;
+  }
+  .work-scene--architecture {
+    margin-top: 135px;
+  }
+  .work-scene--architecture :global(.project-meta) {
+    display: block;
+  }
+  .work-scene--architecture :global(.project-context) {
+    text-align: left;
+    margin-top: 15px;
+  }
+  .work-interlude {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+    padding-block: var(--space-7);
+  }
+  .work-interlude > p {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 5.5rem);
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 1.08;
+  }
+  .work-interlude > p span {
+    color: var(--accent-strong);
+  }
+  .work-interlude > .eyebrow {
+    color: var(--muted);
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+  .work-scene--technology {
+    margin-top: var(--space-6);
+  }
+  .work-outro {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 35px;
+  }
+  .work-outro > p {
+    max-width: 510px;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin: 0;
+  }
+  @media (max-width: 767px) {
+    .editorial-pair {
+      grid-template-columns: 1fr;
+      gap: 45px;
+    }
+    .work-scene--architecture {
+      max-width: 85%;
+      margin: 0 0 0 auto;
+    }
+    .work-scene--architecture :global(.project-meta) {
+      display: flex;
+    }
+    .work-scene--architecture :global(.project-context) {
+      text-align: right;
+      margin-top: 0;
+    }
+    .work-interlude {
+      align-items: start;
+      flex-direction: column;
+      gap: 25px;
+      padding-block: 60px;
+    }
+    .work-interlude > p {
+      font-size: clamp(2rem, 8.3vw, 3.5rem);
+    }
+    .work-outro {
+      align-items: start;
+      flex-direction: column;
+      gap: 25px;
+    }
+  }
+</style>

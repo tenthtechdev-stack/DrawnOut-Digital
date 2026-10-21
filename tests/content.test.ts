@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
+import { isAbsolute, relative, sep } from 'node:path';
 import test from 'node:test';
 import { z } from 'astro/zod';
 import {
@@ -144,7 +145,16 @@ test('all seven supplied project records are valid drafts with existing local me
     assert.equal(record.services.length, 0, 'no service scope is inferred from the artwork');
     assert.equal(record.slug, filename.replace(/\.json$/, ''));
     const coverPath = new URL(record.cover, path);
-    assert.ok(fileURLToPath(coverPath).includes('/src/assets/projects/'));
+    const localAssetPath = relative(
+      fileURLToPath(new URL('../src/assets/', import.meta.url)),
+      fileURLToPath(coverPath),
+    );
+    assert.ok(
+      localAssetPath !== '..' &&
+        !localAssetPath.startsWith(`..${sep}`) &&
+        !isAbsolute(localAssetPath),
+      'Project media must remain inside src/assets.',
+    );
     assert.ok((await readFile(coverPath)).length > 0);
     records.push({ id: record.slug, data: record });
   }
