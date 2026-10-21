@@ -84,7 +84,11 @@ In actual project previews, heroes are prioritized and later media load lazily w
 
 ## Delivery and limits
 
-The Phase 3 source, screenshots, gallery, asset audit, handoff and Codex workflow are committed to the dedicated review branch. Remote push, PR head and gallery image retrieval are verified after publication and reported in the delivery response. No hosted CI configuration is introduced; local results above are not represented as hosted checks.
+The Phase 3 source, screenshots, gallery, asset audit, handoff and Codex workflow were committed as `2174ba0a827988f25f0bd9ec4d4a7f0155a9ad09`. `git push -u origin phase3/editorial-portfolio` succeeded. GitHub's branch API returned that exact SHA, and [draft pull request #2](https://github.com/tenthtech/drawnout-digital/pull/2) was opened against `main` from the correct branch.
+
+Direct GitHub API verification retrieved all 24 PNG blobs (32,629,928 bytes). Each matches the committed local file and its Git blob hash, decodes as PNG, and has the expected dimensions. All 37 relative gallery links resolve in GitHub's complete committed tree. Remote `main` remains at the approved Phase 2 merge `b3dc19602963a86b55942294ee85d7fd025d1dc6`; nothing was merged, force-pushed or publicly deployed. This final documentation-only verification may advance the review branch beyond the implementation commit.
+
+No hosted CI configuration is introduced; the local test results above are not represented as hosted checks.
 
 Chromium was available; physical iOS/Android devices, Safari/Firefox and native Windows/PowerShell were not tested. Final project provenance, scope, credits, publication rights and verified narratives/outcomes remain required before actual publication. Real videos/captions and final brand/footer masters remain outstanding for later phases.
 

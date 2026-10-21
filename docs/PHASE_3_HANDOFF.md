@@ -44,6 +44,8 @@ Future motion boundaries are explicit: `data-text-reveal`, `data-image-reveal`, 
 
 Open [the Phase 3 gallery](../artifacts/phase-3/README.md) for Work and representative Bunzo/Triarch detail views, including mobile, tablet, desktop, filters, heroes, and galleries. [Validation results](PHASE_3_VALIDATION.md) report checks and limitations. Historical galleries remain preserved.
 
+[Draft pull request #2](https://github.com/tenthtech/drawnout-digital/pull/2) contains the Phase 3 review branch. The push succeeded, and all 24 screenshots were retrieved and verified through GitHub's API; all 37 gallery links resolve to committed files.
+
 Required before actual portfolio publication: confirmed project classification, DrawnOut role/services, permitted imagery, credits, factual narratives and outcome evidence, and human publication approval. Actual videos/captions and final brand/footer masters remain future inputs. Contact delivery, legal details, device-level launch audits, deployment, and the cinematic motion system remain later work.
 
 **Stop after Phase 3 for visual approval. Do not merge, deploy publicly, or begin the cinematic motion phases automatically.**
