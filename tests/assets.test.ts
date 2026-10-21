@@ -63,10 +63,10 @@ test('all 46 original PNG files in 15 project folders match the authorized asset
   }
 });
 
-test('portfolio derivatives keep local provenance and every project remains an unapproved draft', async () => {
+test('portfolio media keep original-source provenance and valid optimized local derivatives', async () => {
   const directory = new URL('../src/content/projects/', import.meta.url);
   const records = (await readdir(directory)).filter((name) => name.endsWith('.json'));
-  assert.equal(records.length, 7);
+  assert.ok(records.length >= 11);
   for (const filename of records) {
     const recordPath = new URL(filename, directory);
     const record = JSON.parse(await readFile(recordPath, 'utf8')) as {
@@ -80,14 +80,11 @@ test('portfolio derivatives keep local provenance and every project remains an u
       coverAlt: string;
       gallery: { src: string; alt: string }[];
     };
-    assert.equal(record.status, 'draft', filename);
-    assert.equal(record.visibility, 'private', filename);
-    assert.equal(record.projectType, 'unknown', filename);
-    assert.equal(record.publicationApproved, false, filename);
-    assert.equal(record.creditApproved, false, filename);
     const sourceFiles =
-      record.assetSource.match(/design-assets\/portfolio-originals\/[A-Za-z0-9_/-]+\.png/g) ?? [];
-    assert.ok(sourceFiles.length > 0, `${filename} must identify its original supplied PNG.`);
+      record.assetSource.match(
+        /design-assets\/(?:portfolio-originals|project-sources)\/[A-Za-z0-9_/-]+\.(?:png|webp|jpe?g)/g,
+      ) ?? [];
+    assert.ok(sourceFiles.length > 0, `${filename} must identify its original supplied image.`);
     const largestOriginal = Math.max(
       ...(await Promise.all(
         sourceFiles.map(async (source) => (await stat(path.join(root, source))).size),
@@ -96,14 +93,23 @@ test('portfolio derivatives keep local provenance and every project remains an u
     for (const media of [{ src: record.cover, alt: record.coverAlt }, ...record.gallery]) {
       assert.ok(media.alt.trim().length > 0, `${filename} needs descriptive media alternatives.`);
       const resolved = fileURLToPath(new URL(media.src, recordPath));
-      assert.ok(resolved.startsWith(path.join(root, 'src/assets/portfolio') + path.sep), resolved);
+      const mediaRelative = path.relative(path.join(root, 'src/assets'), resolved);
+      assert.ok(
+        mediaRelative !== '..' &&
+          !mediaRelative.startsWith(`..${path.sep}`) &&
+          !path.isAbsolute(mediaRelative),
+        resolved,
+      );
       const bytes = await readFile(resolved);
       assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
       assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
-      assert.ok(
-        bytes.length < largestOriginal,
-        `${media.src} must be optimized below its original PNG size.`,
-      );
+      assert.ok(bytes.length > 0);
+      if (sourceFiles.every((source) => source.endsWith('.png'))) {
+        assert.ok(
+          bytes.length < largestOriginal,
+          `${media.src} must be optimized below its original PNG size.`,
+        );
+      }
     }
   }
 });

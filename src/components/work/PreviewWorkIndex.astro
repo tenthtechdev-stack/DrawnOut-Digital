@@ -1,0 +1,7 @@
+---
+import { getDraftWorkPreviewProjects } from '../../lib/projects';
+import WorkPortfolio from './WorkPortfolio.astro';
+const projects = await getDraftWorkPreviewProjects();
+---
+
+<WorkPortfolio projects={projects} preview />

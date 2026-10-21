@@ -1,0 +1,130 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import MediaSlot from '../MediaSlot.astro';
+
+type GalleryImage = CollectionEntry<'projects'>['data']['gallery'][number];
+interface Props {
+  images: GalleryImage[];
+  heroSource: string;
+}
+const { images, heroSource } = Astro.props;
+const used = new Set([heroSource]);
+const gallery = images.filter((image) => {
+  if (used.has(image.src.src)) return false;
+  used.add(image.src.src);
+  return true;
+});
+const rows: GalleryImage[][] = [];
+for (const image of gallery) {
+  const previous = rows.at(-1);
+  if (image.layout === 'pair' && previous?.length === 1 && previous[0]?.layout === 'pair') {
+    previous.push(image);
+  } else {
+    rows.push([image]);
+  }
+}
+---
+
+{rows.length > 0 && (
+  <section class="case-gallery" data-case-gallery aria-label="Project artwork gallery">
+    {rows.map((row, rowIndex) => (
+      <div
+        class:list={[
+          'gallery-row',
+          {
+            'gallery-row--pair': row.length > 1,
+            'gallery-row--inset': row.length === 1 && row[0]?.layout !== 'full',
+            'gallery-row--alternate': rowIndex % 2 === 1,
+          },
+        ]}
+        data-media-composition
+      >
+        {row.map((image) => (
+          <figure data-image-reveal>
+            <div data-expansion-frame>
+              <MediaSlot
+                poster={image.src}
+                alt={image.alt}
+                aspectRatio={`${image.src.width} / ${image.src.height}`}
+                sizes={
+                  row.length > 1
+                    ? '(max-width: 767px) 90vw, 44vw'
+                    : image.layout === 'full'
+                      ? '92vw'
+                      : '(max-width: 767px) 90vw, 68vw'
+                }
+              />
+            </div>
+            <figcaption>
+              <span class="eyebrow" aria-hidden="true">
+                0{rowIndex + 1}
+              </span>
+              <span>{image.caption ?? image.alt}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    ))}
+  </section>
+)}
+
+<style>
+  .case-gallery {
+    display: grid;
+    gap: var(--space-7);
+    padding-block: var(--space-5) var(--space-7);
+  }
+  .gallery-row {
+    min-width: 0;
+  }
+  .gallery-row--inset {
+    width: 76%;
+    margin-left: auto;
+  }
+  .gallery-row--inset.gallery-row--alternate {
+    margin-left: 0;
+  }
+  .gallery-row--pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 5vw, 80px);
+    align-items: start;
+  }
+  .gallery-row--pair figure:last-child {
+    margin-top: clamp(45px, 8vw, 120px);
+  }
+  figure {
+    min-width: 0;
+    margin: 0;
+  }
+  figcaption {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-top: 18px;
+    font-size: var(--type-small);
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  figcaption > span:last-child {
+    max-width: 620px;
+  }
+  figcaption .eyebrow {
+    min-width: 22px;
+  }
+  @media (max-width: 767px) {
+    .case-gallery {
+      gap: 50px;
+    }
+    .gallery-row--inset {
+      width: 100%;
+    }
+    .gallery-row--pair {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+    .gallery-row--pair figure:last-child {
+      margin-top: 0;
+    }
+  }
+</style>

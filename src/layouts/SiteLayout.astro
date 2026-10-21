@@ -11,6 +11,10 @@ const {
   title = 'DrawnOut Digital — Independent creative & digital studio',
   description = site.description,
 } = Astro.props;
+const portfolioReview =
+  Astro.url.pathname === '/work' ||
+  Astro.url.pathname.startsWith('/work/') ||
+  Astro.url.pathname.startsWith('/_preview/work/');
 ---
 
 <!doctype html>
@@ -34,9 +38,11 @@ const {
       <aside class="phase-notice" aria-label="Design review status">
         <div class="page-frame">
           <span>
-            <i aria-hidden="true"></i> Afterglow / Phase 2
+            <i aria-hidden="true"></i> Afterglow / Phase {portfolioReview ? '3' : '2'}
           </span>
-          <span>Homepage storytelling review</span>
+          <span>
+            {portfolioReview ? 'Work & case-study review' : 'Homepage storytelling review'}
+          </span>
         </div>
       </aside>
     )}

@@ -1,17 +1,162 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import RouteIntro from '../components/RouteIntro.astro';
-import WorkFoundation from '../components/WorkFoundation.astro';
+import WorkPortfolio from '../components/work/WorkPortfolio.astro';
+import { getPublicWorkProjects } from '../lib/projects';
+const publicProjects = await getPublicWorkProjects();
+const PreviewWorkIndex = import.meta.env.DEV
+  ? (await import('../components/work/PreviewWorkIndex.astro')).default
+  : undefined;
 ---
 
 <SiteLayout
   title="Work — DrawnOut Digital"
-  description="Selected identities and creative explorations. Project stories are being prepared for studio review."
+  description="An editorial index of DrawnOut's creative work. Every project starts with a question. Every outcome has a reason."
 >
-  <RouteIntro
-    eyebrow="The work"
-    title="The work speaks. We'll let it."
-    description="Every project starts with a question. Every outcome has a reason."
-  />
-  <WorkFoundation intro={false} />
+  <section class="work-introduction page-frame" aria-labelledby="work-title" data-work-introduction>
+    <div class="work-kicker">
+      <p class="eyebrow">DrawnOut / Work</p>
+      <p class="eyebrow">A point of view. In every detail.</p>
+    </div>
+    <div class="work-opening">
+      <h1 id="work-title" data-text-reveal>
+        <span>The work speaks.</span>{' '}
+        <span>
+          We'll let it<span class="work-period">.</span>
+        </span>
+      </h1>
+      <div class="work-foreword">
+        <p>
+          We believe a portfolio should do more than display attractive images. It should reveal the
+          thinking behind them.
+        </p>
+        <p>Every project starts with a question. Every outcome has a reason.</p>
+        <a href="#project-index">
+          Explore the index <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  {PreviewWorkIndex ? <PreviewWorkIndex /> : <WorkPortfolio projects={publicProjects} />}
 </SiteLayout>
+
+<style>
+  .work-introduction {
+    position: relative;
+    padding-block: clamp(40px, 6vw, 100px) var(--space-6);
+    isolation: isolate;
+  }
+  .work-introduction::before {
+    position: absolute;
+    z-index: -1;
+    inset: 5% 0 0 40%;
+    content: '';
+    pointer-events: none;
+    background: radial-gradient(ellipse at 78% 51%, #f5b69a32, transparent 68%);
+  }
+  .work-kicker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: clamp(35px, 5vw, 75px);
+  }
+  .work-kicker p {
+    margin: 0;
+  }
+  .work-kicker p:first-child {
+    color: var(--accent-strong);
+  }
+  .work-kicker p:last-child {
+    color: var(--muted);
+    text-align: right;
+  }
+  .work-opening {
+    display: grid;
+    grid-template-columns: 2.15fr 1fr;
+    align-items: end;
+    gap: clamp(30px, 5vw, 80px);
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(3.7rem, 7.5vw, 8.6rem);
+    font-weight: 500;
+    line-height: 1.03;
+    letter-spacing: -0.075em;
+  }
+  h1 > span {
+    display: block;
+  }
+  h1 > span:last-child {
+    color: var(--muted);
+  }
+  .work-period {
+    color: var(--accent-strong);
+  }
+  .work-foreword {
+    max-width: 350px;
+    padding-bottom: 5px;
+  }
+  .work-foreword p {
+    font-size: 13px;
+    line-height: 1.85;
+    margin: 0;
+  }
+  .work-foreword p + p {
+    margin-top: 20px;
+    color: var(--muted);
+  }
+  .work-foreword a {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    min-height: 44px;
+    margin-top: 22px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .work-foreword a:hover {
+    color: var(--accent-strong);
+  }
+  @media (max-width: 1023px) {
+    .work-opening {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+    h1 {
+      font-size: clamp(3.5rem, 10.5vw, 7rem);
+    }
+    .work-foreword {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 35px;
+      max-width: 100%;
+    }
+    .work-foreword p + p,
+    .work-foreword a {
+      margin-top: 0;
+    }
+    .work-foreword a {
+      justify-self: start;
+    }
+  }
+  @media (max-width: 639px) {
+    .work-kicker {
+      margin-bottom: 35px;
+    }
+    .work-kicker p:last-child {
+      max-width: 130px;
+      font-size: 9px;
+    }
+    h1 {
+      font-size: clamp(2.65rem, 10.8vw, 4.5rem);
+      letter-spacing: -0.07em;
+    }
+    .work-foreword {
+      grid-template-columns: 1fr;
+      max-width: 340px;
+      gap: 18px;
+    }
+  }
+</style>

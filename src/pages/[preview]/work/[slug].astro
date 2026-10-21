@@ -1,0 +1,33 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+
+export const getStaticPaths = (async () => {
+  if (!import.meta.env.DEV) return [];
+  const { getDraftWorkPreviewProjects } = await import('../../../lib/projects');
+  const projects = await getDraftWorkPreviewProjects();
+  return projects.map((project) => ({
+    params: { preview: '_preview', slug: project.data.slug },
+    props: { project, projects },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  projects: CollectionEntry<'projects'>[];
+}
+const { project, projects } = Astro.props;
+const CaseStudy = import.meta.env.DEV
+  ? (await import('../../../components/case/CaseStudy.astro')).default
+  : undefined;
+---
+
+{CaseStudy && (
+  <SiteLayout
+    title={`${project.data.title} — Private artwork review — DrawnOut Digital`}
+    description="Private local-development artwork review. Unapproved project content is excluded from production builds."
+  >
+    <CaseStudy project={project} projects={projects} preview />
+  </SiteLayout>
+)}

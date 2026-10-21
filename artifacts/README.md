@@ -1,3 +1,5 @@
+[Current Phase 3 Work and case-study gallery](phase-3/README.md)
+
 # Phase 0 visual review gallery
 
 The current homepage storytelling work is in the [Phase 2 Afterglow gallery](./phase-2/README.md) on its dedicated review branch. This page preserves Phase 0.

@@ -1,0 +1,265 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import MediaSlot from '../MediaSlot.astro';
+import Arrow from '../Arrow.astro';
+import { projectCategoryLabels } from '../../lib/portfolio';
+import { canPublish } from '../../lib/project-schema';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  index: number;
+  preview?: boolean;
+}
+const { project, index, preview = false } = Astro.props;
+const { data } = project;
+const unpublished = !canPublish(data);
+const href = `${preview && unpublished ? '/_preview/work' : '/work'}/${data.slug}`;
+const landscapeDetail = data.gallery.find((media) => media.src.width / media.src.height > 2.1);
+const featuredDetail = data.presentation === 'wide' ? landscapeDetail : undefined;
+const poster = featuredDetail?.src ?? data.cover;
+const categories = data.categories.map((category) => projectCategoryLabels[category]);
+const titleId = `index-project-${data.slug}`;
+---
+
+<li
+  class:list={['work-item', `work-item--${data.presentation}`]}
+  data-work-card
+  data-categories={data.categories.join(' ')}
+  data-project-slug={data.slug}
+>
+  <article aria-labelledby={titleId} data-project-scene>
+    <a class="work-card-link" href={href} aria-labelledby={titleId}>
+      <div class="work-card-media" data-image-reveal data-expansion-frame>
+        <MediaSlot
+          poster={poster}
+          mobilePoster={featuredDetail ? data.cover : undefined}
+          alt={featuredDetail?.alt ?? data.coverAlt}
+          aspectRatio={`${poster.width} / ${poster.height}`}
+          availability={unpublished ? 'placeholder' : 'approved'}
+          priority={index === 0}
+          sizes={
+            data.presentation === 'wide'
+              ? '(max-width: 1600px) 92vw, 1465px'
+              : data.presentation === 'portrait'
+                ? '(max-width: 639px) 79vw, (max-width: 1023px) 42vw, 37vw'
+                : '(max-width: 639px) 90vw, (max-width: 1023px) 46vw, 58vw'
+          }
+        />
+        <span class="work-open" aria-hidden="true">
+          <Arrow />
+        </span>
+      </div>
+      <div class="work-card-caption">
+        <div class="work-card-name">
+          <span class="work-number" aria-hidden="true">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <h2 id={titleId}>{data.title}</h2>
+        </div>
+        <div class="work-card-description">
+          <p>{categories.length ? categories.join(' / ') : 'Creative presentation'}</p>
+          <span class="work-view">
+            {preview && unpublished ? 'Preview project' : 'View project'} <Arrow />
+          </span>
+        </div>
+      </div>
+    </a>
+  </article>
+</li>
+
+<style>
+  .work-item {
+    min-width: 0;
+    grid-column: 1 / -1;
+  }
+  .work-item--split {
+    grid-column: span 7;
+  }
+  .work-item--portrait {
+    grid-column: span 5;
+    padding-top: clamp(50px, 7vw, 110px);
+  }
+  .work-item--offset {
+    grid-column: 4 / -1;
+  }
+  .work-card-link {
+    display: block;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  .work-card-media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+  .work-item--split .work-card-media {
+    border-bottom-right-radius: var(--radius-editorial);
+  }
+  .work-card-media :global(.media-slot) {
+    transition: transform 500ms var(--ease-ui);
+  }
+  .work-open {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid #20201e1f;
+    border-radius: 50%;
+    transition: background-color var(--duration-ui) var(--ease-ui);
+  }
+  .work-open :global(svg) {
+    width: 18px;
+    height: 18px;
+    transition: transform var(--duration-ui) var(--ease-ui);
+  }
+  .work-card-link:hover .work-card-media :global(.media-slot),
+  .work-card-link:focus-visible .work-card-media :global(.media-slot) {
+    transform: scale(1.015);
+  }
+  .work-card-link:hover .work-open,
+  .work-card-link:focus-visible .work-open {
+    background: var(--cream);
+  }
+  .work-card-link:hover .work-open :global(svg),
+  .work-card-link:focus-visible .work-open :global(svg) {
+    transform: translate(2px, -2px);
+  }
+  .work-card-caption {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 21px;
+  }
+  .work-card-name {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    min-width: 0;
+  }
+  .work-number {
+    color: var(--muted);
+    font-size: 10px;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    margin: 0;
+  }
+  .work-card-description {
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .work-card-description p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .work-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .work-view :global(svg) {
+    width: 12px;
+    height: 12px;
+  }
+  .work-item--portrait .work-card-caption {
+    display: block;
+  }
+  .work-item--portrait .work-card-description {
+    margin-top: 15px;
+    padding-left: 30px;
+    text-align: left;
+  }
+  :global([data-filter-active='true']) .work-item {
+    grid-column: span 6;
+    padding-top: 0;
+  }
+  :global([data-filter-active='true']) .work-item--wide {
+    grid-column: 1 / -1;
+  }
+  :global([data-filter-active='true']) .work-card-caption {
+    display: block;
+  }
+  :global([data-filter-active='true']) .work-card-description {
+    text-align: left;
+    margin-top: 14px;
+    padding-left: 30px;
+  }
+  @media (max-width: 1023px) {
+    .work-item--split,
+    .work-item--portrait {
+      grid-column: span 6;
+    }
+    .work-item--offset {
+      grid-column: 3 / -1;
+    }
+    .work-card-caption {
+      display: block;
+    }
+    .work-card-description {
+      padding-left: 28px;
+      margin-top: 12px;
+      text-align: left;
+    }
+    h2 {
+      font-size: clamp(1.3rem, 2.8vw, 2rem);
+    }
+  }
+  @media (max-width: 639px) {
+    .work-item,
+    :global([data-filter-active='true']) .work-item {
+      grid-column: 1 / -1;
+      padding-top: 0;
+    }
+    .work-item--portrait {
+      width: 86%;
+      justify-self: end;
+    }
+    .work-item--offset {
+      width: 94%;
+      justify-self: start;
+    }
+    .work-card-caption {
+      padding-top: 18px;
+    }
+    h2 {
+      font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+    .work-card-name {
+      gap: 14px;
+    }
+    .work-card-description,
+    .work-item--portrait .work-card-description,
+    :global([data-filter-active='true']) .work-card-description {
+      padding-left: 27px;
+      margin-top: 12px;
+    }
+    .work-open {
+      top: 12px;
+      right: 12px;
+      width: 35px;
+      height: 35px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .work-card-media :global(.media-slot),
+    .work-open,
+    .work-open :global(svg) {
+      transition: none;
+      transform: none !important;
+    }
+  }
+</style>
