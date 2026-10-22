@@ -133,6 +133,7 @@ const count = projects.length;
             ? `${visibleCount} ${visibleCount === 1 ? 'project' : 'projects'}`
             : `${visibleCount} of ${cards.length} projects · ${label}`;
         empty!.hidden = visibleCount !== 0;
+        index.dispatchEvent(new CustomEvent('portfolio:filterchange', { bubbles: true }));
         if (updateHistory) {
           const url = new URL(window.location.href);
           if (category === 'all') url.searchParams.delete('category');

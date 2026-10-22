@@ -1,10 +1,10 @@
 # DrawnOut Digital
 
-**Phase 3 review:** [Open the Work and case-study gallery](artifacts/phase-3/README.md). Branch `phase3/editorial-portfolio` extends the approved Phase 2 merge `b3dc19602963a86b55942294ee85d7fd025d1dc6`. See [the handoff](docs/PHASE_3_HANDOFF.md), [validation](docs/PHASE_3_VALIDATION.md), and [Codex portfolio workflow](docs/PORTFOLIO_WORKFLOW.md).
+**Phase 4 review:** [Open the cinematic motion gallery](artifacts/phase-4/README.md), including actual desktop/mobile recordings and expansion states. Branch `phase4/cinematic-motion` extends the approved Phase 3 merge `8ae8de991b6768564b92b61ed4078d3e84a9a731`. See [the motion handoff](docs/PHASE_4_HANDOFF.md), [validation](docs/PHASE_4_VALIDATION.md), and [Codex portfolio workflow](docs/PORTFOLIO_WORKFLOW.md).
 
-The approved **Afterglow** homepage is preserved. Earlier galleries remain available: [Phase 2](artifacts/phase-2/README.md), [Phase 1](artifacts/phase-1/README.md), and [Phase 0](artifacts/README.md). Original briefs remain unchanged in `docs/source-pack/`.
+The approved **Afterglow** layouts, copy, typography and portfolio publication gates are preserved. Earlier galleries remain available: [Phase 3](artifacts/phase-3/README.md), [Phase 2](artifacts/phase-2/README.md), [Phase 1](artifacts/phase-1/README.md), and [Phase 0](artifacts/README.md). Original briefs remain unchanged in `docs/source-pack/`.
 
-Astro 7, strict TypeScript, Tailwind 4, locally licensed Manrope, and typed Git-backed project collections. There is no custom admin dashboard. Cinematic motion, actual portfolio publication, and contact delivery remain later work.
+Astro 7, strict TypeScript, Tailwind 4, locally licensed Manrope, and typed Git-backed project collections. GSAP 3.15.0 with ScrollTrigger supplies reusable scroll choreography; CSS animates the hero atmosphere. There is no custom admin dashboard. The signature hand/logo footer, video planning, actual portfolio publication, and contact delivery remain later work.
 
 ## Develop
 
@@ -39,9 +39,19 @@ npm run format:check
 
 `verify` combines Astro/TypeScript checks, ESLint, unit/content/contrast/original-asset tests, and a production build. `test:build` inspects output for draft leakage. `test:publication` makes three isolated builds with a synthetic record to verify automatic case generation, factual-content gating, and withdrawal; real project approvals are untouched.
 
-The browser suite covers retained homepage/navigation behavior, Work filters and URL history, case navigation, responsive images, keyboard use, no JavaScript, and reduced motion. To preserve archived screenshots, run it from a temporary directory using the absolute repository config, then copy only current Phase 3 captures into `artifacts/phase-3/`. See [validation](docs/PHASE_3_VALIDATION.md) for the exact invocation. `npm run test:browser` is available, but its screenshot paths are relative to the command's working directory.
+The browser suite covers retained homepage/navigation behavior, Work filters and URL history, case navigation, responsive images, keyboard use, no JavaScript, reduced motion, reversible expansion, stable geometry, initialization cleanup and failed-library fallback. To preserve archived screenshots, run it from a temporary directory using the absolute repository config, then copy only current Phase 4 captures into `artifacts/phase-4/`. See [validation](docs/PHASE_4_VALIDATION.md) for the exact invocation. `npm run test:browser` is available, but its screenshot paths are relative to the command's working directory.
 
 Chromium is installed at `/usr/bin/chromium`; set `CHROMIUM_PATH` for another executable. Browser packages do not download a browser implicitly. Recorded checks do not establish hardware Safari/Android performance, comprehensive WCAG conformance, or production Core Web Vitals.
+
+To reproduce actual motion recordings, start the private development server after standalone checks, then run:
+
+```sh
+node scripts/capture-motion.mjs --out /tmp/drawnout-phase4-review/artifacts/phase-4
+```
+
+Keep the watched repository unchanged during recording: a Vite reload invalidates a continuous capture. The script fails visibly and closes its encoder on interruption. For the same unchanged implementation, `--recordings-only` retries both whole recordings from the saved screenshot manifest; `--previews-only` rebuilds GIF derivatives from completed MP4s.
+
+The capture script uses real Chromium compositor frames and native page scrolling, then encodes compact H.264 MP4s and GIF excerpts with `/usr/bin/ffmpeg`. Set `FFMPEG_PATH`, `CHROMIUM_PATH`, or `MOTION_BASE_URL` when needed. It also writes PNG expansion states and a machine-readable measurement manifest in the output directory. These recordings show development-only draft art; they do not approve it for production.
 
 ## Content and media
 
@@ -54,8 +64,8 @@ Chromium is installed at `/usr/bin/chromium`; set `CHROMIUM_PATH` for another ex
 
 The immutable original archive contains 15 folders / 46 PNGs. Phase 3 adds 26 WebPs alongside the 11 Phase 2 derivatives; see [the asset audit](docs/PHASE_3_ASSET_AUDIT.md). Future originals belong under `design-assets/project-sources/<slug>/`, outside the historical archive and `public/`. [The portfolio workflow](docs/PORTFOLIO_WORKFLOW.md) documents adding, editing, ordering, publishing, and withdrawing projects with Codex.
 
-The supplied raster logo retains its proportions and light-background framing. Manrope's SIL Open Font License is in `licenses/`. Shared design tokens remain in `src/styles/global.css`. Native scrolling, accessible navigation, the approved hero, and the static footer are retained. Future text/image reveals, expansion frames, and project transitions have explicit component boundaries; no GSAP cinematic system is implemented.
+The supplied raster logo retains its proportions and light-background framing. Manrope's SIL Open Font License is in `licenses/`. Shared design tokens remain in `src/styles/global.css`. The motion layer animates selected editorial text and reserved media surfaces independently of captions and layout. It keeps native scrolling and navigation, restores static content on cleanup/failure, and disables choreography for reduced motion or data saving. The footer remains static.
 
 ## Review boundary
 
-Phase 2 is approved and merged. Phase 3 stops for visual approval. Do not merge, deploy publicly, or begin cinematic motion automatically. Project rights, verified scope/credits/outcomes, final brand/footer masters, videos/captions, contact/domain/social details, and forms/privacy still require the corresponding approvals before release.
+Phase 3 is approved and merged. Phase 4 stops for motion review. Do not merge, deploy publicly, or begin Phase 5 automatically. Project rights, verified scope/credits/outcomes, final brand/footer masters, videos/captions, contact/domain/social details, and forms/privacy still require the corresponding approvals before release.

@@ -35,12 +35,16 @@ const { href, variant = 'solid' } = Astro.props;
     width: 18px;
     height: 18px;
     flex-shrink: 0;
+    transition: transform 220ms var(--ease-ui);
+  }
+  .button:is(:hover, :focus-visible) :global(svg) {
+    transform: translate(2px, -2px);
   }
   .button--solid {
     background: var(--ink);
     color: var(--cream);
   }
-  .button--solid:hover {
+  .button--solid:is(:hover, :focus-visible) {
     background: var(--accent-strong);
   }
   .button--text {
@@ -48,17 +52,26 @@ const { href, variant = 'solid' } = Astro.props;
     border-radius: 0;
     border-bottom-color: currentColor;
   }
-  .button--text:hover {
+  .button--text:is(:hover, :focus-visible) {
     color: var(--accent-strong);
   }
   :global([data-theme='dark']) .button--solid {
     background: var(--cream);
     color: var(--ink);
   }
-  :global([data-theme='dark']) .button--solid:hover {
+  :global([data-theme='dark']) .button--solid:is(:hover, :focus-visible) {
     background: var(--amber);
   }
-  :global([data-theme='dark']) .button--text:hover {
+  :global([data-theme='dark']) .button--text:is(:hover, :focus-visible) {
     color: var(--amber);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .button,
+    .button :global(svg) {
+      transition: none;
+    }
+    .button:is(:hover, :focus-visible) :global(svg) {
+      transform: none;
+    }
   }
 </style>
