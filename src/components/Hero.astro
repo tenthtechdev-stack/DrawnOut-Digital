@@ -9,7 +9,7 @@ import { site } from '../data/site';
     <div class="orbit"></div>
   </div>
   <div class="page-frame hero-inner">
-    <p class="eyebrow hero-kicker">
+    <p class="eyebrow hero-kicker" data-hero-kicker>
       <Star /> Design. Strategy. Storytelling. Digital.
     </p>
     <h1 id="hero-title">
@@ -19,8 +19,8 @@ import { site } from '../data/site';
       </span>
     </h1>
     <div class="hero-bottom">
-      <p>{site.heroDescription}</p>
-      <div class="hero-actions">
+      <p data-hero-support>{site.heroDescription}</p>
+      <div class="hero-actions" data-hero-actions>
         <Button href="/work" variant="text">
           Explore Our Work
         </Button>
@@ -29,7 +29,7 @@ import { site } from '../data/site';
         </a>
       </div>
     </div>
-    <aside class="hero-note" aria-label="Studio philosophy">
+    <aside class="hero-note" data-hero-note aria-label="Studio philosophy">
       <Star />
       <p>
         Good design gets attention.
@@ -47,6 +47,22 @@ import { site } from '../data/site';
   </div>
 </section>
 <style>
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html[data-hero-boot='pending']) .hero:not(:focus-within) {
+      --hero-boot-gate: 1;
+    }
+    :global(html[data-hero-boot='pending']) .hero:not(:focus-within) [data-type-line] {
+      opacity: 0.35;
+      transform: translateY(28px);
+      clip-path: inset(0% 0% 100% 0%);
+    }
+    :global(html[data-hero-boot='pending'])
+      .hero:not(:focus-within)
+      :is([data-hero-kicker], [data-hero-support], [data-hero-actions], [data-hero-note]) {
+      opacity: 0.3;
+      transform: translateY(23px);
+    }
+  }
   .hero {
     position: relative;
     isolation: isolate;
@@ -57,9 +73,54 @@ import { site } from '../data/site';
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
-    background:
-      radial-gradient(ellipse at 94% 77%, #ff8a4c 0, #ffc7a5 19%, transparent 49%),
-      radial-gradient(ellipse at 69% 100%, #e0cbdc 0, transparent 50%), var(--paper);
+    background: var(--paper);
+  }
+  .hero-atmosphere::before,
+  .hero-atmosphere::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: '';
+    transform-origin: 50% 50%;
+    animation-play-state: paused;
+  }
+  .hero-atmosphere::before {
+    background: radial-gradient(ellipse at 69% 100%, #e0cbdc 0, transparent 50%);
+    animation: afterglow-reflection 20s ease-in-out infinite alternate paused;
+  }
+  .hero-atmosphere::after {
+    background: radial-gradient(ellipse at 94% 77%, #ff8a4c 0, #ffc7a5 19%, transparent 49%);
+    animation: afterglow-warmth 24s ease-in-out infinite alternate paused;
+  }
+  :global(html[data-motion-state='ready']:not([data-motion-paused]):not([data-motion-saver='true']))
+    .hero[data-hero-in-view='true']
+    .hero-atmosphere::before,
+  :global(html[data-motion-state='ready']:not([data-motion-paused]):not([data-motion-saver='true']))
+    .hero[data-hero-in-view='true']
+    .hero-atmosphere::after {
+    animation-play-state: running;
+    will-change: transform;
+  }
+  @keyframes afterglow-warmth {
+    from {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    to {
+      transform: translate3d(-2%, -1%, 0) scale(1.1);
+    }
+  }
+  @keyframes afterglow-reflection {
+    from {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    to {
+      transform: translate3d(1.8%, -0.6%, 0) scale(1.08);
+    }
+  }
+  :global(html[data-motion-saver='true']) .hero-atmosphere::before,
+  :global(html[data-motion-saver='true']) .hero-atmosphere::after {
+    animation: none;
+    transform: none;
   }
   .orbit {
     position: absolute;
@@ -132,6 +193,9 @@ import { site } from '../data/site';
     text-decoration-thickness: 1px;
   }
   .hero-enquiry:hover {
+    color: var(--accent-strong);
+  }
+  .hero-enquiry:focus-visible {
     color: var(--accent-strong);
   }
   .hero-note :global(svg) {
@@ -226,6 +290,14 @@ import { site } from '../data/site';
     }
     .hero-inner {
       min-height: 610px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-atmosphere::before,
+    .hero-atmosphere::after {
+      animation: none;
+      transform: none;
+      will-change: auto;
     }
   }
 </style>

@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import MotionEnhancement from '../components/MotionEnhancement.astro';
 import { site } from '../data/site';
 interface Props {
   title?: string;
@@ -15,6 +16,7 @@ const portfolioReview =
   Astro.url.pathname === '/work' ||
   Astro.url.pathname.startsWith('/work/') ||
   Astro.url.pathname.startsWith('/_preview/work/');
+const motionEnabled = !Astro.url.pathname.startsWith('/concepts/');
 ---
 
 <!doctype html>
@@ -29,6 +31,63 @@ const portfolioReview =
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <title>{title}</title>
+    {motionEnabled && Astro.url.pathname === '/' && <script is:inline>
+      (() => {
+        const html = document.documentElement;
+        try {
+          const preference = matchMedia('(prefers-reduced-motion: reduce)');
+          const connection = Reflect.get(navigator, 'connection');
+          const restored = performance
+            .getEntriesByType('navigation')
+            .some((entry) => Reflect.get(entry, 'type') === 'back_forward');
+          if (
+            preference.matches ||
+            connection?.saveData ||
+            document.hidden ||
+            location.hash ||
+            restored ||
+            !('IntersectionObserver' in window)
+          )
+            return;
+
+          html.dataset.heroBoot = 'pending';
+          html.dataset.heroBootUntil = String(performance.now() + 900);
+          html.dataset.heroEntrance = 'pending';
+          const release = () => {
+            if (html.dataset.heroBoot === 'pending') {
+              delete html.dataset.heroBoot;
+              delete html.dataset.heroBootUntil;
+              html.dataset.heroEntrance = 'static';
+            }
+            clearTimeout(timer);
+            document.removeEventListener('focusin', onFocus);
+            document.removeEventListener('visibilitychange', onVisibility);
+            window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('pagehide', release);
+            preference.removeEventListener('change', release);
+          };
+          const onFocus = (event) => {
+            if (event.target instanceof Element && event.target.closest('[data-hero]')) release();
+          };
+          const onScroll = () => {
+            if (scrollY >= 60) release();
+          };
+          const onVisibility = () => {
+            if (document.hidden) release();
+          };
+          const timer = setTimeout(release, 900);
+          document.addEventListener('focusin', onFocus);
+          document.addEventListener('visibilitychange', onVisibility);
+          window.addEventListener('scroll', onScroll, { passive: true });
+          window.addEventListener('pagehide', release);
+          preference.addEventListener('change', release);
+        } catch {
+          delete html.dataset.heroBoot;
+          delete html.dataset.heroBootUntil;
+          html.dataset.heroEntrance = 'static';
+        }
+      })();
+    </script>}
   </head>
   <body>
     <a class="skip-link" href="#main">
@@ -38,19 +97,25 @@ const portfolioReview =
       <aside class="phase-notice" aria-label="Design review status">
         <div class="page-frame">
           <span>
-            <i aria-hidden="true"></i> Afterglow / Phase {portfolioReview ? '3' : '2'}
+            <i aria-hidden="true"></i> Afterglow / Phase{' '}
+            {motionEnabled ? '4' : portfolioReview ? '3' : '2'}
           </span>
           <span>
-            {portfolioReview ? 'Work & case-study review' : 'Homepage storytelling review'}
+            {motionEnabled
+              ? 'Cinematic motion review'
+              : portfolioReview
+                ? 'Work & case-study review'
+                : 'Homepage storytelling review'}
           </span>
         </div>
       </aside>
     )}
     <SiteHeader />
-    <main id="main" tabindex="-1">
+    <main id="main" tabindex="-1" data-motion-root={motionEnabled || undefined}>
       <slot />
     </main>
     <SiteFooter />
+    {motionEnabled && <MotionEnhancement />}
   </body>
 </html>
 <style>

@@ -1,4 +1,6 @@
-[Current Phase 3 Work and case-study gallery](phase-3/README.md)
+[Current Phase 4 cinematic motion gallery and recordings](phase-4/README.md)
+
+[Approved Phase 3 Work and case-study gallery](phase-3/README.md)
 
 # Phase 0 visual review gallery
 

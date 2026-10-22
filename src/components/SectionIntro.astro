@@ -12,7 +12,7 @@ const { id, eyebrow, title, accent, note } = Astro.props;
 <div class="section-intro">
   <div>
     <p class="eyebrow">{eyebrow}</p>
-    <h2 id={id} class="section-heading">
+    <h2 id={id} class="section-heading" data-motion-text="heading">
       {title}
       {accent && (
         <>
@@ -22,7 +22,11 @@ const { id, eyebrow, title, accent, note } = Astro.props;
       )}
     </h2>
   </div>
-  {note && <p class="intro-note">{note}</p>}
+  {note && (
+    <p class="intro-note" data-motion-support>
+      {note}
+    </p>
+  )}
 </div>
 <style>
   .section-intro {
