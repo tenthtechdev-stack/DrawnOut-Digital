@@ -101,7 +101,11 @@ These are instrumented cloud Chromium observations with compositor recording/enc
 
 ## Delivery and boundary
 
-This dedicated review branch includes the implementation, capture utility, complete media gallery and validation. The delivery verification below will record the actual pushed checkpoint and pull request after GitHub retrieval succeeds. No merge or public deployment is part of this delivery.
+The implementation, capture utility, complete gallery and validation were committed as [`bc846bc3344e50f2d2a55d697fce7c8a1fde00a3`](https://github.com/tenthtech/drawnout-digital/commit/bc846bc3344e50f2d2a55d697fce7c8a1fde00a3). `git push -u origin phase4/cinematic-motion` succeeded, and GitHub's branch API returned that exact SHA. [Draft pull request #3](https://github.com/tenthtech/drawnout-digital/pull/3) is open against `main` from the correct dedicated branch.
+
+Authenticated GitHub API verification retrieved all **45 evidence files**: 39 PNGs, two MP4s, two GIFs and two JSON measurement files, totaling **24,218,124 bytes**. Every file matches its committed local bytes and Git blob SHA. The images decode correctly; both MP4s were fully decoded locally before retrieval, and the retrieved video bytes match those verified recordings. All **51 relative gallery targets** exist in GitHub's complete committed tree.
+
+Remote `main` remains at approved Phase 3 merge `8ae8de991b6768564b92b61ed4078d3e84a9a731`. Nothing was force-pushed, merged or publicly deployed. A documentation-only follow-up records this successful retrieval and may advance the review branch beyond the implementation checkpoint; the PR shows its latest head.
 
 No hosted CI configuration is introduced; local test results are not represented as hosted checks. The signature hand/logo footer remains Phase 5. Video/media planning and actual project publication require their separate tasks and approvals.
 

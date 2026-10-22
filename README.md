@@ -1,6 +1,6 @@
 # DrawnOut Digital
 
-**Phase 4 review:** [Open the cinematic motion gallery](artifacts/phase-4/README.md), including actual desktop/mobile recordings and expansion states. Branch `phase4/cinematic-motion` extends the approved Phase 3 merge `8ae8de991b6768564b92b61ed4078d3e84a9a731`. See [the motion handoff](docs/PHASE_4_HANDOFF.md), [validation](docs/PHASE_4_VALIDATION.md), and [Codex portfolio workflow](docs/PORTFOLIO_WORKFLOW.md).
+**Phase 4 review:** [Open the cinematic motion gallery](artifacts/phase-4/README.md), including actual desktop/mobile recordings and expansion states. [Draft PR #3](https://github.com/tenthtech/drawnout-digital/pull/3) is open for review. Branch `phase4/cinematic-motion` extends the approved Phase 3 merge `8ae8de991b6768564b92b61ed4078d3e84a9a731`. See [the motion handoff](docs/PHASE_4_HANDOFF.md), [validation](docs/PHASE_4_VALIDATION.md), and [Codex portfolio workflow](docs/PORTFOLIO_WORKFLOW.md).
 
 The approved **Afterglow** layouts, copy, typography and portfolio publication gates are preserved. Earlier galleries remain available: [Phase 3](artifacts/phase-3/README.md), [Phase 2](artifacts/phase-2/README.md), [Phase 1](artifacts/phase-1/README.md), and [Phase 0](artifacts/README.md). Original briefs remain unchanged in `docs/source-pack/`.
 
