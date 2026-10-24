@@ -29,6 +29,23 @@ const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${
         <span>Have Something in Mind?</span>
         <Arrow />
       </a>
+      <details class="menu-fallback" data-menu-fallback>
+        <summary class="menu-trigger" aria-label="Open menu">
+          <span>Menu</span>
+          <span class="menu-symbol" aria-hidden="true">
+            <i></i>
+            <i></i>
+          </span>
+        </summary>
+        <nav class="fallback-nav" aria-label="Mobile navigation">
+          {navigation.map(({ href, label }) => (
+            <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>
+              {label}
+              <Arrow />
+            </a>
+          ))}
+        </nav>
+      </details>
       <button
         class="menu-trigger"
         type="button"
@@ -181,6 +198,8 @@ const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${
     align-items: center;
     justify-content: space-between;
     gap: 15px;
+    width: 94px;
+    flex-shrink: 0;
     min-height: 44px;
     padding: 0 14px;
     color: inherit;
@@ -192,6 +211,43 @@ const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${
   }
   .menu-trigger[hidden] {
     display: none;
+  }
+  .menu-fallback {
+    display: none;
+  }
+  .menu-fallback summary {
+    list-style: none;
+  }
+  .menu-fallback summary::-webkit-details-marker {
+    display: none;
+  }
+  .fallback-nav {
+    position: absolute;
+    inset: 100% var(--gutter, 4.2vw) auto;
+    display: grid;
+    padding: 16px 24px;
+    background: var(--paper, #f7f5f1);
+    border: 1px solid var(--line, #d6d1c7);
+    box-shadow: 0 16px 30px #20201e15;
+  }
+  .fallback-nav a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 56px;
+    gap: 20px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .fallback-nav a + a {
+    border-top: 1px solid var(--line, #d6d1c7);
+  }
+  .fallback-nav a[aria-current] {
+    color: var(--accent-strong, #a83d1a);
+  }
+  .fallback-nav :global(svg) {
+    width: 20px;
+    height: 20px;
   }
   .menu-symbol {
     display: flex;
@@ -331,6 +387,7 @@ const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${
     .header-cta {
       width: 44px;
       height: 44px;
+      flex-shrink: 0;
       justify-content: center;
       border: 1px solid var(--line, #d6d1c7);
       border-radius: 50%;
@@ -339,17 +396,18 @@ const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${
       display: none;
     }
     .primary-nav {
-      width: 100%;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 6px 22px;
-      margin-left: 0;
-      order: 3;
+      display: none;
     }
     .primary-nav a {
       font-size: 13px;
     }
-    .site-header[data-enhanced] .primary-nav {
+    .menu-fallback {
+      display: block;
+    }
+    .menu-fallback .menu-trigger {
+      display: inline-flex;
+    }
+    .site-header[data-enhanced] .menu-fallback {
       display: none;
     }
     .site-header[data-enhanced] .menu-trigger:not([hidden]) {
@@ -364,6 +422,7 @@ const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${
       gap: 8px;
     }
     .menu-trigger {
+      width: 81px;
       padding-inline: 10px;
       gap: 10px;
     }

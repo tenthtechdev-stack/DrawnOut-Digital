@@ -123,7 +123,8 @@ test('public filtering and neighboring case links never regain excluded draft re
     visibility: 'public',
     projectType: 'client',
     publicationApproved: true,
-    creditApproved: true,
+    creditApproved: false,
+    displayApproval: { state: 'approved', source: 'Synthetic test approval.' },
   };
   const records = [
     {

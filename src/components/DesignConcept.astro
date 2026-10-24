@@ -5,14 +5,15 @@ import Brand from './Brand.astro';
 import Arrow from './Arrow.astro';
 import Star from './Star.astro';
 import MediaSlot from './MediaSlot.astro';
-import { getDraftPreviewProjects } from '../lib/projects';
+import { getDraftPreviewProjects, getPublicProjects } from '../lib/projects';
 
 interface Props {
   variant: 'a' | 'b';
 }
 const { variant } = Astro.props;
 const isA = variant === 'a';
-const projects = await getDraftPreviewProjects();
+// Archived local concepts retain their supplied imagery when a draft is approved.
+const projects = [...(await getPublicProjects()), ...(await getDraftPreviewProjects())];
 const order = isA
   ? ['bunzo', 'triarch', 'sol-community-center']
   : ['triarch', 'bunzo', 'churros', 'feed-n-seed'];

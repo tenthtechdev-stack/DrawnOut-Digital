@@ -7,6 +7,7 @@ function initializeNavigation() {
   const trigger = header?.querySelector<HTMLButtonElement>('[data-menu-trigger]');
   const dialog = header?.querySelector<HTMLDialogElement>('[data-site-menu]');
   const closeButton = dialog?.querySelector<HTMLButtonElement>('[data-menu-close]');
+  const fallback = header?.querySelector<HTMLDetailsElement>('[data-menu-fallback]');
   if (!header || !trigger || !dialog || !closeButton || typeof dialog.showModal !== 'function')
     return;
 
@@ -27,21 +28,25 @@ function initializeNavigation() {
     releaseScroll();
   };
 
+  // The native disclosure already reserves this control's footprint and works
+  // before JS, with JS disabled, or if this module fails to load. Switching to
+  // the dialog never adds or removes an in-flow navigation row.
+  const fallbackWasOpen = fallback?.open ?? false;
+  const fallbackHadFocus = fallback?.contains(document.activeElement) ?? false;
+  if (fallback) fallback.open = false;
   header.setAttribute('data-enhanced', '');
   trigger.hidden = false;
 
-  trigger.addEventListener(
-    'click',
-    () => {
-      if (desktop.matches || dialog.open) return;
-      dialog.showModal();
-      originalOverflow = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-      trigger.setAttribute('aria-expanded', 'true');
-      closeButton.focus();
-    },
-    { signal },
-  );
+  const openMenu = () => {
+    if (desktop.matches || dialog.open) return;
+    dialog.showModal();
+    originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    trigger.setAttribute('aria-expanded', 'true');
+    closeButton.focus();
+  };
+
+  trigger.addEventListener('click', openMenu, { signal });
 
   closeButton.addEventListener('click', closeMenu, { signal });
   dialog.addEventListener(
@@ -130,6 +135,11 @@ function initializeNavigation() {
       : undefined;
   if (sentinel) observer?.observe(sentinel);
 
+  // A slow module may finish while the native menu is in use. Keep that
+  // interaction open and move focus into the enhanced menu rather than hiding it.
+  if (fallbackWasOpen) openMenu();
+  else if (fallbackHadFocus) trigger.focus();
+
   disposeHeader = () => {
     controller.abort();
     observer?.disconnect();
@@ -141,4 +151,13 @@ function initializeNavigation() {
 
 initializeNavigation();
 document.addEventListener('astro:page-load', initializeNavigation);
-document.addEventListener('astro:before-swap', () => disposeHeader?.());
+const beforeSwap = () => disposeHeader?.();
+document.addEventListener('astro:before-swap', beforeSwap);
+
+if (import.meta.hot) {
+  import.meta.hot.dispose(() => {
+    disposeHeader?.();
+    document.removeEventListener('astro:page-load', initializeNavigation);
+    document.removeEventListener('astro:before-swap', beforeSwap);
+  });
+}

@@ -1,0 +1,395 @@
+---
+import { Image } from 'astro:assets';
+import { getPublicProjects } from '../lib/projects';
+import SignatureArtwork from './SignatureArtwork.astro';
+import Arrow from './Arrow.astro';
+const projects = (await getPublicProjects()).slice(0, 6);
+// Arrival times follow the arc length of the SVG wave (0.5s + path fraction × 1.75s).
+// The square response peaks as the stroke reaches its centre.
+const positions = [
+  [13, 65, 0.506],
+  [30, 42, 0.764],
+  [45, 22, 1.0],
+  [56, 57, 1.306],
+  [74, 65, 1.534],
+  [87, 36, 1.808],
+];
+---
+
+<div class="signature-intro" data-signature-intro-overlay>
+  <div class="intro-top" aria-hidden="true">
+    <span>DrawnOut Digital</span>
+    <span>From thought to form.</span>
+  </div>
+  <div class="intro-composition" aria-hidden="true">
+    <div class="intro-projects" data-intro-projects>
+      <svg class="intro-wave" viewBox="0 0 1000 720" fill="none">
+        <path
+          data-intro-wave
+          pathLength="1"
+          d="M 35 650 C 80 610 90 520 130 468 S 245 360 300 302 S 405 135 450 158 S 485 385 560 410 S 675 535 740 468 S 795 270 870 259 S 951 335 960 420"
+        />
+      </svg>
+      {positions.map(([left, top, reaction], index) => (
+        <div
+          class="intro-square-position"
+          style={`--left:${left}%;--top:${top}%;--entry:${index * 0.095}s;--reaction:${reaction}s`}
+        >
+          <div class="intro-square" data-intro-square>
+            {projects[index] && index % 2 === 0 && (
+              <Image
+                src={projects[index].data.cover}
+                alt=""
+                width={200}
+                height={200}
+                fit="cover"
+                quality={72}
+                loading="eager"
+                decoding="async"
+                data-intro-artwork
+              />
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="intro-name" data-intro-name>
+      {'DrawnOut'.split('').map((letter, index) => (
+        <span style={`--letter:${0.74 + index * 0.16}s`}>{letter}</span>
+      ))}
+    </div>
+    <div class="intro-signature" data-intro-signature>
+      <SignatureArtwork variant="intro" />
+    </div>
+  </div>
+  <div class="intro-bottom">
+    <span aria-hidden="true">From the first scribble to the final scroll.</span>
+    <button type="button" data-signature-skip>
+      Skip intro <Arrow />
+    </button>
+  </div>
+</div>
+<!-- Start the CSS storyboard as soon as its markup is parsed. Its lifetime and
+     skip controls never depend on deferred module downloads or GPU compilation. -->
+<script is:inline>
+  (() => {
+    const gate = window.__drawnoutIntro;
+    const overlay = document.querySelector('[data-signature-intro-overlay]');
+    if (!gate || !overlay) return;
+    const controller = new AbortController();
+    const { signal } = controller;
+    window.addEventListener('signature:intro-end', () => controller.abort(), {
+      once: true,
+      signal,
+    });
+    overlay.addEventListener('error', () => gate.finish('asset-error'), { capture: true, signal });
+    overlay
+      .querySelector('[data-signature-skip]')
+      ?.addEventListener('click', () => gate.finish('skip'), { signal });
+    for (const image of overlay.querySelectorAll('img')) {
+      if (image.complete && image.naturalWidth === 0) gate.finish('asset-error');
+    }
+    if (!gate.start()) controller.abort();
+  })();
+</script>
+<script>
+  import '../scripts/signature-intro';
+</script>
+<style>
+  .signature-intro {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    overflow: hidden;
+    background: #f7f5f1;
+    color: #191817;
+    pointer-events: none;
+    isolation: isolate;
+  }
+  :global(html:is([data-signature-intro='pending'], [data-signature-intro='playing']))
+    .signature-intro {
+    display: flex;
+    flex-direction: column;
+  }
+  .intro-top,
+  .intro-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: absolute;
+    inset-inline: clamp(22px, 4vw, 65px);
+    font-size: 11px;
+    letter-spacing: 0.01em;
+    z-index: 3;
+  }
+  .intro-top {
+    top: 28px;
+  }
+  .intro-top > span:first-child {
+    font-weight: 650;
+    font-size: 15px;
+    letter-spacing: -0.04em;
+  }
+  .intro-bottom {
+    bottom: 25px;
+  }
+  .intro-bottom button {
+    border: 1px solid #19181755;
+    background: #f7f5f1;
+    color: #191817;
+    min-height: 44px;
+    border-radius: 50px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    pointer-events: auto;
+    font: inherit;
+  }
+  .intro-bottom button:focus-visible {
+    outline: 3px solid #b63c0b;
+    outline-offset: 4px;
+  }
+  .intro-composition {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .intro-projects {
+    position: absolute;
+    width: min(82vw, 1000px);
+    aspect-ratio: 1000 / 720;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .intro-wave {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: visible;
+  }
+  .intro-wave path {
+    stroke: #191817;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+  .intro-square-position {
+    position: absolute;
+    width: 13%;
+    aspect-ratio: 1;
+    left: var(--left);
+    top: var(--top);
+    transform: translate(-50%, -50%);
+  }
+  .intro-square {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #191817;
+    background: #f7f5f1;
+    opacity: 0;
+    overflow: hidden;
+  }
+  .intro-square img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+  }
+  .intro-name {
+    position: absolute;
+    left: 50%;
+    top: 73%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-size: clamp(58px, 9.5vw, 140px);
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: -0.075em;
+    color: #c14815;
+    z-index: 3;
+  }
+  .intro-name span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  .intro-signature {
+    position: absolute;
+    height: min(98svh, 980px);
+    aspect-ratio: 9 / 16;
+    left: 50%;
+    bottom: -6svh;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  .intro-signature :global([data-signature-artwork]) {
+    width: 100%;
+    height: 100%;
+  }
+  :global(html[data-signature-intro='playing']) .signature-intro {
+    animation: intro-exit 0.5s 3.65s both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-square {
+    animation:
+      square-arrive 0.52s var(--entry) both,
+      square-respond 0.48s var(--reaction) both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-square img {
+    animation: artwork-arrive 0.42s calc(var(--reaction) + 0.1s) both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-wave path {
+    animation: connect-projects 1.75s 0.5s linear both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-name span {
+    animation: letter-arrive 0.32s var(--letter) both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-projects {
+    animation: projects-depart 0.5s 2.25s both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-name {
+    animation: name-resolve 0.6s 2.35s both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-signature {
+    animation: signature-arrive 0.65s 2.55s both;
+  }
+  :global(html[data-signature-intro='playing'])
+    .intro-signature
+    :global([data-signature-composite]) {
+    animation: reference-rise 0.8s 2.5s both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-signature :global([data-signature-frame]) {
+    animation: frame-descend 0.8s 2.5s both;
+  }
+  @keyframes square-arrive {
+    from {
+      opacity: 0;
+      translate: 0 38px;
+      rotate: -7deg;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+      rotate: 0deg;
+    }
+  }
+  @keyframes square-respond {
+    0%,
+    100% {
+      scale: 1;
+    }
+    45% {
+      scale: 1.08;
+    }
+  }
+  @keyframes artwork-arrive {
+    from {
+      opacity: 0;
+      clip-path: inset(100% 0 0 0);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0);
+    }
+  }
+  @keyframes connect-projects {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes letter-arrive {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes projects-depart {
+    to {
+      opacity: 0;
+      scale: 0.94;
+    }
+  }
+  @keyframes name-resolve {
+    to {
+      transform: translate(-50%, calc(-50% + 11svh));
+      opacity: 0;
+      scale: 0.8;
+    }
+  }
+  @keyframes signature-arrive {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes reference-rise {
+    from {
+      opacity: 0;
+      translate: 0 65px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  @keyframes frame-descend {
+    from {
+      opacity: 0;
+      translate: 0 -65px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  @keyframes intro-exit {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  @media (max-width: 639px) {
+    .intro-top > span:last-child {
+      display: none;
+    }
+    .intro-projects {
+      width: 94vw;
+      top: 43%;
+    }
+    .intro-square {
+      border-width: 2px;
+    }
+    .intro-name {
+      top: 64%;
+    }
+    .intro-signature {
+      height: min(96svh, 900px);
+      bottom: -4svh;
+    }
+    .intro-bottom > span {
+      max-width: 145px;
+      line-height: 1.7;
+      font-size: 10px;
+    }
+    .intro-bottom button {
+      gap: 10px;
+      padding-inline: 14px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .signature-intro {
+      display: none !important;
+    }
+  }
+</style>

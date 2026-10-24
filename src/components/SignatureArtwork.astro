@@ -1,0 +1,84 @@
+---
+import { Image } from 'astro:assets';
+import reference from '../assets/signature/hand-emblem-reference.webp';
+
+interface Props {
+  variant?: 'intro' | 'footer';
+}
+const { variant = 'footer' } = Astro.props;
+---
+
+<!-- The supplied reference is one intact composite, not separately rigged anatomy. -->
+<div
+  class:list={['signature-artwork', `signature-artwork--${variant}`]}
+  data-signature-artwork
+  data-signature-asset="reference-composite-prototype"
+  aria-hidden="true"
+>
+  <div class="signature-glow" data-signature-glow></div>
+  <div class="signature-frame" data-signature-frame></div>
+  <div class="signature-composite" data-signature-composite>
+    <Image
+      src={reference}
+      alt=""
+      widths={[450, 810]}
+      sizes={
+        variant === 'intro' ? '(max-width: 767px) 80vw, 440px' : '(max-width: 767px) 100vw, 60vw'
+      }
+      loading={variant === 'intro' ? 'eager' : 'lazy'}
+      decoding="async"
+      format="webp"
+      quality={88}
+    />
+  </div>
+</div>
+
+<style>
+  .signature-artwork {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    position: relative;
+    isolation: isolate;
+    pointer-events: none;
+    transform-origin: 50% 62%;
+  }
+  .signature-composite {
+    position: absolute;
+    inset: 0;
+  }
+  .signature-composite img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .signature-glow {
+    position: absolute;
+    inset: 12% -18% 20%;
+    background: radial-gradient(ellipse at 50% 42%, #ff740024, #ff74000a 38%, transparent 68%);
+    z-index: -1;
+  }
+  .signature-frame {
+    position: absolute;
+    left: 23%;
+    top: 25%;
+    width: 49%;
+    aspect-ratio: 1;
+    border: 1px solid #ffcd8b8c;
+    border-radius: 8%;
+    box-shadow: 0 0 22px #ff6a001a;
+    transform: rotate(17deg);
+    opacity: 0.45;
+    z-index: -1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .signature-artwork,
+    .signature-composite,
+    .signature-frame {
+      transform: none !important;
+    }
+    .signature-frame {
+      display: none;
+    }
+  }
+</style>

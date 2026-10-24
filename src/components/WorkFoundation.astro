@@ -5,14 +5,12 @@ interface Props {
   storytelling?: boolean;
 }
 const { intro = true, storytelling = false } = Astro.props;
-const PreviewWork = import.meta.env.DEV
-  ? storytelling
-    ? (await import('./EditorialWork.astro')).default
-    : (await import('./PreviewWork.astro')).default
-  : undefined;
+const Work = storytelling
+  ? (await import('./EditorialWork.astro')).default
+  : (await import('./PreviewWork.astro')).default;
 ---
 
-<section class="work-foundation page-frame" data-work aria-label="Selected-work foundation">
+<section class="work-foundation page-frame" data-work aria-label="Selected work">
   {intro && (
     <SectionIntro
       id="work-title"
@@ -26,23 +24,10 @@ const PreviewWork = import.meta.env.DEV
       }
     />
   )}
-  {PreviewWork ? (
-    <PreviewWork />
-  ) : (
-    <p class="empty-work">
-      Project stories are being prepared. Selected work will appear here after studio approval.
-    </p>
-  )}
+  <Work />
 </section>
 <style>
   .work-foundation {
     padding-block: var(--space-6) var(--space-7);
-  }
-  .empty-work {
-    border-top: 1px solid var(--line);
-    padding-top: var(--space-4);
-    font-size: var(--type-body);
-    line-height: var(--leading-body);
-    max-width: 680px;
   }
 </style>

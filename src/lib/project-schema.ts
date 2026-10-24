@@ -25,6 +25,15 @@ export function projectSchema<T extends z.ZodType>(imageSchema: T) {
     visibility: z.enum(['private', 'public']).default('private'),
     projectType: z.enum(['client', 'concept', 'internal', 'unknown']).default('unknown'),
     publicationApproved: z.boolean().default(false),
+    displayApproval: z
+      .object({
+        state: z.enum(['pending', 'approved', 'withdrawn']).default('pending'),
+        source: z.string().trim().min(1).optional(),
+      })
+      .refine((approval) => approval.state !== 'approved' || Boolean(approval.source), {
+        message: 'Approved artwork display needs a recorded human approval source.',
+      })
+      .default({ state: 'pending' }),
     creditApproved: z.boolean().default(false),
     clientName: z.string().trim().min(1).optional(),
     year: z.number().int().min(1900).max(2100).optional(),
@@ -80,18 +89,18 @@ export interface PublicationState {
   projectType: 'client' | 'concept' | 'internal' | 'unknown';
   publicationApproved: boolean;
   creditApproved: boolean;
+  displayApproval?: { state: 'pending' | 'approved' | 'withdrawn'; source?: string };
 }
 
-/** Approval flags represent human review; they never establish rights by themselves. */
+/** Visual permission and release state do not verify commissioning, facts or credits. */
 export function canPublish(project: PublicationState): boolean {
   return (
     project.status === 'published' &&
     project.visibility === 'public' &&
     project.publicationApproved === true &&
-    project.creditApproved === true &&
-    (project.projectType === 'client' ||
-      project.projectType === 'concept' ||
-      project.projectType === 'internal')
+    project.displayApproval?.state === 'approved' &&
+    typeof project.displayApproval.source === 'string' &&
+    project.displayApproval.source.trim().length > 0
   );
 }
 

@@ -18,11 +18,14 @@ interface Props {
   projects: CollectionEntry<'projects'>[];
 }
 const { project, projects } = Astro.props;
+// Free-form metadata can contain factual or attribution claims. Until both
+// reviews are complete, use only the approved visual title and description.
+const metadataApproved = project.data.contentVerified && project.data.creditApproved;
 ---
 
 <SiteLayout
-  title={project.data.seoTitle ?? `${project.data.title} — DrawnOut Digital`}
-  description={project.data.seoDescription ?? project.data.summary}
+  title={(metadataApproved && project.data.seoTitle) || `${project.data.title} — DrawnOut Digital`}
+  description={(metadataApproved && project.data.seoDescription) || project.data.summary}
 >
   <CaseStudy project={project} projects={projects} />
 </SiteLayout>

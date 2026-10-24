@@ -12,7 +12,8 @@ interface DraftRecord extends PublicationState {
 const directory = new URL('../../src/content/projects/', import.meta.url);
 const records = readdirSync(directory)
   .filter((name) => name.endsWith('.json'))
-  .map((name) => JSON.parse(readFileSync(new URL(name, directory), 'utf8')) as DraftRecord);
+  .map((name) => JSON.parse(readFileSync(new URL(name, directory), 'utf8')) as DraftRecord)
+  .filter(canPublish);
 
 function projectHref(record: DraftRecord) {
   return `${canPublish(record) ? '/work' : '/_preview/work'}/${record.slug}`;
@@ -82,7 +83,7 @@ async function expectCategory(page: Page, category: string) {
 }
 
 for (const width of [320, 390, 768, 1440, 1920]) {
-  test(`editorial Work index loads responsive draft artwork at ${width}px`, async ({ page }) => {
+  test(`editorial Work index loads responsive approved artwork at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 960 });
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
@@ -165,16 +166,17 @@ test('Work categories derive from records and support URL history and keyboard o
 
 for (const slug of ['bunzo', 'triarch']) {
   for (const width of [390, 768, 1440]) {
-    test(`${slug} case preview preserves art direction and navigation at ${width}px`, async ({
+    test(`${slug} case page preserves art direction and navigation at ${width}px`, async ({
       page,
     }) => {
       await page.setViewportSize({ width, height: 960 });
       const errors: string[] = [];
       page.on('pageerror', (error) => errors.push(error.message));
       const record = records.find((record) => record.slug === slug)!;
-      const response = await page.goto(`/_preview/work/${slug}`);
+      const response = await page.goto(`/work/${slug}`);
       expect(response?.status()).toBe(200);
       await expect(page.locator('[data-case-study]')).toBeVisible();
+      await expect(page.locator('[data-case-draft], .preview-tag')).toHaveCount(0);
       await expect(
         page.getByRole('heading', { level: 1, name: record.title, exact: true }),
       ).toBeVisible();
@@ -233,28 +235,27 @@ for (const slug of ['bunzo', 'triarch']) {
   }
 }
 
-test('draft project navigation stays in the private route namespace and public draft URLs fail', async ({
+test('public project navigation stays in the public route namespace and unavailable URLs fail', async ({
   page,
 }) => {
-  await page.goto('/_preview/work/bunzo');
+  await page.goto('/work/bunzo');
   const next = page.locator('[data-case-next]');
   const nextHref = await next.getAttribute('href');
-  expect(nextHref).toMatch(/^\/_preview\/work\/[a-z0-9-]+$/);
+  expect(nextHref).toMatch(/^\/work\/[a-z0-9-]+$/);
   await next.focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(nextHref!);
   const previous = page.locator('[data-case-previous]');
-  await expect(previous).toHaveAttribute('href', '/_preview/work/bunzo');
+  await expect(previous).toHaveAttribute('href', '/work/bunzo');
   await previous.click();
-  await expect(page).toHaveURL('/_preview/work/bunzo');
-  const draft = records.find((record) => !canPublish(record));
-  if (draft) {
-    const response = await page.goto(`/work/${draft.slug}`);
-    expect(response?.status()).toBe(404);
-  }
+  await expect(page).toHaveURL('/work/bunzo');
+  const response = await page.goto('/work/nonexistent-project');
+  expect(response?.status()).toBe(404);
+  const formerPreview = await page.goto('/_preview/work/bunzo');
+  expect(formerPreview?.status()).toBe(404);
 });
 
-test('Work and case previews remain usable without JavaScript and with reduced motion', async ({
+test('Work and case pages remain usable without JavaScript and with reduced motion', async ({
   browser,
 }) => {
   const context = await browser.newContext({
@@ -309,4 +310,32 @@ test('reduced-motion Work interactions stay visible with no running animations',
   await page.locator('[data-filter="print"]').click();
   await expectCategory(page, 'print');
   await expect(page.locator('main h1')).toBeVisible();
+});
+
+test('every approved project opens a public case from Work with truthful visible fields and usable neighbors', async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const record of records) {
+    await page.goto('/work');
+    const card = page.locator(`[data-work-card] a[href="/work/${record.slug}"]`);
+    await card.click();
+    await expect(page).toHaveURL(`/work/${record.slug}`);
+    await expect(page.locator('[data-case-study]')).toHaveAttribute(
+      'data-project-slug',
+      record.slug,
+    );
+    await expect(page.locator('.preview-tag, [data-case-draft]')).toHaveCount(0);
+    if (!record.contentVerified) {
+      await expect(
+        page.locator('[data-case-facts], [data-case-narrative], [data-case-evidence]'),
+      ).toHaveCount(0);
+    }
+    for (const selector of ['[data-case-previous]', '[data-case-next]']) {
+      const href = await page.locator(selector).getAttribute('href');
+      expect(
+        records.some((project) => href === `/work/${project.slug}` && project.slug !== record.slug),
+      ).toBe(true);
+    }
+  }
 });

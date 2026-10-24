@@ -105,7 +105,8 @@ for (const width of [320, 390, 768, 1440, 1920]) {
       await expect(work.getByRole('heading', { name: project, exact: true })).toBeVisible();
     }
     await expect(work.locator('img')).toHaveCount(5);
-    await expect(work.locator('a[href^="/work/"]')).toHaveCount(0);
+    await expect(work.locator('a[href^="/work/"]')).toHaveCount(5);
+    await expect(work.locator('.preview-tag')).toHaveCount(0);
     await expect(page.locator('video')).toHaveCount(0);
     await expect(page.getByRole('button', { name: /play|watch/i })).toHaveCount(0);
     await loadPortfolioPosters(page);
@@ -163,6 +164,7 @@ test('new homepage story remains usable without JavaScript', async ({ browser })
   await expect(
     page.locator('[data-site-footer]').getByRole('link', { name: "Tell Us What You're Thinking" }),
   ).toBeVisible();
+  await page.locator('[data-menu-fallback] summary').click();
   await page
     .locator('[data-site-header]')
     .getByRole('link', { name: 'Services', exact: true })

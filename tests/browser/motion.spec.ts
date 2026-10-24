@@ -1,5 +1,10 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
 
+// These cases isolate returning-visitor editorial motion; fresh intro timing has its own suite.
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => sessionStorage.setItem('drawnout-loop-seen', '1'));
+});
+
 interface MotionScene {
   id: number;
   start: number;
@@ -111,7 +116,7 @@ async function setProgress(page: Page, media: Locator, scene: MotionScene, progr
   );
   await expect
     .poll(async () => Number(await media.getAttribute('data-motion-progress')))
-    .toBeCloseTo(progress, 1);
+    .toBeCloseTo(progress, 2);
 }
 
 async function assertNoOverflow(page: Page) {
@@ -207,7 +212,7 @@ for (const width of [320, 390, 768, 1440, 1920]) {
 const routes = [
   ['home', '/', '[data-work]'],
   ['work', '/work', '[data-work-index]'],
-  ['case', '/_preview/work/bunzo', '[data-case-gallery]'],
+  ['case', '/work/bunzo', '[data-case-gallery]'],
 ] as const;
 
 for (const [name, route, prefix] of routes) {
@@ -348,7 +353,11 @@ test('no-JavaScript pages retain readable text, portfolio imagery and navigation
   for (const line of await page.locator('[data-type-line]').all()) {
     expect(await line.evaluate((element) => getComputedStyle(element).opacity)).toBe('1');
   }
-  await page.locator('[data-site-header]').getByRole('link', { name: 'Work', exact: true }).click();
+  await page.locator('[data-menu-fallback] summary').click();
+  await page
+    .locator('[data-menu-fallback]')
+    .getByRole('link', { name: 'Work', exact: true })
+    .click();
   await expect(page).toHaveURL('/work');
   await expect(page.locator('[data-work-card]:visible')).not.toHaveCount(0);
   await page.locator('[data-work-card] a').first().click();

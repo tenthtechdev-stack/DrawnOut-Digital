@@ -1,6 +1,8 @@
 import { allowsMotion, expansionProfile, motionTiming } from '../lib/motion-policy';
 
 type Gsap = (typeof import('gsap'))['gsap'];
+type SplitTextPlugin = (typeof import('gsap/SplitText'))['SplitText'];
+type SplitInstance = InstanceType<SplitTextPlugin>;
 type ScrollTriggerPlugin = (typeof import('gsap/ScrollTrigger'))['ScrollTrigger'];
 type Timeline = ReturnType<Gsap['timeline']>;
 type Trigger = ReturnType<ScrollTriggerPlugin['create']>;
@@ -20,7 +22,9 @@ const connection = (navigator as Navigator & { connection?: Connection }).connec
 let generation = 0;
 let activeRoot: HTMLElement | undefined;
 let dispose: (() => void) | undefined;
-let library: Promise<{ gsap: Gsap; ScrollTrigger: ScrollTriggerPlugin }> | undefined;
+let library:
+  | Promise<{ gsap: Gsap; ScrollTrigger: ScrollTriggerPlugin; SplitText: SplitTextPlugin }>
+  | undefined;
 let sceneSnapshot: () => { id: number; start: number; end: number; progress: number }[] = () => [];
 const stats = { initializationCount: 0, cleanupCount: 0, revealCount: 0, refreshCount: 0 };
 let triggerSnapshot = () => 0;
@@ -77,12 +81,14 @@ function stop() {
 }
 
 function getLibrary() {
-  library ??= Promise.all([import('gsap'), import('gsap/ScrollTrigger')]).then(
-    ([{ gsap }, { ScrollTrigger }]) => {
-      gsap.registerPlugin(ScrollTrigger);
-      return { gsap, ScrollTrigger };
-    },
-  );
+  library ??= Promise.all([
+    import('gsap'),
+    import('gsap/ScrollTrigger'),
+    import('gsap/SplitText'),
+  ]).then(([{ gsap }, { ScrollTrigger }, { SplitText }]) => {
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+    return { gsap, ScrollTrigger, SplitText };
+  });
   return library;
 }
 
@@ -137,7 +143,7 @@ async function initialize(force = false) {
   html.dataset.motionState = 'loading';
 
   try {
-    const { gsap, ScrollTrigger } = await getLibrary();
+    const { gsap, ScrollTrigger, SplitText } = await getLibrary();
     if (generation !== currentGeneration || !root.isConnected) return;
     stats.initializationCount += 1;
     const abort = new AbortController();
@@ -146,7 +152,10 @@ async function initialize(force = false) {
     const safetyTimers = new Set<ReturnType<typeof setTimeout>>();
     const scenes = new Set<Scene>();
     const ownTriggers = new Set<Trigger>();
-    const revealAnimations = new Map<HTMLElement, ReturnType<Gsap['to']>>();
+    const revealAnimations = new Map<HTMLElement, ReturnType<Gsap['to']> | Timeline>();
+    const splitTexts = new Map<HTMLElement, SplitInstance>();
+    const splitAnimations = new Map<HTMLElement, Timeline>();
+    const splitTriggers = new Map<HTMLElement, Trigger>();
     let refreshFrame = 0;
     let progressFrame = 0;
     let refreshTimer: ReturnType<typeof setTimeout> | undefined;
@@ -176,6 +185,10 @@ async function initialize(force = false) {
     const syncScenes = () => {
       if (disposed) return;
       for (const scene of scenes) syncProgress(scene);
+      for (const [target, animation] of splitAnimations) {
+        if (splitTriggers.has(target))
+          target.dataset.textProgress = animation.progress().toFixed(4);
+      }
     };
     // Refresh restores animation progress with GSAP callbacks suppressed. Mirror
     // that rendered state explicitly, including the next frame after scrub settles.
@@ -202,6 +215,14 @@ async function initialize(force = false) {
       for (const timer of safetyTimers) clearTimeout(timer);
       safetyTimers.clear();
       mediaQueries.revert();
+      for (const animation of splitAnimations.values()) {
+        animation.scrollTrigger?.kill();
+        animation.kill();
+      }
+      splitAnimations.clear();
+      splitTriggers.clear();
+      for (const split of splitTexts.values()) split.revert();
+      splitTexts.clear();
       context.revert();
       for (const scene of scenes) {
         scene.trigger.kill();
@@ -215,6 +236,9 @@ async function initialize(force = false) {
       for (const target of root.querySelectorAll<HTMLElement>('[data-motion-revealed]')) {
         delete target.dataset.motionRevealed;
         delete target.dataset.motionReveal;
+        delete target.dataset.textProgress;
+        delete target.dataset.textStart;
+        delete target.dataset.textEnd;
       }
       if (hero) delete hero.dataset.heroInView;
       releaseHeroBoot();
@@ -284,12 +308,119 @@ async function initialize(force = false) {
       safetyTimers.add(timer);
     };
 
+    // Split only selected editorial titles. SplitText maintains a single accessible
+    // label, masks actual wrapped lines and re-splits on responsive/font changes.
+    // Content stays ordinary visible HTML until this enhancement succeeds.
+    const splitReveal = (target: HTMLElement, scrubbed = false) => {
+      if (splitTexts.has(target)) return;
+      target.dataset.motionRevealed = 'true';
+      const wordTreatment = scrubbed || target.dataset.motionSplit === 'words';
+      const split = SplitText.create(target, {
+        type: 'lines,words',
+        mask: 'lines',
+        linesClass: 'motion-line',
+        wordsClass: 'motion-word',
+        autoSplit: true,
+        deepSlice: true,
+        aria: 'auto',
+        onSplit: (instance) => {
+          const previous = splitAnimations.get(target);
+          // autoSplit may already have reverted the previous timeline before
+          // onSplit runs. Retain trigger ownership independently of that timeline.
+          const previousTrigger = splitTriggers.get(target);
+          if (previousTrigger) ownTriggers.delete(previousTrigger);
+          previousTrigger?.kill();
+          splitTriggers.delete(target);
+          previous?.scrollTrigger?.kill();
+          previous?.kill();
+          const pieces = wordTreatment ? instance.words : instance.lines;
+          const alreadyComplete = !scrubbed && target.dataset.motionReveal === 'complete';
+          const animation = gsap.timeline({
+            paused: alreadyComplete,
+            onComplete: () => {
+              if (!scrubbed) {
+                revealAnimations.delete(target);
+                target.dataset.motionReveal = 'complete';
+              }
+            },
+            ...(scrubbed
+              ? {
+                  scrollTrigger: {
+                    id: `drawnout-text-${target.id || 'interlude'}`,
+                    trigger: target,
+                    start: 'top 88%',
+                    end: () => (window.innerWidth < 768 ? 'bottom 48%' : 'bottom 42%'),
+                    scrub: 0.35,
+                    invalidateOnRefresh: true,
+                    onRefresh: (trigger: Trigger) => {
+                      target.dataset.textStart = String(trigger.start);
+                      target.dataset.textEnd = String(trigger.end);
+                    },
+                  },
+                }
+              : {}),
+          });
+          gsap.set(pieces, {
+            yPercent: alreadyComplete ? 0 : 115,
+            x: (index: number) => (alreadyComplete ? 0 : scrubbed ? (index % 2 ? 15 : -15) : 0),
+            rotate: alreadyComplete ? 0 : scrubbed ? -2 : 1.5,
+            opacity: alreadyComplete ? 1 : 0.25,
+            transformOrigin: '0% 100%',
+          });
+          animation.to(pieces, {
+            yPercent: 0,
+            x: 0,
+            rotate: 0,
+            opacity: 1,
+            stagger: wordTreatment ? 0.075 : 0.12,
+            duration: wordTreatment ? 0.68 : 0.82,
+            ease: scrubbed ? 'none' : 'power3.out',
+          });
+          if (alreadyComplete) animation.progress(1);
+          target.dataset.motionReveal = scrubbed
+            ? 'scrubbed'
+            : alreadyComplete
+              ? 'complete'
+              : 'running';
+          if (scrubbed) {
+            const syncText = () => {
+              target.dataset.textProgress = animation.progress().toFixed(4);
+            };
+            animation.eventCallback('onUpdate', syncText);
+            syncText();
+          } else if (!alreadyComplete) revealAnimations.set(target, animation);
+          splitAnimations.set(target, animation);
+          if (animation.scrollTrigger) {
+            ownTriggers.add(animation.scrollTrigger);
+            splitTriggers.set(target, animation.scrollTrigger);
+          }
+          // SplitText transfers timeline progress across autoSplit calls and owns
+          // the return value's revert lifecycle.
+          return animation;
+        },
+      });
+      splitTexts.set(target, split);
+      stats.revealCount += 1;
+      if (!scrubbed) {
+        const timer = setTimeout(() => {
+          safetyTimers.delete(timer);
+          const animation = splitAnimations.get(target);
+          if (animation && target.dataset.motionReveal !== 'complete') animation.progress(1);
+        }, motionTiming.revealSafetyMs);
+        safetyTimers.add(timer);
+      }
+    };
+
     observers.text = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
           const target = entry.target as HTMLElement;
           observers.text?.unobserve(target);
+          if (target.hasAttribute('data-motion-split')) {
+            splitReveal(target);
+            continue;
+          }
           const statement = target.dataset.motionText === 'statement';
           const supporting = target.hasAttribute('data-motion-support');
           safeReveal(
@@ -304,7 +435,10 @@ async function initialize(force = false) {
       },
       { threshold: 0.12, rootMargin: '0px 0px -4% 0px' },
     );
-    for (const target of editorialTargets) observers.text.observe(target);
+    for (const target of editorialTargets) {
+      if (target.dataset.motionText === 'scrub') splitReveal(target, true);
+      else observers.text.observe(target);
+    }
 
     observers.hero = hero
       ? new IntersectionObserver(
@@ -347,6 +481,43 @@ async function initialize(force = false) {
       }
     }
 
+    let introHandoff = false;
+    window.addEventListener(
+      'signature:intro-handoff',
+      () => {
+        if (
+          introHandoff ||
+          !hero ||
+          html.dataset.signatureIntro !== 'playing' ||
+          window.scrollY >= 60 ||
+          document.hidden
+        )
+          return;
+        introHandoff = true;
+        html.dataset.heroEntrance = 'running';
+        [...hero.querySelectorAll<HTMLElement>('[data-type-line]')].forEach((line, index) => {
+          safeReveal(line, 0.65, index * 0.08, true);
+        });
+        for (const target of hero.querySelectorAll<HTMLElement>(
+          '[data-hero-support], [data-hero-actions]',
+        )) {
+          safeReveal(target, 0.5, 0.15);
+        }
+      },
+      { signal },
+    );
+    window.addEventListener(
+      'signature:intro-end',
+      () => {
+        if (html.dataset.signatureIntro !== 'skipped') return;
+        for (const [target, animation] of revealAnimations) {
+          if (hero?.contains(target)) animation.progress(1);
+        }
+        releaseHeroBoot();
+      },
+      { signal },
+    );
+
     context.add(() => {
       mediaQueries.add({ mobile: '(max-width: 767px)', desktop: '(min-width: 768px)' }, () => {
         const frameCandidates = [...root.querySelectorAll<HTMLElement>('[data-expansion-frame]')];
@@ -360,7 +531,11 @@ async function initialize(force = false) {
           registered.add(media);
           remember(media);
           remember(image);
-          const profile = expansionProfile(window.innerWidth, image.width / image.height);
+          const profile = expansionProfile(
+            window.innerWidth,
+            image.width / image.height,
+            frame.hasAttribute('data-motion-immersive'),
+          );
           const id = localScenes.length;
           media.dataset.motionScene = String(id);
           const timeline = gsap.timeline({

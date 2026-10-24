@@ -6,8 +6,9 @@ type GalleryImage = CollectionEntry<'projects'>['data']['gallery'][number];
 interface Props {
   images: GalleryImage[];
   heroSource: string;
+  preview?: boolean;
 }
-const { images, heroSource } = Astro.props;
+const { images, heroSource, preview = false } = Astro.props;
 const used = new Set([heroSource]);
 const gallery = images.filter((image) => {
   if (used.has(image.src.src)) return false;
@@ -43,6 +44,7 @@ for (const image of gallery) {
           <figure data-image-reveal>
             <div data-expansion-frame>
               <MediaSlot
+                availability={preview ? 'placeholder' : 'approved'}
                 poster={image.src}
                 alt={image.alt}
                 aspectRatio={`${image.src.width} / ${image.src.height}`}

@@ -120,9 +120,6 @@ test('production asset output excludes every draft project image', async () => {
       `Unapproved image ${stem} must not appear in production asset filenames.`,
     );
   }
-  if (records.every((record) => !canPublish(record))) {
-    assert.ok(!output.some((file) => file.endsWith('.webp')), 'No project WebPs are approved yet.');
-  }
 });
 
 test('production text and generated assets do not expose original portfolio files or draft metadata', async () => {
@@ -160,4 +157,31 @@ test('production text and generated assets do not expose original portfolio file
       }
     }
   }
+});
+
+test('approved artwork has real public cards and cases without invented facts or review labels', async () => {
+  const records = (await projectRecords()).filter(canPublish);
+  const home = await readFile('dist/index.html', 'utf8');
+  const work = await readFile('dist/work/index.html', 'utf8');
+  assert.ok(records.length >= 11, 'The supplied 11 structured projects are approved for display.');
+  for (const record of records) {
+    assert.match(work, new RegExp(`href="/work/${escapePattern(record.slug)}"`));
+    if (record.featured)
+      assert.match(home, new RegExp(`href="/work/${escapePattern(record.slug)}"`));
+    const html = await readFile(`dist/work/${record.slug}/index.html`, 'utf8');
+    assert.doesNotMatch(html, /Private draft|Pending studio review|Visual preview|data-case-draft/);
+    assert.match(html, /data-case-previous/);
+    assert.match(html, /data-case-next/);
+    if (!record.contentVerified) {
+      assert.doesNotMatch(html, /data-case-facts|data-case-narrative|data-case-evidence/);
+    }
+    if (!record.creditApproved) {
+      assert.doesNotMatch(html, /<h2>Credits\.<\/h2>|<dt>Organization<\/dt>|<dt>Our role<\/dt>/);
+    }
+  }
+  for (const html of [home, work])
+    assert.doesNotMatch(
+      html,
+      /Private draft|Pending studio review|Visual preview|Local portfolio preview/,
+    );
 });

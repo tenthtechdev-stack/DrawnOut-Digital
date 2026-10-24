@@ -12,7 +12,7 @@ const { id, eyebrow, title, accent, note } = Astro.props;
 <div class="section-intro">
   <div>
     <p class="eyebrow">{eyebrow}</p>
-    <h2 id={id} class="section-heading" data-motion-text="heading">
+    <h2 id={id} class="section-heading" data-motion-text="heading" data-motion-split="lines">
       {title}
       {accent && (
         <>
