@@ -1,0 +1,19 @@
+{
+  "suite": "tests/browser/signature-footer.spec.ts",
+  "date": "2026-10-23",
+  "result": "passed",
+  "passed": 6,
+  "failed": 0,
+  "workers": 1,
+  "reportedDuration": "1.1m",
+  "command": "node /workspace/drawnout-digital/node_modules/@playwright/test/cli.js test --config /workspace/drawnout-digital/playwright.config.ts signature-footer.spec.ts --workers=1 --output=/workspace/signature-review/footer-tests",
+  "coverage": [
+    "390/768/1440px forward, hold, expand and reverse progress",
+    "stable footer/document height and no horizontal overflow",
+    "contact CTA focus and Enter navigation",
+    "reduced-motion preference change and restoration",
+    "no JavaScript static artwork and contact navigation",
+    "failed animation library import keeps artwork/content/links visible"
+  ],
+  "limit": "Functional checks establish choreography/fallback behavior, not photorealistic hand animation."
+}

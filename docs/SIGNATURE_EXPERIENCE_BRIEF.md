@@ -4,10 +4,10 @@
 
 **This replaces the prior, unsent Phase 5 / motion-refinement instructions. Do not treat earlier drafts as additional competing tasks.**
 
-**Repository:** `tenthtech/drawnout-digital`  
-**Starting branch:** Latest `main` (approved and merged through Phase 4)  
-**Working branch:** Create `feature/drawnout-signature-experience` from up-to-date `main` after the brand assets commit has arrived.  
-**Preferred model:** GPT-6 Astra at Extra High reasoning if available in Codex; otherwise the strongest available Codex model with High/Extra High reasoning.  
+**Repository:** `tenthtech/drawnout-digital`
+**Starting branch:** Latest `main` (approved and merged through Phase 4)
+**Working branch:** Create `feature/drawnout-signature-experience` from up-to-date `main` after the brand assets commit has arrived.
+**Preferred model:** GPT-6 Astra at Extra High reasoning if available in Codex; otherwise the strongest available Codex model with High/Extra High reasoning.
 **Status:** User approves the existing supplied DrawnOut portfolio artwork for public visual display. Real clients, commissions, team credits, deliverables and results must not be invented or marked verified.
 
 ## A. Before writing code

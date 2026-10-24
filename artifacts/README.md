@@ -1,4 +1,6 @@
-[Current Phase 4 cinematic motion gallery and recordings](phase-4/README.md)
+[Current signature experience gallery and recordings](signature/README.md)
+
+[Approved Phase 4 cinematic motion gallery and recordings](phase-4/README.md)
 
 [Approved Phase 3 Work and case-study gallery](phase-3/README.md)
 
