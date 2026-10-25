@@ -5,7 +5,7 @@ import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { clearInterval, setInterval } from 'node:timers';
 
-/* global document, window, getComputedStyle, performance, requestAnimationFrame, PerformanceObserver, innerHeight, scrollY */
+/* global document, window, getComputedStyle, performance, requestAnimationFrame, PerformanceObserver, innerWidth, innerHeight, scrollY, DOMMatrixReadOnly */
 // Browser globals below are used only inside Playwright's page-evaluation callbacks.
 
 // Record the real Chromium compositor. No app animation state is mocked or sought.
@@ -24,8 +24,10 @@ async function settle(page) {
   await page.waitForFunction(() => document.documentElement.dataset.motionState === 'ready');
   await page.evaluate(() => document.fonts.ready);
   // The module becomes ready before its debounced font/image refresh completes.
-  await page.waitForFunction(
-    () => window.__drawnoutMotion.refreshCount > 0 && window.__drawnoutMotion.sceneCount > 0,
+  await page.waitForFunction(() =>
+    window.__drawnoutMotion
+      ? window.__drawnoutMotion.refreshCount > 0 && window.__drawnoutMotion.sceneCount > 0
+      : Boolean(document.querySelector('[data-motion-scene]')),
   );
 }
 
@@ -34,15 +36,35 @@ async function open(page, route) {
   await settle(page);
 }
 
+// Production intentionally omits the development diagnostics object. Read the
+// untransformed media geometry instead, then verify every native scroll position
+// against the real data-motion-progress emitted by the application's timeline.
+async function sceneSnapshots(page) {
+  return page.evaluate(() => {
+    if (window.__drawnoutMotion) return window.__drawnoutMotion.scenes;
+    return [...document.querySelectorAll('[data-motion-scene]')]
+      .filter((media) => media.getClientRects().length > 0)
+      .map((media) => {
+        const top = media.getBoundingClientRect().top + scrollY;
+        return {
+          id: Number(media.dataset.motionScene),
+          start: top - innerHeight * 0.9,
+          end: top - innerHeight * (innerWidth < 768 ? 0.34 : 0.22),
+          progress: Number(media.dataset.motionProgress),
+        };
+      });
+  });
+}
+
 async function selectedScene(page, selector) {
-  await page.waitForFunction((selector) => {
-    const scenes = window.__drawnoutMotion.scenes;
-    return [...document.querySelectorAll(`${selector} [data-motion-scene]`)].some((media) => {
-      const scene = scenes.find((entry) => entry.id === Number(media.dataset.motionScene));
-      return scene && Number.isFinite(scene.start) && scene.start >= 0 && scene.end > scene.start;
-    });
-  }, selector);
-  const scenes = await page.evaluate(() => window.__drawnoutMotion.scenes);
+  await page.waitForFunction(
+    (selector) =>
+      [...document.querySelectorAll(`${selector} [data-motion-scene]`)].some(
+        (media) => media.getClientRects().length > 0,
+      ),
+    selector,
+  );
+  const scenes = await sceneSnapshots(page);
   for (const media of await page.locator(`${selector} [data-motion-scene]`).all()) {
     const id = Number(await media.getAttribute('data-motion-scene'));
     const scene = scenes.find((entry) => entry.id === id);
@@ -52,10 +74,7 @@ async function selectedScene(page, selector) {
 }
 
 async function atProgress(page, media, scene, progress) {
-  const currentScene = await page.evaluate(
-    (id) => window.__drawnoutMotion.scenes.find((entry) => entry.id === id),
-    scene.id,
-  );
+  const currentScene = (await sceneSnapshots(page)).find((entry) => entry.id === scene.id);
   if (!currentScene) throw new Error(`Scene ${scene.id} disappeared before native scroll`);
   await page.evaluate(
     ({ start, end, progress }) => window.scrollTo(0, start + (end - start) * progress),
@@ -106,10 +125,7 @@ async function sceneScreenshot(page, cdp, media, scene, progress, file) {
   if (Math.abs(after - before.progress) > 0.04) {
     throw new Error(`Screenshot changed actual scroll progress for ${file}`);
   }
-  const currentScene = await page.evaluate(
-    (id) => window.__drawnoutMotion.scenes.find((entry) => entry.id === id),
-    scene.id,
-  );
+  const currentScene = (await sceneSnapshots(page)).find((entry) => entry.id === scene.id);
   return {
     file,
     intendedProgress: progress,
@@ -303,44 +319,197 @@ async function footerProgress(page, progress, duration = 700) {
   return page.locator('[data-site-footer]').evaluate((el) => ({
     progress: Number(el.dataset.footerProgress),
     phase: el.dataset.footerPhase,
-    composite: getComputedStyle(el.querySelector('[data-signature-composite]')).transform,
+    hand: getComputedStyle(el.querySelector('[data-signature-hand]')).transform,
+    plaque: getComputedStyle(el.querySelector('[data-signature-plaque]')).transform,
     signature: getComputedStyle(el.querySelector('[data-footer-signature]')).transform,
     scrollY,
   }));
 }
 
-async function captureStates(browser) {
-  for (const width of [390, 768, 1440]) {
-    const context = await browser.newContext({
-      viewport: { width, height: width === 390 ? 844 : 900 },
-    });
-    const page = await context.newPage();
-    const cdp = await context.newCDPSession(page);
-    await page.goto(baseURL, { waitUntil: 'domcontentloaded' });
-    await page.waitForFunction(() => document.documentElement.dataset.signatureIntro === 'playing');
-    for (const [state, time] of [
-      ['squares', 550],
-      ['wave', 1600],
-      ['signature', 3350],
-      ['homepage', 5200],
+async function introSnapshot(page) {
+  return page.evaluate(() => {
+    const root = document.documentElement;
+    const name = document.querySelector('[data-intro-name]');
+    const wave = document.querySelector('[data-intro-wave]');
+    const animation = document
+      .querySelector('[data-signature-intro-overlay]')
+      .getAnimations()
+      .find((entry) => entry.animationName?.includes('intro-exit'));
+    const signature = document.querySelector('[data-intro-signature]');
+    const hand = signature.querySelector('[data-signature-hand]');
+    const plaque = signature.querySelector('[data-signature-plaque]');
+    const range = document.createRange();
+    range.selectNodeContents(name);
+    const textBounds = range.getBoundingClientRect();
+    const layers = {};
+    for (const [label, layer] of [
+      ['hand', hand],
+      ['plaque', plaque],
     ]) {
-      await page.waitForTimeout(Math.max(0, time - (await page.evaluate(() => performance.now()))));
-      if (state === 'signature') {
+      const image = layer.querySelector('img');
+      const style = getComputedStyle(layer);
+      layers[label] = {
+        transform: style.transform,
+        y: new DOMMatrixReadOnly(style.transform).m42,
+        opacity: Number(style.opacity),
+        image: image.currentSrc,
+        loaded: image.complete && image.naturalWidth > 0,
+      };
+    }
+    return {
+      navigationMs: performance.now(),
+      elapsedMs: performance.now() - Number(root.dataset.signatureIntroStarted),
+      cssTimeMs: typeof animation?.currentTime === 'number' ? animation.currentTime : null,
+      intro: root.dataset.signatureIntro,
+      reason: root.dataset.signatureIntroReason,
+      endedMs: Number(root.dataset.signatureIntroEnded) || null,
+      waveOffset: Number.parseFloat(getComputedStyle(wave).strokeDashoffset),
+      wordmark: {
+        text: name.textContent.trim(),
+        clipPath: getComputedStyle(name).clipPath,
+        opacity: Number(getComputedStyle(name).opacity),
+        fontSize: getComputedStyle(name).fontSize,
+        bounds: {
+          x: textBounds.x,
+          y: textBounds.y,
+          width: textBounds.width,
+          height: textBounds.height,
+        },
+      },
+      signatureOpacity: Number(getComputedStyle(signature).opacity),
+      asset: signature.querySelector('[data-signature-artwork]').dataset.signatureAsset,
+      layers,
+    };
+  });
+}
+
+async function captureIntroStates(browser, viewport) {
+  // Each close-spaced keyframe gets a genuinely new browsing session. Waiting for
+  // the actual CSS animation clock never seeks or freezes the animation. CSS can
+  // start after the inline gate while styles load; measure both clocks honestly.
+  // Screenshot overhead cannot make the next stage miss its short live window.
+  for (const [state, time] of [
+    ['squares', 550],
+    ['wave', 1550],
+    ['wordmark', 2280],
+    ['separated', 2720],
+    ['contact', 3100],
+    ['signature', 3420],
+    ['homepage', 5200],
+  ]) {
+    const context = await browser.newContext({ viewport });
+    try {
+      const page = await context.newPage();
+      const cdp = await context.newCDPSession(page);
+      await page.goto(baseURL, { waitUntil: 'commit' });
+      await page.waitForFunction(
+        () => document.documentElement.dataset.signatureIntro === 'playing',
+      );
+      await page.waitForFunction(
+        ({ state, time }) => {
+          if (state === 'homepage') {
+            const started = Number(document.documentElement.dataset.signatureIntroStarted);
+            return started > 0 && performance.now() - started >= time;
+          }
+          const animation = document
+            .querySelector('[data-signature-intro-overlay]')
+            ?.getAnimations()
+            .find((entry) => entry.animationName?.includes('intro-exit'));
+          return typeof animation?.currentTime === 'number' && animation.currentTime >= time;
+        },
+        { state, time },
+      );
+      if (state === 'wordmark') {
         await page.waitForFunction(
-          () =>
-            document.documentElement.dataset.signatureIntro === 'playing' &&
-            Number(getComputedStyle(document.querySelector('[data-intro-signature]')).opacity) >
-              0.95,
+          () => {
+            const name = document.querySelector('[data-intro-name]');
+            const wave = document.querySelector('[data-intro-wave]');
+            const rightInset = Number.parseFloat(
+              getComputedStyle(name).clipPath.match(/inset\([^ ]+ ([^ ]+)/)?.[1] ?? '0',
+            );
+            return (
+              rightInset === 0 &&
+              Number(getComputedStyle(name).opacity) > 0.95 &&
+              Number.parseFloat(getComputedStyle(wave).strokeDashoffset) === 0
+            );
+          },
+          undefined,
+          { timeout: 1000 },
         );
       }
-      await screenshot(page, `intro-${width}-${state}.png`, {
-        state,
-        ...(await page.evaluate(() => ({
-          navigationMs: performance.now(),
-          intro: document.documentElement.dataset.signatureIntro,
-        }))),
+      const before = await introSnapshot(page);
+      if (state === 'homepage') {
+        if (before.intro !== 'completed' || before.reason !== 'complete' || before.endedMs > 5000)
+          throw new Error(`Automatic five-second handoff failed at ${viewport.width}px`);
+      } else if (
+        before.intro !== 'playing' ||
+        before.cssTimeMs === null ||
+        before.cssTimeMs >
+          {
+            squares: 1000,
+            wave: 2100,
+            wordmark: 2430,
+            separated: 3000,
+            contact: 3290,
+            signature: 3600,
+          }[state]
+      ) {
+        throw new Error(
+          `Missed live ${state} keyframe at ${viewport.width}px: CSS ${before.cssTimeMs}ms, gate ${before.elapsedMs}ms`,
+        );
+      }
+      if (state === 'wave' && !(before.waveOffset > 0.05 && before.waveOffset < 0.95))
+        throw new Error('Wave keyframe did not show a partial connecting stroke.');
+      if (['separated', 'contact', 'signature'].includes(state)) {
+        if (
+          !before.layers.hand.loaded ||
+          !before.layers.plaque.loaded ||
+          before.signatureOpacity < 0.95
+        )
+          throw new Error(`Independent signature assets were not visibly ready for ${state}`);
+      }
+      if (state === 'separated' && !(before.layers.hand.y > 20 && before.layers.plaque.y < -20))
+        throw new Error('Separated keyframe did not show opposite independent layer positions.');
+      if (
+        state === 'signature' &&
+        !(Math.abs(before.layers.hand.y) < 0.5 && Math.abs(before.layers.plaque.y) < 0.5)
+      )
+        throw new Error('Held keyframe did not reach shared native registration.');
+      const captured = await cdp.send('Page.captureScreenshot', {
+        format: 'png',
+        captureBeyondViewport: false,
+        fromSurface: true,
       });
+      const after = await introSnapshot(page);
+      const file = `intro-${viewport.width}-${state}.png`;
+      await writeFile(path.join(output, file), Buffer.from(captured.data, 'base64'));
+      manifest.screenshots.push({
+        file,
+        route: '/',
+        width: viewport.width,
+        state,
+        targetTimeMs: time,
+        targetClock: state === 'homepage' ? 'inline gate elapsed' : 'actual CSS animation',
+        before,
+        after,
+      });
+    } finally {
+      await context.close();
     }
+  }
+}
+
+async function captureStates(browser) {
+  for (const width of [390, 768, 1440]) {
+    const viewport = { width, height: width === 390 ? 844 : 900 };
+    await captureIntroStates(browser, viewport);
+    const context = await browser.newContext({ viewport });
+    const page = await context.newPage();
+    const cdp = await context.newCDPSession(page);
+    await page.goto(baseURL);
+    await page.waitForFunction(
+      () => document.documentElement.dataset.signatureIntro === 'completed',
+    );
     await settle(page);
     const { media, scene } = await selectedScene(page, '[data-work]');
     await atProgress(page, media, scene, 0.98);
@@ -439,8 +608,11 @@ async function captureRecording(browser, name, viewport) {
     mark('automatic opening');
     await open(page, '/');
     await page.waitForTimeout(6500);
-    if (await page.evaluate(() => document.documentElement.dataset.signatureIntro !== 'completed'))
-      throw new Error('Recording did not capture a complete automatic opening.');
+    const opening = await introSnapshot(page);
+    if (opening.intro !== 'completed' || opening.reason !== 'complete' || opening.endedMs > 5000)
+      throw new Error(
+        'Recording did not capture a complete automatic opening within five seconds.',
+      );
     await measure('/initial-home');
     mark('living gradient after intro');
     if (viewport.width > 768) {
@@ -527,6 +699,17 @@ const browser = await chromium.launch({
   args: ['--enable-unsafe-swiftshader', '--use-angle=swiftshader', '--ignore-gpu-blocklist'],
 });
 try {
+  // Prepare development modules and image derivatives before timed evidence.
+  // The real captures still use new contexts and an untouched first-visit intro.
+  const warmContext = await browser.newContext();
+  const warmPage = await warmContext.newPage();
+  await open(warmPage, '/#main');
+  await warmPage.waitForFunction(() =>
+    [...document.querySelectorAll('[data-signature-intro-overlay] img')].every(
+      (image) => image.complete && image.naturalWidth > 0,
+    ),
+  );
+  await warmContext.close();
   if (process.argv.includes('--recordings-only')) {
     const previous = JSON.parse(await readFile(manifestFile, 'utf8'));
     manifest.screenshots = previous.screenshots;

@@ -1,5 +1,7 @@
 # DrawnOut Loop — signature experience handoff
 
+> **Historical checkpoint:** this handoff describes commit `bba7f69` before the PR #4 opening correction. The current implementation is documented in [Opening revision handoff](OPENING_REVISION_HANDOFF.md), with [updated review evidence](../artifacts/signature-opening/README.md). The combined entrance described below has been replaced by separate raster hand/plaque layers; photorealistic 3D remains incomplete.
+
 The signature milestone adds the first-visit opening, living Afterglow gradient,
 selected editorial scroll treatments, linked public portfolio and shared closing
 composition. The website implementation is available for review. **The final

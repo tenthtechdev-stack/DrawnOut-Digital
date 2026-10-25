@@ -1,11 +1,19 @@
 # Signature asset process and production boundary
 
-The opening and footer share `src/components/SignatureArtwork.astro` and the same
-approved portrait reference. This is a **reference-composite motion prototype**.
-Its supplied hand and emblem move together. The descending outlined accent is a
-separate decorative frame, not a reconstructed emblem. Independent finger grip,
-emblem descent, changing occlusion and a photorealistic animated hand are **not
-complete**. Functional browser tests do not establish that visual requirement.
+The opening and footer now share two independently masked layers in
+`src/components/SignatureArtwork.astro`: an empty fixed-pose hand and the actual
+supplied illuminated plaque/emblem. This is a **separated raster motion
+prototype**, not completed photorealistic 3D animation. It replaces the rejected
+combined-image entrance and descending decorative outline described in the
+[PR #4 feedback](https://github.com/tenthtech/drawnout-digital/pull/4#issuecomment-6390052967).
+
+The plaque moves separately into the hand's existing pinch pose. No intact
+composite or substitute decorative frame is rendered by the shared component.
+The separation does not recover a hand rig, hidden plaque surfaces, changing
+finger contact or new lighting. Those production requirements remain open.
+The [revised opening gallery](../artifacts/signature-opening/README.md) and
+[revision handoff](OPENING_REVISION_HANDOFF.md) describe the current review;
+previous recordings remain historical evidence.
 
 ## Source inspection
 
@@ -21,12 +29,48 @@ logo-named file supplies no editable vector emblem.
 
 `scripts/signature/convert-reference.mjs` verifies both original files before
 rendering the intact SVG with Chromium at 810 × 1440, preserving alpha and the
-viewBox. It writes a lossless PNG for inspection and a quality-90 WebP for the
-shared site asset. The shipped WebP is approximately 85 KiB; Astro supplies
-responsive 450/810-pixel WebP derivatives. No fabricated hand layer, unrelated
-stock hand, social badge or replacement monogram has been added.
+viewBox. The resulting [lossless reference PNG](../artifacts/signature/hand-emblem-reference.png)
+is the source for the new separation. The previous intact WebP derivative stays
+preserved in Git history and the asset directory; the shared component now
+imports the separate PNGs and lets Astro generate responsive WebP derivatives.
+No unrelated stock hand or replacement monogram has been introduced.
 
-## Review evidence and editable study
+## Reproducible source-pixel separation
+
+`scripts/signature/separate-reference.mjs` first verifies the unchanged original
+SVG and reference PNG hashes. The reviewed
+[ownership mask](../design-assets/signature-layers/hand-mask.svg) assigns each
+source pixel exclusively to either the hand or plaque. Each output retains its
+source RGB bytes; alpha is either the original value or zero. The two full-size
+810 × 1440 canvases retain the same registration, with the hand rendered above
+the plaque. No source pixels are repainted, inpainted or newly generated.
+
+- `src/assets/signature/hand-empty.png` contains the hand, with the entire inset
+  plaque face transparent. Its finger pose and orange illumination remain fixed.
+- `src/assets/signature/emblem-plaque.png` contains the actual approved illuminated
+  plaque and emblem. Contact pixels assigned to the fingers stay with the hand,
+  so they do not descend as detached finger fragments.
+
+The [layer manifest](../design-assets/signature-layers/manifest.json) records
+output hashes, bytes and the reproducible native-pixel checks: no overlapping
+visible pixels, zero RGBA reconstruction error at original registration, and
+95,350 plaque-interior pixels with zero alpha in the empty-hand layer. These
+checks establish source fidelity, not anatomical realism or perfect rendering
+after browser scaling. The exact-pixel guarantee applies to the lossless native
+PNGs; the website's optimized, scaled WebPs can have compression differences and
+a small contact seam.
+
+The source never included plaque edges hidden behind the fingers. Its separated
+plaque therefore has small contact cutouts. At the right index contact, glass
+and skin are optically mixed; the short baked contact highlight stays with the
+hand. There are no clean hidden hand surfaces, articulated fingers, changing
+shadows/refraction or alternate camera views. The
+[layer notes](../design-assets/signature-layers/README.md) document the traced
+contact areas and limitations. An alpha-aware viewer or the browser is required
+to inspect the cutouts: hidden RGB under fully transparent pixels is retained
+for fidelity and must not be interpreted as visible artwork.
+
+## Historical material study and source evidence
 
 | Deliverable                                                                          | What it proves                                                                                               | Quality status                                                                              |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
@@ -36,7 +80,9 @@ stock hand, social badge or replacement monogram has been added.
 | [Asset manifest](../design-assets/signature-study/manifest.json)                     | Source/derivative hashes, bytes, provenance, rights boundary and missing production inputs                   | Inventory, not a rights certificate                                                         |
 | [Render report](../design-assets/signature-study/render-report.json)                 | Actual renderer/version/settings, elapsed time and output hashes                                             | Measured local render evidence                                                              |
 
-The reference is deliberately named as an image plane inside the `.blend` file.
+The Blender study predates the separated-layer revision and does not supply its
+hand or emblem assets. The reference is deliberately named as an image plane
+inside the `.blend` file.
 It is an emissive flat card, not recovered anatomy. The orange plate beside it is
 new geometric material-study work with 80 mm scene thickness, rounded edges,
 IOR 1.46, transmission 0.94 and roughness 0.12. It has no brand emblem. Three area
@@ -53,8 +99,19 @@ photorealism. The Blender image is review evidence, not a website background.
 
 ## Reproduce without changing the originals
 
-Install the project's locked Node dependencies, Chromium and Blender 4.3.2. Set
-`CHROMIUM_PATH` if Chromium is elsewhere. From the repository root:
+Reproduce the current two-layer assets with the project's locked Node dependencies:
+
+```sh
+node scripts/signature/separate-reference.mjs /tmp/drawnout-signature/layers
+```
+
+The optional output directory keeps committed files untouched. With no output
+argument, the command refreshes the two PNG assets and their manifest in the
+repository. Inspect those outputs before using a changed mask. Do not replace
+the supplied originals.
+
+The older conversion and Blender study can also be reproduced. Install Chromium
+and Blender 4.3.2, and set `CHROMIUM_PATH` if Chromium is elsewhere:
 
 ```sh
 node scripts/signature/convert-reference.mjs /tmp/drawnout-signature/reference
@@ -73,29 +130,33 @@ sampling budget. Exact encoded bytes may differ with browser/encoder/Blender
 versions; verify source hashes and visual fidelity rather than assuming outputs
 are byte-identical on every platform.
 
-To intentionally refresh the website derivative after reviewing conversion,
-run `node scripts/signature/convert-reference.mjs` with no output argument. Do
-not replace either original SVG. Keep large future sequences outside Git;
-commit their manifests, scripts, source scene when practical, and a few review
+The historical intact reference conversion can be refreshed deliberately with
+`node scripts/signature/convert-reference.mjs` after review, but that operation
+does not separate the hand or plaque. Keep large future sequences outside Git;
+commit manifests, scripts, a source scene when practical and selected review
 frames.
 
 ## Current motion and fallback behavior
 
-The portrait reference remains unstretched (`object-fit: contain`) in both
-placements. The footer uses an absolute decorative layer, responsive crop,
-gradient scrim and live HTML contact/navigation above it. Scroll progress raises
-the intact reference, lowers the accent frame, holds the pose and expands the
-composition. Reverse scrolling retraces the same timeline without changing
-document height. The current expansion is a responsive background composition;
-it does not recover missing landscape artwork outside the original portrait.
+Both layers use `object-fit: contain` and the same full portrait registration.
+In the opening, the empty hand rises from below while the actual plaque/emblem
+descends from above. They reach their common source coordinates before the
+automatic homepage transition. This demonstrates separate object motion into a
+fixed pose, not a physically simulated or deforming grasp.
 
-The static final pose is the default before scripting, with no JavaScript,
-reduced motion, data saving or failed animation imports. The reference and
-decorative frame cannot intercept pointer input. Normal links remain usable
-throughout. The implementation is marked
-`data-signature-asset="reference-composite-prototype"`; this process document and
-review gallery carry the production limitation without inserting development
-instructions into visitor-facing copy.
+The footer uses the same two assets and final registration. One native-scroll
+ScrollTrigger timeline raises the hand, lowers the plaque, holds the assembled
+pose and expands the composition beneath a scrim. Reverse scrolling retraces
+both objects and the expansion. Live HTML contact and navigation remain above
+the artwork. Neither decorative layer intercepts pointer input or changes the
+page height.
+
+The default unscripted state assembles both layers at their source coordinates.
+No JavaScript, reduced motion, data saving or failed animation imports preserve
+a static footer and usable links. The opening gate skips immediately for reduced
+motion and fails open on media failure. The shared component is marked
+`data-signature-asset="separated-raster-prototype"`; review documentation carries
+the limitation without adding implementation instructions to visitor-facing copy.
 
 ## Exact inputs still required for production
 

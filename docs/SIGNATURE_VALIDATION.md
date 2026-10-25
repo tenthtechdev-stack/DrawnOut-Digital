@@ -1,5 +1,7 @@
 # DrawnOut Loop — validation
 
+> **Historical validation:** these results belong to the pre-correction checkpoint `bba7f69`. They do not validate the revised wordmark or separated hand/plaque entrance. See [Opening revision validation](OPENING_REVISION_VALIDATION.md) for the subsequent run and [updated recordings](../artifacts/signature-opening/README.md).
+
 Local verification on 24 October 2026 for `feature/drawnout-signature-experience`, based on approved main `0ef900b72132f4ab1069da6b824cb1facfe2c95e`. No hosted CI, merge or public deployment is claimed.
 
 ## Automated results

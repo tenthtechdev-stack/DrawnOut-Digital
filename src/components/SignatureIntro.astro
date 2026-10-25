@@ -54,9 +54,7 @@ const positions = [
       ))}
     </div>
     <div class="intro-name" data-intro-name>
-      {'DrawnOut'.split('').map((letter, index) => (
-        <span style={`--letter:${0.74 + index * 0.16}s`}>{letter}</span>
-      ))}
+      DrawnOut
     </div>
     <div class="intro-signature" data-intro-signature>
       <SignatureArtwork variant="intro" />
@@ -89,7 +87,35 @@ const positions = [
     for (const image of overlay.querySelectorAll('img')) {
       if (image.complete && image.naturalWidth === 0) gate.finish('asset-error');
     }
-    if (!gate.start()) controller.abort();
+    if (!gate.start()) {
+      controller.abort();
+      return;
+    }
+    // CSS can resolve in separate browser frames (especially during startup).
+    // Anchor every storyboard actor to the gate's real document-clock start,
+    // rather than letting independently resolved CSS animations drift apart.
+    const origin = performance.now();
+    let syncFrame;
+    const synchronize = () => {
+      if (signal.aborted) return;
+      try {
+        const animations = overlay.getAnimations({ subtree: true });
+        const names = animations.map((animation) => animation.animationName ?? '');
+        if (
+          !['connect-projects', 'name-draw', 'empty-hand-rise', 'plaque-descend'].every((name) =>
+            names.some((animationName) => animationName.includes(name)),
+          )
+        ) {
+          syncFrame = requestAnimationFrame(synchronize);
+          return;
+        }
+        for (const animation of animations) animation.startTime = origin;
+      } catch {
+        gate.finish('animation-error');
+      }
+    };
+    signal.addEventListener('abort', () => cancelAnimationFrame(syncFrame), { once: true });
+    syncFrame = requestAnimationFrame(synchronize);
   })();
 </script>
 <script>
@@ -97,6 +123,9 @@ const positions = [
 </script>
 <style>
   .signature-intro {
+    --intro-grid-inset: max(var(--gutter), calc((100vw - var(--page-max)) / 2 + var(--gutter)));
+    --intro-draw-duration: 1.75s;
+    --intro-draw-delay: 0.5s;
     display: none;
     position: fixed;
     inset: 0;
@@ -119,7 +148,7 @@ const positions = [
     justify-content: space-between;
     gap: 20px;
     position: absolute;
-    inset-inline: clamp(22px, 4vw, 65px);
+    inset-inline: var(--intro-grid-inset);
     font-size: 11px;
     letter-spacing: 0.01em;
     z-index: 3;
@@ -207,21 +236,18 @@ const positions = [
   }
   .intro-name {
     position: absolute;
-    left: 50%;
-    top: 73%;
-    transform: translate(-50%, -50%);
+    left: var(--intro-grid-inset);
+    bottom: clamp(96px, 12svh, 144px);
+    width: max-content;
+    max-width: calc(100% - 2 * var(--intro-grid-inset));
     white-space: nowrap;
-    font-size: clamp(58px, 9.5vw, 140px);
+    font-size: clamp(48px, 17vw, 300px);
     line-height: 1;
     font-weight: 600;
     letter-spacing: -0.075em;
     color: #c14815;
+    clip-path: inset(0 100% 0 0);
     z-index: 3;
-  }
-  .intro-name span {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(25px);
   }
   .intro-signature {
     position: absolute;
@@ -248,27 +274,26 @@ const positions = [
     animation: artwork-arrive 0.42s calc(var(--reaction) + 0.1s) both;
   }
   :global(html[data-signature-intro='playing']) .intro-wave path {
-    animation: connect-projects 1.75s 0.5s linear both;
-  }
-  :global(html[data-signature-intro='playing']) .intro-name span {
-    animation: letter-arrive 0.32s var(--letter) both;
+    animation: connect-projects var(--intro-draw-duration) var(--intro-draw-delay) linear both;
   }
   :global(html[data-signature-intro='playing']) .intro-projects {
     animation: projects-depart 0.5s 2.25s both;
   }
   :global(html[data-signature-intro='playing']) .intro-name {
-    animation: name-resolve 0.6s 2.35s both;
+    /* The wave and live text finish together at 2.25s; hold the complete name
+       for 0.2s before the hand scene takes over. */
+    animation:
+      name-draw var(--intro-draw-duration) var(--intro-draw-delay) linear both,
+      name-resolve 0.35s 2.45s both;
   }
   :global(html[data-signature-intro='playing']) .intro-signature {
-    animation: signature-arrive 0.65s 2.55s both;
+    animation: signature-arrive 0.16s 2.42s both;
   }
-  :global(html[data-signature-intro='playing'])
-    .intro-signature
-    :global([data-signature-composite]) {
-    animation: reference-rise 0.8s 2.5s both;
+  :global(html[data-signature-intro='playing']) .intro-signature :global([data-signature-hand]) {
+    animation: empty-hand-rise 0.8s 2.5s cubic-bezier(0.22, 0.7, 0.2, 1) both;
   }
-  :global(html[data-signature-intro='playing']) .intro-signature :global([data-signature-frame]) {
-    animation: frame-descend 0.8s 2.5s both;
+  :global(html[data-signature-intro='playing']) .intro-signature :global([data-signature-plaque]) {
+    animation: plaque-descend 0.8s 2.5s cubic-bezier(0.22, 0.7, 0.2, 1) both;
   }
   @keyframes square-arrive {
     from {
@@ -309,10 +334,12 @@ const positions = [
       stroke-dashoffset: 0;
     }
   }
-  @keyframes letter-arrive {
+  @keyframes name-draw {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
     to {
-      opacity: 1;
-      transform: translateY(0);
+      clip-path: inset(0);
     }
   }
   @keyframes projects-depart {
@@ -323,9 +350,7 @@ const positions = [
   }
   @keyframes name-resolve {
     to {
-      transform: translate(-50%, calc(-50% + 11svh));
       opacity: 0;
-      scale: 0.8;
     }
   }
   @keyframes signature-arrive {
@@ -333,24 +358,24 @@ const positions = [
       opacity: 1;
     }
   }
-  @keyframes reference-rise {
+  @keyframes empty-hand-rise {
     from {
-      opacity: 0;
-      translate: 0 65px;
+      opacity: 1;
+      transform: translateY(45%);
     }
     to {
       opacity: 1;
-      translate: 0 0;
+      transform: translateY(0);
     }
   }
-  @keyframes frame-descend {
+  @keyframes plaque-descend {
     from {
-      opacity: 0;
-      translate: 0 -65px;
+      opacity: 1;
+      transform: translateY(-75%);
     }
     to {
       opacity: 1;
-      translate: 0 0;
+      transform: translateY(0);
     }
   }
   @keyframes intro-exit {
@@ -369,9 +394,6 @@ const positions = [
     }
     .intro-square {
       border-width: 2px;
-    }
-    .intro-name {
-      top: 64%;
     }
     .intro-signature {
       height: min(96svh, 900px);

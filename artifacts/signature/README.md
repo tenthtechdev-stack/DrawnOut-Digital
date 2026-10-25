@@ -1,5 +1,7 @@
 # DrawnOut Loop — signature experience review
 
+> **Historical gallery — opening not approved:** these captures show the pre-correction checkpoint `bba7f69`. Review the [revised opening gallery](../signature-opening/README.md) for the larger lower-left wordmark and separately moving hand/plaque prototype requested in [PR #4](https://github.com/tenthtech/drawnout-digital/pull/4#issuecomment-6390052967). Final photorealistic 3D remains incomplete.
+
 Review implementation on `feature/drawnout-signature-experience`; no merge or public deployment is authorized by this gallery.
 
 The opening and footer use the **same supplied hand/emblem composite as an interim motion prototype**. The hand and emblem are not independently rigged. The editable Blender file proves an acrylic material study, not completed photorealistic hand animation. See the [asset process and remaining production inputs](../../docs/SIGNATURE_ASSET_PROCESS.md).

@@ -2,9 +2,9 @@
 
 The **DrawnOut Loop / signature experience** extends approved Afterglow through Phase 4 on `feature/drawnout-signature-experience`, based on `main` at `0ef900b72132f4ab1069da6b824cb1facfe2c95e`.
 
-[Visual gallery and recordings](artifacts/signature/README.md) · [Implementation handoff](docs/SIGNATURE_HANDOFF.md) · [Validation](docs/SIGNATURE_VALIDATION.md) · [Asset process and production requirements](docs/SIGNATURE_ASSET_PROCESS.md)
+[Current opening gallery and recordings](artifacts/signature-opening/README.md) · [Revision handoff](docs/OPENING_REVISION_HANDOFF.md) · [Revision validation](docs/OPENING_REVISION_VALIDATION.md) · [Asset process and production requirements](docs/SIGNATURE_ASSET_PROCESS.md)
 
-The opening, living gradient, selected SplitText/ScrollTrigger choreography, immersive portfolio image, public portfolio routes and stable mobile navigation are implemented. The shared opening/footer hand is an **intact supplied-reference prototype**, not a newly rigged 3D hand. Independent gripping, emblem descent and changing occlusion remain production asset requirements. The included Blender scene is a reproducible glass/material study, clearly identified in the gallery.
+The PR #4 correction gives DrawnOut an oversized lower-left wordmark, with its progressive wipe synchronized to the project wave. The empty hand and actual approved illuminated plaque now move independently into the supplied final pose. This is a **separated raster prototype**, not completed photorealistic 3D: the fixed pinch, baked lighting and missing plaque edges require production assets. The shared footer uses the same two layers and reversible expansion. The living gradient, editorial motion, public portfolio and stable navigation remain part of the implementation. Opening visual approval is still pending; the included Blender scene remains a material study, not a hand rig.
 
 Astro 7, strict TypeScript, Tailwind 4, locally hosted Manrope and GSAP 3.15.0 remain the architecture. The hero shader has no WebGL framework dependency. Native scrolling, reduced motion, data saving and static/no-JavaScript fallbacks remain supported. No custom admin, agency showreel, public deployment or automatic merge is included.
 
@@ -37,11 +37,11 @@ npm run format:check
 With development running, execute browser tests from a separate working directory to preserve historical screenshots:
 
 ```sh
-mkdir -p /workspace/signature-review
-cd /workspace/signature-review
+mkdir -p /workspace/opening-review
+cd /workspace/opening-review
 node /workspace/drawnout-digital/node_modules/@playwright/test/cli.js test \
   --config /workspace/drawnout-digital/playwright.config.ts \
-  --workers 1 --output /workspace/signature-review/test-results
+  --workers 1 --output /workspace/opening-review/test-results
 ```
 
 Coverage includes responsive layouts, public portfolio links, navigation/filter history, no-JavaScript and failure fallbacks, intro deadlines/session/skip controls, native reversible text/image/footer scrolling, shader activity and pointer handling, mobile header stability and axe WCAG scans. Automated scans are not a claim of comprehensive accessibility or physical-device performance certification.
@@ -49,12 +49,12 @@ Coverage includes responsive layouts, public portfolio links, navigation/filter 
 ## Review evidence
 
 ```sh
-node scripts/capture-signature.mjs --out /workspace/signature-review/artifacts/signature
+node scripts/capture-signature.mjs --out /workspace/opening-review/artifacts/signature-opening
 ```
 
 Keep the watched repository quiet during capture; live reload invalidates continuous recordings. The utility captures real Chromium compositor frames and native scrolling, then encodes H.264 MP4/GIF previews with FFmpeg. `--stills-only` captures PNG states; `--recordings-only` retains an existing still manifest and records both complete journeys. `CHROMIUM_PATH`, `FFMPEG_PATH` and `MOTION_BASE_URL` are configurable.
 
-The asset process includes original-byte verification, transparent reference conversion, a packed Blender source scene and a reproducible CPU render. No unrelated stock hand or fabricated vector emblem is used.
+The asset process includes original-byte verification, lossless reference conversion and reproducible complementary hand/plaque masks. A separate historical Blender source scene provides a material study only. No unrelated stock hand or fabricated vector emblem is used. The [earlier signature gallery](artifacts/signature/README.md) remains available for comparison, with its original validation clearly marked historical.
 
 ## Portfolio updates
 

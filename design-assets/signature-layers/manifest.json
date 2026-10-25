@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "classification": "separated-raster-motion-prototype",
+  "source": {
+    "path": "artifacts/signature/hand-emblem-reference.png",
+    "sha256": "ea33bc55b3f18ca7233814898ddc07ab8618774aef693a5e635cae75a72dd4dd",
+    "bytes": 791798
+  },
+  "originals": [
+    {
+      "path": "design-assets/brand-originals/hand-and-icon-supplied.svg",
+      "sha256": "ea295f96073b0e789532551ec1787a9c10728fa46767ce27fb428ff1c3affcbb"
+    },
+    {
+      "path": "design-assets/brand-originals/logo-as-supplied.svg",
+      "sha256": "ea295f96073b0e789532551ec1787a9c10728fa46767ce27fb428ff1c3affcbb"
+    }
+  ],
+  "ownershipMask": {
+    "path": "design-assets/signature-layers/hand-mask.svg",
+    "sha256": "9cbccc9edcf21c6a89c9a90ed7cc24a0cd482550c87b1d59df5c5d006cee6a9b",
+    "threshold": 128,
+    "hand": "mask >= 128; retain source RGB and source alpha",
+    "plaque": "mask < 128; retain source RGB and source alpha",
+    "unownedPixels": "retain source RGB; alpha becomes zero"
+  },
+  "outputs": [
+    {
+      "path": "src/assets/signature/hand-empty.png",
+      "sha256": "958355ed60ab409376d39fa0fabc7740b62e60d5b0b6dc591d95dfd37b690edb",
+      "bytes": 914876,
+      "width": 810,
+      "height": 1440,
+      "format": "lossless RGBA PNG",
+      "visiblePixels": 484918
+    },
+    {
+      "path": "src/assets/signature/emblem-plaque.png",
+      "sha256": "c29dd991fbf6d004d590306b4264a43e85df014f799f92d19102033b946be6e6",
+      "bytes": 907941,
+      "width": 810,
+      "height": 1440,
+      "format": "lossless RGBA PNG",
+      "visiblePixels": 138063
+    }
+  ],
+  "verification": {
+    "pngRoundTrip": "exact RGBA byte equality for both encoded layers",
+    "assembledRawRGBA": "exact equality with decoded reference at native registration",
+    "maximumChannelError": 0,
+    "differingPixels": 0,
+    "overlapPixels": 0,
+    "alphaMismatchPixels": 0,
+    "rgbMismatchChannels": 0,
+    "plaqueInteriorPixelsChecked": 95350,
+    "plaqueInteriorAlphaInHand": 0,
+    "plaqueProbes": [
+      [280, 410],
+      [400, 500],
+      [300, 600],
+      [450, 700],
+      [550, 450]
+    ],
+    "handAndContactProbes": [
+      [120, 700],
+      [650, 680],
+      [400, 1200],
+      [480, 850],
+      [158, 631],
+      [173, 653],
+      [188, 681],
+      [569, 561],
+      [562, 580],
+      [564, 596]
+    ],
+    "originalAndReferenceHashesVerified": true,
+    "scope": "native 810 × 1440 pixels; browser scaling and animated occlusion require visual review"
+  },
+  "limitations": [
+    "Two masked raster images, not 3D geometry, an anatomical rig, or an articulated grasp.",
+    "The hand retains a fixed supplied pinch pose and baked orange illumination.",
+    "Hidden plaque edges are absent. The isolated plaque has small contact cutouts; no pixels were invented.",
+    "At the right fingertip, glass and skin are optically mixed. The visible contact patch, including its short baked highlight, stays with the hand to avoid descending finger fragments.",
+    "No clean hidden hand surface, changing shadows, refraction, or new camera views can be recovered from these pixels.",
+    "Exclusive native-pixel masks can produce a small resampling seam at contact when scaled in a browser."
+  ],
+  "sourceRights": "Client-supplied reference; no new third-party stock, generative content, or rights grant.",
+  "reproduce": "node scripts/signature/separate-reference.mjs [optional-output-directory]"
+}

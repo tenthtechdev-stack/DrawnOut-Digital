@@ -32,12 +32,44 @@ for (const width of [320, 390, 768, 1440, 1920]) {
       observer.observe({ type: 'layout-shift', buffered: true });
       const scene = document.querySelector<HTMLElement>('[data-signature-intro-overlay]')!;
       const path = document.querySelector('[data-intro-wave]')!;
-      const letters = [...document.querySelectorAll('[data-intro-name] span')];
-      const signature = document.querySelector('[data-intro-signature]')!;
+      const name = document.querySelector<HTMLElement>('[data-intro-name]')!;
+      const signature = document.querySelector<HTMLElement>('[data-intro-signature]')!;
+      const hand = signature.querySelector<HTMLElement>('[data-signature-hand]')!;
+      const plaque = signature.querySelector<HTMLElement>('[data-signature-plaque]')!;
+      const images = [...signature.querySelectorAll('img')];
+      const range = document.createRange();
+      range.selectNodeContents(name);
       let lastVisible = 0;
       let sawPartialWave = false;
-      let sawOrderedLetters = false;
-      let sawSignature = false;
+      let synchronizedSamples = 0;
+      let maximumRevealDrift = 0;
+      let sawFullName = false;
+      let sawIndependentEntrance = false;
+      let sawHeldPose = false;
+      const fullNameGeometries: {
+        text: string | null;
+        left: number;
+        right: number;
+        top: number;
+        bottom: number;
+        boxTop: number;
+        boxBottom: number;
+        width: number;
+        fontSize: number;
+        gridLeft: number;
+        skipTop: number;
+        viewportWidth: number;
+        viewportHeight: number;
+      }[] = [];
+      const layerCheckpoints: {
+        phase: string;
+        time: number;
+        handY: number;
+        plaqueY: number;
+        imagesLoaded: boolean;
+      }[] = [];
+      const revealCheckpoints: { time: number; waveRemaining: number; textRemaining: number }[] =
+        [];
       await new Promise<void>((resolve) => {
         function sample() {
           const style = getComputedStyle(scene);
@@ -48,15 +80,74 @@ for (const width of [320, 390, 768, 1440, 1920]) {
           )
             lastVisible = performance.now();
           const wave = parseFloat(getComputedStyle(path).strokeDashoffset);
-          if (wave > 0.05 && wave < 0.95) sawPartialWave = true;
-          if (
-            Number(getComputedStyle(letters[0]!).opacity) > 0.95 &&
-            Number(getComputedStyle(letters.at(-1)!).opacity) < 0.05 &&
-            wave > 0 &&
-            wave < 1
-          )
-            sawOrderedLetters = true;
-          if (Number(getComputedStyle(signature).opacity) > 0.95) sawSignature = true;
+          const nameStyle = getComputedStyle(name);
+          const inset = nameStyle.clipPath.match(/^inset\(([^)]+)\)$/)?.[1]?.split(/\s+/);
+          // A full wipe serializes as inset(0px); during the reveal the right
+          // inset is a percentage of the actual wordmark box.
+          const rightInset = inset?.[1] ?? inset?.[0];
+          const remaining = rightInset?.endsWith('%') ? parseFloat(rightInset) / 100 : 0;
+          if (wave > 0.05 && wave < 0.95 && remaining > 0.05 && remaining < 0.95) {
+            sawPartialWave = true;
+            synchronizedSamples += 1;
+            maximumRevealDrift = Math.max(maximumRevealDrift, Math.abs(wave - remaining));
+            if (
+              revealCheckpoints.length === 0 ||
+              revealCheckpoints.at(-1)!.waveRemaining - wave > 0.2
+            ) {
+              revealCheckpoints.push({
+                time: performance.now(),
+                waveRemaining: wave,
+                textRemaining: remaining,
+              });
+            }
+          }
+          if (wave < 0.001 && remaining < 0.001 && Number(nameStyle.opacity) > 0.95) {
+            sawFullName = true;
+            const text = range.getBoundingClientRect();
+            const box = name.getBoundingClientRect();
+            fullNameGeometries[0] = {
+              text: name.textContent?.trim() ?? null,
+              left: text.left,
+              right: text.right,
+              top: text.top,
+              bottom: text.bottom,
+              boxTop: box.top,
+              boxBottom: box.bottom,
+              width: text.width,
+              fontSize: parseFloat(nameStyle.fontSize),
+              gridLeft: scene.querySelector('.intro-top')!.getBoundingClientRect().left,
+              skipTop: scene.querySelector('[data-signature-skip]')!.getBoundingClientRect().top,
+              viewportWidth: innerWidth,
+              viewportHeight: innerHeight,
+            };
+          }
+          if (Number(getComputedStyle(signature).opacity) > 0.95 && Number(style.opacity) > 0.95) {
+            const handY = new DOMMatrixReadOnly(getComputedStyle(hand).transform).m42;
+            const plaqueY = new DOMMatrixReadOnly(getComputedStyle(plaque).transform).m42;
+            const imagesLoaded =
+              images.length === 2 &&
+              images.every((image) => image.complete && image.naturalWidth > 0);
+            if (!sawIndependentEntrance && handY > 5 && plaqueY < -5 && imagesLoaded) {
+              sawIndependentEntrance = true;
+              layerCheckpoints.push({
+                phase: 'separate entrance',
+                time: performance.now(),
+                handY,
+                plaqueY,
+                imagesLoaded,
+              });
+            }
+            if (!sawHeldPose && Math.abs(handY) < 0.2 && Math.abs(plaqueY) < 0.2 && imagesLoaded) {
+              sawHeldPose = true;
+              layerCheckpoints.push({
+                phase: 'registered held pose',
+                time: performance.now(),
+                handY,
+                plaqueY,
+                imagesLoaded,
+              });
+            }
+          }
           if (['completed', 'skipped'].includes(document.documentElement.dataset.signatureIntro!))
             resolve();
           else requestAnimationFrame(sample);
@@ -70,8 +161,18 @@ for (const width of [320, 390, 768, 1440, 1920]) {
         ended: Number(document.documentElement.dataset.signatureIntroEnded),
         reason: document.documentElement.dataset.signatureIntroReason,
         sawPartialWave,
-        sawOrderedLetters,
-        sawSignature,
+        synchronizedSamples,
+        maximumRevealDrift,
+        revealCheckpoints,
+        sawFullName,
+        fullNameGeometry: fullNameGeometries[0] ?? null,
+        sawIndependentEntrance,
+        sawHeldPose,
+        layerCheckpoints,
+        imageSources: images.map((image) => image.currentSrc),
+        legacyCompositeCount: signature.querySelectorAll(
+          '[data-signature-composite], [data-signature-frame]',
+        ).length,
       };
     });
     await test.info().attach(`intro-${width}`, {
@@ -83,8 +184,29 @@ for (const width of [320, 390, 768, 1440, 1920]) {
     expect(observations.ended).toBeLessThanOrEqual(5000);
     expect(observations.lastVisible).toBeLessThanOrEqual(5000);
     expect(observations.sawPartialWave).toBe(true);
-    expect(observations.sawOrderedLetters).toBe(true);
-    expect(observations.sawSignature).toBe(true);
+    expect(observations.synchronizedSamples).toBeGreaterThan(2);
+    expect(observations.maximumRevealDrift).toBeLessThan(0.02);
+    expect(observations.sawFullName).toBe(true);
+    expect(observations.fullNameGeometry).not.toBeNull();
+    const geometry = observations.fullNameGeometry!;
+    expect(geometry.text).toBe('DrawnOut');
+    expect(Math.abs(geometry.left - geometry.gridLeft)).toBeLessThan(2);
+    expect(geometry.width).toBeGreaterThan(geometry.viewportWidth * 0.6);
+    expect(geometry.fontSize).toBeGreaterThan(geometry.viewportWidth * 0.14);
+    expect(geometry.left).toBeGreaterThanOrEqual(12);
+    expect(geometry.right).toBeLessThanOrEqual(geometry.viewportWidth - 12);
+    // Range bounds expose horizontally clipped letters, but their vertical
+    // font metrics include unused ascender/descender space outside line-height.
+    // Use the wordmark's actual layout box for placement and Skip clearance.
+    expect(geometry.boxTop).toBeGreaterThan(geometry.viewportHeight * 0.5);
+    expect(geometry.boxBottom).toBeLessThan(geometry.skipTop - 10);
+    expect(observations.sawIndependentEntrance).toBe(true);
+    expect(observations.sawHeldPose).toBe(true);
+    expect(observations.layerCheckpoints[0]!.time).toBeLessThan(
+      observations.layerCheckpoints[1]!.time,
+    );
+    expect(observations.legacyCompositeCount).toBe(0);
+    expect(new Set(observations.imageSources).size).toBe(2);
     await expect(page.locator(overlay)).toBeHidden();
     await expect(page.locator('main h1')).toHaveText('We make ideas impossible to ignore.');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
@@ -246,9 +368,25 @@ test('delayed optional module never delays or replays the inline opening', async
 });
 
 test('failed signature media reveals the working homepage', async ({ page }) => {
-  await page.route('**/*hand-emblem-reference*', (route) => route.abort());
+  await page.route('**/*hand-empty*', (route) => route.abort());
   await page.goto('/');
   await expectSkipped(page);
+  await page.getByRole('link', { name: 'Explore Our Work', exact: true }).click();
+  await expect(page).toHaveURL('/work');
+});
+
+test('failed storyboard clock initialization reveals a working homepage', async ({ page }) => {
+  await page.addInitScript(() => {
+    Element.prototype.getAnimations = () => {
+      throw new Error('Animation clock unavailable');
+    };
+  });
+  await page.goto('/');
+  await expectSkipped(page);
+  await expect(page.locator('html')).toHaveAttribute(
+    'data-signature-intro-reason',
+    'animation-error',
+  );
   await page.getByRole('link', { name: 'Explore Our Work', exact: true }).click();
   await expect(page).toHaveURL('/work');
 });

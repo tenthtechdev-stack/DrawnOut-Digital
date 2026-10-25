@@ -1,6 +1,6 @@
 /**
- * The closing reference-composite study. The supplied hand/plaque is deliberately
- * kept intact: these transforms are choreography, not a claimed anatomical rig.
+ * The closing study moves separately masked hand and plaque pixels into their
+ * shared source coordinates. The fixed hand pose is a 2D layer, not a 3D rig.
  */
 import { allowsMotion } from '../lib/motion-policy';
 
@@ -38,26 +38,26 @@ async function start() {
     if (ticket !== generation || !footer.isConnected) return;
     gsap.registerPlugin(ScrollTrigger);
     const signature = footer.querySelector<HTMLElement>('[data-footer-signature]');
-    const composite = footer.querySelector<HTMLElement>('[data-signature-composite]');
-    const frame = footer.querySelector<HTMLElement>('[data-signature-frame]');
+    const hand = footer.querySelector<HTMLElement>('[data-signature-hand]');
+    const plaque = footer.querySelector<HTMLElement>('[data-signature-plaque]');
     const atmosphere = footer.querySelector<HTMLElement>('[data-footer-atmosphere]');
-    if (!signature || !composite || !frame || !atmosphere) return;
+    if (!signature || !hand || !plaque || !atmosphere) return;
 
     const context = gsap.context(() => {
       const mobile = () => window.innerWidth < 768;
       const timeline = gsap.timeline({ paused: true, defaults: { ease: 'none' } });
       timeline
         .fromTo(
-          composite,
+          hand,
           { yPercent: 38, opacity: 0.3 },
           { yPercent: 0, opacity: 1, duration: 0.48 },
           0,
         )
         .fromTo(
-          frame,
+          plaque,
           { yPercent: -65, opacity: 0 },
-          { yPercent: 0, opacity: 0.5, duration: 0.38 },
-          0.08,
+          { yPercent: 0, opacity: 1, duration: 0.48 },
+          0,
         )
         .fromTo(
           signature,
@@ -93,13 +93,15 @@ async function start() {
       sync(trigger.progress);
     }, footer);
     const refresh = () => ScrollTrigger.refresh();
-    const image = composite.querySelector('img');
-    if (image && !image.complete) image.addEventListener('load', refresh, { once: true });
+    const images = [hand.querySelector('img'), plaque.querySelector('img')];
+    for (const image of images) {
+      if (image && !image.complete) image.addEventListener('load', refresh, { once: true });
+    }
     document.fonts?.ready.then(() => {
       if (ticket === generation) refresh();
     });
     dispose = () => {
-      image?.removeEventListener('load', refresh);
+      for (const image of images) image?.removeEventListener('load', refresh);
       context.revert();
       footer.dataset.footerMotion = 'static';
       delete footer.dataset.footerProgress;
