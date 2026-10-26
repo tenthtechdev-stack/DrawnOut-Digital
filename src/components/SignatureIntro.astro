@@ -3,16 +3,40 @@ import { Image } from 'astro:assets';
 import { getPublicProjects } from '../lib/projects';
 import SignatureArtwork from './SignatureArtwork.astro';
 import Arrow from './Arrow.astro';
-const projects = (await getPublicProjects()).slice(0, 6);
-// Arrival times follow the arc length of the SVG wave (0.5s + path fraction × 1.75s).
-// The square response peaks as the stroke reaches its centre.
+// Explicit art direction, resolved only through the existing publication gate.
+// A withdrawn selection leaves its outlined slot empty rather than exposing a draft.
+const publicProjects = new Map(
+  (await getPublicProjects()).map((project) => [project.data.slug, project]),
+);
+const selections = [
+  'bunzo',
+  'triarch',
+  'sol-community-center',
+  'churros',
+  'by-tech-group',
+  'capture',
+];
+const projects = selections.map((slug) => {
+  const project = publicProjects.get(slug);
+  if (!project) return undefined;
+  // Keep the actual SOL signage image tied to its approved collection record.
+  const poster =
+    slug === 'sol-community-center'
+      ? (project.data.gallery.find(({ src }) => src.src.includes('sol-community-signage'))?.src ??
+        project.data.cover)
+      : project.data.cover;
+  return { project, poster };
+});
+// Arrival times follow the unchanged wave. The second square shifts slightly
+// up/left to give the enlarged apex frame its own breathing room. The final
+// value is when the wave enters the enlarged frame (SVG arc length, 0.5 + 1.75p).
 const positions = [
-  [13, 65, 0.506],
-  [30, 42, 0.764],
-  [45, 22, 1.0],
-  [56, 57, 1.306],
-  [74, 65, 1.534],
-  [87, 36, 1.808],
+  [13, 65, 0.506, 0.62],
+  [27, 39, 0.764, 0.879],
+  [45, 22, 1.0, 1.095],
+  [56, 57, 1.306, 1.407],
+  [74, 65, 1.534, 1.656],
+  [87, 36, 1.808, 1.898],
 ];
 ---
 
@@ -23,27 +47,37 @@ const positions = [
   </div>
   <div class="intro-composition" aria-hidden="true">
     <div class="intro-projects" data-intro-projects>
-      <svg class="intro-wave" viewBox="0 0 1000 720" fill="none">
+      <svg class="intro-wave" viewBox="0 0 1000 720" preserveAspectRatio="none" fill="none">
         <path
           data-intro-wave
           pathLength="1"
           d="M 35 650 C 80 610 90 520 130 468 S 245 360 300 302 S 405 135 450 158 S 485 385 560 410 S 675 535 740 468 S 795 270 870 259 S 951 335 960 420"
         />
       </svg>
-      {positions.map(([left, top, reaction], index) => (
+      {positions.map(([left, top, reaction, arrival], index) => (
         <div
-          class="intro-square-position"
-          style={`--left:${left}%;--top:${top}%;--entry:${index * 0.095}s;--reaction:${reaction}s`}
+          class:list={[
+            'intro-square-position',
+            { 'intro-square-position--sol': selections[index] === 'sol-community-center' },
+          ]}
+          style={`--left:${left}%;--top:${top}%;--entry:${index * 0.095}s;--reaction:${reaction}s;--artwork-arrival:${arrival}s`}
         >
-          <div class="intro-square" data-intro-square>
-            {projects[index] && index % 2 === 0 && (
+          <div
+            class="intro-square"
+            data-intro-square
+            data-intro-project={projects[index]?.project.data.slug}
+          >
+            {projects[index] && (
               <Image
-                src={projects[index].data.cover}
+                src={projects[index].poster}
                 alt=""
-                width={200}
-                height={200}
+                width={340}
+                height={selections[index] === 'sol-community-center' ? undefined : 340}
                 fit="cover"
-                quality={72}
+                widths={[160, 340]}
+                sizes="(max-width: 639px) 16vw, (max-width: 1100px) 15vw, 170px"
+                format="webp"
+                quality={78}
                 loading="eager"
                 decoding="async"
                 data-intro-artwork
@@ -124,6 +158,13 @@ const positions = [
 <style>
   .signature-intro {
     --intro-grid-inset: max(var(--gutter), calc((100vw - var(--page-max)) / 2 + var(--gutter)));
+    --intro-word-size: clamp(48px, 17vw, 300px);
+    --intro-word-bottom: clamp(96px, 12svh, 144px);
+    --intro-project-width: min(
+      86vw,
+      1000px,
+      calc((100svh - var(--intro-word-size) - var(--intro-word-bottom) - 90px) * 2.15)
+    );
     --intro-draw-duration: 1.75s;
     --intro-draw-delay: 0.5s;
     display: none;
@@ -190,9 +231,15 @@ const positions = [
   }
   .intro-projects {
     position: absolute;
-    width: min(82vw, 1000px);
-    aspect-ratio: 1000 / 720;
-    top: 45%;
+    width: var(--intro-project-width);
+    aspect-ratio: 1000 / 650;
+    top: min(
+      43svh,
+      calc(
+        100svh - var(--intro-word-bottom) - var(--intro-word-size) - 18px -
+          var(--intro-project-width) * 0.175
+      )
+    );
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -213,11 +260,14 @@ const positions = [
   }
   .intro-square-position {
     position: absolute;
-    width: 13%;
+    width: 15.5%;
     aspect-ratio: 1;
     left: var(--left);
     top: var(--top);
     transform: translate(-50%, -50%);
+  }
+  .intro-square-position--sol {
+    width: 17%;
   }
   .intro-square {
     width: 100%;
@@ -234,14 +284,20 @@ const positions = [
     object-fit: cover;
     opacity: 0;
   }
+  .intro-square-position--sol .intro-square {
+    background: #e4e0d9;
+  }
+  .intro-square-position--sol img {
+    object-fit: contain;
+  }
   .intro-name {
     position: absolute;
     left: var(--intro-grid-inset);
-    bottom: clamp(96px, 12svh, 144px);
+    bottom: var(--intro-word-bottom);
     width: max-content;
     max-width: calc(100% - 2 * var(--intro-grid-inset));
     white-space: nowrap;
-    font-size: clamp(48px, 17vw, 300px);
+    font-size: var(--intro-word-size);
     line-height: 1;
     font-weight: 600;
     letter-spacing: -0.075em;
@@ -271,7 +327,7 @@ const positions = [
       square-respond 0.48s var(--reaction) both;
   }
   :global(html[data-signature-intro='playing']) .intro-square img {
-    animation: artwork-arrive 0.42s calc(var(--reaction) + 0.1s) both;
+    animation: artwork-arrive 0.28s var(--artwork-arrival) both;
   }
   :global(html[data-signature-intro='playing']) .intro-wave path {
     animation: connect-projects var(--intro-draw-duration) var(--intro-draw-delay) linear both;
@@ -388,9 +444,11 @@ const positions = [
     .intro-top > span:last-child {
       display: none;
     }
-    .intro-projects {
-      width: 94vw;
-      top: 43%;
+    .signature-intro {
+      --intro-project-width: min(
+        94vw,
+        calc((100svh - var(--intro-word-size) - var(--intro-word-bottom) - 90px) * 2.15)
+      );
     }
     .intro-square {
       border-width: 2px;
