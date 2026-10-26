@@ -1,4 +1,8 @@
-[Current opening correction gallery and recordings — PR #4 visual review](signature-opening/README.md)
+[Contact page — desktop, tablet and mobile review](contact/README.md)
+
+[Approved opening project-square gallery and recordings](signature-squares/README.md)
+
+[Earlier opening correction gallery and recordings — PR #4](signature-opening/README.md)
 
 [Historical signature experience gallery before the opening correction](signature/README.md)
 

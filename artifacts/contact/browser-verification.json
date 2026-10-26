@@ -1,0 +1,2931 @@
+{
+  "stats": {
+    "startTime": "2026-10-26T15:52:32.430Z",
+    "duration": 283017.749,
+    "expected": 156,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "concept a: usable at 360px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 786
+        }
+      ]
+    },
+    {
+      "title": "concept a: usable at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 942
+        }
+      ]
+    },
+    {
+      "title": "concept a: usable at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 700
+        }
+      ]
+    },
+    {
+      "title": "concept a: usable at 1024px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 724
+        }
+      ]
+    },
+    {
+      "title": "concept a: usable at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2245
+        }
+      ]
+    },
+    {
+      "title": "concept a: usable at 1920px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1209
+        }
+      ]
+    },
+    {
+      "title": "concept a: no JavaScript and reduced motion remain readable",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 813
+        }
+      ]
+    },
+    {
+      "title": "concept b: usable at 360px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 874
+        }
+      ]
+    },
+    {
+      "title": "concept b: usable at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1195
+        }
+      ]
+    },
+    {
+      "title": "concept b: usable at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1157
+        }
+      ]
+    },
+    {
+      "title": "concept b: usable at 1024px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1509
+        }
+      ]
+    },
+    {
+      "title": "concept b: usable at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1656
+        }
+      ]
+    },
+    {
+      "title": "concept b: usable at 1920px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 927
+        }
+      ]
+    },
+    {
+      "title": "concept b: no JavaScript and reduced motion remain readable",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 398
+        }
+      ]
+    },
+    {
+      "title": "concept switch changes the layout and preserves the supplied copy",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 577
+        }
+      ]
+    },
+    {
+      "title": "Contact is responsive and accessible at 390px with official contact links",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1491
+        }
+      ]
+    },
+    {
+      "title": "Contact is responsive and accessible at 768px with official contact links",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1512
+        }
+      ]
+    },
+    {
+      "title": "Contact is responsive and accessible at 1440px with official contact links",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1452
+        }
+      ]
+    },
+    {
+      "title": "an unconfigured form never posts or reports success and offers email instead",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 553
+        }
+      ]
+    },
+    {
+      "title": "no JavaScript leaves the unconfigured form safe and direct contact usable",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 963
+        }
+      ]
+    },
+    {
+      "title": "required fields announce errors, focus the summary and link back to controls",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1486
+        }
+      ]
+    },
+    {
+      "title": "a configured form has a native POST fallback without JavaScript",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 867
+        }
+      ]
+    },
+    {
+      "title": "whitespace-only values and malformed email are rejected without a request",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 572
+        }
+      ]
+    },
+    {
+      "title": "input limits and the honeypot reject oversized or automated submissions",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 643
+        }
+      ]
+    },
+    {
+      "title": "provider acceptance is announced honestly and duplicate submissions stay blocked",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 720
+        }
+      ]
+    },
+    {
+      "title": "http provider failure keeps the enquiry and never announces success",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 550
+        }
+      ]
+    },
+    {
+      "title": "network provider failure keeps the enquiry and never announces success",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 595
+        }
+      ]
+    },
+    {
+      "title": "malformed provider failure keeps the enquiry and never announces success",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 614
+        }
+      ]
+    },
+    {
+      "title": "not-accepted provider failure keeps the enquiry and never announces success",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 583
+        }
+      ]
+    },
+    {
+      "title": "conflicting-error provider failure keeps the enquiry and never announces success",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 633
+        }
+      ]
+    },
+    {
+      "title": "a timed-out request reports uncertainty without an automatic retry",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 614
+        }
+      ]
+    },
+    {
+      "title": "correcting errors and explicitly retrying a rejected submission preserves a valid enquiry",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 725
+        }
+      ]
+    },
+    {
+      "title": "Afterglow foundation is readable and complete at 320px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1221
+        }
+      ]
+    },
+    {
+      "title": "Afterglow foundation is readable and complete at 360px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1179
+        }
+      ]
+    },
+    {
+      "title": "Afterglow foundation is readable and complete at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2193
+        }
+      ]
+    },
+    {
+      "title": "Afterglow foundation is readable and complete at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2842
+        }
+      ]
+    },
+    {
+      "title": "Afterglow foundation is readable and complete at 1024px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2223
+        }
+      ]
+    },
+    {
+      "title": "Afterglow foundation is readable and complete at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4084
+        }
+      ]
+    },
+    {
+      "title": "Afterglow foundation is readable and complete at 1920px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1636
+        }
+      ]
+    },
+    {
+      "title": "mobile navigation traps focus, closes with Escape, and restores the trigger",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 889
+        }
+      ]
+    },
+    {
+      "title": "mobile navigation closes after link selection and desktop resize releases its lock",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 990
+        }
+      ]
+    },
+    {
+      "title": "mobile navigation dismisses on the backdrop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 727
+        }
+      ]
+    },
+    {
+      "title": "no-JavaScript mobile navigation and reduced-motion content stay usable",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 739
+        }
+      ]
+    },
+    {
+      "title": "Work route has shared navigation, metadata, and correct current-page state",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 489
+        }
+      ]
+    },
+    {
+      "title": "Services route has shared navigation, metadata, and correct current-page state",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 369
+        }
+      ]
+    },
+    {
+      "title": "About route has shared navigation, metadata, and correct current-page state",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 659
+        }
+      ]
+    },
+    {
+      "title": "Contact route has shared navigation, metadata, and correct current-page state",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 430
+        }
+      ]
+    },
+    {
+      "title": "hero entrance starts before its first painted text and never replays at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2627
+        }
+      ]
+    },
+    {
+      "title": "hero entrance starts before its first painted text and never replays at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2687
+        }
+      ]
+    },
+    {
+      "title": "hero entrance starts before its first painted text and never replays at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2721
+        }
+      ]
+    },
+    {
+      "title": "late GSAP loading releases the hero watchdog and preserves the visible static text",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3172
+        }
+      ]
+    },
+    {
+      "title": "motion enhancement preserves readable content and normal scrolling at 320px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1553
+        }
+      ]
+    },
+    {
+      "title": "motion enhancement preserves readable content and normal scrolling at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1540
+        }
+      ]
+    },
+    {
+      "title": "motion enhancement preserves readable content and normal scrolling at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1667
+        }
+      ]
+    },
+    {
+      "title": "motion enhancement preserves readable content and normal scrolling at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1705
+        }
+      ]
+    },
+    {
+      "title": "motion enhancement preserves readable content and normal scrolling at 1920px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1646
+        }
+      ]
+    },
+    {
+      "title": "home image expansion completes and reverses without layout shifts at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1093
+        }
+      ]
+    },
+    {
+      "title": "home image expansion completes and reverses without layout shifts at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1420
+        }
+      ]
+    },
+    {
+      "title": "home image expansion completes and reverses without layout shifts at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1019
+        }
+      ]
+    },
+    {
+      "title": "work image expansion completes and reverses without layout shifts at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 949
+        }
+      ]
+    },
+    {
+      "title": "work image expansion completes and reverses without layout shifts at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 903
+        }
+      ]
+    },
+    {
+      "title": "work image expansion completes and reverses without layout shifts at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 881
+        }
+      ]
+    },
+    {
+      "title": "case image expansion completes and reverses without layout shifts at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1054
+        }
+      ]
+    },
+    {
+      "title": "case image expansion completes and reverses without layout shifts at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1026
+        }
+      ]
+    },
+    {
+      "title": "case image expansion completes and reverses without layout shifts at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 981
+        }
+      ]
+    },
+    {
+      "title": "filter changes, resize and repeated initialization keep one scoped motion system",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1162
+        }
+      ]
+    },
+    {
+      "title": "live reduced-motion changes remove scroll choreography and restore it without duplicates",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1024
+        }
+      ]
+    },
+    {
+      "title": "no-JavaScript pages retain readable text, portfolio imagery and navigation",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1206
+        }
+      ]
+    },
+    {
+      "title": "failed GSAP downloads leave visible content and a usable static page",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 971
+        }
+      ]
+    },
+    {
+      "title": "keyboard focus exposes the complete interactive portfolio image",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 831
+        }
+      ]
+    },
+    {
+      "title": "editorial Work index loads responsive approved artwork at 320px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2029
+        }
+      ]
+    },
+    {
+      "title": "editorial Work index loads responsive approved artwork at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3013
+        }
+      ]
+    },
+    {
+      "title": "editorial Work index loads responsive approved artwork at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4479
+        }
+      ]
+    },
+    {
+      "title": "editorial Work index loads responsive approved artwork at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 5386
+        }
+      ]
+    },
+    {
+      "title": "editorial Work index loads responsive approved artwork at 1920px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1932
+        }
+      ]
+    },
+    {
+      "title": "Work categories derive from records and support URL history and keyboard operation",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1062
+        }
+      ]
+    },
+    {
+      "title": "bunzo case page preserves art direction and navigation at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1772
+        }
+      ]
+    },
+    {
+      "title": "bunzo case page preserves art direction and navigation at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2234
+        }
+      ]
+    },
+    {
+      "title": "bunzo case page preserves art direction and navigation at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3643
+        }
+      ]
+    },
+    {
+      "title": "triarch case page preserves art direction and navigation at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1634
+        }
+      ]
+    },
+    {
+      "title": "triarch case page preserves art direction and navigation at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1844
+        }
+      ]
+    },
+    {
+      "title": "triarch case page preserves art direction and navigation at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2930
+        }
+      ]
+    },
+    {
+      "title": "public project navigation stays in the public route namespace and unavailable URLs fail",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1431
+        }
+      ]
+    },
+    {
+      "title": "Work and case pages remain usable without JavaScript and with reduced motion",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 733
+        }
+      ]
+    },
+    {
+      "title": "reduced-motion Work interactions stay visible with no running animations",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 604
+        }
+      ]
+    },
+    {
+      "title": "every approved project opens a public case from Work with truthful visible fields and usable neighbors",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3845
+        }
+      ]
+    },
+    {
+      "title": "signature WCAG scan / at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1381
+        }
+      ]
+    },
+    {
+      "title": "signature WCAG scan /work at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1236
+        }
+      ]
+    },
+    {
+      "title": "signature WCAG scan /work/bunzo at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1123
+        }
+      ]
+    },
+    {
+      "title": "signature WCAG scan /contact at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1085
+        }
+      ]
+    },
+    {
+      "title": "signature WCAG scan / at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1584
+        }
+      ]
+    },
+    {
+      "title": "signature WCAG scan /work at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1334
+        }
+      ]
+    },
+    {
+      "title": "signature WCAG scan /work/bunzo at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1221
+        }
+      ]
+    },
+    {
+      "title": "signature WCAG scan /contact at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1259
+        }
+      ]
+    },
+    {
+      "title": "mobile menu remains accessible with the signature experience",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1098
+        }
+      ]
+    },
+    {
+      "title": "major portfolio image opens from an editorial frame to near full bleed at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 987
+        }
+      ]
+    },
+    {
+      "title": "manifesto words follow actual scroll and reverse at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2030
+        }
+      ]
+    },
+    {
+      "title": "major portfolio image opens from an editorial frame to near full bleed at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1124
+        }
+      ]
+    },
+    {
+      "title": "manifesto words follow actual scroll and reverse at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1983
+        }
+      ]
+    },
+    {
+      "title": "selected editorial lines and words reveal once and reflow safely after resizing",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2551
+        }
+      ]
+    },
+    {
+      "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3450
+        }
+      ]
+    },
+    {
+      "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3638
+        }
+      ]
+    },
+    {
+      "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3722
+        }
+      ]
+    },
+    {
+      "title": "footer reduced-motion preference restores composed static artwork and working navigation",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1367
+        }
+      ]
+    },
+    {
+      "title": "footer remains composed with JavaScript disabled",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 692
+        }
+      ]
+    },
+    {
+      "title": "footer stays available when the animation libraries fail to load",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 763
+        }
+      ]
+    },
+    {
+      "title": "living shader keeps painting after the intro at 390px and pauses offscreen",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 7470
+        }
+      ]
+    },
+    {
+      "title": "living shader keeps painting after the intro at 1440px and pauses offscreen",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 7573
+        }
+      ]
+    },
+    {
+      "title": "desktop pointer response eases towards the cursor while mobile touch preserves autonomous motion",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4653
+        }
+      ]
+    },
+    {
+      "title": "visibility suspension pauses the shader clock and resumes without a time jump",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 5607
+        }
+      ]
+    },
+    {
+      "title": "WebGL context failure selects animated CSS and a live preference change restores static artwork",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2650
+        }
+      ]
+    },
+    {
+      "title": "unavailable GPU uses visibly flowing CSS without adding a rendering loop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2920
+        }
+      ]
+    },
+    {
+      "title": "initial reduced motion and data saving never initialize GPU rendering",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1526
+        }
+      ]
+    },
+    {
+      "title": "stable mobile header at 320px with no-preference, reload and direct case",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1397
+        }
+      ]
+    },
+    {
+      "title": "stable mobile header at 320px with reduce, reload and direct case",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1271
+        }
+      ]
+    },
+    {
+      "title": "stable header through delayed navigation and fonts at 320px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1446
+        }
+      ]
+    },
+    {
+      "title": "failed navigation module keeps native menu and stable geometry at 320px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1195
+        }
+      ]
+    },
+    {
+      "title": "no-JavaScript native menu preserves header geometry at 320px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 885
+        }
+      ]
+    },
+    {
+      "title": "stable mobile header at 390px with no-preference, reload and direct case",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1492
+        }
+      ]
+    },
+    {
+      "title": "stable mobile header at 390px with reduce, reload and direct case",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1311
+        }
+      ]
+    },
+    {
+      "title": "stable header through delayed navigation and fonts at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1389
+        }
+      ]
+    },
+    {
+      "title": "failed navigation module keeps native menu and stable geometry at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1139
+        }
+      ]
+    },
+    {
+      "title": "no-JavaScript native menu preserves header geometry at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 900
+        }
+      ]
+    },
+    {
+      "title": "opening completes automatically within five navigation seconds at 320px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4452
+        }
+      ]
+    },
+    {
+      "title": "opening completes automatically within five navigation seconds at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4460
+        }
+      ]
+    },
+    {
+      "title": "opening completes automatically within five navigation seconds at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4506
+        }
+      ]
+    },
+    {
+      "title": "opening completes automatically within five navigation seconds at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4582
+        }
+      ]
+    },
+    {
+      "title": "opening completes automatically within five navigation seconds at 1920px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4442
+        }
+      ]
+    },
+    {
+      "title": "Escape immediately bypasses the opening",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 712
+        }
+      ]
+    },
+    {
+      "title": "Enter immediately bypasses the opening",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 737
+        }
+      ]
+    },
+    {
+      "title": "Space immediately bypasses the opening",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 688
+        }
+      ]
+    },
+    {
+      "title": "Tab immediately bypasses the opening",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 746
+        }
+      ]
+    },
+    {
+      "title": "wheel bypass preserves the original native scroll input",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 678
+        }
+      ]
+    },
+    {
+      "title": "visible skip control immediately reveals the homepage",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 944
+        }
+      ]
+    },
+    {
+      "title": "an underlying navigation click keeps its first action and the intro never replays",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1312
+        }
+      ]
+    },
+    {
+      "title": "direct case and hash destinations bypass the intro",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 866
+        }
+      ]
+    },
+    {
+      "title": "reduced motion reaches the homepage immediately and remains readable without JavaScript",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1117
+        }
+      ]
+    },
+    {
+      "title": "data saving bypasses the opening",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 744
+        }
+      ]
+    },
+    {
+      "title": "an opted-out first homepage visit never introduces the intro on an internal return",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 897
+        }
+      ]
+    },
+    {
+      "title": "unavailable session storage fails open",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 663
+        }
+      ]
+    },
+    {
+      "title": "a mobile tap immediately bypasses the intro",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 644
+        }
+      ]
+    },
+    {
+      "title": "live reduced-motion preference immediately cancels the opening",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 597
+        }
+      ]
+    },
+    {
+      "title": "delayed optional module never delays or replays the inline opening",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 6259
+        }
+      ]
+    },
+    {
+      "title": "failed signature media reveals the working homepage",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 943
+        }
+      ]
+    },
+    {
+      "title": "failed storyboard clock initialization reveals a working homepage",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 920
+        }
+      ]
+    },
+    {
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 320px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 5054
+        }
+      ]
+    },
+    {
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 5118
+        }
+      ]
+    },
+    {
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 5091
+        }
+      ]
+    },
+    {
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 5053
+        }
+      ]
+    },
+    {
+      "title": "Phase 2 storytelling and original portfolio remain readable at 320px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1336
+        }
+      ]
+    },
+    {
+      "title": "Phase 2 storytelling and original portfolio remain readable at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2812
+        }
+      ]
+    },
+    {
+      "title": "Phase 2 storytelling and original portfolio remain readable at 768px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3119
+        }
+      ]
+    },
+    {
+      "title": "Phase 2 storytelling and original portfolio remain readable at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4287
+        }
+      ]
+    },
+    {
+      "title": "Phase 2 storytelling and original portfolio remain readable at 1920px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1586
+        }
+      ]
+    },
+    {
+      "title": "new homepage story remains usable without JavaScript",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 648
+        }
+      ]
+    },
+    {
+      "title": "reduced-motion storytelling preserves visibility and a keyboard-usable mobile menu",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 621
+        }
+      ]
+    }
+  ],
+  "measurements": [
+    {
+      "name": "320-no-preference-home",
+      "data": {
+        "samples": [
+          {
+            "time": 143.69999999925494,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": false
+          },
+          {
+            "time": 275.19999999925494,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "320-no-preference-reload",
+      "data": {
+        "samples": [
+          {
+            "time": 70.30000000074506,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": false
+          },
+          {
+            "time": 87.80000000074506,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "320-no-preference-direct-case",
+      "data": {
+        "samples": [
+          {
+            "time": 66.30000000074506,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": false
+          },
+          {
+            "time": 97.90000000037253,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "320-reduce-home",
+      "data": {
+        "samples": [
+          {
+            "time": 201.59999999962747,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": false
+          },
+          {
+            "time": 267,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "320-reduce-reload",
+      "data": {
+        "samples": [
+          {
+            "time": 67.09999999962747,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": false
+          },
+          {
+            "time": 105.19999999925494,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "320-reduce-direct-case",
+      "data": {
+        "samples": [
+          {
+            "time": 49.20000000111759,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": false
+          },
+          {
+            "time": 69.30000000074506,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "320-delayed-module-fonts",
+      "data": {
+        "samples": [
+          {
+            "time": 248.80000000074506,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": false
+          },
+          {
+            "time": 1086,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "320-failed-module",
+      "data": {
+        "samples": [
+          {
+            "time": 154.7999999988824,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": false
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "320-failed-module-internal",
+      "data": {
+        "samples": [
+          {
+            "time": 82.69999999925494,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 165,
+            "actionWidth": 133,
+            "enhanced": false
+          }
+        ],
+        "layoutShiftSum": 0.018036151479077292,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "390-no-preference-home",
+      "data": {
+        "samples": [
+          {
+            "time": 242.5,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": false
+          },
+          {
+            "time": 316.90000000037253,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "390-no-preference-reload",
+      "data": {
+        "samples": [
+          {
+            "time": 101.10000000149012,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": false
+          },
+          {
+            "time": 111.5,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "390-no-preference-direct-case",
+      "data": {
+        "samples": [
+          {
+            "time": 54.399999998509884,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": false
+          },
+          {
+            "time": 72.59999999962747,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "390-reduce-home",
+      "data": {
+        "samples": [
+          {
+            "time": 173,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": false
+          },
+          {
+            "time": 236.2000000011176,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "390-reduce-reload",
+      "data": {
+        "samples": [
+          {
+            "time": 54.79999999888241,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": false
+          },
+          {
+            "time": 92.40000000037253,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "390-reduce-direct-case",
+      "data": {
+        "samples": [
+          {
+            "time": 47.80000000074506,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": false
+          },
+          {
+            "time": 94.59999999962747,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "390-delayed-module-fonts",
+      "data": {
+        "samples": [
+          {
+            "time": 157.2999999988824,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": false
+          },
+          {
+            "time": 982.2999999988824,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": true
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "390-failed-module",
+      "data": {
+        "samples": [
+          {
+            "time": 227.19999999925494,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": false
+          }
+        ],
+        "layoutShiftSum": 0,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "390-failed-module-internal",
+      "data": {
+        "samples": [
+          {
+            "time": 55,
+            "mainTop": 125,
+            "height": 89,
+            "actionLeft": 218,
+            "actionWidth": 150,
+            "enhanced": false
+          }
+        ],
+        "layoutShiftSum": 0.025526760923539976,
+        "headerShiftSum": 0
+      }
+    },
+    {
+      "name": "intro-320",
+      "data": {
+        "layoutShiftSum": 0,
+        "lastVisible": 4237.4000000003725,
+        "ended": 4289.2,
+        "reason": "complete",
+        "sawPartialWave": true,
+        "synchronizedSamples": 94,
+        "maximumRevealDrift": 1.1102230246251565e-16,
+        "revealCheckpoints": [
+          {
+            "time": 688.1999999992549,
+            "waveRemaining": 0.943486,
+            "textRemaining": 0.943486
+          },
+          {
+            "time": 1040.800000000745,
+            "waveRemaining": 0.743486,
+            "textRemaining": 0.7434860000000001
+          },
+          {
+            "time": 1404.4000000003725,
+            "waveRemaining": 0.533943,
+            "textRemaining": 0.5339430000000001
+          },
+          {
+            "time": 1771.199999999255,
+            "waveRemaining": 0.3244,
+            "textRemaining": 0.32439999999999997
+          },
+          {
+            "time": 2137.699999999255,
+            "waveRemaining": 0.114971,
+            "textRemaining": 0.11497099999999999
+          }
+        ],
+        "sawFullName": true,
+        "fullNameGeometry": {
+          "text": "DrawnOut",
+          "left": 22,
+          "right": 249.234375,
+          "top": 733.59375,
+          "bottom": 794.59375,
+          "boxTop": 737.59375,
+          "boxBottom": 792,
+          "width": 227.234375,
+          "fontSize": 54.4,
+          "gridLeft": 22,
+          "skipTop": 831,
+          "viewportWidth": 320,
+          "viewportHeight": 900
+        },
+        "sawIndependentEntrance": true,
+        "sawHeldPose": true,
+        "layerCheckpoints": [
+          {
+            "phase": "separate entrance",
+            "time": 2638.0999999996275,
+            "handY": 310.106,
+            "plaqueY": -516.843,
+            "imagesLoaded": true
+          },
+          {
+            "phase": "registered held pose",
+            "time": 3354.300000000745,
+            "handY": 0.117547,
+            "plaqueY": -0.195912,
+            "imagesLoaded": true
+          }
+        ],
+        "imageSources": [
+          "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-contact%2Fsrc%2Fassets%2Fsignature%2Femblem-plaque.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=450&h=800&q=92&f=webp",
+          "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-contact%2Fsrc%2Fassets%2Fsignature%2Fhand-empty.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=450&h=800&q=92&f=webp"
+        ],
+        "legacyCompositeCount": 0
+      }
+    },
+    {
+      "name": "intro-390",
+      "data": {
+        "layoutShiftSum": 0,
+        "lastVisible": 4221.199999999255,
+        "ended": 4264.1,
+        "reason": "complete",
+        "sawPartialWave": true,
+        "synchronizedSamples": 94,
+        "maximumRevealDrift": 1.1102230246251565e-16,
+        "revealCheckpoints": [
+          {
+            "time": 663.3999999985099,
+            "waveRemaining": 0.944,
+            "textRemaining": 0.9440000000000001
+          },
+          {
+            "time": 1029.5,
+            "waveRemaining": 0.734457,
+            "textRemaining": 0.734457
+          },
+          {
+            "time": 1380.0999999996275,
+            "waveRemaining": 0.534457,
+            "textRemaining": 0.5344570000000001
+          },
+          {
+            "time": 1746.2999999988824,
+            "waveRemaining": 0.324914,
+            "textRemaining": 0.324914
+          },
+          {
+            "time": 2112.7999999988824,
+            "waveRemaining": 0.115429,
+            "textRemaining": 0.11542899999999999
+          }
+        ],
+        "sawFullName": true,
+        "fullNameGeometry": {
+          "text": "DrawnOut",
+          "left": 22,
+          "right": 298.984375,
+          "top": 721.703125,
+          "bottom": 795.703125,
+          "boxTop": 725.703125,
+          "boxBottom": 792,
+          "width": 276.984375,
+          "fontSize": 66.3,
+          "gridLeft": 22,
+          "skipTop": 831,
+          "viewportWidth": 390,
+          "viewportHeight": 900
+        },
+        "sawIndependentEntrance": true,
+        "sawHeldPose": true,
+        "layerCheckpoints": [
+          {
+            "phase": "separate entrance",
+            "time": 2613.39999999851,
+            "handY": 311.594,
+            "plaqueY": -519.323,
+            "imagesLoaded": true
+          },
+          {
+            "phase": "registered held pose",
+            "time": 3346,
+            "handY": 0.0339071,
+            "plaqueY": -0.0565118,
+            "imagesLoaded": true
+          }
+        ],
+        "imageSources": [
+          "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-contact%2Fsrc%2Fassets%2Fsignature%2Femblem-plaque.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=450&h=800&q=92&f=webp",
+          "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-contact%2Fsrc%2Fassets%2Fsignature%2Fhand-empty.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=450&h=800&q=92&f=webp"
+        ],
+        "legacyCompositeCount": 0
+      }
+    },
+    {
+      "name": "intro-768",
+      "data": {
+        "layoutShiftSum": 0,
+        "lastVisible": 4215,
+        "ended": 4281.6,
+        "reason": "complete",
+        "sawPartialWave": true,
+        "synchronizedSamples": 94,
+        "maximumRevealDrift": 1.1102230246251565e-16,
+        "revealCheckpoints": [
+          {
+            "time": 685.1000000014901,
+            "waveRemaining": 0.941143,
+            "textRemaining": 0.941143
+          },
+          {
+            "time": 1051.7000000011176,
+            "waveRemaining": 0.731714,
+            "textRemaining": 0.7317140000000001
+          },
+          {
+            "time": 1418.300000000745,
+            "waveRemaining": 0.522171,
+            "textRemaining": 0.522171
+          },
+          {
+            "time": 1768.2000000011176,
+            "waveRemaining": 0.322171,
+            "textRemaining": 0.32217100000000004
+          },
+          {
+            "time": 2134.800000000745,
+            "waveRemaining": 0.112629,
+            "textRemaining": 0.112629
+          }
+        ],
+        "sawFullName": true,
+        "fullNameGeometry": {
+          "text": "DrawnOut",
+          "left": 32.25,
+          "right": 577.65625,
+          "top": 653.4375,
+          "bottom": 799.4375,
+          "boxTop": 661.4375,
+          "boxBottom": 792,
+          "width": 545.40625,
+          "fontSize": 130.56,
+          "gridLeft": 32.25,
+          "skipTop": 831,
+          "viewportWidth": 768,
+          "viewportHeight": 900
+        },
+        "sawIndependentEntrance": true,
+        "sawHeldPose": true,
+        "layerCheckpoints": [
+          {
+            "phase": "separate entrance",
+            "time": 2619.4000000003725,
+            "handY": 337.917,
+            "plaqueY": -563.194,
+            "imagesLoaded": true
+          },
+          {
+            "phase": "registered held pose",
+            "time": 3351.9000000003725,
+            "handY": 0.0939704,
+            "plaqueY": -0.156617,
+            "imagesLoaded": true
+          }
+        ],
+        "imageSources": [
+          "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-contact%2Fsrc%2Fassets%2Fsignature%2Femblem-plaque.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=810&h=1440&q=92&f=webp",
+          "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-contact%2Fsrc%2Fassets%2Fsignature%2Fhand-empty.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=810&h=1440&q=92&f=webp"
+        ],
+        "legacyCompositeCount": 0
+      }
+    },
+    {
+      "name": "intro-1440",
+      "data": {
+        "layoutShiftSum": 0,
+        "lastVisible": 4234.699999999255,
+        "ended": 4315.4,
+        "reason": "complete",
+        "sawPartialWave": true,
+        "synchronizedSamples": 94,
+        "maximumRevealDrift": 1.1102230246251565e-16,
+        "revealCheckpoints": [
+          {
+            "time": 712.0999999996275,
+            "waveRemaining": 0.944971,
+            "textRemaining": 0.944971
+          },
+          {
+            "time": 1078.7999999988824,
+            "waveRemaining": 0.735486,
+            "textRemaining": 0.735486
+          },
+          {
+            "time": 1445.699999999255,
+            "waveRemaining": 0.525943,
+            "textRemaining": 0.5259429999999999
+          },
+          {
+            "time": 1795.8999999985099,
+            "waveRemaining": 0.325943,
+            "textRemaining": 0.325943
+          },
+          {
+            "time": 2163,
+            "waveRemaining": 0.116457,
+            "textRemaining": 0.11645699999999999
+          }
+        ],
+        "sawFullName": true,
+        "fullNameGeometry": {
+          "text": "DrawnOut",
+          "left": 60.46875,
+          "right": 1083.1875,
+          "top": 532.203125,
+          "bottom": 806.203125,
+          "boxTop": 547.203125,
+          "boxBottom": 792,
+          "width": 1022.71875,
+          "fontSize": 244.8,
+          "gridLeft": 60.46875,
+          "skipTop": 831,
+          "viewportWidth": 1440,
+          "viewportHeight": 900
+        },
+        "sawIndependentEntrance": true,
+        "sawHeldPose": true,
+        "layerCheckpoints": [
+          {
+            "phase": "separate entrance",
+            "time": 2664.5999999996275,
+            "handY": 321.29,
+            "plaqueY": -535.483,
+            "imagesLoaded": true
+          },
+          {
+            "phase": "registered held pose",
+            "time": 3395.39999999851,
+            "handY": 0.041684,
+            "plaqueY": -0.0694734,
+            "imagesLoaded": true
+          }
+        ],
+        "imageSources": [
+          "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-contact%2Fsrc%2Fassets%2Fsignature%2Femblem-plaque.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=810&h=1440&q=92&f=webp",
+          "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-contact%2Fsrc%2Fassets%2Fsignature%2Fhand-empty.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=810&h=1440&q=92&f=webp"
+        ],
+        "legacyCompositeCount": 0
+      }
+    },
+    {
+      "name": "intro-1920",
+      "data": {
+        "layoutShiftSum": 0,
+        "lastVisible": 4216.300000000745,
+        "ended": 4264.3,
+        "reason": "complete",
+        "sawPartialWave": true,
+        "synchronizedSamples": 95,
+        "maximumRevealDrift": 1.1102230246251565e-16,
+        "revealCheckpoints": [
+          {
+            "time": 655,
+            "waveRemaining": 0.948571,
+            "textRemaining": 0.948571
+          },
+          {
+            "time": 1005.0999999996275,
+            "waveRemaining": 0.748571,
+            "textRemaining": 0.748571
+          },
+          {
+            "time": 1354.9000000003725,
+            "waveRemaining": 0.548514,
+            "textRemaining": 0.548514
+          },
+          {
+            "time": 1721.699999999255,
+            "waveRemaining": 0.339029,
+            "textRemaining": 0.339029
+          },
+          {
+            "time": 2088.0999999996275,
+            "waveRemaining": 0.129543,
+            "textRemaining": 0.129543
+          }
+        ],
+        "sawFullName": true,
+        "fullNameGeometry": {
+          "text": "DrawnOut",
+          "left": 240.625,
+          "right": 1493.984375,
+          "top": 474,
+          "bottom": 810,
+          "boxTop": 492,
+          "boxBottom": 792,
+          "width": 1253.359375,
+          "fontSize": 300,
+          "gridLeft": 240.625,
+          "skipTop": 831,
+          "viewportWidth": 1920,
+          "viewportHeight": 900
+        },
+        "sawIndependentEntrance": true,
+        "sawHeldPose": true,
+        "layerCheckpoints": [
+          {
+            "phase": "separate entrance",
+            "time": 2606.0999999996275,
+            "handY": 331.719,
+            "plaqueY": -552.864,
+            "imagesLoaded": true
+          },
+          {
+            "phase": "registered held pose",
+            "time": 3338.300000000745,
+            "handY": 0.0712196,
+            "plaqueY": -0.118699,
+            "imagesLoaded": true
+          }
+        ],
+        "imageSources": [
+          "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-contact%2Fsrc%2Fassets%2Fsignature%2Femblem-plaque.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=810&h=1440&q=92&f=webp",
+          "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-contact%2Fsrc%2Fassets%2Fsignature%2Fhand-empty.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=810&h=1440&q=92&f=webp"
+        ],
+        "legacyCompositeCount": 0
+      }
+    },
+    {
+      "name": "project-squares-320",
+      "data": {
+        "slugs": [
+          "bunzo",
+          "triarch",
+          "sol-community-center",
+          "churros",
+          "by-tech-group",
+          "capture"
+        ],
+        "images": [
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/bunzo-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 51,
+            "height": 51,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/triarch-business-card.webp?origWidth=814&origHeight=931&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 51,
+            "height": 51,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/sol-community-signage.webp?origWidth=650&origHeight=397&origFormat=webp&w=160&h=98&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 51,
+            "height": 31,
+            "fit": "contain"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/churros-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 51,
+            "height": 51,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/by-tech-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 51,
+            "height": 51,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/capture-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 51,
+            "height": 51,
+            "fit": "cover"
+          }
+        ],
+        "arrivals": [619.875, 878.875, 1094.5625, 1406.9375, 1655.4375, 1898.25],
+        "sawOutline": [true, true, true, true, true, true],
+        "revealStarts": [
+          643.9000000003725, 893.9000000003726, 1110.6000000003723, 1427.2000000003725,
+          1677.2000000003725, 1910.5000000003722
+        ],
+        "sawMixedReveal": true,
+        "fullyVisibleAt": 2177.2000000003727,
+        "geometry": {
+          "frames": [
+            {
+              "left": 25.390625,
+              "right": 72,
+              "top": 368.921875,
+              "bottom": 415.53125,
+              "width": 46.609375,
+              "height": 46.609375
+            },
+            {
+              "left": 67.5,
+              "right": 114.109375,
+              "top": 318.09375,
+              "bottom": 364.703125,
+              "width": 46.609375,
+              "height": 46.609375
+            },
+            {
+              "left": 119.3828125,
+              "right": 170.5078125,
+              "top": 282.5859375,
+              "bottom": 333.7109375,
+              "width": 51.125,
+              "height": 51.125
+            },
+            {
+              "left": 154.734375,
+              "right": 201.34375,
+              "top": 353.28125,
+              "bottom": 399.890625,
+              "width": 46.609375,
+              "height": 46.609375
+            },
+            {
+              "left": 208.875,
+              "right": 255.484375,
+              "top": 368.921875,
+              "bottom": 415.53125,
+              "width": 46.609375,
+              "height": 46.609375
+            },
+            {
+              "left": 247.74449157714844,
+              "right": 294.8336486816406,
+              "top": 311.9788513183594,
+              "bottom": 359.0680236816406,
+              "width": 47.08915710449219,
+              "height": 47.08917236328125
+            }
+          ],
+          "slotWidths": [46.609375, 46.609375, 51.125, 46.609375, 46.609375, 46.609375],
+          "groupWidth": 300.796875,
+          "wordmark": {
+            "left": 22,
+            "right": 249.234375,
+            "top": 688.328125,
+            "bottom": 742.734375,
+            "width": 227.234375,
+            "height": 54.40625
+          },
+          "skip": {
+            "left": 187.046875,
+            "right": 298,
+            "top": 775,
+            "bottom": 819,
+            "width": 110.953125,
+            "height": 44
+          }
+        },
+        "ended": 4317.8,
+        "reason": "complete",
+        "overflow": false
+      }
+    },
+    {
+      "name": "project-squares-390",
+      "data": {
+        "slugs": [
+          "bunzo",
+          "triarch",
+          "sol-community-center",
+          "churros",
+          "by-tech-group",
+          "capture"
+        ],
+        "images": [
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/bunzo-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 62,
+            "height": 62,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/triarch-business-card.webp?origWidth=814&origHeight=931&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 62,
+            "height": 62,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/sol-community-signage.webp?origWidth=650&origHeight=397&origFormat=webp&w=160&h=98&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 62,
+            "height": 38,
+            "fit": "contain"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/churros-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 62,
+            "height": 62,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/by-tech-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 62,
+            "height": 62,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/capture-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 62,
+            "height": 62,
+            "fit": "cover"
+          }
+        ],
+        "arrivals": [619.875, 878.875, 1094.5625, 1406.9375, 1655.4375, 1898.25],
+        "sawOutline": [true, true, true, true, true, true],
+        "revealStarts": [
+          644.4000000003725, 894.5000000003726, 1111.1000000003726, 1427.7000000003725,
+          1677.7000000003725, 1911.1000000003726
+        ],
+        "sawMixedReveal": true,
+        "fullyVisibleAt": 2177.7000000003723,
+        "geometry": {
+          "frames": [
+            {
+              "left": 30.953125,
+              "right": 87.765625,
+              "top": 370.234375,
+              "bottom": 427.046875,
+              "width": 56.8125,
+              "height": 56.8125
+            },
+            {
+              "left": 82.265625,
+              "right": 139.078125,
+              "top": 308.28125,
+              "bottom": 365.09375,
+              "width": 56.8125,
+              "height": 56.8125
+            },
+            {
+              "left": 145.5,
+              "right": 207.8125,
+              "top": 265.03125,
+              "bottom": 327.34375,
+              "width": 62.3125,
+              "height": 62.3125
+            },
+            {
+              "left": 188.578125,
+              "right": 245.390625,
+              "top": 351.171875,
+              "bottom": 407.984375,
+              "width": 56.8125,
+              "height": 56.8125
+            },
+            {
+              "left": 254.5625,
+              "right": 311.375,
+              "top": 370.234375,
+              "bottom": 427.046875,
+              "width": 56.8125,
+              "height": 56.8125
+            },
+            {
+              "left": 301.92950439453125,
+              "right": 359.32049560546875,
+              "top": 300.85137939453125,
+              "bottom": 358.24237060546875,
+              "width": 57.3909912109375,
+              "height": 57.3909912109375
+            }
+          ],
+          "slotWidths": [56.8125, 56.8125, 62.3125, 56.8125, 56.8125, 56.8125],
+          "groupWidth": 366.59375,
+          "wordmark": {
+            "left": 22,
+            "right": 298.984375,
+            "top": 676.4375,
+            "bottom": 742.734375,
+            "width": 276.984375,
+            "height": 66.296875
+          },
+          "skip": {
+            "left": 257.046875,
+            "right": 368,
+            "top": 775,
+            "bottom": 819,
+            "width": 110.953125,
+            "height": 44
+          }
+        },
+        "ended": 4266.5,
+        "reason": "complete",
+        "overflow": false
+      }
+    },
+    {
+      "name": "project-squares-768",
+      "data": {
+        "slugs": [
+          "bunzo",
+          "triarch",
+          "sol-community-center",
+          "churros",
+          "by-tech-group",
+          "capture"
+        ],
+        "images": [
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/bunzo-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 115,
+            "height": 115,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/triarch-business-card.webp?origWidth=814&origHeight=931&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 115,
+            "height": 115,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/sol-community-signage.webp?origWidth=650&origHeight=397&origFormat=webp&w=160&h=98&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 115,
+            "height": 70,
+            "fit": "contain"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/churros-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 115,
+            "height": 115,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/by-tech-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 115,
+            "height": 115,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/capture-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=160&h=160&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 115,
+            "height": 115,
+            "fit": "cover"
+          }
+        ],
+        "arrivals": [619.875, 878.875, 1094.5625, 1406.9375, 1655.4375, 1898.25],
+        "sawOutline": [true, true, true, true, true, true],
+        "revealStarts": [
+          630.0000000011175, 896.7000000011176, 1113.3000000011175, 1430.0000000011175,
+          1680.0000000011175, 1913.3000000011177
+        ],
+        "sawMixedReveal": true,
+        "fullyVisibleAt": 2180.0000000011173,
+        "geometry": {
+          "frames": [
+            {
+              "left": 88.4453125,
+              "right": 190.8046875,
+              "top": 400.203125,
+              "bottom": 502.5625,
+              "width": 102.359375,
+              "height": 102.359375
+            },
+            {
+              "left": 180.8984375,
+              "right": 283.2578125,
+              "top": 288.59375,
+              "bottom": 390.953125,
+              "width": 102.359375,
+              "height": 102.359375
+            },
+            {
+              "left": 294.8359375,
+              "right": 407.1015625,
+              "top": 210.65625,
+              "bottom": 322.921875,
+              "width": 112.265625,
+              "height": 112.265625
+            },
+            {
+              "left": 372.4453125,
+              "right": 474.8046875,
+              "top": 365.859375,
+              "bottom": 468.21875,
+              "width": 102.359375,
+              "height": 102.359375
+            },
+            {
+              "left": 491.3203125,
+              "right": 593.6796875,
+              "top": 400.203125,
+              "bottom": 502.5625,
+              "width": 102.359375,
+              "height": 102.359375
+            },
+            {
+              "left": 576.68408203125,
+              "right": 680.03466796875,
+              "top": 275.2231140136719,
+              "bottom": 378.5737609863281,
+              "width": 103.3505859375,
+              "height": 103.35064697265625
+            }
+          ],
+          "slotWidths": [102.359375, 102.359375, 112.265625, 102.359375, 102.359375, 102.359375],
+          "groupWidth": 660.46875,
+          "wordmark": {
+            "left": 32.25,
+            "right": 577.65625,
+            "top": 661.4375,
+            "bottom": 792,
+            "width": 545.40625,
+            "height": 130.5625
+          },
+          "skip": {
+            "left": 606.796875,
+            "right": 735.75,
+            "top": 831,
+            "bottom": 875,
+            "width": 128.953125,
+            "height": 44
+          }
+        },
+        "ended": 4256.2,
+        "reason": "complete",
+        "overflow": false
+      }
+    },
+    {
+      "name": "project-squares-1440",
+      "data": {
+        "slugs": [
+          "bunzo",
+          "triarch",
+          "sol-community-center",
+          "churros",
+          "by-tech-group",
+          "capture"
+        ],
+        "images": [
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/bunzo-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=340&h=340&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 170,
+            "height": 170,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/triarch-business-card.webp?origWidth=814&origHeight=931&origFormat=webp&w=340&h=340&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 170,
+            "height": 170,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/sol-community-signage.webp?origWidth=650&origHeight=397&origFormat=webp&w=340&h=208&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 170,
+            "height": 104,
+            "fit": "contain"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/churros-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=340&h=340&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 170,
+            "height": 170,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/by-tech-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=340&h=340&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 170,
+            "height": 170,
+            "fit": "cover"
+          },
+          {
+            "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-contact/src/assets/portfolio/capture-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=340&h=340&q=78&f=webp&fit=cover",
+            "loaded": true,
+            "width": 170,
+            "height": 170,
+            "fit": "cover"
+          }
+        ],
+        "arrivals": [619.875, 878.875, 1094.5625, 1406.9375, 1655.4375, 1898.25],
+        "sawOutline": [true, true, true, true, true, true],
+        "revealStarts": [640.5, 890.4, 1107.1, 1423.7, 1673.7, 1923.8],
+        "sawMixedReveal": true,
+        "fullyVisibleAt": 2173.7000000000003,
+        "geometry": {
+          "frames": [
+            {
+              "left": 280.1171875,
+              "right": 432.4765625,
+              "top": 376.828125,
+              "bottom": 529.1875,
+              "width": 152.359375,
+              "height": 152.359375
+            },
+            {
+              "left": 417.7265625,
+              "right": 570.0859375,
+              "top": 210.703125,
+              "bottom": 363.0625,
+              "width": 152.359375,
+              "height": 152.359375
+            },
+            {
+              "left": 587.296875,
+              "right": 754.390625,
+              "top": 94.7265625,
+              "bottom": 261.8203125,
+              "width": 167.09375,
+              "height": 167.09375
+            },
+            {
+              "left": 702.7890625,
+              "right": 855.1484375,
+              "top": 325.703125,
+              "bottom": 478.0625,
+              "width": 152.359375,
+              "height": 152.359375
+            },
+            {
+              "left": 879.7265625,
+              "right": 1032.0859375,
+              "top": 376.828125,
+              "bottom": 529.1875,
+              "width": 152.359375,
+              "height": 152.359375
+            },
+            {
+              "left": 1006.662841796875,
+              "right": 1160.712158203125,
+              "top": 190.686279296875,
+              "bottom": 344.735595703125,
+              "width": 154.04931640625,
+              "height": 154.04931640625
+            }
+          ],
+          "slotWidths": [152.359375, 152.359375, 167.09375, 152.359375, 152.359375, 152.359375],
+          "groupWidth": 982.96875,
+          "wordmark": {
+            "left": 60.46875,
+            "right": 1083.1875,
+            "top": 547.203125,
+            "bottom": 792,
+            "width": 1022.71875,
+            "height": 244.796875
+          },
+          "skip": {
+            "left": 1250.578125,
+            "right": 1379.53125,
+            "top": 831,
+            "bottom": 875,
+            "width": 128.953125,
+            "height": 44
+          }
+        },
+        "ended": 4266.9,
+        "reason": "complete",
+        "overflow": false
+      }
+    }
+  ]
+}

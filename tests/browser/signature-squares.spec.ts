@@ -74,22 +74,6 @@ for (const width of [320, 390, 768, 1440]) {
       const totalLength = path.getTotalLength();
       const matrix = path.getScreenCTM()!;
       const frames = squares.map((square) => rect(square.parentElement!));
-      const arrivals = frames.map(() => Number.POSITIVE_INFINITY);
-      for (let step = 0; step <= 4000; step += 1) {
-        const fraction = step / 4000;
-        const point = path.getPointAtLength(totalLength * fraction);
-        const screen = new DOMPoint(point.x, point.y).matrixTransform(matrix);
-        frames.forEach((frame, index) => {
-          if (
-            !Number.isFinite(arrivals[index]) &&
-            screen.x >= frame.left &&
-            screen.x <= frame.right &&
-            screen.y >= frame.top &&
-            screen.y <= frame.bottom
-          )
-            arrivals[index] = 500 + fraction * 1750;
-        });
-      }
       const sawOutline = squares.map(() => false);
       const revealStarts: (number | null)[] = squares.map(() => null);
       let sawMixedReveal = false;
@@ -144,6 +128,25 @@ for (const width of [320, 390, 768, 1440]) {
         }
         sample();
       });
+      // Compute the curve intersections after observation. The thousands of SVG
+      // queries must not block the first reveal on slower runners. Geometry and
+      // the SVG transform were captured above before the sequence was observed.
+      const arrivals = frames.map(() => Number.POSITIVE_INFINITY);
+      for (let step = 0; step <= 4000; step += 1) {
+        const fraction = step / 4000;
+        const point = path.getPointAtLength(totalLength * fraction);
+        const screen = new DOMPoint(point.x, point.y).matrixTransform(matrix);
+        frames.forEach((frame, index) => {
+          if (
+            !Number.isFinite(arrivals[index]) &&
+            screen.x >= frame.left &&
+            screen.x <= frame.right &&
+            screen.y >= frame.top &&
+            screen.y <= frame.bottom
+          )
+            arrivals[index] = 500 + fraction * 1750;
+        });
+      }
       return {
         slugs: squares.map((square) => square.dataset.introProject),
         images: images.map((image) => ({

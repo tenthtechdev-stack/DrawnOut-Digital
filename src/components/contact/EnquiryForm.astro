@@ -1,0 +1,429 @@
+---
+import Arrow from '../Arrow.astro';
+import { enquiryLimits, enquiryServices, formspreeEndpoint } from '../../lib/contact-form';
+interface Props {
+  email?: string;
+}
+const { email = 'official@drawnoutdigital.com' } = Astro.props;
+const endpoint = formspreeEndpoint(import.meta.env.PUBLIC_FORMSPREE_ENDPOINT);
+---
+
+<section
+  class="enquiry"
+  aria-labelledby="enquiry-heading"
+  data-form-state={endpoint ? 'ready' : 'unconfigured'}
+>
+  <div class="enquiry-heading">
+    <p class="eyebrow">01 / Your next idea</p>
+    <h2 id="enquiry-heading">Tell us a little.</h2>
+    <p>Start with what you know. We can work out the rest together.</p>
+  </div>
+  <p class="form-note">
+    Fields marked <span aria-hidden="true">*</span>
+    <span class="sr-only">with an asterisk</span> are required.
+  </p>
+  <p
+    class="form-availability"
+    id="enquiry-availability"
+    data-form-unconfigured
+    hidden={Boolean(endpoint)}
+  >
+    The enquiry form is not connected yet. Please <a href={`mailto:${email}`}>email us directly</a>.
+  </p>
+  <noscript>
+    <p class="form-availability">
+      {endpoint
+        ? 'Submitting opens our form provider’s confirmation page. '
+        : 'Online submission is currently unavailable. '}
+      You can also <a href={`mailto:${email}`}>email {email}</a>.
+    </p>
+  </noscript>
+  <form
+    data-enquiry-form
+    data-endpoint={endpoint ?? ''}
+    action={endpoint}
+    method="post"
+    aria-labelledby="enquiry-heading"
+    aria-describedby="enquiry-privacy"
+  >
+    <input type="hidden" name="_subject" value="New project enquiry — DrawnOut Digital" />
+    <div class="form-trap" aria-hidden="true">
+      <label for="enquiry-website">Leave this field empty</label>
+      <input id="enquiry-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    <div class="error-summary" data-error-summary role="alert" tabindex="-1" hidden>
+      <p>Please check the following fields.</p>
+      <ul></ul>
+    </div>
+    <fieldset data-enquiry-fields>
+      <legend class="sr-only">Project enquiry</legend>
+      <div class="fields">
+        <div class="field">
+          <label for="enquiry-name">
+            Name <span aria-hidden="true">*</span>
+          </label>
+          <input
+            id="enquiry-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+            maxlength={enquiryLimits.name}
+            aria-describedby="enquiry-name-error"
+          />
+          <p class="field-error" id="enquiry-name-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="enquiry-email">
+            Email <span aria-hidden="true">*</span>
+          </label>
+          <input
+            id="enquiry-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            inputmode="email"
+            required
+            maxlength={enquiryLimits.email}
+            aria-describedby="enquiry-email-error"
+          />
+          <p class="field-error" id="enquiry-email-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="enquiry-company">
+            Company / organization <span>(optional)</span>
+          </label>
+          <input
+            id="enquiry-company"
+            name="company"
+            type="text"
+            autocomplete="organization"
+            maxlength={enquiryLimits.company}
+            aria-describedby="enquiry-company-error"
+          />
+          <p class="field-error" id="enquiry-company-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="enquiry-phone">
+            Phone / WhatsApp <span>(optional)</span>
+          </label>
+          <input
+            id="enquiry-phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            inputmode="tel"
+            maxlength={enquiryLimits.phone}
+            aria-describedby="enquiry-phone-error"
+          />
+          <p class="field-error" id="enquiry-phone-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="enquiry-service">
+            Project type or service <span aria-hidden="true">*</span>
+          </label>
+          <select
+            id="enquiry-service"
+            name="service"
+            required
+            aria-describedby="enquiry-service-error"
+          >
+            <option value="">Select a starting point</option>
+            {enquiryServices.map(({ value, label }) => (
+              <option value={value}>{label}</option>
+            ))}
+          </select>
+          <p class="field-error" id="enquiry-service-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="enquiry-budget">
+            Approximate budget <span>(optional)</span>
+          </label>
+          <input
+            id="enquiry-budget"
+            name="budget"
+            type="text"
+            maxlength={enquiryLimits.budget}
+            aria-describedby="enquiry-budget-hint enquiry-budget-error"
+          />
+          <p class="field-hint" id="enquiry-budget-hint">
+            An estimate or range, with your currency.
+          </p>
+          <p class="field-error" id="enquiry-budget-error" hidden></p>
+        </div>
+        <div class="field field--full">
+          <label for="enquiry-description">
+            Project description <span aria-hidden="true">*</span>
+          </label>
+          <textarea
+            id="enquiry-description"
+            name="description"
+            rows="4"
+            required
+            maxlength={enquiryLimits.description}
+            aria-describedby="enquiry-description-hint enquiry-description-error"
+          ></textarea>
+          <p class="field-hint" id="enquiry-description-hint">
+            What are you thinking about? Share the idea, what you need, or where you're stuck.
+          </p>
+          <p class="field-error" id="enquiry-description-error" hidden></p>
+        </div>
+      </div>
+      <p class="form-privacy" id="enquiry-privacy">
+        We use the details you share to understand your enquiry and respond to you. This form does
+        not sign you up for marketing.
+        {endpoint && (
+          <>
+            {' '}
+            Enquiries are processed by Formspree. Read{' '}
+            <a href="https://formspree.io/legal/privacy-policy/">Formspree’s privacy policy</a>.
+          </>
+        )}
+      </p>
+      <button
+        type="submit"
+        data-submit-enquiry
+        disabled={!endpoint}
+        aria-describedby={!endpoint ? 'enquiry-availability' : undefined}
+      >
+        <span data-submit-label>Send enquiry</span>
+        <Arrow />
+      </button>
+    </fieldset>
+    <div
+      class="form-status"
+      data-form-status
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      tabindex="-1"
+    ></div>
+    <p class="form-failure-help" data-failure-help hidden>
+      Prefer another way? <a href={`mailto:${email}`}>Email {email}</a>.
+    </p>
+    <button class="form-again" type="button" data-new-enquiry hidden>
+      Start another enquiry
+    </button>
+  </form>
+</section>
+<script>
+  import '../../scripts/contact-form';
+</script>
+<style>
+  .enquiry-heading > .eyebrow {
+    color: var(--accent-strong);
+    margin: 0 0 22px;
+  }
+  .enquiry-heading h2 {
+    margin: 0;
+    font-size: clamp(2rem, 3.1vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: var(--tracking-display);
+    font-weight: 500;
+  }
+  .enquiry-heading > p:last-child {
+    margin: 18px 0 0;
+    font-size: var(--type-small);
+    line-height: var(--leading-body);
+    color: var(--muted);
+  }
+  .form-note {
+    margin: 32px 0 20px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .form-availability {
+    margin: 0 0 30px;
+    padding: 16px 18px;
+    background: var(--surface);
+    border-left: 2px solid var(--accent-strong);
+    font-size: var(--type-small);
+    line-height: 1.8;
+  }
+  a {
+    text-decoration-thickness: 1px;
+  }
+  a:hover {
+    color: var(--accent-strong);
+  }
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+  }
+  .fields {
+    display: grid;
+    gap: 28px 24px;
+  }
+  .field {
+    min-width: 0;
+  }
+  label {
+    display: block;
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: 600;
+    margin-bottom: 9px;
+  }
+  label span {
+    color: var(--muted);
+    font-weight: 400;
+  }
+  label span[aria-hidden] {
+    color: var(--accent-strong);
+  }
+  input,
+  select,
+  textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    border: 1px solid var(--line);
+    border-bottom-color: var(--muted);
+    background: #fffaf380;
+    border-radius: var(--radius-control);
+    padding: 12px;
+    color: var(--ink);
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+    transition:
+      border-color var(--duration-ui) var(--ease-ui),
+      background var(--duration-ui) var(--ease-ui);
+  }
+  input:hover,
+  select:hover,
+  textarea:hover {
+    border-color: var(--muted);
+  }
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--accent-strong);
+    background: var(--cream);
+  }
+  textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  [aria-invalid='true'] {
+    border-color: var(--accent-strong);
+    border-width: 2px;
+  }
+  .field-hint,
+  .field-error {
+    margin: 9px 0 0;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .field-hint {
+    color: var(--muted);
+  }
+  .field-error {
+    color: var(--accent-strong);
+    font-weight: 600;
+  }
+  .form-privacy {
+    margin: 26px 0;
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 58ch;
+  }
+  button[type='submit'] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 54px;
+    min-width: 208px;
+    gap: 36px;
+    padding: 16px 20px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-control);
+    background: var(--ink);
+    color: var(--cream);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background var(--duration-ui) var(--ease-ui);
+  }
+  button[type='submit']:not(:disabled):is(:hover, :focus-visible) {
+    background: var(--accent-strong);
+  }
+  button[type='submit']:disabled {
+    background: var(--surface);
+    color: var(--muted);
+    cursor: not-allowed;
+    border-color: var(--line);
+  }
+  button :global(svg) {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .form-trap {
+    display: none;
+  }
+  .error-summary {
+    margin: 0 0 26px;
+    border: 1px solid var(--accent-strong);
+    border-left-width: 3px;
+    padding: 18px 20px;
+    font-size: var(--type-small);
+    line-height: 1.7;
+  }
+  .error-summary p {
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+  .error-summary ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+  .error-summary :global(a) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 6px;
+    color: var(--accent-strong);
+  }
+  .form-status {
+    font-size: var(--type-small);
+    line-height: 1.8;
+    max-width: 60ch;
+  }
+  .form-status:not(:empty) {
+    margin-top: 24px;
+    padding: 18px 20px;
+    border-left: 2px solid var(--accent-strong);
+    background: var(--surface);
+  }
+  .form-failure-help {
+    font-size: var(--type-small);
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+  }
+  .form-again {
+    background: transparent;
+    border: 0;
+    padding: 12px 0;
+    min-height: 44px;
+    font-size: var(--type-small);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+  }
+  [hidden] {
+    display: none;
+  }
+  @media (min-width: 640px) {
+    .fields {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .field--full {
+      grid-column: 1 / -1;
+    }
+  }
+</style>
