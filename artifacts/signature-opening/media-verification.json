@@ -1,0 +1,774 @@
+{
+  "verifiedAt": "2026-10-25T17:36:37.283679+00:00",
+  "scope": "Local byte signatures, dimensions, complete media decoding and MP4 fast-start; not proof of artistic approval, device rendering frame rate or GitHub retrieval.",
+  "status": "passed",
+  "expectedFilesPresent": 64,
+  "counts": {
+    "png": 60,
+    "gif": 2,
+    "mp4": 2
+  },
+  "totalBytes": 23828697,
+  "files": [
+    {
+      "file": "case-bunzo-1440.png",
+      "format": "png",
+      "bytes": 439440,
+      "sha256": "e070cd868f9f296df1e8b6d547dc4bd3809a3dd1f4cae725043e56cabbd29c1d",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "case-bunzo-390.png",
+      "format": "png",
+      "bytes": 140624,
+      "sha256": "4a7a80ffec7e94a2ce1c76f0f0474b7aacf421f5f7420a9f64bb986b4363a111",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "case-bunzo-768.png",
+      "format": "png",
+      "bytes": 379300,
+      "sha256": "0cfcb643263b9fb592d6a838b6f1166a5c3e8c74233ae6a6a6aa4ebf40fae711",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "desktop-signature-preview.gif",
+      "format": "gif",
+      "bytes": 1104871,
+      "sha256": "dd1fd9966c1c875e9dfb393206c7b2b3a889561054ff07f397b3ae56b24f375d",
+      "width": 640,
+      "height": 400,
+      "mode": "P",
+      "decodedFrames": 56,
+      "fullDecode": "passed",
+      "durationSeconds": 8.0,
+      "loop": 0
+    },
+    {
+      "file": "desktop-signature.mp4",
+      "format": "mp4",
+      "bytes": 5384863,
+      "sha256": "4caa9a20f5564036ce53e93d86f54f7f00b938b1fd7444b2388990b4689bba1e",
+      "width": 1440,
+      "height": 900,
+      "codec": "h264",
+      "pixelFormat": "yuvj420p",
+      "encodedFrameRate": "30/1",
+      "encodedFrames": 1655,
+      "durationSeconds": 55.166667,
+      "fullDecode": "passed",
+      "fastStart": true,
+      "containerAtoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "bytes": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "bytes": 18238
+        },
+        {
+          "type": "free",
+          "offset": 18270,
+          "bytes": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 18278,
+          "bytes": 5366585
+        }
+      ]
+    },
+    {
+      "file": "emblem-plaque-opaque.png",
+      "format": "png",
+      "bytes": 227331,
+      "sha256": "87e6d94315a183e95eee1a1fb81a20e48eb65cff315631f91428e38061651133",
+      "width": 810,
+      "height": 1440,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-1440-arrive.png",
+      "format": "png",
+      "bytes": 130964,
+      "sha256": "439e787b5d20b6db06e41bcf2aef0f3b0544220e8837485ce6c01dca6869eff6",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-1440-expanded.png",
+      "format": "png",
+      "bytes": 689938,
+      "sha256": "99a895609f07bd8885e7d13870a0382774a746aa654076099785680794570ade",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-1440-meeting.png",
+      "format": "png",
+      "bytes": 464211,
+      "sha256": "1a8e26b45bcf3e65730e771a5f1aaec851545550f5f81106fd764af96769a6ed",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-1440-reverse.png",
+      "format": "png",
+      "bytes": 130792,
+      "sha256": "e564177470394cf46e542b4387bb7762492410fdbe08739ce240e40330dcfd22",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-390-arrive.png",
+      "format": "png",
+      "bytes": 67857,
+      "sha256": "7306c2d448b9b61087c08ea7217893223ea15cc1d5ecba445f2791254cb42a0d",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-390-expanded.png",
+      "format": "png",
+      "bytes": 184425,
+      "sha256": "087ccc7a6f60955523e9483051d0cecbd9e085bdb4284fcab404109a0504ada3",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-390-meeting.png",
+      "format": "png",
+      "bytes": 135813,
+      "sha256": "b9508ccf593e2e46b391a09b10fae4b165ecb6f8c87ddaa68267e55508ab4981",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-390-reverse.png",
+      "format": "png",
+      "bytes": 67700,
+      "sha256": "886e340b2a039376b27f6108b594a6bce7a07b9d2c40418f74a212ebcec153c6",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-768-arrive.png",
+      "format": "png",
+      "bytes": 99085,
+      "sha256": "387474bf702fa3c284fb9c6d91cda3d9f0de19303084d0f2b86bfb88698590b4",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-768-expanded.png",
+      "format": "png",
+      "bytes": 394800,
+      "sha256": "15a19f3ae101a200d0581f8d93d2a599b42288026fa6a0204eb95ad9bd41e608",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-768-meeting.png",
+      "format": "png",
+      "bytes": 282668,
+      "sha256": "97a824117a69949fe55a289b38402d8a46ae106c1aa339656e79742c224d88ed",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "footer-768-reverse.png",
+      "format": "png",
+      "bytes": 98785,
+      "sha256": "bc39cc1d51102d4cdf8d4883eab86c47bb43b3e10803fa62bd8fcf6d126049a1",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "hand-empty-opaque.png",
+      "format": "png",
+      "bytes": 638827,
+      "sha256": "d63027c338bddae1c82ade0304356511ef18d7de6067f0049800958449022860",
+      "width": 810,
+      "height": 1440,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-1440-begin.png",
+      "format": "png",
+      "bytes": 152920,
+      "sha256": "302ec73507c36d14bddbdb5267f63d49b56450627cfefde48ccc528cd9d1993a",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-1440-complete.png",
+      "format": "png",
+      "bytes": 691207,
+      "sha256": "d3e7f37c0770051b44b0126c96136399c4aedfe4cf499b665a390adc11b03c78",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-1440-middle.png",
+      "format": "png",
+      "bytes": 511514,
+      "sha256": "6c6270fa9ad602bf539906826bc3e068e3bd5eb95b9beec0cfd1ef6ab41b4315",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-1440-reverse.png",
+      "format": "png",
+      "bytes": 153303,
+      "sha256": "15c7911f886265b108753d489e733a2a5711f9f5e2bdfdaada50a567be92980e",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-390-begin.png",
+      "format": "png",
+      "bytes": 104321,
+      "sha256": "7976f20deaaa202aa51f41a41ee96d4b76ad4c4ab892f4b66d2276a9093fb193",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-390-complete.png",
+      "format": "png",
+      "bytes": 246380,
+      "sha256": "16e0c48c74d5e2a1b41d23d5d9c9ebb5528eb10c4ec694e46de8b4e9d727e794",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-390-middle.png",
+      "format": "png",
+      "bytes": 155703,
+      "sha256": "7cb0067c22ac7250ef063cb23acd5f424acafa6e44fdf4b3e02ca98406d6e258",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-390-reverse.png",
+      "format": "png",
+      "bytes": 100858,
+      "sha256": "9c84272a43851e5fc2b7a36e9eda549bba08ec6c6921deedd85696776f00f90d",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-768-begin.png",
+      "format": "png",
+      "bytes": 158930,
+      "sha256": "5cbe1ad2bfbc31abf8a48b34e7870dce7464a3866453109110f0b26722c15881",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-768-complete.png",
+      "format": "png",
+      "bytes": 421672,
+      "sha256": "6356ba5e6c8f5d6cdfec6b827b252a580fdf65d6a89c0f5f75f2494843fa93ac",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-768-middle.png",
+      "format": "png",
+      "bytes": 240320,
+      "sha256": "559f1514561c739905753d736473fd6b1cd0fb95846b0faf1552b4b28ca75821",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "immersive-768-reverse.png",
+      "format": "png",
+      "bytes": 155814,
+      "sha256": "a6ba2ce459de20d73c4d678ce09340f9ab94b5369b5b643ede8dbe79f613418d",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-1440-contact.png",
+      "format": "png",
+      "bytes": 299130,
+      "sha256": "bc49f27076d2d53be608af1bd738f939d3bb3ec3155254876fbf4cad857b73ab",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-1440-homepage.png",
+      "format": "png",
+      "bytes": 176236,
+      "sha256": "7fcb22697f37e7e6d2b13274c6c36ed950ff7376f5165744c4582f328468f6ee",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-1440-separated.png",
+      "format": "png",
+      "bytes": 303696,
+      "sha256": "6caebb41af9e815704a45b7dd790ac0dcd9c021ebed3dd9bbb42898794f9e8cc",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-1440-signature.png",
+      "format": "png",
+      "bytes": 298785,
+      "sha256": "39dff1458234eec1df7a39b528106494fd81682522a86a77d59c8e41947d0be0",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-1440-squares.png",
+      "format": "png",
+      "bytes": 23619,
+      "sha256": "eec5d3621e5232e3fc562f4bb026157163fd348612702d3bdd8557a43517bb89",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-1440-wave.png",
+      "format": "png",
+      "bytes": 104548,
+      "sha256": "921b0a3e9d70f285952d3cf369a4a3b9f45813f526c99adf02bd1fa6d2f968aa",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-1440-wordmark.png",
+      "format": "png",
+      "bytes": 146769,
+      "sha256": "7ec96270e105d85b4d940ca0ef95371a1c2690d04fa262d9589d4f41cbb14353",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-390-contact.png",
+      "format": "png",
+      "bytes": 189283,
+      "sha256": "96d1ac9bd9d8906ed609c01f568935f6be60dc713493199bbfa6b40f5b8dfb58",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-390-homepage.png",
+      "format": "png",
+      "bytes": 95532,
+      "sha256": "cbcdb51c615858117008cdf1452becf004d779f101b2efba0552c5342ae9fd6a",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-390-separated.png",
+      "format": "png",
+      "bytes": 196948,
+      "sha256": "44f2511558d58682ea89093fc26047076d2ec20bad44391ac7a226de2cb14465",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-390-signature.png",
+      "format": "png",
+      "bytes": 188402,
+      "sha256": "23e433ddf60f3680dd5f64c83d0ce64ec0fe9daa2b89b7a7fcf89aa5353d6ac2",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-390-squares.png",
+      "format": "png",
+      "bytes": 12641,
+      "sha256": "f6e9821bd12765ab767be62a55ecffb52193aae809258611e6d0d37f2f105380",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-390-wave.png",
+      "format": "png",
+      "bytes": 26373,
+      "sha256": "f767c1f9c30833474c686995923febe3af6d370832742b6f668334b1534091d2",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-390-wordmark.png",
+      "format": "png",
+      "bytes": 34996,
+      "sha256": "e334c2c1114fbdcadf50a0e3963ba3f50eb4e46d177591c9a2a191c117622c60",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-768-contact.png",
+      "format": "png",
+      "bytes": 287646,
+      "sha256": "cd49bf8299de0d9780ca87c301741578fd1670598bca359479932c02e6c2aab5",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-768-homepage.png",
+      "format": "png",
+      "bytes": 152398,
+      "sha256": "298a73392c638012021192032bc9168324324b473bd03a417386e6a2daca40ba",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-768-separated.png",
+      "format": "png",
+      "bytes": 285508,
+      "sha256": "f4b4862a9e1e3b9ab870f11016821f64d9f9aefbce71919014cecd1fe6d52ba8",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-768-signature.png",
+      "format": "png",
+      "bytes": 286528,
+      "sha256": "235acf27bc8a07b970b9eef70dd15a7e213d0d06574bc8c7fbb0a821734fe57a",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-768-squares.png",
+      "format": "png",
+      "bytes": 18479,
+      "sha256": "a47e249f7827ff2d0419a6162736ecdfdc6cb5af90d545e95765d3ecd7b8339d",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-768-wave.png",
+      "format": "png",
+      "bytes": 54899,
+      "sha256": "82c7f4ac04c2fd4158f905c1f2b35cf2437f2b5e3093d3d3fc97a2f8ccd4e19a",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "intro-768-wordmark.png",
+      "format": "png",
+      "bytes": 72466,
+      "sha256": "3e644ee436babd54b8733b55c0aa29ea149c8b672c9a52999acefeb49d5b5e3d",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "mobile-signature-preview.gif",
+      "format": "gif",
+      "bytes": 1401520,
+      "sha256": "c12564535dfc5de09f2e1f96be96ddf9b7911073ab83dc445bd7f12c42140dcd",
+      "width": 390,
+      "height": 844,
+      "mode": "P",
+      "decodedFrames": 56,
+      "fullDecode": "passed",
+      "durationSeconds": 8.0,
+      "loop": 0
+    },
+    {
+      "file": "mobile-signature.mp4",
+      "format": "mp4",
+      "bytes": 2819124,
+      "sha256": "7dca65f3feb6d856848d40350d809768efa9f464862297b0e4891ea4d8aa101d",
+      "width": 390,
+      "height": 844,
+      "codec": "h264",
+      "pixelFormat": "yuvj420p",
+      "encodedFrameRate": "30/1",
+      "encodedFrames": 1627,
+      "durationSeconds": 54.233333,
+      "fullDecode": "passed",
+      "fastStart": true,
+      "containerAtoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "bytes": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "bytes": 16826
+        },
+        {
+          "type": "free",
+          "offset": 16858,
+          "bytes": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 16866,
+          "bytes": 2802258
+        }
+      ]
+    },
+    {
+      "file": "production-case-bunzo-1440.png",
+      "format": "png",
+      "bytes": 439440,
+      "sha256": "e070cd868f9f296df1e8b6d547dc4bd3809a3dd1f4cae725043e56cabbd29c1d",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "production-case-bunzo-390.png",
+      "format": "png",
+      "bytes": 140624,
+      "sha256": "4a7a80ffec7e94a2ce1c76f0f0474b7aacf421f5f7420a9f64bb986b4363a111",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "production-home-1440.png",
+      "format": "png",
+      "bytes": 175739,
+      "sha256": "a325c98bae25138ea2ca74c76664d2c3c1a1199cb590b37ffda1f45fdada56b1",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "production-home-390.png",
+      "format": "png",
+      "bytes": 95590,
+      "sha256": "45189810925a3ded374ebef9fa3f437f97091cf5ff0931ff15b26031e1d6fd9b",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "production-navigation-390.png",
+      "format": "png",
+      "bytes": 26407,
+      "sha256": "78e230aef7011af7c98061bc1d0384e31aa7c7bd17ef8aa07b2fb5e7fe3f54e1",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "production-work-1440.png",
+      "format": "png",
+      "bytes": 404211,
+      "sha256": "f6b2f3f431b7fdf56ea8d1193a2e6a1a0cadf32fe10840ab814833faa0ffd073",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "production-work-390.png",
+      "format": "png",
+      "bytes": 130818,
+      "sha256": "558f05a4d267e9fd6af4da4f39d767e057d76b1060cc3911d8c19b55d9949711",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "work-1440.png",
+      "format": "png",
+      "bytes": 404211,
+      "sha256": "f6b2f3f431b7fdf56ea8d1193a2e6a1a0cadf32fe10840ab814833faa0ffd073",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "work-390.png",
+      "format": "png",
+      "bytes": 130818,
+      "sha256": "558f05a4d267e9fd6af4da4f39d767e057d76b1060cc3911d8c19b55d9949711",
+      "width": 390,
+      "height": 844,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    },
+    {
+      "file": "work-768.png",
+      "format": "png",
+      "bytes": 250077,
+      "sha256": "3cc6ea2cb5da296b5a6da0b32566ce54ced2a90983fd323050a5df929fcfdc8e",
+      "width": 768,
+      "height": 900,
+      "mode": "RGB",
+      "decodedFrames": 1,
+      "fullDecode": "passed"
+    }
+  ]
+}

@@ -1,0 +1,475 @@
+---
+import { Image } from 'astro:assets';
+import { getPublicProjects } from '../lib/projects';
+import SignatureArtwork from './SignatureArtwork.astro';
+import Arrow from './Arrow.astro';
+// Explicit art direction, resolved only through the existing publication gate.
+// A withdrawn selection leaves its outlined slot empty rather than exposing a draft.
+const publicProjects = new Map(
+  (await getPublicProjects()).map((project) => [project.data.slug, project]),
+);
+const selections = [
+  'bunzo',
+  'triarch',
+  'sol-community-center',
+  'churros',
+  'by-tech-group',
+  'capture',
+];
+const projects = selections.map((slug) => {
+  const project = publicProjects.get(slug);
+  if (!project) return undefined;
+  // Keep the actual SOL signage image tied to its approved collection record.
+  const poster =
+    slug === 'sol-community-center'
+      ? (project.data.gallery.find(({ src }) => src.src.includes('sol-community-signage'))?.src ??
+        project.data.cover)
+      : project.data.cover;
+  return { project, poster };
+});
+// Arrival times follow the unchanged wave. The second square shifts slightly
+// up/left to give the enlarged apex frame its own breathing room. The final
+// value is when the wave enters the enlarged frame (SVG arc length, 0.5 + 1.75p).
+const positions = [
+  [13, 65, 0.506, 0.62],
+  [27, 39, 0.764, 0.879],
+  [45, 22, 1.0, 1.095],
+  [56, 57, 1.306, 1.407],
+  [74, 65, 1.534, 1.656],
+  [87, 36, 1.808, 1.898],
+];
+---
+
+<div class="signature-intro" data-signature-intro-overlay>
+  <div class="intro-top" aria-hidden="true">
+    <span>DrawnOut Digital</span>
+    <span>From thought to form.</span>
+  </div>
+  <div class="intro-composition" aria-hidden="true">
+    <div class="intro-projects" data-intro-projects>
+      <svg class="intro-wave" viewBox="0 0 1000 720" preserveAspectRatio="none" fill="none">
+        <path
+          data-intro-wave
+          pathLength="1"
+          d="M 35 650 C 80 610 90 520 130 468 S 245 360 300 302 S 405 135 450 158 S 485 385 560 410 S 675 535 740 468 S 795 270 870 259 S 951 335 960 420"
+        />
+      </svg>
+      {positions.map(([left, top, reaction, arrival], index) => (
+        <div
+          class:list={[
+            'intro-square-position',
+            { 'intro-square-position--sol': selections[index] === 'sol-community-center' },
+          ]}
+          style={`--left:${left}%;--top:${top}%;--entry:${index * 0.095}s;--reaction:${reaction}s;--artwork-arrival:${arrival}s`}
+        >
+          <div
+            class="intro-square"
+            data-intro-square
+            data-intro-project={projects[index]?.project.data.slug}
+          >
+            {projects[index] && (
+              <Image
+                src={projects[index].poster}
+                alt=""
+                width={340}
+                height={selections[index] === 'sol-community-center' ? undefined : 340}
+                fit="cover"
+                widths={[160, 340]}
+                sizes="(max-width: 639px) 16vw, (max-width: 1100px) 15vw, 170px"
+                format="webp"
+                quality={78}
+                loading="eager"
+                decoding="async"
+                data-intro-artwork
+              />
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="intro-name" data-intro-name>
+      DrawnOut
+    </div>
+    <div class="intro-signature" data-intro-signature>
+      <SignatureArtwork variant="intro" />
+    </div>
+  </div>
+  <div class="intro-bottom">
+    <span aria-hidden="true">From the first scribble to the final scroll.</span>
+    <button type="button" data-signature-skip>
+      Skip intro <Arrow />
+    </button>
+  </div>
+</div>
+<!-- Start the CSS storyboard as soon as its markup is parsed. Its lifetime and
+     skip controls never depend on deferred module downloads or GPU compilation. -->
+<script is:inline>
+  (() => {
+    const gate = window.__drawnoutIntro;
+    const overlay = document.querySelector('[data-signature-intro-overlay]');
+    if (!gate || !overlay) return;
+    const controller = new AbortController();
+    const { signal } = controller;
+    window.addEventListener('signature:intro-end', () => controller.abort(), {
+      once: true,
+      signal,
+    });
+    overlay.addEventListener('error', () => gate.finish('asset-error'), { capture: true, signal });
+    overlay
+      .querySelector('[data-signature-skip]')
+      ?.addEventListener('click', () => gate.finish('skip'), { signal });
+    for (const image of overlay.querySelectorAll('img')) {
+      if (image.complete && image.naturalWidth === 0) gate.finish('asset-error');
+    }
+    if (!gate.start()) {
+      controller.abort();
+      return;
+    }
+    // CSS can resolve in separate browser frames (especially during startup).
+    // Anchor every storyboard actor to the gate's real document-clock start,
+    // rather than letting independently resolved CSS animations drift apart.
+    const origin = performance.now();
+    let syncFrame;
+    const synchronize = () => {
+      if (signal.aborted) return;
+      try {
+        const animations = overlay.getAnimations({ subtree: true });
+        const names = animations.map((animation) => animation.animationName ?? '');
+        if (
+          !['connect-projects', 'name-draw', 'empty-hand-rise', 'plaque-descend'].every((name) =>
+            names.some((animationName) => animationName.includes(name)),
+          )
+        ) {
+          syncFrame = requestAnimationFrame(synchronize);
+          return;
+        }
+        for (const animation of animations) animation.startTime = origin;
+      } catch {
+        gate.finish('animation-error');
+      }
+    };
+    signal.addEventListener('abort', () => cancelAnimationFrame(syncFrame), { once: true });
+    syncFrame = requestAnimationFrame(synchronize);
+  })();
+</script>
+<script>
+  import '../scripts/signature-intro';
+</script>
+<style>
+  .signature-intro {
+    --intro-grid-inset: max(var(--gutter), calc((100vw - var(--page-max)) / 2 + var(--gutter)));
+    --intro-word-size: clamp(48px, 17vw, 300px);
+    --intro-word-bottom: clamp(96px, 12svh, 144px);
+    --intro-project-width: min(
+      86vw,
+      1000px,
+      calc((100svh - var(--intro-word-size) - var(--intro-word-bottom) - 90px) * 2.15)
+    );
+    --intro-draw-duration: 1.75s;
+    --intro-draw-delay: 0.5s;
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    overflow: hidden;
+    background: #f7f5f1;
+    color: #191817;
+    pointer-events: none;
+    isolation: isolate;
+  }
+  :global(html:is([data-signature-intro='pending'], [data-signature-intro='playing']))
+    .signature-intro {
+    display: flex;
+    flex-direction: column;
+  }
+  .intro-top,
+  .intro-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: absolute;
+    inset-inline: var(--intro-grid-inset);
+    font-size: 11px;
+    letter-spacing: 0.01em;
+    z-index: 3;
+  }
+  .intro-top {
+    top: 28px;
+  }
+  .intro-top > span:first-child {
+    font-weight: 650;
+    font-size: 15px;
+    letter-spacing: -0.04em;
+  }
+  .intro-bottom {
+    bottom: 25px;
+  }
+  .intro-bottom button {
+    border: 1px solid #19181755;
+    background: #f7f5f1;
+    color: #191817;
+    min-height: 44px;
+    border-radius: 50px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    pointer-events: auto;
+    font: inherit;
+  }
+  .intro-bottom button:focus-visible {
+    outline: 3px solid #b63c0b;
+    outline-offset: 4px;
+  }
+  .intro-composition {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .intro-projects {
+    position: absolute;
+    width: var(--intro-project-width);
+    aspect-ratio: 1000 / 650;
+    top: min(
+      43svh,
+      calc(
+        100svh - var(--intro-word-bottom) - var(--intro-word-size) - 18px -
+          var(--intro-project-width) * 0.175
+      )
+    );
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .intro-wave {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: visible;
+  }
+  .intro-wave path {
+    stroke: #191817;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+  .intro-square-position {
+    position: absolute;
+    width: 15.5%;
+    aspect-ratio: 1;
+    left: var(--left);
+    top: var(--top);
+    transform: translate(-50%, -50%);
+  }
+  .intro-square-position--sol {
+    width: 17%;
+  }
+  .intro-square {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #191817;
+    background: #f7f5f1;
+    opacity: 0;
+    overflow: hidden;
+  }
+  .intro-square img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+  }
+  .intro-square-position--sol .intro-square {
+    background: #e4e0d9;
+  }
+  .intro-square-position--sol img {
+    object-fit: contain;
+  }
+  .intro-name {
+    position: absolute;
+    left: var(--intro-grid-inset);
+    bottom: var(--intro-word-bottom);
+    width: max-content;
+    max-width: calc(100% - 2 * var(--intro-grid-inset));
+    white-space: nowrap;
+    font-size: var(--intro-word-size);
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: -0.075em;
+    color: #c14815;
+    clip-path: inset(0 100% 0 0);
+    z-index: 3;
+  }
+  .intro-signature {
+    position: absolute;
+    height: min(98svh, 980px);
+    aspect-ratio: 9 / 16;
+    left: 50%;
+    bottom: -6svh;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  .intro-signature :global([data-signature-artwork]) {
+    width: 100%;
+    height: 100%;
+  }
+  :global(html[data-signature-intro='playing']) .signature-intro {
+    animation: intro-exit 0.5s 3.65s both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-square {
+    animation:
+      square-arrive 0.52s var(--entry) both,
+      square-respond 0.48s var(--reaction) both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-square img {
+    animation: artwork-arrive 0.28s var(--artwork-arrival) both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-wave path {
+    animation: connect-projects var(--intro-draw-duration) var(--intro-draw-delay) linear both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-projects {
+    animation: projects-depart 0.5s 2.25s both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-name {
+    /* The wave and live text finish together at 2.25s; hold the complete name
+       for 0.2s before the hand scene takes over. */
+    animation:
+      name-draw var(--intro-draw-duration) var(--intro-draw-delay) linear both,
+      name-resolve 0.35s 2.45s both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-signature {
+    animation: signature-arrive 0.16s 2.42s both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-signature :global([data-signature-hand]) {
+    animation: empty-hand-rise 0.8s 2.5s cubic-bezier(0.22, 0.7, 0.2, 1) both;
+  }
+  :global(html[data-signature-intro='playing']) .intro-signature :global([data-signature-plaque]) {
+    animation: plaque-descend 0.8s 2.5s cubic-bezier(0.22, 0.7, 0.2, 1) both;
+  }
+  @keyframes square-arrive {
+    from {
+      opacity: 0;
+      translate: 0 38px;
+      rotate: -7deg;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+      rotate: 0deg;
+    }
+  }
+  @keyframes square-respond {
+    0%,
+    100% {
+      scale: 1;
+    }
+    45% {
+      scale: 1.08;
+    }
+  }
+  @keyframes artwork-arrive {
+    from {
+      opacity: 0;
+      clip-path: inset(100% 0 0 0);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0);
+    }
+  }
+  @keyframes connect-projects {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes name-draw {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0);
+    }
+  }
+  @keyframes projects-depart {
+    to {
+      opacity: 0;
+      scale: 0.94;
+    }
+  }
+  @keyframes name-resolve {
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes signature-arrive {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes empty-hand-rise {
+    from {
+      opacity: 1;
+      transform: translateY(45%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes plaque-descend {
+    from {
+      opacity: 1;
+      transform: translateY(-75%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes intro-exit {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  @media (max-width: 639px) {
+    .intro-top > span:last-child {
+      display: none;
+    }
+    .signature-intro {
+      --intro-project-width: min(
+        94vw,
+        calc((100svh - var(--intro-word-size) - var(--intro-word-bottom) - 90px) * 2.15)
+      );
+    }
+    .intro-square {
+      border-width: 2px;
+    }
+    .intro-signature {
+      height: min(96svh, 900px);
+      bottom: -4svh;
+    }
+    .intro-bottom > span {
+      max-width: 145px;
+      line-height: 1.7;
+      font-size: 10px;
+    }
+    .intro-bottom button {
+      gap: 10px;
+      padding-inline: 14px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .signature-intro {
+      display: none !important;
+    }
+  }
+</style>

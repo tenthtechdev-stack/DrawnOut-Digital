@@ -15,6 +15,13 @@ const { data } = project;
 const { previous, next } = getProjectNeighbors(projects, data.slug);
 const href = (slug: string) => `${preview ? '/_preview/work' : '/work'}/${slug}`;
 const verified = data.contentVerified;
+const attributed = verified && data.creditApproved;
+const hasFacts =
+  verified &&
+  (data.year ||
+    data.industry ||
+    data.services.length > 0 ||
+    (attributed && (data.projectType !== 'unknown' || data.clientName || data.role)));
 const portrait = data.cover.width < data.cover.height;
 const narratives = verified
   ? [
@@ -34,7 +41,10 @@ const categoryText = data.categories.map((category) => projectCategoryLabels[cat
   <header class="case-intro page-frame" data-text-reveal>
     <div class="case-breadcrumb">
       <a href="/work" class="back-link">
-        <span aria-hidden="true">↙</span> All work
+        <span aria-hidden="true">
+          <Arrow />
+        </span>{' '}
+        All work
       </a>
       <span class="eyebrow">{preview ? 'Local artwork review' : 'Selected work'}</span>
     </div>
@@ -57,7 +67,10 @@ const categoryText = data.categories.map((category) => projectCategoryLabels[cat
     <div class="case-opening-line">
       <span class="eyebrow">{preview ? 'A closer look at the artwork' : 'The project'}</span>
       <a href="#case-overview" aria-label="Read project overview">
-        <span>Scroll to explore</span> <span aria-hidden="true">↓</span>
+        <span>Scroll to explore</span>{' '}
+        <span class="scroll-arrow" aria-hidden="true">
+          <Arrow />
+        </span>
       </a>
     </div>
   </header>
@@ -72,6 +85,7 @@ const categoryText = data.categories.map((category) => projectCategoryLabels[cat
     )}
     <div class="hero-artwork" data-image-reveal data-expansion-frame>
       <MediaSlot
+        availability={preview ? 'placeholder' : 'approved'}
         poster={data.cover}
         alt={data.coverAlt}
         priority
@@ -102,15 +116,15 @@ const categoryText = data.categories.map((category) => projectCategoryLabels[cat
           results.
         </p>
       )}
-      {verified && (
+      {hasFacts && (
         <dl class="case-facts" data-case-facts>
-          {data.projectType !== 'unknown' && (
+          {attributed && data.projectType !== 'unknown' && (
             <div>
               <dt>Project type</dt>
               <dd>{data.projectType}</dd>
             </div>
           )}
-          {data.clientName && (
+          {attributed && data.clientName && (
             <div>
               <dt>Organization</dt>
               <dd>{data.clientName}</dd>
@@ -128,7 +142,7 @@ const categoryText = data.categories.map((category) => projectCategoryLabels[cat
               <dd>{data.industry}</dd>
             </div>
           )}
-          {data.role && (
+          {attributed && data.role && (
             <div>
               <dt>Our role</dt>
               <dd>{data.role}</dd>
@@ -162,53 +176,54 @@ const categoryText = data.categories.map((category) => projectCategoryLabels[cat
   )}
 
   <div class="page-frame">
-    <CaseGallery images={data.gallery} heroSource={data.cover.src} />
+    <CaseGallery images={data.gallery} heroSource={data.cover.src} preview={preview} />
   </div>
 
-  {verified && (data.deliverables?.length || data.results?.length || data.credits?.length) && (
-    <section
-      class="case-evidence page-frame"
-      data-case-evidence
-      aria-label="Confirmed project details"
-    >
-      {data.deliverables && data.deliverables.length > 0 && (
-        <div>
-          <h2>What was delivered.</h2>
-          <ul>
-            {data.deliverables.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-      {data.results && data.results.length > 0 && (
-        <div>
-          <h2>Documented outcomes.</h2>
-          <dl>
-            {data.results.map((result) => (
-              <div>
-                <dt>{result.label}</dt>
-                <dd>
-                  {result.value}
-                  <span class="evidence-source">Source: {result.evidenceSource}</span>
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      )}
-      {data.credits && data.credits.length > 0 && (
-        <div>
-          <h2>Credits.</h2>
-          <ul>
-            {data.credits.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </section>
-  )}
+  {verified &&
+    (data.deliverables?.length || data.results?.length || (attributed && data.credits?.length)) && (
+      <section
+        class="case-evidence page-frame"
+        data-case-evidence
+        aria-label="Confirmed project details"
+      >
+        {data.deliverables && data.deliverables.length > 0 && (
+          <div>
+            <h2>What was delivered.</h2>
+            <ul>
+              {data.deliverables.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {data.results && data.results.length > 0 && (
+          <div>
+            <h2>Documented outcomes.</h2>
+            <dl>
+              {data.results.map((result) => (
+                <div>
+                  <dt>{result.label}</dt>
+                  <dd>
+                    {result.value}
+                    <span class="evidence-source">Source: {result.evidenceSource}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        )}
+        {attributed && data.credits && data.credits.length > 0 && (
+          <div>
+            <h2>Credits.</h2>
+            <ul>
+              {data.credits.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
+    )}
 
   {(previous || next) && (
     <nav class="case-navigation page-frame" data-case-navigation aria-label="More projects">
@@ -228,7 +243,7 @@ const categoryText = data.categories.map((category) => projectCategoryLabels[cat
             <span class="eyebrow">Previous project</span>
             <span class="neighbor-title">{previous.data.title}</span>
             <span class="neighbor-arrow" aria-hidden="true">
-              ↙
+              <Arrow />
             </span>
           </a>
         )}
@@ -241,6 +256,7 @@ const categoryText = data.categories.map((category) => projectCategoryLabels[cat
           >
             <div class="next-image" data-expansion-frame>
               <MediaSlot
+                availability={preview ? 'placeholder' : 'approved'}
                 poster={next.data.cover}
                 alt={next.data.coverAlt}
                 aspectRatio={`${next.data.cover.width} / ${next.data.cover.height}`}
@@ -289,7 +305,14 @@ const categoryText = data.categories.map((category) => projectCategoryLabels[cat
     color: var(--accent-strong);
   }
   .back-link > span {
-    font-size: 22px;
+    display: inline-flex;
+  }
+  .back-link :global(svg),
+  .neighbor-arrow :global(svg) {
+    transform: rotate(180deg);
+  }
+  .scroll-arrow :global(svg) {
+    transform: rotate(135deg);
   }
   .draft-note {
     display: flex;

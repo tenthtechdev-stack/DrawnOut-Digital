@@ -1,10 +1,7 @@
 ---
-import { getDraftPreviewProjects } from '../lib/projects';
+import { getPublicProjects } from '../lib/projects';
 import ProjectCard from './ProjectCard.astro';
-const all = await getDraftPreviewProjects();
-const projects = ['bunzo', 'triarch', 'sol-community-center'].flatMap(
-  (slug) => all.find((project) => project.data.slug === slug) ?? [],
-);
+const projects = (await getPublicProjects({ featuredOnly: true })).slice(0, 3);
 ---
 
 <div class="preview-projects">
@@ -14,10 +11,7 @@ const projects = ['bunzo', 'triarch', 'sol-community-center'].flatMap(
       <ProjectCard project={project} index={index + 1} />
     ))}
   </div>
-  <p class="preview-context">
-    Portfolio stills for local visual review. Project scope, credits, and publication permissions
-    await confirmation.
-  </p>
+  <p class="preview-context">Selected artwork. Explore each project for a closer look.</p>
 </div>
 <style>
   .paired-projects {

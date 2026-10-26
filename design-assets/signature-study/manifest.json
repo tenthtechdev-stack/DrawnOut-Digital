@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-24",
+  "status": "reference-composite-prototype; production hand animation incomplete",
+  "originalSourceSHA256": "ea295f96073b0e789532551ec1787a9c10728fa46767ce27fb428ff1c3affcbb",
+  "originalsIdentical": true,
+  "sourceViewBox": [0, 0, 810, 1439.999935],
+  "embeddedRasters": [
+    {
+      "role": "opacity mask",
+      "format": "PNG",
+      "width": 1086,
+      "height": 1448,
+      "bitDepth": 8,
+      "colorType": "grayscale",
+      "bytes": 24026
+    },
+    {
+      "role": "complete hand/emblem appearance",
+      "format": "PNG",
+      "width": 1086,
+      "height": 1448,
+      "bitDepth": 8,
+      "colorType": "RGB",
+      "bytes": 820526
+    }
+  ],
+  "rights": {
+    "referenceProvenance": "Client-supplied reference/final pose approved in docs/SIGNATURE_EXPERIENCE_BRIEF.md; originals kept unchanged.",
+    "thirdPartyHandModelUsed": false,
+    "thirdPartyHandLicenseVerified": false,
+    "inferenceLimit": "Asset intake is not proof of a hand-model license, editable source rights or portfolio client/credit rights.",
+    "studyGeometry": "Project-authored basic acrylic plate and pedestal; no branded emblem modeled."
+  },
+  "siteUse": {
+    "sharedComponent": "src/components/SignatureArtwork.astro",
+    "variants": ["intro", "footer"],
+    "marker": "data-signature-asset=\"reference-composite-prototype\"",
+    "derivedSize": [810, 1440],
+    "runtimeImageWidths": [450, 810],
+    "independentHandEmblemMotion": false,
+    "staticFallback": true,
+    "renderStudyDeployed": false
+  },
+  "productionInputsMissing": [
+    "Licensed approved realistic hand mesh, rig and PBR skin/nail maps with render and source-delivery rights.",
+    "Approved editable DrawnOut emblem vector paths or mesh.",
+    "Approved glass/frame geometry and material; separate frame, foreground hand, emblem, background, glow and shadow/reflection passes for layered delivery.",
+    "Rigged grip/contact/occlusion animation sharing one master scene and final pose across intro and footer.",
+    "Approved desktop/portrait cameras, expansion backgrounds, rendered masters and beginning/contact/final proof frames.",
+    "Reviewed optimized derivatives, rights manifest and measured mobile transfer/decode-memory budget."
+  ],
+  "files": [
+    {
+      "path": "design-assets/brand-originals/hand-and-icon-supplied.svg",
+      "role": "supplied reference original",
+      "provenance": "client supplied; preserve exact bytes",
+      "bytes": 1127170,
+      "sha256": "ea295f96073b0e789532551ec1787a9c10728fa46767ce27fb428ff1c3affcbb"
+    },
+    {
+      "path": "design-assets/brand-originals/logo-as-supplied.svg",
+      "role": "identical supplied reference original",
+      "provenance": "client supplied; not editable emblem paths",
+      "bytes": 1127170,
+      "sha256": "ea295f96073b0e789532551ec1787a9c10728fa46767ce27fb428ff1c3affcbb"
+    },
+    {
+      "path": "src/assets/signature/hand-emblem-reference.webp",
+      "role": "shared website reference-composite prototype",
+      "provenance": "client reference derivative; no independent hand or emblem layers",
+      "bytes": 86416,
+      "sha256": "21ee3e09abb829c2a333b2ca04002b592bacbec9e607528e24c5e214bb5607b7"
+    },
+    {
+      "path": "artifacts/signature/hand-emblem-reference.png",
+      "role": "lossless review reference",
+      "provenance": "client reference derivative; current Chromium conversion",
+      "bytes": 791798,
+      "sha256": "ea33bc55b3f18ca7233814898ddc07ab8618774aef693a5e635cae75a72dd4dd"
+    },
+    {
+      "path": "scripts/signature/convert-reference.mjs",
+      "role": "source conversion script",
+      "provenance": "project-authored source; no third-party hand asset",
+      "bytes": 2291,
+      "sha256": "31c89e3b00fdd77cb3b41481c5717e2d4eebca80501288852382b8f2e08523ba"
+    },
+    {
+      "path": "scripts/signature/render-study.py",
+      "role": "reproducible Blender scene generator",
+      "provenance": "project-authored geometry, materials and lighting",
+      "bytes": 8596,
+      "sha256": "1ff902bd3c4faaaa6b290112491dc3c7836833e2e2408194d99946bf1a1df4a9"
+    },
+    {
+      "path": "design-assets/signature-study/signature-glass-study.blend",
+      "role": "Packed editable scene, reference image plane and material-study geometry only",
+      "provenance": "Project-authored material study with supplied reference; no hand rig",
+      "bytes": 1411044,
+      "sha256": "1987636b28fab53a49c5709512ab5fed969fa638a8cf122575c7fc578cddc675"
+    },
+    {
+      "path": "design-assets/signature-study/render-report.json",
+      "role": "Observed CPU render settings and output hashes",
+      "provenance": "Project-authored material study with supplied reference; no hand rig",
+      "bytes": 832,
+      "sha256": "4bad3c411f35e3448491cfaea773918541e3d84b7d6519f6217fc036a81f584f"
+    },
+    {
+      "path": "artifacts/signature/signature-glass-study.png",
+      "role": "Actual 32-sample Cycles study, not final photorealistic hand animation",
+      "provenance": "Project-authored material study with supplied reference; no hand rig",
+      "bytes": 1438064,
+      "sha256": "46298f445e0dd627853b7edb9ad9d4f597555c7b8402e1c99a17f59d49ecd67f"
+    }
+  ]
+}

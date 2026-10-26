@@ -9,7 +9,11 @@ const capabilityNames = [
 ];
 
 async function loadPosters(page: Page) {
-  for (const image of await page.locator('img').all()) {
+  // The transient intro is absent after its session ends. Exercise the images
+  // in the persistent page, including the shared signature footer.
+  for (const image of await page
+    .locator('main img, [data-site-header] img, [data-site-footer] img')
+    .all()) {
     await image.scrollIntoViewIfNeeded();
     await expect(image).toHaveJSProperty('complete', true);
     expect(
@@ -62,7 +66,7 @@ for (const width of [320, 360, 390, 768, 1024, 1440, 1920]) {
     }
     const work = page.locator('[data-work]');
     await expect(work.locator('img')).toHaveCount(5);
-    await expect(work.locator('a[href^="/work/"]')).toHaveCount(0);
+    await expect(work.locator('a[href^="/work/"]')).toHaveCount(5);
     await expect(page.locator('[data-site-footer]')).toBeVisible();
     await loadPosters(page);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
@@ -169,15 +173,16 @@ test('no-JavaScript mobile navigation and reduced-motion content stay usable', a
   const page = await context.newPage();
   await page.goto('http://127.0.0.1:4321/');
   const header = page.locator('[data-site-header]');
+  await page.keyboard.press('Tab');
+  await expect(page.getByRole('link', { name: 'Skip to content', exact: true })).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/#main$/);
+  await header.locator('[data-menu-fallback] summary').click();
   for (const name of ['Work', 'Services', 'About', 'Contact']) {
     await expect(header.getByRole('link', { name, exact: true })).toBeVisible();
   }
   await expect(page.locator('main h1')).toBeVisible();
   await expect(page.locator('[data-site-footer]')).toBeVisible();
-  await page.keyboard.press('Tab');
-  await expect(page.getByRole('link', { name: 'Skip to content', exact: true })).toBeFocused();
-  await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(/#main$/);
   await header.getByRole('link', { name: 'Work', exact: true }).click();
   await expect(page).toHaveURL('/work');
   await context.close();

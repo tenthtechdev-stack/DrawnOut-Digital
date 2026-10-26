@@ -1,11 +1,13 @@
 ---
 import Button from './Button.astro';
 import Star from './Star.astro';
+import LivingGradient from './LivingGradient.astro';
 import { site } from '../data/site';
 ---
 
 <section class="hero" data-hero aria-labelledby="hero-title">
   <div class="hero-atmosphere" data-ambient-layer aria-hidden="true">
+    <LivingGradient />
     <div class="orbit"></div>
   </div>
   <div class="page-frame hero-inner">
@@ -74,53 +76,6 @@ import { site } from '../data/site';
     overflow: hidden;
     pointer-events: none;
     background: var(--paper);
-  }
-  .hero-atmosphere::before,
-  .hero-atmosphere::after {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    content: '';
-    transform-origin: 50% 50%;
-    animation-play-state: paused;
-  }
-  .hero-atmosphere::before {
-    background: radial-gradient(ellipse at 69% 100%, #e0cbdc 0, transparent 50%);
-    animation: afterglow-reflection 20s ease-in-out infinite alternate paused;
-  }
-  .hero-atmosphere::after {
-    background: radial-gradient(ellipse at 94% 77%, #ff8a4c 0, #ffc7a5 19%, transparent 49%);
-    animation: afterglow-warmth 24s ease-in-out infinite alternate paused;
-  }
-  :global(html[data-motion-state='ready']:not([data-motion-paused]):not([data-motion-saver='true']))
-    .hero[data-hero-in-view='true']
-    .hero-atmosphere::before,
-  :global(html[data-motion-state='ready']:not([data-motion-paused]):not([data-motion-saver='true']))
-    .hero[data-hero-in-view='true']
-    .hero-atmosphere::after {
-    animation-play-state: running;
-    will-change: transform;
-  }
-  @keyframes afterglow-warmth {
-    from {
-      transform: translate3d(0, 0, 0) scale(1);
-    }
-    to {
-      transform: translate3d(-2%, -1%, 0) scale(1.1);
-    }
-  }
-  @keyframes afterglow-reflection {
-    from {
-      transform: translate3d(0, 0, 0) scale(1);
-    }
-    to {
-      transform: translate3d(1.8%, -0.6%, 0) scale(1.08);
-    }
-  }
-  :global(html[data-motion-saver='true']) .hero-atmosphere::before,
-  :global(html[data-motion-saver='true']) .hero-atmosphere::after {
-    animation: none;
-    transform: none;
   }
   .orbit {
     position: absolute;
@@ -290,14 +245,6 @@ import { site } from '../data/site';
     }
     .hero-inner {
       min-height: 610px;
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-atmosphere::before,
-    .hero-atmosphere::after {
-      animation: none;
-      transform: none;
-      will-change: auto;
     }
   }
 </style>

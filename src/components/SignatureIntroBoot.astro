@@ -1,0 +1,118 @@
+<!-- The homepage is always the default. This tiny gate expires even if the module never loads. -->
+<script is:inline>
+  (() => {
+    const html = document.documentElement;
+    try {
+      const preference = matchMedia('(prefers-reduced-motion: reduce)');
+      const connection = Reflect.get(navigator, 'connection');
+      const navigation = performance.getEntriesByType('navigation')[0];
+      if (sessionStorage.getItem('drawnout-loop-seen') === '1') return;
+      // Consume the initial homepage visit even when it opts out or arrives late.
+      // Returning from an internal page must never introduce a previously skipped gate.
+      sessionStorage.setItem('drawnout-loop-seen', '1');
+      if (
+        preference.matches ||
+        connection?.saveData ||
+        document.hidden ||
+        location.hash ||
+        scrollY > 0 ||
+        navigation?.type === 'back_forward' ||
+        performance.now() > 600
+      )
+        return;
+      html.dataset.signatureIntro = 'pending';
+      html.dataset.heroEntrance = 'static';
+      const controller = new AbortController();
+      const { signal } = controller;
+      let handoffTimer;
+      let completionTimer;
+      const finish = (reason = 'skipped') => {
+        if (!['pending', 'playing'].includes(html.dataset.signatureIntro)) return;
+        html.dataset.signatureIntro = reason === 'complete' ? 'completed' : 'skipped';
+        html.dataset.signatureIntroReason = reason;
+        html.dataset.signatureIntroEnded = performance.now().toFixed(2);
+        clearTimeout(watchdog);
+        clearTimeout(deadline);
+        clearTimeout(handoffTimer);
+        clearTimeout(completionTimer);
+        controller.abort();
+        window.dispatchEvent(new CustomEvent('signature:intro-end', { detail: { reason } }));
+      };
+      const deadline = setTimeout(() => finish('deadline'), Math.max(0, 4800 - performance.now()));
+      const watchdog = setTimeout(() => finish('initialization-timeout'), 650);
+      window.__drawnoutIntro = {
+        finish,
+        start() {
+          if (html.dataset.signatureIntro !== 'pending') return false;
+          if (performance.now() > 600) {
+            finish('late-initialization');
+            return false;
+          }
+          clearTimeout(watchdog);
+          html.dataset.signatureIntro = 'playing';
+          html.dataset.signatureIntroStarted = performance.now().toFixed(2);
+          handoffTimer = setTimeout(
+            () => window.dispatchEvent(new Event('signature:intro-handoff')),
+            3500,
+          );
+          completionTimer = setTimeout(() => finish('complete'), 4200);
+          return true;
+        },
+      };
+      const input = (event) => {
+        // Keep the visible button present through pointerup; its click handler
+        // finishes the intro without the gesture falling through to page links.
+        if (
+          event.type === 'pointerdown' &&
+          event.target instanceof Element &&
+          event.target.closest('[data-signature-skip]')
+        )
+          return;
+        finish('input');
+      };
+      window.addEventListener('wheel', input, { passive: true, signal });
+      window.addEventListener('touchstart', input, { passive: true, signal });
+      window.addEventListener('pointerdown', input, { passive: true, capture: true, signal });
+      window.addEventListener('scroll', input, { passive: true, signal });
+      window.addEventListener(
+        'keydown',
+        (event) => {
+          if (['Escape', 'Enter', ' ', 'Tab', 'PageDown', 'ArrowDown', 'End'].includes(event.key))
+            input(event);
+        },
+        { capture: true, signal },
+      );
+      document.addEventListener(
+        'focusin',
+        (event) => {
+          if (!event.target.closest?.('[data-signature-skip]')) input(event);
+        },
+        { signal },
+      );
+      document.addEventListener(
+        'visibilitychange',
+        () => {
+          if (document.hidden) finish('hidden');
+        },
+        { signal },
+      );
+      preference.addEventListener(
+        'change',
+        () => {
+          if (preference.matches) finish('reduced-motion');
+        },
+        { signal },
+      );
+      connection?.addEventListener?.(
+        'change',
+        () => {
+          if (connection.saveData) finish('save-data');
+        },
+        { signal },
+      );
+      window.addEventListener('pagehide', () => finish('navigation'), { signal });
+    } catch {
+      html.dataset.signatureIntro = 'skipped';
+    }
+  })();
+</script>

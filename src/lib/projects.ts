@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { selectPublicProjects, type ProjectSelectionOptions } from './project-schema';
+import { canPublish, selectPublicProjects, type ProjectSelectionOptions } from './project-schema';
 import { sortWorkProjects } from './portfolio';
 
 /** Every public consumer must use this selector, including future generated routes. */
@@ -11,12 +11,14 @@ export async function getPublicProjects(options: ProjectSelectionOptions = {}) {
 export async function getDraftPreviewProjects() {
   if (!import.meta.env.DEV) return [];
 
-  return (await getCollection('projects')).sort(
-    (a, b) =>
-      (a.data.featuredOrder ?? Number.POSITIVE_INFINITY) -
-        (b.data.featuredOrder ?? Number.POSITIVE_INFINITY) ||
-      a.data.slug.localeCompare(b.data.slug),
-  );
+  return (await getCollection('projects'))
+    .filter(({ data }) => !canPublish(data))
+    .sort(
+      (a, b) =>
+        (a.data.featuredOrder ?? Number.POSITIVE_INFINITY) -
+          (b.data.featuredOrder ?? Number.POSITIVE_INFINITY) ||
+        a.data.slug.localeCompare(b.data.slug),
+    );
 }
 
 /** Work index and public case navigation share this approval-filtered ordering. */

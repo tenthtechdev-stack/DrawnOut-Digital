@@ -17,7 +17,8 @@ const approved: PublicationState = {
   visibility: 'public',
   projectType: 'client',
   publicationApproved: true,
-  creditApproved: true,
+  creditApproved: false,
+  displayApproval: { state: 'approved', source: 'Synthetic test approval only.' },
 };
 const minimalRecord = {
   title: 'Review sample',
@@ -38,26 +39,28 @@ test('missing approval metadata defaults to private, unpublished content', () =>
   assert.equal(canPublish(record), false);
 });
 
-test('every approval and known provenance is required independently', () => {
+test('visual permission is independent of commissioning and credit, but release gates fail closed', () => {
   for (const status of ['draft', 'review', 'published'] as const) {
     for (const visibility of ['private', 'public'] as const) {
-      for (const projectType of ['unknown', 'client', 'concept', 'internal'] as const) {
+      for (const state of ['pending', 'approved', 'withdrawn'] as const) {
         for (const publicationApproved of [false, true]) {
           for (const creditApproved of [false, true]) {
-            const record = {
-              status,
-              visibility,
-              projectType,
-              publicationApproved,
-              creditApproved,
-            };
-            const expected =
-              status === 'published' &&
-              visibility === 'public' &&
-              projectType !== 'unknown' &&
-              publicationApproved &&
-              creditApproved;
-            assert.equal(canPublish(record), expected, JSON.stringify(record));
+            for (const projectType of ['unknown', 'client', 'concept', 'internal'] as const) {
+              const record = {
+                status,
+                visibility,
+                projectType,
+                publicationApproved,
+                creditApproved,
+                displayApproval: { state, source: 'Synthetic approval source.' },
+              };
+              const expected =
+                status === 'published' &&
+                visibility === 'public' &&
+                publicationApproved &&
+                state === 'approved';
+              assert.equal(canPublish(record), expected, JSON.stringify(record));
+            }
           }
         }
       }
@@ -86,10 +89,26 @@ test('URL slugs reject traversal, separators, unsafe text and ambiguous casing',
   }
 });
 
-test('a missing or invalid runtime provenance value fails closed', () => {
-  for (const projectType of [undefined, null, '', 'unverified']) {
-    assert.equal(canPublish({ ...approved, projectType } as unknown as PublicationState), false);
+test('missing, malformed, withdrawn or undocumented visual permission fails closed', () => {
+  for (const displayApproval of [
+    undefined,
+    null,
+    {},
+    { state: 'approved' },
+    { state: 'approved', source: ' ' },
+    { state: 'unknown', source: 'Not approval.' },
+    { state: 'withdrawn', source: 'Previous permission revoked.' },
+  ]) {
+    assert.equal(
+      canPublish({ ...approved, displayApproval } as unknown as PublicationState),
+      false,
+    );
   }
+  assert.equal(
+    schema.safeParse({ ...minimalRecord, displayApproval: { state: 'approved' } }).success,
+    false,
+  );
+  assert.equal(schema.parse(minimalRecord).displayApproval.state, 'pending');
 });
 
 test('cover alternatives and result evidence cannot be empty', () => {
@@ -114,8 +133,13 @@ test('the public selector excludes drafts and applies deterministic featured ord
       data: { ...approved, slug: 'draft', featured: true, status: 'draft' as const },
     },
     {
-      id: 'uncredited',
-      data: { ...approved, slug: 'uncredited', featured: true, creditApproved: false },
+      id: 'withdrawn',
+      data: {
+        ...approved,
+        slug: 'withdrawn',
+        featured: true,
+        displayApproval: { state: 'withdrawn' as const, source: 'Withdrawn.' },
+      },
     },
   ];
   assert.deepEqual(
@@ -152,13 +176,9 @@ test('project records retain the supplied collection, safe local media and publi
   for (const filename of filenames) {
     const path = new URL(filename, directory);
     const record = schema.parse(JSON.parse(await readFile(path, 'utf8')));
-    if (!canPublish(record)) {
-      assert.equal(record.visibility, 'private', `${filename} must remain private until approved.`);
-      assert.ok(
-        record.status === 'draft' || record.status === 'review',
-        `${filename} must not claim publication before all approvals are present.`,
-      );
-    }
+    // Withdrawal alone is a supported release operation. Records may retain
+    // their former published/public switches while the display gate excludes
+    // them; selector equality below verifies the actual publication boundary.
     assert.equal(record.slug, filename.replace(/\.json$/, ''));
     for (const source of [record.cover, ...record.gallery.map((media) => media.src)]) {
       const mediaPath = new URL(source, path);

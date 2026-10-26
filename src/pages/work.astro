@@ -3,9 +3,6 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import WorkPortfolio from '../components/work/WorkPortfolio.astro';
 import { getPublicWorkProjects } from '../lib/projects';
 const publicProjects = await getPublicWorkProjects();
-const PreviewWorkIndex = import.meta.env.DEV
-  ? (await import('../components/work/PreviewWorkIndex.astro')).default
-  : undefined;
 ---
 
 <SiteLayout
@@ -36,7 +33,7 @@ const PreviewWorkIndex = import.meta.env.DEV
       </div>
     </div>
   </section>
-  {PreviewWorkIndex ? <PreviewWorkIndex /> : <WorkPortfolio projects={publicProjects} />}
+  <WorkPortfolio projects={publicProjects} />
 </SiteLayout>
 
 <style>

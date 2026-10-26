@@ -1,0 +1,114 @@
+<div
+  class="living-gradient"
+  data-living-gradient
+  data-gradient-renderer="static"
+  aria-hidden="true"
+>
+  <div class="gradient-fallback">
+    <div class="gradient-colour gradient-coral"></div>
+    <div class="gradient-colour gradient-amber"></div>
+    <div class="gradient-colour gradient-lilac"></div>
+  </div>
+  <canvas width="1" height="1" data-gradient-canvas></canvas>
+</div>
+
+<script>
+  import '../scripts/living-gradient';
+</script>
+
+<style>
+  .living-gradient,
+  .gradient-fallback,
+  canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .living-gradient {
+    overflow: hidden;
+    background: var(--paper);
+    contain: strict;
+  }
+  .gradient-fallback {
+    background: radial-gradient(ellipse at 82% 76%, #ffb387 0, transparent 63%);
+  }
+  .gradient-fallback::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background:
+      linear-gradient(90deg, #f7f5f1ee, #f7f5f100 80%), linear-gradient(#f7f5f1, #f7f5f100 60%);
+  }
+  .gradient-colour {
+    position: absolute;
+    inset: -18%;
+    transform-origin: 75% 65%;
+    animation-play-state: paused;
+  }
+  .gradient-coral {
+    background: radial-gradient(ellipse at 89% 72%, #ff824a 0, #ffac7d80 23%, transparent 49%);
+    animation: coral-flow 13s ease-in-out infinite alternate paused;
+  }
+  .gradient-amber {
+    background: radial-gradient(ellipse at 86% 99%, #ffbf6d 0, #ffe0b780 20%, transparent 52%);
+    animation: amber-flow 17s ease-in-out infinite alternate paused;
+  }
+  .gradient-lilac {
+    background: radial-gradient(ellipse at 67% 106%, #bdb3ddcc 0, transparent 45%);
+    animation: lilac-flow 19s ease-in-out infinite alternate paused;
+  }
+  canvas {
+    opacity: 0;
+  }
+  [data-gradient-renderer='webgl'] canvas {
+    opacity: 1;
+  }
+  [data-gradient-renderer='webgl'] .gradient-fallback {
+    visibility: hidden;
+  }
+  [data-gradient-renderer='css'][data-gradient-active='true'] .gradient-colour {
+    animation-play-state: running;
+  }
+  @keyframes coral-flow {
+    from {
+      transform: translate3d(8%, 9%, 0) rotate(-14deg) scale(0.94);
+    }
+    to {
+      transform: translate3d(-13%, -8%, 0) rotate(12deg) scale(1.18);
+    }
+  }
+  @keyframes amber-flow {
+    from {
+      transform: translate3d(-12%, 2%, 0) rotate(9deg) scale(1.08);
+    }
+    to {
+      transform: translate3d(5%, -13%, 0) rotate(-19deg) scale(0.94);
+    }
+  }
+  @keyframes lilac-flow {
+    from {
+      transform: translate3d(7%, -3%, 0) rotate(8deg);
+    }
+    to {
+      transform: translate3d(-10%, 7%, 0) rotate(-11deg) scale(1.2);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gradient-colour {
+      animation: none;
+    }
+    canvas {
+      display: none;
+    }
+    [data-gradient-renderer='webgl'] .gradient-fallback {
+      visibility: visible;
+    }
+  }
+  @media (max-width: 767px) {
+    .gradient-fallback::after {
+      background: linear-gradient(#f7f5f1 16%, #f7f5f1dc 38%, #f7f5f100 70%);
+    }
+  }
+</style>

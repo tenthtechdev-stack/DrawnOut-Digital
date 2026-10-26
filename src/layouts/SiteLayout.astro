@@ -3,6 +3,8 @@ import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import MotionEnhancement from '../components/MotionEnhancement.astro';
+import SignatureIntro from '../components/SignatureIntro.astro';
+import SignatureIntroBoot from '../components/SignatureIntroBoot.astro';
 import { site } from '../data/site';
 interface Props {
   title?: string;
@@ -31,10 +33,12 @@ const motionEnabled = !Astro.url.pathname.startsWith('/concepts/');
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <title>{title}</title>
+    {motionEnabled && Astro.url.pathname === '/' && <SignatureIntroBoot />}
     {motionEnabled && Astro.url.pathname === '/' && <script is:inline>
       (() => {
         const html = document.documentElement;
         try {
+          if (html.dataset.signatureIntro === 'pending') return;
           const preference = matchMedia('(prefers-reduced-motion: reduce)');
           const connection = Reflect.get(navigator, 'connection');
           const restored = performance
@@ -97,12 +101,12 @@ const motionEnabled = !Astro.url.pathname.startsWith('/concepts/');
       <aside class="phase-notice" aria-label="Design review status">
         <div class="page-frame">
           <span>
-            <i aria-hidden="true"></i> Afterglow / Phase{' '}
-            {motionEnabled ? '4' : portfolioReview ? '3' : '2'}
+            <i aria-hidden="true"></i> Afterglow /{' '}
+            {motionEnabled ? 'Signature experience' : portfolioReview ? 'Phase 3' : 'Phase 2'}
           </span>
           <span>
             {motionEnabled
-              ? 'Cinematic motion review'
+              ? 'Signature experience review'
               : portfolioReview
                 ? 'Work & case-study review'
                 : 'Homepage storytelling review'}
@@ -110,6 +114,7 @@ const motionEnabled = !Astro.url.pathname.startsWith('/concepts/');
         </div>
       </aside>
     )}
+    {motionEnabled && Astro.url.pathname === '/' && <SignatureIntro />}
     <SiteHeader />
     <main id="main" tabindex="-1" data-motion-root={motionEnabled || undefined}>
       <slot />

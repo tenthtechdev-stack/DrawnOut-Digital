@@ -1,4 +1,8 @@
-[Current Phase 4 cinematic motion gallery and recordings](phase-4/README.md)
+[Current opening correction gallery and recordings — PR #4 visual review](signature-opening/README.md)
+
+[Historical signature experience gallery before the opening correction](signature/README.md)
+
+[Approved Phase 4 cinematic motion gallery and recordings](phase-4/README.md)
 
 [Approved Phase 3 Work and case-study gallery](phase-3/README.md)
 
