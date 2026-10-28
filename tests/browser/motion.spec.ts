@@ -1,15 +1,12 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
 
-// Simulate a same-tab internal navigation to isolate editorial motion; full loads have their own suite.
+// Isolate editorial motion through the supported storage-unavailable fallback.
+// Home links now intentionally replay the intro and have dedicated coverage.
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => {
-    sessionStorage.setItem(
-      'drawnout-loop-navigation',
-      JSON.stringify({
-        to: location.pathname + location.search,
-        at: Date.now(),
-      }),
-    );
+    Storage.prototype.getItem = () => {
+      throw new DOMException('Storage unavailable in editorial-motion fixture', 'SecurityError');
+    };
   });
 });
 

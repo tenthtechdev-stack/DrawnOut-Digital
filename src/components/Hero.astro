@@ -120,50 +120,6 @@ import { site } from '../data/site';
   h1 > span {
     display: block;
   }
-  /* One local glow sits behind every heading line, avoiding a rectangular
-     highlight or an overlapping scrim above the preceding line's glyphs. */
-  h1::before {
-    content: '';
-    position: absolute;
-    width: 74%;
-    height: 1.9em;
-    bottom: -0.42em;
-    left: -7%;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse 65% 72% at 50% 50%,
-      #f7f5f1f5 28%,
-      #f7f5f1c9 50%,
-      #f7f5f166 66%,
-      transparent 85%
-    );
-    filter: blur(14px);
-  }
-  .hero-kicker,
-  .hero-bottom > p,
-  .hero-actions,
-  .hero-baseline > span {
-    position: relative;
-    isolation: isolate;
-  }
-  .hero-kicker {
-    width: fit-content;
-  }
-  :is(.hero-kicker, .hero-bottom > p, .hero-actions, .hero-note, .hero-baseline > span)::before {
-    content: '';
-    position: absolute;
-    inset: -28px -35px;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse 65% 75% at 50% 50%,
-      #f7f5f180 24%,
-      #f7f5f140 54%,
-      transparent 82%
-    );
-    filter: blur(15px);
-  }
   .accent-line {
     color: var(--accent-strong);
   }

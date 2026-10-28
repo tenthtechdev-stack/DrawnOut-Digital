@@ -377,7 +377,7 @@ test('data saving bypasses the opening', async ({ page }) => {
   await expect(page.locator('main h1')).toBeVisible();
 });
 
-test('an opted-out first homepage visit never introduces the intro on an internal return', async ({
+test('a homepage return respects the current motion preference instead of a past opt-out', async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -390,11 +390,10 @@ test('an opted-out first homepage visit never introduces the intro on an interna
     .getByRole('link', { name: 'DrawnOut Digital home' })
     .click();
   await expect(page).toHaveURL('/');
+  await expect(page.locator(overlay)).toBeVisible();
+  await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');
+  await page.keyboard.press('Escape');
   await expect(page.locator(overlay)).toBeHidden();
-  await expect(page.locator('html')).toHaveAttribute(
-    'data-signature-intro-reason',
-    'internal-navigation',
-  );
 });
 
 test('unavailable session storage fails open', async ({ page }) => {

@@ -1,5 +1,4 @@
 import { expect, test, type Page } from '@playwright/test';
-import sharp from 'sharp';
 
 // Explicit software WebGL exercises the real shader in cloud Chromium. This is
 // rendering coverage, not a claim about physical-device GPU performance.
@@ -61,19 +60,52 @@ async function visibleGradient(page: Page) {
   return page.screenshot({ clip: bounds! });
 }
 
-async function pixels(image: Buffer) {
-  return sharp(image).resize(160, 96, { fit: 'fill' }).removeAlpha().raw().toBuffer();
+// Read the actual WebGL output immediately after its next natural draw. This
+// excludes foreground text from colour-isolation measurements and does not seek
+// or change the animation clock. Browser recordings remain the visual evidence.
+async function canvasPixels(page: Page) {
+  const samples = await page.locator('[data-gradient-canvas]').evaluate(async (element) => {
+    const canvas = element as HTMLCanvasElement;
+    const gl = canvas.getContext('webgl')!;
+    return new Promise<number[]>((resolve, reject) => {
+      const original = gl.drawArrays;
+      const timer = setTimeout(() => {
+        gl.drawArrays = original;
+        reject(new Error('No natural gradient frame arrived'));
+      }, 3000);
+      gl.drawArrays = function (...args) {
+        original.apply(gl, args);
+        gl.drawArrays = original;
+        clearTimeout(timer);
+        const rgba = new Uint8Array(canvas.width * canvas.height * 4);
+        gl.readPixels(0, 0, canvas.width, canvas.height, gl.RGBA, gl.UNSIGNED_BYTE, rgba);
+        const rgb: number[] = [];
+        for (let y = 0; y < 96; y += 1) {
+          for (let x = 0; x < 160; x += 1) {
+            const sx = Math.min(canvas.width - 1, Math.floor(((x + 0.5) / 160) * canvas.width));
+            const sy = Math.min(canvas.height - 1, Math.floor(((y + 0.5) / 96) * canvas.height));
+            const index = (sy * canvas.width + sx) * 4;
+            rgb.push(rgba[index]!, rgba[index + 1]!, rgba[index + 2]!);
+          }
+        }
+        resolve(rgb);
+      };
+    });
+  });
+  return Buffer.from(samples);
 }
 
 function frameMetrics(before: Buffer, after: Buffer) {
-  const quadrants = Array.from({ length: 4 }, () => ({ pixels: 0, changed: 0, colourful: 0 }));
-  let totalDifference = 0;
+  const regions = {
+    left: { pixels: 0, difference: 0, colourful: 0 },
+    right: { pixels: 0, difference: 0, colourful: 0 },
+  };
+  const rightHalves = Array.from({ length: 2 }, () => ({ pixels: 0, changed: 0 }));
   let warmPixels = 0;
   let colourfulPixels = 0;
   for (let pixel = 0; pixel < 160 * 96; pixel += 1) {
     const x = pixel % 160;
     const y = Math.floor(pixel / 160);
-    const quadrant = quadrants[(x >= 80 ? 1 : 0) + (y >= 48 ? 2 : 0)]!;
     const index = pixel * 3;
     const channels = [after[index]!, after[index + 1]!, after[index + 2]!];
     const difference =
@@ -81,28 +113,40 @@ function frameMetrics(before: Buffer, after: Buffer) {
         (sum, channel, offset) => sum + Math.abs(channel - before[index + offset]!),
         0,
       ) / 3;
-    quadrant.pixels += 1;
-    if (difference > 6) quadrant.changed += 1;
-    if (Math.max(...channels) - Math.min(...channels) > 28) {
-      quadrant.colourful += 1;
+    const colourful = Math.max(...channels) - Math.min(...channels) > 28;
+    if (colourful) {
       colourfulPixels += 1;
       if (channels[0]! - channels[2]! > 25 && channels[0]! - channels[1]! > 12) warmPixels += 1;
     }
-    totalDifference += difference;
+    const region = x < 72 ? regions.left : x >= 88 ? regions.right : undefined;
+    if (region) {
+      region.pixels += 1;
+      region.difference += difference;
+      if (colourful) region.colourful += 1;
+    }
+    if (x >= 88) {
+      const half = rightHalves[y < 48 ? 0 : 1]!;
+      half.pixels += 1;
+      if (difference > 6) half.changed += 1;
+    }
   }
   return {
-    meanChannelChange: totalDifference / (160 * 96),
     colourfulFraction: colourfulPixels / (160 * 96),
     warmShare: warmPixels / Math.max(1, colourfulPixels),
-    quadrants: quadrants.map((item) => ({
-      changedFraction: item.changed / item.pixels,
-      colourfulFraction: item.colourful / item.pixels,
-    })),
+    left: {
+      meanChannelChange: regions.left.difference / regions.left.pixels,
+      colourfulFraction: regions.left.colourful / regions.left.pixels,
+    },
+    right: {
+      meanChannelChange: regions.right.difference / regions.right.pixels,
+      colourfulFraction: regions.right.colourful / regions.right.pixels,
+      halves: rightHalves.map((half) => half.changed / half.pixels),
+    },
   };
 }
 
 for (const width of [320, 390, 768, 1440]) {
-  test(`fluid shader evolves at 0/2/5s after the loader at ${width}px and pauses offscreen`, async ({
+  test(`right-side fluid shader evolves at 0/2/5/8s after the loader at ${width}px and pauses offscreen`, async ({
     page,
   }) => {
     await observeGPUStartup(page);
@@ -122,13 +166,13 @@ for (const width of [320, 390, 768, 1440]) {
     await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'completed');
     const frames: { elapsedMs: number; state: GradientState; pixels: Buffer }[] = [];
     const started = Date.now();
-    for (const at of [0, 2000, 5000]) {
+    for (const at of [0, 2000, 5000, 8000]) {
       const remaining = at - (Date.now() - started);
       if (remaining > 0) await page.waitForTimeout(remaining);
       frames.push({
         elapsedMs: Date.now() - started,
         state: await snapshot(page),
-        pixels: await pixels(await visibleGradient(page)),
+        pixels: await canvasPixels(page),
       });
     }
     const first = frames[0]!;
@@ -137,20 +181,16 @@ for (const width of [320, 390, 768, 1440]) {
       ...frameMetrics(first.pixels, frame.pixels),
     }));
     for (const change of changes) {
-      // Reject a static shader, imperceptibly drifting wash, or a sole corner hotspot.
-      expect(change.meanChannelChange).toBeGreaterThan(3);
-      expect(change.colourfulFraction).toBeGreaterThan(0.22);
-      expect(change.warmShare).toBeGreaterThan(0.45);
-      for (const quadrant of change.quadrants) {
-        expect(quadrant.changedFraction).toBeGreaterThan(0.04);
-      }
-    }
-    // A moving cream region can occupy a quadrant at one instant. Across both
-    // observations, colour must reach every quadrant rather than stay in a corner.
-    for (let index = 0; index < 4; index += 1) {
-      expect(
-        Math.max(...changes.map((change) => change.quadrants[index]!.colourfulFraction)),
-      ).toBeGreaterThan(0.05);
+      // Correct art direction: clean paper left, strongly moving warm colour
+      // throughout the right band. These reject the earlier full-hero shader.
+      expect(change.left.colourfulFraction).toBeLessThan(0.01);
+      expect(change.left.meanChannelChange).toBeLessThan(0.5);
+      expect(change.right.colourfulFraction).toBeGreaterThan(0.65);
+      expect(change.right.meanChannelChange).toBeGreaterThan(7);
+      expect(change.colourfulFraction).toBeGreaterThan(0.3);
+      expect(change.colourfulFraction).toBeLessThan(0.55);
+      expect(change.warmShare).toBeGreaterThan(0.75);
+      for (const half of change.right.halves) expect(half).toBeGreaterThan(0.3);
     }
     const last = frames.at(-1)!.state;
     const elapsed = last.time - first.state.time;

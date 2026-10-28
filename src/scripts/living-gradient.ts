@@ -20,53 +20,55 @@ const vertexSource = `
   }
 `;
 
-// Two nested, low-frequency domain warps produce broad liquid contours rather
-// than translating soft circles. This is one analytic shader pass: no textures,
-// simulation buffers, noise loops, or per-frame CPU geometry.
+// A right-localized folded ribbon. The moving boundary and inner contours evolve
+// at different rates, so vertical flow deforms rather than translating wallpaper.
+// One analytic pass; no textures, simulation buffers, or per-frame CPU geometry.
 const fragmentSource = `
   precision mediump float;
   varying vec2 uv;
   uniform float time;
   uniform vec2 pointer;
 
-  vec2 bend(vec2 p, float t) {
-    return vec2(
-      sin(p.y * 3.6 + sin(p.x * 2.1 - t * 0.48) + t * 0.62),
-      cos(p.x * 3.1 - cos(p.y * 2.7 + t * 0.42) - t * 0.53)
-    );
+  // Stationary screen-space grain: fine, low-amplitude, never temporal static.
+  float grain(vec2 point) {
+    vec3 p = fract(vec3(point.xyx) * 0.1031);
+    p += dot(p, p.yzx + 33.33);
+    return fract((p.x + p.y) * p.z);
   }
 
   void main() {
     vec2 p = vec2(uv.x, 1.0 - uv.y);
-    float t = time * 0.68;
-    vec2 q = p + bend(p, t) * 0.27;
-    q += bend(q * 1.34 + vec2(2.7, 1.3), t * 0.81) * 0.17;
-
-    // The eased cursor gently bends only the nearby flow; autonomous movement
-    // continues at rest. Returning the pointer to zero restores its idle shape.
+    float t = time;
     vec2 delta = p - (pointer * 0.5 + 0.5);
-    float influence = exp(-dot(delta, delta) * 13.0) * length(pointer);
-    q += vec2(-delta.y, delta.x) * influence * 0.34;
-    q += pointer * influence * 0.075;
+    float influence = exp(-dot(delta, delta) * 16.0) * length(pointer);
+    vec2 q = p + vec2(-delta.y, delta.x) * influence * 0.12;
+    q += pointer * influence * 0.018;
 
-    float ribbon = 0.5 + 0.5 * sin(q.x * 4.1 + q.y * 2.2
-      + sin(q.y * 4.5 - t * 0.46) * 0.72 - t * 0.57);
-    float warm = smoothstep(0.12, 0.82, ribbon);
-    float coral = smoothstep(0.48, 0.96, ribbon);
-    float cool = smoothstep(0.48, 0.92,
-      0.5 + 0.5 * sin(q.y * 3.7 - q.x * 2.4 + t * 0.51));
-    float cream = smoothstep(0.68, 0.98,
-      0.5 + 0.5 * sin(q.x * 2.8 - q.y * 4.0 + t * 0.44));
+    // Broad waves travel vertically, with a second counter-moving curl that
+    // changes each fold's width and shape throughout the 4–8 second phrase.
+    float travel = q.y * 6.3 - t * 1.05;
+    float curl = sin(q.y * 10.5 + t * 0.63 + sin(travel) * 0.9);
+    float boundary = 0.625 + sin(travel) * 0.045 + curl * 0.022;
+    float envelope = smoothstep(boundary - 0.115, boundary + 0.11, p.x);
+    float fold = q.x + sin(travel + q.x * 2.8) * 0.085
+      + sin(q.y * 11.0 - t * 0.72 + curl) * 0.035;
+    float contour = fold * 13.5 + sin(travel * 0.72 + t * 0.2) * 1.3;
+    float amber = 0.5 + 0.5 * sin(contour);
+    float coral = smoothstep(0.45, 0.95,
+      0.5 + 0.5 * sin(contour + 1.4 + curl * 0.55));
+    float lightFold = pow(0.5 + 0.5 * sin(contour - 1.8), 3.0);
+    float lilac = smoothstep(0.74, 0.99,
+      0.5 + 0.5 * sin(travel * 0.7 + fold * 9.0 + t * 0.17));
 
     vec3 paper = vec3(0.9686, 0.9608, 0.9451);
-    vec3 colour = mix(paper, vec3(1.0, 0.69, 0.31), warm * 0.94);
-    colour = mix(colour, vec3(0.98, 0.34, 0.16), coral * 0.82);
-    colour = mix(colour, vec3(0.72, 0.67, 0.86), cool * (1.0 - warm) * 0.66);
-    colour = mix(colour, vec3(1.0, 0.91, 0.76), cream * 0.44);
-    // Only the edge joins the surrounding paper. Typography gets local DOM
-    // scrims, so the rest of the canvas retains its colour and visible flow.
-    float edge = 1.0 - smoothstep(0.0, 0.065, p.y);
-    gl_FragColor = vec4(mix(colour, paper, edge * 0.55), 1.0);
+    vec3 colour = mix(vec3(1.0, 0.82, 0.52), vec3(1.0, 0.64, 0.27), amber);
+    colour = mix(colour, vec3(1.0, 0.43, 0.28), coral * 0.78);
+    colour = mix(colour, vec3(1.0, 0.91, 0.77), lightFold * 0.78);
+    colour = mix(colour, vec3(0.77, 0.72, 0.89), lilac * 0.32);
+    colour += (grain(gl_FragCoord.xy) - 0.5) * 0.012;
+    // Keep the left half paper throughout every phase. This envelope is the
+    // composition, not a rectangle/scrim placed behind individual text nodes.
+    gl_FragColor = vec4(mix(paper, colour, envelope), 1.0);
   }
 `;
 

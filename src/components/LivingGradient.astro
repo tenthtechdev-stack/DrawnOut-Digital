@@ -32,27 +32,41 @@
     contain: strict;
   }
   .gradient-fallback {
-    background: linear-gradient(125deg, #f7f5f1 4%, #ffd19a 42%, #f7f5f1 88%);
+    overflow: hidden;
+    background: var(--paper);
+    /* The fallback keeps the same paper-left / colour-right composition. */
+    mask-image: linear-gradient(90deg, transparent 44%, #000 72%);
   }
   .gradient-colour {
     position: absolute;
-    inset: -25%;
-    border-radius: 40%;
-    filter: blur(26px);
-    transform-origin: 50% 50%;
+    left: 49%;
+    right: -16%;
+    top: -28%;
+    bottom: -28%;
+    border-radius: 48% 30% 44% 35%;
+    filter: blur(25px);
+    transform-origin: 65% 50%;
     animation-play-state: paused;
   }
   .gradient-coral {
-    background: radial-gradient(ellipse at 75% 36%, #ff7747 0, #ff9f59c0 25%, transparent 57%);
-    animation: coral-flow 9s ease-in-out infinite alternate paused;
+    background: linear-gradient(165deg, #ffbb6d 8%, #ff865c 34%, #ffd19a 54%, #ff895b 74%, #ffc47c);
+    animation: coral-flow 7s ease-in-out infinite alternate paused;
   }
   .gradient-amber {
-    background: radial-gradient(ellipse at 24% 72%, #ffc16e 0, #ffcf92cc 27%, transparent 58%);
-    animation: amber-flow 12s ease-in-out infinite alternate paused;
+    left: 61%;
+    background: repeating-linear-gradient(
+      158deg,
+      transparent 0 12%,
+      #ffe0a6cc 20%,
+      #ffbd6fcc 30%,
+      transparent 43%
+    );
+    animation: amber-flow 9s ease-in-out infinite alternate paused;
   }
   .gradient-lilac {
-    background: radial-gradient(ellipse at 78% 91%, #bdb3ddc0 0, transparent 49%);
-    animation: lilac-flow 14s ease-in-out infinite alternate paused;
+    left: 72%;
+    background: radial-gradient(ellipse at 73% 60%, #c6b8dd99 0, transparent 56%);
+    animation: lilac-flow 11s ease-in-out infinite alternate paused;
   }
   canvas {
     opacity: 0;
@@ -68,26 +82,28 @@
   }
   @keyframes coral-flow {
     from {
-      transform: translate3d(8%, 9%, 0) rotate(-14deg) scale(0.94);
+      transform: translate3d(3%, 12%, 0) skewY(-10deg) rotate(-8deg);
+      border-radius: 48% 30% 44% 35%;
     }
     to {
-      transform: translate3d(-13%, -8%, 0) rotate(12deg) scale(1.18);
+      transform: translate3d(-4%, -13%, 0) skewY(8deg) rotate(6deg);
+      border-radius: 33% 48% 29% 45%;
     }
   }
   @keyframes amber-flow {
     from {
-      transform: translate3d(-12%, 2%, 0) rotate(9deg) scale(1.08);
+      transform: translate3d(-3%, -16%, 0) rotate(7deg);
     }
     to {
-      transform: translate3d(5%, -13%, 0) rotate(-19deg) scale(0.94);
+      transform: translate3d(4%, 15%, 0) rotate(-9deg);
     }
   }
   @keyframes lilac-flow {
     from {
-      transform: translate3d(7%, -3%, 0) rotate(8deg);
+      transform: translate3d(2%, 18%, 0) rotate(-8deg);
     }
     to {
-      transform: translate3d(-10%, 7%, 0) rotate(-11deg) scale(1.2);
+      transform: translate3d(-3%, -20%, 0) rotate(10deg);
     }
   }
   @media (prefers-reduced-motion: reduce) {

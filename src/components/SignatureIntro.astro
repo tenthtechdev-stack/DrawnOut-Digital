@@ -45,6 +45,9 @@ const positions = [
     <span>DrawnOut Digital</span>
     <span>From thought to form.</span>
   </div>
+  <div data-intro-brief aria-hidden="true">
+    DrawnOut
+  </div>
   <div class="intro-composition" aria-hidden="true">
     <div class="intro-projects" data-intro-projects>
       <svg class="intro-wave" viewBox="0 0 1000 720" preserveAspectRatio="none" fill="none">
@@ -130,18 +133,32 @@ const positions = [
       if (signal.aborted) return;
       try {
         if (origin === undefined) {
-          // The native hidden attribute is the no-JS/CSS-failure fallback.
-          // Only reveal a loader whose own stylesheet is actually ready.
-          if (getComputedStyle(overlay).getPropertyValue('--intro-styles-ready').trim() !== '1') {
+          // Wait only within the full-sequence budget. Both the stylesheet and
+          // real artwork must be ready before committing to the full story.
+          // Late assets/HTML get a distinct, deliberately brief branded handoff.
+          const stylesReady =
+            getComputedStyle(overlay).getPropertyValue('--intro-styles-ready').trim() === '1';
+          const imagesReady = [...overlay.querySelectorAll('img')].every(
+            (image) => image.complete && image.naturalWidth > 0,
+          );
+          if ((!stylesReady || !imagesReady) && performance.now() < gate.fullUntil) {
             syncFrame = requestAnimationFrame(synchronize);
             return;
           }
-          if (!gate.start()) {
+          const mode = stylesReady && imagesReady ? 'full' : 'brief';
+          if (mode === 'brief' || performance.now() > gate.fullUntil)
+            document.documentElement.dataset.signatureIntroFallback = !stylesReady
+              ? 'style-delay'
+              : !imagesReady
+                ? 'asset-delay'
+                : 'late-start';
+          if (!gate.start(mode)) {
             controller.abort();
             return;
           }
           origin = Number(document.documentElement.dataset.signatureIntroStarted);
           overlay.hidden = false;
+          if (document.documentElement.dataset.signatureIntroMode === 'brief') return;
         }
         const animations = overlay.getAnimations({ subtree: true });
         const names = animations.map((animation) => animation.animationName ?? '');

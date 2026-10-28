@@ -45,6 +45,34 @@ test('readable but unwritable session storage keeps navigation immediately avail
 
 async function completed(page: Page) {
   await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');
+  await expect(page.locator('html')).toHaveAttribute('data-signature-intro-mode', 'full');
+  await expect(page.locator(overlay)).toBeVisible();
+  const appearance = await page.evaluate(async () => {
+    const scene = document.querySelector<HTMLElement>('[data-signature-intro-overlay]')!;
+    const samples: number[] = [];
+    const start = performance.now();
+    await new Promise<void>((resolve) => {
+      const sample = () => {
+        const style = getComputedStyle(scene);
+        const bounds = scene.getBoundingClientRect();
+        if (
+          !scene.hidden &&
+          style.display !== 'none' &&
+          style.visibility !== 'hidden' &&
+          Number(style.opacity) > 0.95 &&
+          bounds.width >= innerWidth - 1 &&
+          bounds.height >= innerHeight - 1
+        )
+          samples.push(performance.now());
+        if (performance.now() - start >= 450) resolve();
+        else requestAnimationFrame(sample);
+      };
+      requestAnimationFrame(sample);
+    });
+    return { frames: samples.length, visibleMs: (samples.at(-1) ?? 0) - (samples[0] ?? 0) };
+  });
+  expect(appearance.frames).toBeGreaterThan(2);
+  expect(appearance.visibleMs).toBeGreaterThan(300);
   await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'completed');
   await expect(page.locator('html')).toHaveAttribute('data-signature-intro-reason', 'complete');
   const ended = Number(await page.locator('html').getAttribute('data-signature-intro-ended'));
@@ -53,6 +81,24 @@ async function completed(page: Page) {
   expect(ended).toBeLessThanOrEqual(5000);
   await expect(page.locator(overlay)).toBeHidden();
   return ended;
+}
+
+for (const route of ['/contact', '/work']) {
+  for (const width of [390, 1440]) {
+    test(`Home/logo from ${route} replays the full visible loader at ${width}px`, async ({
+      page,
+    }) => {
+      await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
+      await page.goto(`${route}#main`);
+      await page.locator('[data-site-header] a[href="/"]').first().click();
+      await expect(page).toHaveURL('/');
+      const ended = await completed(page);
+      await test.info().attach('home-arrival', {
+        body: JSON.stringify({ route, width, ended }),
+        contentType: 'application/json',
+      });
+    });
+  }
 }
 
 for (const width of [390, 1440]) {
@@ -298,10 +344,16 @@ for (const availableAt of [620, 850]) {
         Number(await page.locator('html').getAttribute('data-signature-intro-started')),
       ).toBeGreaterThanOrEqual(620);
     } else {
-      await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'skipped');
-      await expect(page.locator(overlay)).toBeHidden();
-      await expect(page.locator(overlay)).toHaveAttribute('hidden', '');
-      await page.waitForTimeout(1000);
+      await expect(page.locator('html')).toHaveAttribute('data-signature-intro-mode', 'brief');
+      await expect(page.locator(overlay)).toBeVisible();
+      await expect(page.locator('[data-intro-brief]')).toBeVisible();
+      await expect(page.locator('html')).toHaveAttribute(
+        'data-signature-intro-reason',
+        'brief-complete',
+      );
+      expect(
+        Number(await page.locator('html').getAttribute('data-signature-intro-ended')),
+      ).toBeLessThanOrEqual(5000);
       await expect(page.locator(overlay)).toBeHidden();
       await expect(page.locator('main h1')).toBeVisible();
     }
@@ -324,7 +376,7 @@ test('prevented same-tab clicks and same-document hash actions leave no navigati
   expect(await page.evaluate(() => sessionStorage.getItem('drawnout-loop-navigation'))).toBeNull();
 });
 
-test('missing stylesheet readiness never reveals the loader or blocks content', async ({
+test('missing full stylesheet readiness uses the independent brief handoff and releases content', async ({
   page,
 }) => {
   await page.addInitScript(() => {
@@ -334,15 +386,42 @@ test('missing stylesheet readiness never reveals the loader or blocks content', 
     };
   });
   await page.goto('/', { waitUntil: 'commit' });
-  await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'skipped');
+  await expect(page.locator('html')).toHaveAttribute('data-signature-intro-mode', 'brief');
+  await expect(page.locator('[data-intro-brief]')).toBeVisible();
   await expect(page.locator('html')).toHaveAttribute(
     'data-signature-intro-reason',
-    'initialization-timeout',
+    'brief-complete',
   );
   await expect(page.locator(overlay)).toBeHidden();
   await expect(page.locator(overlay)).toHaveAttribute('hidden', '');
   await page.getByRole('link', { name: 'Explore Our Work', exact: true }).click();
   await expect(page).toHaveURL('/work');
+  await expect(page.locator('main h1')).toBeVisible();
+});
+
+test('delayed artwork uses a truthful brief handoff instead of empty project reveals', async ({
+  page,
+}) => {
+  await page.route('**/*', async (route) => {
+    if (route.request().resourceType() === 'image')
+      await new Promise((resolve) => setTimeout(resolve, 1100));
+    await route.continue();
+  });
+  await page.goto('/', { waitUntil: 'commit' });
+  await expect(page.locator('html')).toHaveAttribute('data-signature-intro-mode', 'brief');
+  await expect(page.locator('html')).toHaveAttribute(
+    'data-signature-intro-fallback',
+    'asset-delay',
+  );
+  await expect(page.locator('[data-intro-brief]')).toBeVisible();
+  await expect(page.locator('html')).toHaveAttribute(
+    'data-signature-intro-reason',
+    'brief-complete',
+  );
+  expect(
+    Number(await page.locator('html').getAttribute('data-signature-intro-ended')),
+  ).toBeLessThanOrEqual(5000);
+  await expect(page.locator(overlay)).toBeHidden();
   await expect(page.locator('main h1')).toBeVisible();
 });
 
