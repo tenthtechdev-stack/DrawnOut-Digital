@@ -40,7 +40,7 @@ const positions = [
 ];
 ---
 
-<div class="signature-intro" data-signature-intro-overlay>
+<div class="signature-intro" data-signature-intro-overlay hidden>
   <div class="intro-top" aria-hidden="true">
     <span>DrawnOut Digital</span>
     <span>From thought to form.</span>
@@ -121,18 +121,28 @@ const positions = [
     for (const image of overlay.querySelectorAll('img')) {
       if (image.complete && image.naturalWidth === 0) gate.finish('asset-error');
     }
-    if (!gate.start()) {
-      controller.abort();
-      return;
-    }
     // CSS can resolve in separate browser frames (especially during startup).
     // Anchor every storyboard actor to the gate's real document-clock start,
     // rather than letting independently resolved CSS animations drift apart.
-    const origin = performance.now();
+    let origin;
     let syncFrame;
     const synchronize = () => {
       if (signal.aborted) return;
       try {
+        if (origin === undefined) {
+          // The native hidden attribute is the no-JS/CSS-failure fallback.
+          // Only reveal a loader whose own stylesheet is actually ready.
+          if (getComputedStyle(overlay).getPropertyValue('--intro-styles-ready').trim() !== '1') {
+            syncFrame = requestAnimationFrame(synchronize);
+            return;
+          }
+          if (!gate.start()) {
+            controller.abort();
+            return;
+          }
+          origin = Number(document.documentElement.dataset.signatureIntroStarted);
+          overlay.hidden = false;
+        }
         const animations = overlay.getAnimations({ subtree: true });
         const names = animations.map((animation) => animation.animationName ?? '');
         if (
@@ -156,7 +166,15 @@ const positions = [
   import '../scripts/signature-intro';
 </script>
 <style>
+  /* Mobile Chromium can restore a content anchor on refresh even at scrollY=0.
+     Keep the top-of-page loader stable while it owns the screen; history and
+     deep links bypass this state and retain normal browser restoration. */
+  :global(html[data-signature-intro='pending']),
+  :global(html[data-signature-intro='playing']) {
+    overflow-anchor: none;
+  }
   .signature-intro {
+    --intro-styles-ready: 1;
     --intro-grid-inset: max(var(--gutter), calc((100vw - var(--page-max)) / 2 + var(--gutter)));
     --intro-word-size: clamp(48px, 17vw, 300px);
     --intro-word-bottom: clamp(96px, 12svh, 144px);
@@ -177,8 +195,10 @@ const positions = [
     pointer-events: none;
     isolation: isolate;
   }
-  :global(html:is([data-signature-intro='pending'], [data-signature-intro='playing']))
-    .signature-intro {
+  .signature-intro[hidden] {
+    display: none !important;
+  }
+  :global(html[data-signature-intro='playing']) .signature-intro {
     display: flex;
     flex-direction: column;
   }

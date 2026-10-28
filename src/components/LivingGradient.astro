@@ -32,32 +32,27 @@
     contain: strict;
   }
   .gradient-fallback {
-    background: radial-gradient(ellipse at 82% 76%, #ffb387 0, transparent 63%);
-  }
-  .gradient-fallback::after {
-    position: absolute;
-    inset: 0;
-    content: '';
-    background:
-      linear-gradient(90deg, #f7f5f1ee, #f7f5f100 80%), linear-gradient(#f7f5f1, #f7f5f100 60%);
+    background: linear-gradient(125deg, #f7f5f1 4%, #ffd19a 42%, #f7f5f1 88%);
   }
   .gradient-colour {
     position: absolute;
-    inset: -18%;
-    transform-origin: 75% 65%;
+    inset: -25%;
+    border-radius: 40%;
+    filter: blur(26px);
+    transform-origin: 50% 50%;
     animation-play-state: paused;
   }
   .gradient-coral {
-    background: radial-gradient(ellipse at 89% 72%, #ff824a 0, #ffac7d80 23%, transparent 49%);
-    animation: coral-flow 13s ease-in-out infinite alternate paused;
+    background: radial-gradient(ellipse at 75% 36%, #ff7747 0, #ff9f59c0 25%, transparent 57%);
+    animation: coral-flow 9s ease-in-out infinite alternate paused;
   }
   .gradient-amber {
-    background: radial-gradient(ellipse at 86% 99%, #ffbf6d 0, #ffe0b780 20%, transparent 52%);
-    animation: amber-flow 17s ease-in-out infinite alternate paused;
+    background: radial-gradient(ellipse at 24% 72%, #ffc16e 0, #ffcf92cc 27%, transparent 58%);
+    animation: amber-flow 12s ease-in-out infinite alternate paused;
   }
   .gradient-lilac {
-    background: radial-gradient(ellipse at 67% 106%, #bdb3ddcc 0, transparent 45%);
-    animation: lilac-flow 19s ease-in-out infinite alternate paused;
+    background: radial-gradient(ellipse at 78% 91%, #bdb3ddc0 0, transparent 49%);
+    animation: lilac-flow 14s ease-in-out infinite alternate paused;
   }
   canvas {
     opacity: 0;
@@ -104,11 +99,6 @@
     }
     [data-gradient-renderer='webgl'] .gradient-fallback {
       visibility: visible;
-    }
-  }
-  @media (max-width: 767px) {
-    .gradient-fallback::after {
-      background: linear-gradient(#f7f5f1 16%, #f7f5f1dc 38%, #f7f5f100 70%);
     }
   }
 </style>

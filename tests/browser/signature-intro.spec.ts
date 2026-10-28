@@ -39,11 +39,48 @@ for (const width of [320, 390, 768, 1440, 1920]) {
       const images = [...signature.querySelectorAll('img')];
       const range = document.createRange();
       range.selectNodeContents(name);
+      const animation = (element: Element, animationName: string) => {
+        const result = element
+          .getAnimations()
+          .find((entry) => (entry as CSSAnimation).animationName.includes(animationName));
+        if (!(result?.effect instanceof KeyframeEffect) || result.startTime === null)
+          throw new Error(`Missing live ${animationName} animation`);
+        const timing = result.effect.getComputedTiming();
+        return {
+          start: Number(result.startTime) + Number(timing.delay),
+          end: Number(result.startTime) + Number(timing.endTime),
+          keyframes: result.effect.getKeyframes(),
+        };
+      };
+      // Read the browser's actual effects without seeking them. A slow rAF
+      // observer may miss the short fully written hold; its scheduled interval
+      // is independently checked alongside real partial/finished render samples.
+      const wordDraw = animation(name, 'name-draw');
+      const waveDraw = animation(path, 'connect-projects');
+      const wordFade = animation(name, 'name-resolve');
+      const completeClip = String(wordDraw.keyframes.at(-1)?.clipPath ?? '');
+      const hold = {
+        from: wordDraw.end,
+        until: wordFade.start,
+        duration: wordFade.start - wordDraw.end,
+        waveStart: waveDraw.start,
+        waveEnd: waveDraw.end,
+        wordStart: wordDraw.start,
+        wordEnd: wordDraw.end,
+        completeClip,
+        fadeFrom: Number(wordFade.keyframes[0]?.opacity),
+        fadeTo: Number(wordFade.keyframes.at(-1)?.opacity),
+      };
       let lastVisible = 0;
       let sawPartialWave = false;
       let synchronizedSamples = 0;
       let maximumRevealDrift = 0;
       let sawFullName = false;
+      let sawCompletedWipe = false;
+      let readablePartialSamples = 0;
+      const holdSamples: { time: number; fullyVisible: boolean }[] = [];
+      let previousSample: number | undefined;
+      let maximumSampleGap = 0;
       let sawIndependentEntrance = false;
       let sawHeldPose = false;
       const fullNameGeometries: {
@@ -72,6 +109,10 @@ for (const width of [320, 390, 768, 1440, 1920]) {
         [];
       await new Promise<void>((resolve) => {
         function sample() {
+          const time = Number(document.timeline.currentTime ?? performance.now());
+          if (previousSample !== undefined)
+            maximumSampleGap = Math.max(maximumSampleGap, time - previousSample);
+          previousSample = time;
           const style = getComputedStyle(scene);
           if (
             style.display !== 'none' &&
@@ -86,6 +127,13 @@ for (const width of [320, 390, 768, 1440, 1920]) {
           // inset is a percentage of the actual wordmark box.
           const rightInset = inset?.[1] ?? inset?.[0];
           const remaining = rightInset?.endsWith('%') ? parseFloat(rightInset) / 100 : 0;
+          const fullyWritten = wave < 0.001 && remaining < 0.001;
+          const fullyVisible = fullyWritten && Number(nameStyle.opacity) > 0.95;
+          if (fullyWritten) sawCompletedWipe = true;
+          if (remaining > 0.05 && remaining < 0.9 && Number(nameStyle.opacity) > 0.95)
+            readablePartialSamples += 1;
+          if (time >= hold.from + 1 && time <= hold.until - 1)
+            holdSamples.push({ time, fullyVisible });
           if (wave > 0.05 && wave < 0.95 && remaining > 0.05 && remaining < 0.95) {
             sawPartialWave = true;
             synchronizedSamples += 1;
@@ -101,8 +149,15 @@ for (const width of [320, 390, 768, 1440, 1920]) {
               });
             }
           }
-          if (wave < 0.001 && remaining < 0.001 && Number(nameStyle.opacity) > 0.95) {
-            sawFullName = true;
+          if (fullyVisible) sawFullName = true;
+          // Range geometry describes the laid-out letters even while the wipe
+          // clips some pixels. Capture it once while drawable, not only during
+          // a 200ms observation window that can fall between sampled frames.
+          if (
+            fullNameGeometries.length === 0 &&
+            Number(nameStyle.opacity) > 0.95 &&
+            remaining < 0.9
+          ) {
             const text = range.getBoundingClientRect();
             const box = name.getBoundingClientRect();
             fullNameGeometries[0] = {
@@ -165,6 +220,11 @@ for (const width of [320, 390, 768, 1440, 1920]) {
         maximumRevealDrift,
         revealCheckpoints,
         sawFullName,
+        sawCompletedWipe,
+        readablePartialSamples,
+        hold,
+        holdSamples,
+        maximumSampleGap,
         fullNameGeometry: fullNameGeometries[0] ?? null,
         sawIndependentEntrance,
         sawHeldPose,
@@ -186,7 +246,19 @@ for (const width of [320, 390, 768, 1440, 1920]) {
     expect(observations.sawPartialWave).toBe(true);
     expect(observations.synchronizedSamples).toBeGreaterThan(2);
     expect(observations.maximumRevealDrift).toBeLessThan(0.02);
-    expect(observations.sawFullName).toBe(true);
+    expect(observations.readablePartialSamples).toBeGreaterThan(2);
+    expect(observations.sawCompletedWipe).toBe(true);
+    expect(Math.abs(observations.hold.wordStart - observations.hold.waveStart)).toBeLessThan(1);
+    expect(Math.abs(observations.hold.wordEnd - observations.hold.waveEnd)).toBeLessThan(1);
+    expect(observations.hold.duration + 0.01).toBeGreaterThanOrEqual(200);
+    expect(observations.hold.completeClip).toMatch(/^inset\(0(?:px|%)?(?:\s+0(?:px|%)?)*\)$/);
+    expect(observations.hold.fadeFrom).toBe(1);
+    expect(observations.hold.fadeTo).toBe(0);
+    for (const sample of observations.holdSamples)
+      expect(
+        sample.fullyVisible,
+        `Wordmark was not complete during its hold at ${sample.time}ms`,
+      ).toBe(true);
     expect(observations.fullNameGeometry).not.toBeNull();
     const geometry = observations.fullNameGeometry!;
     expect(geometry.text).toBe('DrawnOut');
@@ -241,7 +313,7 @@ test('visible skip control immediately reveals the homepage', async ({ page }) =
   await expect(page).toHaveURL('/work');
 });
 
-test('an underlying navigation click keeps its first action and the intro never replays', async ({
+test('internal navigation keeps its first action and the next manual refresh replays', async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
@@ -254,20 +326,23 @@ test('an underlying navigation click keeps its first action and the intro never 
     .click();
   await expect(page).toHaveURL('/');
   await expect(page.locator(overlay)).toBeHidden();
-  await page.reload();
-  await expect(page.locator(overlay)).toBeHidden();
-  expect(await page.evaluate(() => sessionStorage.getItem('drawnout-loop-seen'))).toBe('1');
+  await page.reload({ waitUntil: 'commit' });
+  await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');
+  await page.keyboard.press('Escape');
+  await expectSkipped(page);
 });
 
-test('direct case and hash destinations bypass the intro', async ({ page }) => {
+test('direct case loads use the loader while hash destinations reach content immediately', async ({
+  page,
+}) => {
   await page.goto('/work/bunzo');
-  await expect(page.locator(overlay)).toHaveCount(0);
+  await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');
+  await page.keyboard.press('Escape');
+  await expect(page.locator(overlay)).toBeHidden();
   await expect(page.locator('main h1')).toContainText('Bunzo');
   await page.goto('/#main');
   await expect(page.locator(overlay)).toBeHidden();
-  expect(
-    await page.evaluate(() => document.documentElement.dataset.signatureIntro),
-  ).toBeUndefined();
+  await expect(page.locator('html')).toHaveAttribute('data-signature-intro-reason', 'deep-link');
 });
 
 test('reduced motion reaches the homepage immediately and remains readable without JavaScript', async ({
@@ -310,9 +385,16 @@ test('an opted-out first homepage visit never introduces the intro on an interna
   await expect(page.locator(overlay)).toBeHidden();
   await page.goto('/work');
   await page.emulateMedia({ reducedMotion: 'no-preference' });
-  await page.goto('/');
+  await page
+    .locator('[data-site-header]')
+    .getByRole('link', { name: 'DrawnOut Digital home' })
+    .click();
+  await expect(page).toHaveURL('/');
   await expect(page.locator(overlay)).toBeHidden();
-  expect(await page.evaluate(() => sessionStorage.getItem('drawnout-loop-seen'))).toBe('1');
+  await expect(page.locator('html')).toHaveAttribute(
+    'data-signature-intro-reason',
+    'internal-navigation',
+  );
 });
 
 test('unavailable session storage fails open', async ({ page }) => {

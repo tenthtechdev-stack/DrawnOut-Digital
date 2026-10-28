@@ -1,6 +1,7 @@
 ---
 import Button from './Button.astro';
 import SignatureArtwork from './SignatureArtwork.astro';
+import SocialIcon from './SocialIcon.astro';
 import { navigation, site } from '../data/site';
 import { contact } from '../data/contact';
 ---
@@ -36,21 +37,37 @@ import { contact } from '../data/contact';
           {contact.email}
         </a>
       </div>
-      <nav aria-label="Footer navigation">
-        <ul>
-          {navigation.map((item) => (
-            <li>
-              <a href={item.href}>{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div class="footer-links">
+        <nav aria-label="Footer navigation">
+          <ul>
+            {navigation.map((item) => (
+              <li>
+                <a href={item.href}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <nav class="footer-social" aria-label="DrawnOut Digital social profiles">
+          <ul>
+            {contact.social.map(({ label, href }) => (
+              <li>
+                <a href={href} aria-label={`DrawnOut Digital on ${label}`}>
+                  <SocialIcon name={label} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </div>
     <div class="footer-legal">
       <span>
         © {new Date().getFullYear()} {site.name}
       </span>
       <span>Independent creative &amp; digital studio</span>
+      <p class="footer-credit" data-footer-credit>
+        Designed and Developed by <a href="https://www.thetenthtech.com/">Tenth Tech</a>
+      </p>
     </div>
   </div>
 </footer>
@@ -140,6 +157,11 @@ import { contact } from '../data/contact';
     line-height: 1.8;
     margin: 12px 0 0;
   }
+  .footer-links {
+    display: grid;
+    justify-items: end;
+    gap: 12px;
+  }
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -172,8 +194,35 @@ import { contact } from '../data/contact';
     color: var(--amber);
     text-decoration: underline;
   }
+  .footer-social ul {
+    gap: 10px;
+  }
+  .footer-social a {
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #ffffff40;
+    border-radius: 50%;
+    color: var(--cream);
+    transition:
+      color var(--duration-ui) var(--ease-ui),
+      border-color var(--duration-ui) var(--ease-ui),
+      background-color var(--duration-ui) var(--ease-ui);
+  }
+  .footer-social a:is(:hover, :focus-visible) {
+    color: var(--amber);
+    border-color: var(--amber);
+    background: #ffffff0a;
+  }
+  .footer-social :global(svg) {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
   .footer-legal {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
     gap: 20px;
     padding-block: 25px;
@@ -181,6 +230,20 @@ import { contact } from '../data/contact';
     color: var(--inverse-muted);
     font-size: 11px;
     line-height: 1.8;
+  }
+  .footer-credit {
+    margin: 0;
+    font-size: 12px;
+  }
+  .footer-credit a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--cream);
+    text-decoration-thickness: 1px;
+  }
+  .footer-credit a:is(:hover, :focus-visible) {
+    color: var(--amber);
   }
   @media (max-width: 767px) {
     .footer-bottom {
@@ -207,7 +270,11 @@ import { contact } from '../data/contact';
     }
     .footer-legal {
       flex-direction: column;
+      align-items: start;
       gap: 7px;
+    }
+    .footer-links {
+      justify-items: start;
     }
     h2 {
       font-size: clamp(2.2rem, 8.5vw, 4rem);

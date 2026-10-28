@@ -74,8 +74,34 @@ for (const width of [320, 390, 768, 1440]) {
       const totalLength = path.getTotalLength();
       const matrix = path.getScreenCTM()!;
       const frames = squares.map((square) => rect(square.parentElement!));
+      const exit = overlay
+        .getAnimations()
+        .find((entry) => (entry as CSSAnimation).animationName.includes('intro-exit'));
+      if (!exit || exit.startTime === null) throw new Error('Missing live intro clock');
+      const artworkTimings = images.map((image) => {
+        const animation = image
+          .getAnimations()
+          .find((entry) => (entry as CSSAnimation).animationName.includes('artwork-arrive'));
+        if (!(animation?.effect instanceof KeyframeEffect) || animation.startTime === null)
+          throw new Error('Missing live artwork reveal');
+        const timing = animation.effect.getComputedTiming();
+        const keyframes = animation.effect.getKeyframes();
+        const offset = Number(animation.startTime) - Number(exit.startTime);
+        return {
+          clockOffset: offset,
+          start: offset + Number(timing.delay),
+          end: offset + Number(timing.endTime),
+          fromOpacity: Number(keyframes[0]?.opacity),
+          toOpacity: Number(keyframes.at(-1)?.opacity),
+          finalClip: String(keyframes.at(-1)?.clipPath ?? ''),
+        };
+      });
       const sawOutline = squares.map(() => false);
       const revealStarts: (number | null)[] = squares.map(() => null);
+      const lastUnrevealed = squares.map(() => 0);
+      let lastIncomplete = 0;
+      let previousSample: number | undefined;
+      let maximumSampleGap = 0;
       let sawMixedReveal = false;
       const fullSnapshots: {
         clock: number;
@@ -89,26 +115,31 @@ for (const width of [320, 390, 768, 1440]) {
       }[] = [];
       await new Promise<void>((resolve) => {
         function sample() {
-          const animation = overlay
-            .getAnimations()
-            .find((entry) => (entry as CSSAnimation).animationName.includes('intro-exit'));
-          const clock = Number(animation?.currentTime ?? 0);
+          const clock = Number(exit!.currentTime ?? 0);
+          if (previousSample !== undefined)
+            maximumSampleGap = Math.max(maximumSampleGap, clock - previousSample);
+          previousSample = clock;
           const states = images.map(imageState);
           states.forEach((state, index) => {
             if (Number(getComputedStyle(squares[index]!).opacity) > 0.25 && state.opacity < 0.01)
               sawOutline[index] = true;
-            if (state.opacity > 0.02 && state.remaining < 0.98 && revealStarts[index] === null)
-              revealStarts[index] = clock;
+            if (revealStarts[index] === null) {
+              if (state.opacity > 0.02 && state.remaining < 0.98) revealStarts[index] = clock;
+              else lastUnrevealed[index] = clock;
+            }
           });
           if (
             states.some((state) => state.opacity > 0.2 && state.remaining < 0.9) &&
             states.some((state) => state.opacity < 0.01)
           )
             sawMixedReveal = true;
+          const allComplete =
+            states.length === 6 &&
+            states.every((state) => state.opacity > 0.99 && state.remaining < 0.001);
+          if (fullSnapshots.length === 0 && !allComplete) lastIncomplete = clock;
           if (
             fullSnapshots.length === 0 &&
-            states.length === 6 &&
-            states.every((state) => state.opacity > 0.99 && state.remaining < 0.001) &&
+            allComplete &&
             Number(getComputedStyle(group).opacity) > 0.9
           ) {
             fullSnapshots.push({
@@ -157,8 +188,12 @@ for (const width of [320, 390, 768, 1440]) {
           fit: getComputedStyle(image).objectFit,
         })),
         arrivals,
+        artworkTimings,
         sawOutline,
         revealStarts,
+        lastUnrevealed,
+        lastIncomplete,
+        maximumSampleGap,
         sawMixedReveal,
         fullyVisibleAt: fullSnapshots[0]?.clock ?? null,
         geometry: fullSnapshots[0]?.geometry ?? null,
@@ -182,14 +217,26 @@ for (const width of [320, 390, 768, 1440]) {
     for (const [index, firstVisible] of evidence.revealStarts.entries()) {
       expect(firstVisible).not.toBeNull();
       expect(Number.isFinite(evidence.arrivals[index])).toBe(true);
-      // Stroke thickness, easing and one sampled frame allow a small tolerance
-      // around the actual geometric crossing, while rejecting a simultaneous fade.
+      const timing = evidence.artworkTimings[index]!;
+      // Compare the browser's attached effect with the independently measured
+      // SVG crossing. Then bracket live visibility with the last negative and
+      // first positive sample: observer scheduling is not the reveal start.
+      expect(Math.abs(timing.clockOffset)).toBeLessThan(1);
+      expect(timing.start).toBeGreaterThanOrEqual(evidence.arrivals[index]! - 25);
+      expect(timing.start).toBeLessThan(evidence.arrivals[index]! + 25);
+      expect(timing.fromOpacity).toBe(0);
+      expect(timing.toOpacity).toBe(1);
+      expect(timing.finalClip).toMatch(/^inset\(0(?:px|%)?(?:\s+0(?:px|%)?)*\)$/);
       expect(firstVisible!).toBeGreaterThanOrEqual(evidence.arrivals[index]! - 25);
-      expect(firstVisible!).toBeLessThan(evidence.arrivals[index]! + 160);
+      expect(evidence.lastUnrevealed[index]!).toBeLessThan(evidence.arrivals[index]! + 160);
+      expect(evidence.lastUnrevealed[index]!).toBeLessThan(firstVisible!);
       if (index > 0) expect(firstVisible!).toBeGreaterThan(evidence.revealStarts[index - 1]!);
     }
     expect(evidence.fullyVisibleAt).not.toBeNull();
-    expect(evidence.fullyVisibleAt!).toBeLessThanOrEqual(2250);
+    expect(Math.max(...evidence.artworkTimings.map((timing) => timing.end))).toBeLessThanOrEqual(
+      2250,
+    );
+    expect(evidence.lastIncomplete).toBeLessThanOrEqual(2250);
     expect(evidence.geometry).not.toBeNull();
     const geometry = evidence.geometry!;
     const sol = geometry.frames[2]!;

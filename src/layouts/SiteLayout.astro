@@ -9,16 +9,25 @@ import { site } from '../data/site';
 interface Props {
   title?: string;
   description?: string;
+  enableLoader?: boolean;
 }
 const {
   title = 'DrawnOut Digital — Independent creative & digital studio',
   description = site.description,
+  enableLoader = true,
 } = Astro.props;
 const portfolioReview =
   Astro.url.pathname === '/work' ||
   Astro.url.pathname.startsWith('/work/') ||
   Astro.url.pathname.startsWith('/_preview/work/');
 const motionEnabled = !Astro.url.pathname.startsWith('/concepts/');
+const loaderEnabled =
+  enableLoader &&
+  motionEnabled &&
+  !Astro.url.pathname.startsWith('/_preview/') &&
+  !/^\/404(?:\/|\.html)?$/.test(Astro.url.pathname);
+const replayURL = new URL(Astro.url);
+replayURL.searchParams.set('showIntro', '1');
 ---
 
 <!doctype html>
@@ -33,7 +42,7 @@ const motionEnabled = !Astro.url.pathname.startsWith('/concepts/');
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <title>{title}</title>
-    {motionEnabled && Astro.url.pathname === '/' && <SignatureIntroBoot />}
+    {loaderEnabled && <SignatureIntroBoot />}
     {motionEnabled && Astro.url.pathname === '/' && <script is:inline>
       (() => {
         const html = document.documentElement;
@@ -105,6 +114,11 @@ const motionEnabled = !Astro.url.pathname.startsWith('/concepts/');
             {motionEnabled ? 'Signature experience' : portfolioReview ? 'Phase 3' : 'Phase 2'}
           </span>
           <span>
+            {loaderEnabled && (
+              <a href={replayURL.pathname + replayURL.search} data-intro-replay>
+                Replay loader
+              </a>
+            )}{' '}
             {motionEnabled
               ? 'Signature experience review'
               : portfolioReview
@@ -114,7 +128,7 @@ const motionEnabled = !Astro.url.pathname.startsWith('/concepts/');
         </div>
       </aside>
     )}
-    {motionEnabled && Astro.url.pathname === '/' && <SignatureIntro />}
+    {loaderEnabled && <SignatureIntro />}
     <SiteHeader />
     <main id="main" tabindex="-1" data-motion-root={motionEnabled || undefined}>
       <slot />
@@ -146,6 +160,12 @@ const motionEnabled = !Astro.url.pathname.startsWith('/concepts/');
     height: 5px;
     border-radius: 50%;
     background: var(--amber);
+  }
+  .phase-notice a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-right: 16px;
   }
   .phase-notice span:last-child {
     color: var(--inverse-muted);

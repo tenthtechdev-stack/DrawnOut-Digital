@@ -1,8 +1,16 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
 
-// These cases isolate returning-visitor editorial motion; fresh intro timing has its own suite.
+// Simulate a same-tab internal navigation to isolate editorial motion; full loads have their own suite.
 test.beforeEach(async ({ page }) => {
-  await page.addInitScript(() => sessionStorage.setItem('drawnout-loop-seen', '1'));
+  await page.addInitScript(() => {
+    sessionStorage.setItem(
+      'drawnout-loop-navigation',
+      JSON.stringify({
+        to: location.pathname + location.search,
+        at: Date.now(),
+      }),
+    );
+  });
 });
 
 interface MotionScene {

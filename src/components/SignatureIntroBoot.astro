@@ -1,27 +1,87 @@
-<!-- The homepage is always the default. This tiny gate expires even if the module never loads. -->
-<script is:inline>
+---
+const allowReplay = import.meta.env.DEV;
+---
+
+<!-- Content is the default; the optional loader has a navigation-clock deadline. -->
+<script is:inline define:vars={{ allowReplay }}>
   (() => {
     const html = document.documentElement;
+    const intentKey = 'drawnout-loop-navigation';
+    const duration = 4200;
+    const releaseAt = 4900;
+    const latestStart = releaseAt - duration;
+    let storageAvailable = true;
+    let internalNavigation = false;
+    const navigation = performance.getEntriesByType('navigation')[0];
+    const destination = location.pathname + location.search;
+    try {
+      const stored = sessionStorage.getItem(intentKey);
+      sessionStorage.removeItem(intentKey);
+      // Some browsers allow reads while quota/privacy policy blocks writes.
+      // Without a writable store, a later internal click cannot be classified.
+      sessionStorage.setItem(intentKey, '{}');
+      sessionStorage.removeItem(intentKey);
+      if (stored && navigation?.type !== 'reload') {
+        const intent = JSON.parse(stored);
+        internalNavigation =
+          intent.to === destination &&
+          Date.now() - intent.at >= 0 &&
+          Date.now() - intent.at < 15000;
+      }
+    } catch {
+      // If intent cannot be recorded, favour immediate navigation over a gate.
+      storageAvailable = false;
+    }
+    // Listen after link handlers so prevented filter/hash actions do not leave
+    // a stale intent. This never cancels or delays the browser's navigation.
+    window.addEventListener('click', (event) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      )
+        return;
+      const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
+      if (!link || link.hasAttribute('download') || (link.target && link.target !== '_self'))
+        return;
+      try {
+        const url = new URL(link.href, location.href);
+        if (url.origin !== location.origin || !['http:', 'https:'].includes(url.protocol)) return;
+        if (url.pathname === location.pathname && url.search === location.search && url.hash)
+          return;
+        sessionStorage.setItem(
+          intentKey,
+          JSON.stringify({ to: url.pathname + url.search, at: Date.now() }),
+        );
+      } catch {
+        // The next document also fails open when storage is unavailable.
+      }
+    });
     try {
       const preference = matchMedia('(prefers-reduced-motion: reduce)');
       const connection = Reflect.get(navigator, 'connection');
-      const navigation = performance.getEntriesByType('navigation')[0];
-      if (sessionStorage.getItem('drawnout-loop-seen') === '1') return;
-      // Consume the initial homepage visit even when it opts out or arrives late.
-      // Returning from an internal page must never introduce a previously skipped gate.
-      sessionStorage.setItem('drawnout-loop-seen', '1');
-      if (
-        preference.matches ||
-        connection?.saveData ||
-        document.hidden ||
-        location.hash ||
-        scrollY > 0 ||
-        navigation?.type === 'back_forward' ||
-        performance.now() > 600
-      )
+      const replay = allowReplay && new URLSearchParams(location.search).get('showIntro') === '1';
+      let exclusion;
+      if (!storageAvailable) exclusion = 'storage-unavailable';
+      else if (preference.matches) exclusion = 'reduced-motion';
+      else if (connection?.saveData) exclusion = 'save-data';
+      else if (document.hidden) exclusion = 'hidden';
+      else if (location.hash) exclusion = 'deep-link';
+      else if (scrollY > 0) exclusion = 'restored-scroll';
+      else if (navigation?.type === 'back_forward') exclusion = 'history';
+      else if (internalNavigation && !replay) exclusion = 'internal-navigation';
+      else if (performance.now() >= latestStart) exclusion = 'insufficient-time';
+      if (exclusion) {
+        html.dataset.signatureIntro = 'skipped';
+        html.dataset.signatureIntroReason = exclusion;
         return;
+      }
       html.dataset.signatureIntro = 'pending';
-      html.dataset.heroEntrance = 'static';
+      if (location.pathname === '/') html.dataset.heroEntrance = 'static';
+      if (replay) html.dataset.signatureIntroDebug = 'replay';
       const controller = new AbortController();
       const { signal } = controller;
       let handoffTimer;
@@ -31,6 +91,8 @@
         html.dataset.signatureIntro = reason === 'complete' ? 'completed' : 'skipped';
         html.dataset.signatureIntroReason = reason;
         html.dataset.signatureIntroEnded = performance.now().toFixed(2);
+        const overlay = document.querySelector('[data-signature-intro-overlay]');
+        if (overlay) overlay.hidden = true;
         clearTimeout(watchdog);
         clearTimeout(deadline);
         clearTimeout(handoffTimer);
@@ -38,30 +100,46 @@
         controller.abort();
         window.dispatchEvent(new CustomEvent('signature:intro-end', { detail: { reason } }));
       };
-      const deadline = setTimeout(() => finish('deadline'), Math.max(0, 4800 - performance.now()));
-      const watchdog = setTimeout(() => finish('initialization-timeout'), 650);
+      const deadline = setTimeout(
+        () => finish('deadline'),
+        Math.max(0, releaseAt - performance.now()),
+      );
+      // Preserve the full approved timeline. When there is no longer enough
+      // navigation budget to play it, keep content visible instead of flashing
+      // a truncated or accelerated loader. Pending never displays an overlay.
+      const watchdog = setTimeout(
+        () => finish('initialization-timeout'),
+        Math.max(0, latestStart - performance.now()),
+      );
       window.__drawnoutIntro = {
         finish,
         start() {
           if (html.dataset.signatureIntro !== 'pending') return false;
-          if (performance.now() > 600) {
-            finish('late-initialization');
+          if (performance.now() + duration > releaseAt) {
+            finish('insufficient-time');
+            return false;
+          }
+          if (scrollY > 0) {
+            finish('restored-scroll');
             return false;
           }
           clearTimeout(watchdog);
           html.dataset.signatureIntro = 'playing';
           html.dataset.signatureIntroStarted = performance.now().toFixed(2);
-          handoffTimer = setTimeout(
-            () => window.dispatchEvent(new Event('signature:intro-handoff')),
-            3500,
-          );
-          completionTimer = setTimeout(() => finish('complete'), 4200);
+          if (location.pathname === '/') {
+            handoffTimer = setTimeout(
+              () => window.dispatchEvent(new Event('signature:intro-handoff')),
+              3500,
+            );
+          }
+          completionTimer = setTimeout(() => finish('complete'), duration);
           return true;
         },
       };
       const input = (event) => {
-        // Keep the visible button present through pointerup; its click handler
-        // finishes the intro without the gesture falling through to page links.
+        // Mobile restoration/ScrollTrigger can notify scroll without movement.
+        // Actual wheel/touch input still skips immediately, even at the top.
+        if (event.type === 'scroll' && scrollX === 0 && scrollY === 0) return;
         if (
           event.type === 'pointerdown' &&
           event.target instanceof Element &&
@@ -111,6 +189,13 @@
         { signal },
       );
       window.addEventListener('pagehide', () => finish('navigation'), { signal });
+      window.addEventListener(
+        'pageshow',
+        (event) => {
+          if (event.persisted) finish('history');
+        },
+        { signal },
+      );
     } catch {
       html.dataset.signatureIntro = 'skipped';
     }
