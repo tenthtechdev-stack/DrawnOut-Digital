@@ -1,0 +1,377 @@
+---
+import Arrow from '../Arrow.astro';
+import { servicePages, servicePath, type ServicePage } from '../../data/services';
+interface Props {
+  service: ServicePage;
+}
+const { service } = Astro.props;
+const pagePath = servicePath(service.slug);
+// Relative identifiers resolve against the current preview. No unapproved
+// production domain, offers, ratings, results or FAQ rich-result claims.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: '/services' },
+        { '@type': 'ListItem', position: 3, name: service.title, item: pagePath },
+      ],
+    },
+    {
+      '@type': 'Service',
+      '@id': `${pagePath}#service`,
+      name: service.title,
+      description: service.description,
+      url: pagePath,
+      provider: { '@type': 'Organization', name: 'DrawnOut Digital' },
+    },
+  ],
+};
+---
+
+<article class="service-page" data-service-page={service.slug}>
+  <header class="service-intro page-frame">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/services">Services</a>
+        </li>
+        <li>
+          <span aria-current="page">{service.title}</span>
+        </li>
+      </ol>
+    </nav>
+    <p class="eyebrow">{service.eyebrow}</p>
+    <h1 data-motion-text="heading">{service.headline}</h1>
+    <div class="service-opening">
+      <p>{service.opening}</p>
+      <a href="#service-details" class="text-link">
+        Explore the approach <Arrow />
+      </a>
+    </div>
+  </header>
+
+  <div class="service-editorial page-frame" id="service-details">
+    {service.sections.map((section, index) => (
+      <section class="editorial-section" aria-labelledby={`service-section-${index + 1}`}>
+        <span class="eyebrow section-number" aria-hidden="true">
+          0{index + 1}
+        </span>
+        <h2 id={`service-section-${index + 1}`} data-motion-text="heading">
+          {section.heading}
+        </h2>
+        <p>{section.body}</p>
+      </section>
+    ))}
+    <p class="scope-note">
+      Scope, deliverables and production responsibilities are agreed for each project.
+    </p>
+  </div>
+
+  <section class="service-faq page-frame" aria-labelledby="service-faq-heading" data-service-faq>
+    <div>
+      <p class="eyebrow">A few useful answers</p>
+      <h2 id="service-faq-heading" class="section-heading" data-motion-text="heading">
+        Before we begin.
+      </h2>
+    </div>
+    <div class="faq-list">
+      {service.faqs.map((faq) => (
+        <details>
+          <summary>
+            {faq.question}
+            <span aria-hidden="true">+</span>
+          </summary>
+          <p>{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="service-enquiry page-frame" aria-labelledby="service-enquiry-title">
+    <p class="eyebrow">Have something in mind?</p>
+    <h2 id="service-enquiry-title" class="section-heading" data-motion-text="heading">
+      {service.cta.lead}
+    </h2>
+    <a href="/contact" class="text-link" data-service-enquiry>
+      {service.cta.label}
+      <Arrow />
+    </a>
+  </section>
+
+  <nav class="related-services page-frame" aria-label="Explore other services">
+    <p class="eyebrow">Connected thinking</p>
+    <ul>
+      {servicePages
+        .filter((item) => item.slug !== service.slug)
+        .map((item) => (
+          <li>
+            <a href={servicePath(item.slug)}>
+              {item.title}
+              <Arrow />
+            </a>
+          </li>
+        ))}
+    </ul>
+    <a class="all-services" href="/services">
+      All services
+    </a>
+  </nav>
+</article>
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')}
+/>
+<style>
+  .service-intro {
+    padding-block: 30px var(--space-6);
+  }
+  .breadcrumbs {
+    margin-bottom: var(--space-6);
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    padding: 0;
+    margin: 0;
+  }
+  .breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin-left: 14px;
+    color: var(--muted);
+  }
+  .breadcrumbs a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .breadcrumbs span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .service-intro > .eyebrow {
+    color: var(--accent-strong);
+    margin: 0 0 28px;
+  }
+  h1 {
+    margin: 0;
+    max-width: 1120px;
+    font-size: clamp(2.7rem, 6.4vw, 6.8rem);
+    font-weight: 500;
+    line-height: 1.06;
+    letter-spacing: var(--tracking-display);
+    text-wrap: balance;
+  }
+  .service-opening {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 35px;
+    margin-top: var(--space-5);
+  }
+  .service-opening p {
+    max-width: 760px;
+    font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    min-height: 48px;
+    border-bottom: 1px solid currentColor;
+    padding-block: 12px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .text-link :global(svg) {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+  }
+  a:hover {
+    color: var(--accent-strong);
+  }
+  .editorial-section {
+    display: grid;
+    grid-template-columns: 50px minmax(0, 0.85fr) minmax(0, 1fr);
+    gap: clamp(24px, 5vw, 80px);
+    border-top: 1px solid var(--line);
+    padding-block: clamp(32px, 5vw, 70px);
+  }
+  .section-number {
+    color: var(--accent-strong);
+    padding-top: 8px;
+  }
+  .editorial-section h2 {
+    margin: 0;
+    max-width: 500px;
+    font-size: clamp(1.7rem, 2.8vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+  .editorial-section > p {
+    max-width: 650px;
+    margin: 0;
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+  }
+  .scope-note {
+    border-top: 1px solid var(--line);
+    margin: 0;
+    padding-top: 22px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .service-faq {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(40px, 7vw, 100px);
+    padding-block: var(--space-7);
+  }
+  .service-faq .eyebrow {
+    color: var(--accent-strong);
+    margin: 0 0 28px;
+  }
+  details {
+    border-top: 1px solid var(--line);
+  }
+  details:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+  summary {
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+    font-size: clamp(1rem, 1.35vw, 1.25rem);
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 24px 38px 24px 0;
+    min-height: 68px;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary > span {
+    position: absolute;
+    right: 4px;
+    top: 25px;
+    color: var(--accent-strong);
+    font-size: 22px;
+    line-height: 1;
+  }
+  details[open] summary > span {
+    transform: rotate(45deg);
+  }
+  details > p {
+    margin: 0;
+    padding: 0 30px 28px 0;
+    color: var(--muted);
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+  }
+  .service-enquiry {
+    padding-block: var(--space-6);
+    background: var(--surface);
+  }
+  .service-enquiry .eyebrow {
+    color: var(--accent-strong);
+    margin: 0 0 28px;
+  }
+  .service-enquiry h2 {
+    max-width: 900px;
+  }
+  .service-enquiry .text-link {
+    margin-top: 28px;
+    min-width: min(100%, 300px);
+  }
+  .related-services {
+    padding-block: var(--space-6);
+  }
+  .related-services > .eyebrow {
+    margin: 0 0 25px;
+  }
+  .related-services ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 60px;
+    padding: 0;
+    margin: 0 0 25px;
+  }
+  .related-services li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding-block: 22px;
+    border-top: 1px solid var(--line);
+    text-decoration: none;
+    font-size: clamp(1rem, 1.5vw, 1.35rem);
+  }
+  .related-services :global(svg) {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+  }
+  .all-services {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    font-size: 13px;
+  }
+  @media (max-width: 900px) {
+    .service-opening,
+    .service-faq {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .service-opening .text-link {
+      justify-self: start;
+    }
+    .editorial-section {
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 20px;
+    }
+    .editorial-section > p {
+      grid-column: 2;
+    }
+  }
+  @media (max-width: 639px) {
+    .service-intro {
+      padding-top: 18px;
+    }
+    .breadcrumbs {
+      margin-bottom: 35px;
+      font-size: 11px;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 10.6vw, 4rem);
+    }
+    .service-intro > .eyebrow {
+      margin-bottom: 22px;
+    }
+    .service-opening {
+      gap: 22px;
+    }
+    .related-services ul {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>

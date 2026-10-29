@@ -12,7 +12,7 @@ import Arrow from './Arrow.astro';
     <ul>
       {capabilities.map((item, index) => (
         <li>
-          <a href={`/services#${item.id}`}>
+          <a href={`/services/${item.id}`}>
             <span class="capability-number">0{index + 1}</span>
             <span>{item.title}</span>
             <Arrow />

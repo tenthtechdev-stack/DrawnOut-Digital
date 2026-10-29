@@ -15,7 +15,7 @@ import Arrow from './Arrow.astro';
   <ol>
     {capabilities.map((capability, index) => (
       <li>
-        <a href={`/services#${capability.id}`}>
+        <a href={`/services/${capability.id}`}>
           <span class="service-number">0{index + 1}</span>
           <div>
             <h3>{capability.title}</h3>
