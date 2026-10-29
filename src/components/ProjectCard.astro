@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import MediaSlot from './MediaSlot.astro';
+import PortfolioMotionToggle from './PortfolioMotionToggle.astro';
 import Arrow from './Arrow.astro';
 import type { ImageMetadata } from 'astro';
 import { canPublish } from '../lib/project-schema';
@@ -15,12 +16,15 @@ const { project, index, layout = 'paired', media } = Astro.props;
 const poster = media?.src ?? project.data.cover;
 const alt = media?.alt ?? project.data.coverAlt;
 const published = canPublish(project.data);
+const motion = published ? project.data.motion : undefined;
+const motionId = `home-motion-${project.data.slug}`;
 const href = `${published ? '/work' : '/_preview/work'}/${project.data.slug}`;
 const categories = project.data.categories
   .map((category) => projectCategoryLabels[category])
   .join(' / ');
 ---
 
+<div class="project-card-shell">
 <a
   href={href}
   class:list={['project-card', `project-card--${layout}`]}
@@ -41,6 +45,8 @@ const categories = project.data.categories
     </p>
   </div>
   <MediaSlot
+    motion={motion}
+    motionId={motionId}
     availability={published ? 'approved' : 'placeholder'}
     poster={poster}
     mobilePoster={media ? project.data.cover : undefined}
@@ -56,6 +62,8 @@ const categories = project.data.categories
   />
   {media?.caption && <p class="media-caption">{media.caption}</p>}
 </a>
+{motion && <PortfolioMotionToggle id={motionId} title={project.data.title} />}
+</div>
 <style>
   .project-card {
     display: block;

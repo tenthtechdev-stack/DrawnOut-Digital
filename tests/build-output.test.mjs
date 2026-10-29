@@ -185,3 +185,26 @@ test('approved artwork has real public cards and cases without invented facts or
       /Private draft|Pending studio review|Visual preview|Local portfolio preview/,
     );
 });
+
+test('only approved motion exports ship, and cards defer video sources until visible', async () => {
+  const records = await projectRecords();
+  const expected = records.filter(canPublish).flatMap((record) =>
+    record.motion ? [record.motion.landscape, record.motion.portrait] : [],
+  );
+  const emitted = (await files('dist/media/portfolio')).map((file) => path.basename(file));
+  assert.deepEqual(emitted.sort(), [...new Set(expected)].sort());
+  for (const file of emitted) assert.ok((await readFile(`dist/media/portfolio/${file}`)).length > 0);
+  for (const route of ['dist/index.html', 'dist/work/index.html']) {
+    const html = await readFile(route, 'utf8');
+    const videos = html.match(/<video\b[^>]*data-portfolio-video[^>]*>/g) ?? [];
+    assert.equal(videos.length, 6, `${route} needs all six project compositions.`);
+    for (const video of videos) {
+      assert.doesNotMatch(video, /\ssrc=/);
+      assert.match(video, /preload="none"/);
+      assert.match(video, /aria-hidden="true"/);
+      assert.match(video, /\bmuted\b/);
+      assert.match(video, /\bplaysinline\b/);
+    }
+    assert.equal((html.match(/data-motion-toggle=/g) ?? []).length, 6);
+  }
+});

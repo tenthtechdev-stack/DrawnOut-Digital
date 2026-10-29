@@ -1,0 +1,41 @@
+---
+interface Props {
+  id: string;
+  title: string;
+}
+const { id, title } = Astro.props;
+---
+
+<button
+  class="portfolio-motion-toggle"
+  type="button"
+  data-motion-toggle={id}
+  data-motion-title={title}
+  aria-controls={id}
+  aria-label={`Pause ${title} animation`}
+  aria-pressed="false"
+  hidden
+>
+  <span data-motion-control-label>Pause animation</span>
+</button>
+<style>
+  .portfolio-motion-toggle {
+    min-height: 44px;
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: var(--paper);
+    color: var(--ink);
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+  }
+  .portfolio-motion-toggle:hover {
+    border-color: var(--accent-strong);
+  }
+  .portfolio-motion-toggle:focus-visible {
+    outline: 3px solid var(--accent-strong);
+    outline-offset: 3px;
+  }
+</style>
