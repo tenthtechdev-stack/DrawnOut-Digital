@@ -204,7 +204,8 @@ test('service previews have distinct metadata, complete copy, FAQs and truthful 
       6,
       'Five FAQs plus the shared no-JS menu',
     );
-    for (const faq of service.faqs) assert.ok(html.includes(faq.question.replaceAll('&', '&amp;')));
+    for (const faq of service.faqs)
+      assert.ok(html.includes(faq.question.replaceAll('&', '&amp;').replaceAll("'", '&#39;')));
     assert.match(html, /href="\/contact"[^>]*data-service-enquiry/);
     const schema = JSON.parse(
       html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1],
