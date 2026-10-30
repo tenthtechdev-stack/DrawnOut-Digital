@@ -21,7 +21,7 @@ export const projects = {
     direction: 'Symbol becomes a system: concentric apertures, signage and stationery.',
     background: '#286332',
     assets: {
-      identity: crop('02_SOL_Community_Center', 1, [1073, 279, 478, 244]),
+      identity: crop('02_SOL_Community_Center', 1, [1120, 310, 380, 165]),
       signage: crop('02_SOL_Community_Center', 4, [0, 0, 650, 397]),
       card: crop('02_SOL_Community_Center', 4, [0, 670, 475, 262]),
       notebook: crop('02_SOL_Community_Center', 4, [486, 670, 387, 262]),
@@ -129,8 +129,9 @@ export function renderComposition(slug, format, seconds, assets) {
   let body = rect(0, 0, w, h, project.background);
 
   if (slug === 'sol-community-center') {
-    const logoWidth = portrait ? 470 : 478;
-    body += image('identity', (w - logoWidth) / 2, h / 2 - 122, logoWidth, 244);
+    const logoWidth = portrait ? 492 : 608;
+    const logoHeight = logoWidth * 165 / 380;
+    body += image('identity', (w - logoWidth) / 2, (h - logoHeight) / 2, logoWidth, logoHeight);
     const construction = presence(t, 0.25, 0.65, 1.2, 1.8);
     for (let i = 0; i < 3; i++) {
       const r = 75 + i * 40 + Math.sin(t * 1.7 + i) * 16;
