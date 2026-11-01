@@ -133,8 +133,10 @@ export function renderComposition(slug, format, seconds, assets) {
     // The existing full-color emblem is sampled directly from the approved
     // board. A circular presentation mask excludes the banner photograph;
     // it does not reconstruct or recolor any part of the original mark.
-    const emblem = clip(circle(w / 2, h / 2, logoSize * 92 / 186, '#fff'));
-    body += image('identity', (w - logoSize) / 2, (h - logoSize) / 2, logoSize, logoSize, { mask: emblem });
+    const emblem = clip(circle(w / 2, h / 2, (logoSize * 92) / 186, '#fff'));
+    body += image('identity', (w - logoSize) / 2, (h - logoSize) / 2, logoSize, logoSize, {
+      mask: emblem,
+    });
     const construction = presence(t, 0.25, 0.65, 1.2, 1.8);
     for (let i = 0; i < 3; i++) {
       const r = 75 + i * 40 + Math.sin(t * 1.7 + i) * 16;
@@ -145,42 +147,82 @@ export function renderComposition(slug, format, seconds, assets) {
     const cardP = ramp(t, 1.65, 2.65);
     if (portrait) {
       body += image('signage', 30, 35, w - 60, 330, { cover: true, radius: 4 });
-      body += image('card', 27 - (1 - cardP) * 130, 402, 285, 198, { cover: true, angle: -7 + cardP * 3 });
-      body += image('notebook', 316 + (1 - cardP) * 170, 425, 257, 192, { cover: true, angle: 8 - cardP * 4 });
+      body += image('card', 27 - (1 - cardP) * 130, 402, 285, 198, {
+        cover: true,
+        angle: -7 + cardP * 3,
+      });
+      body += image('notebook', 316 + (1 - cardP) * 170, 425, 257, 192, {
+        cover: true,
+        angle: 8 - cardP * 4,
+      });
       body += ring(w / 2, 662, 29, '#f6a817', 7);
       body += ring(w / 2 + 13, 662, 29, '#286332', 3);
     } else {
       body += image('signage', 40, 48, 540, 330, { cover: true, radius: 3 });
       body += image('apparel', 620, 45 + (1 - cardP) * 200, 290, 212, { cover: true });
-      body += image('card', 383 - (1 - cardP) * 130, 334, 270, 149, { cover: true, angle: -6 + cardP * 3 });
-      body += image('notebook', 666 + (1 - cardP) * 140, 297, 250, 169, { cover: true, angle: 8 - cardP * 4 });
+      body += image('card', 383 - (1 - cardP) * 130, 334, 270, 149, {
+        cover: true,
+        angle: -6 + cardP * 3,
+      });
+      body += image('notebook', 666 + (1 - cardP) * 140, 297, 250, 169, {
+        cover: true,
+        angle: 8 - cardP * 4,
+      });
       body += ring(112, 444, 30, '#f6a817', 6);
       body += ring(127, 444, 30, '#286332', 3);
     }
     body += '</g>';
-    body += ring(w / 2, h / 2, Math.hypot(w, h) * 0.6 * application, '#f6a817', 8, application > 0 && application < 1 ? 1 : 0);
+    body += ring(
+      w / 2,
+      h / 2,
+      Math.hypot(w, h) * 0.6 * application,
+      '#f6a817',
+      8,
+      application > 0 && application < 1 ? 1 : 0,
+    );
   } else if (slug === 'bunzo') {
     const logoWidth = portrait ? 550 : 710;
-    const logoHeight = logoWidth * 478 / 770;
+    const logoHeight = (logoWidth * 478) / 770;
     body += image('identity', (w - logoWidth) / 2, (h - logoHeight) / 2, logoWidth, logoHeight);
     const bars = 5;
     let shutters = '';
     for (let i = 0; i < bars; i++) {
       const amount = presence(t, 0.85 + i * 0.08, 1.6 + i * 0.08, 4.3 + i * 0.07, 5.4);
-      shutters += rect((w / bars) * i, i % 2 ? h * (1 - amount) : 0, w / bars + 1, h * amount, '#fff');
+      shutters += rect(
+        (w / bars) * i,
+        i % 2 ? h * (1 - amount) : 0,
+        w / bars + 1,
+        h * amount,
+        '#fff',
+      );
     }
     const shutter = clip(shutters);
     body += `<g clip-path="${shutter}">${rect(0, 0, w, h, '#f2b825')}`;
     const punch = ramp(t, 1.7, 2.45);
     if (portrait) {
       body += image('packaging', 0, 29, w, 260, { cover: true });
-      body += image('cup', 28, 336 + (1 - punch) * 180, 247, 303, { cover: true, angle: -7 + 3 * punch });
-      body += image('bag', 307, 329 - (1 - punch) * 150, 253, 303, { cover: true, angle: 7 - 3 * punch });
+      body += image('cup', 28, 336 + (1 - punch) * 180, 247, 303, {
+        cover: true,
+        angle: -7 + 3 * punch,
+      });
+      body += image('bag', 307, 329 - (1 - punch) * 150, 253, 303, {
+        cover: true,
+        angle: 7 - 3 * punch,
+      });
     } else {
       body += image('packaging', 0, 0, w, 268, { cover: true });
-      body += image('box', 40 - (1 - punch) * 200, 286, 290, 220, { cover: true, angle: -5 + 2 * punch });
-      body += image('cup', 374, 278 + (1 - punch) * 180, 222, 235, { cover: true, angle: 5 - 2 * punch });
-      body += image('bag', 661 + (1 - punch) * 200, 280, 259, 233, { cover: true, angle: -4 + 2 * punch });
+      body += image('box', 40 - (1 - punch) * 200, 286, 290, 220, {
+        cover: true,
+        angle: -5 + 2 * punch,
+      });
+      body += image('cup', 374, 278 + (1 - punch) * 180, 222, 235, {
+        cover: true,
+        angle: 5 - 2 * punch,
+      });
+      body += image('bag', 661 + (1 - punch) * 200, 280, 259, 233, {
+        cover: true,
+        angle: -4 + 2 * punch,
+      });
     }
     body += '</g>';
     const accent = presence(t, 0.3, 0.6, 1.2, 1.6);
@@ -189,44 +231,78 @@ export function renderComposition(slug, format, seconds, assets) {
   } else if (slug === 'triarch') {
     const logoWidth = portrait ? 534 : 744;
     const top = portrait ? 294 : 212;
-    body += image('identity', (w - logoWidth) / 2, top, logoWidth, logoWidth * 162 / 744);
+    body += image('identity', (w - logoWidth) / 2, top, logoWidth, (logoWidth * 162) / 744);
     const guides = presence(t, 0.25, 0.85, 1.5, 2);
     for (let i = 0; i < 5; i++) {
       const x = w * (0.14 + i * 0.18);
-      body += line(x, h * 0.12, x, h * (0.12 + 0.76 * ramp(t, 0.3 + i * 0.08, 1.1 + i * 0.08)), '#37383a', 1, guides);
+      body += line(
+        x,
+        h * 0.12,
+        x,
+        h * (0.12 + 0.76 * ramp(t, 0.3 + i * 0.08, 1.1 + i * 0.08)),
+        '#37383a',
+        1,
+        guides,
+      );
     }
     body += line(w * 0.08, top - 22, w * 0.92, top - 22, '#37383a', 1, guides);
     body += line(w * 0.08, top + 165, w * 0.92, top + 165, '#e2ae25', 3, guides);
-    const leftGate = clip(rect(0, h * (1 - application) / 2, w, h * application, '#fff'));
+    const leftGate = clip(rect(0, (h * (1 - application)) / 2, w, h * application, '#fff'));
     body += `<g clip-path="${leftGate}">${rect(0, 0, w, h, '#d8d8d6')}`;
     const slide = ramp(t, 1.7, 2.9);
     if (portrait) {
-      body += image('card', 38, 25 + (1 - slide) * 110, 322, 460, { cover: true, angle: -3 + slide * 2 });
-      body += image('device', 309, 313 - (1 - slide) * 100, 250, 356, { cover: true, angle: 3 - slide });
+      body += image('card', 38, 25 + (1 - slide) * 110, 322, 460, {
+        cover: true,
+        angle: -3 + slide * 2,
+      });
+      body += image('device', 309, 313 - (1 - slide) * 100, 250, 356, {
+        cover: true,
+        angle: 3 - slide,
+      });
       body += image('monogram', 67, 532, 108, 122);
     } else {
-      body += image('card', 84 + (1 - slide) * 100, 36, 380, 468, { cover: true, angle: -3 + slide * 2 });
-      body += image('device', 535 - (1 - slide) * 100, 46, 339, 446, { cover: true, angle: 3 - slide });
+      body += image('card', 84 + (1 - slide) * 100, 36, 380, 468, {
+        cover: true,
+        angle: -3 + slide * 2,
+      });
+      body += image('device', 535 - (1 - slide) * 100, 46, 339, 446, {
+        cover: true,
+        angle: 3 - slide,
+      });
     }
     body += line(w * 0.04, h * 0.93, w * (0.04 + 0.92 * slide), h * 0.93, '#e2ae25', 3);
     body += '</g>';
   } else if (slug === 'churros') {
     const logoHeight = portrait ? 570 : 460;
-    const logoWidth = logoHeight * 689 / 717;
+    const logoWidth = (logoHeight * 689) / 717;
     body += image('identity', (w - logoWidth) / 2, (h - logoHeight) / 2, logoWidth, logoHeight);
     const orbit = presence(t, 0.25, 0.9, 1.4, 1.85);
     const orbitAngle = -0.7 + t * 0.8;
     for (let i = 0; i < 3; i++) {
-      const angle = orbitAngle + i * Math.PI * 2 / 3;
-      body += circle(w / 2 + Math.cos(angle) * w * 0.39, h / 2 + Math.sin(angle) * h * 0.38, 9 + i * 4, ['#c94c1d', '#f4ad18', '#7d371b'][i], orbit);
+      const angle = orbitAngle + (i * Math.PI * 2) / 3;
+      body += circle(
+        w / 2 + Math.cos(angle) * w * 0.39,
+        h / 2 + Math.sin(angle) * h * 0.38,
+        9 + i * 4,
+        ['#c94c1d', '#f4ad18', '#7d371b'][i],
+        orbit,
+      );
     }
     const expansion = clip(circle(w * 0.5, h * 0.5, Math.hypot(w, h) * 0.65 * application, '#fff'));
     body += `<g clip-path="${expansion}">${rect(0, 0, w, h, '#f2b728')}`;
     body += image('pattern', 0, 0, w, h, { cover: true, opacity: 0.18 });
     const shift = Math.sin((t - 2) * 0.9) * 12;
     const windows = portrait
-      ? [[w * 0.35, 210, 170, 'bag'], [w * 0.69, 455, 164, 'box'], [w * 0.27, 627, 102, 'sign']]
-      : [[w * 0.23, 277, 176, 'bag'], [w * 0.57, 245, 181, 'box'], [w * 0.84, 365, 108, 'sign']];
+      ? [
+          [w * 0.35, 210, 170, 'bag'],
+          [w * 0.69, 455, 164, 'box'],
+          [w * 0.27, 627, 102, 'sign'],
+        ]
+      : [
+          [w * 0.23, 277, 176, 'bag'],
+          [w * 0.57, 245, 181, 'box'],
+          [w * 0.84, 365, 108, 'sign'],
+        ];
     windows.forEach(([x, y, r, name], index) => {
       const yy = y + shift * (index % 2 ? -1 : 1);
       body += circle(x + 5, yy + 8, r + 5, '#a44d1e', 0.2);
@@ -237,10 +313,22 @@ export function renderComposition(slug, format, seconds, assets) {
     body += '</g>';
   } else if (slug === 'by-tech-group') {
     const logoWidth = portrait ? 560 : 725;
-    body += image('identity', (w - logoWidth) / 2, (h - logoWidth * 485 / 725) / 2, logoWidth, logoWidth * 485 / 725);
+    body += image(
+      'identity',
+      (w - logoWidth) / 2,
+      (h - (logoWidth * 485) / 725) / 2,
+      logoWidth,
+      (logoWidth * 485) / 725,
+    );
     const guides = presence(t, 0.25, 0.7, 1.3, 1.8);
     for (let i = 0; i < 4; i++) {
-      body += rect(w * (0.08 + i * 0.22), h * 0.88, w * 0.15 * guides, 5, ['#6c5ce7', '#209cdb', '#8bc34a', '#209cdb'][i]);
+      body += rect(
+        w * (0.08 + i * 0.22),
+        h * 0.88,
+        w * 0.15 * guides,
+        5,
+        ['#6c5ce7', '#209cdb', '#8bc34a', '#209cdb'][i],
+      );
     }
     let modules = '';
     const columns = portrait ? 3 : 4;
@@ -251,7 +339,14 @@ export function renderComposition(slug, format, seconds, assets) {
         const p = presence(t, 1 + delay, 1.7 + delay, 4.2 + delay, 5.45);
         const cellW = w / columns;
         const cellH = h / rows;
-        modules += rect(col * cellW + cellW * (1 - p) / 2, row * cellH + cellH * (1 - p) / 2, cellW * p + 0.3, cellH * p + 0.3, '#fff', 8 * (1 - p));
+        modules += rect(
+          col * cellW + (cellW * (1 - p)) / 2,
+          row * cellH + (cellH * (1 - p)) / 2,
+          cellW * p + 0.3,
+          cellH * p + 0.3,
+          '#fff',
+          8 * (1 - p),
+        );
       }
     }
     const grid = clip(modules);
@@ -273,11 +368,16 @@ export function renderComposition(slug, format, seconds, assets) {
     const cy = h / 2;
     body += circle(cx, cy, logoSize * 0.57, '#fff7d5');
     const logoCircle = clip(circle(cx, cy, logoSize / 2, '#fff'));
-    body += image('identity', cx - logoSize / 2, cy - logoSize / 2, logoSize, logoSize, { mask: logoCircle });
+    body += image('identity', cx - logoSize / 2, cy - logoSize / 2, logoSize, logoSize, {
+      mask: logoCircle,
+    });
     const wavePath = (level, amplitude, phase) => {
       let d = `M0 ${h + 5}L0 ${n(level)}`;
       for (let x = 0; x <= w; x += w / 40) {
-        const y = level + Math.sin(x / w * Math.PI * 3 + phase) * amplitude + Math.sin(x / w * Math.PI * 5 - phase * 0.7) * amplitude * 0.25;
+        const y =
+          level +
+          Math.sin((x / w) * Math.PI * 3 + phase) * amplitude +
+          Math.sin((x / w) * Math.PI * 5 - phase * 0.7) * amplitude * 0.25;
         d += `L${n(x)} ${n(y)}`;
       }
       return `${d}L${w} ${h + 5}Z`;

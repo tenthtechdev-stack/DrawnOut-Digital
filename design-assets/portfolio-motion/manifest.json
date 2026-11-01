@@ -1,0 +1,523 @@
+{
+  "generator": "scripts/portfolio/render-loops.mjs",
+  "compositionSource": "scripts/portfolio/compositions.mjs",
+  "durationSeconds": 5.75,
+  "fps": 24,
+  "frameCount": 138,
+  "limitations": [
+    "Source artwork consists of flattened presentation PNGs, not independently rigged vectors or 3D products.",
+    "Marks and illustrations are cropped original pixels. Paths are presentation masks and decorative construction guides, not replacement official marks.",
+    "Perspective and rotational motion apply to flat image panels; no physical product simulation or independently animated hands are claimed.",
+    "These are new 2D editorial motion compositions for visual approval; the preliminary pan/zoom study archive is not used."
+  ],
+  "projects": {
+    "sol-community-center": {
+      "title": "SOL Community Center",
+      "direction": "Symbol becomes a system: concentric apertures, signage and stationery.",
+      "assets": {
+        "identity": {
+          "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_01.png",
+          "bounds": [
+            607,
+            27,
+            186,
+            186
+          ],
+          "sourceSHA256": "fb81af8a1afeb3ecb777b6b630cc412c886777a2da3be06bd8b4adbd4fc68f67"
+        },
+        "signage": {
+          "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_04.png",
+          "bounds": [
+            0,
+            0,
+            650,
+            397
+          ],
+          "sourceSHA256": "d86723fa035280759de1a79e76f52421060e1497be6c47606007dc40de6caed9"
+        },
+        "card": {
+          "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_04.png",
+          "bounds": [
+            0,
+            670,
+            475,
+            262
+          ],
+          "sourceSHA256": "d86723fa035280759de1a79e76f52421060e1497be6c47606007dc40de6caed9"
+        },
+        "notebook": {
+          "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_04.png",
+          "bounds": [
+            486,
+            670,
+            387,
+            262
+          ],
+          "sourceSHA256": "d86723fa035280759de1a79e76f52421060e1497be6c47606007dc40de6caed9"
+        },
+        "apparel": {
+          "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_04.png",
+          "bounds": [
+            1110,
+            0,
+            544,
+            397
+          ],
+          "sourceSHA256": "d86723fa035280759de1a79e76f52421060e1497be6c47606007dc40de6caed9"
+        }
+      },
+      "exports": {
+        "landscape": {
+          "file": "sol-community-center-landscape.mp4",
+          "width": 960,
+          "height": 540,
+          "bytes": 227300,
+          "sha256": "b33d75bea253929bef4c601702e92ab93ee25014fa23cf7ac3237e618094c3c1",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "972c2009909277a5c72bdb95ae8863f98950506f24a693da0e54ace3c202c7a0",
+          "lastFrameSHA256": "972c2009909277a5c72bdb95ae8863f98950506f24a693da0e54ace3c202c7a0"
+        },
+        "portrait": {
+          "file": "sol-community-center-portrait.mp4",
+          "width": 600,
+          "height": 750,
+          "bytes": 227775,
+          "sha256": "013da26eb5b0913a4061ee6cd09a8f68fd9c6e8c33f13b018b4abecb4890f8ed",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "682c00e56c00977aebcbacd5663de27f331619b5e72253ebb7fe597be63fbe60",
+          "lastFrameSHA256": "682c00e56c00977aebcbacd5663de27f331619b5e72253ebb7fe597be63fbe60"
+        }
+      }
+    },
+    "bunzo": {
+      "title": "Bunzo",
+      "direction": "Packaging with punch: red shutters and independently moving application panels.",
+      "assets": {
+        "identity": {
+          "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
+          "bounds": [
+            65,
+            22,
+            770,
+            478
+          ],
+          "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed"
+        },
+        "packaging": {
+          "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_03.png",
+          "bounds": [
+            0,
+            0,
+            1654,
+            539
+          ],
+          "sourceSHA256": "b9ece46ac27a97f5445c88bf493555c21a602de58026cdf1979f85ba2b4fa419"
+        },
+        "cup": {
+          "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_04.png",
+          "bounds": [
+            390,
+            8,
+            411,
+            505
+          ],
+          "sourceSHA256": "16eba7984d75b4742b0c5e92b8c2fffe3bfd72cb3ae9aeb9a5733586292a9b1d"
+        },
+        "bag": {
+          "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_04.png",
+          "bounds": [
+            812,
+            8,
+            430,
+            505
+          ],
+          "sourceSHA256": "16eba7984d75b4742b0c5e92b8c2fffe3bfd72cb3ae9aeb9a5733586292a9b1d"
+        },
+        "box": {
+          "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_03.png",
+          "bounds": [
+            3,
+            548,
+            382,
+            329
+          ],
+          "sourceSHA256": "b9ece46ac27a97f5445c88bf493555c21a602de58026cdf1979f85ba2b4fa419"
+        }
+      },
+      "exports": {
+        "landscape": {
+          "file": "bunzo-landscape.mp4",
+          "width": 960,
+          "height": 540,
+          "bytes": 230076,
+          "sha256": "e8467141f0137e5ea8932116cb10b6cbf2dfc4cf1d64b827b8629d02bbe0958d",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "8950ed1f594e92401b6155a4018e8d41b83cc3079bc099cf69e38de4404c6593",
+          "lastFrameSHA256": "8950ed1f594e92401b6155a4018e8d41b83cc3079bc099cf69e38de4404c6593"
+        },
+        "portrait": {
+          "file": "bunzo-portrait.mp4",
+          "width": 600,
+          "height": 750,
+          "bytes": 169294,
+          "sha256": "799c5afea870c29088fd25c4644cc7533d58dd4b59902fef0d4da24013af4bd2",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "52e344b520936d74f0537cc75e6be1897118326316ff4bf2b05210dc62d632de",
+          "lastFrameSHA256": "52e344b520936d74f0537cc75e6be1897118326316ff4bf2b05210dc62d632de"
+        }
+      }
+    },
+    "triarch": {
+      "title": "Triarch",
+      "direction": "Architectural lines: measured construction guides, monogram and stationery.",
+      "assets": {
+        "identity": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+          "bounds": [
+            44,
+            161,
+            744,
+            162
+          ],
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec"
+        },
+        "monogram": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_02.png",
+          "bounds": [
+            132,
+            586,
+            161,
+            180
+          ],
+          "sourceSHA256": "1aee15e956efdac35e5d3bbee530fa66a013d1124038bb6883e708d337ced05b"
+        },
+        "card": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+          "bounds": [
+            838,
+            0,
+            816,
+            931
+          ],
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec"
+        },
+        "device": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_02.png",
+          "bounds": [
+            1102,
+            301,
+            552,
+            630
+          ],
+          "sourceSHA256": "1aee15e956efdac35e5d3bbee530fa66a013d1124038bb6883e708d337ced05b"
+        }
+      },
+      "exports": {
+        "landscape": {
+          "file": "triarch-landscape.mp4",
+          "width": 960,
+          "height": 540,
+          "bytes": 205913,
+          "sha256": "d3013715f89ed87d5ce86d4688eb4c7004750989e633fa55f1a1394123b8f1c9",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "11532cfe9e59c0906a55a585b989852a54026d57e7326a217062efe02772fdfa",
+          "lastFrameSHA256": "11532cfe9e59c0906a55a585b989852a54026d57e7326a217062efe02772fdfa"
+        },
+        "portrait": {
+          "file": "triarch-portrait.mp4",
+          "width": 600,
+          "height": 750,
+          "bytes": 162786,
+          "sha256": "b4bfe55f3ec217d17a304b198072551f64aadbd5ccc35a04614db5aab3e89e72",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "bd61b46628bd73b67c877e49186cae25f4a99ba4ba9764cbb9bf6abc31828482",
+          "lastFrameSHA256": "bd61b46628bd73b67c877e49186cae25f4a99ba4ba9764cbb9bf6abc31828482"
+        }
+      }
+    },
+    "churros": {
+      "title": "Churros Dessert Shop",
+      "direction": "Illustrated sweetness: arcs, revolving circular windows and packaging.",
+      "assets": {
+        "identity": {
+          "source": "design-assets/portfolio-originals/07_Churros_Dessert_Shop/07_Churros_Dessert_Shop_01.png",
+          "bounds": [
+            118,
+            38,
+            689,
+            717
+          ],
+          "sourceSHA256": "9cdc590d4cd5aa316ff506cd35412214ea9586df38419e9b9566daf3777491be"
+        },
+        "bag": {
+          "source": "design-assets/portfolio-originals/07_Churros_Dessert_Shop/07_Churros_Dessert_Shop_03.png",
+          "bounds": [
+            0,
+            18,
+            383,
+            419
+          ],
+          "sourceSHA256": "c0f322f5861faee1a66e256728d6ce0a1a3c21bcbaee8f1551f314738540788e"
+        },
+        "box": {
+          "source": "design-assets/portfolio-originals/07_Churros_Dessert_Shop/07_Churros_Dessert_Shop_03.png",
+          "bounds": [
+            393,
+            18,
+            483,
+            419
+          ],
+          "sourceSHA256": "c0f322f5861faee1a66e256728d6ce0a1a3c21bcbaee8f1551f314738540788e"
+        },
+        "sign": {
+          "source": "design-assets/portfolio-originals/07_Churros_Dessert_Shop/07_Churros_Dessert_Shop_03.png",
+          "bounds": [
+            1250,
+            18,
+            404,
+            419
+          ],
+          "sourceSHA256": "c0f322f5861faee1a66e256728d6ce0a1a3c21bcbaee8f1551f314738540788e"
+        },
+        "pattern": {
+          "source": "design-assets/portfolio-originals/07_Churros_Dessert_Shop/07_Churros_Dessert_Shop_02.png",
+          "bounds": [
+            744,
+            582,
+            242,
+            261
+          ],
+          "sourceSHA256": "16d3e263d5a0855fa519c28f999cacf11661d24bbc1961e3b2d925b91190d95f"
+        }
+      },
+      "exports": {
+        "landscape": {
+          "file": "churros-landscape.mp4",
+          "width": 960,
+          "height": 540,
+          "bytes": 290946,
+          "sha256": "b1fa3f2fcb1db7bb04d06c2fbf96ac53b2298aec9bb26f72ae2c04eb0de83c81",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "de91f1b51a440d49958f314c7ef453c97167a832fc8afec477566c4adea99cb5",
+          "lastFrameSHA256": "de91f1b51a440d49958f314c7ef453c97167a832fc8afec477566c4adea99cb5"
+        },
+        "portrait": {
+          "file": "churros-portrait.mp4",
+          "width": 600,
+          "height": 750,
+          "bytes": 322248,
+          "sha256": "96a4af84ef8cf9bca9106402f3b91714fbb37e0b2465947955a08ad930d6c997",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "47e843c163fe32845120e3d5c1cfe92247b3b71f3951412334669a8f9e0dc5d8",
+          "lastFrameSHA256": "47e843c163fe32845120e3d5c1cfe92247b3b71f3951412334669a8f9e0dc5d8"
+        }
+      }
+    },
+    "by-tech-group": {
+      "title": "By Tech Group",
+      "direction": "Identity in modules: progressive grid apertures and assembled applications.",
+      "assets": {
+        "identity": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_01.png",
+          "bounds": [
+            468,
+            123,
+            725,
+            485
+          ],
+          "sourceSHA256": "260eeedb90d8a7c730e6eb08432af979dac3b2d051a1ba972f3c2eb5123db95b"
+        },
+        "building": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_02.png",
+          "bounds": [
+            0,
+            551,
+            551,
+            380
+          ],
+          "sourceSHA256": "618e3c165ffa4d3cd536704ef73d8b8ab2c46b7a0e069c9685a13ea290cb2232"
+        },
+        "flag": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_02.png",
+          "bounds": [
+            559,
+            551,
+            476,
+            380
+          ],
+          "sourceSHA256": "618e3c165ffa4d3cd536704ef73d8b8ab2c46b7a0e069c9685a13ea290cb2232"
+        },
+        "mug": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_03.png",
+          "bounds": [
+            1121,
+            0,
+            533,
+            437
+          ],
+          "sourceSHA256": "f8325f3a8b01c0ce719914e8a6d12be13e96ecd026c9cb691fced12180cba30c"
+        },
+        "folio": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_03.png",
+          "bounds": [
+            386,
+            445,
+            802,
+            486
+          ],
+          "sourceSHA256": "f8325f3a8b01c0ce719914e8a6d12be13e96ecd026c9cb691fced12180cba30c"
+        }
+      },
+      "exports": {
+        "landscape": {
+          "file": "by-tech-group-landscape.mp4",
+          "width": 960,
+          "height": 540,
+          "bytes": 150392,
+          "sha256": "5ad6d677f09fe8e4ff6e7da3fc8cd923d92c16a3bc6830fbff9657d8e1711347",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "36a8b161116993cfe1917ab1ab9686605fbcb09b195b9111dcec9c02d57d0daa",
+          "lastFrameSHA256": "36a8b161116993cfe1917ab1ab9686605fbcb09b195b9111dcec9c02d57d0daa"
+        },
+        "portrait": {
+          "file": "by-tech-group-portrait.mp4",
+          "width": 600,
+          "height": 750,
+          "bytes": 122412,
+          "sha256": "dad4c04e8487f8083fa6022ef2dd3f283f08d252833ab9a392f7fa72920404bc",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "845cb7856ce0e7ed5673c7e43ec26374a767fedfa1842070ac53b16d7369d1eb",
+          "lastFrameSHA256": "845cb7856ce0e7ed5673c7e43ec26374a767fedfa1842070ac53b16d7369d1eb"
+        }
+      }
+    },
+    "u-wanna-smoothie": {
+      "title": "U Wanna Smoothie",
+      "direction": "Liquid and flavor: elastic wave masks, illustrated menu and product imagery.",
+      "assets": {
+        "identity": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_01.png",
+          "bounds": [
+            565,
+            207,
+            522,
+            518
+          ],
+          "sourceSHA256": "14d7dbf0150dd22afa7a94a66709a2ac6843a4af618569a8cfc5477f53ff515b"
+        },
+        "cup": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_01.png",
+          "bounds": [
+            0,
+            0,
+            555,
+            931
+          ],
+          "sourceSHA256": "14d7dbf0150dd22afa7a94a66709a2ac6843a4af618569a8cfc5477f53ff515b"
+        },
+        "drink": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_02.png",
+          "bounds": [
+            882,
+            389,
+            522,
+            492
+          ],
+          "sourceSHA256": "209c98817e5cf2f540973fa5a8514f47af76d7ac0cbc957d28317b41d9277c92"
+        },
+        "menu": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_03.png",
+          "bounds": [
+            0,
+            404,
+            821,
+            459
+          ],
+          "sourceSHA256": "7c88793349c0a2a242410213f659b17a7b296eb1ae17108fe80d6a733b3f8638"
+        }
+      },
+      "exports": {
+        "landscape": {
+          "file": "u-wanna-smoothie-landscape.mp4",
+          "width": 960,
+          "height": 540,
+          "bytes": 147409,
+          "sha256": "535d344a97aa3f034fee2416da0bf11aa6fa18ea39246608d070644dc5729e1e",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "3db4937596d919b9d0d1278a1110e7b3463e09d139aba4115198e3e3c6a9aeab",
+          "lastFrameSHA256": "3db4937596d919b9d0d1278a1110e7b3463e09d139aba4115198e3e3c6a9aeab"
+        },
+        "portrait": {
+          "file": "u-wanna-smoothie-portrait.mp4",
+          "width": 600,
+          "height": 750,
+          "bytes": 145555,
+          "sha256": "31d6dcb811f73dd129afa46cd69dddc6ceb3c3896178cb93a30d5e3a3aec0d19",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "0721abaa4e0666ad955779d36021ea4e7b320baf6c9497be834781b983467ee0",
+          "lastFrameSHA256": "0721abaa4e0666ad955779d36021ea4e7b320baf6c9497be834781b983467ee0"
+        }
+      }
+    }
+  }
+}
