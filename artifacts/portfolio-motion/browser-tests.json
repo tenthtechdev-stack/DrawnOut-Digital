@@ -1,0 +1,167 @@
+{
+  "passed": 24,
+  "failed": 0,
+  "method": "22 cases passed in the production run; two existing homepage image assertions were corrected to allow Astro production hashes, then both passed. This is consolidated coverage across those runs, not a single uninterrupted 24-pass process.",
+  "tests": [
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "homepage lazily attaches sources at 35% visibility and all six desktop cards autoplay",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "all six Home and Work animations autoplay without hover and respect the decoder budget at 390px",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "all six Home and Work animations autoplay without hover and respect the decoder budget at 768px",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "keyboard pause control stays separate from project links and preserves a descriptive poster",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "document visibility changes release decoders and visible cards resume",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "reduced-motion retains meaningful project posters without a broken player",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "save-data retains meaningful project posters without a broken player",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "autoplay-blocked retains meaningful project posters without a broken player",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "no JavaScript leaves clickable descriptive cards and official contact links without video requests",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "filtering releases hidden animations and keeps category navigation and project links working",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "editorial Work index loads responsive approved artwork at 390px",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "editorial Work index loads responsive approved artwork at 768px",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "editorial Work index loads responsive approved artwork at 1440px",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "Work categories derive from records and support URL history and keyboard operation",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "bunzo case page preserves art direction and navigation at 390px",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "triarch case page preserves art direction and navigation at 1440px",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "public project navigation stays in the public route namespace and unavailable URLs fail",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "Work and case pages remain usable without JavaScript and with reduced motion",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "reduced-motion Work interactions stay visible with no running animations",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "every approved project opens a public case from Work with truthful visible fields and usable neighbors",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "storytelling.spec.ts",
+      "title": "Phase 2 storytelling and original portfolio remain readable at 390px",
+      "status": "passed",
+      "run": "portfolio-browser-repair.log"
+    },
+    {
+      "file": "storytelling.spec.ts",
+      "title": "Phase 2 storytelling and original portfolio remain readable at 1440px",
+      "status": "passed",
+      "run": "portfolio-browser-repair.log"
+    },
+    {
+      "file": "storytelling.spec.ts",
+      "title": "new homepage story remains usable without JavaScript",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    },
+    {
+      "file": "storytelling.spec.ts",
+      "title": "reduced-motion storytelling preserves visibility and a keyboard-usable mobile menu",
+      "status": "passed",
+      "run": "portfolio-browser-final.log"
+    }
+  ],
+  "initialRunStats": {
+    "startTime": "2026-11-01T18:40:45.096Z",
+    "duration": 125273.382,
+    "expected": 22,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "repairRunStats": {
+    "startTime": "2026-11-01T18:44:25.024Z",
+    "duration": 20937.186999999998,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -127,7 +127,9 @@ for (const width of [320, 390, 768, 1440, 1920]) {
       const currentSource = await image.evaluate((element: HTMLImageElement) =>
         decodeURIComponent(element.currentSrc),
       );
-      expect(currentSource).toContain(width < 640 ? mobilePoster! : widePoster!);
+      expect(currentSource).toContain(
+        (width < 640 ? mobilePoster! : widePoster!).replace(/\.webp$/, ''),
+      );
     }
     const mediaRatios = await work.locator('.media-slot').evaluateAll((elements) =>
       elements.map((element) => {
