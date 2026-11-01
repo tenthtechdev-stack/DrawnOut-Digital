@@ -6,17 +6,17 @@ The owner requested an immediate checkpoint push, without further testing, debug
 
 ## Completed checks on the latest implementation
 
-| Check | Actual result |
-| --- | --- |
-| `npm run check` | Passed: 95 files, 0 errors, 0 warnings, 0 hints |
-| `npm run lint` | Passed |
-| `npm test` | 32 passed, 0 failed |
-| `npm run build` | Passed; 17 static pages |
-| `npm run test:build` | 4 passed, 0 failed |
-| `npm run test:publication` | 1 passed, 0 failed |
-| Latest focused Playwright run | 6 passed, 0 failed; 39.5 seconds |
-| Final full Playwright run | Not rerun after the last corrections; expected discovery count 188 |
-| Final repository formatting check | Not completed after the last changes and checkpoint documentation |
+| Check                             | Actual result                                                      |
+| --------------------------------- | ------------------------------------------------------------------ |
+| `npm run check`                   | Passed: 95 files, 0 errors, 0 warnings, 0 hints                    |
+| `npm run lint`                    | Passed                                                             |
+| `npm test`                        | 32 passed, 0 failed                                                |
+| `npm run build`                   | Passed; 17 static pages                                            |
+| `npm run test:build`              | 4 passed, 0 failed                                                 |
+| `npm run test:publication`        | 1 passed, 0 failed                                                 |
+| Latest focused Playwright run     | 6 passed, 0 failed; 39.5 seconds                                   |
+| Final full Playwright run         | Not rerun after the last corrections; expected discovery count 188 |
+| Final repository formatting check | Not completed after the last changes and checkpoint documentation  |
 
 The focused run covered zero-position scroll notifications versus actual scrolling; a fresh mobile load and two consecutive refreshes; preserving a scrolled mobile refresh position; desktop automatic completion; six progressive artwork reveals and SOL prominence; and the real 320px fluid shader at 0/2/5 seconds, including offscreen pause.
 
