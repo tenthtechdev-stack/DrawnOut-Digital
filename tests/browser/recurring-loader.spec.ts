@@ -2,6 +2,59 @@ import { expect, test, type Page } from '@playwright/test';
 
 const overlay = '[data-signature-intro-overlay]';
 
+/** Dev transforms can legitimately exhaust the navigation budget. This branch
+ * verifies the visible fallback; optimized production acceptance still requires
+ * the full storyboard and is run by test:production-browser. */
+async function completedBrief(page: Page) {
+  await expect(page.locator(overlay)).toBeVisible();
+  await expect(page.locator('[data-intro-brief]')).toBeVisible();
+  const visible = await page.evaluate(async () => {
+    const element = document.querySelector<HTMLElement>('[data-intro-brief]')!;
+    const times: number[] = [];
+    const until = performance.now() + 350;
+    await new Promise<void>((resolve) => {
+      const sample = () => {
+        const style = getComputedStyle(element);
+        const scene = getComputedStyle(element.closest('[data-signature-intro-overlay]')!);
+        const bounds = element.getBoundingClientRect();
+        if (
+          style.display !== 'none' &&
+          scene.visibility !== 'hidden' &&
+          Number(scene.opacity) > 0.1 &&
+          bounds.width > innerWidth * 0.5
+        )
+          times.push(performance.now());
+        if (performance.now() >= until) resolve();
+        else requestAnimationFrame(sample);
+      };
+      requestAnimationFrame(sample);
+    });
+    return { frames: times.length, duration: (times.at(-1) ?? 0) - (times[0] ?? 0) };
+  });
+  expect(visible.frames).toBeGreaterThan(2);
+  expect(visible.duration).toBeGreaterThan(200);
+  await expect(page.locator('html')).toHaveAttribute(
+    'data-signature-intro-reason',
+    'brief-complete',
+  );
+  const result = await page.evaluate(() => ({
+    mode: document.documentElement.dataset.signatureIntroMode,
+    fallback: document.documentElement.dataset.signatureIntroFallback,
+    started: Number(document.documentElement.dataset.signatureIntroStarted),
+    ended: Number(document.documentElement.dataset.signatureIntroEnded),
+  }));
+  expect(result.mode).toBe('brief');
+  expect(['asset-delay', 'style-delay', 'late-start']).toContain(result.fallback);
+  expect(result.ended).toBeLessThanOrEqual(5000);
+  expect(result.ended - result.started).toBeGreaterThanOrEqual(1000);
+  await expect(page.locator(overlay)).toBeHidden();
+  await test.info().attach('dev-budget-fallback', {
+    body: JSON.stringify({ ...result, visible }),
+    contentType: 'application/json',
+  });
+  return result.ended;
+}
+
 test('a zero-position scroll notification preserves the loader while actual scrolling skips it', async ({
   page,
 }) => {
@@ -45,6 +98,8 @@ test('readable but unwritable session storage keeps navigation immediately avail
 
 async function completed(page: Page) {
   await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');
+  if ((await page.locator('html').getAttribute('data-signature-intro-mode')) === 'brief')
+    return completedBrief(page);
   await expect(page.locator('html')).toHaveAttribute('data-signature-intro-mode', 'full');
   await expect(page.locator(overlay)).toBeVisible();
   const appearance = await page.evaluate(async () => {
