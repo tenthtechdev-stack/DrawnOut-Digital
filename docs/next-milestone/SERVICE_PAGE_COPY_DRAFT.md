@@ -1,10 +1,11 @@
 # DrawnOut Digital | Five Service Page Copy Drafts
 
-**Editorial status:** Draft for client approval, 28 October 2026. This finalizes the proposed *words*, not the page layouts. Based on the five existing service pillars and the studio's approved public-facing positioning. Delivery examples are illustrative scope options, **not assertions that specific commissioned services, clients, outcomes, or team credentials have been verified**. Remove or revise any capability not actually offered before publication.
+**Editorial status:** Draft for client approval, 28 October 2026. This finalizes the proposed _words_, not the page layouts. Based on the five existing service pillars and the studio's approved public-facing positioning. Delivery examples are illustrative scope options, **not assertions that specific commissioned services, clients, outcomes, or team credentials have been verified**. Remove or revise any capability not actually offered before publication.
 
 **Studio voice:** Creative, clear, confident, conversational. No inflated results, generic SEO keyword repetition, invented pricing, invented client outcomes, or fabricated testimonials. The pages will share the CTA: **Have something in mind? Tell us what you're thinking.** Link to `/contact`.
 
 **Proposed URL map:**
+
 - `/services/brand-identity` (Brand Identity & Design)
 - `/services/digital-design` (Digital Design)
 - `/services/marketing-campaigns` (Marketing & Campaigns)
