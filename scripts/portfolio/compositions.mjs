@@ -21,7 +21,7 @@ export const projects = {
     direction: 'Symbol becomes a system: concentric apertures, signage and stationery.',
     background: '#286332',
     assets: {
-      identity: crop('02_SOL_Community_Center', 1, [1120, 310, 380, 165]),
+      identity: crop('02_SOL_Community_Center', 1, [607, 27, 186, 186]),
       signage: crop('02_SOL_Community_Center', 4, [0, 0, 650, 397]),
       card: crop('02_SOL_Community_Center', 4, [0, 670, 475, 262]),
       notebook: crop('02_SOL_Community_Center', 4, [486, 670, 387, 262]),
@@ -66,7 +66,7 @@ export const projects = {
   'by-tech-group': {
     title: 'By Tech Group',
     direction: 'Identity in modules: progressive grid apertures and assembled applications.',
-    background: '#08090d',
+    background: '#000000',
     assets: {
       identity: crop('03_By_Tech_Group', 1, [468, 123, 725, 485]),
       building: crop('03_By_Tech_Group', 2, [0, 551, 551, 380]),
@@ -129,9 +129,12 @@ export function renderComposition(slug, format, seconds, assets) {
   let body = rect(0, 0, w, h, project.background);
 
   if (slug === 'sol-community-center') {
-    const logoWidth = portrait ? 492 : 608;
-    const logoHeight = logoWidth * 165 / 380;
-    body += image('identity', (w - logoWidth) / 2, (h - logoHeight) / 2, logoWidth, logoHeight);
+    const logoSize = portrait ? 302 : 290;
+    // The existing full-color emblem is sampled directly from the approved
+    // board. A circular presentation mask excludes the banner photograph;
+    // it does not reconstruct or recolor any part of the original mark.
+    const emblem = clip(circle(w / 2, h / 2, logoSize * 92 / 186, '#fff'));
+    body += image('identity', (w - logoSize) / 2, (h - logoSize) / 2, logoSize, logoSize, { mask: emblem });
     const construction = presence(t, 0.25, 0.65, 1.2, 1.8);
     for (let i = 0; i < 3; i++) {
       const r = 75 + i * 40 + Math.sin(t * 1.7 + i) * 16;

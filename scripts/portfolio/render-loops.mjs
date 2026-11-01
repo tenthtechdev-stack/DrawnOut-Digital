@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /** Reproducible, offline source-artwork compositing. Requires Node, sharp and FFmpeg. */
 import assert from 'node:assert/strict';
+import { Buffer } from 'node:buffer';
 import { createHash } from 'node:crypto';
 import { once } from 'node:events';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
