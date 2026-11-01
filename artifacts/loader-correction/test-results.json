@@ -1,0 +1,1392 @@
+{
+  "development": {
+    "passed": 188,
+    "failed": 0,
+    "method": "Verified coverage across interrupted/resumed runs, not a single uninterrupted green process. Each current test maps to the saved run where it passed. Full-storyboard cases now run unchanged against optimized production assets.",
+    "tests": [
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept a: usable at 360px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept a: usable at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept a: usable at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept a: usable at 1024px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept a: usable at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept a: usable at 1920px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept a: no JavaScript and reduced motion remain readable",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept b: usable at 360px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept b: usable at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept b: usable at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept b: usable at 1024px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept b: usable at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept b: usable at 1920px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept b: no JavaScript and reduced motion remain readable",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "concepts.spec.ts",
+        "title": "concept switch changes the layout and preserves the supplied copy",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "Contact is responsive and accessible at 390px with official contact links",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "Contact is responsive and accessible at 768px with official contact links",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "Contact is responsive and accessible at 1440px with official contact links",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "an unconfigured form never posts or reports success and offers email instead",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "no JavaScript leaves the unconfigured form safe and direct contact usable",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "required fields announce errors, focus the summary and link back to controls",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "a configured form has a native POST fallback without JavaScript",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "whitespace-only values and malformed email are rejected without a request",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "input limits and the honeypot reject oversized or automated submissions",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "provider acceptance is announced honestly and duplicate submissions stay blocked",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "http provider failure keeps the enquiry and never announces success",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "network provider failure keeps the enquiry and never announces success",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "malformed provider failure keeps the enquiry and never announces success",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "not-accepted provider failure keeps the enquiry and never announces success",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "conflicting-error provider failure keeps the enquiry and never announces success",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "a timed-out request reports uncertainty without an automatic retry",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "correcting errors and explicitly retrying a rejected submission preserves a valid enquiry",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "footer-social.spec.ts",
+        "title": "footer social icons and exact development credit are usable at 320px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "footer-social.spec.ts",
+        "title": "footer social icons and exact development credit are usable at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "footer-social.spec.ts",
+        "title": "footer social icons and exact development credit are usable at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "footer-social.spec.ts",
+        "title": "footer social icons and exact development credit are usable at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "footer-social.spec.ts",
+        "title": "footer social and attribution links remain usable without JavaScript",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "Afterglow foundation is readable and complete at 320px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "Afterglow foundation is readable and complete at 360px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "Afterglow foundation is readable and complete at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "Afterglow foundation is readable and complete at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "Afterglow foundation is readable and complete at 1024px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "Afterglow foundation is readable and complete at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "Afterglow foundation is readable and complete at 1920px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "mobile navigation traps focus, closes with Escape, and restores the trigger",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "mobile navigation closes after link selection and desktop resize releases its lock",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "mobile navigation dismisses on the backdrop",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "no-JavaScript mobile navigation and reduced-motion content stay usable",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "Work route has shared navigation, metadata, and correct current-page state",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "Services route has shared navigation, metadata, and correct current-page state",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "About route has shared navigation, metadata, and correct current-page state",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "foundation.spec.ts",
+        "title": "Contact route has shared navigation, metadata, and correct current-page state",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "hero entrance starts before its first painted text and never replays at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "hero entrance starts before its first painted text and never replays at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "hero entrance starts before its first painted text and never replays at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "late GSAP loading releases the hero watchdog and preserves the visible static text",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "motion enhancement preserves readable content and normal scrolling at 320px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "motion enhancement preserves readable content and normal scrolling at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "motion enhancement preserves readable content and normal scrolling at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "motion enhancement preserves readable content and normal scrolling at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "motion enhancement preserves readable content and normal scrolling at 1920px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "home image expansion completes and reverses without layout shifts at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "home image expansion completes and reverses without layout shifts at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "home image expansion completes and reverses without layout shifts at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "work image expansion completes and reverses without layout shifts at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "work image expansion completes and reverses without layout shifts at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "work image expansion completes and reverses without layout shifts at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "case image expansion completes and reverses without layout shifts at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "case image expansion completes and reverses without layout shifts at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "case image expansion completes and reverses without layout shifts at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "filter changes, resize and repeated initialization keep one scoped motion system",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "live reduced-motion changes remove scroll choreography and restore it without duplicates",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "no-JavaScript pages retain readable text, portfolio imagery and navigation",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "failed GSAP downloads leave visible content and a usable static page",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "motion.spec.ts",
+        "title": "keyboard focus exposes the complete interactive portfolio image",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "editorial Work index loads responsive approved artwork at 320px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "editorial Work index loads responsive approved artwork at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "editorial Work index loads responsive approved artwork at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "editorial Work index loads responsive approved artwork at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "editorial Work index loads responsive approved artwork at 1920px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "Work categories derive from records and support URL history and keyboard operation",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "bunzo case page preserves art direction and navigation at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "bunzo case page preserves art direction and navigation at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "bunzo case page preserves art direction and navigation at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "triarch case page preserves art direction and navigation at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "triarch case page preserves art direction and navigation at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "triarch case page preserves art direction and navigation at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "public project navigation stays in the public route namespace and unavailable URLs fail",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "Work and case pages remain usable without JavaScript and with reduced motion",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "reduced-motion Work interactions stay visible with no running animations",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "portfolio.spec.ts",
+        "title": "every approved project opens a public case from Work with truthful visible fields and usable neighbors",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "a zero-position scroll notification preserves the loader while actual scrolling skips it",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "a missing route opens error recovery immediately without a branded loader",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "readable but unwritable session storage keeps navigation immediately available",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "Home/logo from /contact replays the full visible loader at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "Home/logo from /contact replays the full visible loader at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "Home/logo from /work replays the full visible loader at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "Home/logo from /work replays the full visible loader at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "a fresh load and both consecutive refreshes play the full loop at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "a fresh load and both consecutive refreshes play the full loop at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "a manual same-session revisit replays while clicked internal routes and Work filters do not",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "a scrolled mobile refresh preserves the browser position and skips the loader",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "direct /work loading is skippable without a homepage handoff",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "direct /work/bunzo loading is skippable without a homepage handoff",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "direct /contact loading is skippable without a homepage handoff",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "direct /services loading is skippable without a homepage handoff",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "direct /about loading is skippable without a homepage handoff",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "browser back/forward preserves content and scroll without restarting the loader",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "a stale matching navigation token cannot suppress a direct load",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "a fresh mismatched navigation token cannot suppress a direct load",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "new-tab and modified links do not leave a same-tab suppression token",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "development replay cannot bypass reduced",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "development replay cannot bypass save-data",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "development replay cannot bypass hidden",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "development replay link starts a new full sequence without a production preference override",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "stylesheet readiness at 620ms respects the full-sequence navigation budget",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "stylesheet readiness at 850ms respects the full-sequence navigation budget",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "prevented same-tab clicks and same-document hash actions leave no navigation intent",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "missing full stylesheet readiness uses the independent brief handoff and releases content",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "delayed artwork uses a truthful brief handoff instead of empty project reveals",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "recurring-loader.spec.ts",
+        "title": "development replay keeps deep-link content visible",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-accessibility.spec.ts",
+        "title": "signature WCAG scan / at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-accessibility.spec.ts",
+        "title": "signature WCAG scan /work at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-accessibility.spec.ts",
+        "title": "signature WCAG scan /work/bunzo at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-accessibility.spec.ts",
+        "title": "signature WCAG scan /contact at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-accessibility.spec.ts",
+        "title": "signature WCAG scan / at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-accessibility.spec.ts",
+        "title": "signature WCAG scan /work at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-accessibility.spec.ts",
+        "title": "signature WCAG scan /work/bunzo at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-accessibility.spec.ts",
+        "title": "signature WCAG scan /contact at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-accessibility.spec.ts",
+        "title": "mobile menu remains accessible with the signature experience",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-choreography.spec.ts",
+        "title": "major portfolio image opens from an editorial frame to near full bleed at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-choreography.spec.ts",
+        "title": "manifesto words follow actual scroll and reverse at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-choreography.spec.ts",
+        "title": "major portfolio image opens from an editorial frame to near full bleed at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-choreography.spec.ts",
+        "title": "manifesto words follow actual scroll and reverse at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-choreography.spec.ts",
+        "title": "selected editorial lines and words reveal once and reflow safely after resizing",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-footer.spec.ts",
+        "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-footer.spec.ts",
+        "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-footer.spec.ts",
+        "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-footer.spec.ts",
+        "title": "footer reduced-motion preference restores composed static artwork and working navigation",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-footer.spec.ts",
+        "title": "footer remains composed with JavaScript disabled",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-footer.spec.ts",
+        "title": "footer stays available when the animation libraries fail to load",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-gradient.spec.ts",
+        "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 320px and pauses offscreen",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "signature-gradient.spec.ts",
+        "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 390px and pauses offscreen",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "signature-gradient.spec.ts",
+        "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 768px and pauses offscreen",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "signature-gradient.spec.ts",
+        "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "signature-gradient.spec.ts",
+        "title": "desktop pointer response eases towards the cursor while mobile touch preserves autonomous motion",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "signature-gradient.spec.ts",
+        "title": "visibility suspension pauses the shader clock and resumes without a time jump",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "signature-gradient.spec.ts",
+        "title": "WebGL context failure selects animated CSS and a live preference change restores static artwork",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "signature-gradient.spec.ts",
+        "title": "unavailable GPU uses visibly flowing CSS without adding a rendering loop",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "signature-gradient.spec.ts",
+        "title": "initial reduced motion and data saving never initialize GPU rendering",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "signature-header.spec.ts",
+        "title": "stable mobile header at 320px with no-preference, reload and direct case",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-header.spec.ts",
+        "title": "stable mobile header at 320px with reduce, reload and direct case",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-header.spec.ts",
+        "title": "stable header through delayed navigation and fonts at 320px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-header.spec.ts",
+        "title": "failed navigation module keeps native menu and stable geometry at 320px",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "signature-header.spec.ts",
+        "title": "no-JavaScript native menu preserves header geometry at 320px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-header.spec.ts",
+        "title": "stable mobile header at 390px with no-preference, reload and direct case",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-header.spec.ts",
+        "title": "stable mobile header at 390px with reduce, reload and direct case",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-header.spec.ts",
+        "title": "stable header through delayed navigation and fonts at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-header.spec.ts",
+        "title": "failed navigation module keeps native menu and stable geometry at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-header.spec.ts",
+        "title": "no-JavaScript native menu preserves header geometry at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "opening completes automatically within five navigation seconds at 320px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "opening completes automatically within five navigation seconds at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "opening completes automatically within five navigation seconds at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "opening completes automatically within five navigation seconds at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "opening completes automatically within five navigation seconds at 1920px",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "Escape immediately bypasses the opening",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "Enter immediately bypasses the opening",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "Space immediately bypasses the opening",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "Tab immediately bypasses the opening",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "wheel bypass preserves the original native scroll input",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "visible skip control immediately reveals the homepage",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "internal navigation keeps its first action and the next manual refresh replays",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "direct case loads use the loader while hash destinations reach content immediately",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "reduced motion reaches the homepage immediately and remains readable without JavaScript",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "data saving bypasses the opening",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "a homepage return respects the current motion preference instead of a past opt-out",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "unavailable session storage fails open",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "a mobile tap immediately bypasses the intro",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "live reduced-motion preference immediately cancels the opening",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "delayed optional module never delays or replays the inline opening",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "signature-intro.spec.ts",
+        "title": "failed signature media reveals the working homepage",
+        "status": "passed",
+        "run": "stage-a-browser-isolated.log"
+      },
+      {
+        "file": "storytelling.spec.ts",
+        "title": "Phase 2 storytelling and original portfolio remain readable at 320px",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "storytelling.spec.ts",
+        "title": "Phase 2 storytelling and original portfolio remain readable at 390px",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "storytelling.spec.ts",
+        "title": "Phase 2 storytelling and original portfolio remain readable at 768px",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "storytelling.spec.ts",
+        "title": "Phase 2 storytelling and original portfolio remain readable at 1440px",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "storytelling.spec.ts",
+        "title": "Phase 2 storytelling and original portfolio remain readable at 1920px",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "storytelling.spec.ts",
+        "title": "new homepage story remains usable without JavaScript",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      },
+      {
+        "file": "storytelling.spec.ts",
+        "title": "reduced-motion storytelling preserves visibility and a keyboard-usable mobile menu",
+        "status": "passed",
+        "run": "stage-a-browser-remainder.log"
+      }
+    ]
+  },
+  "production": {
+    "startTime": "2026-11-01T18:45:57.000Z",
+    "duration": 72821.435,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "productionJourneys": [
+    {
+      "arrival": "cold direct",
+      "mode": "full",
+      "reason": "complete",
+      "started": 312.7,
+      "ended": 4518,
+      "visibleFrames": 187,
+      "visibleMs": 3412.5,
+      "partialWave": true,
+      "partialWord": true,
+      "sixRevealed": true,
+      "independentEntrance": true,
+      "wordGeometry": {
+        "left": 22,
+        "width": 278.125,
+        "bottom": 742.734375,
+        "fontSize": 66.3
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false
+    },
+    {
+      "arrival": "refresh 1",
+      "mode": "full",
+      "reason": "complete",
+      "started": 115.3,
+      "ended": 4350.6,
+      "visibleFrames": 189,
+      "visibleMs": 3781.300000000745,
+      "partialWave": true,
+      "partialWord": true,
+      "sixRevealed": true,
+      "independentEntrance": true,
+      "wordGeometry": {
+        "left": 22,
+        "width": 278.125,
+        "bottom": 742.734375,
+        "fontSize": 66.3
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false
+    },
+    {
+      "arrival": "refresh 2",
+      "mode": "full",
+      "reason": "complete",
+      "started": 86.3,
+      "ended": 4299.4,
+      "visibleFrames": 211,
+      "visibleMs": 3734.10000000149,
+      "partialWave": true,
+      "partialWord": true,
+      "sixRevealed": true,
+      "independentEntrance": true,
+      "wordGeometry": {
+        "left": 22,
+        "width": 278.125,
+        "bottom": 742.734375,
+        "fontSize": 66.3
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false
+    },
+    {
+      "arrival": "/contact Home",
+      "mode": "full",
+      "reason": "complete",
+      "started": 118.4,
+      "ended": 4318.8,
+      "visibleFrames": 223,
+      "visibleMs": 3837.800000000745,
+      "partialWave": true,
+      "partialWord": true,
+      "sixRevealed": true,
+      "independentEntrance": true,
+      "wordGeometry": {
+        "left": 22,
+        "width": 278.125,
+        "bottom": 742.734375,
+        "fontSize": 66.3
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false
+    },
+    {
+      "arrival": "/work Home",
+      "mode": "full",
+      "reason": "complete",
+      "started": 78.7,
+      "ended": 4279.3,
+      "visibleFrames": 205,
+      "visibleMs": 3671.800000000745,
+      "partialWave": true,
+      "partialWord": true,
+      "sixRevealed": true,
+      "independentEntrance": true,
+      "wordGeometry": {
+        "left": 22,
+        "width": 278.125,
+        "bottom": 742.734375,
+        "fontSize": 66.3
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false
+    },
+    {
+      "arrival": "cold direct",
+      "mode": "full",
+      "reason": "complete",
+      "started": 101,
+      "ended": 4430.6,
+      "visibleFrames": 102,
+      "visibleMs": 3276.5,
+      "partialWave": true,
+      "partialWord": true,
+      "sixRevealed": true,
+      "independentEntrance": true,
+      "wordGeometry": {
+        "left": 60.46875,
+        "width": 1026.921875,
+        "bottom": 792,
+        "fontSize": 244.8
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false
+    },
+    {
+      "arrival": "refresh 1",
+      "mode": "full",
+      "reason": "complete",
+      "started": 138,
+      "ended": 4352.5,
+      "visibleFrames": 116,
+      "visibleMs": 3578.099999997765,
+      "partialWave": true,
+      "partialWord": true,
+      "sixRevealed": true,
+      "independentEntrance": true,
+      "wordGeometry": {
+        "left": 60.46875,
+        "width": 1026.921875,
+        "bottom": 792,
+        "fontSize": 244.8
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false
+    },
+    {
+      "arrival": "refresh 2",
+      "mode": "full",
+      "reason": "complete",
+      "started": 168.8,
+      "ended": 4369,
+      "visibleFrames": 121,
+      "visibleMs": 3841.5,
+      "partialWave": true,
+      "partialWord": true,
+      "sixRevealed": true,
+      "independentEntrance": true,
+      "wordGeometry": {
+        "left": 60.46875,
+        "width": 1026.921875,
+        "bottom": 792,
+        "fontSize": 244.8
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false
+    },
+    {
+      "arrival": "/contact Home",
+      "mode": "full",
+      "reason": "complete",
+      "started": 101.9,
+      "ended": 4327.7,
+      "visibleFrames": 118,
+      "visibleMs": 3556.2000000029802,
+      "partialWave": true,
+      "partialWord": true,
+      "sixRevealed": true,
+      "independentEntrance": true,
+      "wordGeometry": {
+        "left": 60.46875,
+        "width": 1026.921875,
+        "bottom": 792,
+        "fontSize": 244.8
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false
+    },
+    {
+      "arrival": "/work Home",
+      "mode": "full",
+      "reason": "complete",
+      "started": 88,
+      "ended": 4288.5,
+      "visibleFrames": 110,
+      "visibleMs": 3712.300000000745,
+      "partialWave": true,
+      "partialWord": true,
+      "sixRevealed": true,
+      "independentEntrance": true,
+      "wordGeometry": {
+        "left": 60.46875,
+        "width": 1026.921875,
+        "bottom": 792,
+        "fontSize": 244.8
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false
+    }
+  ],
+  "logSHA256": {
+    "stage-a-browser-isolated.log": "f4d03baaa549c773d1952f06658e2e15be495dab11de861f8bfbe34378408a06",
+    "stage-a-browser-remainder.log": "444478ac2f5e30ce2b77101afb16acc44836463b1ce837125733f7ae7b35be54",
+    "stage-a-production-browser.log": "c567ed14ff55341f9fa95f255407c270a3718f35458a7ada3e29467b80715fde"
+  }
+}
