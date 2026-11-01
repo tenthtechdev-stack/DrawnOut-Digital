@@ -35,7 +35,14 @@ async function fullStoryboard(page: Page) {
         const remaining = parseFloat(getComputedStyle(wave).strokeDashoffset);
         if (remaining > 0.05 && remaining < 0.95) partialWave = true;
         const wordStyle = getComputedStyle(name);
-        if (wordStyle.clipPath.includes('%') && Number(wordStyle.opacity) > 0.9) {
+        if (
+          !scene.hidden &&
+          style.display !== 'none' &&
+          style.visibility !== 'hidden' &&
+          Number(style.opacity) > 0.1 &&
+          wordStyle.clipPath.includes('%') &&
+          Number(wordStyle.opacity) > 0.9
+        ) {
           partialWord = true;
           const box = name.getBoundingClientRect();
           wordGeometry = {
@@ -160,3 +167,21 @@ for (const width of [390, 1440]) {
     }
   });
 }
+
+test('failed storyboard clock initialization reveals a working homepage', async ({ page }) => {
+  await page.addInitScript(() => {
+    Element.prototype.getAnimations = () => {
+      throw new Error('Animation clock unavailable');
+    };
+  });
+  await page.goto('/');
+  await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'skipped');
+  await expect(page.locator('html')).toHaveAttribute(
+    'data-signature-intro-reason',
+    'animation-error',
+  );
+  await expect(page.locator('[data-signature-intro-overlay]')).toBeHidden();
+  await expect(page.locator('main h1')).toHaveText('We make ideas impossible to ignore.');
+  await page.getByRole('link', { name: 'Explore Our Work', exact: true }).click();
+  await expect(page).toHaveURL('/work');
+});
