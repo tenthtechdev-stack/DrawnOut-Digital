@@ -3,7 +3,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { chromium } from '@playwright/test';
 
-/* global document, getComputedStyle, innerWidth */
+/* global document, getComputedStyle, innerWidth, requestAnimationFrame, window */
 const baseURL = process.env.SERVICE_CAPTURE_URL ?? 'http://127.0.0.1:4353';
 const output = path.resolve('artifacts/services');
 const slugs = [
@@ -38,6 +38,14 @@ try {
       const response = await page.goto(`${baseURL}/services/${slug}`);
       assert.equal(response.status(), 200);
       await page.evaluate(() => document.fonts.ready);
+      // Trigger native lazy loading before full-page screenshots, then return
+      // to the introduction without changing the page's rendering behavior.
+      await page.locator('[data-site-footer]').scrollIntoViewIfNeeded();
+      await page.evaluate(async () => {
+        await Promise.all([...document.images].map((item) => item.decode()));
+      });
+      await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+      await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(resolve)));
       const facts = await page.evaluate(() => ({
         title: document.title,
         description: document.querySelector('meta[name="description"]').content,

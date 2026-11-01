@@ -110,6 +110,8 @@ test('service copy, native FAQ controls and navigation work without JavaScript',
   await expect(details).toContainText('Not automatically.');
   await page.locator('[data-service-enquiry]').click();
   await expect(page).toHaveURL('/contact');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Have something in mind?');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveAccessibleName(
+    'Have something in mind?',
+  );
   await context.close();
 });
