@@ -11,6 +11,7 @@ type Entry = {
   generation: number;
 };
 
+const lifecycle = new AbortController();
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const mobile = matchMedia('(max-width: 767px), (pointer: coarse)');
 const connection = (navigator as Navigator & { connection?: Connection }).connection;
@@ -24,9 +25,9 @@ function initialize() {
   const { signal } = controller;
   const entries: Entry[] = videos.map((video) => ({
     video,
-    button: document.querySelector<HTMLButtonElement>(
-      `[data-motion-toggle="${CSS.escape(video.id)}"]`,
-    ) ?? undefined,
+    button:
+      document.querySelector<HTMLButtonElement>(`[data-motion-toggle="${CSS.escape(video.id)}"]`) ??
+      undefined,
     ratio: 0,
     paused: false,
     failed: false,
@@ -54,7 +55,10 @@ function initialize() {
     const paused = entry.paused || entry.failed;
     const action = paused ? 'Play' : 'Pause';
     entry.button.setAttribute('aria-pressed', String(entry.paused));
-    entry.button.setAttribute('aria-label', `${action} ${entry.button.dataset.motionTitle} animation`);
+    entry.button.setAttribute(
+      'aria-label',
+      `${action} ${entry.button.dataset.motionTitle} animation`,
+    );
     const label = entry.button.querySelector('[data-motion-control-label]');
     if (label) label.textContent = `${action} animation`;
   }
@@ -85,9 +89,10 @@ function initialize() {
     for (const entry of entries) {
       if (!selected.has(entry.video.id)) continue;
       const bounds = entry.video.parentElement!.getBoundingClientRect();
-      const source = bounds.width / bounds.height < 1.1
-        ? entry.video.dataset.portrait
-        : entry.video.dataset.landscape;
+      const source =
+        bounds.width / bounds.height < 1.1
+          ? entry.video.dataset.portrait
+          : entry.video.dataset.landscape;
       if (!source || (entry.source === source && !entry.video.paused)) continue;
       if (entry.source !== source) {
         release(entry);
@@ -97,40 +102,54 @@ function initialize() {
       entry.video.muted = true;
       entry.video.defaultMuted = true;
       const generation = ++entry.generation;
-      void entry.video.play().then(() => {
-        if (entry.generation !== generation || disposed) return;
-        entry.video.dataset.motionState = 'playing';
-      }).catch((error: unknown) => {
-        if (entry.generation !== generation || disposed) return;
-        if (error instanceof DOMException && error.name === 'AbortError') return;
-        entry.failed = true;
-        release(entry);
-        controls(entry, allowed);
-      });
+      void entry.video
+        .play()
+        .then(() => {
+          if (entry.generation !== generation || disposed) return;
+          entry.video.dataset.motionState = 'playing';
+        })
+        .catch((error: unknown) => {
+          if (entry.generation !== generation || disposed) return;
+          if (error instanceof DOMException && error.name === 'AbortError') return;
+          entry.failed = true;
+          release(entry);
+          controls(entry, allowed);
+        });
     }
   }
 
-  const observer = new IntersectionObserver((observations) => {
-    for (const observation of observations) {
-      const entry = entries.find(({ video }) => video === observation.target);
-      if (entry) entry.ratio = observation.isIntersecting ? observation.intersectionRatio : 0;
-      else footerVisible = observation.isIntersecting;
-    }
-    update();
-  }, { threshold: [0, 0.1, 0.35, 0.5, 0.75, 1] });
+  const observer = new IntersectionObserver(
+    (observations) => {
+      for (const observation of observations) {
+        const entry = entries.find(({ video }) => video === observation.target);
+        if (entry) entry.ratio = observation.isIntersecting ? observation.intersectionRatio : 0;
+        else footerVisible = observation.isIntersecting;
+      }
+      update();
+    },
+    { threshold: [0, 0.1, 0.35, 0.5, 0.75, 1] },
+  );
   for (const entry of entries) {
     observer.observe(entry.video);
-    entry.button?.addEventListener('click', () => {
-      entry.paused = entry.failed ? false : !entry.paused;
-      entry.failed = false;
-      update();
-    }, { signal });
-    entry.video.addEventListener('error', () => {
-      if (!entry.source) return;
-      entry.failed = true;
-      release(entry);
-      controls(entry, !reduced.matches && !connection?.saveData);
-    }, { signal });
+    entry.button?.addEventListener(
+      'click',
+      () => {
+        entry.paused = entry.failed ? false : !entry.paused;
+        entry.failed = false;
+        update();
+      },
+      { signal },
+    );
+    entry.video.addEventListener(
+      'error',
+      () => {
+        if (!entry.source) return;
+        entry.failed = true;
+        release(entry);
+        controls(entry, !reduced.matches && !connection?.saveData);
+      },
+      { signal },
+    );
   }
   const footer = document.querySelector('[data-site-footer]');
   if (footer) observer.observe(footer);
@@ -156,10 +175,18 @@ function initialize() {
 }
 
 initialize();
-document.addEventListener('astro:page-load', initialize);
-document.addEventListener('astro:before-swap', () => cleanup?.());
-window.addEventListener('pagehide', () => cleanup?.());
-window.addEventListener('pageshow', (event) => {
-  if (event.persisted) initialize();
-});
-if (import.meta.hot) import.meta.hot.dispose(() => cleanup?.());
+document.addEventListener('astro:page-load', initialize, { signal: lifecycle.signal });
+document.addEventListener('astro:before-swap', () => cleanup?.(), { signal: lifecycle.signal });
+window.addEventListener('pagehide', () => cleanup?.(), { signal: lifecycle.signal });
+window.addEventListener(
+  'pageshow',
+  (event) => {
+    if (event.persisted) initialize();
+  },
+  { signal: lifecycle.signal },
+);
+if (import.meta.hot)
+  import.meta.hot.dispose(() => {
+    lifecycle.abort();
+    cleanup?.();
+  });

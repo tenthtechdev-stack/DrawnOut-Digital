@@ -6,19 +6,24 @@ interface Props {
 const { id, title } = Astro.props;
 ---
 
-<button
-  class="portfolio-motion-toggle"
-  type="button"
-  data-motion-toggle={id}
-  data-motion-title={title}
-  aria-controls={id}
-  aria-label={`Pause ${title} animation`}
-  aria-pressed="false"
-  hidden
->
-  <span data-motion-control-label>Pause animation</span>
-</button>
+<div class="portfolio-motion-controls">
+  <button
+    class="portfolio-motion-toggle"
+    type="button"
+    data-motion-toggle={id}
+    data-motion-title={title}
+    aria-controls={id}
+    aria-label={`Pause ${title} animation`}
+    aria-pressed="false"
+    hidden
+  >
+    <span data-motion-control-label>Pause animation</span>
+  </button>
+</div>
 <style>
+  .portfolio-motion-controls {
+    min-block-size: 52px;
+  }
   .portfolio-motion-toggle {
     min-height: 44px;
     margin-top: 8px;

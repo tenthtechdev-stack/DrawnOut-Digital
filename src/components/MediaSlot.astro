@@ -46,7 +46,7 @@ const mobileSources = mobilePoster
   class="media-slot"
   data-media-slot
   data-portfolio-motion={hasMotion || undefined}
-  style={`--media-ratio: ${hasMotion ? "16 / 9" : aspectRatio}; --mobile-media-ratio: ${hasMotion ? "4 / 5" : mobilePoster ? `${mobilePoster.width} / ${mobilePoster.height}` : aspectRatio}`}
+  style={`--media-ratio: ${aspectRatio}; --mobile-media-ratio: ${mobilePoster ? `${mobilePoster.width} / ${mobilePoster.height}` : aspectRatio}`}
 >
   <picture>
     {mobilePoster && (
