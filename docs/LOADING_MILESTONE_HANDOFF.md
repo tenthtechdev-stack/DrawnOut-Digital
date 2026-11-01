@@ -1,5 +1,7 @@
 # Recurring DrawnOut Loop, fluid Afterglow and footer links
 
+> Historical checkpoint at `4f537b8`. Homepage arrival policy, late-start handling and gradient composition are superseded by [the Stage A correction](next-milestone/STAGE_A_STATUS.md).
+
 Implementation brief: [issue #6](https://github.com/tenthtech/drawnout-digital/issues/6). This milestone preserves the approved six-project opening, SOL branding mockup, bottom-left wordmark, separate hand/plaque prototype, portfolio content and Contact implementation.
 
 Branch: `feature/recurring-loop-fluid-afterglow`, based on Contact commit `c755f3ea836012a942277438a96f4828d85c1200`. PR #4 is merged into `main`. PR #5 remains the prerequisite for this stacked review; its Contact form configuration and canonical contact details are unchanged.
