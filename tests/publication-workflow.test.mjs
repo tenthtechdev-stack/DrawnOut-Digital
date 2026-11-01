@@ -26,7 +26,14 @@ async function outputFiles(directory) {
 test('visual approval publishes a record without verifying facts or credits; withdrawal removes its route and unique media', async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), 'drawnout-publication-'));
   try {
-    for (const item of ['src', 'public', 'design-assets/portfolio-motion', 'astro.config.mjs', 'tsconfig.json', 'package.json']) {
+    for (const item of [
+      'src',
+      'public',
+      'design-assets/portfolio-motion',
+      'astro.config.mjs',
+      'tsconfig.json',
+      'package.json',
+    ]) {
       await cp(path.join(root, item), path.join(temporary, item), { recursive: true });
     }
     await symlink(path.join(root, 'node_modules'), path.join(temporary, 'node_modules'), 'dir');
@@ -115,8 +122,10 @@ test('visual approval publishes a record without verifying facts or credits; wit
     };
     for (const record of [fixture, futureDraft]) {
       for (const file of [record.motion.landscape, record.motion.portrait]) {
-        await writeFile(path.join(temporary, 'design-assets/portfolio-motion', file),
-          `Synthetic media publication boundary: ${file}`);
+        await writeFile(
+          path.join(temporary, 'design-assets/portfolio-motion', file),
+          `Synthetic media publication boundary: ${file}`,
+        );
       }
     }
     await writeFile(path.join(content, `${futureDraft.slug}.json`), JSON.stringify(futureDraft));

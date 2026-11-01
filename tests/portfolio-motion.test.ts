@@ -19,25 +19,59 @@ test('mobile selects one visible motion decoder, desktop two, without mutating c
 });
 
 test('equal visibility selection is deterministic and paused/offscreen loops do not consume capacity', () => {
-  assert.deepEqual(selectMotionCandidates([
-    { id: 'b', ratio: 0.8, disabled: false },
-    { id: 'a', ratio: 0.8, disabled: false },
-    { id: 'c', ratio: 0, disabled: false },
-  ], true), ['a']);
+  assert.deepEqual(
+    selectMotionCandidates(
+      [
+        { id: 'b', ratio: 0.8, disabled: false },
+        { id: 'a', ratio: 0.8, disabled: false },
+        { id: 'c', ratio: 0, disabled: false },
+      ],
+      true,
+    ),
+    ['a'],
+  );
 });
 
 test('motion records require provenance and confined local MP4 filenames', () => {
   const schema = projectSchema(z.string());
   const record = {
-    title: 'Synthetic motion record', slug: 'synthetic', summary: 'Testing media paths.',
-    cover: '../../assets/portfolio/cover.webp', coverAlt: 'Synthetic artwork.', assetSource: 'Test.',
+    title: 'Synthetic motion record',
+    slug: 'synthetic',
+    summary: 'Testing media paths.',
+    cover: '../../assets/portfolio/cover.webp',
+    coverAlt: 'Synthetic artwork.',
+    assetSource: 'Test.',
     motion: {
-      landscape: 'synthetic-landscape.mp4', portrait: 'synthetic-portrait.mp4', source: 'Test source.',
+      landscape: 'synthetic-landscape.mp4',
+      portrait: 'synthetic-portrait.mp4',
+      source: 'Test source.',
     },
   };
   assert.equal(schema.safeParse(record).success, true);
-  for (const landscape of ['../private.mp4', '/private-landscape.mp4', 'https://example.com/a.mp4', 'file.webm', 'UPPER-landscape.mp4']) {
-    assert.equal(schema.safeParse({ ...record, motion: { ...record.motion, landscape } }).success, false);
+  for (const landscape of [
+    '../private.mp4',
+    '/private-landscape.mp4',
+    'https://example.com/a.mp4',
+    'file.webm',
+    'UPPER-landscape.mp4',
+  ]) {
+    assert.equal(
+      schema.safeParse({ ...record, motion: { ...record.motion, landscape } }).success,
+      false,
+    );
   }
-  assert.equal(schema.safeParse({ ...record, motion: { ...record.motion, source: '' } }).success, false);
+  assert.equal(
+    schema.safeParse({ ...record, motion: { ...record.motion, source: '' } }).success,
+    false,
+  );
+});
+
+test('equally visible cards prefer the viewport center instead of starving a later project', () => {
+  const candidates = [
+    { id: 'by-tech', ratio: 1, centerDistance: 262, disabled: false },
+    { id: 'u-wanna', ratio: 0.999814, centerDistance: 120, disabled: false },
+    { id: 'offscreen', ratio: 0.1, centerDistance: 0, disabled: false },
+  ];
+  assert.deepEqual(selectMotionCandidates(candidates, true), ['u-wanna']);
+  assert.deepEqual(selectMotionCandidates(candidates, false), ['u-wanna', 'by-tech']);
 });

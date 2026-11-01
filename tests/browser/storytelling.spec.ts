@@ -101,14 +101,20 @@ for (const width of [320, 390, 768, 1440, 1920]) {
       'Triarch',
       'Churros Dessert Shop',
       'By Tech Group',
+      'U Wanna Smoothie',
     ]) {
       await expect(work.getByRole('heading', { name: project, exact: true })).toBeVisible();
     }
-    await expect(work.locator('img')).toHaveCount(5);
-    await expect(work.locator('a[href^="/work/"]')).toHaveCount(5);
+    await expect(work.locator('img')).toHaveCount(6);
+    await expect(work.locator('a[href^="/work/"]')).toHaveCount(6);
     await expect(work.locator('.preview-tag')).toHaveCount(0);
-    await expect(page.locator('video')).toHaveCount(0);
-    await expect(page.getByRole('button', { name: /play|watch/i })).toHaveCount(0);
+    await expect(work.locator('[data-portfolio-video]')).toHaveCount(6);
+    await expect(page.locator('video:not([data-portfolio-video])')).toHaveCount(0);
+    await expect(
+      page
+        .getByRole('button', { name: /play|watch/i })
+        .and(page.locator(':not([data-motion-toggle])')),
+    ).toHaveCount(0);
     await loadPortfolioPosters(page);
     for (const [project, mobilePoster, widePoster] of [
       ['Bunzo', 'bunzo-applications.webp', 'bunzo-packaging-wide.webp'],
@@ -150,17 +156,18 @@ for (const width of [320, 390, 768, 1440, 1920]) {
   });
 }
 
-test('new homepage story remains usable without JavaScript', async ({ browser }) => {
+test('new homepage story remains usable without JavaScript', async ({ browser, baseURL }) => {
   const context = await browser.newContext({
+    baseURL,
     javaScriptEnabled: false,
     viewport: { width: 390, height: 844 },
   });
   const page = await context.newPage();
-  await page.goto('http://127.0.0.1:4321/');
+  await page.goto('/');
   for (const [selector, heading] of sourceHeadings) {
     await expect(page.locator(selector).getByRole('heading', { name: heading })).toBeVisible();
   }
-  await expect(page.locator('[data-work] img')).toHaveCount(5);
+  await expect(page.locator('[data-work] img')).toHaveCount(6);
   await expect(
     page.locator('[data-site-footer]').getByRole('link', { name: "Tell Us What You're Thinking" }),
   ).toBeVisible();

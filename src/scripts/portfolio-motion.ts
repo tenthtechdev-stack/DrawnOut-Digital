@@ -35,6 +35,7 @@ function initialize() {
   }));
   let footerVisible = false;
   let disposed = false;
+  let scrollFrame = 0;
 
   function release(entry: Entry) {
     entry.generation += 1;
@@ -60,7 +61,8 @@ function initialize() {
       `${action} ${entry.button.dataset.motionTitle} animation`,
     );
     const label = entry.button.querySelector('[data-motion-control-label]');
-    if (label) label.textContent = `${action} animation`;
+    if (label && label.textContent !== `${action} animation`)
+      label.textContent = `${action} animation`;
   }
 
   function update() {
@@ -76,6 +78,11 @@ function initialize() {
             entries.map((entry) => ({
               id: entry.video.id,
               ratio: entry.ratio,
+              centerDistance: Math.abs(
+                entry.video.getBoundingClientRect().top +
+                  entry.video.getBoundingClientRect().height / 2 -
+                  innerHeight / 2,
+              ),
               disabled: entry.paused || entry.failed || Boolean(entry.video.closest('[hidden]')),
             })),
             mobile.matches,
@@ -161,12 +168,24 @@ function initialize() {
   document.addEventListener('portfolio:filterchange', update, { signal });
   document.addEventListener('visibilitychange', update, { signal });
   window.addEventListener('resize', update, { passive: true, signal });
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (scrollFrame || disposed) return;
+      scrollFrame = requestAnimationFrame(() => {
+        scrollFrame = 0;
+        update();
+      });
+    },
+    { passive: true, signal },
+  );
   reduced.addEventListener('change', update, { signal });
   mobile.addEventListener('change', update, { signal });
   connection?.addEventListener?.('change', update, { signal });
   update();
   cleanup = () => {
     disposed = true;
+    cancelAnimationFrame(scrollFrame);
     controller.abort();
     observer.disconnect();
     entrance.disconnect();

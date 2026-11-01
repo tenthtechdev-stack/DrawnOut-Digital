@@ -25,44 +25,44 @@ const categories = project.data.categories
 ---
 
 <div class="project-card-shell">
-<a
-  href={href}
-  class:list={['project-card', `project-card--${layout}`]}
-  data-project-card
-  aria-labelledby={`project-${project.id}`}
->
-  <div class="project-meta">
-    <div>
-      <p class="eyebrow project-number">0{index + 1}</p>
-      <h3 id={`project-${project.id}`}>{project.data.title}</h3>
+  <a
+    href={href}
+    class:list={['project-card', `project-card--${layout}`]}
+    data-project-card
+    aria-labelledby={`project-${project.id}`}
+  >
+    <div class="project-meta">
+      <div>
+        <p class="eyebrow project-number">0{index + 1}</p>
+        <h3 id={`project-${project.id}`}>{project.data.title}</h3>
+      </div>
+      <p class="project-context">
+        {categories || 'Artwork'}
+        <br />
+        <span class="project-visit">
+          {published ? 'View project' : 'Preview project'} <Arrow />
+        </span>
+      </p>
     </div>
-    <p class="project-context">
-      {categories || 'Artwork'}
-      <br />
-      <span class="project-visit">
-        {published ? 'View project' : 'Preview project'} <Arrow />
-      </span>
-    </p>
-  </div>
-  <MediaSlot
-    motion={motion}
-    motionId={motionId}
-    availability={published ? 'approved' : 'placeholder'}
-    poster={poster}
-    mobilePoster={media ? project.data.cover : undefined}
-    alt={alt}
-    aspectRatio={`${poster.width} / ${poster.height}`}
-    sizes={
-      layout === 'lead'
-        ? '(max-width: 767px) 90vw, 69vw'
-        : layout === 'panorama'
-          ? '92vw'
-          : '(max-width: 767px) 90vw, 48vw'
-    }
-  />
-  {media?.caption && <p class="media-caption">{media.caption}</p>}
-</a>
-{motion && <PortfolioMotionToggle id={motionId} title={project.data.title} />}
+    <MediaSlot
+      motion={motion}
+      motionId={motionId}
+      availability={published ? 'approved' : 'placeholder'}
+      poster={poster}
+      mobilePoster={media ? project.data.cover : undefined}
+      alt={alt}
+      aspectRatio={`${poster.width} / ${poster.height}`}
+      sizes={
+        layout === 'lead'
+          ? '(max-width: 767px) 90vw, 69vw'
+          : layout === 'panorama'
+            ? '92vw'
+            : '(max-width: 767px) 90vw, 48vw'
+      }
+    />
+    {media?.caption && <p class="media-caption">{media.caption}</p>}
+  </a>
+  {motion && <PortfolioMotionToggle id={motionId} title={project.data.title} />}
 </div>
 <style>
   .project-card {

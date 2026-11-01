@@ -107,7 +107,12 @@ for (const width of [320, 390, 768, 1440, 1920]) {
     await expect(page.locator('[data-work-card] a[href^="/work/"]')).toHaveCount(
       records.filter(canPublish).length,
     );
-    await expect(page.locator('video')).toHaveCount(0);
+    await expect(page.locator('[data-portfolio-video]')).toHaveCount(6);
+    for (const video of await page.locator('[data-portfolio-video]').all()) {
+      await expect(video).toHaveAttribute('preload', 'none');
+      await expect(video).toHaveAttribute('aria-hidden', 'true');
+    }
+    await expect(page.locator('video:not([data-portfolio-video])')).toHaveCount(0);
     await loadImages(page.locator('[data-work-card] img'));
     const aspectRatios = await page.locator('[data-work-card] img').evaluateAll((images) =>
       images.map((image) => {
@@ -257,14 +262,16 @@ test('public project navigation stays in the public route namespace and unavaila
 
 test('Work and case pages remain usable without JavaScript and with reduced motion', async ({
   browser,
+  baseURL,
 }) => {
   const context = await browser.newContext({
+    baseURL,
     javaScriptEnabled: false,
     reducedMotion: 'reduce',
     viewport: { width: 390, height: 844 },
   });
   const page = await context.newPage();
-  await page.goto('http://127.0.0.1:4321/work?category=packaging');
+  await page.goto('/work?category=packaging');
   await expect(page.locator('[data-work-filters]')).toBeHidden();
   await expect(page.locator('[data-work-card]:visible')).toHaveCount(records.length);
   const firstProject = page.locator('[data-work-card] a').first();
