@@ -1,5 +1,7 @@
 # DrawnOut Digital
 
+The **About brand-story experience** is under review on `feature/about-brand-story-experience`, based on main `05cefd16292656289889d558a31bb8249418eb63`. [About gallery and recordings](artifacts/about/README.md) · [About handoff](docs/next-milestone/ABOUT_PAGE_HANDOFF.md) · [Observed validation](docs/next-milestone/ABOUT_PAGE_VALIDATION.md) · [Portfolio rhythm gallery](artifacts/portfolio-rhythm/README.md). The approved derived sketch is public review artwork; the original personal photograph remains private. Earlier milestone notes follow.
+
 The **Contact page** is ready for review on `feature/contact-page`, based on the approved signature work merged into `main` in PR #4. [Contact gallery](artifacts/contact/README.md) · [Validation](docs/CONTACT_VALIDATION.md) · [Formspree owner setup](docs/CONTACT_HANDOFF.md). No form endpoint is configured yet; the page offers direct email contact and does not claim live enquiry delivery.
 
 The **DrawnOut Loop / signature experience** extends approved Afterglow through Phase 4 on `feature/drawnout-signature-experience`, based on `main` at `0ef900b72132f4ab1069da6b824cb1facfe2c95e`.

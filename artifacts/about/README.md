@@ -48,6 +48,8 @@ Native Chromium screenshots and real-time recordings from the local production b
 
 ## Approved portrait on the actual cream background
 
+[Full-resolution transparent approved sketch](../../src/assets/about/founders-sketch-approved.png) · [Editable SVG reveal masks](../../design-assets/about/portrait-reveal-masks.svg) · [Approval and provenance manifest](../../design-assets/about/portrait-manifest.json)
+
 ![Approved derived founder sketch rendered on the Afterglow hero background](founders-cream-presentation.png)
 
 [Full source resolution cream presentation](founders-cream-native-1445.png) — approved derived PNG rendered at 1445×1088 on the same Afterglow paper colour in a standalone browser canvas. The image above is cropped directly from the actual About hero.
