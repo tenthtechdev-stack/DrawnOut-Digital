@@ -1,96 +1,94 @@
 ---
-import { Image } from 'astro:assets';
-import { Buffer } from 'node:buffer';
-import { readFile } from 'node:fs/promises';
+import { getImage } from 'astro:assets';
 import { founderPortrait } from '../../data/founder-portrait';
 
-// A trusted local environment setting permits private visual review. It is
-// deliberately absent from production, including when the setting remains set.
-let reviewSource: string | undefined;
-if (import.meta.env.DEV && process.env.ABOUT_PORTRAIT_REVIEW_FILE && !founderPortrait) {
-  const bytes = await readFile(process.env.ABOUT_PORTRAIT_REVIEW_FILE);
-  if (bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])))
-    reviewSource = `data:image/png;base64,${bytes.toString('base64')}`;
-}
-const state = founderPortrait ? 'approved' : reviewSource ? 'private-review' : 'pending';
+const artwork = await getImage({
+  src: founderPortrait.src,
+  width: 1445,
+  format: 'webp',
+  quality: 85,
+});
 ---
 
-<div class="founder-portrait" data-founder-portrait data-portrait-state={state}>
-  {founderPortrait ? (
-    <Image
-      src={founderPortrait.src}
-      alt={founderPortrait.alt}
-      widths={[480, 800, 1200]}
-      sizes="(max-width: 767px) 94vw, (max-width: 1023px) 84vw, 52vw"
-      format="webp"
-      loading="eager"
-      fetchpriority="high"
-      class="portrait-art"
+<link rel="preload" as="image" href={artwork.src} />
+<div class="founder-portrait" data-founder-portrait data-portrait-state="approved">
+  <svg
+    class="portrait-art"
+    viewBox="0 0 1445 1088"
+    role="img"
+    aria-labelledby="about-portrait-title"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <title id="about-portrait-title">{founderPortrait.alt}</title>
+    <defs>
+      <!-- Broad brushes reveal the approved raster. These are masks,
+           not independently drawn portrait contours or editable facial art. -->
+      <mask
+        id="about-portrait-reveal-mask"
+        maskUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="1445"
+        height="1088"
+        style="mask-type: luminance"
+      >
+        <g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round">
+          <path
+            data-about-mask="contour"
+            pathLength="1"
+            stroke-width="135"
+            d="M76 735C73 569 214 491 232 341S299 89 411 76C568 2 693 155 680 336S629 602 551 726"
+          />
+          <path
+            data-about-mask="contour"
+            pathLength="1"
+            stroke-width="145"
+            d="M593 732C677 622 685 390 780 264S984 117 1021 151C1114 100 1144 265 1180 377S1284 554 1361 720"
+          />
+          <path
+            data-about-mask="face"
+            pathLength="1"
+            stroke-width="120"
+            d="M398 160C359 218 373 297 420 347S536 400 572 339 568 221 526 194M382 253 558 229M410 321 567 304"
+          />
+          <path
+            data-about-mask="face"
+            pathLength="1"
+            stroke-width="125"
+            d="M895 256C834 301 842 405 889 461S995 475 1022 413 1030 321 1000 285M862 331 1034 361M885 407 1009 437"
+          />
+          <path
+            data-about-mask="fabric"
+            pathLength="1"
+            stroke-width="230"
+            d="M130 646C226 512 338 574 413 604S561 615 620 626C770 572 786 778 872 824S1128 727 1285 808M92 790C290 720 341 855 509 880S819 903 955 932 1256 916 1337 983"
+          />
+        </g>
+        <rect width="1445" height="1088" fill="white" data-about-mask-complete />
+      </mask>
+    </defs>
+    <!-- One optimized raster image; no photograph or duplicate portrait layers. -->
+    <image
+      href={artwork.src}
+      width="1445"
+      height="1088"
+      preserveAspectRatio="xMidYMid meet"
+      data-about-portrait-raster
     />
-  ) : reviewSource ? (
-    <img
-      src={reviewSource}
-      width="1446"
-      height="1087"
-      alt="Private review candidate: editorial illustration of the two twin founders together, preserving their expressions, long hair and embroidered clothing."
-      class="portrait-art"
-      data-private-portrait-review
-    />
-  ) : (
-    <svg
-      class="portrait-pending"
-      viewBox="0 0 800 600"
-      role="img"
-      aria-labelledby="portrait-pending-title"
-    >
-      <title id="portrait-pending-title">One thought becoming two connected paths</title>
-      <path class="thought-path" d="M 30 500 C 130 500 100 360 220 350 S 400 395 400 280" />
-      <path d="M 400 280 C 400 190 230 140 200 245 S 240 450 400 430" />
-      <path d="M 400 280 C 400 180 580 130 610 240 S 570 450 400 430" />
-      <circle cx="400" cy="280" r="9" />
-    </svg>
-  )}
-  {import.meta.env.DEV && state !== 'approved' && (
-    <p class="portrait-review-label">
-      {reviewSource
-        ? 'Private portrait review · approval pending'
-        : 'Founder illustration awaiting approval'}
-    </p>
-  )}
+  </svg>
 </div>
 
 <style>
   .founder-portrait {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1445 / 1088;
     isolation: isolate;
   }
-  .portrait-art,
-  .portrait-pending {
+  .portrait-art {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-  }
-  .portrait-pending {
-    fill: none;
-    stroke: var(--ink);
-    stroke-width: 1.7;
-    stroke-linecap: round;
-  }
-  .portrait-pending .thought-path {
-    stroke: var(--accent-strong);
-    stroke-width: 2.5;
-  }
-  .portrait-pending circle {
-    fill: var(--accent-strong);
-    stroke: none;
-  }
-  .portrait-review-label {
-    margin: 12px 0 0;
-    color: var(--muted);
-    font-size: 11px;
-    line-height: 1.6;
+    overflow: visible;
   }
 </style>

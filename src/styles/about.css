@@ -865,3 +865,29 @@
     stroke-dasharray: none !important;
   }
 }
+
+/* No pending/ready selector hides content. Only a running, guarded entrance
+   applies these initial states; removing it returns the complete composition. */
+[data-about-hero][data-about-entrance='running'] .about-title-mask {
+  overflow: clip;
+}
+
+[data-about-hero][data-about-entrance='running'] [data-about-hero-line],
+[data-about-hero][data-about-entrance='running'] [data-about-mask] {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+}
+
+[data-about-hero][data-about-entrance='running'] [data-about-mask-complete] {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page [data-about-portrait-raster] {
+    mask: none !important;
+  }
+  .about-page :is([data-about-headline], [data-about-intro], [data-about-caption]) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

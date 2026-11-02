@@ -1,0 +1,75 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1445"
+  height="1088"
+  viewBox="0 0 1445 1088"
+  role="img"
+  aria-labelledby="title description"
+>
+  <title id="title">DrawnOut approved founder raster — editable reveal masks</title>
+  <desc id="description">
+    The approved transparent raster portrait, revealed by editable white SVG brushes. These paths
+    are masks, not vector portrait strokes. Founder positions are not mapped to names.
+  </desc>
+  <!-- Production source: src/components/about/FounderPortrait.astro.
+       Keep its brush geometry synchronized after edits here.
+       The image is the approved derived artwork, never the private photograph.
+       Edit the contour, face and fabric brushes independently via data-about-mask.
+       Hide the final data-about-mask-complete rectangle to inspect those brushes.
+       Animation: stroke-dasharray:1 1; stroke-dashoffset:1 -> 0 with pathLength:1.
+       Timing in seconds: contours .8–1.94, faces 1.35–2.19, fabric 1.85–2.5,
+       final white fill 2.35–2.7. Remove the mask entirely after the entrance.
+       Static final presentation deliberately keeps the full white fill visible. -->
+  <defs>
+    <mask
+      id="about-portrait-reveal-mask"
+      maskUnits="userSpaceOnUse"
+      x="0"
+      y="0"
+      width="1445"
+      height="1088"
+      style="mask-type: luminance"
+    >
+      <g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round">
+        <path
+          data-about-mask="contour"
+          pathLength="1"
+          stroke-width="135"
+          d="M76 735C73 569 214 491 232 341S299 89 411 76C568 2 693 155 680 336S629 602 551 726"
+        />
+        <path
+          data-about-mask="contour"
+          pathLength="1"
+          stroke-width="145"
+          d="M593 732C677 622 685 390 780 264S984 117 1021 151C1114 100 1144 265 1180 377S1284 554 1361 720"
+        />
+        <path
+          data-about-mask="face"
+          pathLength="1"
+          stroke-width="120"
+          d="M398 160C359 218 373 297 420 347S536 400 572 339 568 221 526 194M382 253 558 229M410 321 567 304"
+        />
+        <path
+          data-about-mask="face"
+          pathLength="1"
+          stroke-width="125"
+          d="M895 256C834 301 842 405 889 461S995 475 1022 413 1030 321 1000 285M862 331 1034 361M885 407 1009 437"
+        />
+        <path
+          data-about-mask="fabric"
+          pathLength="1"
+          stroke-width="230"
+          d="M130 646C226 512 338 574 413 604S561 615 620 626C770 572 786 778 872 824S1128 727 1285 808M92 790C290 720 341 855 509 880S819 903 955 932 1256 916 1337 983"
+        />
+      </g>
+      <rect width="1445" height="1088" fill="white" data-about-mask-complete />
+    </mask>
+  </defs>
+  <image
+    href="../../src/assets/about/founders-sketch-approved.png"
+    width="1445"
+    height="1088"
+    preserveAspectRatio="xMidYMid meet"
+    mask="url(#about-portrait-reveal-mask)"
+  />
+</svg>

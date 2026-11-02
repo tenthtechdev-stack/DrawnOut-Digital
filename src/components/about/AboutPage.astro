@@ -350,6 +350,15 @@ const structuredData = {
     <p class="about-invitation__concept">{aboutPage.concept}</p>
   </section>
 </article>
+<script is:inline>
+  // Record arrival without hiding content while the enhancement module loads.
+  document
+    .querySelector('[data-about-page]')
+    ?.setAttribute('data-about-arrival-at', String(performance.now()));
+</script>
+<script>
+  import '../../scripts/about-motion';
+</script>
 <script
   type="application/ld+json"
   set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')}
