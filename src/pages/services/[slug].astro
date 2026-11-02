@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ServicePage from '../../components/services/ServicePage.astro';
+import { servicePages } from '../../data/services';
+
+export function getStaticPaths() {
+  return servicePages.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+const { service } = Astro.props;
+---
+
+<SiteLayout title={service.seoTitle} description={service.description}>
+  <ServicePage service={service} />
+</SiteLayout>

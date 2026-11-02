@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import RouteIntro from '../components/RouteIntro.astro';
+import Arrow from '../components/Arrow.astro';
 import { capabilities } from '../data/site';
 ---
 
@@ -18,7 +19,12 @@ import { capabilities } from '../data/site';
       <section id={item.id}>
         <p class="eyebrow">0{index + 1}</p>
         <div>
-          <h2>{item.title}</h2>
+          <h2>
+            <a href={`/services/${item.id}`}>
+              {item.title}
+              <Arrow />
+            </a>
+          </h2>
           <p>{item.proposition}</p>
         </div>
       </section>
@@ -46,6 +52,22 @@ import { capabilities } from '../data/site';
     letter-spacing: -0.045em;
     font-weight: 500;
     margin: 0;
+  }
+  h2 a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    text-decoration: none;
+    min-height: 48px;
+  }
+  h2 a:hover {
+    color: var(--accent-strong);
+  }
+  h2 :global(svg) {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
   }
   section div > p {
     font-size: var(--type-body);

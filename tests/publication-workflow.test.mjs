@@ -6,6 +6,7 @@ import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { canPublish } from '../src/lib/project-schema.ts';
+import { serviceIndex } from '../src/data/service-index.ts';
 import sharp from 'sharp';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -178,7 +179,7 @@ test('visual approval publishes a record without verifying facts or credits; wit
     for (const record of publicRecords) assert.ok(work.includes(`/work/${record.slug}`));
     assert.equal(
       first.files.filter((name) => name.endsWith('.html')).length,
-      7 + publicRecords.length,
+      7 + Object.keys(serviceIndex).length + publicRecords.length,
     );
     assert.ok(first.files.some((name) => /publication-fixture-only.*\.webp$/.test(name)));
     for (const file of [fixture.motion.landscape, fixture.motion.portrait]) {
@@ -229,7 +230,7 @@ test('visual approval publishes a record without verifying facts or credits; wit
     const revoked = await build();
     assert.equal(
       revoked.files.filter((name) => name.endsWith('.html')).length,
-      6 + publicRecords.length,
+      6 + Object.keys(serviceIndex).length + publicRecords.length,
     );
     assert.ok(
       revoked.files.every(

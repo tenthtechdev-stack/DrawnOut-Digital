@@ -1,3 +1,5 @@
+import { serviceIndex } from './service-index';
+
 export const navigation = [
   { href: '/work', label: 'Work' },
   { href: '/services', label: 'Services' },
@@ -5,34 +7,12 @@ export const navigation = [
   { href: '/contact', label: 'Contact' },
 ] as const;
 
-// Original DrawnOut draft copy; design approval does not establish service proof.
-export const capabilities = [
-  {
-    id: 'brand-identity',
-    title: 'Brand Identity & Design',
-    proposition: 'Make your brand look like it knows who it is.',
-  },
-  {
-    id: 'digital-design',
-    title: 'Digital Design',
-    proposition: 'Your brand should feel like itself everywhere.',
-  },
-  {
-    id: 'marketing-campaigns',
-    title: 'Marketing & Campaigns',
-    proposition: 'Make every impression mean something.',
-  },
-  {
-    id: 'words-storytelling',
-    title: 'Words & Storytelling',
-    proposition: 'Because what you say matters as much as how it looks.',
-  },
-  {
-    id: 'creative-direction',
-    title: 'Creative Direction',
-    proposition: 'A bigger idea needs a bigger picture.',
-  },
-] as const;
+// One source for navigation, overview copy and Contact service choices.
+export const capabilities = Object.entries(serviceIndex).map(([id, { title, headline }]) => ({
+  id,
+  title,
+  proposition: headline,
+}));
 
 export const site = {
   name: 'DrawnOut Digital',

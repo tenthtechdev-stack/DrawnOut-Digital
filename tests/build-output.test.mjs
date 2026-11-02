@@ -3,6 +3,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
 import { canPublish } from '../src/lib/project-schema.ts';
+import { servicePages } from '../src/data/services.ts';
 
 async function files(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -53,6 +54,7 @@ test('production emits foundation routes and approved cases without private prev
       'contact/index.html',
       'index.html',
       'services/index.html',
+      ...servicePages.map((service) => `services/${service.slug}/index.html`),
       'work/index.html',
       ...approved.map((record) => `work/${record.slug}/index.html`),
     ].sort(),
@@ -184,6 +186,43 @@ test('approved artwork has real public cards and cases without invented facts or
       html,
       /Private draft|Pending studio review|Visual preview|Local portfolio preview/,
     );
+});
+
+test('service previews have distinct metadata, complete copy, FAQs and truthful structured data', async () => {
+  const titles = new Set();
+  const home = await readFile('dist/index.html', 'utf8');
+  const overview = await readFile('dist/services/index.html', 'utf8');
+  for (const service of servicePages) {
+    const route = `/services/${service.slug}`;
+    const html = await readFile(`dist${route}/index.html`, 'utf8');
+    titles.add(service.seoTitle);
+    assert.ok(html.includes(service.seoTitle.replaceAll('&', '&amp;')));
+    assert.match(html, /noindex, nofollow/);
+    assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1);
+    assert.equal(
+      (html.match(/<details[\s>]/g) ?? []).length,
+      6,
+      'Five FAQs plus the shared no-JS menu',
+    );
+    for (const faq of service.faqs)
+      assert.ok(html.includes(faq.question.replaceAll('&', '&amp;').replaceAll("'", '&#39;')));
+    assert.match(html, /href="\/contact"[^>]*data-service-enquiry/);
+    const schema = JSON.parse(
+      html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1],
+    );
+    assert.deepEqual(
+      schema['@graph'].map((entry) => entry['@type']),
+      ['BreadcrumbList', 'Service'],
+    );
+    assert.equal(schema['@graph'][0].itemListElement[2].item, route);
+    assert.equal(schema['@graph'][1].name, service.title);
+    assert.equal(schema['@graph'][1].url, route);
+    assert.equal(schema['@graph'][1].aggregateRating, undefined);
+    assert.equal(schema['@graph'][1].offers, undefined);
+    assert.ok(home.includes(`href="${route}"`));
+    assert.ok(overview.includes(`href="${route}"`));
+  }
+  assert.equal(titles.size, 5);
 });
 
 test('only approved motion exports ship, and cards defer video sources until visible', async () => {

@@ -1,0 +1,218 @@
+{
+  "recordedAt": "2026-11-01T12:48:54.001080+00:00",
+  "browser": "Chromium /usr/bin/chromium",
+  "browserScope": "17 focused production service tests; 15 page/viewport accessibility scans plus linked navigation and no-JavaScript tests. No full-site motion regression is claimed.",
+  "buildSourceCheckpoint": "53390e9",
+  "supportAdjustments": "Production-preview browser configuration, Contact accessible-name assertion, lazy-image capture readiness and documentation only; service production source is unchanged from the checkpoint.",
+  "results": {
+    "unit": 32,
+    "buildOutput": 5,
+    "publication": 1,
+    "browser": 17,
+    "automatedTotal": 55,
+    "screenshots": 21,
+    "capturedPageViewports": 15
+  },
+  "checks": {
+    "check": {
+      "logFile": "check.log",
+      "sha256": "3ff2c9c945a89ef3fc04f1017ace0bd96ea7d741b52206fe7d9eb42d404eef47",
+      "observedOutput": "\n> drawnout-digital@0.1.0 check\n> cross-env ASTRO_TELEMETRY_DISABLED=1 astro check\n\n12:43:24 [vite] Re-optimizing dependencies because vite config has changed\n12:43:25 [content] Syncing content\n12:43:25 [content] Synced content\n12:43:25 [types] Generated 1.18s\n12:43:25 [check] Getting diagnostics for Astro files in /workspace/drawnout-services...\nResult (102 files): \n- 0 errors\n- 0 warnings\n- 0 hints\n\n"
+    },
+    "lint": {
+      "logFile": "lint.log",
+      "sha256": "8acf4e8f84c04ed28f9b7ac33dc0e03b471d9bfaf7d3c22cba1b3ae2b434a871",
+      "observedOutput": "\n> drawnout-digital@0.1.0 lint\n> eslint .\n\n"
+    },
+    "unit": {
+      "logFile": "unit.log",
+      "sha256": "3d14980e66ac832550d981f2fd4cf780e470da44adb297c7f28cc9afaa304c0a",
+      "observedOutput": "\n> drawnout-digital@0.1.0 test\n> node --import tsx --test tests/*.test.ts\n\n\u2714 all 46 original PNG files in 15 project folders match the authorized asset commit byte for byte (711.873828ms)\n\u2714 portfolio media keep original-source provenance and valid optimized local derivatives (42.456754ms)\n\u2714 contact configuration only accepts a public HTTPS Formspree form endpoint (1.571ms)\n\u2714 enquiry validation accepts optional omissions and trimmed required values (1.128114ms)\n\u2714 enquiry validation rejects whitespace-only required fields and invalid email/service (0.432123ms)\n\u2714 every enquiry text field enforces its input limit independently (0.400607ms)\n\u2714 success requires explicit Formspree acceptance, never an empty or error response (0.249979ms)\n\u2714 missing approval metadata defaults to private, unpublished content (9.155709ms)\n\u2714 visual permission is independent of commissioning and credit, but release gates fail closed (0.93615ms)\n\u2714 URL slugs reject traversal, separators, unsafe text and ambiguous casing (1.965174ms)\n\u2714 missing, malformed, withdrawn or undocumented visual permission fails closed (1.21784ms)\n\u2714 cover alternatives and result evidence cannot be empty (1.282829ms)\n\u2714 the public selector excludes drafts and applies deterministic featured ordering (13.147375ms)\n\u2714 project records retain the supplied collection, safe local media and publication safeguards (60.212511ms)\n\u2714 ink text on paper meets AA body-text contrast (14.99:1) (1.221162ms)\n\u2714 muted text on paper meets AA body-text contrast (5.93:1) (0.156664ms)\n\u2714 accent-strong text on paper meets AA body-text contrast (5.91:1) (0.096691ms)\n\u2714 cream text on ink meets AA body-text contrast (15.48:1) (0.09741ms)\n\u2714 amber text on footer meets AA body-text contrast (8.59:1) (0.089305ms)\n\u2714 inverse-muted text on footer meets AA body-text contrast (9.80:1) (0.079411ms)\n\u2714 reduced motion and data saving independently opt out of motion (0.972065ms)\n\u2714 small screens reduce expansion amplitude without changing the aspect ratio or document geometry (0.345715ms)\n\u2714 unknown viewport measurements choose the restrained mobile profile (1.075483ms)\n\u2714 new editorial fields default safely without verifying narratives or publication (10.157495ms)\n\u2714 editorial metadata rejects unsupported categories, duplicate tags and invalid ordering (1.886892ms)\n\u2714 Work order is deterministic, falls back to featured order and does not mutate input (12.389609ms)\n\u2714 filters are derived only from actual tags, with exact overlapping counts (0.802294ms)\n\u2714 public filtering and neighboring case links never regain excluded draft records (0.662725ms)\n\u2714 separated assets retain the documented approved source and output provenance (19.377715ms)\n\u2714 the empty hand omits the plaque face and the descending plaque omits the fingers (39.297624ms)\n\u2714 registered layers reconstruct the supplied pose without repainting or duplicate overlap (61.419457ms)\n\u2714 the documented separation command reproduces both committed assets and manifest (1076.833616ms)\n\u2139 tests 32\n\u2139 suites 0\n\u2139 pass 32\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 1997.668363\n"
+    },
+    "build": {
+      "logFile": "build.log",
+      "sha256": "50a8d551d2308340b2fa0fa15643b84f7bf4a09c6cbd2e0a231d1b4c9a93dc9a",
+      "observedOutput": "\n> drawnout-digital@0.1.0 build\n> cross-env ASTRO_TELEMETRY_DISABLED=1 astro build\n\n12:44:05 [vite] Re-optimizing dependencies because vite config has changed\n12:44:06 [content] Syncing content\n12:44:06 [content] Synced content\n12:44:06 [types] Generated 876ms\n12:44:06 [build] output: \"static\"\n12:44:06 [build] mode: \"static\"\n12:44:06 [build] directory: /workspace/drawnout-services/dist/\n12:44:06 [build] Collecting build info...\n12:44:06 [build] \u2713 Completed in 951ms.\n12:44:06 [build] Building static entrypoints...\n12:44:07 [vite] \u2713 built in 908ms\n12:44:07 [vite] \u2713 built in 110ms\n12:44:07 [build] Rearranging server assets...\n\n generating static routes \n12:44:07   \u251c\u2500 /404.html (+36ms) \n12:44:07   \u251c\u2500 /about/index.html (+14ms) \n12:44:07   \u251c\u2500 /contact/index.html (+10ms) \n12:44:07   \u251c\u2500 /services/brand-identity/index.html (+9ms) \n12:44:07   \u251c\u2500 /services/digital-design/index.html (+8ms) \n12:44:07   \u251c\u2500 /services/marketing-campaigns/index.html (+6ms) \n12:44:07   \u251c\u2500 /services/words-storytelling/index.html (+27ms) \n12:44:07   \u251c\u2500 /services/creative-direction/index.html (+6ms) \n12:44:07   \u251c\u2500 /services/index.html (+14ms) \n12:44:07   \u251c\u2500 /work/bunzo/index.html (+9ms) \n12:44:07   \u251c\u2500 /work/sol-community-center/index.html (+8ms) \n12:44:07   \u251c\u2500 /work/triarch/index.html (+6ms) \n12:44:07   \u251c\u2500 /work/churros/index.html (+6ms) \n12:44:07   \u251c\u2500 /work/capture/index.html (+6ms) \n12:44:07   \u251c\u2500 /work/by-tech-group/index.html (+4ms) \n12:44:07   \u251c\u2500 /work/khalo/index.html (+7ms) \n12:44:07   \u251c\u2500 /work/fk-technology/index.html (+7ms) \n12:44:07   \u251c\u2500 /work/feed-n-seed/index.html (+5ms) \n12:44:07   \u251c\u2500 /work/abacus-immigration/index.html (+4ms) \n12:44:07   \u251c\u2500 /work/u-wanna-smoothie/index.html (+6ms) \n12:44:07   \u251c\u2500 /work/index.html (+12ms) \n12:44:07   \u251c\u2500 /index.html (+18ms) \n12:44:07 \u2713 Completed in 287ms.\n\n generating optimized images \n12:44:07   \u25b6 /_astro/emblem-plaque.CwFSxarI_ZwBY80.webp (reused cache entry) (+3ms) (1/147)\n12:44:07   \u25b6 /_astro/bunzo-applications.DAYmSXhj_Ntbyh.webp (reused cache entry) (+2ms) (2/147)\n12:44:07   \u25b6 /_astro/hand-empty.qW-O5cKx_Z1CFYnY.webp (reused cache entry) (+2ms) (3/147)\n12:44:07   \u25b6 /_astro/triarch-business-card.B2kBDRlH_2usesf.webp (reused cache entry) (+2ms) (4/147)\n12:44:07   \u25b6 /_astro/emblem-plaque.CwFSxarI_Z5ECEN.webp (reused cache entry) (+2ms) (5/147)\n12:44:07   \u25b6 /_astro/bunzo-applications.DAYmSXhj_L4TsW.webp (reused cache entry) (+2ms) (6/147)\n12:44:07   \u25b6 /_astro/hand-empty.qW-O5cKx_1wQUfg.webp (reused cache entry) (+2ms) (7/147)\n12:44:07   \u25b6 /_astro/triarch-business-card.B2kBDRlH_zP3z1.webp (reused cache entry) (+2ms) (8/147)\n12:44:07   \u25b6 /_astro/bunzo-applications.DAYmSXhj_19ONkY.webp (reused cache entry) (+1ms) (9/147)\n12:44:07   \u25b6 /_astro/sol-community-signage.BgtsZzfk_1CmTBO.webp (reused cache entry) (+1ms) (10/147)\n12:44:07   \u25b6 /_astro/churros-applications.JIrYecxx_2NVvl.webp (reused cache entry) (+2ms) (11/147)\n12:44:07   \u25b6 /_astro/triarch-business-card.B2kBDRlH_ZY9qYq.webp (reused cache entry) (+1ms) (12/147)\n12:44:07   \u25b6 /_astro/bunzo-applications.DAYmSXhj_2c71xN.webp (reused cache entry) (+1ms) (13/147)\n12:44:07   \u25b6 /_astro/sol-community-signage.BgtsZzfk_Z2tI0Kv.webp (reused cache entry) (+1ms) (14/147)\n12:44:07   \u25b6 /_astro/churros-applications.JIrYecxx_Z1QNemS.webp (reused cache entry) (+2ms) (15/147)\n12:44:07   \u25b6 /_astro/bunzo-applications.DAYmSXhj_Z10aOEr.webp (reused cache entry) (+2ms) (16/147)\n12:44:07   \u25b6 /_astro/triarch-business-card.B2kBDRlH_ZxQoTE.webp (reused cache entry) (+2ms) (17/147)\n12:44:07   \u25b6 /_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp (reused cache entry) (+2ms) (18/147)\n12:44:07   \u25b6 /_astro/bunzo-applications.DAYmSXhj_AC9wa.webp (reused cache entry) (+1ms) (19/147)\n12:44:07   \u25b6 /_astro/churros-applications.JIrYecxx_1gnsmv.webp (reused cache entry) (+2ms) (20/147)\n12:44:07   \u25b6 /_astro/by-tech-applications.DAXrhYT4_ZPDiOq.webp (reused cache entry) (+1ms) (21/147)\n12:44:07   \u25b6 /_astro/sol-community-signage.BgtsZzfk_1Rxwug.webp (reused cache entry) (+2ms) (22/147)\n12:44:07   \u25b6 /_astro/churros-applications.JIrYecxx_ok6m.webp (reused cache entry) (+1ms) (23/147)\n12:44:07   \u25b6 /_astro/by-tech-applications.DAXrhYT4_2jUE6h.webp (reused cache entry) (+1ms) (24/147)\n12:44:07   \u25b6 /_astro/capture-applications.lhBr_dKb_SYdYT.webp (reused cache entry) (+1ms) (25/147)\n12:44:07   \u25b6 /_astro/churros-applications.JIrYecxx_Z1FrqN.webp (reused cache entry) (+2ms) (26/147)\n12:44:07   \u25b6 /_astro/triarch-business-card.B2kBDRlH_Z2qJmPB.webp (reused cache entry) (+5ms) (27/147)\n12:44:07   \u25b6 /_astro/capture-applications.lhBr_dKb_Z10CVSk.webp (reused cache entry) (+2ms) (28/147)\n12:44:07   \u25b6 /_astro/churros-applications.JIrYecxx_Z1Mcg0a.webp (reused cache entry) (+2ms) (29/147)\n12:44:07   \u25b6 /_astro/bunzo-cup-detail.CBuQNYF0_Q2pn6.webp (reused cache entry) (+2ms) (30/147)\n12:44:07   \u25b6 /_astro/by-tech-applications.DAXrhYT4_mUd1J.webp (reused cache entry) (+4ms) (31/147)\n12:44:07   \u25b6 /_astro/capture-applications.lhBr_dKb_27xJQ4.webp (reused cache entry) (+2ms) (32/147)\n12:44:07   \u25b6 /_astro/bunzo-bag-detail.DKduj3GZ_Z1BXtF3.webp (reused cache entry) (+1ms) (33/147)\n12:44:07   \u25b6 /_astro/bunzo-packaging-wide.BzEIOzUP_L8B3c.webp (reused cache entry) (+1ms) (34/147)\n12:44:07   \u25b6 /_astro/by-tech-applications.DAXrhYT4_ZS3Uep.webp (reused cache entry) (+2ms) (35/147)\n12:44:07   \u25b6 /_astro/capture-applications.lhBr_dKb_QyBzU.webp (reused cache entry) (+1ms) (36/147)\n12:44:07   \u25b6 /_astro/bunzo-identity.B7wBiny0_Zrxcia.webp (reused cache entry) (+1ms) (37/147)\n12:44:07   \u25b6 /_astro/bunzo-packaging-wide.BzEIOzUP_zLBCL.webp (reused cache entry) (+1ms) (38/147)\n12:44:07   \u25b6 /_astro/capture-applications.lhBr_dKb_13xHtN.webp (reused cache entry) (+2ms) (39/147)\n12:44:07   \u25b6 /_astro/bunzo-identity.B7wBiny0_Z1lgwAP.webp (reused cache entry) (+2ms) (40/147)\n12:44:07   \u25b6 /_astro/by-tech-applications.DAXrhYT4_Z2h2vT1.webp (reused cache entry) (+2ms) (41/147)\n12:44:07   \u25b6 /_astro/bunzo-packaging-wide.BzEIOzUP_Z1ou2R4.webp (reused cache entry) (+3ms) (42/147)\n12:44:07   \u25b6 /_astro/by-tech-applications.DAXrhYT4_12CNly.webp (reused cache entry) (+2ms) (43/147)\n12:44:07   \u25b6 /_astro/bunzo-identity.B7wBiny0_Z2mVHbI.webp (reused cache entry) (+2ms) (44/147)\n12:44:07   \u25b6 /_astro/capture-applications.lhBr_dKb_ZGX64y.webp (reused cache entry) (+3ms) (45/147)\n12:44:07   \u25b6 /_astro/bunzo-packaging-wide.BzEIOzUP_Z2tfWgD.webp (reused cache entry) (+2ms) (46/147)\n12:44:07   \u25b6 /_astro/sol-community-applications.CHSjn_90_2rrBui.webp (reused cache entry) (+2ms) (47/147)\n12:44:07   \u25b6 /_astro/bunzo-social-layouts.DurTkaS9_Z143blQ.webp (reused cache entry) (+2ms) (48/147)\n12:44:07   \u25b6 /_astro/bunzo-identity.B7wBiny0_2rEPfr.webp (reused cache entry) (+2ms) (49/147)\n12:44:07   \u25b6 /_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp (reused cache entry) (+1ms) (50/147)\n12:44:07   \u25b6 /_astro/bunzo-social-layouts.DurTkaS9_Z2k2jC0.webp (reused cache entry) (+1ms) (51/147)\n12:44:07   \u25b6 /_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp (reused cache entry) (+1ms) (52/147)\n12:44:07   \u25b6 /_astro/sol-community-applications.CHSjn_90_219TyT.webp (reused cache entry) (+2ms) (53/147)\n12:44:07   \u25b6 /_astro/sol-identity-system.jaH81r6G_Z20CDxP.webp (reused cache entry) (+2ms) (54/147)\n12:44:07   \u25b6 /_astro/bunzo-social-layouts.DurTkaS9_Z1dqBvT.webp (reused cache entry) (+2ms) (55/147)\n12:44:07   \u25b6 /_astro/sol-community-applications.CHSjn_90_Z2kAVan.webp (reused cache entry) (+2ms) (56/147)\n12:44:07   \u25b6 /_astro/sol-notice-layouts.DuB0r9JG_Z24halM.webp (reused cache entry) (+3ms) (57/147)\n12:44:07   \u25b6 /_astro/sol-identity-system.jaH81r6G_1KQnlS.webp (reused cache entry) (+2ms) (58/147)\n12:44:07   \u25b6 /_astro/bunzo-social-layouts.DurTkaS9_26eHIF.webp (reused cache entry) (+1ms) (59/147)\n12:44:07   \u25b6 /_astro/sol-community-applications.CHSjn_90_ebYVL.webp (reused cache entry) (+1ms) (60/147)\n12:44:07   \u25b6 /_astro/sol-notice-layouts.DuB0r9JG_15zr9F.webp (reused cache entry) (+1ms) (61/147)\n12:44:07   \u25b6 /_astro/triarch-identity-board.C83R2uNz_2wjdGx.webp (reused cache entry) (+1ms) (62/147)\n12:44:07   \u25b6 /_astro/sol-apparel-detail.BcibQzZO_1eJj2o.webp (reused cache entry) (+1ms) (63/147)\n12:44:07   \u25b6 /_astro/sol-identity-system.jaH81r6G_4KgS3.webp (reused cache entry) (+2ms) (64/147)\n12:44:07   \u25b6 /_astro/triarch-identity-board.C83R2uNz_Z1wRtDy.webp (reused cache entry) (+1ms) (65/147)\n12:44:07   \u25b6 /_astro/triarch-letterform-detail.Bcq5QPDG_1sUmFt.webp (reused cache entry) (+1ms) (66/147)\n12:44:07   \u25b6 /_astro/sol-apparel-detail.BcibQzZO_Z1AK8wJ.webp (reused cache entry) (+1ms) (67/147)\n12:44:07   \u25b6 /_astro/triarch-identity-board.C83R2uNz_Z1469e6.webp (reused cache entry) (+1ms) (68/147)\n12:44:07   \u25b6 /_astro/triarch-letterform-detail.Bcq5QPDG_11jOaj.webp (reused cache entry) (+1ms) (69/147)\n12:44:07   \u25b6 /_astro/sol-apparel-detail.BcibQzZO_1xKgwD.webp (reused cache entry) (+1ms) (70/147)\n12:44:07   \u25b6 /_astro/triarch-identity-board.C83R2uNz_1Kh3th.webp (reused cache entry) (+1ms) (71/147)\n12:44:07   \u25b6 /_astro/triarch-device-detail.Bf9PTwAM_ZgqcnL.webp (reused cache entry) (+1ms) (72/147)\n12:44:07   \u25b6 /_astro/churros-retail-wide.DnU_M71G_2lgCng.webp (reused cache entry) (+1ms) (73/147)\n12:44:07   \u25b6 /_astro/sol-notice-layouts.DuB0r9JG_1J0Nr5.webp (reused cache entry) (+4ms) (74/147)\n12:44:07   \u25b6 /_astro/triarch-letterform-detail.Bcq5QPDG_Z2pyHKw.webp (reused cache entry) (+2ms) (75/147)\n12:44:07   \u25b6 /_astro/churros-retail-wide.DnU_M71G_Z2hCXWy.webp (reused cache entry) (+1ms) (76/147)\n12:44:07   \u25b6 /_astro/triarch-device-detail.Bf9PTwAM_Z1luBsC.webp (reused cache entry) (+1ms) (77/147)\n12:44:07   \u25b6 /_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp (reused cache entry) (+1ms) (78/147)\n12:44:07   \u25b6 /_astro/churros-identity.CPd1pOD4_1A2j6H.webp (reused cache entry) (+1ms) (79/147)\n12:44:07   \u25b6 /_astro/capture-identity.CdbNOS9r_ZVHGBF.webp (reused cache entry) (+1ms) (80/147)\n12:44:07   \u25b6 /_astro/churros-patterns.CVu5OpxJ_2wKpBY.webp (reused cache entry) (+1ms) (81/147)\n12:44:07   \u25b6 /_astro/churros-identity.CPd1pOD4_2og4jV.webp (reused cache entry) (+1ms) (82/147)\n12:44:07   \u25b6 /_astro/churros-retail-wide.DnU_M71G_lux6y.webp (reused cache entry) (+2ms) (83/147)\n12:44:07   \u25b6 /_astro/churros-patterns.CVu5OpxJ_1or4d5.webp (reused cache entry) (+1ms) (84/147)\n12:44:07   \u25b6 /_astro/capture-identity.CdbNOS9r_Z8tVor.webp (reused cache entry) (+1ms) (85/147)\n12:44:07   \u25b6 /_astro/churros-retail-wide.DnU_M71G_1OCsI2.webp (reused cache entry) (+1ms) (86/147)\n12:44:07   \u25b6 /_astro/churros-patterns.CVu5OpxJ_Z1JIgAD.webp (reused cache entry) (+1ms) (87/147)\n12:44:07   \u25b6 /_astro/capture-stationery-detail.Cje0Alcr_Z2pvczC.webp (reused cache entry) (+1ms) (88/147)\n12:44:07   \u25b6 /_astro/by-tech-identity.BGAf8P-l_ZCPwt3.webp (reused cache entry) (+1ms) (89/147)\n12:44:07   \u25b6 /_astro/churros-identity.CPd1pOD4_2adnQu.webp (reused cache entry) (+3ms) (90/147)\n12:44:07   \u25b6 /_astro/capture-identity.CdbNOS9r_ZcaNpb.webp (reused cache entry) (+2ms) (91/147)\n12:44:07   \u25b6 /_astro/capture-stationery-detail.Cje0Alcr_Z1crSGQ.webp (reused cache entry) (+1ms) (92/147)\n12:44:07   \u25b6 /_astro/capture-identity.CdbNOS9r_1IPYA2.webp (reused cache entry) (+1ms) (93/147)\n12:44:07   \u25b6 /_astro/churros-identity.CPd1pOD4_ZXVVWe.webp (reused cache entry) (+2ms) (94/147)\n12:44:07   \u25b6 /_astro/by-tech-identity.BGAf8P-l_andJb.webp (reused cache entry) (+2ms) (95/147)\n12:44:07   \u25b6 /_astro/khalo-packaging.obGhBFNs_QEHwm.webp (reused cache entry) (+2ms) (96/147)\n12:44:07   \u25b6 /_astro/khalo-applications.Cnl5_lJd_ZHKfz2.webp (reused cache entry) (+1ms) (97/147)\n12:44:07   \u25b6 /_astro/khalo-identity.DYtZWM5J_Z2e0HiY.webp (reused cache entry) (+1ms) (98/147)\n12:44:07   \u25b6 /_astro/by-tech-identity.BGAf8P-l_ZLxVEJ.webp (reused cache entry) (+1ms) (99/147)\n12:44:07   \u25b6 /_astro/khalo-packaging.obGhBFNs_Z2vTwtl.webp (reused cache entry) (+1ms) (100/147)\n12:44:07   \u25b6 /_astro/khalo-applications.Cnl5_lJd_jvWCM.webp (reused cache entry) (+1ms) (101/147)\n12:44:07   \u25b6 /_astro/khalo-identity.DYtZWM5J_1Ws6ch.webp (reused cache entry) (+1ms) (102/147)\n12:44:07   \u25b6 /_astro/by-tech-identity.BGAf8P-l_19sQkt.webp (reused cache entry) (+2ms) (103/147)\n12:44:07   \u25b6 /_astro/khalo-packaging.obGhBFNs_Z16O9jf.webp (reused cache entry) (+1ms) (104/147)\n12:44:07   \u25b6 /_astro/khalo-applications.Cnl5_lJd_1LRTGg.webp (reused cache entry) (+1ms) (105/147)\n12:44:07   \u25b6 /_astro/fk-applications.Zgm8Jfre_64FuE.webp (reused cache entry) (+1ms) (106/147)\n12:44:07   \u25b6 /_astro/khalo-identity.DYtZWM5J_Z1yeRAQ.webp (reused cache entry) (+1ms) (107/147)\n12:44:07   \u25b6 /_astro/fk-applications.Zgm8Jfre_1MGziS.webp (reused cache entry) (+1ms) (108/147)\n12:44:07   \u25b6 /_astro/khalo-identity.DYtZWM5J_Z1NOsXC.webp (reused cache entry) (+1ms) (109/147)\n12:44:07   \u25b6 /_astro/khalo-packaging.obGhBFNs_80N3f.webp (reused cache entry) (+2ms) (110/147)\n12:44:07   \u25b6 /_astro/khalo-applications.Cnl5_lJd_Z1GveV4.webp (reused cache entry) (+2ms) (111/147)\n12:44:07   \u25b6 /_astro/fk-applications.Zgm8Jfre_CQwTz.webp (reused cache entry) (+1ms) (112/147)\n12:44:07   \u25b6 /_astro/fk-identity.DqUm2UKg_2iUFMO.webp (reused cache entry) (+1ms) (113/147)\n12:44:07   \u25b6 /_astro/fk-card-detail.CuxFR9GL_Hf1AT.webp (reused cache entry) (+1ms) (114/147)\n12:44:07   \u25b6 /_astro/feed-n-seed-product.DNO_wrF0_ZW5Jgh.webp (reused cache entry) (+1ms) (115/147)\n12:44:07   \u25b6 /_astro/fk-identity.DqUm2UKg_OrSYt.webp (reused cache entry) (+1ms) (116/147)\n12:44:07   \u25b6 /_astro/fk-applications.Zgm8Jfre_1RGuh4.webp (reused cache entry) (+1ms) (117/147)\n12:44:07   \u25b6 /_astro/fk-card-detail.CuxFR9GL_1EqutH.webp (reused cache entry) (+1ms) (118/147)\n12:44:07   \u25b6 /_astro/feed-n-seed-product.DNO_wrF0_Zizxh1.webp (reused cache entry) (+1ms) (119/147)\n12:44:07   \u25b6 /_astro/abacus-applications.D_dNd7sT_ZLyJ7I.webp (reused cache entry) (+1ms) (120/147)\n12:44:07   \u25b6 /_astro/fk-identity.DqUm2UKg_Z10iLIc.webp (reused cache entry) (+1ms) (121/147)\n12:44:07   \u25b6 /_astro/feed-n-seed-stationery.Br9gCSKk_ZkHoOa.webp (reused cache entry) (+1ms) (122/147)\n12:44:07   \u25b6 /_astro/feed-n-seed-product.DNO_wrF0_1zckKA.webp (reused cache entry) (+2ms) (123/147)\n12:44:07   \u25b6 /_astro/abacus-applications.D_dNd7sT_Z83x8s.webp (reused cache entry) (+1ms) (124/147)\n12:44:07   \u25b6 /_astro/feed-n-seed-stationery.Br9gCSKk_Fi1DF.webp (reused cache entry) (+1ms) (125/147)\n12:44:07   \u25b6 /_astro/fk-identity.DqUm2UKg_Z16XrKo.webp (reused cache entry) (+1ms) (126/147)\n12:44:07   \u25b6 /_astro/feed-n-seed-product.DNO_wrF0_Zzmmdr.webp (reused cache entry) (+1ms) (127/147)\n12:44:07   \u25b6 /_astro/feed-n-seed-stationery.Br9gCSKk_1vDRnR.webp (reused cache entry) (+2ms) (128/147)\n12:44:07   \u25b6 /_astro/abacus-applications.D_dNd7sT_1PgghV.webp (reused cache entry) (+2ms) (129/147)\n12:44:07   \u25b6 /_astro/abacus-social-layouts.BYtbsmdS_ZaA1A9.webp (reused cache entry) (+2ms) (130/147)\n12:44:07   \u25b6 /_astro/smoothie-identity.BILl84Aa_Z1YDTEa.webp (reused cache entry) (+1ms) (131/147)\n12:44:07   \u25b6 /_astro/feed-n-seed-stationery.Br9gCSKk_ZJa3HG.webp (reused cache entry) (+2ms) (132/147)\n12:44:07   \u25b6 /_astro/abacus-applications.D_dNd7sT_ZjiqG6.webp (reused cache entry) (+2ms) (133/147)\n12:44:07   \u25b6 /_astro/abacus-social-layouts.BYtbsmdS_noh8d.webp (reused cache entry) (+2ms) (134/147)\n12:44:07   \u25b6 /_astro/smoothie-identity.BILl84Aa_1FulaF.webp (reused cache entry) (+2ms) (135/147)\n12:44:07   \u25b6 /_astro/smoothie-color.yOxVXOpo_tv5dV.webp (reused cache entry) (+1ms) (136/147)\n12:44:07   \u25b6 /_astro/smoothie-identity.BILl84Aa_vG4st.webp (reused cache entry) (+1ms) (137/147)\n12:44:07   \u25b6 /_astro/smoothie-menu.L9Y1qIBG_Z28xNzd.webp (reused cache entry) (+1ms) (138/147)\n12:44:07   \u25b6 /_astro/abacus-social-layouts.BYtbsmdS_Z1uaU3f.webp (reused cache entry) (+1ms) (139/147)\n12:44:07   \u25b6 /_astro/smoothie-color.yOxVXOpo_Zpdf4J.webp (reused cache entry) (+1ms) (140/147)\n12:44:07   \u25b6 /_astro/smoothie-identity.BILl84Aa_Z1wfAVC.webp (reused cache entry) (+1ms) (141/147)\n12:44:07   \u25b6 /_astro/abacus-social-layouts.BYtbsmdS_Z1cCmcD.webp (reused cache entry) (+1ms) (142/147)\n12:44:07   \u25b6 /_astro/smoothie-menu.L9Y1qIBG_1EH7wa.webp (reused cache entry) (+2ms) (143/147)\n12:44:07   \u25b6 /_astro/smoothie-menu.L9Y1qIBG_19UTnq.webp (reused cache entry) (+2ms) (144/147)\n12:44:07   \u25b6 /_astro/smoothie-color.yOxVXOpo_1bIt1E.webp (reused cache entry) (+3ms) (145/147)\n12:44:07   \u25b6 /_astro/smoothie-color.yOxVXOpo_V8RDS.webp (reused cache entry) (+1ms) (146/147)\n12:44:07   \u25b6 /_astro/smoothie-menu.L9Y1qIBG_2sQKVq.webp (reused cache entry) (+1ms) (147/147)\n12:44:07 \u2713 Completed in 61ms.\n\n12:44:07 [build] \u2713 Completed in 1.44s.\n12:44:07 [build] 22 page(s) built in 2.41s\n12:44:07 [build] Complete!\n"
+    },
+    "buildOutput": {
+      "logFile": "build-output.log",
+      "sha256": "e3f63d632e7a45ee34f250119ac341c60f8d43cac14578123f3a6fb50d34d247",
+      "observedOutput": "\n> drawnout-digital@0.1.0 test:build\n> node --test tests/build-output.test.mjs\n\n\u2714 production emits foundation routes and approved cases without private preview or draft routes (34.781406ms)\n\u2714 production asset output excludes every draft project image (4.65236ms)\n\u2714 production text and generated assets do not expose original portfolio files or draft metadata (31.470585ms)\n\u2714 approved artwork has real public cards and cases without invented facts or review labels (16.018478ms)\n\u2714 service previews have distinct metadata, complete copy, FAQs and truthful structured data (9.470135ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 314.132818\n"
+    },
+    "publication": {
+      "logFile": "publication.log",
+      "sha256": "a52570f603844445cc465f550225875af0f22eaba429fcbfebb95652b8ba3c4d",
+      "observedOutput": "\n> drawnout-digital@0.1.0 test:publication\n> node --test tests/publication-workflow.test.mjs\n\n\u2714 visual approval publishes a record without verifying facts or credits; withdrawal removes its route and unique media (14293.400675ms)\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 1\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 14587.540381\n"
+    },
+    "browser": {
+      "logFile": "browser-production.log",
+      "sha256": "733571c606f355f9ea1d789efb34fbbe18311671dec9d81a0a14bd05de2216e7",
+      "observedOutput": "[WebServer] (node:206158) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n\nRunning 17 tests using 1 worker\n\n(node:206259) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n  \u2713   1 tests/browser/services.spec.ts:7:5 \u203a brand-identity copy, FAQs, navigation and accessibility at 390px (2.8s)\n  \u2713   2 tests/browser/services.spec.ts:7:5 \u203a digital-design copy, FAQs, navigation and accessibility at 390px (2.0s)\n  \u2713   3 tests/browser/services.spec.ts:7:5 \u203a marketing-campaigns copy, FAQs, navigation and accessibility at 390px (2.3s)\n  \u2713   4 tests/browser/services.spec.ts:7:5 \u203a words-storytelling copy, FAQs, navigation and accessibility at 390px (2.0s)\n  \u2713   5 tests/browser/services.spec.ts:7:5 \u203a creative-direction copy, FAQs, navigation and accessibility at 390px (2.1s)\n  \u2713   6 tests/browser/services.spec.ts:7:5 \u203a brand-identity copy, FAQs, navigation and accessibility at 768px (2.2s)\n  \u2713   7 tests/browser/services.spec.ts:7:5 \u203a digital-design copy, FAQs, navigation and accessibility at 768px (2.0s)\n  \u2713   8 tests/browser/services.spec.ts:7:5 \u203a marketing-campaigns copy, FAQs, navigation and accessibility at 768px (2.1s)\n  \u2713   9 tests/browser/services.spec.ts:7:5 \u203a words-storytelling copy, FAQs, navigation and accessibility at 768px (1.9s)\n  \u2713  10 tests/browser/services.spec.ts:7:5 \u203a creative-direction copy, FAQs, navigation and accessibility at 768px (2.0s)\n  \u2713  11 tests/browser/services.spec.ts:7:5 \u203a brand-identity copy, FAQs, navigation and accessibility at 1440px (2.1s)\n  \u2713  12 tests/browser/services.spec.ts:7:5 \u203a digital-design copy, FAQs, navigation and accessibility at 1440px (2.3s)\n  \u2713  13 tests/browser/services.spec.ts:7:5 \u203a marketing-campaigns copy, FAQs, navigation and accessibility at 1440px (2.4s)\n  \u2713  14 tests/browser/services.spec.ts:7:5 \u203a words-storytelling copy, FAQs, navigation and accessibility at 1440px (1.9s)\n  \u2713  15 tests/browser/services.spec.ts:7:5 \u203a creative-direction copy, FAQs, navigation and accessibility at 1440px (2.6s)\n  \u2713  16 tests/browser/services.spec.ts:72:1 \u203a homepage and overview links open service pages and the enquiry CTA reaches Contact (1.7s)\n  \u2713  17 tests/browser/services.spec.ts:95:1 \u203a service copy, native FAQ controls and navigation work without JavaScript (768ms)\n\n  17 passed (38.4s)\n"
+    },
+    "capture": {
+      "logFile": "capture.log",
+      "sha256": "17f7940d11b417366244edce156a18577124436e802fa4cef514b5fb4ed2320f",
+      "observedOutput": "{\"pages\":15,\"screenshots\":21,\"output\":\"/workspace/drawnout-services/artifacts/services\"}\n"
+    },
+    "finalCheck": {
+      "logFile": "check-final.log",
+      "sha256": "700c955a1807bf6904c69199e03eea05ea81a3b5c0144674929d7baa9b24a94e",
+      "observedOutput": "\n> drawnout-digital@0.1.0 check\n> cross-env ASTRO_TELEMETRY_DISABLED=1 astro check\n\n12:49:57 [vite] Re-optimizing dependencies because vite config has changed\n12:49:58 [content] Syncing content\n12:49:58 [content] Synced content\n12:49:58 [types] Generated 881ms\n12:49:58 [check] Getting diagnostics for Astro files in /workspace/drawnout-services...\nResult (105 files): \n- 0 errors\n- 0 warnings\n- 0 hints\n\n"
+    },
+    "finalFormat": {
+      "logFile": "format-final.log",
+      "sha256": "3b572d7baabdfe405f32b884f40f3a1483117dee1c1934c2aa6ed06700250569",
+      "observedOutput": "\n> drawnout-digital@0.1.0 format:check\n> prettier --check .\n\nChecking formatting...\nAll matched files use Prettier code style!\n"
+    }
+  },
+  "screenshots": [
+    {
+      "file": "brand-identity-1440-faq.png",
+      "width": 1440,
+      "height": 732,
+      "bytes": 66596,
+      "sha256": "995a51b34434ff6583606d838b17b5d11fc20711e63e37593bb2da39ed96b4c7"
+    },
+    {
+      "file": "brand-identity-1440-hero.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 107591,
+      "sha256": "0aee04f2a2ee4892ee5d1901cb906e16edeeb6a894c77919dd52c28f14c01698"
+    },
+    {
+      "file": "brand-identity-1440.png",
+      "width": 1440,
+      "height": 4422,
+      "bytes": 1411062,
+      "sha256": "e23559e1798e9918f813187365d7f4d3800539928f14a901dba45cdd1d8dba61"
+    },
+    {
+      "file": "brand-identity-390-faq.png",
+      "width": 390,
+      "height": 923,
+      "bytes": 52747,
+      "sha256": "e73e038a5c8bf46f39a013b2ae680ab7796714302841045c54870ab81d965fa8"
+    },
+    {
+      "file": "brand-identity-390-hero.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 65817,
+      "sha256": "6017eccbaaa9fdcf738418d55e7d4da25e58ba994368322ebc71108e2f8eeca1"
+    },
+    {
+      "file": "brand-identity-390.png",
+      "width": 390,
+      "height": 4824,
+      "bytes": 471697,
+      "sha256": "1f7316eac07aba47f7b005555974eccf2e7ca8ee36af541714440871d5c3147e"
+    },
+    {
+      "file": "brand-identity-768-faq.png",
+      "width": 768,
+      "height": 762,
+      "bytes": 53869,
+      "sha256": "bd3f4414ecfc3201f8d98e4b92d396fdee4a144dbb6fef71f3431e387be16cb2"
+    },
+    {
+      "file": "brand-identity-768-hero.png",
+      "width": 768,
+      "height": 900,
+      "bytes": 90221,
+      "sha256": "27273d6c9f4105f6e2ea0235d1c5d5b9d0205527c2c37cb04caf46091e10db9d"
+    },
+    {
+      "file": "brand-identity-768.png",
+      "width": 768,
+      "height": 3785,
+      "bytes": 670950,
+      "sha256": "716b430795754863fd258ae3026e4b08ce51ac8190d99401a27b8ac0a285b87a"
+    },
+    {
+      "file": "creative-direction-1440.png",
+      "width": 1440,
+      "height": 4351,
+      "bytes": 1193985,
+      "sha256": "a2c6199d0ac80788a98aaf1a5a5fb9c9820f62047d26e9311d9c2cc30cec8dd1"
+    },
+    {
+      "file": "creative-direction-390.png",
+      "width": 390,
+      "height": 4662,
+      "bytes": 501170,
+      "sha256": "b1d1fd2d784e8c662fbac594bb6185594b6fd263bd107f8e0d5e4ee9d9a0336e"
+    },
+    {
+      "file": "creative-direction-768.png",
+      "width": 768,
+      "height": 3716,
+      "bytes": 660604,
+      "sha256": "620217a532bd64551b13b1d915d751f8ccb404c0dfb1360280ce1a714f623665"
+    },
+    {
+      "file": "digital-design-1440.png",
+      "width": 1440,
+      "height": 4371,
+      "bytes": 1407845,
+      "sha256": "e01d552c0b16ed43aac5fed5da8d015da7b8e3505a2dfc2146f2b283341e4aff"
+    },
+    {
+      "file": "digital-design-390.png",
+      "width": 390,
+      "height": 4775,
+      "bytes": 467491,
+      "sha256": "d553b287210d5f8504828c7a1d37cdf4fecff4f0a713d41d7b394345db8e6742"
+    },
+    {
+      "file": "digital-design-768.png",
+      "width": 768,
+      "height": 3775,
+      "bytes": 668682,
+      "sha256": "942cf2f3d825d9bc63ba7da32870ea0a476f24ed9c8d5773b792a13a8ae60ae5"
+    },
+    {
+      "file": "marketing-campaigns-1440.png",
+      "width": 1440,
+      "height": 4351,
+      "bytes": 1189420,
+      "sha256": "cd24272c70b0b34ee37e164072c9e0d4d0f173a01a9fcca3fa816f2a76a84705"
+    },
+    {
+      "file": "marketing-campaigns-390.png",
+      "width": 390,
+      "height": 4685,
+      "bytes": 460079,
+      "sha256": "a9cd6c24a13480f4cccecc950c633c7215d02ea9927ece11ae56b616d5f9df11"
+    },
+    {
+      "file": "marketing-campaigns-768.png",
+      "width": 768,
+      "height": 3688,
+      "bytes": 662462,
+      "sha256": "fe988b37e3a122d0d735940e9167e3399dece225ac7336b731899b5b948f807d"
+    },
+    {
+      "file": "words-storytelling-1440.png",
+      "width": 1440,
+      "height": 4493,
+      "bytes": 1205753,
+      "sha256": "7e4d007e312056056766e25745067060e9666828a6e86e61a8e43644d9b4555c"
+    },
+    {
+      "file": "words-storytelling-390.png",
+      "width": 390,
+      "height": 4640,
+      "bytes": 500904,
+      "sha256": "0d95260e8b2df2e4fac0411208a47cbd627f6d3d93b407a43d49f1bc87381f79"
+    },
+    {
+      "file": "words-storytelling-768.png",
+      "width": 768,
+      "height": 3688,
+      "bytes": 660010,
+      "sha256": "263ef9efd0553a03b0326d2ff2a0bf32a976970ba9ad6b36f055f28d41ea1d08"
+    }
+  ],
+  "mergedUpstreamCheckpoint": "b2f32e1"
+}
