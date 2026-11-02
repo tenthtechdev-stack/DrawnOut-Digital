@@ -24,7 +24,7 @@ The source remains an editorial draft for studio review. Scope examples remain c
 
 Each page keeps the shared `noindex, nofollow` setting. JSON-LD contains only accurate `BreadcrumbList` and `Service` descriptions with relative preview URLs and the supplied studio name. It adds no production domain, pricing, offers, reviews, ratings or FAQ rich-result promise. Approved launch configuration, canonical URLs and indexing are later work.
 
-This branch is stacked on `feature/recurring-loop-fluid-afterglow` ([PR #7](https://github.com/tenthtech/drawnout-digital/pull/7)), which depends on Contact ([PR #5](https://github.com/tenthtech/drawnout-digital/pull/5)). The service draft PR targets the recurring-loop branch so its diff contains the service milestone. Neither prerequisite nor this branch is merged or deployed by this task.
+PR #8 now targets `main`, integrating the merged Contact, loader/gradient and portfolio-motion milestones. [Current integration validation](SERVICE_MAIN_INTEGRATION.md) documents the combined conflict resolutions and regression checks. No deployment is included.
 
 ## Reproduce the evidence
 
@@ -45,4 +45,4 @@ The isolated browser config serves the built `dist` on port 4351 and requires a 
 
 ## Next review
 
-Review the page hierarchy and screenshots, then approve or revise the supplied editorial copy and actual service scopes. Confirm delivery responsibilities, ownership/handover terms, writing capability, paid-media scope and any future related-project attribution before public launch. The existing Contact provider setup and privacy dependencies also remain. This is a draft structure/content review; merge and deployment require their own authorization.
+Review the page hierarchy and screenshots, then approve or revise the supplied editorial copy and actual service scopes. Confirm delivery responsibilities, ownership/handover terms, writing capability, paid-media scope and any future related-project attribution before public launch. The existing Contact provider setup and privacy dependencies also remain. Content and service-scope approval remain distinct from this authorized code integration; public launch and deployment require their own authorization.

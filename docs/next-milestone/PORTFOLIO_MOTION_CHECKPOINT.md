@@ -1,0 +1,15 @@
+# Portfolio motion implementation checkpoint
+
+This branch continues from loader/gradient correction commit `40ccb58` and depends on PR #7 and Contact PR #5. It preserves the approved source artwork and adds a reproducible offline 2D motion pipeline, typed project motion records and publication-gated media routes, plus viewport-managed playback on homepage and Work cards.
+
+The six 2D source-art compositions are now exported in both landscape (960 × 540) and portrait (600 × 750): **12 completed silent MP4s**, each 5.75 seconds, 138 frames and 24 fps. H.264/yuv420p files use progressive MP4 playback and range from 120 to 315 KiB, below the 3 MiB per-loop budget. Each composition has its own masks, layout and motion vocabulary.
+
+The [asset gallery](../../artifacts/portfolio-motion/assets-gallery.html) plays all six landscape loops and expands their separate portrait compositions. The [asset review notes](../../artifacts/portfolio-motion/PORTFOLIO_MOTION_ASSETS.md) link the MP4s and six GIF previews. There are 48 PNG keyframes covering the opening, construction, application and return stages.
+
+`node --test tests/portfolio-motion-exports.test.mjs` passed all six project tests, validating all 12 actual files, source/export SHA-256 hashes, stream properties, dimensions, duration, frame count and size budget. The renderer asserted pixel-identical source endpoints in every format. Decoded H.264 endpoint differences range from 0.1080 to 0.6167 on a 0–255 mean absolute pixel-difference scale, below the threshold of 3; application scenes differ from their openings by 46.75–115.35. The complete [export verification output](../../artifacts/portfolio-motion/export-tests.txt) records the measurements. ESLint and Prettier checks passed for the motion generator, review generator and export tests.
+
+The SOL opening uses the authentic green/gold emblem from board `02_SOL_Community_Center_01.png`, source bounds `[607,27,186,186]`. A 92-source-pixel circular presentation aperture removes the surrounding banner photograph. This corrects contamination from the overlapping sign in the earlier white-lockup crop; no official mark is redrawn or recolored. Its application scene uses the supplied building signage, apparel and stationery imagery.
+
+All source material is flattened PNG artwork. Reveals, masks, decorative construction guides and moving photographic panels do not constitute rigged vector logos or physical 3D packaging. Original pixels, filenames, source SHA-256 hashes, crop bounds and export hashes are retained in the [manifest](../../design-assets/portfolio-motion/manifest.json). Website playback, publication gating and responsive browser evidence are documented separately in the [website gallery](../../artifacts/portfolio-motion/index.html).
+
+Reproduce the assets with `node scripts/portfolio/render-loops.mjs`, verify them with the export test above, and rebuild the review material with `node scripts/portfolio/create-review.mjs`. These exports remain review artifacts on the feature branch; no merge or deployment is part of this delivery.

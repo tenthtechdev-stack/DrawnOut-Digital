@@ -1,0 +1,264 @@
+{
+  "baseMain": "05928c85ec1e5ab8400515207f412e7d34818cdd",
+  "resolvedFiles": [
+    ".gitignore",
+    "tests/build-output.test.mjs",
+    "tests/publication-workflow.test.mjs"
+  ],
+  "criticalFilesPreservedByteForByte": 93,
+  "checks": {
+    "typescript": "passed",
+    "lint": "passed",
+    "formatting": "passed",
+    "unitTests": 36,
+    "staticPages": 22,
+    "approvedVideoEndpoints": 12,
+    "buildOutputTests": 6,
+    "publicationTests": 1,
+    "motionExportTests": 6,
+    "browserTests": 44,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browserStats": {
+    "startTime": "2026-11-02T10:30:43.230Z",
+    "duration": 98770.088,
+    "expected": 44,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browserTests": [
+    {
+      "file": "contact.spec.ts",
+      "title": "Contact is responsive and accessible at 390px with official contact links",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "Contact is responsive and accessible at 768px with official contact links",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "Contact is responsive and accessible at 1440px with official contact links",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "an unconfigured form never posts or reports success and offers email instead",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "no JavaScript leaves the unconfigured form safe and direct contact usable",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "required fields announce errors, focus the summary and link back to controls",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "a configured form has a native POST fallback without JavaScript",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "whitespace-only values and malformed email are rejected without a request",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "input limits and the honeypot reject oversized or automated submissions",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "provider acceptance is announced honestly and duplicate submissions stay blocked",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "http provider failure keeps the enquiry and never announces success",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "network provider failure keeps the enquiry and never announces success",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "malformed provider failure keeps the enquiry and never announces success",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "not-accepted provider failure keeps the enquiry and never announces success",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "conflicting-error provider failure keeps the enquiry and never announces success",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "a timed-out request reports uncertainty without an automatic retry",
+      "status": "passed"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "correcting errors and explicitly retrying a rejected submission preserves a valid enquiry",
+      "status": "passed"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "homepage lazily attaches sources at 35% visibility and all six desktop cards autoplay",
+      "status": "passed"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "all six Home and Work animations autoplay without hover and respect the decoder budget at 390px",
+      "status": "passed"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "all six Home and Work animations autoplay without hover and respect the decoder budget at 768px",
+      "status": "passed"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "keyboard pause control stays separate from project links and preserves a descriptive poster",
+      "status": "passed"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "document visibility changes release decoders and visible cards resume",
+      "status": "passed"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "reduced-motion retains meaningful project posters without a broken player",
+      "status": "passed"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "save-data retains meaningful project posters without a broken player",
+      "status": "passed"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "autoplay-blocked retains meaningful project posters without a broken player",
+      "status": "passed"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "no JavaScript leaves clickable descriptive cards and official contact links without video requests",
+      "status": "passed"
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "filtering releases hidden animations and keeps category navigation and project links working",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "brand-identity copy, FAQs, navigation and accessibility at 390px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "digital-design copy, FAQs, navigation and accessibility at 390px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 390px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "words-storytelling copy, FAQs, navigation and accessibility at 390px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "creative-direction copy, FAQs, navigation and accessibility at 390px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "brand-identity copy, FAQs, navigation and accessibility at 768px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "digital-design copy, FAQs, navigation and accessibility at 768px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 768px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "words-storytelling copy, FAQs, navigation and accessibility at 768px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "creative-direction copy, FAQs, navigation and accessibility at 768px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "brand-identity copy, FAQs, navigation and accessibility at 1440px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "digital-design copy, FAQs, navigation and accessibility at 1440px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 1440px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "words-storytelling copy, FAQs, navigation and accessibility at 1440px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "creative-direction copy, FAQs, navigation and accessibility at 1440px",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "homepage and overview links open service pages and the enquiry CTA reaches Contact",
+      "status": "passed"
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "service copy, native FAQ controls and navigation work without JavaScript",
+      "status": "passed"
+    }
+  ],
+  "logSHA256": {
+    "motion-exports.log": "1aa75e596817f6465814deb7e3c7f76fc45bf4bf033ad034a151d6d1c46bfc0a",
+    "build.log": "412b68488b3968a244575a87771c73f514ae61c3bea444fa1109aaedec978e2f",
+    "format.log": "3b572d7baabdfe405f32b884f40f3a1483117dee1c1934c2aa6ed06700250569",
+    "lint.log": "8acf4e8f84c04ed28f9b7ac33dc0e03b471d9bfaf7d3c22cba1b3ae2b434a871",
+    "build-tests.log": "e761efe5cc23989ea5e55a6235ce2a46ad8146b3b73135789a00fc3175274e19",
+    "check.log": "2276622bc8f189cee54db1cfcca33f0c7f775c3981f8afb0d59b2cad344b8d95",
+    "unit.log": "b702f5a012a4c8140b8e9e89f8ca739285c231e93afc07606d5a5aad682d09ff",
+    "browser.log": "20e8b9735f5d4da200cde2472212a703fbff1f3efbd4e7ce62cf3575b9a28428",
+    "publication.log": "14de98f7c7b66628659d31ad42db57b6f5793140ce18db60e5ab6dc3d292a11f"
+  }
+}

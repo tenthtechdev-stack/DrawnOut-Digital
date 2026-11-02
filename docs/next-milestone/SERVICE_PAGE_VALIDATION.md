@@ -1,5 +1,7 @@
 # Service pages — observed validation
 
+> Historical standalone milestone results. See [current main integration validation](SERVICE_MAIN_INTEGRATION.md) for the combined implementation and newer portfolio coverage.
+
 Validated locally on 1 November 2026 on `feature/service-page-foundation`, stacked on `feature/recurring-loop-fluid-afterglow`.
 
 [Screenshot gallery](../../artifacts/services/README.md) · [Capture measurements](../../artifacts/services/capture-evidence.json) · [Verification record](../../artifacts/services/verification.json) · [Handoff](SERVICE_PAGE_HANDOFF.md)

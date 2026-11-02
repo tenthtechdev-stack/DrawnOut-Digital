@@ -10,6 +10,8 @@ interface Props {
   sizes?: string;
   video?: { mp4?: string; webm?: string; captions?: string };
   mobilePoster?: ImageMetadata;
+  motion?: { landscape: string; portrait: string; source: string };
+  motionId?: string;
 }
 const {
   poster,
@@ -20,7 +22,10 @@ const {
   sizes = '(max-width: 640px) 90vw, (max-width: 1023px) 85vw, 70vw',
   video,
   mobilePoster,
+  motion,
+  motionId,
 } = Astro.props;
+const hasMotion = availability === 'approved' && Boolean(motion && motionId);
 const widths = [...new Set([480, 800, 1200, 1440, poster.width])]
   .filter((width) => width <= poster.width)
   .sort((a, b) => a - b);
@@ -40,6 +45,7 @@ const mobileSources = mobilePoster
 <div
   class="media-slot"
   data-media-slot
+  data-portfolio-motion={hasMotion || undefined}
   style={`--media-ratio: ${aspectRatio}; --mobile-media-ratio: ${mobilePoster ? `${mobilePoster.width} / ${mobilePoster.height}` : aspectRatio}`}
 >
   <picture>
@@ -63,6 +69,25 @@ const mobileSources = mobilePoster
       format="webp"
     />
   </picture>
+  {hasMotion && motion && (
+    <video
+      id={motionId}
+      class="portfolio-motion-video"
+      data-portfolio-video
+      data-landscape={`/media/portfolio/${motion.landscape}`}
+      data-portrait={`/media/portfolio/${motion.portrait}`}
+      data-motion-state="poster"
+      muted
+      autoplay
+      playsinline
+      loop
+      preload="none"
+      aria-hidden="true"
+      tabindex="-1"
+      width="960"
+      height="540"
+    />
+  )}
   {hasApprovedVideo && (
     <video
       class="media-video"
@@ -82,6 +107,9 @@ const mobileSources = mobilePoster
   )}
   {availability === 'placeholder' && <span class="preview-tag">Visual preview</span>}
 </div>
+<script>
+  import '../scripts/portfolio-motion';
+</script>
 <style>
   .media-slot {
     position: relative;
@@ -114,6 +142,23 @@ const mobileSources = mobilePoster
     font-size: 9px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+  }
+  .portfolio-motion-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .portfolio-motion-video[data-motion-state='playing'] {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .portfolio-motion-video {
+      display: none;
+    }
   }
   .media-video {
     position: absolute;

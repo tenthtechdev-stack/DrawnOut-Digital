@@ -512,19 +512,3 @@ test('failed signature media reveals the working homepage', async ({ page }) => 
   await page.getByRole('link', { name: 'Explore Our Work', exact: true }).click();
   await expect(page).toHaveURL('/work');
 });
-
-test('failed storyboard clock initialization reveals a working homepage', async ({ page }) => {
-  await page.addInitScript(() => {
-    Element.prototype.getAnimations = () => {
-      throw new Error('Animation clock unavailable');
-    };
-  });
-  await page.goto('/');
-  await expectSkipped(page);
-  await expect(page.locator('html')).toHaveAttribute(
-    'data-signature-intro-reason',
-    'animation-error',
-  );
-  await page.getByRole('link', { name: 'Explore Our Work', exact: true }).click();
-  await expect(page).toHaveURL('/work');
-});

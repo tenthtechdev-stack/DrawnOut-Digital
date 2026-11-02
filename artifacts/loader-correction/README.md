@@ -2,7 +2,7 @@
 
 Real headed Chromium recordings from the local production build, captured on 28 October 2026. No animation timelines were sought or sped up. This is visual-review evidence, not approval or a claim about the separately hosted Netlify build.
 
-[Validation report](../../docs/next-milestone/STAGE_A_VALIDATION.md) · [Source diagnosis](../../docs/next-milestone/STAGE_A_STATUS.md) · [Measured browser evidence](evidence.json)
+[Validation report](../../docs/next-milestone/STAGE_A_VALIDATION.md) · [Source diagnosis](../../docs/next-milestone/STAGE_A_STATUS.md) · [Measured browser evidence](evidence.json) · [Final automated results](test-results.json)
 
 ## Desktop 1440px
 
