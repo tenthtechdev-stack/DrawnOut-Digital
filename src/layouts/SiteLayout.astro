@@ -42,7 +42,7 @@ replayURL.searchParams.set('showIntro', '1');
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <title>{title}</title>
-    {loaderEnabled && <SignatureIntroBoot />}
+    {motionEnabled && <SignatureIntroBoot enableIntro={loaderEnabled} />}
     {motionEnabled && Astro.url.pathname === '/' && <script is:inline>
       (() => {
         const html = document.documentElement;

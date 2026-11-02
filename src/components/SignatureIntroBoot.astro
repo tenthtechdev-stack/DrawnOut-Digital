@@ -1,9 +1,13 @@
 ---
+interface Props {
+  enableIntro?: boolean;
+}
+const { enableIntro = true } = Astro.props;
 const allowReplay = import.meta.env.DEV;
 ---
 
 <!-- Content is the default; the optional loader has a navigation-clock deadline. -->
-<script is:inline define:vars={{ allowReplay }}>
+<script is:inline define:vars={{ allowReplay, enableIntro }}>
   (() => {
     const html = document.documentElement;
     const intentKey = 'drawnout-loop-navigation';
@@ -61,6 +65,8 @@ const allowReplay = import.meta.env.DEV;
         // The next document also fails open when storage is unavailable.
       }
     });
+    // Routes with their own arrival still record ordinary internal navigation.
+    if (!enableIntro) return;
     try {
       const preference = matchMedia('(prefers-reduced-motion: reduce)');
       const connection = Reflect.get(navigator, 'connection');
