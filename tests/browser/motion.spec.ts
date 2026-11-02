@@ -1,8 +1,13 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
 
-// These cases isolate returning-visitor editorial motion; fresh intro timing has its own suite.
+// Isolate editorial motion through the supported storage-unavailable fallback.
+// Home links now intentionally replay the intro and have dedicated coverage.
 test.beforeEach(async ({ page }) => {
-  await page.addInitScript(() => sessionStorage.setItem('drawnout-loop-seen', '1'));
+  await page.addInitScript(() => {
+    Storage.prototype.getItem = () => {
+      throw new DOMException('Storage unavailable in editorial-motion fixture', 'SecurityError');
+    };
+  });
 });
 
 interface MotionScene {

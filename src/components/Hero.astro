@@ -68,6 +68,7 @@ import { site } from '../data/site';
   .hero {
     position: relative;
     isolation: isolate;
+    overflow: clip;
   }
   .hero-atmosphere {
     position: absolute;
@@ -108,6 +109,9 @@ import { site } from '../data/site';
   h1 {
     margin: 36px 0 40px;
     max-width: 80%;
+    width: fit-content;
+    position: relative;
+    isolation: isolate;
     font-size: var(--type-display);
     font-weight: 550;
     line-height: 1.01;
@@ -132,6 +136,7 @@ import { site } from '../data/site';
   }
   .hero-note {
     position: absolute;
+    isolation: isolate;
     right: var(--gutter);
     top: 43%;
   }

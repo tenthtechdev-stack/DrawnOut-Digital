@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-28",
+  "netlify": {
+    "url": "https://drawnoutdigital.netlify.app/",
+    "command": "curl -I -L --max-time 25 https://drawnoutdigital.netlify.app/",
+    "exitCode": 56,
+    "error": "CONNECT tunnel failed, response 403",
+    "deployedSha": null
+  },
+  "mirrorRepository": {
+    "url": "https://github.com/tenthtechdev-stack/DrawnOut-Digital",
+    "command": "gh api repos/tenthtechdev-stack/DrawnOut-Digital",
+    "httpStatus": 404,
+    "access": "not available to this connection"
+  },
+  "conclusion": "Cannot verify hosted SHA or hosted loader behavior. Source defects were diagnosed separately. No deployment or preview repository push."
+}

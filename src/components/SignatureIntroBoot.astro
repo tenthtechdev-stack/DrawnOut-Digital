@@ -1,67 +1,155 @@
-<!-- The homepage is always the default. This tiny gate expires even if the module never loads. -->
-<script is:inline>
+---
+const allowReplay = import.meta.env.DEV;
+---
+
+<!-- Content is the default; the optional loader has a navigation-clock deadline. -->
+<script is:inline define:vars={{ allowReplay }}>
   (() => {
     const html = document.documentElement;
+    const intentKey = 'drawnout-loop-navigation';
+    const duration = 4200;
+    const releaseAt = 4900;
+    const latestStart = releaseAt - duration;
+    const minimumBrief = 300;
+    let storageAvailable = true;
+    let internalNavigation = false;
+    const navigation = performance.getEntriesByType('navigation')[0];
+    const destination = location.pathname + location.search;
+    try {
+      const stored = sessionStorage.getItem(intentKey);
+      sessionStorage.removeItem(intentKey);
+      // Some browsers allow reads while quota/privacy policy blocks writes.
+      // Without a writable store, a later internal click cannot be classified.
+      sessionStorage.setItem(intentKey, '{}');
+      sessionStorage.removeItem(intentKey);
+      if (stored && navigation?.type !== 'reload') {
+        const intent = JSON.parse(stored);
+        internalNavigation =
+          intent.to === destination &&
+          Date.now() - intent.at >= 0 &&
+          Date.now() - intent.at < 15000;
+      }
+    } catch {
+      // If intent cannot be recorded, favour immediate navigation over a gate.
+      storageAvailable = false;
+    }
+    // Listen after link handlers so prevented filter/hash actions do not leave
+    // a stale intent. This never cancels or delays the browser's navigation.
+    window.addEventListener('click', (event) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      )
+        return;
+      const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
+      if (!link || link.hasAttribute('download') || (link.target && link.target !== '_self'))
+        return;
+      try {
+        const url = new URL(link.href, location.href);
+        if (url.origin !== location.origin || !['http:', 'https:'].includes(url.protocol)) return;
+        if (url.pathname === location.pathname && url.search === location.search && url.hash)
+          return;
+        sessionStorage.setItem(
+          intentKey,
+          JSON.stringify({ to: url.pathname + url.search, at: Date.now() }),
+        );
+      } catch {
+        // The next document also fails open when storage is unavailable.
+      }
+    });
     try {
       const preference = matchMedia('(prefers-reduced-motion: reduce)');
       const connection = Reflect.get(navigator, 'connection');
-      const navigation = performance.getEntriesByType('navigation')[0];
-      if (sessionStorage.getItem('drawnout-loop-seen') === '1') return;
-      // Consume the initial homepage visit even when it opts out or arrives late.
-      // Returning from an internal page must never introduce a previously skipped gate.
-      sessionStorage.setItem('drawnout-loop-seen', '1');
-      if (
-        preference.matches ||
-        connection?.saveData ||
-        document.hidden ||
-        location.hash ||
-        scrollY > 0 ||
-        navigation?.type === 'back_forward' ||
-        performance.now() > 600
-      )
+      const replay = allowReplay && new URLSearchParams(location.search).get('showIntro') === '1';
+      let exclusion;
+      if (!storageAvailable) exclusion = 'storage-unavailable';
+      else if (preference.matches) exclusion = 'reduced-motion';
+      else if (connection?.saveData) exclusion = 'save-data';
+      else if (document.hidden) exclusion = 'hidden';
+      else if (location.hash) exclusion = 'deep-link';
+      else if (scrollY > 0) exclusion = 'restored-scroll';
+      else if (navigation?.type === 'back_forward') exclusion = 'history';
+      // Home is the branded arrival, including a Home/logo click from Work or
+      // Contact. Other internal destinations remain immediate.
+      else if (internalNavigation && location.pathname !== '/' && !replay)
+        exclusion = 'internal-navigation';
+      else if (performance.now() >= releaseAt - minimumBrief) exclusion = 'insufficient-time';
+      if (exclusion) {
+        html.dataset.signatureIntro = 'skipped';
+        html.dataset.signatureIntroReason = exclusion;
         return;
+      }
       html.dataset.signatureIntro = 'pending';
-      html.dataset.heroEntrance = 'static';
+      if (location.pathname === '/') html.dataset.heroEntrance = 'static';
+      if (replay) html.dataset.signatureIntroDebug = 'replay';
       const controller = new AbortController();
       const { signal } = controller;
       let handoffTimer;
       let completionTimer;
       const finish = (reason = 'skipped') => {
         if (!['pending', 'playing'].includes(html.dataset.signatureIntro)) return;
-        html.dataset.signatureIntro = reason === 'complete' ? 'completed' : 'skipped';
+        html.dataset.signatureIntro = ['complete', 'brief-complete'].includes(reason)
+          ? 'completed'
+          : 'skipped';
         html.dataset.signatureIntroReason = reason;
         html.dataset.signatureIntroEnded = performance.now().toFixed(2);
-        clearTimeout(watchdog);
+        const overlay = document.querySelector('[data-signature-intro-overlay]');
+        if (overlay) overlay.hidden = true;
         clearTimeout(deadline);
         clearTimeout(handoffTimer);
         clearTimeout(completionTimer);
         controller.abort();
         window.dispatchEvent(new CustomEvent('signature:intro-end', { detail: { reason } }));
       };
-      const deadline = setTimeout(() => finish('deadline'), Math.max(0, 4800 - performance.now()));
-      const watchdog = setTimeout(() => finish('initialization-timeout'), 650);
+      const deadline = setTimeout(
+        () => finish('deadline'),
+        Math.max(0, releaseAt - performance.now()),
+      );
       window.__drawnoutIntro = {
+        fullUntil: latestStart,
         finish,
-        start() {
+        start(requestedMode = 'full') {
           if (html.dataset.signatureIntro !== 'pending') return false;
-          if (performance.now() > 600) {
-            finish('late-initialization');
+          const now = performance.now();
+          const remaining = releaseAt - now;
+          if (remaining < minimumBrief) {
+            finish('insufficient-time');
             return false;
           }
-          clearTimeout(watchdog);
+          if (scrollY > 0) {
+            finish('restored-scroll');
+            return false;
+          }
+          // Never accelerate the approved choreography. HTML/style startup
+          // outside its remaining budget gets an explicitly shorter branded
+          // handoff with its own mode and completion reason.
+          const mode = requestedMode === 'brief' || now > latestStart ? 'brief' : 'full';
+          const playingFor = mode === 'full' ? duration : Math.min(1100, remaining - 30);
+          html.dataset.signatureIntroMode = mode;
           html.dataset.signatureIntro = 'playing';
-          html.dataset.signatureIntroStarted = performance.now().toFixed(2);
-          handoffTimer = setTimeout(
-            () => window.dispatchEvent(new Event('signature:intro-handoff')),
-            3500,
+          html.dataset.signatureIntroStarted = now.toFixed(2);
+          html.style.setProperty('--intro-brief-duration', `${playingFor}ms`);
+          if (location.pathname === '/' && mode === 'full') {
+            handoffTimer = setTimeout(
+              () => window.dispatchEvent(new Event('signature:intro-handoff')),
+              3500,
+            );
+          }
+          completionTimer = setTimeout(
+            () => finish(mode === 'full' ? 'complete' : 'brief-complete'),
+            playingFor,
           );
-          completionTimer = setTimeout(() => finish('complete'), 4200);
           return true;
         },
       };
       const input = (event) => {
-        // Keep the visible button present through pointerup; its click handler
-        // finishes the intro without the gesture falling through to page links.
+        // Mobile restoration/ScrollTrigger can notify scroll without movement.
+        // Actual wheel/touch input still skips immediately, even at the top.
+        if (event.type === 'scroll' && scrollX === 0 && scrollY === 0) return;
         if (
           event.type === 'pointerdown' &&
           event.target instanceof Element &&
@@ -111,8 +199,132 @@
         { signal },
       );
       window.addEventListener('pagehide', () => finish('navigation'), { signal });
+      window.addEventListener(
+        'pageshow',
+        (event) => {
+          if (event.persisted) finish('history');
+        },
+        { signal },
+      );
     } catch {
       html.dataset.signatureIntro = 'skipped';
     }
   })();
 </script>
+
+<!-- The short handoff has no dependency on the page stylesheet, fonts, images,
+     modules or WebGL. It is used only when the complete storyboard cannot fit. -->
+<style is:inline>
+  [data-intro-brief] {
+    display: none;
+  }
+  html[data-signature-intro='playing'][data-signature-intro-mode='brief']
+    [data-signature-intro-overlay] {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    overflow: hidden;
+    background: #f7f5f1;
+    color: #191817;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none;
+    font-family: 'Manrope Variable', Arial, sans-serif;
+    animation: drawnout-brief-exit var(--intro-brief-duration, 1100ms) linear both;
+  }
+  html[data-signature-intro-mode='brief'] [data-signature-intro-overlay] .intro-composition {
+    display: none;
+  }
+  html[data-signature-intro-mode='brief'] [data-intro-brief] {
+    display: block;
+    position: absolute;
+    inset-inline: max(20px, 4vw);
+    bottom: max(110px, 16vh);
+    color: #c14815;
+    font-size: clamp(48px, 17vw, 300px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.075em;
+  }
+  html[data-signature-intro-mode='brief'] [data-intro-brief]::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: min(100%, 36rem);
+    margin-top: 28px;
+    background: currentColor;
+    transform-origin: left;
+    animation: drawnout-brief-rule var(--intro-brief-duration, 1100ms) ease-out both;
+  }
+  html[data-signature-intro-mode='brief'] .intro-top,
+  html[data-signature-intro-mode='brief'] .intro-bottom {
+    position: absolute;
+    inset-inline: max(20px, 4vw);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 11px;
+  }
+  html[data-signature-intro-mode='brief'] .intro-top {
+    top: 28px;
+  }
+  html[data-signature-intro-mode='brief'] .intro-bottom {
+    bottom: 25px;
+  }
+  html[data-signature-intro-mode='brief'] [data-signature-skip] {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 44px;
+    padding: 0 18px;
+    border: 1px solid #19181755;
+    border-radius: 50px;
+    background: #f7f5f1;
+    color: #191817;
+    font: inherit;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  html[data-signature-intro-mode='brief'] [data-signature-skip] svg {
+    width: 16px;
+    height: 16px;
+  }
+  html[data-signature-intro-mode='brief'] [data-signature-skip]:focus-visible {
+    outline: 3px solid #b63c0b;
+    outline-offset: 4px;
+  }
+  @keyframes drawnout-brief-rule {
+    from {
+      transform: scaleX(0.08);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  @keyframes drawnout-brief-exit {
+    0%,
+    70% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  @media (max-width: 639px) {
+    html[data-signature-intro-mode='brief'] .intro-top > span:last-child {
+      display: none;
+    }
+    html[data-signature-intro-mode='brief'] .intro-bottom > span {
+      max-width: 145px;
+      line-height: 1.7;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-signature-intro-overlay] {
+      display: none !important;
+    }
+  }
+</style>

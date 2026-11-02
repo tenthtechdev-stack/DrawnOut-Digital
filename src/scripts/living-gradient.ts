@@ -20,47 +20,55 @@ const vertexSource = `
   }
 `;
 
-// Three moving colour fields bend each other's edges. No textures, framebuffer
-// feedback, noise loops, lighting passes or per-frame CPU geometry are needed.
+// A right-localized folded ribbon. The moving boundary and inner contours evolve
+// at different rates, so vertical flow deforms rather than translating wallpaper.
+// One analytic pass; no textures, simulation buffers, or per-frame CPU geometry.
 const fragmentSource = `
   precision mediump float;
   varying vec2 uv;
   uniform float time;
-  uniform float portrait;
   uniform vec2 pointer;
 
-  float field(vec2 p, vec2 centre, vec2 size) {
-    vec2 delta = (p - centre) / size;
-    return exp(-dot(delta, delta) * 2.2);
+  // Stationary screen-space grain: fine, low-amplitude, never temporal static.
+  float grain(vec2 point) {
+    vec3 p = fract(vec3(point.xyx) * 0.1031);
+    p += dot(p, p.yzx + 33.33);
+    return fract((p.x + p.y) * p.z);
   }
 
   void main() {
     vec2 p = vec2(uv.x, 1.0 - uv.y);
-    float t = time * 0.26;
-    vec2 flow = vec2(
-      sin(p.y * 5.2 + t) * 0.11 + sin(p.x * 4.1 - t * 0.8) * 0.055,
-      cos(p.x * 4.7 - t * 0.7) * 0.09 + sin(p.y * 6.0 + t * 0.9) * 0.045
-    );
-    vec2 q = p + flow + pointer * vec2(0.055, 0.035);
-    vec2 orangeCentre = vec2(0.86 + sin(t * 0.84) * 0.2, 0.66 + cos(t) * 0.18);
-    vec2 amberCentre = vec2(0.76 + cos(t * 0.75 + 2.0) * 0.23, 0.9 + sin(t * 0.9) * 0.19);
-    vec2 lilacCentre = vec2(0.49 + sin(t * 0.65 + 3.0) * 0.17, 0.96 + cos(t * 0.85) * 0.12);
-    float orange = field(q, orangeCentre, vec2(0.62, 0.63));
-    float amber = field(q, amberCentre, vec2(0.64, 0.52));
-    float lilac = field(q, lilacCentre, vec2(0.60, 0.37));
+    float t = time;
+    vec2 delta = p - (pointer * 0.5 + 0.5);
+    float influence = exp(-dot(delta, delta) * 16.0) * length(pointer);
+    vec2 q = p + vec2(-delta.y, delta.x) * influence * 0.12;
+    q += pointer * influence * 0.018;
+
+    // Broad waves travel vertically, with a second counter-moving curl that
+    // changes each fold's width and shape throughout the 4–8 second phrase.
+    float travel = q.y * 6.3 - t * 1.05;
+    float curl = sin(q.y * 10.5 + t * 0.63 + sin(travel) * 0.9);
+    float boundary = 0.625 + sin(travel) * 0.045 + curl * 0.022;
+    float envelope = smoothstep(boundary - 0.115, boundary + 0.11, p.x);
+    float fold = q.x + sin(travel + q.x * 2.8) * 0.085
+      + sin(q.y * 11.0 - t * 0.72 + curl) * 0.035;
+    float contour = fold * 13.5 + sin(travel * 0.72 + t * 0.2) * 1.3;
+    float amber = 0.5 + 0.5 * sin(contour);
+    float coral = smoothstep(0.45, 0.95,
+      0.5 + 0.5 * sin(contour + 1.4 + curl * 0.55));
+    float lightFold = pow(0.5 + 0.5 * sin(contour - 1.8), 3.0);
+    float lilac = smoothstep(0.74, 0.99,
+      0.5 + 0.5 * sin(travel * 0.7 + fold * 9.0 + t * 0.17));
+
     vec3 paper = vec3(0.9686, 0.9608, 0.9451);
-    vec3 colour = paper;
-    colour = mix(colour, vec3(1.0, 0.72, 0.43), amber * 0.83);
-    colour = mix(colour, vec3(1.0, 0.43, 0.22), orange * 0.89);
-    colour = mix(colour, vec3(0.72, 0.67, 0.86), lilac * 0.65);
-    // Keep the approved dark orange headline on a light surface at every phase.
-    // Portrait framing needs the light area across the full width of the heading.
-    float lightLeft = (1.0 - smoothstep(0.50, 0.88, p.x)) * (1.0 - smoothstep(0.58, 0.87, p.y));
-    float lightTop = 1.0 - smoothstep(0.24, 0.62, p.y);
-    float readability = max(lightLeft, lightTop * portrait);
-    colour = mix(colour, paper, readability * 0.91);
-    colour = mix(colour, paper, (1.0 - smoothstep(0.0, 0.18, p.y)) * 0.85);
-    gl_FragColor = vec4(colour, 1.0);
+    vec3 colour = mix(vec3(1.0, 0.82, 0.52), vec3(1.0, 0.64, 0.27), amber);
+    colour = mix(colour, vec3(1.0, 0.43, 0.28), coral * 0.78);
+    colour = mix(colour, vec3(1.0, 0.91, 0.77), lightFold * 0.78);
+    colour = mix(colour, vec3(0.77, 0.72, 0.89), lilac * 0.32);
+    colour += (grain(gl_FragCoord.xy) - 0.5) * 0.012;
+    // Keep the left half paper throughout every phase. This envelope is the
+    // composition, not a rectangle/scrim placed behind individual text nodes.
+    gl_FragColor = vec4(mix(paper, colour, envelope), 1.0);
   }
 `;
 
@@ -187,7 +195,17 @@ function initialize(force = false) {
   }
 
   function updateActivity() {
-    active = !disposed && visible && !document.hidden && !reduced.matches && !connection?.saveData;
+    const intro = document.documentElement.dataset.signatureIntro;
+    const coveredByIntro = intro === 'pending' || intro === 'playing';
+    // The opaque loader covers the hero. Pause CSS as well as WebGL so its
+    // blurred fallback layers do not compete with the approved storyboard.
+    active =
+      !disposed &&
+      visible &&
+      !coveredByIntro &&
+      !document.hidden &&
+      !reduced.matches &&
+      !connection?.saveData;
     element!.dataset.gradientActive = String(active);
     if (animationFrame) cancelAnimationFrame(animationFrame);
     animationFrame = 0;
@@ -242,12 +260,10 @@ function initialize(force = false) {
         gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
         const uniforms = {
           time: gl.getUniformLocation(program, 'time'),
-          portrait: gl.getUniformLocation(program, 'portrait'),
           pointer: gl.getUniformLocation(program, 'pointer'),
         };
         draw = () => {
           gl!.uniform1f(uniforms.time, time);
-          gl!.uniform1f(uniforms.portrait, canvas!.width < canvas!.height ? 1 : 0);
           gl!.uniform2f(uniforms.pointer, pointer.x, pointer.y);
           gl!.drawArrays(gl!.TRIANGLES, 0, 3);
         };
@@ -261,7 +277,7 @@ function initialize(force = false) {
     updateActivity();
   }
 
-  const entrance = new MutationObserver(scheduleGraphics);
+  const entrance = new MutationObserver(updateActivity);
   function scheduleGraphics() {
     if (disposed || graphicsStarted || graphicsFrame || !active) return;
     const state = document.documentElement.dataset;
@@ -283,7 +299,7 @@ function initialize(force = false) {
     attributes: true,
     attributeFilter: ['data-signature-intro', 'data-hero-boot', 'data-hero-entrance'],
   });
-  window.addEventListener('signature:intro-end', scheduleGraphics, { signal });
+  window.addEventListener('signature:intro-end', updateActivity, { signal });
   scheduleGraphics();
 
   const intersection = new IntersectionObserver(([entry]) => {

@@ -1,5 +1,6 @@
 interface IntroGate {
-  start: () => boolean;
+  fullUntil: number;
+  start: (mode?: 'full' | 'brief') => boolean;
   finish: (reason?: string) => void;
 }
 

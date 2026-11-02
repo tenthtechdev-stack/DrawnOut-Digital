@@ -1,8 +1,25 @@
 import { defineConfig } from 'astro/config';
+import { realpathSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   output: 'static',
+  // Keep the short opening independent of a render-blocking stylesheet request.
+  // The shared + homepage styles add about 14KB compressed to the HTML.
+  build: { inlineStylesheets: 'always' },
   devToolbar: { enabled: false },
-  vite: { plugins: [tailwindcss()] },
+  vite: {
+    plugins: [tailwindcss()],
+    // Each worktree owns its dependency transforms, even with shared packages.
+    cacheDir: fileURLToPath(new URL('./.astro/vite', import.meta.url)),
+    server: {
+      fs: {
+        allow: [
+          fileURLToPath(new URL('.', import.meta.url)),
+          realpathSync(new URL('./node_modules', import.meta.url)),
+        ],
+      },
+    },
+  },
 });

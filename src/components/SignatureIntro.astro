@@ -40,10 +40,13 @@ const positions = [
 ];
 ---
 
-<div class="signature-intro" data-signature-intro-overlay>
+<div class="signature-intro" data-signature-intro-overlay hidden>
   <div class="intro-top" aria-hidden="true">
     <span>DrawnOut Digital</span>
     <span>From thought to form.</span>
+  </div>
+  <div data-intro-brief aria-hidden="true">
+    DrawnOut
   </div>
   <div class="intro-composition" aria-hidden="true">
     <div class="intro-projects" data-intro-projects>
@@ -121,18 +124,42 @@ const positions = [
     for (const image of overlay.querySelectorAll('img')) {
       if (image.complete && image.naturalWidth === 0) gate.finish('asset-error');
     }
-    if (!gate.start()) {
-      controller.abort();
-      return;
-    }
     // CSS can resolve in separate browser frames (especially during startup).
     // Anchor every storyboard actor to the gate's real document-clock start,
     // rather than letting independently resolved CSS animations drift apart.
-    const origin = performance.now();
+    let origin;
     let syncFrame;
     const synchronize = () => {
       if (signal.aborted) return;
       try {
+        if (origin === undefined) {
+          // Wait only within the full-sequence budget. Both the stylesheet and
+          // real artwork must be ready before committing to the full story.
+          // Late assets/HTML get a distinct, deliberately brief branded handoff.
+          const stylesReady =
+            getComputedStyle(overlay).getPropertyValue('--intro-styles-ready').trim() === '1';
+          const imagesReady = [...overlay.querySelectorAll('img')].every(
+            (image) => image.complete && image.naturalWidth > 0,
+          );
+          if ((!stylesReady || !imagesReady) && performance.now() < gate.fullUntil) {
+            syncFrame = requestAnimationFrame(synchronize);
+            return;
+          }
+          const mode = stylesReady && imagesReady ? 'full' : 'brief';
+          if (mode === 'brief' || performance.now() > gate.fullUntil)
+            document.documentElement.dataset.signatureIntroFallback = !stylesReady
+              ? 'style-delay'
+              : !imagesReady
+                ? 'asset-delay'
+                : 'late-start';
+          if (!gate.start(mode)) {
+            controller.abort();
+            return;
+          }
+          origin = Number(document.documentElement.dataset.signatureIntroStarted);
+          overlay.hidden = false;
+          if (document.documentElement.dataset.signatureIntroMode === 'brief') return;
+        }
         const animations = overlay.getAnimations({ subtree: true });
         const names = animations.map((animation) => animation.animationName ?? '');
         if (
@@ -156,7 +183,15 @@ const positions = [
   import '../scripts/signature-intro';
 </script>
 <style>
+  /* Mobile Chromium can restore a content anchor on refresh even at scrollY=0.
+     Keep the top-of-page loader stable while it owns the screen; history and
+     deep links bypass this state and retain normal browser restoration. */
+  :global(html[data-signature-intro='pending']),
+  :global(html[data-signature-intro='playing']) {
+    overflow-anchor: none;
+  }
   .signature-intro {
+    --intro-styles-ready: 1;
     --intro-grid-inset: max(var(--gutter), calc((100vw - var(--page-max)) / 2 + var(--gutter)));
     --intro-word-size: clamp(48px, 17vw, 300px);
     --intro-word-bottom: clamp(96px, 12svh, 144px);
@@ -177,8 +212,10 @@ const positions = [
     pointer-events: none;
     isolation: isolate;
   }
-  :global(html:is([data-signature-intro='pending'], [data-signature-intro='playing']))
-    .signature-intro {
+  .signature-intro[hidden] {
+    display: none !important;
+  }
+  :global(html[data-signature-intro='playing']) .signature-intro {
     display: flex;
     flex-direction: column;
   }

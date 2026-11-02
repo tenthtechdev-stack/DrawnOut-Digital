@@ -1,0 +1,1395 @@
+{
+  "focused_final": {
+    "stats": {
+      "startTime": "2026-10-28T10:39:08.916Z",
+      "duration": 39493.214,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "a zero-position scroll notification preserves the loader while actual scrolling skips it",
+        "status": "expected",
+        "durationMs": 834,
+        "measurements": {}
+      },
+      {
+        "title": "a fresh load and both consecutive refreshes play the full loop at 390px",
+        "status": "expected",
+        "durationMs": 14166,
+        "measurements": {
+          "refreshes-390": {
+            "width": 390,
+            "completionsMs": [4438.1, 4284, 4288.1]
+          }
+        }
+      },
+      {
+        "title": "a scrolled mobile refresh preserves the browser position and skips the loader",
+        "status": "expected",
+        "durationMs": 820,
+        "measurements": {}
+      },
+      {
+        "title": "fluid shader evolves at 0/2/5s after the loader at 320px and pauses offscreen",
+        "status": "expected",
+        "durationMs": 10827,
+        "measurements": {
+          "fluid-gradient-320": {
+            "width": 320,
+            "frames": [
+              {
+                "elapsedMs": 0,
+                "state": {
+                  "renderer": "webgl",
+                  "active": true,
+                  "frames": 0,
+                  "time": 0,
+                  "width": 320,
+                  "height": 610,
+                  "pointer": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "target": {
+                    "x": 0,
+                    "y": 0
+                  }
+                }
+              },
+              {
+                "elapsedMs": 2004,
+                "state": {
+                  "renderer": "webgl",
+                  "active": true,
+                  "frames": 59,
+                  "time": 1.9863999999999988,
+                  "width": 320,
+                  "height": 610,
+                  "pointer": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "target": {
+                    "x": 0,
+                    "y": 0
+                  }
+                }
+              },
+              {
+                "elapsedMs": 5002,
+                "state": {
+                  "renderer": "webgl",
+                  "active": true,
+                  "frames": 149,
+                  "time": 4.986399999999995,
+                  "width": 320,
+                  "height": 610,
+                  "pointer": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "target": {
+                    "x": 0,
+                    "y": 0
+                  }
+                }
+              }
+            ],
+            "changes": [
+              {
+                "elapsedMs": 2004,
+                "meanChannelChange": 18.10885416666665,
+                "colourfulFraction": 0.5134765625,
+                "warmShare": 0.9483960948396095,
+                "quadrants": [
+                  {
+                    "changedFraction": 0.7333333333333333,
+                    "colourfulFraction": 0.553125
+                  },
+                  {
+                    "changedFraction": 0.325,
+                    "colourfulFraction": 0.041666666666666664
+                  },
+                  {
+                    "changedFraction": 0.8393229166666667,
+                    "colourfulFraction": 0.9190104166666667
+                  },
+                  {
+                    "changedFraction": 0.9080729166666667,
+                    "colourfulFraction": 0.5401041666666667
+                  }
+                ]
+              },
+              {
+                "elapsedMs": 5002,
+                "meanChannelChange": 62.16998697916692,
+                "colourfulFraction": 0.8828125,
+                "warmShare": 0.9990412979351032,
+                "quadrants": [
+                  {
+                    "changedFraction": 0.9216145833333333,
+                    "colourfulFraction": 0.8328125
+                  },
+                  {
+                    "changedFraction": 0.9825520833333333,
+                    "colourfulFraction": 0.9760416666666667
+                  },
+                  {
+                    "changedFraction": 0.9825520833333333,
+                    "colourfulFraction": 0.7270833333333333
+                  },
+                  {
+                    "changedFraction": 1,
+                    "colourfulFraction": 0.9953125
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "opening completes automatically within five navigation seconds at 1440px",
+        "status": "expected",
+        "durationMs": 4746,
+        "measurements": {
+          "intro-1440": {
+            "layoutShiftSum": 0,
+            "lastVisible": 4272.79999999993,
+            "ended": 4443.1,
+            "reason": "complete",
+            "sawPartialWave": true,
+            "synchronizedSamples": 11,
+            "maximumRevealDrift": 1.1102230246251565e-16,
+            "revealCheckpoints": [
+              {
+                "time": 1069.2999999999302,
+                "waveRemaining": 0.816971,
+                "textRemaining": 0.8169710000000001
+              },
+              {
+                "time": 1448.2999999999302,
+                "waveRemaining": 0.597943,
+                "textRemaining": 0.597943
+              },
+              {
+                "time": 1821.5999999999767,
+                "waveRemaining": 0.388457,
+                "textRemaining": 0.388457
+              },
+              {
+                "time": 2195.79999999993,
+                "waveRemaining": 0.169429,
+                "textRemaining": 0.16942900000000002
+              }
+            ],
+            "sawFullName": true,
+            "sawCompletedWipe": true,
+            "readablePartialSamples": 11,
+            "hold": {
+              "from": 2491.5,
+              "until": 2691.5,
+              "duration": 200,
+              "waveStart": 741.5,
+              "waveEnd": 2491.5,
+              "wordStart": 741.5,
+              "wordEnd": 2491.5,
+              "completeClip": "inset(0px)",
+              "fadeFrom": 1,
+              "fadeTo": 0
+            },
+            "holdSamples": [
+              {
+                "time": 2561.7,
+                "fullyVisible": true
+              }
+            ],
+            "maximumSampleGap": 266.69999999999993,
+            "fullNameGeometry": {
+              "text": "DrawnOut",
+              "left": 60.46875,
+              "right": 1083.1875,
+              "top": 532.203125,
+              "bottom": 806.203125,
+              "boxTop": 547.203125,
+              "boxBottom": 792,
+              "width": 1022.71875,
+              "fontSize": 244.8,
+              "gridLeft": 60.46875,
+              "skipTop": 831,
+              "viewportWidth": 1440,
+              "viewportHeight": 900
+            },
+            "sawIndependentEntrance": true,
+            "sawHeldPose": true,
+            "layerCheckpoints": [
+              {
+                "phase": "separate entrance",
+                "time": 2841.29999999993,
+                "handY": 252.912,
+                "plaqueY": -421.52,
+                "imagesLoaded": true
+              },
+              {
+                "phase": "registered held pose",
+                "time": 3516.29999999993,
+                "handY": 0.0890381,
+                "plaqueY": -0.148397,
+                "imagesLoaded": true
+              }
+            ],
+            "imageSources": [
+              "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-loader%2Fsrc%2Fassets%2Fsignature%2Femblem-plaque.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=810&h=1440&q=92&f=webp",
+              "http://127.0.0.1:4321/_image?href=%2F%40fs%2Fworkspace%2Fdrawnout-loader%2Fsrc%2Fassets%2Fsignature%2Fhand-empty.png%3ForigWidth%3D810%26origHeight%3D1440%26origFormat%3Dpng&w=810&h=1440&q=92&f=webp"
+            ],
+            "legacyCompositeCount": 0
+          }
+        }
+      },
+      {
+        "title": "six approved project posters reveal with the wave and keep SOL prominent at 1440px",
+        "status": "expected",
+        "durationMs": 5270,
+        "measurements": {
+          "project-squares-1440": {
+            "slugs": [
+              "bunzo",
+              "triarch",
+              "sol-community-center",
+              "churros",
+              "by-tech-group",
+              "capture"
+            ],
+            "images": [
+              {
+                "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-loader/src/assets/portfolio/bunzo-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=340&h=340&q=78&f=webp&fit=cover",
+                "loaded": true,
+                "width": 170,
+                "height": 170,
+                "fit": "cover"
+              },
+              {
+                "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-loader/src/assets/portfolio/triarch-business-card.webp?origWidth=814&origHeight=931&origFormat=webp&w=340&h=340&q=78&f=webp&fit=cover",
+                "loaded": true,
+                "width": 170,
+                "height": 170,
+                "fit": "cover"
+              },
+              {
+                "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-loader/src/assets/portfolio/sol-community-signage.webp?origWidth=650&origHeight=397&origFormat=webp&w=340&h=208&q=78&f=webp&fit=cover",
+                "loaded": true,
+                "width": 170,
+                "height": 104,
+                "fit": "contain"
+              },
+              {
+                "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-loader/src/assets/portfolio/churros-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=340&h=340&q=78&f=webp&fit=cover",
+                "loaded": true,
+                "width": 170,
+                "height": 170,
+                "fit": "cover"
+              },
+              {
+                "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-loader/src/assets/portfolio/by-tech-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=340&h=340&q=78&f=webp&fit=cover",
+                "loaded": true,
+                "width": 170,
+                "height": 170,
+                "fit": "cover"
+              },
+              {
+                "source": "http://127.0.0.1:4321/_image?href=/@fs/workspace/drawnout-loader/src/assets/portfolio/capture-applications.webp?origWidth=1440&origHeight=811&origFormat=webp&w=340&h=340&q=78&f=webp&fit=cover",
+                "loaded": true,
+                "width": 170,
+                "height": 170,
+                "fit": "cover"
+              }
+            ],
+            "arrivals": [619.875, 878.875, 1094.5625, 1406.9375, 1655.4375, 1898.25],
+            "artworkTimings": [
+              {
+                "clockOffset": 0,
+                "start": 620,
+                "end": 900,
+                "fromOpacity": 0,
+                "toOpacity": 1,
+                "finalClip": "inset(0px)"
+              },
+              {
+                "clockOffset": 0,
+                "start": 879,
+                "end": 1159,
+                "fromOpacity": 0,
+                "toOpacity": 1,
+                "finalClip": "inset(0px)"
+              },
+              {
+                "clockOffset": 0,
+                "start": 1095,
+                "end": 1375,
+                "fromOpacity": 0,
+                "toOpacity": 1,
+                "finalClip": "inset(0px)"
+              },
+              {
+                "clockOffset": 0,
+                "start": 1407,
+                "end": 1687,
+                "fromOpacity": 0,
+                "toOpacity": 1,
+                "finalClip": "inset(0px)"
+              },
+              {
+                "clockOffset": 0,
+                "start": 1656,
+                "end": 1936,
+                "fromOpacity": 0,
+                "toOpacity": 1,
+                "finalClip": "inset(0px)"
+              },
+              {
+                "clockOffset": 0,
+                "start": 1898,
+                "end": 2178,
+                "fromOpacity": 0,
+                "toOpacity": 1,
+                "finalClip": "inset(0px)"
+              }
+            ],
+            "sawOutline": [true, true, true, true, true, true],
+            "revealStarts": [753.3000000000001, 1003.2, 1119.9, 1503.3000000000002, 1753.2, 2019.8],
+            "lastUnrevealed": [
+              603.3000000000001, 869.9000000000001, 1003.2, 1386.6000000000001, 1636.6000000000001,
+              1886.4999999999998
+            ],
+            "lastIncomplete": 2136.5,
+            "maximumSampleGap": 250,
+            "sawMixedReveal": true,
+            "fullyVisibleAt": 2269.8999999999996,
+            "geometry": {
+              "frames": [
+                {
+                  "left": 281.4588623046875,
+                  "right": 433.5987548828125,
+                  "top": 377.2600402832031,
+                  "bottom": 529.39990234375,
+                  "width": 152.139892578125,
+                  "height": 152.13986206054688
+                },
+                {
+                  "left": 418.8699951171875,
+                  "right": 571.0098876953125,
+                  "top": 211.37432861328125,
+                  "bottom": 363.51422119140625,
+                  "width": 152.139892578125,
+                  "height": 152.139892578125
+                },
+                {
+                  "left": 588.196044921875,
+                  "right": 755.0491333007812,
+                  "top": 95.56483459472656,
+                  "bottom": 262.41790771484375,
+                  "width": 166.85308837890625,
+                  "height": 166.8530731201172
+                },
+                {
+                  "left": 703.5218505859375,
+                  "right": 855.6617431640625,
+                  "top": 326.20867919921875,
+                  "bottom": 478.34857177734375,
+                  "width": 152.139892578125,
+                  "height": 152.139892578125
+                },
+                {
+                  "left": 880.2044677734375,
+                  "right": 1032.3443603515625,
+                  "top": 377.2600402832031,
+                  "bottom": 529.39990234375,
+                  "width": 152.139892578125,
+                  "height": 152.13986206054688
+                },
+                {
+                  "left": 1007.7857666015625,
+                  "right": 1159.95751953125,
+                  "top": 192.2141571044922,
+                  "bottom": 344.3858947753906,
+                  "width": 152.1717529296875,
+                  "height": 152.17173767089844
+                }
+              ],
+              "slotWidths": [
+                152.139892578125, 152.139892578125, 166.85308837890625, 152.139892578125,
+                152.139892578125, 152.13995361328125
+              ],
+              "groupWidth": 981.552734375,
+              "wordmark": {
+                "left": 60.46875,
+                "right": 1083.1875,
+                "top": 547.203125,
+                "bottom": 792,
+                "width": 1022.71875,
+                "height": 244.796875
+              },
+              "skip": {
+                "left": 1250.578125,
+                "right": 1379.53125,
+                "top": 831,
+                "bottom": 875,
+                "width": 128.953125,
+                "height": 44
+              }
+            },
+            "ended": 4493,
+            "reason": "complete",
+            "overflow": false
+          }
+        }
+      }
+    ]
+  },
+  "previous_full": {
+    "stats": {
+      "startTime": "2026-10-27T17:25:30.019Z",
+      "duration": 391096.493,
+      "expected": 184,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "concept a: usable at 360px",
+        "status": "expected",
+        "durationMs": 813
+      },
+      {
+        "title": "concept a: usable at 390px",
+        "status": "expected",
+        "durationMs": 839
+      },
+      {
+        "title": "concept a: usable at 768px",
+        "status": "expected",
+        "durationMs": 664
+      },
+      {
+        "title": "concept a: usable at 1024px",
+        "status": "expected",
+        "durationMs": 617
+      },
+      {
+        "title": "concept a: usable at 1440px",
+        "status": "expected",
+        "durationMs": 1552
+      },
+      {
+        "title": "concept a: usable at 1920px",
+        "status": "expected",
+        "durationMs": 805
+      },
+      {
+        "title": "concept a: no JavaScript and reduced motion remain readable",
+        "status": "expected",
+        "durationMs": 379
+      },
+      {
+        "title": "concept b: usable at 360px",
+        "status": "expected",
+        "durationMs": 680
+      },
+      {
+        "title": "concept b: usable at 390px",
+        "status": "expected",
+        "durationMs": 847
+      },
+      {
+        "title": "concept b: usable at 768px",
+        "status": "expected",
+        "durationMs": 642
+      },
+      {
+        "title": "concept b: usable at 1024px",
+        "status": "expected",
+        "durationMs": 677
+      },
+      {
+        "title": "concept b: usable at 1440px",
+        "status": "expected",
+        "durationMs": 1396
+      },
+      {
+        "title": "concept b: usable at 1920px",
+        "status": "expected",
+        "durationMs": 937
+      },
+      {
+        "title": "concept b: no JavaScript and reduced motion remain readable",
+        "status": "expected",
+        "durationMs": 331
+      },
+      {
+        "title": "concept switch changes the layout and preserves the supplied copy",
+        "status": "expected",
+        "durationMs": 505
+      },
+      {
+        "title": "Contact is responsive and accessible at 390px with official contact links",
+        "status": "expected",
+        "durationMs": 1477
+      },
+      {
+        "title": "Contact is responsive and accessible at 768px with official contact links",
+        "status": "expected",
+        "durationMs": 1554
+      },
+      {
+        "title": "Contact is responsive and accessible at 1440px with official contact links",
+        "status": "expected",
+        "durationMs": 1645
+      },
+      {
+        "title": "an unconfigured form never posts or reports success and offers email instead",
+        "status": "expected",
+        "durationMs": 628
+      },
+      {
+        "title": "no JavaScript leaves the unconfigured form safe and direct contact usable",
+        "status": "expected",
+        "durationMs": 797
+      },
+      {
+        "title": "required fields announce errors, focus the summary and link back to controls",
+        "status": "expected",
+        "durationMs": 1505
+      },
+      {
+        "title": "a configured form has a native POST fallback without JavaScript",
+        "status": "expected",
+        "durationMs": 982
+      },
+      {
+        "title": "whitespace-only values and malformed email are rejected without a request",
+        "status": "expected",
+        "durationMs": 733
+      },
+      {
+        "title": "input limits and the honeypot reject oversized or automated submissions",
+        "status": "expected",
+        "durationMs": 788
+      },
+      {
+        "title": "provider acceptance is announced honestly and duplicate submissions stay blocked",
+        "status": "expected",
+        "durationMs": 825
+      },
+      {
+        "title": "http provider failure keeps the enquiry and never announces success",
+        "status": "expected",
+        "durationMs": 750
+      },
+      {
+        "title": "network provider failure keeps the enquiry and never announces success",
+        "status": "expected",
+        "durationMs": 683
+      },
+      {
+        "title": "malformed provider failure keeps the enquiry and never announces success",
+        "status": "expected",
+        "durationMs": 692
+      },
+      {
+        "title": "not-accepted provider failure keeps the enquiry and never announces success",
+        "status": "expected",
+        "durationMs": 744
+      },
+      {
+        "title": "conflicting-error provider failure keeps the enquiry and never announces success",
+        "status": "expected",
+        "durationMs": 733
+      },
+      {
+        "title": "a timed-out request reports uncertainty without an automatic retry",
+        "status": "expected",
+        "durationMs": 690
+      },
+      {
+        "title": "correcting errors and explicitly retrying a rejected submission preserves a valid enquiry",
+        "status": "expected",
+        "durationMs": 805
+      },
+      {
+        "title": "footer social icons and exact development credit are usable at 320px",
+        "status": "expected",
+        "durationMs": 1103
+      },
+      {
+        "title": "footer social icons and exact development credit are usable at 390px",
+        "status": "expected",
+        "durationMs": 1262
+      },
+      {
+        "title": "footer social icons and exact development credit are usable at 768px",
+        "status": "expected",
+        "durationMs": 1400
+      },
+      {
+        "title": "footer social icons and exact development credit are usable at 1440px",
+        "status": "expected",
+        "durationMs": 1459
+      },
+      {
+        "title": "footer social and attribution links remain usable without JavaScript",
+        "status": "expected",
+        "durationMs": 651
+      },
+      {
+        "title": "Afterglow foundation is readable and complete at 320px",
+        "status": "expected",
+        "durationMs": 1208
+      },
+      {
+        "title": "Afterglow foundation is readable and complete at 360px",
+        "status": "expected",
+        "durationMs": 1176
+      },
+      {
+        "title": "Afterglow foundation is readable and complete at 390px",
+        "status": "expected",
+        "durationMs": 2711
+      },
+      {
+        "title": "Afterglow foundation is readable and complete at 768px",
+        "status": "expected",
+        "durationMs": 4132
+      },
+      {
+        "title": "Afterglow foundation is readable and complete at 1024px",
+        "status": "expected",
+        "durationMs": 3056
+      },
+      {
+        "title": "Afterglow foundation is readable and complete at 1440px",
+        "status": "expected",
+        "durationMs": 6768
+      },
+      {
+        "title": "Afterglow foundation is readable and complete at 1920px",
+        "status": "expected",
+        "durationMs": 2745
+      },
+      {
+        "title": "mobile navigation traps focus, closes with Escape, and restores the trigger",
+        "status": "expected",
+        "durationMs": 930
+      },
+      {
+        "title": "mobile navigation closes after link selection and desktop resize releases its lock",
+        "status": "expected",
+        "durationMs": 995
+      },
+      {
+        "title": "mobile navigation dismisses on the backdrop",
+        "status": "expected",
+        "durationMs": 899
+      },
+      {
+        "title": "no-JavaScript mobile navigation and reduced-motion content stay usable",
+        "status": "expected",
+        "durationMs": 782
+      },
+      {
+        "title": "Work route has shared navigation, metadata, and correct current-page state",
+        "status": "expected",
+        "durationMs": 785
+      },
+      {
+        "title": "Services route has shared navigation, metadata, and correct current-page state",
+        "status": "expected",
+        "durationMs": 608
+      },
+      {
+        "title": "About route has shared navigation, metadata, and correct current-page state",
+        "status": "expected",
+        "durationMs": 598
+      },
+      {
+        "title": "Contact route has shared navigation, metadata, and correct current-page state",
+        "status": "expected",
+        "durationMs": 632
+      },
+      {
+        "title": "hero entrance starts before its first painted text and never replays at 390px",
+        "status": "expected",
+        "durationMs": 2468
+      },
+      {
+        "title": "hero entrance starts before its first painted text and never replays at 768px",
+        "status": "expected",
+        "durationMs": 2525
+      },
+      {
+        "title": "hero entrance starts before its first painted text and never replays at 1440px",
+        "status": "expected",
+        "durationMs": 2598
+      },
+      {
+        "title": "late GSAP loading releases the hero watchdog and preserves the visible static text",
+        "status": "expected",
+        "durationMs": 3100
+      },
+      {
+        "title": "motion enhancement preserves readable content and normal scrolling at 320px",
+        "status": "expected",
+        "durationMs": 1560
+      },
+      {
+        "title": "motion enhancement preserves readable content and normal scrolling at 390px",
+        "status": "expected",
+        "durationMs": 1718
+      },
+      {
+        "title": "motion enhancement preserves readable content and normal scrolling at 768px",
+        "status": "expected",
+        "durationMs": 1769
+      },
+      {
+        "title": "motion enhancement preserves readable content and normal scrolling at 1440px",
+        "status": "expected",
+        "durationMs": 1909
+      },
+      {
+        "title": "motion enhancement preserves readable content and normal scrolling at 1920px",
+        "status": "expected",
+        "durationMs": 2265
+      },
+      {
+        "title": "home image expansion completes and reverses without layout shifts at 390px",
+        "status": "expected",
+        "durationMs": 1106
+      },
+      {
+        "title": "home image expansion completes and reverses without layout shifts at 768px",
+        "status": "expected",
+        "durationMs": 1255
+      },
+      {
+        "title": "home image expansion completes and reverses without layout shifts at 1440px",
+        "status": "expected",
+        "durationMs": 1632
+      },
+      {
+        "title": "work image expansion completes and reverses without layout shifts at 390px",
+        "status": "expected",
+        "durationMs": 962
+      },
+      {
+        "title": "work image expansion completes and reverses without layout shifts at 768px",
+        "status": "expected",
+        "durationMs": 1137
+      },
+      {
+        "title": "work image expansion completes and reverses without layout shifts at 1440px",
+        "status": "expected",
+        "durationMs": 1480
+      },
+      {
+        "title": "case image expansion completes and reverses without layout shifts at 390px",
+        "status": "expected",
+        "durationMs": 1147
+      },
+      {
+        "title": "case image expansion completes and reverses without layout shifts at 768px",
+        "status": "expected",
+        "durationMs": 1333
+      },
+      {
+        "title": "case image expansion completes and reverses without layout shifts at 1440px",
+        "status": "expected",
+        "durationMs": 932
+      },
+      {
+        "title": "filter changes, resize and repeated initialization keep one scoped motion system",
+        "status": "expected",
+        "durationMs": 1325
+      },
+      {
+        "title": "live reduced-motion changes remove scroll choreography and restore it without duplicates",
+        "status": "expected",
+        "durationMs": 963
+      },
+      {
+        "title": "no-JavaScript pages retain readable text, portfolio imagery and navigation",
+        "status": "expected",
+        "durationMs": 1157
+      },
+      {
+        "title": "failed GSAP downloads leave visible content and a usable static page",
+        "status": "expected",
+        "durationMs": 989
+      },
+      {
+        "title": "keyboard focus exposes the complete interactive portfolio image",
+        "status": "expected",
+        "durationMs": 1026
+      },
+      {
+        "title": "editorial Work index loads responsive approved artwork at 320px",
+        "status": "expected",
+        "durationMs": 1839
+      },
+      {
+        "title": "editorial Work index loads responsive approved artwork at 390px",
+        "status": "expected",
+        "durationMs": 2729
+      },
+      {
+        "title": "editorial Work index loads responsive approved artwork at 768px",
+        "status": "expected",
+        "durationMs": 4526
+      },
+      {
+        "title": "editorial Work index loads responsive approved artwork at 1440px",
+        "status": "expected",
+        "durationMs": 5190
+      },
+      {
+        "title": "editorial Work index loads responsive approved artwork at 1920px",
+        "status": "expected",
+        "durationMs": 1930
+      },
+      {
+        "title": "Work categories derive from records and support URL history and keyboard operation",
+        "status": "expected",
+        "durationMs": 1233
+      },
+      {
+        "title": "bunzo case page preserves art direction and navigation at 390px",
+        "status": "expected",
+        "durationMs": 1925
+      },
+      {
+        "title": "bunzo case page preserves art direction and navigation at 768px",
+        "status": "expected",
+        "durationMs": 2332
+      },
+      {
+        "title": "bunzo case page preserves art direction and navigation at 1440px",
+        "status": "expected",
+        "durationMs": 3663
+      },
+      {
+        "title": "triarch case page preserves art direction and navigation at 390px",
+        "status": "expected",
+        "durationMs": 1497
+      },
+      {
+        "title": "triarch case page preserves art direction and navigation at 768px",
+        "status": "expected",
+        "durationMs": 1956
+      },
+      {
+        "title": "triarch case page preserves art direction and navigation at 1440px",
+        "status": "expected",
+        "durationMs": 2935
+      },
+      {
+        "title": "public project navigation stays in the public route namespace and unavailable URLs fail",
+        "status": "expected",
+        "durationMs": 1307
+      },
+      {
+        "title": "Work and case pages remain usable without JavaScript and with reduced motion",
+        "status": "expected",
+        "durationMs": 696
+      },
+      {
+        "title": "reduced-motion Work interactions stay visible with no running animations",
+        "status": "expected",
+        "durationMs": 637
+      },
+      {
+        "title": "every approved project opens a public case from Work with truthful visible fields and usable neighbors",
+        "status": "expected",
+        "durationMs": 3780
+      },
+      {
+        "title": "a missing route opens error recovery immediately without a branded loader",
+        "status": "expected",
+        "durationMs": 455
+      },
+      {
+        "title": "readable but unwritable session storage keeps navigation immediately available",
+        "status": "expected",
+        "durationMs": 980
+      },
+      {
+        "title": "a fresh load and both consecutive refreshes play the full loop at 390px",
+        "status": "expected",
+        "durationMs": 14189
+      },
+      {
+        "title": "a fresh load and both consecutive refreshes play the full loop at 1440px",
+        "status": "expected",
+        "durationMs": 14359
+      },
+      {
+        "title": "a manual same-session revisit replays while clicked internal routes and Work filters do not",
+        "status": "expected",
+        "durationMs": 1901
+      },
+      {
+        "title": "direct /work loading is skippable without a homepage handoff",
+        "status": "expected",
+        "durationMs": 582
+      },
+      {
+        "title": "direct /work/bunzo loading is skippable without a homepage handoff",
+        "status": "expected",
+        "durationMs": 499
+      },
+      {
+        "title": "direct /contact loading is skippable without a homepage handoff",
+        "status": "expected",
+        "durationMs": 4856
+      },
+      {
+        "title": "direct /services loading is skippable without a homepage handoff",
+        "status": "expected",
+        "durationMs": 405
+      },
+      {
+        "title": "direct /about loading is skippable without a homepage handoff",
+        "status": "expected",
+        "durationMs": 574
+      },
+      {
+        "title": "browser back/forward preserves content and scroll without restarting the loader",
+        "status": "expected",
+        "durationMs": 1487
+      },
+      {
+        "title": "a stale matching navigation token cannot suppress a direct load",
+        "status": "expected",
+        "durationMs": 476
+      },
+      {
+        "title": "a fresh mismatched navigation token cannot suppress a direct load",
+        "status": "expected",
+        "durationMs": 526
+      },
+      {
+        "title": "new-tab and modified links do not leave a same-tab suppression token",
+        "status": "expected",
+        "durationMs": 665
+      },
+      {
+        "title": "development replay cannot bypass reduced",
+        "status": "expected",
+        "durationMs": 672
+      },
+      {
+        "title": "development replay cannot bypass save-data",
+        "status": "expected",
+        "durationMs": 610
+      },
+      {
+        "title": "development replay cannot bypass hidden",
+        "status": "expected",
+        "durationMs": 620
+      },
+      {
+        "title": "development replay link starts a new full sequence without a production preference override",
+        "status": "expected",
+        "durationMs": 1087
+      },
+      {
+        "title": "stylesheet readiness at 620ms respects the full-sequence navigation budget",
+        "status": "expected",
+        "durationMs": 5259
+      },
+      {
+        "title": "stylesheet readiness at 850ms respects the full-sequence navigation budget",
+        "status": "expected",
+        "durationMs": 2351
+      },
+      {
+        "title": "prevented same-tab clicks and same-document hash actions leave no navigation intent",
+        "status": "expected",
+        "durationMs": 657
+      },
+      {
+        "title": "missing stylesheet readiness never reveals the loader or blocks content",
+        "status": "expected",
+        "durationMs": 1344
+      },
+      {
+        "title": "development replay keeps deep-link content visible",
+        "status": "expected",
+        "durationMs": 612
+      },
+      {
+        "title": "signature WCAG scan / at 390px",
+        "status": "expected",
+        "durationMs": 1328
+      },
+      {
+        "title": "signature WCAG scan /work at 390px",
+        "status": "expected",
+        "durationMs": 1419
+      },
+      {
+        "title": "signature WCAG scan /work/bunzo at 390px",
+        "status": "expected",
+        "durationMs": 1150
+      },
+      {
+        "title": "signature WCAG scan /contact at 390px",
+        "status": "expected",
+        "durationMs": 1189
+      },
+      {
+        "title": "signature WCAG scan / at 1440px",
+        "status": "expected",
+        "durationMs": 1444
+      },
+      {
+        "title": "signature WCAG scan /work at 1440px",
+        "status": "expected",
+        "durationMs": 1483
+      },
+      {
+        "title": "signature WCAG scan /work/bunzo at 1440px",
+        "status": "expected",
+        "durationMs": 1352
+      },
+      {
+        "title": "signature WCAG scan /contact at 1440px",
+        "status": "expected",
+        "durationMs": 1258
+      },
+      {
+        "title": "mobile menu remains accessible with the signature experience",
+        "status": "expected",
+        "durationMs": 1237
+      },
+      {
+        "title": "major portfolio image opens from an editorial frame to near full bleed at 390px",
+        "status": "expected",
+        "durationMs": 935
+      },
+      {
+        "title": "manifesto words follow actual scroll and reverse at 390px",
+        "status": "expected",
+        "durationMs": 2493
+      },
+      {
+        "title": "major portfolio image opens from an editorial frame to near full bleed at 1440px",
+        "status": "expected",
+        "durationMs": 1077
+      },
+      {
+        "title": "manifesto words follow actual scroll and reverse at 1440px",
+        "status": "expected",
+        "durationMs": 2737
+      },
+      {
+        "title": "selected editorial lines and words reveal once and reflow safely after resizing",
+        "status": "expected",
+        "durationMs": 2902
+      },
+      {
+        "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 390px",
+        "status": "expected",
+        "durationMs": 3557
+      },
+      {
+        "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 768px",
+        "status": "expected",
+        "durationMs": 3849
+      },
+      {
+        "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 1440px",
+        "status": "expected",
+        "durationMs": 3885
+      },
+      {
+        "title": "footer reduced-motion preference restores composed static artwork and working navigation",
+        "status": "expected",
+        "durationMs": 1528
+      },
+      {
+        "title": "footer remains composed with JavaScript disabled",
+        "status": "expected",
+        "durationMs": 703
+      },
+      {
+        "title": "footer stays available when the animation libraries fail to load",
+        "status": "expected",
+        "durationMs": 901
+      },
+      {
+        "title": "fluid shader evolves at 0/2/5s after the loader at 320px and pauses offscreen",
+        "status": "expected",
+        "durationMs": 10657
+      },
+      {
+        "title": "fluid shader evolves at 0/2/5s after the loader at 390px and pauses offscreen",
+        "status": "expected",
+        "durationMs": 10604
+      },
+      {
+        "title": "fluid shader evolves at 0/2/5s after the loader at 768px and pauses offscreen",
+        "status": "expected",
+        "durationMs": 10917
+      },
+      {
+        "title": "fluid shader evolves at 0/2/5s after the loader at 1440px and pauses offscreen",
+        "status": "expected",
+        "durationMs": 11069
+      },
+      {
+        "title": "desktop pointer response eases towards the cursor while mobile touch preserves autonomous motion",
+        "status": "expected",
+        "durationMs": 5087
+      },
+      {
+        "title": "visibility suspension pauses the shader clock and resumes without a time jump",
+        "status": "expected",
+        "durationMs": 2501
+      },
+      {
+        "title": "WebGL context failure selects animated CSS and a live preference change restores static artwork",
+        "status": "expected",
+        "durationMs": 2463
+      },
+      {
+        "title": "unavailable GPU uses visibly flowing CSS without adding a rendering loop",
+        "status": "expected",
+        "durationMs": 3458
+      },
+      {
+        "title": "initial reduced motion and data saving never initialize GPU rendering",
+        "status": "expected",
+        "durationMs": 791
+      },
+      {
+        "title": "stable mobile header at 320px with no-preference, reload and direct case",
+        "status": "expected",
+        "durationMs": 1432
+      },
+      {
+        "title": "stable mobile header at 320px with reduce, reload and direct case",
+        "status": "expected",
+        "durationMs": 1210
+      },
+      {
+        "title": "stable header through delayed navigation and fonts at 320px",
+        "status": "expected",
+        "durationMs": 1373
+      },
+      {
+        "title": "failed navigation module keeps native menu and stable geometry at 320px",
+        "status": "expected",
+        "durationMs": 1048
+      },
+      {
+        "title": "no-JavaScript native menu preserves header geometry at 320px",
+        "status": "expected",
+        "durationMs": 772
+      },
+      {
+        "title": "stable mobile header at 390px with no-preference, reload and direct case",
+        "status": "expected",
+        "durationMs": 1363
+      },
+      {
+        "title": "stable mobile header at 390px with reduce, reload and direct case",
+        "status": "expected",
+        "durationMs": 1208
+      },
+      {
+        "title": "stable header through delayed navigation and fonts at 390px",
+        "status": "expected",
+        "durationMs": 1387
+      },
+      {
+        "title": "failed navigation module keeps native menu and stable geometry at 390px",
+        "status": "expected",
+        "durationMs": 1135
+      },
+      {
+        "title": "no-JavaScript native menu preserves header geometry at 390px",
+        "status": "expected",
+        "durationMs": 782
+      },
+      {
+        "title": "opening completes automatically within five navigation seconds at 320px",
+        "status": "expected",
+        "durationMs": 4585
+      },
+      {
+        "title": "opening completes automatically within five navigation seconds at 390px",
+        "status": "expected",
+        "durationMs": 4577
+      },
+      {
+        "title": "opening completes automatically within five navigation seconds at 768px",
+        "status": "expected",
+        "durationMs": 4654
+      },
+      {
+        "title": "opening completes automatically within five navigation seconds at 1440px",
+        "status": "unexpected",
+        "durationMs": 4744
+      },
+      {
+        "title": "opening completes automatically within five navigation seconds at 1920px",
+        "status": "expected",
+        "durationMs": 4972
+      },
+      {
+        "title": "Escape immediately bypasses the opening",
+        "status": "expected",
+        "durationMs": 982
+      },
+      {
+        "title": "Enter immediately bypasses the opening",
+        "status": "expected",
+        "durationMs": 799
+      },
+      {
+        "title": "Space immediately bypasses the opening",
+        "status": "expected",
+        "durationMs": 721
+      },
+      {
+        "title": "Tab immediately bypasses the opening",
+        "status": "expected",
+        "durationMs": 643
+      },
+      {
+        "title": "wheel bypass preserves the original native scroll input",
+        "status": "expected",
+        "durationMs": 1413
+      },
+      {
+        "title": "visible skip control immediately reveals the homepage",
+        "status": "expected",
+        "durationMs": 1579
+      },
+      {
+        "title": "internal navigation keeps its first action and the next manual refresh replays",
+        "status": "expected",
+        "durationMs": 1995
+      },
+      {
+        "title": "direct case loads use the loader while hash destinations reach content immediately",
+        "status": "expected",
+        "durationMs": 1097
+      },
+      {
+        "title": "reduced motion reaches the homepage immediately and remains readable without JavaScript",
+        "status": "expected",
+        "durationMs": 1434
+      },
+      {
+        "title": "data saving bypasses the opening",
+        "status": "expected",
+        "durationMs": 618
+      },
+      {
+        "title": "an opted-out first homepage visit never introduces the intro on an internal return",
+        "status": "expected",
+        "durationMs": 1070
+      },
+      {
+        "title": "unavailable session storage fails open",
+        "status": "expected",
+        "durationMs": 758
+      },
+      {
+        "title": "a mobile tap immediately bypasses the intro",
+        "status": "expected",
+        "durationMs": 623
+      },
+      {
+        "title": "live reduced-motion preference immediately cancels the opening",
+        "status": "expected",
+        "durationMs": 645
+      },
+      {
+        "title": "delayed optional module never delays or replays the inline opening",
+        "status": "expected",
+        "durationMs": 6749
+      },
+      {
+        "title": "failed signature media reveals the working homepage",
+        "status": "expected",
+        "durationMs": 1170
+      },
+      {
+        "title": "failed storyboard clock initialization reveals a working homepage",
+        "status": "expected",
+        "durationMs": 1462
+      },
+      {
+        "title": "six approved project posters reveal with the wave and keep SOL prominent at 320px",
+        "status": "expected",
+        "durationMs": 5424
+      },
+      {
+        "title": "six approved project posters reveal with the wave and keep SOL prominent at 390px",
+        "status": "expected",
+        "durationMs": 5310
+      },
+      {
+        "title": "six approved project posters reveal with the wave and keep SOL prominent at 768px",
+        "status": "expected",
+        "durationMs": 5351
+      },
+      {
+        "title": "six approved project posters reveal with the wave and keep SOL prominent at 1440px",
+        "status": "unexpected",
+        "durationMs": 5332
+      },
+      {
+        "title": "Phase 2 storytelling and original portfolio remain readable at 320px",
+        "status": "expected",
+        "durationMs": 1372
+      },
+      {
+        "title": "Phase 2 storytelling and original portfolio remain readable at 390px",
+        "status": "expected",
+        "durationMs": 3222
+      },
+      {
+        "title": "Phase 2 storytelling and original portfolio remain readable at 768px",
+        "status": "expected",
+        "durationMs": 4586
+      },
+      {
+        "title": "Phase 2 storytelling and original portfolio remain readable at 1440px",
+        "status": "expected",
+        "durationMs": 6029
+      },
+      {
+        "title": "Phase 2 storytelling and original portfolio remain readable at 1920px",
+        "status": "expected",
+        "durationMs": 2280
+      },
+      {
+        "title": "new homepage story remains usable without JavaScript",
+        "status": "expected",
+        "durationMs": 859
+      },
+      {
+        "title": "reduced-motion storytelling preserves visibility and a keyboard-usable mobile menu",
+        "status": "expected",
+        "durationMs": 639
+      }
+    ]
+  },
+  "status": "Checkpoint: final full browser suite and final recordings incomplete; no new tests run for checkpoint delivery."
+}
