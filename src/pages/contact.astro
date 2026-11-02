@@ -1,28 +1,292 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import RouteIntro from '../components/RouteIntro.astro';
+import EnquiryForm from '../components/contact/EnquiryForm.astro';
+import Arrow from '../components/Arrow.astro';
+import Star from '../components/Star.astro';
+import { contact } from '../data/contact';
 ---
 
 <SiteLayout
   title="Contact — DrawnOut Digital"
-  description="Have a good idea? Let's make it better. You don't need a perfect brief. You just need somewhere to start."
+  description="Have something in mind? You don't need a perfect brief. You just need somewhere to start. Get in touch with DrawnOut Digital."
 >
-  <RouteIntro
-    eyebrow="Tell Us What You're Thinking"
-    title="Have a good idea? Let's make it better."
-    description="You don't need a perfect brief. You just need somewhere to start."
-  />
-  <p class="contact-status page-frame">
-    The enquiry channel is being prepared. Direct contact details will appear here once confirmed by
-    the studio.
-  </p>
+  <section class="contact-intro page-frame" aria-labelledby="contact-title">
+    <div class="contact-kicker">
+      <p class="eyebrow">Contact / Start a conversation</p>
+      <span aria-hidden="true">
+        <Star />
+      </span>
+    </div>
+    <h1 id="contact-title" data-motion-text="heading" data-motion-split="lines">
+      Have something
+      <br />
+      <span>in mind?</span>
+    </h1>
+    <div class="contact-intro-bottom">
+      <a class="enquiry-jump" href="#enquiry">
+        <span>Tell us what you're thinking</span>
+        <span aria-hidden="true">↓</span>
+      </a>
+      <p data-motion-support>You don't need a perfect brief. You just need somewhere to start.</p>
+    </div>
+  </section>
+  <div class="contact-body page-frame">
+    <section id="enquiry" class="contact-enquiry" aria-labelledby="enquiry-heading">
+      <EnquiryForm email={contact.email} />
+    </section>
+    <aside class="contact-direct" aria-labelledby="direct-heading">
+      <p class="eyebrow">A direct line</p>
+      <h2 id="direct-heading" data-motion-text="heading" data-motion-split="lines">
+        Every idea starts
+        <br />
+        with a hello.
+      </h2>
+      <dl class="contact-methods">
+        <div>
+          <dt>Email</dt>
+          <dd>
+            <a href={`mailto:${contact.email}`}>
+              <span>{contact.email}</span>
+              <Arrow />
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt>Phone</dt>
+          <dd>
+            <a href={`tel:${contact.phone}`}>
+              <span>{contact.phone}</span>
+              <Arrow />
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt>WhatsApp</dt>
+          <dd>
+            <a
+              href={contact.whatsapp}
+              aria-label="Start a conversation with DrawnOut Digital on WhatsApp"
+            >
+              <span>Message us on WhatsApp</span>
+              <Arrow />
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <nav class="contact-social" aria-label="DrawnOut Digital social profiles">
+        <p class="eyebrow">Find us elsewhere</p>
+        <ul>
+          {contact.social.map(({ label, href }) => (
+            <li>
+              <a href={href} aria-label={`DrawnOut Digital on ${label}`}>
+                <span>{label}</span>
+                <Arrow />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </aside>
+  </div>
 </SiteLayout>
 <style>
-  .contact-status {
+  .contact-intro {
+    padding-block: var(--space-6) var(--space-5);
+  }
+  .contact-kicker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 34px;
+    color: var(--accent-strong);
+  }
+  .contact-kicker p {
+    margin: 0;
+  }
+  .contact-kicker :global(svg) {
+    width: clamp(28px, 3vw, 42px);
+    height: auto;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(4rem, 9.1vw, 9.1rem);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: var(--tracking-display);
+  }
+  h1 > span {
+    color: var(--accent-strong);
+  }
+  .contact-intro-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 36px;
+    margin-top: 40px;
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-intro-bottom p {
+    max-width: 380px;
+    margin: 0;
+    font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+    line-height: 1.6;
+    letter-spacing: -0.025em;
+  }
+  .enquiry-jump {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    min-height: 44px;
     font-size: var(--type-small);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+  .enquiry-jump > span:last-child {
+    font-size: 24px;
+  }
+  .contact-body {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.45fr);
+    gap: clamp(50px, 9vw, 150px);
+    padding-bottom: var(--space-7);
+  }
+  .contact-enquiry {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+  }
+  .contact-direct {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+  .contact-direct > .eyebrow {
+    margin: 0 0 22px;
+    color: var(--accent-strong);
+  }
+  h2 {
+    margin: 0 0 36px;
+    font-size: clamp(1.75rem, 2.5vw, 2.75rem);
+    line-height: 1.18;
+    letter-spacing: -0.05em;
+    font-weight: 500;
+  }
+  .contact-methods {
+    margin: 0;
+  }
+  .contact-methods > div {
+    padding-block: 20px 15px;
+    border-top: 1px solid var(--line);
+  }
+  dt {
     color: var(--muted);
-    line-height: var(--leading-body);
-    padding-bottom: var(--space-6);
-    margin-block: 0;
+    font-size: var(--type-small);
+    margin-bottom: 6px;
+  }
+  dd {
+    margin: 0;
+  }
+  .contact-methods a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 44px;
+    font-size: clamp(0.875rem, 1.25vw, 1.125rem);
+    text-decoration: none;
+  }
+  .contact-methods a span {
+    overflow-wrap: anywhere;
+  }
+  .contact-direct :global(svg) {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transition: transform var(--duration-ui) var(--ease-ui);
+  }
+  .contact-social {
+    margin-top: 48px;
+  }
+  .contact-social p {
+    margin: 0 0 12px;
+    color: var(--muted);
+  }
+  .contact-social ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .contact-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 44px;
+    font-size: var(--type-small);
+    text-decoration: none;
+  }
+  .contact-social :global(svg) {
+    width: 13px;
+    height: 13px;
+  }
+  a:is(:hover, :focus-visible) {
+    color: var(--accent-strong);
+    text-decoration: underline;
+  }
+  a:is(:hover, :focus-visible) :global(svg) {
+    transform: translate(2px, -2px);
+  }
+  @media (max-width: 899px) {
+    .contact-body {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 64px;
+    }
+    .contact-enquiry,
+    .contact-direct {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    .contact-direct {
+      padding-top: 36px;
+      border-top: 1px solid var(--line);
+    }
+    .contact-methods a {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 639px) {
+    .contact-intro {
+      padding-top: 46px;
+    }
+    .contact-kicker {
+      margin-bottom: 32px;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 10.8vw, 4.3rem);
+      line-height: 1.08;
+    }
+    .contact-intro-bottom {
+      flex-direction: column-reverse;
+      align-items: start;
+      gap: 28px;
+      margin-top: 26px;
+    }
+    .contact-intro-bottom p {
+      max-width: 310px;
+      font-size: 1.0625rem;
+    }
+    .enquiry-jump {
+      width: 100%;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    a:is(:hover, :focus-visible) :global(svg) {
+      transform: none;
+    }
   }
 </style>

@@ -1,0 +1,20 @@
+{
+  "testOnlyConfiguredBuild": true,
+  "noExternalSubmission": true,
+  "cases": [
+    {
+      "build": "/workspace/contact-review/provider-fixture-dist",
+      "configured": true,
+      "formAction": "https://formspree.io/f/contacttestfixture",
+      "submitDisabled": false,
+      "passed": true
+    },
+    {
+      "build": "dist",
+      "configured": false,
+      "formAction": null,
+      "submitDisabled": true,
+      "passed": true
+    }
+  ]
+}

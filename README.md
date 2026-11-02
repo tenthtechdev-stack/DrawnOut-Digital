@@ -1,5 +1,7 @@
 # DrawnOut Digital
 
+The **Contact page** is ready for review on `feature/contact-page`, based on the approved signature work merged into `main` in PR #4. [Contact gallery](artifacts/contact/README.md) · [Validation](docs/CONTACT_VALIDATION.md) · [Formspree owner setup](docs/CONTACT_HANDOFF.md). No form endpoint is configured yet; the page offers direct email contact and does not claim live enquiry delivery.
+
 The **DrawnOut Loop / signature experience** extends approved Afterglow through Phase 4 on `feature/drawnout-signature-experience`, based on `main` at `0ef900b72132f4ab1069da6b824cb1facfe2c95e`.
 
 [Current opening gallery and recordings](artifacts/signature-opening/README.md) · [Revision handoff](docs/OPENING_REVISION_HANDOFF.md) · [Revision validation](docs/OPENING_REVISION_VALIDATION.md) · [Asset process and production requirements](docs/SIGNATURE_ASSET_PROCESS.md)

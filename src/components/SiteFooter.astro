@@ -2,6 +2,7 @@
 import Button from './Button.astro';
 import SignatureArtwork from './SignatureArtwork.astro';
 import { navigation, site } from '../data/site';
+import { contact } from '../data/contact';
 ---
 
 <footer class="site-footer" data-site-footer data-theme="dark">
@@ -31,6 +32,9 @@ import { navigation, site } from '../data/site';
           {site.name}
         </a>
         <p>{site.signoff}</p>
+        <a class="footer-email" href={`mailto:${contact.email}`}>
+          {contact.email}
+        </a>
       </div>
       <nav aria-label="Footer navigation">
         <ul>
@@ -143,6 +147,19 @@ import { navigation, site } from '../data/site';
     padding: 0;
     margin: 0;
     gap: 12px 25px;
+  }
+  .footer-brand > .footer-email {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+  .footer-email:is(:hover, :focus-visible) {
+    color: var(--amber);
+    text-decoration: underline;
   }
   nav a {
     display: inline-flex;
