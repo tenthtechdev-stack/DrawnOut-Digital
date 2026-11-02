@@ -26,7 +26,14 @@ async function outputFiles(directory) {
 test('visual approval publishes a record without verifying facts or credits; withdrawal removes its route and unique media', async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), 'drawnout-publication-'));
   try {
-    for (const item of ['src', 'public', 'astro.config.mjs', 'tsconfig.json', 'package.json']) {
+    for (const item of [
+      'src',
+      'public',
+      'design-assets/portfolio-motion',
+      'astro.config.mjs',
+      'tsconfig.json',
+      'package.json',
+    ]) {
       await cp(path.join(root, item), path.join(temporary, item), { recursive: true });
     }
     await symlink(path.join(root, 'node_modules'), path.join(temporary, 'node_modules'), 'dir');
@@ -72,6 +79,11 @@ test('visual approval publishes a record without verifying facts or credits; wit
       cover: '../../assets/portfolio/publication-fixture-only.webp',
       coverAlt: 'Supplied packaging artwork reused only in an isolated automated fixture.',
       assetSource: 'Automated fixture only; no real portfolio publication approval.',
+      motion: {
+        landscape: 'publication-workflow-fixture-landscape.mp4',
+        portrait: 'publication-workflow-fixture-portrait.mp4',
+        source: 'Synthetic binary publication fixture, not actual video artwork.',
+      },
       gallery: cover.gallery.slice(0, 1).map((media) => ({
         ...media,
         alt: 'Supplied packaging detail used only by the isolated test fixture.',
@@ -102,7 +114,20 @@ test('visual approval publishes a record without verifying facts or credits; wit
       displayApproval: { state: 'pending' },
       cover: '../../assets/portfolio/future-draft-only.webp',
       gallery: [],
+      motion: {
+        landscape: 'future-private-artwork-sentinel-landscape.mp4',
+        portrait: 'future-private-artwork-sentinel-portrait.mp4',
+        source: 'Synthetic unpublished video fixture.',
+      },
     };
+    for (const record of [fixture, futureDraft]) {
+      for (const file of [record.motion.landscape, record.motion.portrait]) {
+        await writeFile(
+          path.join(temporary, 'design-assets/portfolio-motion', file),
+          `Synthetic media publication boundary: ${file}`,
+        );
+      }
+    }
     await writeFile(path.join(content, `${futureDraft.slug}.json`), JSON.stringify(futureDraft));
     const recordFile = path.join(content, `${fixture.slug}.json`);
     const build = async () => {
@@ -156,6 +181,14 @@ test('visual approval publishes a record without verifying facts or credits; wit
       7 + publicRecords.length,
     );
     assert.ok(first.files.some((name) => /publication-fixture-only.*\.webp$/.test(name)));
+    for (const file of [fixture.motion.landscape, fixture.motion.portrait]) {
+      assert.equal(
+        await readFile(path.join(temporary, 'dist/media/portfolio', file), 'utf8'),
+        `Synthetic media publication boundary: ${file}`,
+      );
+      assert.ok(home.includes(`/media/portfolio/${file}`));
+      assert.ok(work.includes(`/media/portfolio/${file}`));
+    }
 
     fixture.contentVerified = true;
     await build();

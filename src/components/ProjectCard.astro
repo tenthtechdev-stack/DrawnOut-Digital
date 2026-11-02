@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import MediaSlot from './MediaSlot.astro';
+import PortfolioMotionToggle from './PortfolioMotionToggle.astro';
 import Arrow from './Arrow.astro';
 import type { ImageMetadata } from 'astro';
 import { canPublish } from '../lib/project-schema';
@@ -15,47 +16,54 @@ const { project, index, layout = 'paired', media } = Astro.props;
 const poster = media?.src ?? project.data.cover;
 const alt = media?.alt ?? project.data.coverAlt;
 const published = canPublish(project.data);
+const motion = published ? project.data.motion : undefined;
+const motionId = `home-motion-${project.data.slug}`;
 const href = `${published ? '/work' : '/_preview/work'}/${project.data.slug}`;
 const categories = project.data.categories
   .map((category) => projectCategoryLabels[category])
   .join(' / ');
 ---
 
-<a
-  href={href}
-  class:list={['project-card', `project-card--${layout}`]}
-  data-project-card
-  aria-labelledby={`project-${project.id}`}
->
-  <div class="project-meta">
-    <div>
-      <p class="eyebrow project-number">0{index + 1}</p>
-      <h3 id={`project-${project.id}`}>{project.data.title}</h3>
+<div class="project-card-shell">
+  <a
+    href={href}
+    class:list={['project-card', `project-card--${layout}`]}
+    data-project-card
+    aria-labelledby={`project-${project.id}`}
+  >
+    <div class="project-meta">
+      <div>
+        <p class="eyebrow project-number">0{index + 1}</p>
+        <h3 id={`project-${project.id}`}>{project.data.title}</h3>
+      </div>
+      <p class="project-context">
+        {categories || 'Artwork'}
+        <br />
+        <span class="project-visit">
+          {published ? 'View project' : 'Preview project'} <Arrow />
+        </span>
+      </p>
     </div>
-    <p class="project-context">
-      {categories || 'Artwork'}
-      <br />
-      <span class="project-visit">
-        {published ? 'View project' : 'Preview project'} <Arrow />
-      </span>
-    </p>
-  </div>
-  <MediaSlot
-    availability={published ? 'approved' : 'placeholder'}
-    poster={poster}
-    mobilePoster={media ? project.data.cover : undefined}
-    alt={alt}
-    aspectRatio={`${poster.width} / ${poster.height}`}
-    sizes={
-      layout === 'lead'
-        ? '(max-width: 767px) 90vw, 69vw'
-        : layout === 'panorama'
-          ? '92vw'
-          : '(max-width: 767px) 90vw, 48vw'
-    }
-  />
-  {media?.caption && <p class="media-caption">{media.caption}</p>}
-</a>
+    <MediaSlot
+      motion={motion}
+      motionId={motionId}
+      availability={published ? 'approved' : 'placeholder'}
+      poster={poster}
+      mobilePoster={media ? project.data.cover : undefined}
+      alt={alt}
+      aspectRatio={`${poster.width} / ${poster.height}`}
+      sizes={
+        layout === 'lead'
+          ? '(max-width: 767px) 90vw, 69vw'
+          : layout === 'panorama'
+            ? '92vw'
+            : '(max-width: 767px) 90vw, 48vw'
+      }
+    />
+    {media?.caption && <p class="media-caption">{media.caption}</p>}
+  </a>
+  {motion && <PortfolioMotionToggle id={motionId} title={project.data.title} />}
+</div>
 <style>
   .project-card {
     display: block;
