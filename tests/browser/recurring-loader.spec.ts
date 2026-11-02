@@ -242,7 +242,8 @@ test('a scrolled mobile refresh preserves the browser position and skips the loa
   }
 });
 
-for (const route of ['/work', '/work/bunzo', '/contact', '/services', '/about']) {
+// About has its own nonblocking arrival; its route contract is in about.spec.ts.
+for (const route of ['/work', '/work/bunzo', '/contact', '/services']) {
   test(`direct ${route} loading is skippable without a homepage handoff`, async ({ page }) => {
     await page.addInitScript(() => {
       Reflect.set(window, '__testHeroHandoffs', 0);

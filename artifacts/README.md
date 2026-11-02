@@ -1,3 +1,7 @@
+[About brand story — approved sketch, responsive pages and real-time recordings](about/README.md)
+
+[Curated portfolio rhythm — Home and Work recordings](portfolio-rhythm/README.md)
+
 [Contact page — desktop, tablet and mobile review](contact/README.md)
 
 [Approved opening project-square gallery and recordings](signature-squares/README.md)
