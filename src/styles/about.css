@@ -31,12 +31,32 @@
 }
 
 .about-hero {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.about-hero__layout {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
   grid-template-areas: 'heading portrait' 'intro portrait' 'signoff portrait';
   column-gap: clamp(32px, 4vw, 80px);
   padding-block: clamp(52px, 6vw, 100px) var(--about-section-space);
+}
+
+.about-hero .about-eyebrow,
+.about-hero .about-title-mask:nth-child(2),
+.about-hero .about-story-link > span {
+  color: var(--amber);
+}
+
+.about-hero .about-hero__signoff > p,
+.about-hero .about-figure-index {
+  color: var(--inverse-muted);
+}
+
+.about-page .about-hero a:is(:hover, :focus-visible):not(.button) {
+  color: var(--amber);
 }
 
 .about-hero__heading {
@@ -88,11 +108,46 @@
   grid-area: portrait;
   align-self: start;
   position: relative;
-  margin-top: clamp(80px, 8vw, 135px);
+  margin-top: clamp(30px, 4vw, 70px);
 }
 
-.about-hero__portrait > :first-child {
+.about-hero__composition {
+  position: relative;
   width: 100%;
+  aspect-ratio: 1 / 1.02;
+  isolation: isolate;
+  transform-origin: center;
+  pointer-events: none;
+}
+
+.about-hero__circle {
+  position: absolute;
+  inset: 4% 3% auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.about-hero__emblem {
+  position: absolute;
+  top: -1%;
+  left: 50%;
+  width: min(64%, 410px);
+  transform: translateX(-50%) rotate(-8deg);
+  opacity: 0.94;
+  overflow: hidden;
+}
+
+.about-hero__emblem svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.about-hero__artwork {
+  position: absolute;
+  inset: auto -1% 0;
+  width: 102%;
 }
 
 .about-hero__portrait figcaption {
@@ -102,7 +157,7 @@
   gap: 10px 20px;
   padding-top: 20px;
   margin-top: 18px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid #5b574e;
   font-size: var(--type-small);
   line-height: 1.6;
 }
@@ -122,7 +177,7 @@
   pointer-events: none;
   stroke: var(--accent);
   stroke-width: 1.5;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .about-hero__signoff {
@@ -562,7 +617,7 @@
 }
 
 @media (max-width: 1023px) {
-  .about-hero {
+  .about-hero__layout {
     column-gap: 30px;
   }
   .about-hero h1 {
@@ -570,7 +625,7 @@
   }
   .about-hero__portrait {
     align-self: start;
-    margin-top: 95px;
+    margin-top: 60px;
   }
   .about-hero__thread {
     top: 22%;
@@ -607,7 +662,7 @@
   .about-page {
     --about-heading: clamp(2.5rem, 7.5vw, 3.7rem);
   }
-  .about-hero {
+  .about-hero__layout {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: 'heading' 'portrait' 'intro' 'signoff';
     padding-top: 40px;
@@ -626,6 +681,10 @@
   .about-hero__portrait {
     width: min(100%, 580px);
     margin: 36px auto 0;
+  }
+  .about-hero__composition {
+    width: 88%;
+    margin-left: auto;
   }
   .about-hero__portrait figcaption {
     padding-top: 16px;
@@ -866,20 +925,25 @@
   }
 }
 
-/* No pending/ready selector hides content. Only a running, guarded entrance
-   applies these initial states; removing it returns the complete composition. */
+/* First-paint centering has its own 550ms fail-open guard; running states have
+   the arrival deadline. Without those explicit states, all content is visible. */
+[data-about-hero][data-about-prepaint] [data-about-composition] {
+  transform: translate(var(--about-center-x, 0px), var(--about-center-y, 0px));
+}
+
+[data-about-hero][data-about-prepaint]
+  :is([data-about-headline], [data-about-intro], [data-about-caption], [data-about-hero-line]),
+[data-about-hero][data-about-prepaint] .about-hero__heading .about-eyebrow {
+  opacity: 0;
+}
+
 [data-about-hero][data-about-entrance='running'] .about-title-mask {
   overflow: clip;
 }
 
-[data-about-hero][data-about-entrance='running'] [data-about-hero-line],
-[data-about-hero][data-about-entrance='running'] [data-about-mask] {
+[data-about-hero][data-about-entrance='running'] [data-about-hero-line] {
   stroke-dasharray: 1 1;
   stroke-dashoffset: 1;
-}
-
-[data-about-hero][data-about-entrance='running'] [data-about-mask-complete] {
-  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -888,6 +952,9 @@
   }
   .about-page :is([data-about-headline], [data-about-intro], [data-about-caption]) {
     opacity: 1 !important;
+    transform: none !important;
+  }
+  .about-page [data-about-composition] {
     transform: none !important;
   }
 }

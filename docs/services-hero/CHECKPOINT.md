@@ -1,0 +1,13 @@
+# About refinement checkpoint before Services implementation
+
+Base: owner-reviewed `b9fc396cc002c07af0ad60a3b99e932022dcd0b7` on the still-open PR #10. This feature is stacked on `feature/about-brand-story-experience`; PR #10 and main are not rewritten.
+
+Part 1 changes the About hero to the existing philosophy section's charcoal palette. The complete approved sketch, authentic emblem and paper circle begin centered, hold briefly, then move into the final responsive layout as the editorial copy appears. The arrival remains nonblocking and preserves immediate navigation, input/resize settling, reduced motion, Save Data and no-JavaScript fallbacks. The original portrait asset and all seven chapters' supplied copy are unchanged.
+
+The process graphic now uses direct scroll scrubbing and fractional SVG dash values. Removing numeric scrubbing delay and SVG auto-rounding corrects the prior lag and binary-looking line drawing. Production browser checks compare actual fractional offsets with scroll geometry through quick reversal and resize.
+
+Before beginning Services implementation: production build passed (22 routes), Astro/TypeScript passed (130 files, zero diagnostics), all 42 unit tests passed, and About production acceptance passed 21/21. Two initial browser runs exposed screenshot-fixture issues: full-page screenshots trigger an intended resize fallback, and a diagnostic phase flag overlaps the first motion frames at its timer boundary. Viewport pixel sampling and an actual early hold interval correct those test fixtures; no application changes were needed. The initial and final reports are retained in `artifacts/services-hero/`.
+
+Subsequent native frame review found a first-paint final-to-center flash and a mobile headline/emblem collision during transition. The next source checkpoint adds a scoped, independently guarded 550ms pre-paint pose and delays the mobile copy. It restores the complete static hero on input, failure or late initialization, with an absolute 4.05-second arrival deadline. Post-change browser and frame verification remain pending at this code-preservation checkpoint; Services implementation remains gated on that verification. Type checking for this follow-up passes (133 files, zero diagnostics).
+
+The next checkpoint implements only the Services cinematic hero. Existing overview chapters, five detail pages, Contact, portfolio, homepage loader/gradient and footer remain outside that redesign scope. No merge, deployment or separate Netlify repository push is authorized.

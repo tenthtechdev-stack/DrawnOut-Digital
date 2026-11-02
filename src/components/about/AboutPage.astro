@@ -1,6 +1,7 @@
 ---
 import Arrow from '../Arrow.astro';
 import Button from '../Button.astro';
+import BrandEmblem from '../BrandEmblem.astro';
 import FounderPortrait from './FounderPortrait.astro';
 import { aboutPage } from '../../data/about';
 import '../../styles/about.css';
@@ -16,51 +17,179 @@ const structuredData = {
 ---
 
 <article class="about-page" data-about-page>
-  <section class="about-hero page-frame" aria-labelledby="about-title" data-about-hero>
-    <header class="about-hero__heading">
-      <p class="eyebrow about-eyebrow" data-about-reveal>
-        {hero.eyebrow}
-      </p>
-      <h1 id="about-title" aria-label={hero.heading}>
-        {hero.headlineSegments.map((segment) => (
-          <span class="about-title-mask">
-            <span data-about-headline>{segment} </span>
+  <section
+    class="about-hero"
+    aria-labelledby="about-title"
+    data-about-hero
+    data-theme="dark"
+    data-about-hero-phase="settled"
+  >
+    <div class="about-hero__layout page-frame" data-about-hero-layout>
+      <header class="about-hero__heading">
+        <p class="eyebrow about-eyebrow" data-about-reveal>
+          {hero.eyebrow}
+        </p>
+        <h1 id="about-title" aria-label={hero.heading}>
+          {hero.headlineSegments.map((segment) => (
+            <span class="about-title-mask">
+              <span data-about-headline>{segment} </span>
+            </span>
+          ))}
+        </h1>
+      </header>
+
+      <svg class="about-hero__thread" viewBox="0 0 360 160" fill="none" aria-hidden="true">
+        <path
+          data-about-hero-line
+          d="M2 98C70 98 62 28 137 28S179 139 247 139 270 10 356 10"
+          pathLength="1"
+        />
+      </svg>
+
+      <figure class="about-hero__portrait" data-about-portrait>
+        <div class="about-hero__composition" data-about-composition>
+          <span class="about-hero__circle" data-about-circle aria-hidden="true" />
+          <div class="about-hero__emblem" data-about-emblem aria-hidden="true">
+            <BrandEmblem />
+          </div>
+          <div class="about-hero__artwork">
+            <FounderPortrait />
+          </div>
+        </div>
+        <figcaption data-about-caption>
+          <span>{hero.caption}</span>
+          <span class="about-figure-index" aria-hidden="true">
+            01 / TWO MINDS
           </span>
+        </figcaption>
+      </figure>
+
+      <div class="about-hero__intro" data-about-intro>
+        {hero.paragraphs.map((paragraph) => (
+          <p>{paragraph}</p>
         ))}
-      </h1>
-    </header>
-
-    <svg class="about-hero__thread" viewBox="0 0 360 160" fill="none" aria-hidden="true">
-      <path
-        data-about-hero-line
-        d="M2 98C70 98 62 28 137 28S179 139 247 139 270 10 356 10"
-        pathLength="1"
-      />
-    </svg>
-
-    <figure class="about-hero__portrait" data-about-portrait>
-      <FounderPortrait />
-      <figcaption data-about-caption>
-        <span>{hero.caption}</span>
-        <span class="about-figure-index" aria-hidden="true">
-          01 / TWO MINDS
-        </span>
-      </figcaption>
-    </figure>
-
-    <div class="about-hero__intro" data-about-intro>
-      {hero.paragraphs.map((paragraph) => (
-        <p>{paragraph}</p>
-      ))}
-    </div>
-    <div class="about-hero__signoff" data-about-reveal>
-      <p>{hero.supportingLabel}</p>
-      <a href="#our-beginning" class="about-story-link">
-        Follow the thought <span aria-hidden="true">↓</span>
-      </a>
+      </div>
+      <div class="about-hero__signoff" data-about-reveal>
+        <p>{hero.supportingLabel}</p>
+        <a href="#our-beginning" class="about-story-link">
+          Follow the thought <span aria-hidden="true">↓</span>
+        </a>
+      </div>
     </div>
   </section>
 
+  <script is:inline>
+    // An About-only first-paint pose. No JS means the complete static hero.
+    // This independent deadline also releases the page if its module never runs.
+    (() => {
+      const page = document.currentScript?.closest('[data-about-page]');
+      const hero = page?.querySelector('[data-about-hero]');
+      const composition = hero?.querySelector('[data-about-composition]');
+      if (!page || !hero || !composition) return;
+      page.dataset.aboutArrivalAt = String(performance.now());
+      let deadline;
+      let controller;
+      const clean = () => {
+        clearTimeout(deadline);
+        controller?.abort();
+        hero.removeAttribute('data-about-prepaint');
+        hero.style.removeProperty('--about-center-x');
+        hero.style.removeProperty('--about-center-y');
+      };
+      const release = (reason) => {
+        if (hero.dataset.aboutBoot !== 'pending') return;
+        clean();
+        hero.dataset.aboutBoot = 'released';
+        hero.dataset.aboutEntrance = 'static';
+        hero.dataset.aboutHeroPhase = 'settled';
+        hero.dataset.aboutSettleReason = `boot-${reason}`;
+      };
+      try {
+        const preference = matchMedia('(prefers-reduced-motion: reduce)');
+        const connection = Reflect.get(navigator, 'connection');
+        const navigation = performance.getEntriesByType('navigation')[0];
+        if (
+          preference.matches ||
+          connection?.saveData ||
+          document.hidden ||
+          location.hash ||
+          scrollY > 0 ||
+          navigation?.type === 'back_forward' ||
+          typeof Element.prototype.animate !== 'function' ||
+          (document.activeElement && document.activeElement !== document.body)
+        ) {
+          hero.dataset.aboutBoot = 'skipped';
+          return;
+        }
+        const finalBox = composition.getBoundingClientRect();
+        const heroBox = hero.getBoundingClientRect();
+        const visibleTop = Math.max(0, heroBox.top);
+        const visibleHeight = Math.min(heroBox.height, innerHeight - visibleTop);
+        if (visibleHeight <= 0) {
+          hero.dataset.aboutBoot = 'skipped';
+          return;
+        }
+        const fromX = heroBox.left + heroBox.width / 2 - (finalBox.left + finalBox.width / 2);
+        const fromY = visibleTop + visibleHeight / 2 - (finalBox.top + finalBox.height / 2);
+        controller = new AbortController();
+        const { signal } = controller;
+        const input = (event) => {
+          if (event.type === 'scroll' && scrollX === 0 && scrollY === 0) return;
+          release('input');
+        };
+        window.addEventListener('wheel', input, { passive: true, signal });
+        window.addEventListener('touchstart', input, { passive: true, signal });
+        window.addEventListener('pointerdown', input, { capture: true, passive: true, signal });
+        window.addEventListener('keydown', input, { capture: true, signal });
+        window.addEventListener('scroll', input, { passive: true, signal });
+        window.addEventListener('resize', () => release('resize'), { signal });
+        window.addEventListener('pagehide', () => release('navigation'), { signal });
+        document.addEventListener('focusin', input, { signal });
+        document.addEventListener(
+          'visibilitychange',
+          () => {
+            if (document.hidden) release('hidden');
+          },
+          { signal },
+        );
+        preference.addEventListener(
+          'change',
+          () => {
+            if (preference.matches) release('reduced-motion');
+          },
+          { signal },
+        );
+        connection?.addEventListener?.(
+          'change',
+          () => {
+            if (connection.saveData) release('save-data');
+          },
+          { signal },
+        );
+        hero.addEventListener('about:boot-release', () => release('module'), { signal });
+        hero.addEventListener(
+          'about:boot-handoff',
+          () => {
+            clean();
+            hero.dataset.aboutBoot = 'handed-off';
+          },
+          { signal },
+        );
+        // The deadline and release handlers exist before the first hidden pixel.
+        deadline = setTimeout(() => release('deadline'), 550);
+        hero.style.setProperty('--about-center-x', `${fromX}px`);
+        hero.style.setProperty('--about-center-y', `${fromY}px`);
+        hero.dataset.aboutBoot = 'pending';
+        hero.dataset.aboutHeroPhase = 'center';
+        hero.setAttribute('data-about-prepaint', '');
+      } catch {
+        clean();
+        hero.dataset.aboutBoot = 'released';
+        hero.dataset.aboutHeroPhase = 'settled';
+        hero.dataset.aboutSettleReason = 'boot-failure';
+      }
+    })();
+  </script>
   <section
     class="about-origin about-chapter"
     id="our-beginning"
@@ -350,12 +479,6 @@ const structuredData = {
     <p class="about-invitation__concept">{aboutPage.concept}</p>
   </section>
 </article>
-<script is:inline>
-  // Record arrival without hiding content while the enhancement module loads.
-  document
-    .querySelector('[data-about-page]')
-    ?.setAttribute('data-about-arrival-at', String(performance.now()));
-</script>
 <script>
   import '../../scripts/about-motion';
 </script>

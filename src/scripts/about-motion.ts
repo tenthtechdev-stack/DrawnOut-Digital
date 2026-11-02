@@ -1,4 +1,4 @@
-/** Draw → reveal → connect. The portrait is one approved raster under SVG masks. */
+/** Center → connect → reveal. Native scrolling and the full approved art stay available. */
 import { allowsMotion } from '../lib/motion-policy';
 
 type Connection = EventTarget & { saveData?: boolean };
@@ -52,7 +52,10 @@ async function initialize() {
   let settleHero = (reason: string) => {
     const hero = page.querySelector<HTMLElement>('[data-about-hero]');
     if (hero) {
+      hero.dispatchEvent(new Event('about:boot-release'));
+      hero.removeAttribute('data-about-prepaint');
       hero.dataset.aboutEntrance = 'static';
+      hero.dataset.aboutHeroPhase = 'settled';
       hero.dataset.aboutSettleReason = reason;
     }
   };
@@ -106,6 +109,7 @@ async function initialize() {
     const heroController = new AbortController();
     const heroSignal = heroController.signal;
     const heroAnimations = new Set<Animation>();
+    const composition = hero.querySelector<HTMLElement>('[data-about-composition]');
     const arrival = Number(page.dataset.aboutArrivalAt ?? 0);
     const initializedAt = performance.now();
     const navigation = performance.getEntriesByType('navigation')[0] as
@@ -120,7 +124,10 @@ async function initialize() {
       // Remove the mask first: every approved raster pixel is visible even if
       // browser animation cancellation or another library fails afterwards.
       raster.removeAttribute('mask');
+      hero.dispatchEvent(new Event('about:boot-release'));
+      hero.removeAttribute('data-about-prepaint');
       hero.dataset.aboutEntrance = started ? 'settled' : 'static';
+      hero.dataset.aboutHeroPhase = 'settled';
       hero.dataset.aboutSettleReason = reason;
       hero.dataset.aboutEndedAt = performance.now().toFixed(2);
       heroController.abort();
@@ -147,6 +154,7 @@ async function initialize() {
     window.addEventListener('keydown', input, { capture: true, signal: heroSignal });
     window.addEventListener('scroll', input, { passive: true, signal: heroSignal });
     document.addEventListener('focusin', input, { signal: heroSignal });
+    window.addEventListener('resize', () => settleHero('resize'), { signal: heroSignal });
     document.addEventListener(
       'visibilitychange',
       () => {
@@ -155,32 +163,65 @@ async function initialize() {
       { signal: heroSignal },
     );
     const exclusion =
-      location.hash || window.scrollY > 0
-        ? 'restored-scroll'
-        : navigation?.type === 'back_forward'
-          ? 'history'
-          : !arrival || initializedAt - arrival > 900
-            ? 'late-init'
-            : document.activeElement instanceof HTMLElement &&
-                document.activeElement !== document.body
-              ? 'focused'
-              : undefined;
+      hero.dataset.aboutBoot === 'released' || hero.dataset.aboutBoot === 'skipped'
+        ? 'boot-released'
+        : location.hash || window.scrollY > 0
+          ? 'restored-scroll'
+          : navigation?.type === 'back_forward'
+            ? 'history'
+            : !arrival || initializedAt - arrival > 550
+              ? 'late-init'
+              : document.activeElement instanceof HTMLElement &&
+                  document.activeElement !== document.body
+                ? 'focused'
+                : undefined;
     if (exclusion) settleHero(exclusion);
     else {
       const startHero = () => {
         if (finished || started || disposed || !allowed() || document.hidden) return;
+        if (hero.dataset.aboutBoot === 'released' || performance.now() - arrival > 550) {
+          settleHero('late-init');
+          return;
+        }
         if (performance.now() - initializedAt > 450) {
           settleHero('late-asset');
           return;
         }
         try {
           clearTimeout(readyDeadline);
-          // The independent watchdog is armed before the first hidden pixel.
-          deadline = schedule(() => settleHero('deadline'), 4050);
+          if (!composition) {
+            settleHero('missing-composition');
+            return;
+          }
+          // Measure the static final slot; the entrance only transforms its
+          // decoration. No grid dimensions or document scroll positions change.
+          // Handoff, untransformed measurement and WAAPI setup share one turn;
+          // the browser cannot paint a static right pose between them.
+          hero.dispatchEvent(new Event('about:boot-handoff'));
+          hero.removeAttribute('data-about-prepaint');
+          const finalBox = composition.getBoundingClientRect();
+          const heroBox = hero.getBoundingClientRect();
+          const visibleTop = Math.max(0, heroBox.top);
+          const visibleHeight = Math.min(heroBox.height, innerHeight - visibleTop);
+          const centerX = heroBox.left + heroBox.width / 2;
+          const centerY = visibleTop + visibleHeight / 2;
+          const fromX = centerX - (finalBox.left + finalBox.width / 2);
+          const fromY = centerY - (finalBox.top + finalBox.height / 2);
+          // On the stacked layout the moving emblem passes below the title.
+          // Let it clear that reading area before the title begins to reveal.
+          const mobile = window.matchMedia('(max-width: 767px)').matches;
+          const headlineDelay = mobile ? 1700 : 1200;
+          const copyDelay = mobile ? 2700 : 1750;
+          const copyDuration = mobile ? 750 : 950;
+          // Arm rollback before any copy fades or composition movement begins.
+          deadline = schedule(
+            () => settleHero('deadline'),
+            Math.max(0, arrival + 4050 - performance.now()),
+          );
           hero.dataset.aboutStartedAt = performance.now().toFixed(2);
           hero.dataset.aboutEntrance = 'running';
+          hero.dataset.aboutHeroPhase = 'center';
           started = true;
-          raster.setAttribute('mask', 'url(#about-portrait-reveal-mask)');
           const clock = document.timeline.currentTime;
           const play = (
             target: Element,
@@ -188,42 +229,54 @@ async function initialize() {
             options: KeyframeAnimationOptions,
           ) => {
             const animation = animate(target, keyframes, options);
-            if (typeof clock === 'number') animation.startTime = clock;
             heroAnimations.add(animation);
+            if (typeof clock === 'number') animation.startTime = clock;
           };
+          play(
+            composition,
+            [
+              { transform: `translate(${fromX}px, ${fromY}px)` },
+              { transform: 'translate(0px, 0px)' },
+            ],
+            { delay: 800, duration: 1400, easing: 'cubic-bezier(.4,0,.2,1)' },
+          );
+          schedule(() => {
+            if (!finished) hero.dataset.aboutHeroPhase = 'transition';
+          }, 800);
           for (const line of hero.querySelectorAll('[data-about-hero-line]')) {
-            play(line, [{ strokeDashoffset: '1' }, { strokeDashoffset: '0' }], {
-              duration: 500,
-              easing: 'cubic-bezier(.3,0,.3,1)',
-            });
+            play(
+              line,
+              [
+                { strokeDashoffset: '1', opacity: 0 },
+                { strokeDashoffset: '0', opacity: 0.6 },
+              ],
+              {
+                delay: 1200,
+                duration: 1000,
+                easing: 'ease-out',
+              },
+            );
           }
+          const eyebrow = hero.querySelector('.about-hero__heading .about-eyebrow');
+          if (eyebrow)
+            play(eyebrow, [{ opacity: 0 }, { opacity: 1 }], {
+              delay: headlineDelay,
+              duration: 650,
+            });
           hero.querySelectorAll('[data-about-headline]').forEach((headline, index) => {
             play(
               headline,
               [
-                { transform: 'translateY(104%)', opacity: 0 },
+                { transform: 'translateY(75%)', opacity: 0 },
                 { transform: 'translateY(0)', opacity: 1 },
               ],
-              { duration: 620, delay: 500 + index * 90, easing: 'cubic-bezier(.2,.7,.2,1)' },
+              {
+                duration: 800,
+                delay: headlineDelay + index * 110,
+                easing: 'cubic-bezier(.2,.7,.2,1)',
+              },
             );
           });
-          for (const group of ['contour', 'face', 'fabric'] as const) {
-            hero.querySelectorAll(`[data-about-mask="${group}"]`).forEach((path, index) => {
-              play(path, [{ strokeDashoffset: '1' }, { strokeDashoffset: '0' }], {
-                duration: group === 'contour' ? 1050 : group === 'face' ? 750 : 650,
-                delay: (group === 'contour' ? 800 : group === 'face' ? 1350 : 1850) + index * 90,
-                easing: 'cubic-bezier(.25,.1,.3,1)',
-              });
-            });
-          }
-          const complete = hero.querySelector('[data-about-mask-complete]');
-          if (complete) {
-            play(complete, [{ opacity: 0 }, { opacity: 1 }], {
-              delay: 2350,
-              duration: 350,
-              easing: 'ease-out',
-            });
-          }
           hero
             .querySelectorAll('[data-about-intro], [data-about-caption]')
             .forEach((copy, index) => {
@@ -234,35 +287,45 @@ async function initialize() {
                   { opacity: 1, transform: 'none' },
                 ],
                 {
-                  duration: 900,
-                  delay: 2200 + index * 120,
+                  duration: copyDuration,
+                  delay: copyDelay + index * 100,
                   easing: 'cubic-bezier(.2,.7,.2,1)',
                 },
               );
             });
-          schedule(() => settleHero('complete'), 3500);
+          schedule(() => settleHero('complete'), mobile ? 3650 : 2900);
         } catch {
           settleHero('failure');
         }
       };
-      // Decode the same preloaded optimized URL without adding a second painted
-      // portrait. Until it is ready, the HTML artwork and all copy stay static.
-      const asset = new Image();
-      const source = raster.getAttribute('href');
+      // Decode the same displayed assets without adding painted duplicates.
+      // A late portrait or emblem keeps the complete static final composition.
+      const sources = [
+        raster.getAttribute('href'),
+        hero.querySelector('[data-about-emblem] image')?.getAttribute('href'),
+      ];
       readyDeadline = schedule(() => settleHero('late-asset'), 450);
-      asset.addEventListener('error', () => settleHero('asset-failure'), {
-        once: true,
-        signal: heroSignal,
-      });
-      const decoded = () => {
-        if (typeof asset.decode === 'function')
-          void asset.decode().then(startHero, () => settleHero('asset-failure'));
-        else startHero();
-      };
-      asset.addEventListener('load', decoded, { once: true, signal: heroSignal });
-      if (source) asset.src = source;
-      else settleHero('asset-failure');
-      if (asset.complete && asset.naturalWidth > 0) decoded();
+      const decodeAsset = (source: string | null | undefined) =>
+        new Promise<void>((resolve, reject) => {
+          if (!source) {
+            reject(new Error('Missing hero artwork'));
+            return;
+          }
+          const asset = new Image();
+          let decoding = false;
+          const loaded = () => {
+            if (decoding) return;
+            decoding = true;
+            if (typeof asset.decode === 'function')
+              void asset.decode().then(() => resolve(), reject);
+            else resolve();
+          };
+          asset.addEventListener('error', reject, { once: true, signal: heroSignal });
+          asset.addEventListener('load', loaded, { once: true, signal: heroSignal });
+          asset.src = source;
+          if (asset.complete && asset.naturalWidth > 0) loaded();
+        });
+      void Promise.all(sources.map(decodeAsset)).then(startHero, () => settleHero('asset-failure'));
     }
   } else settleHero(firstVisit ? 'unsupported' : 'already-seen');
 
@@ -285,7 +348,7 @@ async function initialize() {
         timeline.fromTo(
           lines,
           { strokeDasharray: '1 1', strokeDashoffset: 1 },
-          { strokeDashoffset: 0, duration: 1 },
+          { strokeDashoffset: 0, duration: 1, autoRound: false },
           0,
         );
         timeline.to(progress, { value: 1, duration: 1 }, 0);
@@ -329,7 +392,7 @@ async function initialize() {
         timeline.fromTo(
           process.querySelector('[data-about-process-line]'),
           { strokeDasharray: '1 1', strokeDashoffset: 1 },
-          { strokeDashoffset: 0, duration: 1 },
+          { strokeDashoffset: 0, duration: 1, autoRound: false },
           0,
         );
         timeline.to(progress, { value: 1, duration: 1 }, 0);
@@ -370,12 +433,19 @@ async function initialize() {
           start: 'top 84%',
           end: 'bottom 34%',
           animation: timeline,
-          scrub: 0.3,
+          scrub: true,
           invalidateOnRefresh: true,
-          onRefresh: syncProcess,
+          onUpdate: (self) => {
+            process.dataset.aboutScrollProgress = self.progress.toFixed(4);
+          },
+          onRefresh: (self) => {
+            syncProcess();
+            process.dataset.aboutScrollProgress = self.progress.toFixed(4);
+          },
         });
         triggers.add(trigger);
         syncProcess();
+        process.dataset.aboutScrollProgress = trigger.progress.toFixed(4);
       }
     });
 

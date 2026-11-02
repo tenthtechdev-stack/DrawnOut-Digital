@@ -38,7 +38,7 @@ async function expectFullPortrait(page: Page) {
   expect(geometry.meet).toContain('meet');
   expect(geometry.href).toContain('founders-sketch-approved');
   const viewportWidth = page.viewportSize()!.width;
-  expect(geometry.art.width).toBeGreaterThan(viewportWidth * (viewportWidth < 768 ? 0.8 : 0.35));
+  expect(geometry.art.width).toBeGreaterThan(viewportWidth * (viewportWidth < 768 ? 0.75 : 0.35));
   expect(geometry.art.x).toBeGreaterThanOrEqual(geometry.outer.x - 1);
   expect(geometry.art.y).toBeGreaterThanOrEqual(geometry.outer.y - 1);
   expect(geometry.art.x + geometry.art.width).toBeLessThanOrEqual(
@@ -128,6 +128,25 @@ for (const width of [320, 390, 768, 1440]) {
     ])
       await expect(page.locator('[data-about-page]')).toContainText(copy);
     await expectFullPortrait(page);
+    const colours = await page.evaluate(() => ({
+      hero: getComputedStyle(document.querySelector('[data-about-hero]')!).backgroundColor,
+      philosophy: getComputedStyle(document.querySelector('[data-about-philosophy]')!)
+        .backgroundColor,
+    }));
+    expect(
+      Math.max(
+        ...colours.hero
+          .match(/[\d.]+/g)!
+          .slice(0, 3)
+          .map(Number),
+      ),
+    ).toBeLessThan(60);
+    expect(colours.hero).toBe(colours.philosophy);
+    const emblem = page.locator('[data-about-emblem]');
+    await expect(emblem).toBeVisible();
+    expect(await emblem.evaluate((node) => Boolean(node.closest('[aria-hidden="true"]')))).toBe(
+      true,
+    );
     await textFits(page.locator('h1'), width);
     for (const name of await page.locator('[data-about-founder-name]').all())
       await textFits(name, width);
@@ -186,110 +205,161 @@ for (const width of [320, 390, 768, 1440]) {
   });
 }
 
-async function crop(page: Page, selector: string) {
-  const box = await page.locator(selector).boundingBox();
-  expect(box).not.toBeNull();
-  const buffer = await page.screenshot({ fullPage: true, animations: 'allow' });
+interface ArrivalFrame {
+  time: number;
+  state?: string;
+  phase?: string;
+  center: number;
+  top: number;
+  width: number;
+  transform: string;
+  headline: number;
+  intro: number;
+  logo: number;
+  overlay: boolean;
+}
+
+async function sampleArrival(page: Page) {
+  await page.addInitScript(() => {
+    const samples: unknown[] = [];
+    Reflect.set(window, '__aboutCorrectionFrames', samples);
+    function frame() {
+      const hero = document.querySelector<HTMLElement>('[data-about-hero]');
+      const composition = document.querySelector('[data-about-composition]');
+      const headline = document.querySelector('[data-about-headline]');
+      const intro = document.querySelector('[data-about-intro]');
+      const logo = document.querySelector('[data-about-emblem]');
+      if (hero && composition && headline && intro && logo) {
+        const box = composition.getBoundingClientRect();
+        samples.push({
+          time: performance.now(),
+          state: hero.dataset.aboutEntrance,
+          phase: hero.dataset.aboutHeroPhase,
+          center: box.x + box.width / 2,
+          top: box.top,
+          width: box.width,
+          transform: getComputedStyle(composition).transform,
+          headline: Number(getComputedStyle(headline).opacity),
+          intro: Number(getComputedStyle(intro).opacity),
+          logo: Number(getComputedStyle(logo).opacity),
+          overlay: document.querySelector('[data-signature-intro-overlay]') !== null,
+        });
+      }
+      if (performance.now() < 6500) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  });
+}
+
+async function heroPixels(page: Page) {
+  const box = await page.locator(hero).boundingBox();
+  // Full-page capture can temporarily resize Chromium's viewport, which must
+  // correctly release the real arrival. Observe the unchanged viewport here.
+  const buffer = await page.screenshot({ animations: 'allow' });
   return sharp(buffer)
     .extract({
       left: Math.floor(box!.x),
       top: Math.floor(box!.y),
       width: Math.floor(box!.width),
-      height: Math.floor(box!.height),
+      height: Math.floor(Math.min(box!.height, page.viewportSize()!.height - box!.y)),
     })
     .removeAlpha()
     .raw()
-    .toBuffer({ resolveWithObject: true });
+    .toBuffer();
 }
 
-function pixelsChanged(before: Buffer, after: Buffer) {
+function changedFraction(before: Buffer, after: Buffer) {
   expect(before.length).toBe(after.length);
   let changed = 0;
-  let difference = 0;
   for (let index = 0; index < before.length; index += 3) {
-    const distance =
+    if (
       Math.abs(before[index]! - after[index]!) +
-      Math.abs(before[index + 1]! - after[index + 1]!) +
-      Math.abs(before[index + 2]! - after[index + 2]!);
-    difference += distance;
-    if (distance > 24) changed += 1;
+        Math.abs(before[index + 1]! - after[index + 1]!) +
+        Math.abs(before[index + 2]! - after[index + 2]!) >
+      24
+    )
+      changed += 1;
   }
-  return { fraction: changed / (before.length / 3), mean: difference / before.length };
+  return changed / (before.length / 3);
 }
 
 for (const width of [390, 1440]) {
-  test(`real hero frames draw and settle once within 4.2 seconds at ${width}px`, async ({
+  test(`actual centered founder/logo composition moves right and settles nonblockingly at ${width}px`, async ({
     page,
   }) => {
     await page.setViewportSize(viewportFor(width));
-    await page.addInitScript(() => {
-      const samples: unknown[] = [];
-      Reflect.set(window, '__aboutSamples', samples);
-      function sample() {
-        const entrance = document.querySelector<HTMLElement>('[data-about-hero]');
-        const line = document.querySelector('[data-about-hero-line]');
-        const headline = document.querySelector('[data-about-headline]');
-        const masks = [...document.querySelectorAll('[data-about-mask]')];
-        if (entrance && line && headline)
-          samples.push({
-            time: performance.now(),
-            state: entrance.dataset.aboutEntrance,
-            line: getComputedStyle(line).strokeDashoffset,
-            headline: getComputedStyle(headline).transform,
-            masks: masks.map((node) => getComputedStyle(node).strokeDashoffset).join('|'),
-            overlayVisible: [...document.querySelectorAll('[data-signature-intro-overlay]')].some(
-              (node) =>
-                getComputedStyle(node).visibility !== 'hidden' &&
-                getComputedStyle(node).display !== 'none',
-            ),
-          });
-        if (performance.now() < 6000) requestAnimationFrame(sample);
-      }
-      requestAnimationFrame(sample);
-    });
+    await sampleArrival(page);
     await page.goto('/about', { waitUntil: 'commit' });
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');
     await expectReleased(page);
-    await page.waitForTimeout(1000);
-    const early = await crop(page, portrait);
-    await page.waitForTimeout(900);
-    const middle = await crop(page, portrait);
+    await page.waitForFunction(
+      () =>
+        performance.now() -
+          Number(
+            document.querySelector<HTMLElement>('[data-about-hero]')!.dataset.aboutStartedAt,
+          ) >=
+        400,
+    );
+    const centeredPixels = await heroPixels(page);
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');
-    const finished = await crop(page, portrait);
     await expect(page.locator(hero)).toHaveAttribute('data-about-settle-reason', 'complete');
-    await page.waitForTimeout(600);
-    const stable = await crop(page, portrait);
-    const observations = (await page.evaluate(() => Reflect.get(window, '__aboutSamples'))) as {
-      time: number;
-      state: string;
-      line: string;
-      headline: string;
-      masks: string;
-      overlayVisible: boolean;
-    }[];
-    const running = observations.filter(({ state }) => state === 'running');
-    const settled = observations.find(({ state }) => state === 'settled');
-    expect(running.length).toBeGreaterThan(8);
-    expect(new Set(running.map(({ line }) => line)).size).toBeGreaterThan(3);
-    expect(new Set(running.map(({ headline }) => headline)).size).toBeGreaterThan(3);
-    expect(new Set(running.map(({ masks }) => masks)).size).toBeGreaterThan(3);
-    expect(settled!.time - running[0]!.time).toBeLessThanOrEqual(4200);
-    expect(observations.some(({ overlayVisible }) => overlayVisible)).toBe(false);
-    const earlyToMiddle = pixelsChanged(early.data, middle.data);
-    const middleToFinished = pixelsChanged(middle.data, finished.data);
-    const afterSettle = pixelsChanged(finished.data, stable.data);
-    expect(earlyToMiddle.fraction + middleToFinished.fraction).toBeGreaterThan(0.005);
-    expect(afterSettle.fraction).toBeLessThan(0.001);
+    const settledPixels = await heroPixels(page);
+    await page.waitForTimeout(350);
+    const stablePixels = await heroPixels(page);
+    const frames = (await page.evaluate(() =>
+      Reflect.get(window, '__aboutCorrectionFrames'),
+    )) as ArrivalFrame[];
+    const running = frames.filter(({ state }) => state === 'running');
+    const final = frames.find(({ state }) => state === 'settled')!;
+    // The very first observable paint must already be the centered arrival.
+    // A settled SSR pose followed by a centered jump is a visible flash even
+    // when every later frame of the main animation is correct.
+    const beforeRunning = frames.filter(({ time }) => time <= running[0]!.time);
+    for (const frame of beforeRunning) {
+      expect(Math.abs(frame.center - width / 2)).toBeLessThan(width * 0.05);
+      expect(frame.headline).toBeLessThan(0.05);
+      expect(frame.intro).toBeLessThan(0.05);
+    }
+    // WAAPI and the phase-label timer can run on adjacent event-loop turns at
+    // the hold/move boundary. Measure the actual approved first 600ms hold.
+    const centerFrames = running.filter(
+      ({ phase, time }) => phase === 'center' && time - running[0]!.time < 600,
+    );
+    expect(centerFrames.length).toBeGreaterThan(3);
+    expect(Math.abs(centerFrames[0]!.center - width / 2)).toBeLessThan(width * 0.05);
+    expect(
+      Math.max(...centerFrames.map(({ center }) => center)) -
+        Math.min(...centerFrames.map(({ center }) => center)),
+    ).toBeLessThan(3);
+    expect(Math.max(...centerFrames.map(({ logo }) => logo))).toBeGreaterThan(0.1);
+    const distance = final.center - centerFrames[0]!.center;
+    expect(distance).toBeGreaterThan(width < 768 ? 8 : width * 0.12);
+    expect(
+      running.some(
+        ({ center }) =>
+          center > centerFrames[0]!.center + distance * 0.2 &&
+          center < final.center - distance * 0.2,
+      ),
+    ).toBe(true);
+    expect(new Set(running.map(({ transform }) => transform)).size).toBeGreaterThan(5);
+    expect(final.headline).toBe(1);
+    expect(final.intro).toBe(1);
+    expect(final.time - running[0]!.time).toBeLessThanOrEqual(4200);
+    expect(frames.some(({ overlay }) => overlay)).toBe(false);
+    const shiftedPixels = changedFraction(centeredPixels, settledPixels);
+    const stable = changedFraction(settledPixels, stablePixels);
+    expect(shiftedPixels).toBeGreaterThan(0.01);
+    expect(stable).toBeLessThan(0.001);
     await expectFullPortrait(page);
-    await test.info().attach('rendered-frame-evidence', {
+    await test.info().attach('actual-center-to-right-evidence', {
       body: JSON.stringify({
         width,
-        earlyToMiddle,
-        middleToFinished,
-        afterSettle,
-        firstRunning: running[0],
-        firstSettled: settled,
-        samples: observations,
+        distance,
+        centeredFrame: centerFrames[0],
+        final,
+        shiftedPixels,
+        stable,
+        frames,
       }),
       contentType: 'application/json',
     });

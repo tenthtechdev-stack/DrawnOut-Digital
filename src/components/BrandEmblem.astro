@@ -1,0 +1,38 @@
+---
+import { getImage } from 'astro:assets';
+import originalBrandArtwork from '../assets/brand/drawnout-logo-provided.png';
+
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+// This is a loss-preserving crop of the original 1920px supplied artwork,
+// not an enlarged navigation thumbnail or a redrawn vector emblem. The mark
+// occupies roughly 460×608 native pixels; keep its CSS width at or below 440px.
+const artwork = await getImage({
+  src: originalBrandArtwork,
+  width: 1920,
+  format: 'png',
+});
+---
+
+<svg
+  class:list={['brand-emblem', className]}
+  viewBox="160 245 470 620"
+  preserveAspectRatio="xMidYMid meet"
+  aria-hidden="true"
+  focusable="false"
+  data-brand-emblem
+>
+  <image href={artwork.src} width="1920" height="1080" />
+</svg>
+
+<style>
+  .brand-emblem {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 440px;
+    overflow: hidden;
+  }
+</style>
