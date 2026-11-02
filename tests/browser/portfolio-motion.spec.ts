@@ -1,4 +1,4 @@
-import { expect, test, type Locator, type Page } from '@playwright/test';
+import { expect, test, type Locator, type Page, type Request } from '@playwright/test';
 
 const slugs = [
   'bunzo',
@@ -41,14 +41,40 @@ async function playing(video: Locator) {
     .not.toBe(state.time);
 }
 
-async function allSix(page: Page, route: '/' | '/work', width: number) {
+async function curatedProjects(page: Page, route: '/' | '/work', width: number) {
+  const footageRequests: string[] = [];
+  const recordRequest = (request: Request) => {
+    if (request.url().includes('/media/portfolio/')) footageRequests.push(request.url());
+  };
+  page.on('request', recordRequest);
   await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
   await page.goto(`${route}#main`);
   await expect(page.locator('[data-portfolio-video]')).toHaveCount(6);
   const prefix = route === '/' ? 'home' : 'work';
+  const animated =
+    route === '/'
+      ? ['sol-community-center', 'churros', 'u-wanna-smoothie']
+      : ['sol-community-center', 'churros', 'by-tech-group', 'u-wanna-smoothie'];
+  await expect(
+    page.locator('[data-portfolio-card][data-project-presentation="animated"]'),
+  ).toHaveCount(animated.length);
   for (const slug of slugs) {
     const video = page.locator(`#${prefix}-motion-${slug}`);
-    await playing(video);
+    const card = page.locator(`[data-portfolio-card][data-project-slug="${slug}"]`);
+    await expect(card).toHaveAttribute(
+      'data-project-presentation',
+      animated.includes(slug) ? 'animated' : 'static',
+    );
+    if (animated.includes(slug)) await playing(video);
+    else {
+      await video.scrollIntoViewIfNeeded();
+      await expect(video).not.toHaveAttribute('src', /.+/);
+      await expect(video).toHaveAttribute('data-motion-state', 'poster');
+      await expect(page.locator(`[data-motion-toggle="${prefix}-motion-${slug}"]`)).toBeHidden();
+      const poster = video.locator('..').locator('picture img');
+      await expect(poster).toBeVisible();
+      expect(await poster.getAttribute('alt')).toBeTruthy();
+    }
     const budget = width < 768 ? 1 : 2;
     expect(await page.locator('[data-portfolio-video][src]').count()).toBeLessThanOrEqual(budget);
     expect(
@@ -71,9 +97,13 @@ async function allSix(page: Page, route: '/' | '/work', width: number) {
   await page.locator('[data-site-footer]').scrollIntoViewIfNeeded();
   await expect(page.locator('[data-portfolio-video][src]')).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  const staticSlugs = slugs.filter((slug) => !animated.includes(slug));
+  for (const slug of staticSlugs)
+    expect(footageRequests.some((url) => url.includes(`/${slug}-`))).toBe(false);
+  page.off('request', recordRequest);
 }
 
-test('homepage lazily attaches sources at 35% visibility and all six desktop cards autoplay', async ({
+test('homepage defers curated footage until 35% visibility and retains six compositions', async ({
   page,
 }) => {
   const requests: string[] = [];
@@ -85,26 +115,26 @@ test('homepage lazily attaches sources at 35% visibility and all six desktop car
   await page.waitForTimeout(300);
   expect(requests).toHaveLength(0);
   await expect(page.locator('[data-portfolio-video][src]')).toHaveCount(0);
-  const first = page.locator('#home-motion-bunzo');
+  const first = page.locator('#home-motion-sol-community-center');
   await page.evaluate(() => {
-    const video = document.querySelector('#home-motion-bunzo')!;
+    const video = document.querySelector('#home-motion-sol-community-center')!;
     const box = video.getBoundingClientRect();
     scrollTo(0, scrollY + box.top - innerHeight + box.height * 0.25);
   });
   await page.waitForTimeout(300);
   await expect(first).not.toHaveAttribute('src', /.+/);
   await playing(first);
-  expect(requests.every((url) => url.includes('bunzo'))).toBe(true);
-  await allSix(page, '/', 1440);
-  await allSix(page, '/work', 1440);
+  expect(requests.every((url) => url.includes('sol-community-center'))).toBe(true);
+  await curatedProjects(page, '/', 1440);
+  await curatedProjects(page, '/work', 1440);
 });
 
 for (const width of [390, 768]) {
-  test(`all six Home and Work animations autoplay without hover and respect the decoder budget at ${width}px`, async ({
+  test(`curated Home and Work motion alternates with posters and respects the decoder budget at ${width}px`, async ({
     page,
   }) => {
-    await allSix(page, '/', width);
-    await allSix(page, '/work', width);
+    await curatedProjects(page, '/', width);
+    await curatedProjects(page, '/work', width);
   });
 }
 
@@ -112,9 +142,9 @@ test('keyboard pause control stays separate from project links and preserves a d
   page,
 }) => {
   await page.goto('/work#main');
-  const video = page.locator('#work-motion-bunzo');
+  const video = page.locator('#work-motion-sol-community-center');
   await playing(video);
-  const button = page.locator('[data-motion-toggle="work-motion-bunzo"]');
+  const button = page.locator('[data-motion-toggle="work-motion-sol-community-center"]');
   expect(await button.evaluate((element) => Boolean(element.closest('a')))).toBe(false);
   await button.focus();
   expect(await button.evaluate((element) => getComputedStyle(element).outlineStyle)).not.toBe(
@@ -134,7 +164,7 @@ test('keyboard pause control stays separate from project links and preserves a d
 
 test('document visibility changes release decoders and visible cards resume', async ({ page }) => {
   await page.goto('/work#main');
-  const video = page.locator('#work-motion-bunzo');
+  const video = page.locator('#work-motion-sol-community-center');
   await playing(video);
   // Synthetic visibility events exercise the same handler deterministically in headless Chromium.
   await page.evaluate(() => {
@@ -175,6 +205,13 @@ for (const mode of ['reduced-motion', 'save-data', 'autoplay-blocked'] as const)
         await expect(poster).toBeVisible();
         expect(await poster.getAttribute('alt')).toBeTruthy();
         await expect(video).toHaveAttribute('data-motion-state', 'poster');
+      }
+      if (mode !== 'autoplay-blocked') {
+        for (const title of await page.locator('[data-portfolio-title]').all()) {
+          expect(await title.textContent()).toBeTruthy();
+          expect(await title.evaluate((element) => element.getAnimations().length)).toBe(0);
+          expect(await title.evaluate((element) => getComputedStyle(element).opacity)).toBe('1');
+        }
       }
       await expect(page.locator('[data-portfolio-video][src]')).toHaveCount(0);
     }
@@ -226,22 +263,111 @@ test('no JavaScript leaves clickable descriptive cards and official contact link
   }
 });
 
-test('filtering releases hidden animations and keeps category navigation and project links working', async ({
+test('filters curate the visible sequence, release hidden footage and preserve project links', async ({
   page,
 }) => {
   await page.goto('/work#main');
-  const video = page.locator('#work-motion-bunzo');
-  await playing(video);
-  // Bunzo has no print category, so this actually removes the playing card.
+  const sol = page.locator('#work-motion-sol-community-center');
+  await playing(sol);
+  await page.locator('[data-filter="packaging"]').click();
+  await expect(page.locator('[data-filter="packaging"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('[data-project-slug="sol-community-center"]')).toBeHidden();
+  await expect(sol).not.toHaveAttribute('src', /.+/);
+  await expect(page.locator('[data-work-count]')).toContainText('Packaging');
+  await expect(
+    page.locator('[data-portfolio-card]:visible[data-project-presentation="animated"]'),
+  ).toHaveCount(2);
+  for (const slug of ['bunzo', 'u-wanna-smoothie'])
+    await expect(page.locator(`[data-project-slug="${slug}"]`)).toHaveAttribute(
+      'data-project-presentation',
+      'animated',
+    );
+  const churros = page.locator('#work-motion-churros');
+  await expect(churros).not.toHaveAttribute('src', /.+/);
+  await expect(page.locator('[data-motion-toggle="work-motion-churros"]')).toBeHidden();
+  await playing(page.locator('#work-motion-bunzo'));
   await page.locator('[data-filter="print"]').click();
-  await expect(page.locator('[data-filter="print"]')).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('[data-project-slug="bunzo"]')).toBeHidden();
-  await expect(video).not.toHaveAttribute('src', /.+/);
-  await expect(page.locator('[data-work-count]')).toContainText('Print');
+  await expect(page.locator('#work-motion-bunzo')).not.toHaveAttribute('src', /.+/);
+  await expect(
+    page.locator('[data-portfolio-card]:visible[data-project-presentation="animated"]'),
+  ).toHaveCount(3);
+  for (const slug of ['sol-community-center', 'by-tech-group', 'u-wanna-smoothie'])
+    await expect(page.locator(`[data-project-slug="${slug}"]`)).toHaveAttribute(
+      'data-project-presentation',
+      'animated',
+    );
   await page.locator('[data-filter="all"]').click();
-  await playing(video);
-  const link = page.locator('[data-project-slug="bunzo"] a[href="/work/bunzo"]');
+  await playing(sol);
+  const link = page.locator(
+    '[data-project-slug="sol-community-center"] a[href="/work/sol-community-center"]',
+  );
   await link.focus();
   await page.keyboard.press('Enter');
-  await expect(page).toHaveURL('/work/bunzo');
+  await expect(page).toHaveURL('/work/sol-community-center');
+});
+
+test('unchanged DOM and repeated filter events retain playing footage without source or play resets', async ({
+  page,
+}) => {
+  await page.goto('/work#main');
+  const video = page.locator('#work-motion-sol-community-center');
+  await playing(video);
+  await video.evaluate((element: HTMLVideoElement) => {
+    const state = { loads: 0, plays: 0, sourceMutations: 0 };
+    const load = element.load.bind(element);
+    const play = element.play.bind(element);
+    element.load = () => {
+      state.loads += 1;
+      load();
+    };
+    element.play = () => {
+      state.plays += 1;
+      return play();
+    };
+    new MutationObserver((records) => {
+      state.sourceMutations += records.length;
+    }).observe(element, {
+      attributes: true,
+      attributeFilter: ['src'],
+    });
+    Object.assign(element, { testPlaybackUpdates: state });
+    document.dispatchEvent(new Event('astro:page-load'));
+    document.dispatchEvent(new CustomEvent('portfolio:filterchange', { bubbles: true }));
+  });
+  const before = await video.evaluate((element: HTMLVideoElement) => element.currentTime);
+  await expect
+    .poll(() => video.evaluate((element: HTMLVideoElement) => element.currentTime))
+    .not.toBe(before);
+  const mutations = await video.evaluate(
+    (element) =>
+      (element as HTMLVideoElement & { testPlaybackUpdates: object }).testPlaybackUpdates,
+  );
+  expect(mutations).toEqual({ loads: 0, plays: 0, sourceMutations: 0 });
+  await expect(video).toHaveAttribute('data-motion-state', 'playing');
+});
+
+test('project copy reveals once, stays readable and completes immediately for keyboard focus', async ({
+  page,
+}) => {
+  await page.goto('/work#main');
+  const card = page.locator('[data-project-slug="sol-community-center"]');
+  const caption = card.locator('[data-portfolio-caption]');
+  await caption.scrollIntoViewIfNeeded();
+  await expect(caption).toHaveAttribute('data-portfolio-reveal', 'complete');
+  const title = caption.locator('[data-portfolio-title]');
+  await expect(title).toHaveText('SOL Community Center');
+  const titleText = await title.textContent();
+  await page.locator('main h1').scrollIntoViewIfNeeded();
+  await caption.scrollIntoViewIfNeeded();
+  await expect(caption).toHaveAttribute('data-portfolio-reveal', 'complete');
+  expect(await title.textContent()).toBe(titleText);
+  await page.evaluate(() => new Promise(requestAnimationFrame));
+  expect(await title.evaluate((element) => element.getAnimations().length)).toBe(0);
+  const later = page.locator('[data-project-slug="u-wanna-smoothie"]');
+  await later.locator('a').focus();
+  await expect(later.locator('[data-portfolio-caption]')).toHaveAttribute(
+    'data-portfolio-reveal',
+    'complete',
+  );
+  await expect(later.locator('[data-portfolio-title]')).toBeVisible();
 });

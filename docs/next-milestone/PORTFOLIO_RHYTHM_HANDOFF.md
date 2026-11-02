@@ -1,0 +1,15 @@
+# Portfolio rhythm refinement
+
+The existing project order remains the source of the presentation order. Home and Work both begin Bunzo, SOL Community Center, Triarch and Churros. SOL is the required animated selection, so the curated opening deliberately begins **static → animated → static → animated**. This preserves the approved sorting while keeping SOL prominent instead of applying an animated-first parity rule that would suppress it.
+
+The rhythm selector works with every visible project, including projects with no motion asset. It anchors SOL when present, then chooses available motion with a static visible project between animated selections. Without SOL, it starts with the first visible motion project. Poster-only projects remain static; their longer static gaps are preserved rather than inventing footage or changing project order.
+
+Default animated selections are SOL, Churros and U Wanna Smoothie on Home, with By Tech Group also animated on Work. Packaging filtering selects Bunzo and U Wanna Smoothie; Print selects SOL, By Tech Group and U Wanna Smoothie. Filters change presentation eligibility without rebuilding the cards. Six video nodes and all twelve landscape/portrait MP4 exports remain available. Project metadata, media publication boundaries, links and source artwork are preserved.
+
+Eligible footage retains the existing 35% viewport threshold and one mobile/coarse-pointer or two desktop decoders. Static selections receive no source and expose no playback control. Reduced motion, Save Data and no JavaScript retain descriptive posters. Repeated initialization and unchanged filter events should preserve an already playing source.
+
+Project titles and metadata use a single restrained upward reveal with a short stagger. The semantic text exists immediately; keyboard focus completes the reveal, and reduced motion/Save Data use readable static copy.
+
+The browser suite now checks curated motion and static choices, decoder limits, static source avoidance, filter changes, unchanged-DOM playback, one-time copy reveals, keyboard controls and fallback behavior. `scripts/capture-portfolio-motion.mjs` visits all cards, records both selected footage and static gaps, and checks title completion. Its default output is now `artifacts/portfolio-rhythm`, preserving the prior asset and playback evidence in `artifacts/portfolio-motion`. Running it captures browser behavior; it does not regenerate project MP4 assets.
+
+Validation at this checkpoint: Astro check passed with zero diagnostics; the production build passed; all seven focused portfolio unit tests passed; targeted ESLint, Prettier, JavaScript syntax and whitespace checks passed. All twelve MP4 exports match their existing manifest SHA-256 hashes. The full unit command passed seven of eight test files; the existing original-asset test encountered sandbox `spawnSync git EPERM` when reading its authorized reference tree, rather than reporting an asset mismatch. Browser execution and fresh visual recordings remain pending the coordinating agent's browser handoff. No browser validation or recording result is claimed here.

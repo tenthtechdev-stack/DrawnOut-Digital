@@ -2,7 +2,85 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { z } from 'astro/zod';
 import { projectSchema } from '../src/lib/project-schema';
-import { selectMotionCandidates } from '../src/lib/portfolio-motion-policy';
+import {
+  selectMotionCandidates,
+  selectPortfolioRhythm,
+  type PortfolioRhythmProject,
+} from '../src/lib/portfolio-motion-policy';
+
+const rhythmProjects: readonly PortfolioRhythmProject[] = [
+  { id: 'bunzo', hasMotion: true },
+  { id: 'sol-community-center', hasMotion: true, priority: 1 },
+  { id: 'triarch', hasMotion: true },
+  { id: 'churros', hasMotion: true },
+  { id: 'capture', hasMotion: false },
+  { id: 'by-tech-group', hasMotion: true },
+  { id: 'khalo', hasMotion: false },
+  { id: 'fk-technology', hasMotion: false },
+  { id: 'feed-n-seed', hasMotion: false },
+  { id: 'abacus-immigration', hasMotion: false },
+  { id: 'u-wanna-smoothie', hasMotion: true },
+];
+
+test('visible project rhythm preserves SOL and approved ordering with genuine static spacers', () => {
+  const immutable = rhythmProjects.map((project) => Object.freeze({ ...project }));
+  const before = structuredClone(immutable);
+  assert.deepEqual(selectPortfolioRhythm(Object.freeze(immutable)), [
+    'sol-community-center',
+    'churros',
+    'by-tech-group',
+    'u-wanna-smoothie',
+  ]);
+  assert.deepEqual(immutable, before);
+  // The homepage omits Capture, so By Tech provides the static beat before Smoothie.
+  const featured = rhythmProjects.filter(({ hasMotion }) => hasMotion);
+  assert.deepEqual(selectPortfolioRhythm(featured), [
+    'sol-community-center',
+    'churros',
+    'u-wanna-smoothie',
+  ]);
+});
+
+test('filters curate the visible subset, counting poster-only cards rather than motion parity', () => {
+  const select = (ids: string[]) =>
+    selectPortfolioRhythm(rhythmProjects.filter(({ id }) => ids.includes(id)));
+  assert.deepEqual(select(['bunzo', 'churros', 'khalo', 'feed-n-seed', 'u-wanna-smoothie']), [
+    'bunzo',
+    'u-wanna-smoothie',
+  ]);
+  assert.deepEqual(
+    select(['bunzo', 'capture', 'by-tech-group', 'fk-technology', 'abacus-immigration']),
+    ['bunzo', 'by-tech-group'],
+  );
+  assert.deepEqual(
+    select([
+      'sol-community-center',
+      'triarch',
+      'capture',
+      'by-tech-group',
+      'fk-technology',
+      'feed-n-seed',
+      'abacus-immigration',
+      'u-wanna-smoothie',
+    ]),
+    ['sol-community-center', 'by-tech-group', 'u-wanna-smoothie'],
+  );
+  assert.deepEqual(select(['triarch']), ['triarch']);
+  assert.deepEqual(select(['capture', 'khalo']), []);
+  assert.deepEqual(selectPortfolioRhythm([]), []);
+});
+
+test('curation is deterministic and priority never invents motion for a poster-only project', () => {
+  const input = [
+    { id: 'still', hasMotion: false, priority: 10 },
+    { id: 'first', hasMotion: true },
+    { id: 'second', hasMotion: true },
+    { id: 'space', hasMotion: false },
+    { id: 'last', hasMotion: true },
+  ];
+  assert.deepEqual(selectPortfolioRhythm(input), ['first', 'last']);
+  assert.deepEqual(selectPortfolioRhythm(input), ['first', 'last']);
+});
 
 test('mobile selects one visible motion decoder, desktop two, without mutating candidates', () => {
   const candidates = [

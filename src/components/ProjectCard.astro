@@ -24,19 +24,21 @@ const categories = project.data.categories
   .join(' / ');
 ---
 
-<div class="project-card-shell">
+<div class="project-card-shell" data-portfolio-card data-project-slug={project.data.slug}>
   <a
     href={href}
     class:list={['project-card', `project-card--${layout}`]}
     data-project-card
     aria-labelledby={`project-${project.id}`}
   >
-    <div class="project-meta">
+    <div class="project-meta" data-portfolio-caption>
       <div>
         <p class="eyebrow project-number">0{index + 1}</p>
-        <h3 id={`project-${project.id}`}>{project.data.title}</h3>
+        <h3 id={`project-${project.id}`} data-portfolio-title>
+          {project.data.title}
+        </h3>
       </div>
-      <p class="project-context">
+      <p class="project-context" data-portfolio-meta>
         {categories || 'Artwork'}
         <br />
         <span class="project-visit">
@@ -64,6 +66,9 @@ const categories = project.data.categories
   </a>
   {motion && <PortfolioMotionToggle id={motionId} title={project.data.title} />}
 </div>
+<script>
+  import '../scripts/portfolio-titles';
+</script>
 <style>
   .project-card {
     display: block;

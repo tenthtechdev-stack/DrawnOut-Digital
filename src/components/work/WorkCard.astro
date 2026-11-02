@@ -27,6 +27,7 @@ const titleId = `index-project-${data.slug}`;
 <li
   class:list={['work-item', `work-item--${data.presentation}`]}
   data-work-card
+  data-portfolio-card
   data-categories={data.categories.join(' ')}
   data-project-slug={data.slug}
 >
@@ -54,14 +55,16 @@ const titleId = `index-project-${data.slug}`;
           <Arrow />
         </span>
       </div>
-      <div class="work-card-caption">
+      <div class="work-card-caption" data-portfolio-caption>
         <div class="work-card-name">
           <span class="work-number" aria-hidden="true">
             {String(index + 1).padStart(2, '0')}
           </span>
-          <h2 id={titleId}>{data.title}</h2>
+          <h2 id={titleId} data-portfolio-title>
+            {data.title}
+          </h2>
         </div>
-        <div class="work-card-description">
+        <div class="work-card-description" data-portfolio-meta>
           <p>{categories.length ? categories.join(' / ') : 'Creative presentation'}</p>
           <span class="work-view">
             {preview && unpublished ? 'Preview project' : 'View project'} <Arrow />
@@ -72,6 +75,10 @@ const titleId = `index-project-${data.slug}`;
     {motion && <PortfolioMotionToggle id={motionId} title={data.title} />}
   </article>
 </li>
+
+<script>
+  import '../../scripts/portfolio-titles';
+</script>
 
 <style>
   .work-item {

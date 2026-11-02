@@ -4,7 +4,7 @@ import ProjectCard from './ProjectCard.astro';
 const projects = (await getPublicProjects({ featuredOnly: true })).slice(0, 3);
 ---
 
-<div class="preview-projects">
+<div class="preview-projects" data-portfolio-rhythm>
   {projects[0] && <ProjectCard project={projects[0]} index={0} layout="lead" />}
   <div class="paired-projects">
     {projects.slice(1).map((project, index) => (

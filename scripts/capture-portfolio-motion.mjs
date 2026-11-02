@@ -11,20 +11,12 @@ const argument = (name, fallback) => {
   return index < 0 ? fallback : process.argv[index + 1];
 };
 const baseURL = argument('--base-url', process.env.PORTFOLIO_BASE_URL ?? 'http://127.0.0.1:4363');
-const output = path.resolve(argument('--out', 'artifacts/portfolio-motion'));
+const output = path.resolve(argument('--out', 'artifacts/portfolio-rhythm'));
 const nativeDirectory = path.resolve(
-  argument('--native-out', '/tmp/drawnout-portfolio-native-recordings'),
+  argument('--native-out', '/tmp/drawnout-portfolio-rhythm-native-recordings'),
 );
 const ffmpeg = process.env.FFMPEG_PATH ?? '/usr/bin/ffmpeg';
 const ffprobe = process.env.FFPROBE_PATH ?? '/usr/bin/ffprobe';
-const slugs = [
-  'bunzo',
-  'sol-community-center',
-  'triarch',
-  'churros',
-  'by-tech-group',
-  'u-wanna-smoothie',
-];
 const evidence = {
   capturedAt: new Date().toISOString(),
   baseURL,
@@ -197,42 +189,81 @@ try {
         mode: 'normal-motion',
         position: 'top',
       });
-      for (const slug of slugs) {
-        const video = page.locator('#' + name + '-motion-' + slug);
-        await video.evaluate((element) => {
+      const cards = await page.locator('[data-portfolio-card]').all();
+      for (const card of cards) {
+        const slug = await card.getAttribute('data-project-slug');
+        const presentation = await card.getAttribute('data-project-presentation');
+        assert.ok(['animated', 'static'].includes(presentation));
+        const video = card.locator('[data-portfolio-video]');
+        const target = (await video.count()) ? video : card.locator('[data-media-slot]');
+        await target.evaluate((element) => {
           const box = element.getBoundingClientRect();
           window.scrollTo({
             top: window.scrollY + box.top - (window.innerHeight - box.height) / 2,
             behavior: 'instant',
           });
         });
+        let before = null;
+        let after = null;
+        let crop = null;
+        if (presentation === 'animated') {
+          await page.waitForFunction(
+            (id) => document.getElementById(id)?.dataset.motionState === 'playing',
+            await video.getAttribute('id'),
+          );
+          before = await videoState(video);
+          assert.equal(before.paused, false);
+          assert.equal(before.muted && before.loop && before.playsInline, true);
+          assert.ok(before.intersectionRatio >= 0.35);
+          assert.ok(before.activeSources <= (width === 390 ? 1 : 2));
+          assert.ok(before.playingVideos <= (width === 390 ? 1 : 2));
+          crop = before.mediaBox.width / before.mediaBox.height < 1.1 ? 'portrait' : 'landscape';
+          assert.ok(before.source.endsWith('-' + crop + '.mp4'));
+          // Selected footage runs naturally for a complete loop in recordings.
+          await page.waitForTimeout(record ? 6250 : 400);
+          after = await videoState(video);
+          assert.notEqual(
+            after.currentTime,
+            before.currentTime,
+            name + ' ' + slug + ' must advance',
+          );
+          assert.equal(after.paused, false);
+        } else {
+          // Static selections keep their approved poster even when a motion asset exists.
+          await page.waitForTimeout(record ? 1400 : 400);
+          if (await video.count()) {
+            before = await videoState(video);
+            assert.equal(await video.getAttribute('src'), null);
+            assert.equal(before.paused, true);
+            assert.equal(before.state, 'poster');
+          }
+          assert.equal(await card.locator('[data-motion-toggle]:visible').count(), 0);
+          assert.ok(await card.locator('picture img').getAttribute('alt'));
+        }
+        const caption = card.locator('[data-portfolio-caption]');
+        await caption.scrollIntoViewIfNeeded();
         await page.waitForFunction(
-          (id) => document.getElementById(id)?.dataset.motionState === 'playing',
-          await video.getAttribute('id'),
+          (slug) =>
+            document.querySelector(
+              '[data-portfolio-card][data-project-slug="' + slug + '"] [data-portfolio-caption]',
+            )?.dataset.portfolioReveal === 'complete',
+          slug,
         );
-        const before = await videoState(video);
-        assert.equal(before.paused, false);
-        assert.equal(before.muted && before.loop && before.playsInline, true);
-        assert.ok(before.intersectionRatio >= 0.35);
-        assert.ok(before.activeSources <= (width === 390 ? 1 : 2));
-        assert.ok(before.playingVideos <= (width === 390 ? 1 : 2));
-        const crop =
-          before.mediaBox.width / before.mediaBox.height < 1.1 ? 'portrait' : 'landscape';
-        assert.ok(before.source.endsWith('-' + crop + '.mp4'));
-        // Let the real footage run naturally for a complete loop in recordings.
-        await page.waitForTimeout(record ? 6250 : 400);
-        const after = await videoState(video);
-        assert.notEqual(
-          after.currentTime,
-          before.currentTime,
-          name + ' ' + slug + ' must actually advance',
-        );
-        assert.equal(after.paused, false);
-        evidence.playback.push({ route, width, slug, crop, before, after });
+        evidence.playback.push({
+          route,
+          width,
+          slug,
+          presentation,
+          crop,
+          before,
+          after,
+          titleReveal: await caption.getAttribute('data-portfolio-reveal'),
+        });
         await screenshot(page, name + '-' + width + '-' + slug + '.png', {
           route,
           mode: 'normal-motion',
           slug,
+          presentation,
         });
         await save();
       }
@@ -251,7 +282,7 @@ try {
           reducedMotion: false,
           method:
             'Continuous native Playwright browser video; MP4/GIF conversion changes encoding only.',
-          ...transcode(nativeFile, name + '-' + width + '-autoplay'),
+          ...transcode(nativeFile, name + '-' + width + '-rhythm'),
         });
         await save();
       }
@@ -288,11 +319,11 @@ try {
   }
   assert.equal(evidence.errors.length, 0, 'Normal motion pages must not throw browser errors');
   const html =
-    '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfolio motion — live website evidence</title><style>body{font:16px/1.6 system-ui;background:#f8f6ef;color:#24221f;margin:0;padding:clamp(20px,5vw,70px)}main{max-width:1280px;margin:auto}h1{font-size:clamp(32px,5vw,64px);line-height:1.1}h2{margin-top:60px}a{color:#68523d}video{width:100%;background:#e9e4d8;max-height:680px}section{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:28px}article{min-width:0}img{width:100%;height:250px;object-fit:cover;object-position:top;border:1px solid #d4ccbc}p{max-width:850px}.meta{font-size:13px;color:#665f53}code{overflow-wrap:anywhere}</style><main><h1>Portfolio motion in the live website</h1><p>Six project loops autoplay silently when visible, without hover. These continuous browser recordings show the real Home and Work pages at 390px and 1440px. Each card plays naturally for at least 6.25 seconds. The 768px views and static reduced-motion layouts are below.</p><p class="meta">Captured ' +
+    '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfolio motion — live website evidence</title><style>body{font:16px/1.6 system-ui;background:#f8f6ef;color:#24221f;margin:0;padding:clamp(20px,5vw,70px)}main{max-width:1280px;margin:auto}h1{font-size:clamp(32px,5vw,64px);line-height:1.1}h2{margin-top:60px}a{color:#68523d}video{width:100%;background:#e9e4d8;max-height:680px}section{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:28px}article{min-width:0}img{width:100%;height:250px;object-fit:cover;object-position:top;border:1px solid #d4ccbc}p{max-width:850px}.meta{font-size:13px;color:#665f53}code{overflow-wrap:anywhere}</style><main><h1>Portfolio motion in the live website</h1><p>Curated animated projects alternate with descriptive static posters in the preserved project order, with SOL retained as an animated anchor. All six motion assets remain available. These continuous browser recordings show the real Home and Work pages at 390px and 1440px, including the one-time title reveals. Selected footage plays naturally for at least 6.25 seconds; static projects remain on their posters. The 768px views and reduced-motion layouts are below.</p><p class="meta">Captured ' +
     evidence.capturedAt +
     ' from a local production build. Chromium ' +
     evidence.browser +
-    ' with SwiftShader software WebGL. This is browser behavior evidence, not a physical-device performance benchmark. MP4/GIF are transcodes of native Playwright recordings; no animation was sought or composited.</p><p><a href="assets-gallery.html">Six individual project exports and source-artwork keyframes</a> · <a href="website-evidence.json">Browser playback measurements</a> · <a href="browser-tests.json">Browser test report</a></p><h2>Live autoplay recordings</h2><section>' +
+    ' with SwiftShader software WebGL. This is browser behavior evidence, not a physical-device performance benchmark. MP4/GIF are transcodes of native Playwright recordings; no animation was sought or composited.</p><p><a href="../portfolio-motion/assets-gallery.html">Six individual project exports and source-artwork keyframes</a> · <a href="website-evidence.json">Browser playback measurements</a> · <a href="browser-tests.json">Browser test report</a></p><h2>Live portfolio rhythm recordings</h2><section>' +
     evidence.recordings
       .map(
         (recording) =>
