@@ -354,7 +354,7 @@ test('no-JavaScript pages retain readable text, portfolio imagery and navigation
   const page = await context.newPage();
   await page.goto('http://127.0.0.1:4321/');
   await expect(page.locator('main h1')).toBeVisible();
-  await expect(page.locator('[data-work] img')).toHaveCount(5);
+  await expect(page.locator('[data-work] img')).toHaveCount(6);
   for (const line of await page.locator('[data-type-line]').all()) {
     expect(await line.evaluate((element) => getComputedStyle(element).opacity)).toBe('1');
   }

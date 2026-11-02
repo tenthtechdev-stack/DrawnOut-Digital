@@ -352,11 +352,15 @@ test('new-tab and modified links do not leave a same-tab suppression token', asy
 
 for (const mode of ['reduced', 'save-data', 'hidden'] as const) {
   test(`development replay cannot bypass ${mode}`, async ({ page }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
     if (mode === 'reduced') await page.emulateMedia({ reducedMotion: 'reduce' });
     else
       await page.addInitScript((preference) => {
         if (preference === 'save-data')
-          Object.defineProperty(navigator, 'connection', { value: { saveData: true } });
+          Object.defineProperty(navigator, 'connection', {
+            value: Object.assign(new EventTarget(), { saveData: true }),
+          });
         else Object.defineProperty(document, 'hidden', { get: () => true });
       }, mode);
     await page.goto('/?showIntro=1');
@@ -366,6 +370,7 @@ for (const mode of ['reduced', 'save-data', 'hidden'] as const) {
       'data-signature-intro-reason',
       mode === 'reduced' ? 'reduced-motion' : mode,
     );
+    expect(errors).toEqual([]);
   });
 }
 

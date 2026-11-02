@@ -4,6 +4,8 @@ Native Chromium screenshots and real-time recordings from the local production b
 
 [Observed validation](../../docs/next-milestone/ABOUT_PAGE_VALIDATION.md) · [Capture facts, dimensions and hashes](capture-evidence.json) · [Browser test report](browser-tests.json)
 
+[Complete browser coverage and initial/corrected regression reports](browser-coverage-summary.json) · [Portfolio rhythm gallery](../portfolio-rhythm/README.md)
+
 ## Desktop and mobile hero
 
 ### 1440px

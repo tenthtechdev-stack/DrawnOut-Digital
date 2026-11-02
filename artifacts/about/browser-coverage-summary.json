@@ -1,0 +1,1988 @@
+{
+  "generatedAt": "2026-11-02T17:51:49.440046+00:00",
+  "method": "Aggregate of separate browser runs, not one 240-test invocation. The initial shared regression had eight inherited five-card expectation failures; corrected tests were rerun. Original reports are retained.",
+  "applicationSourceCheckpoint": "bddcf1b8f25a59e868ce256c79b96f98db15602d",
+  "uniquePassingCases": 240,
+  "unresolvedCases": 0,
+  "initialStaleExpectationFailures": 8,
+  "correctedFocusedRunPasses": 12,
+  "runs": [
+    {
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "stats": {
+        "startTime": "2026-11-02T17:41:31.211Z",
+        "duration": 408123.577,
+        "expected": 173,
+        "skipped": 0,
+        "unexpected": 8,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "stats": {
+        "startTime": "2026-11-02T17:48:54.448Z",
+        "duration": 25091.489,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/about/browser-tests.json",
+      "stats": {
+        "startTime": "2026-11-02T14:30:32.166Z",
+        "duration": 60961.744,
+        "expected": 17,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "stats": {
+        "startTime": "2026-11-02T14:44:15.099Z",
+        "duration": 195377.773,
+        "expected": 35,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/about/production-loader-tests.json",
+      "stats": {
+        "startTime": "2026-11-02T17:39:19.446Z",
+        "duration": 74568.473,
+        "expected": 7,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "cases": [
+    {
+      "file": "about.spec.ts",
+      "title": "changing motion preferences during arrival releases the full portrait immediately",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 884
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "direct, internal and refresh About arrivals stay nonblocking; Work is immediate and Home retains its full loop",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 7560
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "early keyboard settles the entrance without blocking content",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 1290
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "early scroll settles the entrance without blocking content",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 1053
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "hidden provides the complete static story",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 1275
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "init-failure provides the complete static story",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 1496
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "no-JavaScript mobile story, native menu, portrait and invitation remain usable",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 1148
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "origin and process drawing reverse with native scrolling; names and principles reveal once at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 7308
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "origin and process drawing reverse with native scrolling; names and principles reveal once at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 6914
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "real hero frames draw and settle once within 4.2 seconds at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 9008
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "real hero frames draw and settle once within 4.2 seconds at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 5886
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "reduced provides the complete static story",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 1418
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "save-data provides the complete static story",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 1324
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 3099
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 3160
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 3013
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/browser-tests.json",
+      "durationMs": 2863
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept a: no JavaScript and reduced motion remain readable",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 491
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept a: usable at 1024px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 967
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept a: usable at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 2254
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept a: usable at 1920px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1183
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept a: usable at 360px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1389
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept a: usable at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1266
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept a: usable at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 959
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept b: no JavaScript and reduced motion remain readable",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 409
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept b: usable at 1024px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 885
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept b: usable at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1394
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept b: usable at 1920px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 942
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept b: usable at 360px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 934
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept b: usable at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1002
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept b: usable at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 884
+    },
+    {
+      "file": "concepts.spec.ts",
+      "title": "concept switch changes the layout and preserves the supplied copy",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 554
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "Contact is responsive and accessible at 1440px with official contact links",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1508
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "Contact is responsive and accessible at 390px with official contact links",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1594
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "Contact is responsive and accessible at 768px with official contact links",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1583
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "a configured form has a native POST fallback without JavaScript",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1010
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "a timed-out request reports uncertainty without an automatic retry",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 734
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "an unconfigured form never posts or reports success and offers email instead",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 666
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "conflicting-error provider failure keeps the enquiry and never announces success",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 697
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "correcting errors and explicitly retrying a rejected submission preserves a valid enquiry",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 850
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "http provider failure keeps the enquiry and never announces success",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 703
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "input limits and the honeypot reject oversized or automated submissions",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 821
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "malformed provider failure keeps the enquiry and never announces success",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 683
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "network provider failure keeps the enquiry and never announces success",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 710
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "no JavaScript leaves the unconfigured form safe and direct contact usable",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 869
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "not-accepted provider failure keeps the enquiry and never announces success",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 728
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "provider acceptance is announced honestly and duplicate submissions stay blocked",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 894
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "required fields announce errors, focus the summary and link back to controls",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1515
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "whitespace-only values and malformed email are rejected without a request",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 750
+    },
+    {
+      "file": "footer-social.spec.ts",
+      "title": "footer social and attribution links remain usable without JavaScript",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 732
+    },
+    {
+      "file": "footer-social.spec.ts",
+      "title": "footer social icons and exact development credit are usable at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1299
+    },
+    {
+      "file": "footer-social.spec.ts",
+      "title": "footer social icons and exact development credit are usable at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1198
+    },
+    {
+      "file": "footer-social.spec.ts",
+      "title": "footer social icons and exact development credit are usable at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1112
+    },
+    {
+      "file": "footer-social.spec.ts",
+      "title": "footer social icons and exact development credit are usable at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1217
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "About route has shared navigation, metadata, and correct current-page state",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 953
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "Afterglow foundation is readable and complete at 1024px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 1558
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "Afterglow foundation is readable and complete at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 4342
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "Afterglow foundation is readable and complete at 1920px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 1696
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "Afterglow foundation is readable and complete at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 1870
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "Afterglow foundation is readable and complete at 360px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 1426
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "Afterglow foundation is readable and complete at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 2271
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "Afterglow foundation is readable and complete at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 2979
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "Contact route has shared navigation, metadata, and correct current-page state",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 632
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "Services route has shared navigation, metadata, and correct current-page state",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 594
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "Work route has shared navigation, metadata, and correct current-page state",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 704
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "mobile navigation closes after link selection and desktop resize releases its lock",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 952
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "mobile navigation dismisses on the backdrop",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 769
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "mobile navigation traps focus, closes with Escape, and restores the trigger",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 986
+    },
+    {
+      "file": "foundation.spec.ts",
+      "title": "no-JavaScript mobile navigation and reduced-motion content stay usable",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 813
+    },
+    {
+      "file": "loader.spec.ts",
+      "title": "failed storyboard clock initialization reveals a working homepage",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/production-loader-tests.json",
+      "durationMs": 1073
+    },
+    {
+      "file": "loader.spec.ts",
+      "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/production-loader-tests.json",
+      "durationMs": 23708
+    },
+    {
+      "file": "loader.spec.ts",
+      "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/production-loader-tests.json",
+      "durationMs": 23159
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "case image expansion completes and reverses without layout shifts at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1076
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "case image expansion completes and reverses without layout shifts at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 984
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "case image expansion completes and reverses without layout shifts at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 2099
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "failed GSAP downloads leave visible content and a usable static page",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 980
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "filter changes, resize and repeated initialization keep one scoped motion system",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1333
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "hero entrance starts before its first painted text and never replays at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 2582
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "hero entrance starts before its first painted text and never replays at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 2547
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "hero entrance starts before its first painted text and never replays at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 2603
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "home image expansion completes and reverses without layout shifts at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1036
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "home image expansion completes and reverses without layout shifts at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1378
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "home image expansion completes and reverses without layout shifts at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1039
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "keyboard focus exposes the complete interactive portfolio image",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 997
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "late GSAP loading releases the hero watchdog and preserves the visible static text",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 3204
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "live reduced-motion changes remove scroll choreography and restore it without duplicates",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1098
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "motion enhancement preserves readable content and normal scrolling at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1755
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "motion enhancement preserves readable content and normal scrolling at 1920px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1831
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "motion enhancement preserves readable content and normal scrolling at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1721
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "motion enhancement preserves readable content and normal scrolling at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1979
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "motion enhancement preserves readable content and normal scrolling at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1812
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "no-JavaScript pages retain readable text, portfolio imagery and navigation",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 1466
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "work image expansion completes and reverses without layout shifts at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1185
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "work image expansion completes and reverses without layout shifts at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1369
+    },
+    {
+      "file": "motion.spec.ts",
+      "title": "work image expansion completes and reverses without layout shifts at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1430
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "autoplay-blocked retains meaningful project posters without a broken player",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 4607
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "curated Home and Work motion alternates with posters and respects the decoder budget at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 5643
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "curated Home and Work motion alternates with posters and respects the decoder budget at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 10071
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "document visibility changes release decoders and visible cards resume",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 2468
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "filters curate the visible sequence, release hidden footage and preserve project links",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 2834
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "homepage defers curated footage until 35% visibility and retains six compositions",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 12807
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "keyboard pause control stays separate from project links and preserves a descriptive poster",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 2639
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "no JavaScript leaves clickable descriptive cards and official contact links without video requests",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 1968
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "project copy reveals once, stays readable and completes immediately for keyboard focus",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 2823
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "reduced-motion retains meaningful project posters without a broken player",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 5038
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "save-data retains meaningful project posters without a broken player",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 4630
+    },
+    {
+      "file": "portfolio-motion.spec.ts",
+      "title": "unchanged DOM and repeated filter events retain playing footage without source or play resets",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 1521
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "Work and case pages remain usable without JavaScript and with reduced motion",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 1131
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "Work categories derive from records and support URL history and keyboard operation",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 2895
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "bunzo case page preserves art direction and navigation at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 10338
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "bunzo case page preserves art direction and navigation at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 3508
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "bunzo case page preserves art direction and navigation at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 4644
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "editorial Work index loads responsive approved artwork at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 13549
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "editorial Work index loads responsive approved artwork at 1920px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 7720
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "editorial Work index loads responsive approved artwork at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 5527
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "editorial Work index loads responsive approved artwork at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 9393
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "editorial Work index loads responsive approved artwork at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 8721
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "every approved project opens a public case from Work with truthful visible fields and usable neighbors",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 7682
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "public project navigation stays in the public route namespace and unavailable URLs fail",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 3092
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "reduced-motion Work interactions stay visible with no running animations",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 1010
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "triarch case page preserves art direction and navigation at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 6544
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "triarch case page preserves art direction and navigation at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 2892
+    },
+    {
+      "file": "portfolio.spec.ts",
+      "title": "triarch case page preserves art direction and navigation at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 4344
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "Home/logo from /contact replays the full visible loader at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 5474
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "Home/logo from /contact replays the full visible loader at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 5136
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "Home/logo from /work replays the full visible loader at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 5408
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "Home/logo from /work replays the full visible loader at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 5153
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "a fresh load and both consecutive refreshes play the full loop at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 14328
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "a fresh load and both consecutive refreshes play the full loop at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 13980
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "a fresh mismatched navigation token cannot suppress a direct load",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 748
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "a manual same-session revisit replays while clicked internal routes and Work filters do not",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1283
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "a missing route opens error recovery immediately without a branded loader",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 547
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "a scrolled mobile refresh preserves the browser position and skips the loader",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 893
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "a stale matching navigation token cannot suppress a direct load",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 770
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "a zero-position scroll notification preserves the loader while actual scrolling skips it",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 766
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "browser back/forward preserves content and scroll without restarting the loader",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1278
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "delayed artwork uses a truthful brief handoff instead of empty project reveals",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 2090
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "development replay cannot bypass hidden",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 662
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "development replay cannot bypass reduced",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 625
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "development replay cannot bypass save-data",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 651
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "development replay keeps deep-link content visible",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 707
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "development replay link starts a new full sequence without a production preference override",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 906
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "direct /contact loading is skippable without a homepage handoff",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 4960
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "direct /services loading is skippable without a homepage handoff",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 594
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "direct /work loading is skippable without a homepage handoff",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 813
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "direct /work/bunzo loading is skippable without a homepage handoff",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 723
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "missing full stylesheet readiness uses the independent brief handoff and releases content",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 2355
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "new-tab and modified links do not leave a same-tab suppression token",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 739
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "prevented same-tab clicks and same-document hash actions leave no navigation intent",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 866
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "readable but unwritable session storage keeps navigation immediately available",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 966
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "stylesheet readiness at 620ms respects the full-sequence navigation budget",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 5226
+    },
+    {
+      "file": "recurring-loader.spec.ts",
+      "title": "stylesheet readiness at 850ms respects the full-sequence navigation budget",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 2232
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "brand-identity copy, FAQs, navigation and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1526
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "brand-identity copy, FAQs, navigation and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1925
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "brand-identity copy, FAQs, navigation and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1455
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "creative-direction copy, FAQs, navigation and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1523
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "creative-direction copy, FAQs, navigation and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1315
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "creative-direction copy, FAQs, navigation and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1385
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "digital-design copy, FAQs, navigation and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1670
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "digital-design copy, FAQs, navigation and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1324
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "digital-design copy, FAQs, navigation and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1441
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "homepage and overview links open service pages and the enquiry CTA reaches Contact",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 966
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1424
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1384
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1419
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "service copy, native FAQ controls and navigation work without JavaScript",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 574
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "words-storytelling copy, FAQs, navigation and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1436
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "words-storytelling copy, FAQs, navigation and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1359
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "words-storytelling copy, FAQs, navigation and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1369
+    },
+    {
+      "file": "signature-accessibility.spec.ts",
+      "title": "mobile menu remains accessible with the signature experience",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1210
+    },
+    {
+      "file": "signature-accessibility.spec.ts",
+      "title": "signature WCAG scan / at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1410
+    },
+    {
+      "file": "signature-accessibility.spec.ts",
+      "title": "signature WCAG scan / at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1343
+    },
+    {
+      "file": "signature-accessibility.spec.ts",
+      "title": "signature WCAG scan /contact at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1311
+    },
+    {
+      "file": "signature-accessibility.spec.ts",
+      "title": "signature WCAG scan /contact at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1321
+    },
+    {
+      "file": "signature-accessibility.spec.ts",
+      "title": "signature WCAG scan /work at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1517
+    },
+    {
+      "file": "signature-accessibility.spec.ts",
+      "title": "signature WCAG scan /work at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1443
+    },
+    {
+      "file": "signature-accessibility.spec.ts",
+      "title": "signature WCAG scan /work/bunzo at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1301
+    },
+    {
+      "file": "signature-accessibility.spec.ts",
+      "title": "signature WCAG scan /work/bunzo at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1213
+    },
+    {
+      "file": "signature-choreography.spec.ts",
+      "title": "major portfolio image opens from an editorial frame to near full bleed at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 910
+    },
+    {
+      "file": "signature-choreography.spec.ts",
+      "title": "major portfolio image opens from an editorial frame to near full bleed at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 830
+    },
+    {
+      "file": "signature-choreography.spec.ts",
+      "title": "manifesto words follow actual scroll and reverse at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1729
+    },
+    {
+      "file": "signature-choreography.spec.ts",
+      "title": "manifesto words follow actual scroll and reverse at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1620
+    },
+    {
+      "file": "signature-choreography.spec.ts",
+      "title": "selected editorial lines and words reveal once and reflow safely after resizing",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 2579
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "footer reduced-motion preference restores composed static artwork and working navigation",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1613
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "footer remains composed with JavaScript disabled",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 735
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "footer stays available when the animation libraries fail to load",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 832
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 3874
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 3721
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 3812
+    },
+    {
+      "file": "signature-gradient.spec.ts",
+      "title": "WebGL context failure selects animated CSS and a live preference change restores static artwork",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1773
+    },
+    {
+      "file": "signature-gradient.spec.ts",
+      "title": "desktop pointer response eases towards the cursor while mobile touch preserves autonomous motion",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 4009
+    },
+    {
+      "file": "signature-gradient.spec.ts",
+      "title": "initial reduced motion and data saving never initialize GPU rendering",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 827
+    },
+    {
+      "file": "signature-gradient.spec.ts",
+      "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 14471
+    },
+    {
+      "file": "signature-gradient.spec.ts",
+      "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 320px and pauses offscreen",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 13861
+    },
+    {
+      "file": "signature-gradient.spec.ts",
+      "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 390px and pauses offscreen",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 14291
+    },
+    {
+      "file": "signature-gradient.spec.ts",
+      "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 768px and pauses offscreen",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 14352
+    },
+    {
+      "file": "signature-gradient.spec.ts",
+      "title": "unavailable GPU uses visibly flowing CSS without adding a rendering loop",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 2649
+    },
+    {
+      "file": "signature-gradient.spec.ts",
+      "title": "visibility suspension pauses the shader clock and resumes without a time jump",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1812
+    },
+    {
+      "file": "signature-header.spec.ts",
+      "title": "failed navigation module keeps native menu and stable geometry at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1071
+    },
+    {
+      "file": "signature-header.spec.ts",
+      "title": "failed navigation module keeps native menu and stable geometry at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1106
+    },
+    {
+      "file": "signature-header.spec.ts",
+      "title": "no-JavaScript native menu preserves header geometry at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 821
+    },
+    {
+      "file": "signature-header.spec.ts",
+      "title": "no-JavaScript native menu preserves header geometry at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 834
+    },
+    {
+      "file": "signature-header.spec.ts",
+      "title": "stable header through delayed navigation and fonts at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1369
+    },
+    {
+      "file": "signature-header.spec.ts",
+      "title": "stable header through delayed navigation and fonts at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1399
+    },
+    {
+      "file": "signature-header.spec.ts",
+      "title": "stable mobile header at 320px with no-preference, reload and direct case",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1375
+    },
+    {
+      "file": "signature-header.spec.ts",
+      "title": "stable mobile header at 320px with reduce, reload and direct case",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1289
+    },
+    {
+      "file": "signature-header.spec.ts",
+      "title": "stable mobile header at 390px with no-preference, reload and direct case",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1392
+    },
+    {
+      "file": "signature-header.spec.ts",
+      "title": "stable mobile header at 390px with reduce, reload and direct case",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1270
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "Enter immediately bypasses the opening",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 721
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "Escape immediately bypasses the opening",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1005
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "Space immediately bypasses the opening",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 738
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "Tab immediately bypasses the opening",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 795
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "a homepage return respects the current motion preference instead of a past opt-out",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1068
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "a mobile tap immediately bypasses the intro",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 719
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "data saving bypasses the opening",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-corrections-browser-tests.json",
+      "durationMs": 675
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "delayed optional module never delays or replays the inline opening",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 6943
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "direct case loads use the loader while hash destinations reach content immediately",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 873
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "failed signature media reveals the working homepage",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 931
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "internal navigation keeps its first action and the next manual refresh replays",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 5716
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "live reduced-motion preference immediately cancels the opening",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 820
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "opening completes automatically within five navigation seconds at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 4986
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "opening completes automatically within five navigation seconds at 1920px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 4973
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "opening completes automatically within five navigation seconds at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 4795
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "opening completes automatically within five navigation seconds at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 4736
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "opening completes automatically within five navigation seconds at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 4874
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "reduced motion reaches the homepage immediately and remains readable without JavaScript",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1132
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "unavailable session storage fails open",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 774
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "visible skip control immediately reveals the homepage",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 1022
+    },
+    {
+      "file": "signature-intro.spec.ts",
+      "title": "wheel bypass preserves the original native scroll input",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/regression-initial-browser-tests.json",
+      "durationMs": 918
+    },
+    {
+      "file": "signature-squares.spec.ts",
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/production-loader-tests.json",
+      "durationMs": 5179
+    },
+    {
+      "file": "signature-squares.spec.ts",
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/production-loader-tests.json",
+      "durationMs": 5063
+    },
+    {
+      "file": "signature-squares.spec.ts",
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/production-loader-tests.json",
+      "durationMs": 5219
+    },
+    {
+      "file": "signature-squares.spec.ts",
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/about/production-loader-tests.json",
+      "durationMs": 5149
+    },
+    {
+      "file": "storytelling.spec.ts",
+      "title": "Phase 2 storytelling and original portfolio remain readable at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 11417
+    },
+    {
+      "file": "storytelling.spec.ts",
+      "title": "Phase 2 storytelling and original portfolio remain readable at 1920px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 4815
+    },
+    {
+      "file": "storytelling.spec.ts",
+      "title": "Phase 2 storytelling and original portfolio remain readable at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 4608
+    },
+    {
+      "file": "storytelling.spec.ts",
+      "title": "Phase 2 storytelling and original portfolio remain readable at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 8110
+    },
+    {
+      "file": "storytelling.spec.ts",
+      "title": "Phase 2 storytelling and original portfolio remain readable at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 10547
+    },
+    {
+      "file": "storytelling.spec.ts",
+      "title": "new homepage story remains usable without JavaScript",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 871
+    },
+    {
+      "file": "storytelling.spec.ts",
+      "title": "reduced-motion storytelling preserves visibility and a keyboard-usable mobile menu",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/portfolio-rhythm/browser-tests.json",
+      "durationMs": 950
+    }
+  ]
+}

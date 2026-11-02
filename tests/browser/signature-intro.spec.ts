@@ -426,12 +426,17 @@ test('reduced motion reaches the homepage immediately and remains readable witho
 });
 
 test('data saving bypasses the opening', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(error.message));
   await page.addInitScript(() => {
-    Object.defineProperty(navigator, 'connection', { value: { saveData: true } });
+    Object.defineProperty(navigator, 'connection', {
+      value: Object.assign(new EventTarget(), { saveData: true }),
+    });
   });
   await page.goto('/');
   await expect(page.locator(overlay)).toBeHidden();
   await expect(page.locator('main h1')).toBeVisible();
+  expect(errors).toEqual([]);
 });
 
 test('a homepage return respects the current motion preference instead of a past opt-out', async ({

@@ -16,6 +16,8 @@
     "format:check": "prettier --check .",
     "test": "node --import tsx --test tests/*.test.ts",
     "test:browser": "playwright test",
+    "test:about-browser": "playwright test --config playwright.about.config.ts",
+    "test:about-build": "node --import tsx --test tests/about-build.test.mjs",
     "test:production-browser": "playwright test --config playwright.production.config.ts",
     "test:build": "node --test tests/build-output.test.mjs",
     "test:publication": "node --test tests/publication-workflow.test.mjs",

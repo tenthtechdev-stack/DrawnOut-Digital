@@ -1,0 +1,393 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-about/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.production.config.ts",
+      "--reporter=list,json"
+    ],
+    "configFile": "/workspace/drawnout-about/playwright.production.config.ts",
+    "rootDir": "/workspace/drawnout-about/tests/production-browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-about/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-about/tests/production-browser",
+        "testIgnore": [],
+        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-about/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-about/tests/production-browser",
+        "snapshotDir": "/workspace/drawnout-about/tests/production-browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4323",
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": [
+              "--enable-unsafe-swiftshader",
+              "--use-angle=swiftshader",
+              "--ignore-gpu-blocklist"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [["list"], ["json"]],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run build && npm run preview -- --ignore-lock --port 4323",
+      "url": "http://127.0.0.1:4323",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "loader.spec.ts",
+      "file": "loader.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 23159,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T17:39:24.797Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "production-journeys-390",
+                      "contentType": "application/json",
+                      "body": "W3siYXJyaXZhbCI6ImNvbGQgZGlyZWN0IiwibW9kZSI6ImZ1bGwiLCJyZWFzb24iOiJjb21wbGV0ZSIsInN0YXJ0ZWQiOjM5NC43LCJlbmRlZCI6NDU5NS4yLCJ2aXNpYmxlRnJhbWVzIjoxNzYsInZpc2libGVNcyI6MzMxOS4wOTk5OTk5OTk5NzY3LCJwYXJ0aWFsV2F2ZSI6dHJ1ZSwicGFydGlhbFdvcmQiOnRydWUsInNpeFJldmVhbGVkIjp0cnVlLCJpbmRlcGVuZGVudEVudHJhbmNlIjp0cnVlLCJ3b3JkR2VvbWV0cnkiOnsibGVmdCI6MjIsIndpZHRoIjoyNzguMTI1LCJib3R0b20iOjc0Mi43MzQzNzUsImZvbnRTaXplIjo2Ni4zfSwidmlld3BvcnQiOnsid2lkdGgiOjM5MCwiaGVpZ2h0Ijo4NDR9LCJvdmVyZmxvdyI6ZmFsc2V9LHsiYXJyaXZhbCI6InJlZnJlc2ggMSIsIm1vZGUiOiJmdWxsIiwicmVhc29uIjoiY29tcGxldGUiLCJzdGFydGVkIjoxMDguNSwiZW5kZWQiOjQzMDksInZpc2libGVGcmFtZXMiOjIyNywidmlzaWJsZU1zIjozODQ5LjUsInBhcnRpYWxXYXZlIjp0cnVlLCJwYXJ0aWFsV29yZCI6dHJ1ZSwic2l4UmV2ZWFsZWQiOnRydWUsImluZGVwZW5kZW50RW50cmFuY2UiOnRydWUsIndvcmRHZW9tZXRyeSI6eyJsZWZ0IjoyMiwid2lkdGgiOjI3OC4xMjUsImJvdHRvbSI6NzQyLjczNDM3NSwiZm9udFNpemUiOjY2LjN9LCJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NH0sIm92ZXJmbG93IjpmYWxzZX0seyJhcnJpdmFsIjoicmVmcmVzaCAyIiwibW9kZSI6ImZ1bGwiLCJyZWFzb24iOiJjb21wbGV0ZSIsInN0YXJ0ZWQiOjEwOC41LCJlbmRlZCI6NDMyNy41LCJ2aXNpYmxlRnJhbWVzIjoyMjgsInZpc2libGVNcyI6MzgyNy41LCJwYXJ0aWFsV2F2ZSI6dHJ1ZSwicGFydGlhbFdvcmQiOnRydWUsInNpeFJldmVhbGVkIjp0cnVlLCJpbmRlcGVuZGVudEVudHJhbmNlIjp0cnVlLCJ3b3JkR2VvbWV0cnkiOnsibGVmdCI6MjIsIndpZHRoIjoyNzguMTI1LCJib3R0b20iOjc0Mi43MzQzNzUsImZvbnRTaXplIjo2Ni4zfSwidmlld3BvcnQiOnsid2lkdGgiOjM5MCwiaGVpZ2h0Ijo4NDR9LCJvdmVyZmxvdyI6ZmFsc2V9LHsiYXJyaXZhbCI6Ii9jb250YWN0IEhvbWUiLCJtb2RlIjoiZnVsbCIsInJlYXNvbiI6ImNvbXBsZXRlIiwic3RhcnRlZCI6NjcsImVuZGVkIjo0MjY3LjQsInZpc2libGVGcmFtZXMiOjIyNSwidmlzaWJsZU1zIjozODUyLjcwMDAwMDAwMDA3LCJwYXJ0aWFsV2F2ZSI6dHJ1ZSwicGFydGlhbFdvcmQiOnRydWUsInNpeFJldmVhbGVkIjp0cnVlLCJpbmRlcGVuZGVudEVudHJhbmNlIjp0cnVlLCJ3b3JkR2VvbWV0cnkiOnsibGVmdCI6MjIsIndpZHRoIjoyNzguMTI1LCJib3R0b20iOjc0Mi43MzQzNzUsImZvbnRTaXplIjo2Ni4zfSwidmlld3BvcnQiOnsid2lkdGgiOjM5MCwiaGVpZ2h0Ijo4NDR9LCJvdmVyZmxvdyI6ZmFsc2V9LHsiYXJyaXZhbCI6Ii93b3JrIEhvbWUiLCJtb2RlIjoiZnVsbCIsInJlYXNvbiI6ImNvbXBsZXRlIiwic3RhcnRlZCI6NzMuMywiZW5kZWQiOjQyNzMuNywidmlzaWJsZUZyYW1lcyI6MjI5LCJ2aXNpYmxlTXMiOjM4NDUuMjAwMDAwMDAwMDcsInBhcnRpYWxXYXZlIjp0cnVlLCJwYXJ0aWFsV29yZCI6dHJ1ZSwic2l4UmV2ZWFsZWQiOnRydWUsImluZGVwZW5kZW50RW50cmFuY2UiOnRydWUsIndvcmRHZW9tZXRyeSI6eyJsZWZ0IjoyMiwid2lkdGgiOjI3OC4xMjUsImJvdHRvbSI6NzQyLjczNDM3NSwiZm9udFNpemUiOjY2LjN9LCJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NH0sIm92ZXJmbG93IjpmYWxzZX1d"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "28dfd0acff9a5020216b-5e65fee63ade4d9d646f",
+          "file": "loader.spec.ts",
+          "line": 123,
+          "column": 3
+        },
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 23708,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T17:39:48.307Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "production-journeys-1440",
+                      "contentType": "application/json",
+                      "body": "W3siYXJyaXZhbCI6ImNvbGQgZGlyZWN0IiwibW9kZSI6ImZ1bGwiLCJyZWFzb24iOiJjb21wbGV0ZSIsInN0YXJ0ZWQiOjk4LjQsImVuZGVkIjo0MzYzLjMsInZpc2libGVGcmFtZXMiOjE0MiwidmlzaWJsZU1zIjozNDY0LjY5OTk5OTk5OTk1MzQsInBhcnRpYWxXYXZlIjp0cnVlLCJwYXJ0aWFsV29yZCI6dHJ1ZSwic2l4UmV2ZWFsZWQiOnRydWUsImluZGVwZW5kZW50RW50cmFuY2UiOnRydWUsIndvcmRHZW9tZXRyeSI6eyJsZWZ0Ijo2MC40Njg3NSwid2lkdGgiOjEwMjYuOTIxODc1LCJib3R0b20iOjc5MiwiZm9udFNpemUiOjI0NC44fSwidmlld3BvcnQiOnsid2lkdGgiOjE0NDAsImhlaWdodCI6OTAwfSwib3ZlcmZsb3ciOmZhbHNlfSx7ImFycml2YWwiOiJyZWZyZXNoIDEiLCJtb2RlIjoiZnVsbCIsInJlYXNvbiI6ImNvbXBsZXRlIiwic3RhcnRlZCI6MTUxLjMsImVuZGVkIjo0MzYzLjMsInZpc2libGVGcmFtZXMiOjE2NSwidmlzaWJsZU1zIjozNzg1LjY5OTk5OTk5OTk1MzQsInBhcnRpYWxXYXZlIjp0cnVlLCJwYXJ0aWFsV29yZCI6dHJ1ZSwic2l4UmV2ZWFsZWQiOnRydWUsImluZGVwZW5kZW50RW50cmFuY2UiOnRydWUsIndvcmRHZW9tZXRyeSI6eyJsZWZ0Ijo2MC40Njg3NSwid2lkdGgiOjEwMjYuOTIxODc1LCJib3R0b20iOjc5MiwiZm9udFNpemUiOjI0NC44fSwidmlld3BvcnQiOnsid2lkdGgiOjE0NDAsImhlaWdodCI6OTAwfSwib3ZlcmZsb3ciOmZhbHNlfSx7ImFycml2YWwiOiJyZWZyZXNoIDIiLCJtb2RlIjoiZnVsbCIsInJlYXNvbiI6ImNvbXBsZXRlIiwic3RhcnRlZCI6MTU3LjUsImVuZGVkIjo0MzYyLjEsInZpc2libGVGcmFtZXMiOjE1NCwidmlzaWJsZU1zIjozNjc4Ljg5OTk5OTk5OTkwNywicGFydGlhbFdhdmUiOnRydWUsInBhcnRpYWxXb3JkIjp0cnVlLCJzaXhSZXZlYWxlZCI6dHJ1ZSwiaW5kZXBlbmRlbnRFbnRyYW5jZSI6dHJ1ZSwid29yZEdlb21ldHJ5Ijp7ImxlZnQiOjYwLjQ2ODc1LCJ3aWR0aCI6MTAyNi45MjE4NzUsImJvdHRvbSI6NzkyLCJmb250U2l6ZSI6MjQ0Ljh9LCJ2aWV3cG9ydCI6eyJ3aWR0aCI6MTQ0MCwiaGVpZ2h0Ijo5MDB9LCJvdmVyZmxvdyI6ZmFsc2V9LHsiYXJyaXZhbCI6Ii9jb250YWN0IEhvbWUiLCJtb2RlIjoiZnVsbCIsInJlYXNvbiI6ImNvbXBsZXRlIiwic3RhcnRlZCI6OTAuOSwiZW5kZWQiOjQzMDUuMiwidmlzaWJsZUZyYW1lcyI6MTY5LCJ2aXNpYmxlTXMiOjM3MDAsInBhcnRpYWxXYXZlIjp0cnVlLCJwYXJ0aWFsV29yZCI6dHJ1ZSwic2l4UmV2ZWFsZWQiOnRydWUsImluZGVwZW5kZW50RW50cmFuY2UiOnRydWUsIndvcmRHZW9tZXRyeSI6eyJsZWZ0Ijo2MC40Njg3NSwid2lkdGgiOjEwMjYuOTIxODc1LCJib3R0b20iOjc5MiwiZm9udFNpemUiOjI0NC44fSwidmlld3BvcnQiOnsid2lkdGgiOjE0NDAsImhlaWdodCI6OTAwfSwib3ZlcmZsb3ciOmZhbHNlfSx7ImFycml2YWwiOiIvd29yayBIb21lIiwibW9kZSI6ImZ1bGwiLCJyZWFzb24iOiJjb21wbGV0ZSIsInN0YXJ0ZWQiOjE5OS40LCJlbmRlZCI6NDM5OS42LCJ2aXNpYmxlRnJhbWVzIjoxNDYsInZpc2libGVNcyI6MzYwNi4xOTk5OTk5OTk5NTM0LCJwYXJ0aWFsV2F2ZSI6dHJ1ZSwicGFydGlhbFdvcmQiOnRydWUsInNpeFJldmVhbGVkIjp0cnVlLCJpbmRlcGVuZGVudEVudHJhbmNlIjp0cnVlLCJ3b3JkR2VvbWV0cnkiOnsibGVmdCI6NjAuNDY4NzUsIndpZHRoIjoxMDI2LjkyMTg3NSwiYm90dG9tIjo3OTIsImZvbnRTaXplIjoyNDQuOH0sInZpZXdwb3J0Ijp7IndpZHRoIjoxNDQwLCJoZWlnaHQiOjkwMH0sIm92ZXJmbG93IjpmYWxzZX1d"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "28dfd0acff9a5020216b-340d2ee23fd9511204dc",
+          "file": "loader.spec.ts",
+          "line": 123,
+          "column": 3
+        },
+        {
+          "title": "failed storyboard clock initialization reveals a working homepage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1073,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T17:40:12.031Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "28dfd0acff9a5020216b-08968dee85a3e266aa2a",
+          "file": "loader.spec.ts",
+          "line": 171,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "signature-squares.spec.ts",
+      "file": "signature-squares.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "six approved project posters reveal with the wave and keep SOL prominent at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5063,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T17:40:13.163Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "project-squares-320",
+                      "contentType": "application/json",
+                      "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkRBWW1TWGhqX050YnloLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjo1MSwiaGVpZ2h0Ijo1MSwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vdHJpYXJjaC1idXNpbmVzcy1jYXJkLkIya0JEUmxIXzJ1c2VzZi53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6NTEsImhlaWdodCI6NTEsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQzMjMvX2FzdHJvL3NvbC1jb21tdW5pdHktc2lnbmFnZS5CZ3RzWnpma18xQ21UQk8ud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjUxLCJoZWlnaHQiOjMxLCJmaXQiOiJjb250YWluIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQzMjMvX2FzdHJvL2NodXJyb3MtYXBwbGljYXRpb25zLkpJclllY3h4XzJOVnZsLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjo1MSwiaGVpZ2h0Ijo1MSwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vYnktdGVjaC1hcHBsaWNhdGlvbnMuREFYcmhZVDRfWlBEaU9xLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjo1MSwiaGVpZ2h0Ijo1MSwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vY2FwdHVyZS1hcHBsaWNhdGlvbnMubGhCcl9kS2JfU1lkWVQud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjUxLCJoZWlnaHQiOjUxLCJmaXQiOiJjb3ZlciJ9XSwiYXJyaXZhbHMiOls2MTkuODc1LDg3OC44NzUsMTA5NC41NjI1LDE0MDYuOTM3NSwxNjU1LjQzNzUsMTg5OC4yNV0sImFydHdvcmtUaW1pbmdzIjpbeyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjYyMCwiZW5kIjo5MDAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6ODc5LCJlbmQiOjExNTksImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTA5NSwiZW5kIjoxMzc1LCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjE0MDcsImVuZCI6MTY4NywiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxNjU2LCJlbmQiOjE5MzYsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTg5OCwiZW5kIjoyMTc4LCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn1dLCJzYXdPdXRsaW5lIjpbdHJ1ZSx0cnVlLHRydWUsdHJ1ZSx0cnVlLHRydWVdLCJyZXZlYWxTdGFydHMiOls2MzAuNTAwMDAwMDAwMDAwMSw4OTcuMSwxMTEzLjcsMTQzMC40LDE2ODAuNCwxOTEzLjgwMDAwMDAwMDAwMDJdLCJsYXN0VW5yZXZlYWxlZCI6WzYxMy44MDAwMDAwMDAwMDAxLDg4MC41MDAwMDAwMDAwMDAxLDEwOTcuMiwxNDEzLjgsMTY2My43LDE4OTcuMV0sImxhc3RJbmNvbXBsZXRlIjoyMTYzLjcsIm1heGltdW1TYW1wbGVHYXAiOjk5LjkwNTk5OTk5OTk5OTk4LCJzYXdNaXhlZFJldmVhbCI6dHJ1ZSwiZnVsbHlWaXNpYmxlQXQiOjIxODAuNCwiZ2VvbWV0cnkiOnsiZnJhbWVzIjpbeyJsZWZ0IjoyNS4zOTA2MjUsInJpZ2h0Ijo3MiwidG9wIjozNjguOTIxODc1LCJib3R0b20iOjQxNS41MzEyNSwid2lkdGgiOjQ2LjYwOTM3NSwiaGVpZ2h0Ijo0Ni42MDkzNzV9LHsibGVmdCI6NjcuNSwicmlnaHQiOjExNC4xMDkzNzUsInRvcCI6MzE4LjA5Mzc1LCJib3R0b20iOjM2NC43MDMxMjUsIndpZHRoIjo0Ni42MDkzNzUsImhlaWdodCI6NDYuNjA5Mzc1fSx7ImxlZnQiOjExOS4zODI4MTI1LCJyaWdodCI6MTcwLjUwNzgxMjUsInRvcCI6MjgyLjU4NTkzNzUsImJvdHRvbSI6MzMzLjcxMDkzNzUsIndpZHRoIjo1MS4xMjUsImhlaWdodCI6NTEuMTI1fSx7ImxlZnQiOjE1NC43MzQzNzUsInJpZ2h0IjoyMDEuMzQzNzUsInRvcCI6MzUzLjI4MTI1LCJib3R0b20iOjM5OS44OTA2MjUsIndpZHRoIjo0Ni42MDkzNzUsImhlaWdodCI6NDYuNjA5Mzc1fSx7ImxlZnQiOjIwOC44NzUsInJpZ2h0IjoyNTUuNDg0Mzc1LCJ0b3AiOjM2OC45MjE4NzUsImJvdHRvbSI6NDE1LjUzMTI1LCJ3aWR0aCI6NDYuNjA5Mzc1LCJoZWlnaHQiOjQ2LjYwOTM3NX0seyJsZWZ0IjoyNDcuNzYwNjY1ODkzNTU0NywicmlnaHQiOjI5NC44MTc0NDM4NDc2NTYyNSwidG9wIjozMTEuOTk1MDU2MTUyMzQzNzUsImJvdHRvbSI6MzU5LjA1MTgxODg0NzY1NjI1LCJ3aWR0aCI6NDcuMDU2Nzc3OTU0MTAxNTYsImhlaWdodCI6NDcuMDU2NzYyNjk1MzEyNX1dLCJzbG90V2lkdGhzIjpbNDYuNjA5Mzc1LDQ2LjYwOTM3NSw1MS4xMjUsNDYuNjA5Mzc1LDQ2LjYwOTM3NSw0Ni42MDkzNzVdLCJncm91cFdpZHRoIjozMDAuNzk2ODc1LCJ3b3JkbWFyayI6eyJsZWZ0IjoyMiwicmlnaHQiOjI1MC4xNzE4NzUsInRvcCI6Njg4LjMyODEyNSwiYm90dG9tIjo3NDIuNzM0Mzc1LCJ3aWR0aCI6MjI4LjE3MTg3NSwiaGVpZ2h0Ijo1NC40MDYyNX0sInNraXAiOnsibGVmdCI6MTg1LjUsInJpZ2h0IjoyOTgsInRvcCI6Nzc1LCJib3R0b20iOjgxOSwid2lkdGgiOjExMi41LCJoZWlnaHQiOjQ0fX0sImVuZGVkIjo0MzU2LjMsInJlYXNvbiI6ImNvbXBsZXRlIiwib3ZlcmZsb3ciOmZhbHNlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c6e336804325325a1416-d3a7d344e36f5e20970e",
+          "file": "signature-squares.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "six approved project posters reveal with the wave and keep SOL prominent at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5219,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T17:40:18.238Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "project-squares-390",
+                      "contentType": "application/json",
+                      "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkRBWW1TWGhqX050YnloLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjo2MiwiaGVpZ2h0Ijo2MiwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vdHJpYXJjaC1idXNpbmVzcy1jYXJkLkIya0JEUmxIXzJ1c2VzZi53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6NjIsImhlaWdodCI6NjIsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQzMjMvX2FzdHJvL3NvbC1jb21tdW5pdHktc2lnbmFnZS5CZ3RzWnpma18xQ21UQk8ud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjYyLCJoZWlnaHQiOjM4LCJmaXQiOiJjb250YWluIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQzMjMvX2FzdHJvL2NodXJyb3MtYXBwbGljYXRpb25zLkpJclllY3h4XzJOVnZsLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjo2MiwiaGVpZ2h0Ijo2MiwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vYnktdGVjaC1hcHBsaWNhdGlvbnMuREFYcmhZVDRfWlBEaU9xLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjo2MiwiaGVpZ2h0Ijo2MiwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vY2FwdHVyZS1hcHBsaWNhdGlvbnMubGhCcl9kS2JfU1lkWVQud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjYyLCJoZWlnaHQiOjYyLCJmaXQiOiJjb3ZlciJ9XSwiYXJyaXZhbHMiOls2MTkuODc1LDg3OC44NzUsMTA5NC41NjI1LDE0MDYuOTM3NSwxNjU1LjQzNzUsMTg5OC4yNV0sImFydHdvcmtUaW1pbmdzIjpbeyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjYyMCwiZW5kIjo5MDAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6ODc5LCJlbmQiOjExNTksImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTA5NSwiZW5kIjoxMzc1LCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjE0MDcsImVuZCI6MTY4NywiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxNjU2LCJlbmQiOjE5MzYsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTg5OCwiZW5kIjoyMTc4LCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn1dLCJzYXdPdXRsaW5lIjpbdHJ1ZSx0cnVlLHRydWUsdHJ1ZSx0cnVlLHRydWVdLCJyZXZlYWxTdGFydHMiOls2MzMuMTk5OTk5OTk5OTk5OSw4OTkuODAwMDAwMDAwMDAwMSwxMTE2LjQsMTQzMy4xMDAwMDAwMDAwMDAxLDE2NjYuNSwxOTE2LjM5OTk5OTk5OTk5OTldLCJsYXN0VW5yZXZlYWxlZCI6WzYxNi40LDg4My4wOTk5OTk5OTk5OTk5LDEwOTkuNjk5OTk5OTk5OTk5OCwxNDE2LjM5OTk5OTk5OTk5OTksMTY0OS44LDE4OTkuNzAwMDAwMDAwMDAwM10sImxhc3RJbmNvbXBsZXRlIjoyMTQ5Ljc5OTk5OTk5OTk5OTcsIm1heGltdW1TYW1wbGVHYXAiOjgzLjMwMDAwMDAwMDAwMDA0LCJzYXdNaXhlZFJldmVhbCI6dHJ1ZSwiZnVsbHlWaXNpYmxlQXQiOjIxNjYuNCwiZ2VvbWV0cnkiOnsiZnJhbWVzIjpbeyJsZWZ0IjozMC45NTMxMjUsInJpZ2h0Ijo4Ny43NjU2MjUsInRvcCI6MzcwLjIzNDM3NSwiYm90dG9tIjo0MjcuMDQ2ODc1LCJ3aWR0aCI6NTYuODEyNSwiaGVpZ2h0Ijo1Ni44MTI1fSx7ImxlZnQiOjgyLjI2NTYyNSwicmlnaHQiOjEzOS4wNzgxMjUsInRvcCI6MzA4LjI4MTI1LCJib3R0b20iOjM2NS4wOTM3NSwid2lkdGgiOjU2LjgxMjUsImhlaWdodCI6NTYuODEyNX0seyJsZWZ0IjoxNDUuNSwicmlnaHQiOjIwNy44MTI1LCJ0b3AiOjI2NS4wMzEyNSwiYm90dG9tIjozMjcuMzQzNzUsIndpZHRoIjo2Mi4zMTI1LCJoZWlnaHQiOjYyLjMxMjV9LHsibGVmdCI6MTg4LjU3ODEyNSwicmlnaHQiOjI0NS4zOTA2MjUsInRvcCI6MzUxLjE3MTg3NSwiYm90dG9tIjo0MDcuOTg0Mzc1LCJ3aWR0aCI6NTYuODEyNSwiaGVpZ2h0Ijo1Ni44MTI1fSx7ImxlZnQiOjI1NC41NjI1LCJyaWdodCI6MzExLjM3NSwidG9wIjozNzAuMjM0Mzc1LCJib3R0b20iOjQyNy4wNDY4NzUsIndpZHRoIjo1Ni44MTI1LCJoZWlnaHQiOjU2LjgxMjV9LHsibGVmdCI6MzAxLjg1MjUwODU0NDkyMTksInJpZ2h0IjozNTkuMzk3NTIxOTcyNjU2MjUsInRvcCI6MzAwLjc3NDM1MzAyNzM0Mzc1LCJib3R0b20iOjM1OC4zMTkzOTY5NzI2NTYyNSwid2lkdGgiOjU3LjU0NTAxMzQyNzczNDM3NSwiaGVpZ2h0Ijo1Ny41NDUwNDM5NDUzMTI1fV0sInNsb3RXaWR0aHMiOls1Ni44MTI1LDU2LjgxMjUsNjIuMzEyNSw1Ni44MTI1LDU2LjgxMjUsNTYuODEyNV0sImdyb3VwV2lkdGgiOjM2Ni41OTM3NSwid29yZG1hcmsiOnsibGVmdCI6MjIsInJpZ2h0IjozMDAuMTI1LCJ0b3AiOjY3Ni40Mzc1LCJib3R0b20iOjc0Mi43MzQzNzUsIndpZHRoIjoyNzguMTI1LCJoZWlnaHQiOjY2LjI5Njg3NX0sInNraXAiOnsibGVmdCI6MjU1LjUsInJpZ2h0IjozNjgsInRvcCI6Nzc1LCJib3R0b20iOjgxOSwid2lkdGgiOjExMi41LCJoZWlnaHQiOjQ0fX0sImVuZGVkIjo0Mzk4LjEsInJlYXNvbiI6ImNvbXBsZXRlIiwib3ZlcmZsb3ciOmZhbHNlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c6e336804325325a1416-1df43a81a8e81b292274",
+          "file": "signature-squares.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "six approved project posters reveal with the wave and keep SOL prominent at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5149,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T17:40:23.471Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "project-squares-768",
+                      "contentType": "application/json",
+                      "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkRBWW1TWGhqX050YnloLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxMTUsImhlaWdodCI6MTE1LCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0MzIzL19hc3Ryby90cmlhcmNoLWJ1c2luZXNzLWNhcmQuQjJrQkRSbEhfMnVzZXNmLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxMTUsImhlaWdodCI6MTE1LCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0MzIzL19hc3Ryby9zb2wtY29tbXVuaXR5LXNpZ25hZ2UuQmd0c1p6ZmtfMUNtVEJPLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxMTUsImhlaWdodCI6NzAsImZpdCI6ImNvbnRhaW4ifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vY2h1cnJvcy1hcHBsaWNhdGlvbnMuSklyWWVjeHhfMk5Wdmwud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjExNSwiaGVpZ2h0IjoxMTUsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQzMjMvX2FzdHJvL2J5LXRlY2gtYXBwbGljYXRpb25zLkRBWHJoWVQ0X1pQRGlPcS53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MTE1LCJoZWlnaHQiOjExNSwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vY2FwdHVyZS1hcHBsaWNhdGlvbnMubGhCcl9kS2JfU1lkWVQud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjExNSwiaGVpZ2h0IjoxMTUsImZpdCI6ImNvdmVyIn1dLCJhcnJpdmFscyI6WzYxOS44NzUsODc4Ljg3NSwxMDk0LjU2MjUsMTQwNi45Mzc1LDE2NTUuNDM3NSwxODk4LjI1XSwiYXJ0d29ya1RpbWluZ3MiOlt7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6NjIwLCJlbmQiOjkwMCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0Ijo4NzksImVuZCI6MTE1OSwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxMDk1LCJlbmQiOjEzNzUsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTQwNywiZW5kIjoxNjg3LCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjE2NTYsImVuZCI6MTkzNiwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxODk4LCJlbmQiOjIxNzgsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifV0sInNhd091dGxpbmUiOlt0cnVlLHRydWUsdHJ1ZSx0cnVlLHRydWUsdHJ1ZV0sInJldmVhbFN0YXJ0cyI6WzY0MS41MDAwMDAwMDAwMDAxLDg5MS41MDAwMDAwMDAwMDAxLDExMDguMSwxNDI0LjgsMTY5MS41LDE5MDguMV0sImxhc3RVbnJldmVhbGVkIjpbNjI0LjgwMDAwMDAwMDAwMDEsODc0LjgsMTA5MS4zOTk5OTk5OTk5OTk5LDE0MDguMSwxNjU4LjEsMTg5MS4zOTk5OTk5OTk5OTk2XSwibGFzdEluY29tcGxldGUiOjIxNTguMSwibWF4aW11bVNhbXBsZUdhcCI6MTQ5LjksInNhd01peGVkUmV2ZWFsIjp0cnVlLCJmdWxseVZpc2libGVBdCI6MjE3NC43MDAwMDAwMDAwMDAzLCJnZW9tZXRyeSI6eyJmcmFtZXMiOlt7ImxlZnQiOjg4LjQ0NTMxMjUsInJpZ2h0IjoxOTAuODA0Njg3NSwidG9wIjo0MDAuMjAzMTI1LCJib3R0b20iOjUwMi41NjI1LCJ3aWR0aCI6MTAyLjM1OTM3NSwiaGVpZ2h0IjoxMDIuMzU5Mzc1fSx7ImxlZnQiOjE4MC44OTg0Mzc1LCJyaWdodCI6MjgzLjI1NzgxMjUsInRvcCI6Mjg4LjU5Mzc1LCJib3R0b20iOjM5MC45NTMxMjUsIndpZHRoIjoxMDIuMzU5Mzc1LCJoZWlnaHQiOjEwMi4zNTkzNzV9LHsibGVmdCI6Mjk0LjgzNTkzNzUsInJpZ2h0Ijo0MDcuMTAxNTYyNSwidG9wIjoyMTAuNjU2MjUsImJvdHRvbSI6MzIyLjkyMTg3NSwid2lkdGgiOjExMi4yNjU2MjUsImhlaWdodCI6MTEyLjI2NTYyNX0seyJsZWZ0IjozNzIuNDQ1MzEyNSwicmlnaHQiOjQ3NC44MDQ2ODc1LCJ0b3AiOjM2NS44NTkzNzUsImJvdHRvbSI6NDY4LjIxODc1LCJ3aWR0aCI6MTAyLjM1OTM3NSwiaGVpZ2h0IjoxMDIuMzU5Mzc1fSx7ImxlZnQiOjQ5MS4zMjAzMTI1LCJyaWdodCI6NTkzLjY3OTY4NzUsInRvcCI6NDAwLjIwMzEyNSwiYm90dG9tIjo1MDIuNTYyNSwid2lkdGgiOjEwMi4zNTkzNzUsImhlaWdodCI6MTAyLjM1OTM3NX0seyJsZWZ0Ijo1NzYuNjIzOTAxMzY3MTg3NSwicmlnaHQiOjY4MC4wOTQ4NDg2MzI4MTI1LCJ0b3AiOjI3NS4xNjI5NjM4NjcxODc1LCJib3R0b20iOjM3OC42MzM5MTExMzI4MTI1LCJ3aWR0aCI6MTAzLjQ3MDk0NzI2NTYyNSwiaGVpZ2h0IjoxMDMuNDcwOTQ3MjY1NjI1fV0sInNsb3RXaWR0aHMiOlsxMDIuMzU5Mzc1LDEwMi4zNTkzNzUsMTEyLjI2NTYyNSwxMDIuMzU5Mzc1LDEwMi4zNTkzNzUsMTAyLjM1OTM3NV0sImdyb3VwV2lkdGgiOjY2MC40Njg3NSwid29yZG1hcmsiOnsibGVmdCI6MzIuMjUsInJpZ2h0Ijo1NzkuODkwNjI1LCJ0b3AiOjY2MS40Mzc1LCJib3R0b20iOjc5Miwid2lkdGgiOjU0Ny42NDA2MjUsImhlaWdodCI6MTMwLjU2MjV9LCJza2lwIjp7ImxlZnQiOjYwNS4yNSwicmlnaHQiOjczNS43NSwidG9wIjo4MzEsImJvdHRvbSI6ODc1LCJ3aWR0aCI6MTMwLjUsImhlaWdodCI6NDR9fSwiZW5kZWQiOjQzNTAuOCwicmVhc29uIjoiY29tcGxldGUiLCJvdmVyZmxvdyI6ZmFsc2V9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c6e336804325325a1416-f8e06d82b8a9d2e10230",
+          "file": "signature-squares.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "six approved project posters reveal with the wave and keep SOL prominent at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5179,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T17:40:28.638Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "project-squares-1440",
+                      "contentType": "application/json",
+                      "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkRBWW1TWGhqX0w0VHNXLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxNzAsImhlaWdodCI6MTcwLCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0MzIzL19hc3Ryby90cmlhcmNoLWJ1c2luZXNzLWNhcmQuQjJrQkRSbEhfelAzejEud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjE3MCwiaGVpZ2h0IjoxNzAsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQzMjMvX2FzdHJvL3NvbC1jb21tdW5pdHktc2lnbmFnZS5CZ3RzWnpma19aMnRJMEt2LndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxNzAsImhlaWdodCI6MTA0LCJmaXQiOiJjb250YWluIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQzMjMvX2FzdHJvL2NodXJyb3MtYXBwbGljYXRpb25zLkpJclllY3h4X1oxUU5lbVMud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjE3MCwiaGVpZ2h0IjoxNzAsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQzMjMvX2FzdHJvL2J5LXRlY2gtYXBwbGljYXRpb25zLkRBWHJoWVQ0XzJqVUU2aC53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MTcwLCJoZWlnaHQiOjE3MCwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDMyMy9fYXN0cm8vY2FwdHVyZS1hcHBsaWNhdGlvbnMubGhCcl9kS2JfWjEwQ1ZTay53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MTcwLCJoZWlnaHQiOjE3MCwiZml0IjoiY292ZXIifV0sImFycml2YWxzIjpbNjE5Ljg3NSw4NzguODc1LDEwOTQuNTYyNSwxNDA2LjkzNzUsMTY1NS40Mzc1LDE4OTguMjVdLCJhcnR3b3JrVGltaW5ncyI6W3siY2xvY2tPZmZzZXQiOjAsInN0YXJ0Ijo2MjAsImVuZCI6OTAwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjg3OSwiZW5kIjoxMTU5LCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjEwOTUsImVuZCI6MTM3NSwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxNDA3LCJlbmQiOjE2ODcsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTY1NiwiZW5kIjoxOTM2LCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjE4OTgsImVuZCI6MjE3OCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9XSwic2F3T3V0bGluZSI6W3RydWUsdHJ1ZSx0cnVlLHRydWUsdHJ1ZSx0cnVlXSwicmV2ZWFsU3RhcnRzIjpbNjM3LjMsOTIwLjYwMDAwMDAwMDAwMDEsMTEyMC42MDAwMDAwMDAwMDAxLDE0MjAuNjAwMDAwMDAwMDAwMSwxNjg3LjIsMTkzNy4yXSwibGFzdFVucmV2ZWFsZWQiOls2MjAuNiw4NTMuOTAwMDAwMDAwMDAwMSwxMTAzLjksMTM4Ny4zLDE2NTMuODk5OTk5OTk5OTk5OSwxOTAzLjg5OTk5OTk5OTk5OTldLCJsYXN0SW5jb21wbGV0ZSI6MjEzNy4yLCJtYXhpbXVtU2FtcGxlR2FwIjoyMTYuNjAwMDAwMDAwMDAwMDIsInNhd01peGVkUmV2ZWFsIjp0cnVlLCJmdWxseVZpc2libGVBdCI6MjE3MC40OTk5OTk5OTk5OTk1LCJnZW9tZXRyeSI6eyJmcmFtZXMiOlt7ImxlZnQiOjI4MC4xMTcxODc1LCJyaWdodCI6NDMyLjQ3NjU2MjUsInRvcCI6Mzc2LjgyODEyNSwiYm90dG9tIjo1MjkuMTg3NSwid2lkdGgiOjE1Mi4zNTkzNzUsImhlaWdodCI6MTUyLjM1OTM3NX0seyJsZWZ0Ijo0MTcuNzI2NTYyNSwicmlnaHQiOjU3MC4wODU5Mzc1LCJ0b3AiOjIxMC43MDMxMjUsImJvdHRvbSI6MzYzLjA2MjUsIndpZHRoIjoxNTIuMzU5Mzc1LCJoZWlnaHQiOjE1Mi4zNTkzNzV9LHsibGVmdCI6NTg3LjI5Njg3NSwicmlnaHQiOjc1NC4zOTA2MjUsInRvcCI6OTQuNzI2NTYyNSwiYm90dG9tIjoyNjEuODIwMzEyNSwid2lkdGgiOjE2Ny4wOTM3NSwiaGVpZ2h0IjoxNjcuMDkzNzV9LHsibGVmdCI6NzAyLjc4OTA2MjUsInJpZ2h0Ijo4NTUuMTQ4NDM3NSwidG9wIjozMjUuNzAzMTI1LCJib3R0b20iOjQ3OC4wNjI1LCJ3aWR0aCI6MTUyLjM1OTM3NSwiaGVpZ2h0IjoxNTIuMzU5Mzc1fSx7ImxlZnQiOjg3OS43MjY1NjI1LCJyaWdodCI6MTAzMi4wODU5Mzc1LCJ0b3AiOjM3Ni44MjgxMjUsImJvdHRvbSI6NTI5LjE4NzUsIndpZHRoIjoxNTIuMzU5Mzc1LCJoZWlnaHQiOjE1Mi4zNTkzNzV9LHsibGVmdCI6MTAwNi42MDQ0MzExNTIzNDM4LCJyaWdodCI6MTE2MC43NzA1MDc4MTI1LCJ0b3AiOjE5MC42Mjc4OTkxNjk5MjE4OCwiYm90dG9tIjozNDQuNzkzOTc1ODMwMDc4MSwid2lkdGgiOjE1NC4xNjYwNzY2NjAxNTYyNSwiaGVpZ2h0IjoxNTQuMTY2MDc2NjYwMTU2MjV9XSwic2xvdFdpZHRocyI6WzE1Mi4zNTkzNzUsMTUyLjM1OTM3NSwxNjcuMDkzNzUsMTUyLjM1OTM3NSwxNTIuMzU5Mzc1LDE1Mi4zNTkzNzVdLCJncm91cFdpZHRoIjo5ODIuOTY4NzUsIndvcmRtYXJrIjp7ImxlZnQiOjYwLjQ2ODc1LCJyaWdodCI6MTA4Ny4zOTA2MjUsInRvcCI6NTQ3LjIwMzEyNSwiYm90dG9tIjo3OTIsIndpZHRoIjoxMDI2LjkyMTg3NSwiaGVpZ2h0IjoyNDQuNzk2ODc1fSwic2tpcCI6eyJsZWZ0IjoxMjQ5LjAzMTI1LCJyaWdodCI6MTM3OS41MzEyNSwidG9wIjo4MzEsImJvdHRvbSI6ODc1LCJ3aWR0aCI6MTMwLjUsImhlaWdodCI6NDR9fSwiZW5kZWQiOjQzNjgsInJlYXNvbiI6ImNvbXBsZXRlIiwib3ZlcmZsb3ciOmZhbHNlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c6e336804325325a1416-ee823b680a6de70563f3",
+          "file": "signature-squares.spec.ts",
+          "line": 33,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T17:39:19.446Z",
+    "duration": 74568.473,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

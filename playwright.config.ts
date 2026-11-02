@@ -2,6 +2,9 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests/browser',
+  // About's rendered timing acceptance uses optimized production output through
+  // playwright.about.config.ts; development intentionally permits static arrival.
+  testIgnore: 'about.spec.ts',
   fullyParallel: true,
   workers: 2,
   reporter: 'list',
