@@ -94,17 +94,18 @@ for (const mode of ['blocked', 'delayed'] as const) {
         expect(Math.abs(frame.center - firstReleased.center)).toBeLessThan(2);
         expect(frame.transform).toMatch(/^(?:none|matrix\(1, 0, 0, 1, 0, 0\))$/);
       }
-      await test
-        .info()
-        .attach('expired-boot-never-rehides', {
-          body: JSON.stringify({ released, frames }),
-          contentType: 'application/json',
-        });
+      await test.info().attach('expired-boot-never-rehides', {
+        body: JSON.stringify({ released, frames }),
+        contentType: 'application/json',
+      });
     } else {
-      await page.locator('[data-menu-fallback] summary').click();
-      await expect(
-        page.locator('[data-menu-fallback]').getByRole('link', { name: 'Work', exact: true }),
-      ).toBeVisible();
+      // This failure mode intentionally removes the shared navigation bundle
+      // too. Exercise the About chapter's own native fallback controls.
+      const story = page.getByRole('link', { name: 'Follow the thought', exact: true });
+      await story.focus();
+      await story.press('Enter');
+      await expect(page).toHaveURL(/#our-beginning$/);
+      await expect(page.locator('#our-beginning')).toBeInViewport();
       const contact = page.getByRole('link', { name: "Tell us what you're thinking", exact: true });
       await expect(contact).toHaveAttribute('href', '/contact');
       await contact.click();

@@ -17,7 +17,27 @@ const previewOnly = process.argv.includes('--preview-only');
 const viewportFor = (width) => ({ width, height: width < 768 ? 844 : 900 });
 const evidence = {
   capturedAt: new Date().toISOString(),
-  sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
+  sourceCommit: argument(
+    '--source-commit',
+    execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
+  ),
+  aboutSourceFiles: Object.fromEntries(
+    await Promise.all(
+      [
+        'src/components/about/AboutPage.astro',
+        'src/components/about/FounderPortrait.astro',
+        'src/styles/about.css',
+        'src/scripts/about-motion.ts',
+        'src/components/BrandEmblem.astro',
+        'src/pages/about.astro',
+      ].map(async (filename) => [
+        filename,
+        createHash('sha256')
+          .update(await readFile(filename))
+          .digest('hex'),
+      ]),
+    ),
+  ),
   baseURL,
   route: '/about',
   captureMode: previewOnly ? 'private-quick-preview' : 'complete-about-correction-evidence',
@@ -270,7 +290,7 @@ try {
       files: ['about-1440-hero.png', 'about-390-hero.png'],
     }),
   );
-  for (const width of previewOnly ? [390] : [390, 1440]) {
+  for (const width of [390, 1440]) {
     const viewport = viewportFor(width);
     const context = await browser.newContext({
       baseURL,
@@ -310,6 +330,17 @@ try {
       page,
       `about-${width}-transition.png`,
       'Actual mid-transition composition while moving right and revealing the editorial text.',
+    );
+    await page.waitForFunction(
+      () =>
+        performance.now() -
+          Number(document.querySelector('[data-about-hero]').dataset.aboutStartedAt) >=
+        2100,
+    );
+    await screenshot(
+      page,
+      `about-${width}-copy-entry.png`,
+      'Actual late transition at approximately 2.1 seconds, verifying headline clearance as the composition reaches its final position.',
     );
     await settled(page);
     const final = await facts(page);
@@ -459,6 +490,8 @@ for (const width of [1440, 390])
     `![Centered full founder/emblem composition at ${width}px](about-${width}-center.png)`,
     '',
     `![Actual transition at ${width}px](about-${width}-transition.png)`,
+    '',
+    `![Actual copy entry at ${width}px](about-${width}-copy-entry.png)`,
     '',
     `![Settled dark hero at ${width}px](about-${width}-hero.png)`,
     '',

@@ -1,0 +1,1186 @@
+{
+  "capturedAt": "2026-11-02T19:06:41.687Z",
+  "sourceCommit": "52640f57ef42eef8bc4c4449a82f1ac54730ffd4",
+  "aboutSourceFiles": {
+    "src/components/about/AboutPage.astro": "7a30be66b5b5f5e4dbea2608e714e36aba0b8ff7fb6cb48f397ad4b95db195b9",
+    "src/components/about/FounderPortrait.astro": "ed1c5173d972a4ff847746145e1d0155e50543723ea8153d9e2e2c626e6e5e96",
+    "src/styles/about.css": "dc924c3991d04432d243565681e6453ee34760bd651ce4c8f91eaa86fa6aef7c",
+    "src/scripts/about-motion.ts": "013580b27dbc9e5238230ea6a0200ca135a8fa9ea7ab42a6b312c92503bde5c0",
+    "src/components/BrandEmblem.astro": "70624440933993cda25563f843499e8fcd8d8fedc52ddaff136831fc66771aa5",
+    "src/pages/about.astro": "0a8e3254b3b51d865b2be5bbffebf7d7a66608f0ddac5e4c8a429d6418568a97"
+  },
+  "baseURL": "http://127.0.0.1:4393",
+  "route": "/about",
+  "captureMode": "complete-about-correction-evidence",
+  "method": "Unedited production-browser screenshots at DPR 1 and native real-time Playwright recordings transcoded at unchanged speed to silent H.264 MP4. No animation seeking, replacement CSS or fabricated frames. Process footage uses native document scrolling, including rapid reversal. Software rendering is not a physical-device performance benchmark.",
+  "artwork": "The previously approved derived raster portrait is unchanged. This revised arrival moves the complete portrait, high-resolution emblem and circle together; it does not draw independent portrait strokes. No private original photograph or rejected candidate is used.",
+  "browser": "154.0.8037.57",
+  "screenshots": [
+    {
+      "filename": "about-1440-hero.png",
+      "description": "Complete settled dark hero, approved portrait and large emblem.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 1027,
+      "bytes": 615839,
+      "sha256": "98203078da0b2a8b976399e246be3de6aa46df0313b1207fa00a7d976eaadf2d",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "static",
+        "phase": "settled",
+        "settleReason": "reduced-motion",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 962.6000000000931,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 755.03125,
+          "y": 191.390625,
+          "width": 624.5,
+          "height": 636.984375,
+          "center": 1067.28125,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-390-hero.png",
+      "description": "Complete settled dark hero, approved portrait and large emblem.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 1206,
+      "bytes": 205053,
+      "sha256": "ce408ed45b7ea39ec7a0c9a3c5678c1d234a1fe7d0d4146773552f6af658b8cf",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "static",
+        "phase": "settled",
+        "settleReason": "reduced-motion",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 565.7999999998137,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 63.53125,
+          "y": 376.8125,
+          "width": 304.46875,
+          "height": 310.546875,
+          "center": 215.765625,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-390-center.png",
+      "description": "Actual centered full portrait, emblem and supporting circle during the opening hold.",
+      "mode": "normal-motion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 140080,
+      "sha256": "9e4750df44262db3606303148b2cec796f0515d66051c3183e6f63dad1616901",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "running",
+        "phase": "center",
+        "startedAt": 302.9,
+        "endedAt": null,
+        "sampledAt": 768.6000000000931,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 42.765625,
+          "y": 311.2265625,
+          "width": 304.46875,
+          "height": 310.546875,
+          "center": 195,
+          "transform": "matrix(1, 0, 0, 1, -20.7656, -65.5859)"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-390-transition.png",
+      "description": "Actual mid-transition composition while moving right and revealing the editorial text.",
+      "mode": "normal-motion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 140699,
+      "sha256": "483698cd8c4aae2eca434f861e28caf3b2f34478f1bc5cc7bb4b763b9517f908",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "running",
+        "phase": "transition",
+        "startedAt": 302.9,
+        "endedAt": null,
+        "sampledAt": 1866.5,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 61.25225830078125,
+          "y": 369.61456298828125,
+          "width": 304.46875,
+          "height": 310.546875,
+          "center": 213.48663330078125,
+          "transform": "matrix(1, 0, 0, 1, -2.27899, -7.19794)"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-390-copy-entry.png",
+      "description": "Actual late transition at approximately 2.1 seconds, verifying headline clearance as the composition reaches its final position.",
+      "mode": "normal-motion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 173049,
+      "sha256": "75b5c588ba90644e6caf3a70d90afc9d26bb8c32cdbc5b85f715f4d7672d0abe",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "running",
+        "phase": "transition",
+        "startedAt": 302.9,
+        "endedAt": null,
+        "sampledAt": 2465.7999999998137,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 63.53125,
+          "y": 376.8125,
+          "width": 304.46875,
+          "height": 310.546875,
+          "center": 215.765625,
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-390-settled-viewport.png",
+      "description": "Actual settled dark hero viewport after the nonblocking arrival.",
+      "mode": "normal-motion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 182864,
+      "sha256": "74e90e47d797013d8f55fb278d20f2e8f09afd2c3a5225c8f392708f1992a2a1",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "settled",
+        "phase": "settled",
+        "settleReason": "complete",
+        "startedAt": 302.9,
+        "endedAt": 3954.3,
+        "sampledAt": 4917.5,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 63.53125,
+          "y": 376.8125,
+          "width": 304.46875,
+          "height": 310.546875,
+          "center": 215.765625,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-390-process-midpoint.png",
+      "description": "Actual half-drawn process connector after rapid forward/reverse native scrolling.",
+      "mode": "normal-motion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 50434,
+      "sha256": "a48dcfa643411bfc6216df096eae4a9eed14327437f95ec9178ba1be26019e11",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "settled",
+        "phase": "settled",
+        "settleReason": "input",
+        "startedAt": 386.8,
+        "endedAt": 403.6,
+        "sampledAt": 6426.600000000093,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 63.53125,
+          "y": -4460.1875,
+          "width": 304.46875,
+          "height": 310.546875,
+          "center": 215.765625,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-1440-center.png",
+      "description": "Actual centered full portrait, emblem and supporting circle during the opening hold.",
+      "mode": "normal-motion",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 496351,
+      "sha256": "f7abb665bd5fbb961918356c9fffdd2ff1bb0ae3df155076b65292762f7c442a",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "running",
+        "phase": "center",
+        "startedAt": 411.6,
+        "endedAt": null,
+        "sampledAt": 920.5,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 407.75,
+          "y": 184.0078125,
+          "width": 624.5,
+          "height": 636.984375,
+          "center": 720,
+          "transform": "matrix(1, 0, 0, 1, -347.281, -7.38281)"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-1440-transition.png",
+      "description": "Actual mid-transition composition while moving right and revealing the editorial text.",
+      "mode": "normal-motion",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 537168,
+      "sha256": "883c436005a017c0e56b98adb8ea2fa418f195f8d15f90363c637c1ac204ff93",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "running",
+        "phase": "transition",
+        "startedAt": 411.6,
+        "endedAt": null,
+        "sampledAt": 2152.899999999907,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 743.7553100585938,
+          "y": 191.15090942382812,
+          "width": 624.5000610351562,
+          "height": 636.984375,
+          "center": 1056.0053405761719,
+          "transform": "matrix(1, 0, 0, 1, -11.2759, -0.239714)"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-1440-copy-entry.png",
+      "description": "Actual late transition at approximately 2.1 seconds, verifying headline clearance as the composition reaches its final position.",
+      "mode": "normal-motion",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 630782,
+      "sha256": "68bb33923b04e1995495218edab7459b77d6e26081ba376260aa208edc7d7454",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "running",
+        "phase": "transition",
+        "startedAt": 411.6,
+        "endedAt": null,
+        "sampledAt": 2825.7999999998137,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 755.03125,
+          "y": 191.390625,
+          "width": 624.5,
+          "height": 636.984375,
+          "center": 1067.28125,
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-1440-settled-viewport.png",
+      "description": "Actual settled dark hero viewport after the nonblocking arrival.",
+      "mode": "normal-motion",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 620260,
+      "sha256": "285bd961f2b2c82454c1f9d34f81ea08fea3ad2fe500d75497686bb3cf1b9e93",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "settled",
+        "phase": "settled",
+        "settleReason": "complete",
+        "startedAt": 411.6,
+        "endedAt": 3313.4,
+        "sampledAt": 4372.299999999814,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 755.03125,
+          "y": 191.390625,
+          "width": 624.5,
+          "height": 636.984375,
+          "center": 1067.28125,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-1440-process-midpoint.png",
+      "description": "Actual half-drawn process connector after rapid forward/reverse native scrolling.",
+      "mode": "normal-motion",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 81559,
+      "sha256": "24814b19e2977d660d576d74edd4c75d1444d85a7c9d88003939cf140601d315",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "static",
+        "phase": "settled",
+        "settleReason": "input",
+        "startedAt": null,
+        "endedAt": 301.9,
+        "sampledAt": 6667.299999999814,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 755.03125,
+          "y": -4105.609375,
+          "width": 624.5,
+          "height": 636.984375,
+          "center": 1067.28125,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-320-full-reduced.png",
+      "description": "All seven retained chapters with the supported reduced-motion fallback.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 8766,
+      "bytes": 691184,
+      "sha256": "65e4bce61dcea4d163e2d111b19fb015de15ef87ea868ae5336c7a569bfc3fca",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "static",
+        "phase": "settled",
+        "settleReason": "reduced-motion",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 1147.0999999996275,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 55.125,
+          "y": 366.53125,
+          "width": 242.875,
+          "height": 247.71875,
+          "center": 176.5625,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-320-hero.png",
+      "description": "Complete settled dark hero, approved portrait and large emblem.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 1239,
+      "bytes": 160706,
+      "sha256": "62c270ea90c6b3b71c4ef99517b89dbf2acd90d3e1e41b4de7b9a9f654c713cd",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "static",
+        "phase": "settled",
+        "settleReason": "reduced-motion",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 1246,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 55.125,
+          "y": 366.53125,
+          "width": 242.875,
+          "height": 247.71875,
+          "center": 176.5625,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-390-full-reduced.png",
+      "description": "All seven retained chapters with the supported reduced-motion fallback.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 8259,
+      "bytes": 779995,
+      "sha256": "c6508ff98c279019267a267fb8f4334363f150850a9c9ad8e6974a23a52d6131",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "static",
+        "phase": "settled",
+        "settleReason": "reduced-motion",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 960.7000000001863,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 63.53125,
+          "y": 376.8125,
+          "width": 304.46875,
+          "height": 310.546875,
+          "center": 215.765625,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-768-full-reduced.png",
+      "description": "All seven retained chapters with the supported reduced-motion fallback.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "width": 768,
+      "height": 6258,
+      "bytes": 999735,
+      "sha256": "60ddd17ba474d6ec06eb9b745e7717e491f18f502eb6c72cdd74eb680061d47e",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "static",
+        "phase": "settled",
+        "settleReason": "reduced-motion",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 1285.3999999999069,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 402.328125,
+          "y": 141,
+          "width": 333.40625,
+          "height": 340.0625,
+          "center": 569.03125,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-768-hero.png",
+      "description": "Complete settled dark hero, approved portrait and large emblem.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "width": 768,
+      "height": 900,
+      "bytes": 253555,
+      "sha256": "a60086b38f78e6cc7b3996c422b61daa01816b42d1876245474596d2c37b0f0d",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "static",
+        "phase": "settled",
+        "settleReason": "reduced-motion",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 1369.3999999999069,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 402.328125,
+          "y": 141,
+          "width": 333.40625,
+          "height": 340.0625,
+          "center": 569.03125,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-1440-full-reduced.png",
+      "description": "All seven retained chapters with the supported reduced-motion fallback.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 7873,
+      "bytes": 1874781,
+      "sha256": "9b745123ea46bbc9a768e27113bb92fddcf9b05889ba6a652df7c496d4cfe353",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "static",
+        "phase": "settled",
+        "settleReason": "reduced-motion",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 1941.7000000001863,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 755.03125,
+          "y": 191.390625,
+          "width": 624.5,
+          "height": 636.984375,
+          "center": 1067.28125,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-390-full-no-js.png",
+      "description": "Complete dark About page without JavaScript.",
+      "mode": "no-JavaScript",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 8259,
+      "bytes": 779995,
+      "sha256": "c6508ff98c279019267a267fb8f4334363f150850a9c9ad8e6974a23a52d6131",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "phase": "settled",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 932.1999999997206,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 63.53125,
+          "y": 376.8125,
+          "width": 304.46875,
+          "height": 310.546875,
+          "center": 215.765625,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-390-hero-no-js.png",
+      "description": "Full settled illustration/emblem and copy without JavaScript.",
+      "mode": "no-JavaScript",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 1206,
+      "bytes": 205053,
+      "sha256": "ce408ed45b7ea39ec7a0c9a3c5678c1d234a1fe7d0d4146773552f6af658b8cf",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "phase": "settled",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 1055.8999999999069,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 63.53125,
+          "y": 376.8125,
+          "width": 304.46875,
+          "height": 310.546875,
+          "center": 215.765625,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-1440-full-no-js.png",
+      "description": "Complete dark About page without JavaScript.",
+      "mode": "no-JavaScript",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 7873,
+      "bytes": 1874781,
+      "sha256": "9b745123ea46bbc9a768e27113bb92fddcf9b05889ba6a652df7c496d4cfe353",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "phase": "settled",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 1748,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 755.03125,
+          "y": 191.390625,
+          "width": 624.5,
+          "height": 636.984375,
+          "center": 1067.28125,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "filename": "about-1440-hero-no-js.png",
+      "description": "Full settled illustration/emblem and copy without JavaScript.",
+      "mode": "no-JavaScript",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 1027,
+      "bytes": 615839,
+      "sha256": "98203078da0b2a8b976399e246be3de6aa46df0313b1207fa00a7d976eaadf2d",
+      "observed": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "phase": "settled",
+        "startedAt": null,
+        "endedAt": null,
+        "sampledAt": 1950.0999999996275,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 755.03125,
+          "y": 191.390625,
+          "width": 624.5,
+          "height": 636.984375,
+          "center": 1067.28125,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    }
+  ],
+  "recordings": [
+    {
+      "filename": "about-390-arrival.mp4",
+      "durationSeconds": 6.4,
+      "bytes": 208774,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 390,
+          "height": 844,
+          "frameRate": "25/1"
+        }
+      ],
+      "width": 390,
+      "scene": "arrival"
+    },
+    {
+      "filename": "about-390-process-sync.mp4",
+      "durationSeconds": 7.48,
+      "bytes": 969941,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 390,
+          "height": 844,
+          "frameRate": "25/1"
+        }
+      ],
+      "width": 390,
+      "scene": "process-forward-reverse"
+    },
+    {
+      "filename": "about-1440-arrival.mp4",
+      "durationSeconds": 5.84,
+      "bytes": 700085,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 1440,
+          "height": 900,
+          "frameRate": "25/1"
+        }
+      ],
+      "width": 1440,
+      "scene": "arrival"
+    },
+    {
+      "filename": "about-1440-process-sync.mp4",
+      "durationSeconds": 7.48,
+      "bytes": 1215693,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 1440,
+          "height": 900,
+          "frameRate": "25/1"
+        }
+      ],
+      "width": 1440,
+      "scene": "process-forward-reverse"
+    }
+  ],
+  "measurements": [
+    {
+      "width": 390,
+      "scene": "arrival",
+      "centered": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "running",
+        "phase": "center",
+        "startedAt": 302.9,
+        "endedAt": null,
+        "sampledAt": 721.6000000000931,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 42.765625,
+          "y": 311.2265625,
+          "width": 304.46875,
+          "height": 310.546875,
+          "center": 195,
+          "transform": "matrix(1, 0, 0, 1, -20.7656, -65.5859)"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      },
+      "transition": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "running",
+        "phase": "transition",
+        "startedAt": 302.9,
+        "endedAt": null,
+        "sampledAt": 1823.2999999998137,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 60.87717819213867,
+          "y": 368.4299011230469,
+          "width": 304.46875,
+          "height": 310.5469055175781,
+          "center": 213.11155319213867,
+          "transform": "matrix(1, 0, 0, 1, -2.65407, -8.3826)"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      },
+      "final": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "settled",
+        "phase": "settled",
+        "settleReason": "complete",
+        "startedAt": 302.9,
+        "endedAt": 3954.3,
+        "sampledAt": 3972.399999999907,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 63.53125,
+          "y": 376.8125,
+          "width": 304.46875,
+          "height": 310.546875,
+          "center": 215.765625,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "width": 390,
+      "scene": "process",
+      "samples": [
+        {
+          "requested": 0.12,
+          "duration": 900,
+          "progress": 0.1201,
+          "scrollProgress": 0.1201,
+          "offset": 0.8799,
+          "scrollY": 4350
+        },
+        {
+          "requested": 0.58,
+          "duration": 900,
+          "progress": 0.5796,
+          "scrollProgress": 0.5796,
+          "offset": 0.4204,
+          "scrollY": 4939
+        },
+        {
+          "requested": 0.9,
+          "duration": 300,
+          "progress": 0.9002,
+          "scrollProgress": 0.9002,
+          "offset": 0.0998,
+          "scrollY": 5350
+        },
+        {
+          "requested": 0.24,
+          "duration": 250,
+          "progress": 0.2402,
+          "scrollProgress": 0.2402,
+          "offset": 0.7598,
+          "scrollY": 4504
+        },
+        {
+          "requested": 0.76,
+          "duration": 180,
+          "progress": 0.7598,
+          "scrollProgress": 0.7598,
+          "offset": 0.2402,
+          "scrollY": 5170
+        },
+        {
+          "requested": 0.04,
+          "duration": 180,
+          "progress": 0.0398,
+          "scrollProgress": 0.0398,
+          "offset": 0.9602,
+          "scrollY": 4247
+        },
+        {
+          "requested": 0.5,
+          "duration": 600,
+          "progress": 0.5,
+          "scrollProgress": 0.5,
+          "offset": 0.5,
+          "scrollY": 4837
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "scene": "arrival",
+      "centered": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "running",
+        "phase": "center",
+        "startedAt": 411.6,
+        "endedAt": null,
+        "sampledAt": 820.7000000001863,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 407.75,
+          "y": 184.0078125,
+          "width": 624.5,
+          "height": 636.984375,
+          "center": 720,
+          "transform": "matrix(1, 0, 0, 1, -347.281, -7.38281)"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      },
+      "transition": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "running",
+        "phase": "transition",
+        "startedAt": 411.6,
+        "endedAt": null,
+        "sampledAt": 1954,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 719.7993774414062,
+          "y": 190.64163208007812,
+          "width": 624.4999389648438,
+          "height": 636.984375,
+          "center": 1032.0493469238281,
+          "transform": "matrix(1, 0, 0, 1, -35.2319, -0.74899)"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      },
+      "final": {
+        "title": "About DrawnOut Digital | Two Twins, One Creative Studio",
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "chapters": 7,
+        "robots": "noindex, nofollow",
+        "overlayCount": 0,
+        "entrance": "settled",
+        "phase": "settled",
+        "settleReason": "complete",
+        "startedAt": 411.6,
+        "endedAt": 3313.4,
+        "sampledAt": 3324.2000000001863,
+        "background": "rgb(32, 32, 30)",
+        "composition": {
+          "x": 755.03125,
+          "y": 191.390625,
+          "width": 624.5,
+          "height": 636.984375,
+          "center": 1067.28125,
+          "transform": "none"
+        },
+        "mask": null,
+        "fullImageFit": "xMidYMid meet",
+        "overflow": false
+      }
+    },
+    {
+      "width": 1440,
+      "scene": "process",
+      "samples": [
+        {
+          "requested": 0.12,
+          "duration": 900,
+          "progress": 0.1209,
+          "scrollProgress": 0.1209,
+          "offset": 0.8791,
+          "scrollY": 3971
+        },
+        {
+          "requested": 0.58,
+          "duration": 900,
+          "progress": 0.5802,
+          "scrollProgress": 0.5802,
+          "offset": 0.4198,
+          "scrollY": 4366
+        },
+        {
+          "requested": 0.9,
+          "duration": 300,
+          "progress": 0.9,
+          "scrollProgress": 0.9,
+          "offset": 0.1,
+          "scrollY": 4641
+        },
+        {
+          "requested": 0.24,
+          "duration": 250,
+          "progress": 0.2407,
+          "scrollProgress": 0.2407,
+          "offset": 0.7593,
+          "scrollY": 4074
+        },
+        {
+          "requested": 0.76,
+          "duration": 180,
+          "progress": 0.7605,
+          "scrollProgress": 0.7605,
+          "offset": 0.2395,
+          "scrollY": 4521
+        },
+        {
+          "requested": 0.04,
+          "duration": 180,
+          "progress": 0.0407,
+          "scrollProgress": 0.0407,
+          "offset": 0.9593,
+          "scrollY": 3902
+        },
+        {
+          "requested": 0.5,
+          "duration": 600,
+          "progress": 0.5,
+          "scrollProgress": 0.5,
+          "offset": 0.5,
+          "scrollY": 4297
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "failedRequests": []
+}

@@ -1,0 +1,955 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-services-hero/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.services-hero-about.config.ts"
+    ],
+    "configFile": "/workspace/drawnout-services-hero/playwright.services-hero-about.config.ts",
+    "rootDir": "/workspace/drawnout-services-hero/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-services-hero/test-results/services-hero-about",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-services-hero/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["about.spec.ts", "services-hero-about.spec.ts"],
+        "timeout": 70000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-services-hero/test-results/services-hero-about",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-services-hero/tests/browser",
+        "snapshotDir": "/workspace/drawnout-services-hero/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["about.spec.ts", "services-hero-about.spec.ts"],
+        "timeout": 70000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4393",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      ["list", null],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/services-hero/about-browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4393",
+      "url": "http://127.0.0.1:4393",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "about.spec.ts",
+      "file": "about.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2829,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:43:46.037Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-84ae88c0835a9e124a08",
+          "file": "about.spec.ts",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2299,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:43:49.675Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-54f60f42eae0fed7f838",
+          "file": "about.spec.ts",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2500,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:43:51.987Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-f234666dde0a30a692d5",
+          "file": "about.spec.ts",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2656,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:43:54.500Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-e5e049e7405749dea8e4",
+          "file": "about.spec.ts",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "actual centered founder/logo composition moves right and settles nonblockingly at 390px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 11509,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"\u001b[7mcomplet\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mresiz\u001b[27me\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    24 × locator resolved to <section data-theme=\"dark\" class=\"about-hero\" data-about-hero=\"\" data-about-ended-at=\"798.00\" aria-labelledby=\"about-title\" data-about-entrance=\"settled\" data-about-started-at=\"337.50\" data-about-hero-phase=\"settled\" data-about-settle-reason=\"resize\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"resize\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"\u001b[7mcomplet\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mresiz\u001b[27me\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    24 × locator resolved to <section data-theme=\"dark\" class=\"about-hero\" data-about-hero=\"\" data-about-ended-at=\"798.00\" aria-labelledby=\"about-title\" data-about-entrance=\"settled\" data-about-started-at=\"337.50\" data-about-hero-phase=\"settled\" data-about-settle-reason=\"resize\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"resize\"\u001b[22m\n\n    at /workspace/drawnout-services-hero/tests/browser/about.spec.ts:303:38",
+                    "location": {
+                      "file": "/workspace/drawnout-services-hero/tests/browser/about.spec.ts",
+                      "column": 38,
+                      "line": 303
+                    },
+                    "snippet": "  301 |     const centeredPixels = await heroPixels(page);\n  302 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');\n> 303 |     await expect(page.locator(hero)).toHaveAttribute('data-about-settle-reason', 'complete');\n      |                                      ^\n  304 |     const settledPixels = await heroPixels(page);\n  305 |     await page.waitForTimeout(350);\n  306 |     const stablePixels = await heroPixels(page);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-services-hero/tests/browser/about.spec.ts",
+                        "column": 38,
+                        "line": 303
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"\u001b[7mcomplet\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mresiz\u001b[27me\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    24 × locator resolved to <section data-theme=\"dark\" class=\"about-hero\" data-about-hero=\"\" data-about-ended-at=\"798.00\" aria-labelledby=\"about-title\" data-about-entrance=\"settled\" data-about-started-at=\"337.50\" data-about-hero-phase=\"settled\" data-about-settle-reason=\"resize\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"resize\"\u001b[22m\n\n\n  301 |     const centeredPixels = await heroPixels(page);\n  302 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');\n> 303 |     await expect(page.locator(hero)).toHaveAttribute('data-about-settle-reason', 'complete');\n      |                                      ^\n  304 |     const settledPixels = await heroPixels(page);\n  305 |     await page.waitForTimeout(350);\n  306 |     const stablePixels = await heroPixels(page);\n    at /workspace/drawnout-services-hero/tests/browser/about.spec.ts:303:38"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:43:57.166Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-services-hero/test-results/services-hero-about/about-actual-centered-foun-37f17-tles-nonblockingly-at-390px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-services-hero/test-results/services-hero-about/about-actual-centered-foun-37f17-tles-nonblockingly-at-390px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-services-hero/test-results/services-hero-about/about-actual-centered-foun-37f17-tles-nonblockingly-at-390px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-services-hero/tests/browser/about.spec.ts",
+                    "column": 38,
+                    "line": 303
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-400c34ffddb3bb8f55aa",
+          "file": "about.spec.ts",
+          "line": 285,
+          "column": 3
+        },
+        {
+          "title": "actual centered founder/logo composition moves right and settles nonblockingly at 1440px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12682,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"\u001b[7mcomplet\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mresiz\u001b[27me\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    24 × locator resolved to <section data-theme=\"dark\" class=\"about-hero\" data-about-hero=\"\" data-about-ended-at=\"891.20\" aria-labelledby=\"about-title\" data-about-entrance=\"settled\" data-about-started-at=\"337.10\" data-about-hero-phase=\"settled\" data-about-settle-reason=\"resize\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"resize\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"\u001b[7mcomplet\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mresiz\u001b[27me\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    24 × locator resolved to <section data-theme=\"dark\" class=\"about-hero\" data-about-hero=\"\" data-about-ended-at=\"891.20\" aria-labelledby=\"about-title\" data-about-entrance=\"settled\" data-about-started-at=\"337.10\" data-about-hero-phase=\"settled\" data-about-settle-reason=\"resize\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"resize\"\u001b[22m\n\n    at /workspace/drawnout-services-hero/tests/browser/about.spec.ts:303:38",
+                    "location": {
+                      "file": "/workspace/drawnout-services-hero/tests/browser/about.spec.ts",
+                      "column": 38,
+                      "line": 303
+                    },
+                    "snippet": "  301 |     const centeredPixels = await heroPixels(page);\n  302 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');\n> 303 |     await expect(page.locator(hero)).toHaveAttribute('data-about-settle-reason', 'complete');\n      |                                      ^\n  304 |     const settledPixels = await heroPixels(page);\n  305 |     await page.waitForTimeout(350);\n  306 |     const stablePixels = await heroPixels(page);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-services-hero/tests/browser/about.spec.ts",
+                        "column": 38,
+                        "line": 303
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"\u001b[7mcomplet\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mresiz\u001b[27me\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    24 × locator resolved to <section data-theme=\"dark\" class=\"about-hero\" data-about-hero=\"\" data-about-ended-at=\"891.20\" aria-labelledby=\"about-title\" data-about-entrance=\"settled\" data-about-started-at=\"337.10\" data-about-hero-phase=\"settled\" data-about-settle-reason=\"resize\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"resize\"\u001b[22m\n\n\n  301 |     const centeredPixels = await heroPixels(page);\n  302 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');\n> 303 |     await expect(page.locator(hero)).toHaveAttribute('data-about-settle-reason', 'complete');\n      |                                      ^\n  304 |     const settledPixels = await heroPixels(page);\n  305 |     await page.waitForTimeout(350);\n  306 |     const stablePixels = await heroPixels(page);\n    at /workspace/drawnout-services-hero/tests/browser/about.spec.ts:303:38"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:09.261Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-services-hero/test-results/services-hero-about/about-actual-centered-foun-d02b9-les-nonblockingly-at-1440px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-services-hero/test-results/services-hero-about/about-actual-centered-foun-d02b9-les-nonblockingly-at-1440px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-services-hero/test-results/services-hero-about/about-actual-centered-foun-d02b9-les-nonblockingly-at-1440px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-services-hero/tests/browser/about.spec.ts",
+                    "column": 38,
+                    "line": 303
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-ef612521232bbda0f7c1",
+          "file": "about.spec.ts",
+          "line": 285,
+          "column": 3
+        },
+        {
+          "title": "direct, internal and refresh About arrivals stay nonblocking; Work is immediate and Home retains its full loop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7436,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:22.774Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-2be8c29ea67e001c8c9c",
+          "file": "about.spec.ts",
+          "line": 354,
+          "column": 1
+        },
+        {
+          "title": "early keyboard settles the entrance without blocking content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 989,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:30.443Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-bd7e7324d462badad228",
+          "file": "about.spec.ts",
+          "line": 388,
+          "column": 3
+        },
+        {
+          "title": "early scroll settles the entrance without blocking content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 909,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:31.451Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-abb0a7680374c8e8c14e",
+          "file": "about.spec.ts",
+          "line": 388,
+          "column": 3
+        },
+        {
+          "title": "reduced provides the complete static story",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1306,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:32.371Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-50694660d911a8207bf6",
+          "file": "about.spec.ts",
+          "line": 400,
+          "column": 3
+        },
+        {
+          "title": "save-data provides the complete static story",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1205,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:33.694Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-c4f72bd288c15c248d58",
+          "file": "about.spec.ts",
+          "line": 400,
+          "column": 3
+        },
+        {
+          "title": "hidden provides the complete static story",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1174,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:34.913Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-b413c959876b0d2f9337",
+          "file": "about.spec.ts",
+          "line": 400,
+          "column": 3
+        },
+        {
+          "title": "init-failure provides the complete static story",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1269,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:36.096Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-d3b0de9b5874d6c167de",
+          "file": "about.spec.ts",
+          "line": 400,
+          "column": 3
+        },
+        {
+          "title": "changing motion preferences during arrival releases the full portrait immediately",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 819,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:37.375Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-f71b1ec4201183a20614",
+          "file": "about.spec.ts",
+          "line": 438,
+          "column": 1
+        },
+        {
+          "title": "no-JavaScript mobile story, native menu, portrait and invitation remain usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1068,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:38.210Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-df0770709bab063ed6ff",
+          "file": "about.spec.ts",
+          "line": 449,
+          "column": 1
+        },
+        {
+          "title": "origin and process drawing reverse with native scrolling; names and principles reveal once at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6382,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:39.299Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "data-about-story-progress",
+                      "contentType": "application/json",
+                      "body": "W3sicHJvZ3Jlc3MiOjAuMDQ1NSwib2Zmc2V0IjpbMC45NTQ1LDAuOTU0NV0sInNjcm9sbCI6MTI5NH0seyJwcm9ncmVzcyI6MSwib2Zmc2V0IjpbMCwwXSwic2Nyb2xsIjoyMDI5fSx7InByb2dyZXNzIjowLjE5ODMsIm9mZnNldCI6WzAuODAxNywwLjgwMTddLCJzY3JvbGwiOjE0MDV9XQ=="
+                    },
+                    {
+                      "name": "data-about-process-progress",
+                      "contentType": "application/json",
+                      "body": "W3sicHJvZ3Jlc3MiOjAuMDUzOCwib2Zmc2V0IjpbMC45NDYyXSwic2Nyb2xsIjo0MjY1fSx7InByb2dyZXNzIjowLjkzMTQsIm9mZnNldCI6WzAuMDY4Nl0sInNjcm9sbCI6NTM5MH0seyJwcm9ncmVzcyI6MC4xODcyLCJvZmZzZXQiOlswLjgxMjhdLCJzY3JvbGwiOjQ0MzZ9XQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-e282b47c30a176c45b37",
+          "file": "about.spec.ts",
+          "line": 492,
+          "column": 3
+        },
+        {
+          "title": "origin and process drawing reverse with native scrolling; names and principles reveal once at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6840,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:45.691Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "data-about-story-progress",
+                      "contentType": "application/json",
+                      "body": "W3sicHJvZ3Jlc3MiOjAuMDMyLCJvZmZzZXQiOlswLjk2OCwwLjk2OF0sInNjcm9sbCI6OTQwfSx7InByb2dyZXNzIjoxLCJvZmZzZXQiOlswLDBdLCJzY3JvbGwiOjE2NDd9LHsicHJvZ3Jlc3MiOjAuMTk0OCwib2Zmc2V0IjpbMC44MDUyLDAuODA1Ml0sInNjcm9sbCI6MTA0N31d"
+                    },
+                    {
+                      "name": "data-about-process-progress",
+                      "contentType": "application/json",
+                      "body": "W3sicHJvZ3Jlc3MiOjAuMDE2Mywib2Zmc2V0IjpbMC45ODM3XSwic2Nyb2xsIjozODgxfSx7InByb2dyZXNzIjoxLCJvZmZzZXQiOlswXSwic2Nyb2xsIjo0NzQ1fSx7InByb2dyZXNzIjowLjE2ODYsIm9mZnNldCI6WzAuODMxNF0sInNjcm9sbCI6NDAxMn1d"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-0e14bbbecdae34f21373",
+          "file": "about.spec.ts",
+          "line": 492,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "services-hero-about.spec.ts",
+      "file": "services-hero-about.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "centered composition leaves navigation pointer targets immediately usable at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1159,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:52.555Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-7a0d6421522e571c2abd",
+          "file": "services-hero-about.spec.ts",
+          "line": 7,
+          "column": 3
+        },
+        {
+          "title": "centered composition leaves navigation pointer targets immediately usable at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1225,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:53.722Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-e514a8a6659657279721",
+          "file": "services-hero-about.spec.ts",
+          "line": 7,
+          "column": 3
+        },
+        {
+          "title": "process stays directly synchronized through rapid scroll, reversal and resize at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1398,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:54.964Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "same-frame-process-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzkwLCJzYW1wbGVzIjpbeyJleHBlY3RlZCI6MC4xMjAyMDMyOTU2MzE4MjUyMiwicHJvZ3Jlc3MiOjAuMTIwMSwic2Nyb2xsUHJvZ3Jlc3MiOjAuMTIwMSwibGluZU9mZnNldCI6MC44Nzk5LCJzY3JvbGxZIjo0MzUwLCJwaGFzZXMiOlswLjQ4MDUsMCwwLDBdfSx7ImV4cGVjdGVkIjowLjU3OTY0MTY3MzE2NjkyNjYsInByb2dyZXNzIjowLjU3OTYsInNjcm9sbFByb2dyZXNzIjowLjU3OTYsImxpbmVPZmZzZXQiOjAuNDIwNCwic2Nyb2xsWSI6NDkzOSwicGhhc2VzIjpbMSwxLDAuMzE4MywwXX0seyJleHBlY3RlZCI6MC44NTk2NzI4NzQ0MTQ5NzY2LCJwcm9ncmVzcyI6MC44NTk2LCJzY3JvbGxQcm9ncmVzcyI6MC44NTk2LCJsaW5lT2Zmc2V0IjowLjE0MDQsInNjcm9sbFkiOjUyOTgsInBoYXNlcyI6WzEsMSwxLDAuNDM4NF19LHsiZXhwZWN0ZWQiOjAuMjQwMzI4MTAwNjI0MDI0OSwicHJvZ3Jlc3MiOjAuMjQwMiwic2Nyb2xsUHJvZ3Jlc3MiOjAuMjQwMiwibGluZU9mZnNldCI6MC43NTk4LCJzY3JvbGxZIjo0NTA0LCJwaGFzZXMiOlswLjk2MSwwLDAsMF19LHsiZXhwZWN0ZWQiOjAuNzU5ODI4ODgwNjU1MjI2MSwicHJvZ3Jlc3MiOjAuNzU5OCwic2Nyb2xsUHJvZ3Jlc3MiOjAuNzU5OCwibGluZU9mZnNldCI6MC4yNDAyLCJzY3JvbGxZIjo1MTcwLCJwaGFzZXMiOlsxLDEsMSwwLjAzOV19LHsiZXhwZWN0ZWQiOjAuMDM5ODYwMDgxOTAzMjc2MDcsInByb2dyZXNzIjowLjAzOTgsInNjcm9sbFByb2dyZXNzIjowLjAzOTgsImxpbmVPZmZzZXQiOjAuOTYwMiwic2Nyb2xsWSI6NDI0NywicGhhc2VzIjpbMC4xNTkxLDAsMCwwXX0seyJleHBlY3RlZCI6MC41MDAwNzg0OTA2Mzk2MjU1LCJwcm9ncmVzcyI6MC41LCJzY3JvbGxQcm9ncmVzcyI6MC41LCJsaW5lT2Zmc2V0IjowLjUsInNjcm9sbFkiOjQ4MzcsInBoYXNlcyI6WzEsMSwwLDBdfV0sInJlc2l6ZWRXaWR0aCI6MzIwLCJyZXNpemVkIjp7ImV4cGVjdGVkIjowLjQzMDM3MDk3Njc5NjQwNzEsInByb2dyZXNzIjowLjQzMDQsInNjcm9sbFByb2dyZXNzIjowLjQzMDQsImxpbmVPZmZzZXQiOjAuNTY5Niwic2Nyb2xsWSI6NTE0MiwicGhhc2VzIjpbMSwwLjcyMTYsMCwwXX19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-afec6025b5236159a129",
+          "file": "services-hero-about.spec.ts",
+          "line": 80,
+          "column": 3
+        },
+        {
+          "title": "process stays directly synchronized through rapid scroll, reversal and resize at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1713,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T18:44:56.370Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "same-frame-process-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwic2FtcGxlcyI6W3siZXhwZWN0ZWQiOjAuMTIwNTE0NTQ0MjMyMjcxNjYsInByb2dyZXNzIjowLjEyMDksInNjcm9sbFByb2dyZXNzIjowLjEyMDksImxpbmVPZmZzZXQiOjAuODc5MSwic2Nyb2xsWSI6Mzk3MSwicGhhc2VzIjpbMC40ODM3LDAsMCwwXX0seyJleHBlY3RlZCI6MC41Nzk4MjUyMTQ4NDc2NTM1LCJwcm9ncmVzcyI6MC41ODAyLCJzY3JvbGxQcm9ncmVzcyI6MC41ODAyLCJsaW5lT2Zmc2V0IjowLjQxOTgsInNjcm9sbFkiOjQzNjYsInBoYXNlcyI6WzEsMSwwLjMyMDksMF19LHsiZXhwZWN0ZWQiOjAuODYwMDYyODY0NTE0MjUzNSwicHJvZ3Jlc3MiOjAuODYwNSwic2Nyb2xsUHJvZ3Jlc3MiOjAuODYwNSwibGluZU9mZnNldCI6MC4xMzk1LCJzY3JvbGxZIjo0NjA3LCJwaGFzZXMiOlsxLDEsMSwwLjQ0MTldfSx7ImV4cGVjdGVkIjowLjI0MDI4NDE2MjEzOTU3Mzc2LCJwcm9ncmVzcyI6MC4yNDA3LCJzY3JvbGxQcm9ncmVzcyI6MC4yNDA3LCJsaW5lT2Zmc2V0IjowLjc1OTMsInNjcm9sbFkiOjQwNzQsInBoYXNlcyI6WzAuOTYyOCwwLDAsMF19LHsiZXhwZWN0ZWQiOjAuNzYwMDYxMDQ3NjIwNzc4LCJwcm9ncmVzcyI6MC43NjA1LCJzY3JvbGxQcm9ncmVzcyI6MC43NjA1LCJsaW5lT2Zmc2V0IjowLjIzOTUsInNjcm9sbFkiOjQ1MjEsInBoYXNlcyI6WzEsMSwxLDAuMDQxOV19LHsiZXhwZWN0ZWQiOjAuMDQwMjgwNTI4MzUyNjIyNjg0LCJwcm9ncmVzcyI6MC4wNDA3LCJzY3JvbGxQcm9ncmVzcyI6MC4wNDA3LCJsaW5lT2Zmc2V0IjowLjk1OTMsInNjcm9sbFkiOjM5MDIsInBoYXNlcyI6WzAuMTYyOCwwLDAsMF19LHsiZXhwZWN0ZWQiOjAuNDk5NTkxMTk4OTY4MDA0NSwicHJvZ3Jlc3MiOjAuNSwic2Nyb2xsUHJvZ3Jlc3MiOjAuNSwibGluZU9mZnNldCI6MC41LCJzY3JvbGxZIjo0Mjk3LCJwaGFzZXMiOlsxLDEsMCwwXX1dLCJyZXNpemVkV2lkdGgiOjc2OCwicmVzaXplZCI6eyJleHBlY3RlZCI6MC40MzA0OTMyNzM1NDI2MDA5LCJwcm9ncmVzcyI6MC40MzAxLCJzY3JvbGxQcm9ncmVzcyI6MC40MzAxLCJsaW5lT2Zmc2V0IjowLjU2OTksInNjcm9sbFkiOjMyNDMsInBoYXNlcyI6WzEsMC43MjAzLDAsMF19fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-bfba0dba57fd7e22fac9",
+          "file": "services-hero-about.spec.ts",
+          "line": 80,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T18:43:44.507Z",
+    "duration": 73738.109,
+    "expected": 19,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}
