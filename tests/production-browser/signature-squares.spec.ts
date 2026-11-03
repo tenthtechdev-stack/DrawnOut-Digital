@@ -30,7 +30,7 @@ const approvedPosters = selections.map((slug) => {
 });
 
 for (const width of [320, 390, 768, 1440]) {
-  test(`six approved project posters reveal with the wave and keep SOL prominent at ${width}px`, async ({
+  test(`six enlarged borderless project posters reveal progressively and keep SOL prominent at ${width}px`, async ({
     page,
   }) => {
     for (const { project } of approvedPosters) {
@@ -46,7 +46,7 @@ for (const width of [320, 390, 768, 1440]) {
     const evidence = await page.evaluate(async () => {
       const overlay = document.querySelector<HTMLElement>('[data-signature-intro-overlay]')!;
       const group = overlay.querySelector<HTMLElement>('[data-intro-projects]')!;
-      const path = overlay.querySelector<SVGPathElement>('[data-intro-wave]')!;
+      const connectingWaveCount = overlay.querySelectorAll('.intro-wave, [data-intro-wave]').length;
       const squares = [...overlay.querySelectorAll<HTMLElement>('[data-intro-square]')];
       const images = squares.map((square) => square.querySelector<HTMLImageElement>('img')!);
       const rect = (element: Element) => {
@@ -69,11 +69,6 @@ for (const width of [320, 390, 768, 1440]) {
           remaining: first.endsWith('%') ? parseFloat(first) / 100 : 0,
         };
       };
-      // Derive arrivals from the real SVG curve and stable frame boxes, not
-      // from the implementation's declared delay values or collection order.
-      const totalLength = path.getTotalLength();
-      const matrix = path.getScreenCTM()!;
-      const frames = squares.map((square) => rect(square.parentElement!));
       const exit = overlay
         .getAnimations()
         .find((entry) => (entry as CSSAnimation).animationName.includes('intro-exit'));
@@ -96,13 +91,14 @@ for (const width of [320, 390, 768, 1440]) {
           finalClip: String(keyframes.at(-1)?.clipPath ?? ''),
         };
       });
-      const sawOutline = squares.map(() => false);
+      const sawEmptyTile = squares.map(() => false);
       const revealStarts: (number | null)[] = squares.map(() => null);
       const lastUnrevealed = squares.map(() => 0);
       let lastIncomplete = 0;
       let previousSample: number | undefined;
       let maximumSampleGap = 0;
       let sawMixedReveal = false;
+      let artworkAfterHandEntrance = false;
       const fullSnapshots: {
         clock: number;
         geometry: {
@@ -120,9 +116,19 @@ for (const width of [320, 390, 768, 1440]) {
             maximumSampleGap = Math.max(maximumSampleGap, clock - previousSample);
           previousSample = clock;
           const states = images.map(imageState);
+          const signature = overlay.querySelector<HTMLElement>('[data-intro-signature]')!;
+          const hand = overlay.querySelector<HTMLElement>('[data-signature-hand]')!;
+          const handAnimation = hand.getAnimations()[0];
+          if (
+            Number(getComputedStyle(signature).opacity) > 0.9 &&
+            handAnimation?.effect &&
+            Number(handAnimation.effect.getComputedTiming().progress) > 0 &&
+            Number(getComputedStyle(group).opacity) > 0.01
+          )
+            artworkAfterHandEntrance = true;
           states.forEach((state, index) => {
             if (Number(getComputedStyle(squares[index]!).opacity) > 0.25 && state.opacity < 0.01)
-              sawOutline[index] = true;
+              sawEmptyTile[index] = true;
             if (revealStarts[index] === null) {
               if (state.opacity > 0.02 && state.remaining < 0.98) revealStarts[index] = clock;
               else lastUnrevealed[index] = clock;
@@ -159,25 +165,6 @@ for (const width of [320, 390, 768, 1440]) {
         }
         sample();
       });
-      // Compute the curve intersections after observation. The thousands of SVG
-      // queries must not block the first reveal on slower runners. Geometry and
-      // the SVG transform were captured above before the sequence was observed.
-      const arrivals = frames.map(() => Number.POSITIVE_INFINITY);
-      for (let step = 0; step <= 4000; step += 1) {
-        const fraction = step / 4000;
-        const point = path.getPointAtLength(totalLength * fraction);
-        const screen = new DOMPoint(point.x, point.y).matrixTransform(matrix);
-        frames.forEach((frame, index) => {
-          if (
-            !Number.isFinite(arrivals[index]) &&
-            screen.x >= frame.left &&
-            screen.x <= frame.right &&
-            screen.y >= frame.top &&
-            screen.y <= frame.bottom
-          )
-            arrivals[index] = 500 + fraction * 1750;
-        });
-      }
       return {
         slugs: squares.map((square) => square.dataset.introProject),
         images: images.map((image) => ({
@@ -187,9 +174,14 @@ for (const width of [320, 390, 768, 1440]) {
           height: image.naturalHeight,
           fit: getComputedStyle(image).objectFit,
         })),
-        arrivals,
+        connectingWaveCount,
+        artworkAfterHandEntrance,
+        styles: squares.map((square) => ({
+          border: parseFloat(getComputedStyle(square).borderTopWidth),
+          radius: parseFloat(getComputedStyle(square).borderTopLeftRadius),
+        })),
         artworkTimings,
-        sawOutline,
+        sawEmptyTile,
         revealStarts,
         lastUnrevealed,
         lastIncomplete,
@@ -212,23 +204,28 @@ for (const width of [320, 390, 768, 1440]) {
       expect(image.loaded).toBe(true);
       expect(image.source).toContain(approvedPosters[index]!.basename);
     });
-    expect(evidence.sawOutline).toEqual([true, true, true, true, true, true]);
+    expect(evidence.sawEmptyTile).toEqual([true, true, true, true, true, true]);
     expect(evidence.sawMixedReveal).toBe(true);
+    expect(evidence.connectingWaveCount).toBe(0);
+    expect(evidence.artworkAfterHandEntrance).toBe(false);
+    for (const style of evidence.styles) {
+      expect(style.border).toBe(0);
+      expect(style.radius).toBeGreaterThanOrEqual(8);
+      expect(style.radius).toBeLessThanOrEqual(14);
+    }
     for (const [index, firstVisible] of evidence.revealStarts.entries()) {
       expect(firstVisible).not.toBeNull();
-      expect(Number.isFinite(evidence.arrivals[index])).toBe(true);
       const timing = evidence.artworkTimings[index]!;
-      // Compare the browser's attached effect with the independently measured
-      // SVG crossing. Then bracket live visibility with the last negative and
-      // first positive sample: observer scheduling is not the reveal start.
+      // Inspect the actual browser effects and bracket them with live render
+      // observations. Delays must be staggered; the old connecting path is gone.
       expect(Math.abs(timing.clockOffset)).toBeLessThan(1);
-      expect(timing.start).toBeGreaterThanOrEqual(evidence.arrivals[index]! - 25);
-      expect(timing.start).toBeLessThan(evidence.arrivals[index]! + 25);
+      if (index > 0)
+        expect(timing.start).toBeGreaterThan(evidence.artworkTimings[index - 1]!.start + 180);
       expect(timing.fromOpacity).toBe(0);
       expect(timing.toOpacity).toBe(1);
       expect(timing.finalClip).toMatch(/^inset\(0(?:px|%)?(?:\s+0(?:px|%)?)*\)$/);
-      expect(firstVisible!).toBeGreaterThanOrEqual(evidence.arrivals[index]! - 25);
-      expect(evidence.lastUnrevealed[index]!).toBeLessThan(evidence.arrivals[index]! + 160);
+      expect(firstVisible!).toBeGreaterThanOrEqual(timing.start - 25);
+      expect(evidence.lastUnrevealed[index]!).toBeLessThan(timing.start + 160);
       expect(evidence.lastUnrevealed[index]!).toBeLessThan(firstVisible!);
       if (index > 0) expect(firstVisible!).toBeGreaterThan(evidence.revealStarts[index - 1]!);
     }
@@ -252,7 +249,19 @@ for (const width of [320, 390, 768, 1440]) {
       expect(frame.top).toBeGreaterThan(50);
       expect(overlaps(frame, geometry.wordmark)).toBe(false);
       expect(overlaps(frame, geometry.skip)).toBe(false);
-      expect(geometry.slotWidths[index]! / geometry.groupWidth).toBeGreaterThanOrEqual(0.15);
+      expect(geometry.slotWidths[index]! / geometry.groupWidth).toBeGreaterThanOrEqual(0.25);
+      // Compare actual pixel area with the previous approved six-square layout.
+      // Merely enlarging a percentage inside a smaller container is insufficient.
+      const height = width < 640 ? 844 : 900;
+      const oldWordSize = Math.min(300, Math.max(48, width * 0.17));
+      const oldWordBottom = Math.min(144, Math.max(96, height * 0.12));
+      const oldGroupWidth = Math.min(
+        width * (width < 640 ? 0.94 : 0.86),
+        width < 640 ? Infinity : 1000,
+        (height - oldWordSize - oldWordBottom - 90) * 2.15,
+      );
+      const oldSlotWidth = oldGroupWidth * (index === 2 ? 0.17 : 0.155);
+      expect(geometry.slotWidths[index]!).toBeGreaterThan(oldSlotWidth * 1.2);
       for (const other of geometry.frames.slice(index + 1))
         expect(overlaps(frame, other)).toBe(false);
       if (index !== 2) {

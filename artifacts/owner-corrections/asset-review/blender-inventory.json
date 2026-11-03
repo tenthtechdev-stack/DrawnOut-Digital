@@ -1,0 +1,128 @@
+{
+  "blenderVersion": "4.3.2",
+  "file": "design-assets/signature-study/signature-glass-study.blend",
+  "sceneProperties": {
+    "quality_status": "INTERIM MATERIAL STUDY; no independently rigged hand or editable brand emblem",
+    "source_provenance": "Client-supplied identical image-backed SVGs; no third-party hand assets",
+    "production_gap": "Licensed hand mesh/rig/textures, approved emblem vector, grip/occlusion and final camera approval"
+  },
+  "objects": [
+    {
+      "name": "Warm orange edge light",
+      "type": "LIGHT",
+      "vertices": null,
+      "polygons": null,
+      "materials": [],
+      "modifiers": []
+    },
+    {
+      "name": "Softbox front reflection",
+      "type": "LIGHT",
+      "vertices": null,
+      "polygons": null,
+      "materials": [],
+      "modifiers": []
+    },
+    {
+      "name": "Cool separation reflection",
+      "type": "LIGHT",
+      "vertices": null,
+      "polygons": null,
+      "materials": [],
+      "modifiers": []
+    },
+    {
+      "name": "SUPPLIED COMPOSITE",
+      "type": "FONT",
+      "vertices": null,
+      "polygons": null,
+      "materials": ["Label SUPPLIED COMPOSITE"],
+      "modifiers": []
+    },
+    {
+      "name": "3D GLASS STUDY",
+      "type": "FONT",
+      "vertices": null,
+      "polygons": null,
+      "materials": ["Label 3D GLASS STUDY"],
+      "modifiers": []
+    },
+    {
+      "name": "Studio floor",
+      "type": "MESH",
+      "vertices": 4,
+      "polygons": 1,
+      "materials": ["Charcoal studio"],
+      "modifiers": []
+    },
+    {
+      "name": "SUPPLIED COMPOSITE \u2014 image plane, not hand geometry",
+      "type": "MESH",
+      "vertices": 4,
+      "polygons": 1,
+      "materials": ["Supplied composite texture \u2014 no reconstructed anatomy"],
+      "modifiers": []
+    },
+    {
+      "name": "3D acrylic material study \u2014 no emblem / no hand",
+      "type": "MESH",
+      "vertices": 8,
+      "polygons": 6,
+      "materials": ["Orange acrylic \u2014 IOR 1.46 / 80mm thickness"],
+      "modifiers": [
+        {
+          "name": "Real rounded edge geometry",
+          "type": "BEVEL"
+        },
+        {
+          "name": "Weighted surface normals",
+          "type": "WEIGHTED_NORMAL"
+        }
+      ]
+    },
+    {
+      "name": "Material study pedestal",
+      "type": "MESH",
+      "vertices": 8,
+      "polygons": 6,
+      "materials": ["Dark display pedestal"],
+      "modifiers": [
+        {
+          "name": "Small bevel",
+          "type": "BEVEL"
+        }
+      ]
+    },
+    {
+      "name": "Study camera \u2014 source reference + material test",
+      "type": "CAMERA",
+      "vertices": null,
+      "polygons": null,
+      "materials": [],
+      "modifiers": []
+    }
+  ],
+  "images": [
+    {
+      "name": "hand-emblem-reference.png",
+      "size": [810, 1440],
+      "packed": true
+    },
+    {
+      "name": "Render Result",
+      "size": [0, 0],
+      "packed": false
+    }
+  ],
+  "armatureCount": 0,
+  "curveTypes": [
+    {
+      "name": "3D GLASS STUDY",
+      "rnaType": "TextCurve"
+    },
+    {
+      "name": "SUPPLIED COMPOSITE",
+      "rnaType": "TextCurve"
+    }
+  ]
+}

@@ -11,6 +11,7 @@ interface BootFrame {
   transform: string;
   headline: number;
   intro: number;
+  paragraphs: number[];
 }
 
 async function observeBoot(page: Page) {
@@ -32,6 +33,9 @@ async function observeBoot(page: Page) {
           transform: getComputedStyle(composition).transform,
           headline: Number(getComputedStyle(headline).opacity),
           intro: Number(getComputedStyle(intro).opacity),
+          paragraphs: [...intro.querySelectorAll('p')].map((node) =>
+            Number(getComputedStyle(node).opacity),
+          ),
         });
       }
       if (performance.now() < 3000) requestAnimationFrame(frame);
@@ -91,6 +95,7 @@ for (const mode of ['blocked', 'delayed'] as const) {
         expect(frame.entrance).not.toBe('running');
         expect(frame.headline).toBe(1);
         expect(frame.intro).toBe(1);
+        expect(frame.paragraphs).toEqual([1, 1, 1]);
         expect(Math.abs(frame.center - firstReleased.center)).toBeLessThan(2);
         expect(frame.transform).toMatch(/^(?:none|matrix\(1, 0, 0, 1, 0, 0\))$/);
       }
@@ -116,7 +121,7 @@ for (const mode of ['blocked', 'delayed'] as const) {
 }
 
 for (const width of [390, 1440]) {
-  test(`centered composition leaves navigation pointer targets immediately usable at ${width}px`, async ({
+  test(`portrait arrival leaves navigation pointer targets immediately usable at ${width}px`, async ({
     page,
   }) => {
     await page.setViewportSize(viewportFor(width));
@@ -158,6 +163,71 @@ for (const width of [390, 1440]) {
     await expect(page.locator('main h1')).toBeVisible();
   });
 }
+
+for (const mode of ['blocked', 'delayed'] as const) {
+  test(`portrait asset ${mode} leaves all three paragraphs and navigation readable`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewportFor(390));
+    await observeBoot(page);
+    await page.route('**/*founders-sketch-approved*', async (route) => {
+      if (mode === 'blocked') return route.abort('failed');
+      await new Promise((resolve) => setTimeout(resolve, 1300));
+      return route.continue();
+    });
+    await page.goto('/about', { waitUntil: 'commit' });
+    await expect(page.locator('[data-about-hero]')).toHaveAttribute(
+      'data-about-entrance',
+      /static|settled/,
+      { timeout: 1500 },
+    );
+    await page.waitForTimeout(1600);
+    await expect(page.locator('[data-about-hero]')).toHaveAttribute(
+      'data-about-entrance',
+      /static|settled/,
+    );
+    await expect(page.locator('[data-signature-intro-overlay]')).toHaveCount(0);
+    for (const text of await page.locator('[data-about-headline], [data-about-intro] > p').all()) {
+      await expect(text).toBeVisible();
+      expect(await text.evaluate((node) => Number(getComputedStyle(node).opacity))).toBe(1);
+    }
+    await expect(page.locator('[data-about-intro] > p')).toHaveCount(3);
+    await page.getByRole('link', { name: 'Follow the thought', exact: true }).click();
+    await expect(page).toHaveURL(/#our-beginning$/);
+  });
+}
+
+test('early resize and rapid internal navigation cannot leave stale arrival transforms', async ({
+  page,
+}) => {
+  await page.setViewportSize(viewportFor(1440));
+  await page.goto('/about', { waitUntil: 'commit' });
+  await expect(page.locator('[data-about-hero]')).toHaveAttribute('data-about-entrance', 'running');
+  await page.setViewportSize(viewportFor(390));
+  await expect(page.locator('[data-about-hero]')).toHaveAttribute(
+    'data-about-entrance',
+    /static|settled/,
+  );
+  await expect(page.locator('[data-about-hero]')).toHaveAttribute(
+    'data-about-settle-reason',
+    /resize/,
+  );
+  const composition = page.locator('[data-about-composition]');
+  expect(await composition.evaluate((node) => getComputedStyle(node).transform)).toMatch(
+    /^(?:none|matrix\(1, 0, 0, 1, 0, 0\))$/,
+  );
+  await page.goto('/work');
+  await expect(page.locator('[data-about-page]')).toHaveCount(0);
+  await page.goto('/about');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('[data-about-hero]')).toHaveAttribute(
+    'data-about-entrance',
+    /static|settled/,
+  );
+  await expect(page.locator('[data-about-intro] > p')).toHaveCount(3);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+  await expect(page.locator('main')).not.toHaveAttribute('inert');
+});
 
 async function processFrame(page: Page, requestedProgress: number) {
   return page.locator(processSystem).evaluate(async (node, requested) => {

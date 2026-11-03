@@ -1,7 +1,6 @@
 ---
 import Arrow from '../Arrow.astro';
 import Button from '../Button.astro';
-import BrandEmblem from '../BrandEmblem.astro';
 import FounderPortrait from './FounderPortrait.astro';
 import { aboutPage } from '../../data/about';
 import '../../styles/about.css';
@@ -23,12 +22,10 @@ const structuredData = {
     data-about-hero
     data-theme="dark"
     data-about-hero-phase="settled"
+    data-about-emblem-status="awaiting-approved-3d"
   >
     <div class="about-hero__layout page-frame" data-about-hero-layout>
       <header class="about-hero__heading">
-        <p class="eyebrow about-eyebrow" data-about-reveal>
-          {hero.eyebrow}
-        </p>
         <h1 id="about-title" aria-label={hero.heading}>
           {hero.headlineSegments.map((segment) => (
             <span class="about-title-mask">
@@ -38,21 +35,16 @@ const structuredData = {
         </h1>
       </header>
 
-      <svg class="about-hero__thread" viewBox="0 0 360 160" fill="none" aria-hidden="true">
-        <path
-          data-about-hero-line
-          d="M2 98C70 98 62 28 137 28S179 139 247 139 270 10 356 10"
-          pathLength="1"
-        />
-      </svg>
-
       <figure class="about-hero__portrait" data-about-portrait>
         <div class="about-hero__composition" data-about-composition>
-          <span class="about-hero__circle" data-about-circle aria-hidden="true" />
-          <div class="about-hero__emblem" data-about-emblem aria-hidden="true">
-            <BrandEmblem />
+          <div class="about-hero__atmosphere" data-about-gradient aria-hidden="true">
+            <span class="about-hero__glow about-hero__glow--amber" />
+            <span class="about-hero__glow about-hero__glow--coral" />
+            <span class="about-hero__glow about-hero__glow--orange" />
           </div>
-          <div class="about-hero__artwork">
+          <!-- The 3D emblem beat is withheld pending verified geometry and asset approval.
+               The supplied flat PNG is deliberately not substituted for that deliverable. -->
+          <div class="about-hero__artwork" data-about-artwork>
             <FounderPortrait />
           </div>
         </div>
@@ -66,10 +58,10 @@ const structuredData = {
 
       <div class="about-hero__intro" data-about-intro>
         {hero.paragraphs.map((paragraph) => (
-          <p>{paragraph}</p>
+          <p data-about-hero-paragraph>{paragraph}</p>
         ))}
       </div>
-      <div class="about-hero__signoff" data-about-reveal>
+      <div class="about-hero__signoff" data-about-signoff>
         <p>{hero.supportingLabel}</p>
         <a href="#our-beginning" class="about-story-link">
           Follow the thought <span aria-hidden="true">↓</span>
@@ -102,6 +94,7 @@ const structuredData = {
         hero.dataset.aboutBoot = 'released';
         hero.dataset.aboutEntrance = 'static';
         hero.dataset.aboutHeroPhase = 'settled';
+        hero.dataset.aboutArrivalScene = 'settled';
         hero.dataset.aboutSettleReason = `boot-${reason}`;
       };
       try {
@@ -181,11 +174,13 @@ const structuredData = {
         hero.style.setProperty('--about-center-y', `${fromY}px`);
         hero.dataset.aboutBoot = 'pending';
         hero.dataset.aboutHeroPhase = 'center';
+        hero.dataset.aboutArrivalScene = 'portrait';
         hero.setAttribute('data-about-prepaint', '');
       } catch {
         clean();
         hero.dataset.aboutBoot = 'released';
         hero.dataset.aboutHeroPhase = 'settled';
+        hero.dataset.aboutArrivalScene = 'settled';
         hero.dataset.aboutSettleReason = 'boot-failure';
       }
     })();

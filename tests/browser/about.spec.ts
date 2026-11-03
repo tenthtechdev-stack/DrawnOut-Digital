@@ -142,11 +142,21 @@ for (const width of [320, 390, 768, 1440]) {
       ),
     ).toBeLessThan(60);
     expect(colours.hero).toBe(colours.philosophy);
-    const emblem = page.locator('[data-about-emblem]');
-    await expect(emblem).toBeVisible();
-    expect(await emblem.evaluate((node) => Boolean(node.closest('[aria-hidden="true"]')))).toBe(
-      true,
+    await expect(page.locator(hero)).toHaveAttribute(
+      'data-about-emblem-status',
+      'awaiting-approved-3d',
     );
+    // No raster crop or material-study plate is passed off as the absent 3D asset.
+    await expect(
+      page.locator(`${hero} [data-about-emblem], ${hero} [data-brand-emblem]`),
+    ).toHaveCount(0);
+    await expect(page.locator(`${hero} .about-hero__circle`)).toHaveCount(0);
+    await expect(page.locator(hero)).not.toContainText(aboutPage.hero.eyebrow);
+    await expect(page.locator('[data-about-intro] > p')).toHaveText([...aboutPage.hero.paragraphs]);
+    const atmosphere = page.locator('[data-about-gradient]');
+    await expect(atmosphere).toBeVisible();
+    await expect(atmosphere).toHaveAttribute('aria-hidden', 'true');
+    await expect(atmosphere.locator('.about-hero__glow')).toHaveCount(3);
     await textFits(page.locator('h1'), width);
     for (const name of await page.locator('[data-about-founder-name]').all())
       await textFits(name, width);
@@ -215,7 +225,9 @@ interface ArrivalFrame {
   transform: string;
   headline: number;
   intro: number;
-  logo: number;
+  artwork: number;
+  gradient: number;
+  paragraphs: number[];
   overlay: boolean;
 }
 
@@ -228,8 +240,9 @@ async function sampleArrival(page: Page) {
       const composition = document.querySelector('[data-about-composition]');
       const headline = document.querySelector('[data-about-headline]');
       const intro = document.querySelector('[data-about-intro]');
-      const logo = document.querySelector('[data-about-emblem]');
-      if (hero && composition && headline && intro && logo) {
+      const artwork = document.querySelector('[data-about-artwork]');
+      const gradient = document.querySelector('[data-about-gradient]');
+      if (hero && composition && headline && intro && artwork && gradient) {
         const box = composition.getBoundingClientRect();
         samples.push({
           time: performance.now(),
@@ -241,7 +254,11 @@ async function sampleArrival(page: Page) {
           transform: getComputedStyle(composition).transform,
           headline: Number(getComputedStyle(headline).opacity),
           intro: Number(getComputedStyle(intro).opacity),
-          logo: Number(getComputedStyle(logo).opacity),
+          artwork: Number(getComputedStyle(artwork).opacity),
+          gradient: Number(getComputedStyle(gradient).opacity),
+          paragraphs: [...intro.querySelectorAll('p')].map((node) =>
+            Number(getComputedStyle(node).opacity),
+          ),
           overlay: document.querySelector('[data-signature-intro-overlay]') !== null,
         });
       }
@@ -283,8 +300,8 @@ function changedFraction(before: Buffer, after: Buffer) {
   return changed / (before.length / 3);
 }
 
-for (const width of [390, 1440]) {
-  test(`actual centered founder/logo composition moves right and settles nonblockingly at ${width}px`, async ({
+for (const width of [320, 390, 768, 1440]) {
+  test(`portrait arrives before atmosphere and readable copy without blocking at ${width}px`, async ({
     page,
   }) => {
     await page.setViewportSize(viewportFor(width));
@@ -292,75 +309,132 @@ for (const width of [390, 1440]) {
     await page.goto('/about', { waitUntil: 'commit' });
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');
     await expectReleased(page);
-    await page.waitForFunction(
-      () =>
-        performance.now() -
-          Number(
-            document.querySelector<HTMLElement>('[data-about-hero]')!.dataset.aboutStartedAt,
-          ) >=
-        400,
-    );
-    const centeredPixels = await heroPixels(page);
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');
     await expect(page.locator(hero)).toHaveAttribute('data-about-settle-reason', 'complete');
-    const settledPixels = await heroPixels(page);
-    await page.waitForTimeout(350);
-    const stablePixels = await heroPixels(page);
     const frames = (await page.evaluate(() =>
       Reflect.get(window, '__aboutCorrectionFrames'),
     )) as ArrivalFrame[];
     const running = frames.filter(({ state }) => state === 'running');
     const final = frames.find(({ state }) => state === 'settled')!;
-    // The very first observable paint must already be the centered arrival.
-    // A settled SSR pose followed by a centered jump is a visible flash even
-    // when every later frame of the main animation is correct.
-    const beforeRunning = frames.filter(({ time }) => time <= running[0]!.time);
-    for (const frame of beforeRunning) {
+    expect(running.length).toBeGreaterThan(10);
+    expect(final).toBeDefined();
+    // The first observable frame must already be the arrival. A settled pose
+    // followed by a recenter/fade would flash even if later frames were correct.
+    for (const frame of frames.filter(({ time }) => time <= running[0]!.time)) {
       expect(Math.abs(frame.center - width / 2)).toBeLessThan(width * 0.05);
       expect(frame.headline).toBeLessThan(0.05);
-      expect(frame.intro).toBeLessThan(0.05);
+      expect(frame.paragraphs.every((opacity) => opacity < 0.05)).toBe(true);
     }
-    // WAAPI and the phase-label timer can run on adjacent event-loop turns at
-    // the hold/move boundary. Measure the actual approved first 600ms hold.
-    const centerFrames = running.filter(
-      ({ phase, time }) => phase === 'center' && time - running[0]!.time < 600,
-    );
-    expect(centerFrames.length).toBeGreaterThan(3);
-    expect(Math.abs(centerFrames[0]!.center - width / 2)).toBeLessThan(width * 0.05);
-    expect(
-      Math.max(...centerFrames.map(({ center }) => center)) -
-        Math.min(...centerFrames.map(({ center }) => center)),
-    ).toBeLessThan(3);
-    expect(Math.max(...centerFrames.map(({ logo }) => logo))).toBeGreaterThan(0.1);
-    const distance = final.center - centerFrames[0]!.center;
-    expect(distance).toBeGreaterThan(width < 768 ? 8 : width * 0.12);
-    expect(
-      running.some(
-        ({ center }) =>
-          center > centerFrames[0]!.center + distance * 0.2 &&
-          center < final.center - distance * 0.2,
-      ),
-    ).toBe(true);
+    const firstPortrait = running.find(({ artwork }) => artwork >= 0.8)!;
+    const firstAtmosphere = running.find(({ gradient }) => gradient >= 0.15)!;
+    const firstHeadline = running.find(({ headline }) => headline >= 0.15)!;
+    const firstCopy = running.find(({ paragraphs }) =>
+      paragraphs.some((opacity) => opacity >= 0.15),
+    )!;
+    expect(firstPortrait).toBeDefined();
+    expect(firstAtmosphere).toBeDefined();
+    expect(firstHeadline).toBeDefined();
+    expect(firstCopy).toBeDefined();
+    expect(firstPortrait.time).toBeLessThan(firstAtmosphere.time);
+    expect(firstAtmosphere.time).toBeLessThan(firstHeadline.time);
+    expect(firstHeadline.time).toBeLessThan(firstCopy.time);
+    expect(running.some(({ artwork }) => artwork > 0.1 && artwork < 0.9)).toBe(true);
+    expect(running.some(({ gradient }) => gradient > 0.1 && gradient < 0.9)).toBe(true);
     expect(new Set(running.map(({ transform }) => transform)).size).toBeGreaterThan(5);
+    if (width >= 768) expect(final.center).toBeGreaterThan(width * 0.65);
+    expect(final.artwork).toBe(1);
+    expect(final.gradient).toBe(1);
     expect(final.headline).toBe(1);
     expect(final.intro).toBe(1);
+    expect(final.paragraphs).toEqual([1, 1, 1]);
     expect(final.time - running[0]!.time).toBeLessThanOrEqual(4200);
     expect(frames.some(({ overlay }) => overlay)).toBe(false);
-    const shiftedPixels = changedFraction(centeredPixels, settledPixels);
-    const stable = changedFraction(settledPixels, stablePixels);
-    expect(shiftedPixels).toBeGreaterThan(0.01);
-    expect(stable).toBeLessThan(0.001);
     await expectFullPortrait(page);
-    await test.info().attach('actual-center-to-right-evidence', {
+    await test.info().attach('portrait-atmosphere-copy-frame-evidence', {
       body: JSON.stringify({
         width,
-        distance,
-        centeredFrame: centerFrames[0],
+        firstPortrait,
+        firstAtmosphere,
+        firstHeadline,
+        firstCopy,
         final,
-        shiftedPixels,
-        stable,
         frames,
       }),
+      contentType: 'application/json',
+    });
+  });
+}
+
+for (const width of [390, 1440]) {
+  test(`localized atmosphere remains alive after arrival and pauses offscreen at ${width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewportFor(width));
+    await page.goto('/about');
+    await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');
+    await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'running');
+    const before = await heroPixels(page);
+    const glowTransforms = () =>
+      page
+        .locator('.about-hero__glow')
+        .evaluateAll((nodes) => nodes.map((node) => getComputedStyle(node).transform));
+    const transformsBefore = await glowTransforms();
+    const copyBefore = await page
+      .locator('[data-about-headline], [data-about-intro] > p')
+      .evaluateAll((nodes) =>
+        nodes.map((node) => {
+          const box = node.getBoundingClientRect();
+          return {
+            x: box.x,
+            y: box.y,
+            opacity: getComputedStyle(node).opacity,
+            transform: getComputedStyle(node).transform,
+          };
+        }),
+      );
+    await page.waitForTimeout(1100);
+    const changed = changedFraction(before, await heroPixels(page));
+    expect(await glowTransforms()).not.toEqual(transformsBefore);
+    expect(changed).toBeGreaterThan(0.0001);
+    expect(
+      await page.locator('[data-about-headline], [data-about-intro] > p').evaluateAll((nodes) =>
+        nodes.map((node) => {
+          const box = node.getBoundingClientRect();
+          return {
+            x: box.x,
+            y: box.y,
+            opacity: getComputedStyle(node).opacity,
+            transform: getComputedStyle(node).transform,
+          };
+        }),
+      ),
+    ).toEqual(copyBefore);
+    await page.locator('[data-about-philosophy]').scrollIntoViewIfNeeded();
+    await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'paused');
+    expect(
+      await page
+        .locator('.about-hero__glow')
+        .evaluateAll((nodes) =>
+          nodes.every((node) => getComputedStyle(node).animationPlayState === 'paused'),
+        ),
+    ).toBe(true);
+    await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
+    await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'running');
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'paused');
+    expect(
+      await page
+        .locator('.about-hero__glow')
+        .evaluateAll((nodes) =>
+          nodes.every(
+            (node) =>
+              getComputedStyle(node).animationPlayState === 'paused' ||
+              getComputedStyle(node).animationName === 'none',
+          ),
+        ),
+    ).toBe(true);
+    await test.info().attach('visible-ambient-pixel-change', {
+      body: JSON.stringify({ width, changed }),
       contentType: 'application/json',
     });
   });
@@ -408,6 +482,13 @@ for (const input of ['keyboard', 'scroll']) {
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');
     await expectReleased(page);
     await expectFullPortrait(page);
+    expect(
+      await page
+        .locator('[data-about-headline], [data-about-intro] > p')
+        .evaluateAll((nodes) =>
+          nodes.every((node) => Number(getComputedStyle(node).opacity) === 1),
+        ),
+    ).toBe(true);
   });
 }
 
@@ -441,7 +522,7 @@ for (const mode of ['reduced', 'save-data', 'hidden', 'init-failure'] as const) 
     await expectFullPortrait(page);
     for (const text of await page
       .locator(
-        '[data-about-headline], [data-about-intro], [data-about-founder-name], [data-about-reveal]',
+        '[data-about-headline], [data-about-intro], [data-about-intro] > p, [data-about-founder-name], [data-about-reveal]',
       )
       .all()) {
       await expect(text).toBeVisible();

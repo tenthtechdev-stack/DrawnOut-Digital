@@ -44,8 +44,6 @@
   padding-block: clamp(52px, 6vw, 100px) var(--about-section-space);
 }
 
-.about-hero .about-eyebrow,
-.about-hero .about-title-mask:nth-child(2),
 .about-hero .about-story-link > span {
   color: var(--amber);
 }
@@ -83,10 +81,6 @@
   display: block;
 }
 
-.about-title-mask:nth-child(2) {
-  color: var(--accent-strong);
-}
-
 .about-hero__intro {
   grid-area: intro;
   max-width: 560px;
@@ -120,28 +114,66 @@
   pointer-events: none;
 }
 
-.about-hero__circle {
+.about-hero__atmosphere {
   position: absolute;
-  inset: 4% 3% auto;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--paper);
-}
-
-.about-hero__emblem {
-  position: absolute;
-  top: -1%;
-  left: 50%;
-  width: min(64%, 410px);
-  transform: translateX(-50%) rotate(-8deg);
-  opacity: 0.94;
+  inset: -13% -15% -9%;
   overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+  /* Soft radial falloff localizes the atmosphere behind the portrait. No
+     canvas, full-page filter or hard-edged circular disc is needed. */
+  -webkit-mask-image: radial-gradient(ellipse at 52% 46%, #000 15%, transparent 69%);
+  mask-image: radial-gradient(ellipse at 52% 46%, #000 15%, transparent 69%);
 }
 
-.about-hero__emblem svg {
-  display: block;
-  width: 100%;
-  height: auto;
+.about-hero__glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.8;
+  animation: about-atmosphere-drift 15s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+
+.about-hero__glow--amber {
+  background: radial-gradient(ellipse at 33% 32%, #ffb448 0, #e78a24a8 24%, transparent 57%);
+  transform-origin: 35% 40%;
+}
+
+.about-hero__glow--coral {
+  background: radial-gradient(ellipse at 65% 29%, #e87867 0, #dc635e9c 24%, transparent 59%);
+  animation-name: about-atmosphere-return;
+  animation-duration: 19s;
+  animation-delay: -6s;
+  transform-origin: 67% 38%;
+}
+
+.about-hero__glow--orange {
+  background: radial-gradient(ellipse at 52% 69%, #fc7419 0, #e36f27b3 30%, transparent 61%);
+  animation-duration: 12s;
+  animation-delay: -4s;
+  transform-origin: 50% 66%;
+}
+
+[data-about-hero][data-about-ambient='running'] .about-hero__glow {
+  animation-play-state: running;
+}
+
+@keyframes about-atmosphere-drift {
+  from {
+    transform: translate(-6%, 3%) rotate(-9deg) scale(0.94, 1.04);
+  }
+  to {
+    transform: translate(9%, -7%) rotate(14deg) scale(1.12, 0.93);
+  }
+}
+
+@keyframes about-atmosphere-return {
+  from {
+    transform: translate(7%, -4%) rotate(10deg) scale(1.08, 0.91);
+  }
+  to {
+    transform: translate(-10%, 8%) rotate(-12deg) scale(0.95, 1.14);
+  }
 }
 
 .about-hero__artwork {
@@ -167,17 +199,6 @@
   font-size: 9px;
   letter-spacing: 0.08em;
   align-self: center;
-}
-
-.about-hero__thread {
-  position: absolute;
-  top: 19%;
-  left: 43%;
-  width: 24%;
-  pointer-events: none;
-  stroke: var(--accent);
-  stroke-width: 1.5;
-  opacity: 0.6;
 }
 
 .about-hero__signoff {
@@ -611,9 +632,6 @@
 }
 
 @media (min-width: 1600px) {
-  .about-hero__thread {
-    top: 22%;
-  }
 }
 
 @media (max-width: 1023px) {
@@ -626,10 +644,6 @@
   .about-hero__portrait {
     align-self: start;
     margin-top: 60px;
-  }
-  .about-hero__thread {
-    top: 22%;
-    width: 30%;
   }
   .about-editorial-grid {
     gap: 45px;
@@ -690,14 +704,6 @@
     padding-top: 16px;
     margin-top: 12px;
     font-size: 12px;
-  }
-  .about-hero__thread {
-    top: 210px;
-    left: auto;
-    right: 8%;
-    width: 28%;
-    max-width: 180px;
-    transform: rotate(40deg);
   }
   .about-hero__intro {
     max-width: 580px;
@@ -890,9 +896,6 @@
   .about-hero h1 {
     font-size: 2.9rem;
   }
-  .about-hero__thread {
-    top: 230px;
-  }
   .about-figure-index {
     display: none;
   }
@@ -932,8 +935,14 @@
 }
 
 [data-about-hero][data-about-prepaint]
-  :is([data-about-headline], [data-about-intro], [data-about-caption], [data-about-hero-line]),
-[data-about-hero][data-about-prepaint] .about-hero__heading .about-eyebrow {
+  :is(
+    [data-about-headline],
+    [data-about-intro],
+    [data-about-caption],
+    [data-about-signoff],
+    [data-about-artwork],
+    [data-about-gradient]
+  ) {
   opacity: 0;
 }
 
@@ -941,20 +950,27 @@
   overflow: clip;
 }
 
-[data-about-hero][data-about-entrance='running'] [data-about-hero-line] {
-  stroke-dasharray: 1 1;
-  stroke-dashoffset: 1;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .about-page [data-about-portrait-raster] {
     mask: none !important;
   }
-  .about-page :is([data-about-headline], [data-about-intro], [data-about-caption]) {
+  .about-page
+    :is(
+      [data-about-headline],
+      [data-about-intro],
+      [data-about-hero-paragraph],
+      [data-about-caption],
+      [data-about-signoff],
+      [data-about-artwork],
+      [data-about-gradient]
+    ) {
     opacity: 1 !important;
     transform: none !important;
   }
   .about-page [data-about-composition] {
     transform: none !important;
+  }
+  .about-hero__glow {
+    animation: none !important;
   }
 }

@@ -88,7 +88,9 @@ for (const width of [320, 390, 768, 1440, 1920]) {
       });
       observer.observe({ type: 'layout-shift', buffered: true });
       const scene = document.querySelector<HTMLElement>('[data-signature-intro-overlay]')!;
-      const path = document.querySelector('[data-intro-wave]')!;
+      const connectingWaveCount = document.querySelectorAll(
+        '.intro-wave, [data-intro-wave]',
+      ).length;
       const name = document.querySelector<HTMLElement>('[data-intro-name]')!;
       const signature = document.querySelector<HTMLElement>('[data-intro-signature]')!;
       const hand = signature.querySelector<HTMLElement>('[data-signature-hand]')!;
@@ -113,15 +115,12 @@ for (const width of [320, 390, 768, 1440, 1920]) {
       // observer may miss the short fully written hold; its scheduled interval
       // is independently checked alongside real partial/finished render samples.
       const wordDraw = animation(name, 'name-draw');
-      const waveDraw = animation(path, 'connect-projects');
       const wordFade = animation(name, 'name-resolve');
       const completeClip = String(wordDraw.keyframes.at(-1)?.clipPath ?? '');
       const hold = {
         from: wordDraw.end,
         until: wordFade.start,
         duration: wordFade.start - wordDraw.end,
-        waveStart: waveDraw.start,
-        waveEnd: waveDraw.end,
         wordStart: wordDraw.start,
         wordEnd: wordDraw.end,
         completeClip,
@@ -129,9 +128,6 @@ for (const width of [320, 390, 768, 1440, 1920]) {
         fadeTo: Number(wordFade.keyframes.at(-1)?.opacity),
       };
       let lastVisible = 0;
-      let sawPartialWave = false;
-      let synchronizedSamples = 0;
-      let maximumRevealDrift = 0;
       let sawFullName = false;
       let sawCompletedWipe = false;
       let readablePartialSamples = 0;
@@ -162,8 +158,7 @@ for (const width of [320, 390, 768, 1440, 1920]) {
         plaqueY: number;
         imagesLoaded: boolean;
       }[] = [];
-      const revealCheckpoints: { time: number; waveRemaining: number; textRemaining: number }[] =
-        [];
+      const revealCheckpoints: { time: number; textRemaining: number }[] = [];
       await new Promise<void>((resolve) => {
         function sample() {
           const time = Number(document.timeline.currentTime ?? performance.now());
@@ -177,34 +172,26 @@ for (const width of [320, 390, 768, 1440, 1920]) {
             Number(style.opacity) > 0
           )
             lastVisible = performance.now();
-          const wave = parseFloat(getComputedStyle(path).strokeDashoffset);
           const nameStyle = getComputedStyle(name);
           const inset = nameStyle.clipPath.match(/^inset\(([^)]+)\)$/)?.[1]?.split(/\s+/);
           // A full wipe serializes as inset(0px); during the reveal the right
           // inset is a percentage of the actual wordmark box.
           const rightInset = inset?.[1] ?? inset?.[0];
           const remaining = rightInset?.endsWith('%') ? parseFloat(rightInset) / 100 : 0;
-          const fullyWritten = wave < 0.001 && remaining < 0.001;
+          const fullyWritten = remaining < 0.001;
           const fullyVisible = fullyWritten && Number(nameStyle.opacity) > 0.95;
           if (fullyWritten) sawCompletedWipe = true;
           if (remaining > 0.05 && remaining < 0.9 && Number(nameStyle.opacity) > 0.95)
             readablePartialSamples += 1;
           if (time >= hold.from + 1 && time <= hold.until - 1)
             holdSamples.push({ time, fullyVisible });
-          if (wave > 0.05 && wave < 0.95 && remaining > 0.05 && remaining < 0.95) {
-            sawPartialWave = true;
-            synchronizedSamples += 1;
-            maximumRevealDrift = Math.max(maximumRevealDrift, Math.abs(wave - remaining));
-            if (
-              revealCheckpoints.length === 0 ||
-              revealCheckpoints.at(-1)!.waveRemaining - wave > 0.2
-            ) {
-              revealCheckpoints.push({
-                time: performance.now(),
-                waveRemaining: wave,
-                textRemaining: remaining,
-              });
-            }
+          if (
+            remaining > 0.05 &&
+            remaining < 0.95 &&
+            (revealCheckpoints.length === 0 ||
+              revealCheckpoints.at(-1)!.textRemaining - remaining > 0.2)
+          ) {
+            revealCheckpoints.push({ time: performance.now(), textRemaining: remaining });
           }
           if (fullyVisible) sawFullName = true;
           // Range geometry describes the laid-out letters even while the wipe
@@ -272,9 +259,7 @@ for (const width of [320, 390, 768, 1440, 1920]) {
         lastVisible,
         ended: Number(document.documentElement.dataset.signatureIntroEnded),
         reason: document.documentElement.dataset.signatureIntroReason,
-        sawPartialWave,
-        synchronizedSamples,
-        maximumRevealDrift,
+        connectingWaveCount,
         revealCheckpoints,
         sawFullName,
         sawCompletedWipe,
@@ -300,13 +285,10 @@ for (const width of [320, 390, 768, 1440, 1920]) {
     expect(observations.reason).toBe('complete');
     expect(observations.ended).toBeLessThanOrEqual(5000);
     expect(observations.lastVisible).toBeLessThanOrEqual(5000);
-    expect(observations.sawPartialWave).toBe(true);
-    expect(observations.synchronizedSamples).toBeGreaterThan(2);
-    expect(observations.maximumRevealDrift).toBeLessThan(0.02);
+    expect(observations.connectingWaveCount).toBe(0);
+    expect(observations.revealCheckpoints.length).toBeGreaterThan(2);
     expect(observations.readablePartialSamples).toBeGreaterThan(2);
     expect(observations.sawCompletedWipe).toBe(true);
-    expect(Math.abs(observations.hold.wordStart - observations.hold.waveStart)).toBeLessThan(1);
-    expect(Math.abs(observations.hold.wordEnd - observations.hold.waveEnd)).toBeLessThan(1);
     expect(observations.hold.duration + 0.01).toBeGreaterThanOrEqual(200);
     expect(observations.hold.completeClip).toMatch(/^inset\(0(?:px|%)?(?:\s+0(?:px|%)?)*\)$/);
     expect(observations.hold.fadeFrom).toBe(1);

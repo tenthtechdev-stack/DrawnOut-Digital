@@ -1,4 +1,4 @@
-/** Center → connect → reveal. Native scrolling and the full approved art stay available. */
+/** Portrait → atmosphere → story. The verified 3D-emblem beat remains an asset dependency. */
 import { allowsMotion } from '../lib/motion-policy';
 
 type Connection = EventTarget & { saveData?: boolean };
@@ -47,6 +47,7 @@ async function initialize() {
   const timers = new Set<ReturnType<typeof setTimeout>>();
   let context: Context | undefined;
   let observer: IntersectionObserver | undefined;
+  let atmosphereObserver: IntersectionObserver | undefined;
   let disposed = false;
   let refreshFrame = 0;
   let settleHero = (reason: string) => {
@@ -56,6 +57,7 @@ async function initialize() {
       hero.removeAttribute('data-about-prepaint');
       hero.dataset.aboutEntrance = 'static';
       hero.dataset.aboutHeroPhase = 'settled';
+      hero.dataset.aboutArrivalScene = 'settled';
       hero.dataset.aboutSettleReason = reason;
     }
   };
@@ -67,6 +69,9 @@ async function initialize() {
     settleHero('cleanup');
     controller.abort();
     observer?.disconnect();
+    atmosphereObserver?.disconnect();
+    const hero = page.querySelector<HTMLElement>('[data-about-hero]');
+    if (hero) hero.dataset.aboutAmbient = 'paused';
     for (const timer of timers) clearTimeout(timer);
     for (const animation of animations) animation.cancel();
     animations.clear();
@@ -105,6 +110,24 @@ async function initialize() {
   }
   page.dataset.aboutMotion = 'loading';
 
+  // Transform only three bounded radial layers. CSS stays static without this
+  // visibility/preference opt-in, and never animates a global background.
+  if (hero) {
+    const updateAtmosphere = () => {
+      const box = hero.getBoundingClientRect();
+      hero.dataset.aboutAmbient =
+        !disposed && allowed() && !document.hidden && box.bottom > 0 && box.top < innerHeight
+          ? 'running'
+          : 'paused';
+    };
+    if (typeof IntersectionObserver === 'function') {
+      atmosphereObserver = new IntersectionObserver(updateAtmosphere, { threshold: 0 });
+      atmosphereObserver.observe(hero);
+    } else window.addEventListener('scroll', updateAtmosphere, { passive: true, signal });
+    window.addEventListener('resize', updateAtmosphere, { passive: true, signal });
+    updateAtmosphere();
+  }
+
   if (hero && raster && firstVisit && typeof Element.prototype.animate === 'function') {
     const heroController = new AbortController();
     const heroSignal = heroController.signal;
@@ -128,6 +151,7 @@ async function initialize() {
       hero.removeAttribute('data-about-prepaint');
       hero.dataset.aboutEntrance = started ? 'settled' : 'static';
       hero.dataset.aboutHeroPhase = 'settled';
+      hero.dataset.aboutArrivalScene = 'settled';
       hero.dataset.aboutSettleReason = reason;
       hero.dataset.aboutEndedAt = performance.now().toFixed(2);
       heroController.abort();
@@ -207,12 +231,11 @@ async function initialize() {
           const centerY = visibleTop + visibleHeight / 2;
           const fromX = centerX - (finalBox.left + finalBox.width / 2);
           const fromY = centerY - (finalBox.top + finalBox.height / 2);
-          // On the stacked layout the moving emblem passes below the title.
+          // On the stacked layout the portrait settles below the title.
           // Let it clear that reading area before the title begins to reveal.
           const mobile = window.matchMedia('(max-width: 767px)').matches;
-          const headlineDelay = mobile ? 1700 : 1200;
-          const copyDelay = mobile ? 2700 : 1750;
-          const copyDuration = mobile ? 750 : 950;
+          const headlineDelay = mobile ? 2100 : 1700;
+          const copyDelay = mobile ? 2550 : 2350;
           // Arm rollback before any copy fades or composition movement begins.
           deadline = schedule(
             () => settleHero('deadline'),
@@ -221,6 +244,7 @@ async function initialize() {
           hero.dataset.aboutStartedAt = performance.now().toFixed(2);
           hero.dataset.aboutEntrance = 'running';
           hero.dataset.aboutHeroPhase = 'center';
+          hero.dataset.aboutArrivalScene = 'portrait';
           started = true;
           const clock = document.timeline.currentTime;
           const play = (
@@ -238,31 +262,39 @@ async function initialize() {
               { transform: `translate(${fromX}px, ${fromY}px)` },
               { transform: 'translate(0px, 0px)' },
             ],
-            { delay: 800, duration: 1400, easing: 'cubic-bezier(.4,0,.2,1)' },
+            { delay: 850, duration: 1500, easing: 'cubic-bezier(.4,0,.2,1)' },
           );
+          const artwork = hero.querySelector('[data-about-artwork]');
+          if (artwork)
+            play(
+              artwork,
+              [
+                { opacity: 0, transform: 'translateY(18px)' },
+                { opacity: 1, transform: 'translateY(0)' },
+              ],
+              { duration: 700, easing: 'cubic-bezier(.22,.7,.22,1)' },
+            );
+          // No flat emblem stands in for the missing approved 3D asset. Its
+          // independently reviewed entrance can be inserted before this bloom.
+          const gradient = hero.querySelector('[data-about-gradient]');
+          if (gradient)
+            play(
+              gradient,
+              [
+                { opacity: 0, transform: 'scale(.86)' },
+                { opacity: 1, transform: 'scale(1)' },
+              ],
+              { delay: 700, duration: 1150, easing: 'cubic-bezier(.22,.7,.22,1)' },
+            );
+          schedule(() => {
+            if (!finished) hero.dataset.aboutArrivalScene = 'atmosphere';
+          }, 700);
           schedule(() => {
             if (!finished) hero.dataset.aboutHeroPhase = 'transition';
-          }, 800);
-          for (const line of hero.querySelectorAll('[data-about-hero-line]')) {
-            play(
-              line,
-              [
-                { strokeDashoffset: '1', opacity: 0 },
-                { strokeDashoffset: '0', opacity: 0.6 },
-              ],
-              {
-                delay: 1200,
-                duration: 1000,
-                easing: 'ease-out',
-              },
-            );
-          }
-          const eyebrow = hero.querySelector('.about-hero__heading .about-eyebrow');
-          if (eyebrow)
-            play(eyebrow, [{ opacity: 0 }, { opacity: 1 }], {
-              delay: headlineDelay,
-              duration: 650,
-            });
+          }, 850);
+          schedule(() => {
+            if (!finished) hero.dataset.aboutArrivalScene = 'copy';
+          }, headlineDelay);
           hero.querySelectorAll('[data-about-headline]').forEach((headline, index) => {
             play(
               headline,
@@ -277,33 +309,30 @@ async function initialize() {
               },
             );
           });
-          hero
-            .querySelectorAll('[data-about-intro], [data-about-caption]')
-            .forEach((copy, index) => {
-              play(
-                copy,
-                [
-                  { opacity: 0, transform: 'translateY(12px)' },
-                  { opacity: 1, transform: 'none' },
-                ],
-                {
-                  duration: copyDuration,
-                  delay: copyDelay + index * 100,
-                  easing: 'cubic-bezier(.2,.7,.2,1)',
-                },
-              );
-            });
-          schedule(() => settleHero('complete'), mobile ? 3650 : 2900);
+          hero.querySelectorAll('[data-about-hero-paragraph]').forEach((copy, index) => {
+            play(
+              copy,
+              [
+                { opacity: 0, transform: 'translateY(12px)' },
+                { opacity: 1, transform: 'none' },
+              ],
+              {
+                duration: 750,
+                delay: copyDelay + index * 100,
+                easing: 'cubic-bezier(.2,.7,.2,1)',
+              },
+            );
+          });
+          for (const detail of hero.querySelectorAll('[data-about-caption], [data-about-signoff]'))
+            play(detail, [{ opacity: 0 }, { opacity: 1 }], { delay: 2700, duration: 750 });
+          schedule(() => settleHero('complete'), mobile ? 3750 : 3600);
         } catch {
           settleHero('failure');
         }
       };
       // Decode the same displayed assets without adding painted duplicates.
-      // A late portrait or emblem keeps the complete static final composition.
-      const sources = [
-        raster.getAttribute('href'),
-        hero.querySelector('[data-about-emblem] image')?.getAttribute('href'),
-      ];
+      // A late portrait keeps the complete static final composition.
+      const sources = [raster.getAttribute('href')];
       readyDeadline = schedule(() => settleHero('late-asset'), 450);
       const decodeAsset = (source: string | null | undefined) =>
         new Promise<void>((resolve, reject) => {

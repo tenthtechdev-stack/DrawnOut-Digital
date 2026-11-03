@@ -9,11 +9,10 @@ async function fullStoryboard(page: Page) {
     const html = document.documentElement;
     const scene = document.querySelector<HTMLElement>('[data-signature-intro-overlay]')!;
     const name = scene.querySelector<HTMLElement>('[data-intro-name]')!;
-    const wave = scene.querySelector<SVGPathElement>('[data-intro-wave]')!;
+    const connectingWaveCount = scene.querySelectorAll('.intro-wave, [data-intro-wave]').length;
     const hand = scene.querySelector<HTMLElement>('[data-signature-hand]')!;
     const plaque = scene.querySelector<HTMLElement>('[data-signature-plaque]')!;
     const visible: number[] = [];
-    let partialWave = false;
     let partialWord = false;
     let sixRevealed = false;
     let independentEntrance = false;
@@ -32,8 +31,6 @@ async function fullStoryboard(page: Page) {
           bounds.height >= innerHeight - 1
         )
           visible.push(performance.now());
-        const remaining = parseFloat(getComputedStyle(wave).strokeDashoffset);
-        if (remaining > 0.05 && remaining < 0.95) partialWave = true;
         const wordStyle = getComputedStyle(name);
         if (
           !scene.hidden &&
@@ -84,7 +81,7 @@ async function fullStoryboard(page: Page) {
       ended: Number(html.dataset.signatureIntroEnded),
       visibleFrames: visible.length,
       visibleMs: (visible.at(-1) ?? 0) - (visible[0] ?? 0),
-      partialWave,
+      connectingWaveCount,
       partialWord,
       sixRevealed,
       independentEntrance,
@@ -104,7 +101,7 @@ async function fullStoryboard(page: Page) {
   expect(observations.ended - observations.started).toBeGreaterThanOrEqual(4190);
   expect(observations.visibleFrames).toBeGreaterThan(20);
   expect(observations.visibleMs).toBeGreaterThan(3000);
-  expect(observations.partialWave).toBe(true);
+  expect(observations.connectingWaveCount).toBe(0);
   expect(observations.partialWord).toBe(true);
   expect(observations.sixRevealed).toBe(true);
   expect(observations.independentEntrance).toBe(true);
