@@ -1,0 +1,119 @@
+---
+const contours = Array.from({ length: 12 }, (_, index) => index);
+---
+
+<svg
+  viewBox="0 0 720 620"
+  width="720"
+  height="620"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+>
+  <defs>
+    <linearGradient
+      id="overview-direction-light"
+      x1="0"
+      y1="0"
+      x2="560"
+      y2="570"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#7f8e78" />
+      <stop offset="1" stop-color="#35483b" />
+    </linearGradient>
+    <linearGradient
+      id="overview-direction-fold"
+      x1="320"
+      y1="100"
+      x2="610"
+      y2="490"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#ffc28b" />
+      <stop offset=".34" stop-color="#fa7c46" />
+      <stop offset=".6" stop-color="#db4d27" />
+      <stop offset="1" stop-color="#742c1c" />
+    </linearGradient>
+    <filter id="overview-direction-shadow" x="-35%" y="-25%" width="180%" height="180%">
+      <feDropShadow dx="1" dy="16" stdDeviation="15" flood-color="#101811" flood-opacity=".32" />
+    </filter>
+    <clipPath id="overview-direction-texture">
+      <rect x="35" y="246" width="214" height="251" />
+    </clipPath>
+  </defs>
+  <rect width="720" height="620" rx="3" fill="url(#overview-direction-light)" />
+  <path
+    d="M20 26H700V593H20ZM267 26V593M20 222H700M20 519H700"
+    stroke="#c3cbb9"
+    stroke-width=".65"
+    opacity=".25"
+  />
+  <g transform="rotate(-5 142 139)" filter="url(#overview-direction-shadow)">
+    <rect x="39" y="45" width="214" height="172" fill="#e9e3d4" />
+    <text x="56" y="72" font-size="8" letter-spacing="1.6" fill="#595a4d">
+      A WAY OF SEEING
+    </text>
+    <text x="52" y="147" font-size="66" font-weight="500" letter-spacing="-6" fill="#242820">
+      Aa
+    </text>
+    <path d="M57 163H231" stroke="#c4bcaa" />
+    <text x="57" y="191" font-size="8" letter-spacing="2" fill="#666452">
+      TYPE / CHARACTER
+    </text>
+  </g>
+  <g filter="url(#overview-direction-shadow)">
+    <rect x="35" y="246" width="214" height="251" fill="#cc6338" />
+    <g clip-path="url(#overview-direction-texture)">
+      {contours.map((line) => (
+        <path
+          d={`M${-35 + line * 22} 540C${20 + line * 16} 385 ${-55 + line * 30} 407 ${26 + line * 24} 205`}
+          stroke={line % 3 ? '#f7aa73' : '#713e28'}
+          stroke-width={line % 3 ? 1.7 : 3}
+        />
+      ))}
+    </g>
+    <rect x="48" y="459" width="187" height="25" fill="#cc6338" />
+    <text x="58" y="476" font-size="8" letter-spacing="2" fill="#352a1a">
+      TEXTURE / ENERGY
+    </text>
+  </g>
+  <g transform="rotate(5 477 299)" filter="url(#overview-direction-shadow)">
+    <rect x="287" y="67" width="371" height="440" fill="#d9dfcc" />
+    <text x="308" y="95" font-size="8" letter-spacing="2" fill="#4c5548">
+      ONE DIRECTION / MANY DETAILS
+    </text>
+    <path
+      d="M309 350C404 320 349 143 445 135C552 124 487 325 625 260V409C491 432 517 249 439 258C380 265 407 437 309 444Z"
+      fill="url(#overview-direction-fold)"
+    />
+    <path
+      d="M310 350C406 319 352 144 445 135C552 125 489 325 625 260"
+      stroke="#ffd4a7"
+      stroke-width="1.4"
+    />
+    <path
+      d="M309 444C406 437 381 266 439 258C517 249 492 431 625 409"
+      stroke="#8b3823"
+      stroke-width="1.2"
+    />
+    <path d="M312 345C403 315 357 164 434 151" stroke="#ffbd87" stroke-width="1" opacity=".6" />
+    <text x="308" y="466" font-size="29" font-weight="500" letter-spacing="-1.8" fill="#263225">
+      A bigger picture.
+    </text>
+    <path d="M309 482H631" stroke="#9da98f" />
+  </g>
+  <g filter="url(#overview-direction-shadow)">
+    <rect x="185" y="526" width="448" height="47" fill="#eee8db" />
+    <rect x="196" y="537" width="72" height="25" fill="#28372c" />
+    <rect x="275" y="537" width="72" height="25" fill="#8e9b80" />
+    <rect x="354" y="537" width="72" height="25" fill="#f06a36" />
+    <rect x="433" y="537" width="72" height="25" fill="#f7b482" />
+    <text x="522" y="552" font-size="7" letter-spacing="1.5" fill="#5e5c4e">
+      PALETTE / 05
+    </text>
+  </g>
+  <text x="31" y="599" font-size="8" letter-spacing="2" fill="#d0d8c6">
+    COLOUR / TEXTURE / FORM / A SHARED POINT OF VIEW
+  </text>
+</svg>

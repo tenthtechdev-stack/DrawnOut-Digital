@@ -1,0 +1,119 @@
+---
+const grid = Array.from({ length: 9 }, (_, index) => 60 + index * 60);
+---
+
+<svg
+  viewBox="0 0 720 620"
+  width="720"
+  height="620"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+>
+  <defs>
+    <linearGradient
+      id="overview-digital-ground"
+      x1="0"
+      y1="0"
+      x2="650"
+      y2="620"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#303934" />
+      <stop offset="1" stop-color="#1b2321" />
+    </linearGradient>
+    <linearGradient
+      id="overview-digital-orbit"
+      x1="480"
+      y1="200"
+      x2="290"
+      y2="410"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#ffa272" />
+      <stop offset=".47" stop-color="#ef6232" />
+      <stop offset="1" stop-color="#b13a20" />
+    </linearGradient>
+    <filter id="overview-digital-shadow" x="-30%" y="-30%" width="180%" height="190%">
+      <feDropShadow dx="0" dy="19" stdDeviation="16" flood-color="#050a08" flood-opacity=".35" />
+    </filter>
+  </defs>
+  <rect width="720" height="620" rx="3" fill="url(#overview-digital-ground)" />
+  <g stroke="#64756b" opacity=".22" stroke-width=".7">
+    {grid.map((position) => (
+      <path d={`M${position} 0V620M0 ${position}H720`} />
+    ))}
+  </g>
+  <g transform="translate(31 54) rotate(-8 285 185)" opacity=".5" stroke="#9bae9f" stroke-width="1">
+    <rect width="510" height="332" rx="5" stroke-dasharray="4 5" />
+    <path d="M0 37H510M25 62H183V240H25ZM209 63H484V240H209ZM209 63 484 240M209 240 484 63M25 267H484M25 285H324M25 303H442" />
+    <path d="M-11 0H11M0-11V11M499 332H521M510 321V343" />
+  </g>
+  <g filter="url(#overview-digital-shadow)">
+    <rect x="79" y="133" width="533" height="352" rx="9" fill="#eceae2" />
+    <rect x="79" y="133" width="533" height="36" rx="9" fill="#d8d8ce" />
+    <path d="M79 161H612V169H79Z" fill="#d8d8ce" />
+    <circle cx="99" cy="151" r="3" fill="#827f72" />
+    <circle cx="111" cy="151" r="3" fill="#a7a496" />
+    <circle cx="123" cy="151" r="3" fill="#bab7aa" />
+    <path d="M294 150H396" stroke="#b2b0a3" stroke-width="5" stroke-linecap="round" />
+    <text x="104" y="199" font-size="14" font-weight="600" letter-spacing="-.5" fill="#20201e">
+      DrawnOut
+    </text>
+    <path d="M426 195H449M465 195H490M506 195H531" stroke="#716f62" stroke-width="1.7" />
+    <rect x="549" y="186" width="39" height="17" rx="8.5" fill="#f05a28" />
+    <text x="104" y="244" font-size="7" letter-spacing="1.5" fill="#68675d">
+      IDEAS INTO EXPERIENCES
+    </text>
+    <text x="103" y="283" font-size="32" letter-spacing="-1.8" font-weight="500" fill="#20201e">
+      Think it
+    </text>
+    <text x="103" y="319" font-size="32" letter-spacing="-1.8" font-weight="500" fill="#20201e">
+      through.
+    </text>
+    <path d="M104 346H247M104 356H218M104 366H234" stroke="#aba89a" stroke-width="2" />
+    <rect x="104" y="389" width="84" height="25" rx="12.5" fill="#20201e" />
+    <path d="M119 401H151M167 397 172 401 167 405" stroke="#fff8ee" stroke-width="1.2" />
+    <rect x="289" y="224" width="298" height="210" rx="3" fill="#d4d8c7" />
+    <circle cx="438" cy="329" r="78" stroke="url(#overview-digital-orbit)" stroke-width="37" />
+    <ellipse
+      cx="438"
+      cy="329"
+      rx="105"
+      ry="30"
+      transform="rotate(-34 438 329)"
+      stroke="#f4eee0"
+      stroke-width="2.5"
+    />
+    <path d="M104 453H251M289 453H410M435 453H586" stroke="#cbc7ba" />
+  </g>
+  <g transform="rotate(7 594 420)" filter="url(#overview-digital-shadow)">
+    <rect x="526" y="280" width="143" height="265" rx="18" fill="#121b17" />
+    <rect x="533" y="287" width="129" height="251" rx="12" fill="#f3f0e7" />
+    <rect x="575" y="294" width="46" height="8" rx="4" fill="#20201e" />
+    <text x="546" y="325" font-size="10" font-weight="600" letter-spacing="-.5" fill="#20201e">
+      DrawnOut
+    </text>
+    <path d="M636 319H648M636 323H648" stroke="#20201e" />
+    <rect x="545" y="339" width="105" height="102" rx="2" fill="#d4d8c7" />
+    <circle cx="597" cy="390" r="29" stroke="#ef6232" stroke-width="16" />
+    <ellipse
+      cx="597"
+      cy="390"
+      rx="43"
+      ry="13"
+      transform="rotate(-34 597 390)"
+      stroke="#f7f1e4"
+      stroke-width="1.3"
+    />
+    <text x="545" y="466" font-size="15" letter-spacing="-.6" font-weight="500" fill="#20201e">
+      Think it through.
+    </text>
+    <path d="M545 481H638M545 489H621" stroke="#aaa596" stroke-width="1.5" />
+    <rect x="545" y="505" width="53" height="15" rx="7.5" fill="#f05a28" />
+  </g>
+  <text x="32" y="586" font-size="8" letter-spacing="2" fill="#bdc5b8">
+    STRUCTURE → EXPRESSION → CONNECTION
+  </text>
+  <path d="M600 580H685M677 572 685 580 677 588" stroke="#c0cabd" stroke-width="1" />
+</svg>

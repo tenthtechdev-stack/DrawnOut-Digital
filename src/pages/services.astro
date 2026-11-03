@@ -1,8 +1,7 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import ServicesHero from '../components/services/ServicesHero.astro';
-import Arrow from '../components/Arrow.astro';
-import { capabilities } from '../data/site';
+import ServicesOverview from '../components/services/ServicesOverview.astro';
 ---
 
 <SiteLayout
@@ -11,71 +10,5 @@ import { capabilities } from '../data/site';
   enableLoader={false}
 >
   <ServicesHero />
-  <div class="service-foundation page-frame">
-    {capabilities.map((item, index) => (
-      <section id={item.id}>
-        <p class="eyebrow">0{index + 1}</p>
-        <div>
-          <h2>
-            <a href={`/services/${item.id}`}>
-              {item.title}
-              <Arrow />
-            </a>
-          </h2>
-          <p>{item.proposition}</p>
-        </div>
-      </section>
-    ))}
-  </div>
+  <ServicesOverview />
 </SiteLayout>
-<style>
-  .service-foundation {
-    padding-bottom: var(--space-6);
-  }
-  .service-foundation section {
-    display: grid;
-    grid-template-columns: 70px 1fr;
-    padding-block: 30px;
-    border-top: 1px solid var(--line);
-    gap: 20px;
-  }
-  .service-foundation section > p {
-    margin: 7px 0 0;
-    color: var(--muted);
-  }
-  .service-foundation h2 {
-    font-size: clamp(1.5rem, 3vw, 2.7rem);
-    line-height: 1.25;
-    letter-spacing: -0.045em;
-    font-weight: 500;
-    margin: 0;
-  }
-  .service-foundation h2 a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    text-decoration: none;
-    min-height: 48px;
-  }
-  .service-foundation h2 a:hover {
-    color: var(--accent-strong);
-  }
-  .service-foundation h2 :global(svg) {
-    width: 24px;
-    height: 24px;
-    flex: 0 0 auto;
-  }
-  .service-foundation section div > p {
-    font-size: var(--type-body);
-    line-height: var(--leading-body);
-    margin: 18px 0 0;
-    color: var(--muted);
-  }
-  @media (max-width: 639px) {
-    .service-foundation section {
-      grid-template-columns: 30px 1fr;
-      gap: 15px;
-    }
-  }
-</style>

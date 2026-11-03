@@ -1,0 +1,69 @@
+---
+import Arrow from '../Arrow.astro';
+import { capabilities } from '../../data/site';
+import IdentityArtwork from './overview-art/IdentityArtwork.astro';
+import DigitalArtwork from './overview-art/DigitalArtwork.astro';
+import CampaignArtwork from './overview-art/CampaignArtwork.astro';
+import StorytellingArtwork from './overview-art/StorytellingArtwork.astro';
+import DirectionArtwork from './overview-art/DirectionArtwork.astro';
+import '../../styles/services-overview.css';
+
+const treatments = [
+  { Artwork: IdentityArtwork, tone: 'identity', study: 'Form, character & a recognisable system.' },
+  { Artwork: DigitalArtwork, tone: 'digital', study: 'One visual language, across screens.' },
+  { Artwork: CampaignArtwork, tone: 'campaign', study: 'A connected family of impressions.' },
+  { Artwork: StorytellingArtwork, tone: 'story', study: 'Words with a clear point of view.' },
+  {
+    Artwork: DirectionArtwork,
+    tone: 'direction',
+    study: 'Separate references. A shared direction.',
+  },
+];
+---
+
+<div class="service-foundation services-overview" data-services-overview>
+  {capabilities.map((service, index) => {
+    const { Artwork, tone, study } = treatments[index]!;
+    return (
+      <section
+        id={service.id}
+        class={`service-chapter service-chapter--${tone}`}
+        aria-labelledby={`${service.id}-heading`}
+        data-service-chapter={service.id}
+      >
+        <div class="service-chapter__inner page-frame">
+          <div class="service-chapter__copy">
+            <p class="service-chapter__number">
+              <span>0{index + 1}</span> / CREATIVE PRACTICE
+            </p>
+            <h2 id={`${service.id}-heading`}>{service.title}</h2>
+            <p class="service-chapter__proposition">{service.proposition}</p>
+            <a
+              class="service-chapter__link"
+              href={`/services/${service.id}`}
+              data-service-chapter-link
+            >
+              <span>Explore {service.title}</span>
+              <span class="service-chapter__link-icon">
+                <Arrow />
+              </span>
+            </a>
+          </div>
+          <figure class="service-chapter__figure">
+            <div class="service-chapter__art" data-service-chapter-art>
+              <Artwork />
+            </div>
+            <figcaption>
+              <span>{study}</span>
+              <span class="service-chapter__study">Illustrative study / 0{index + 1}</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    );
+  })}
+</div>
+
+<script>
+  import '../../scripts/services-overview';
+</script>

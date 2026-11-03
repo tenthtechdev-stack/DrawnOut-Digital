@@ -1,0 +1,86 @@
+---
+const bands = Array.from({ length: 9 }, (_, index) => index);
+---
+
+<svg
+  viewBox="0 0 720 620"
+  width="720"
+  height="620"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+>
+  <defs>
+    <filter id="overview-campaign-shadow" x="-30%" y="-30%" width="180%" height="190%">
+      <feDropShadow dx="0" dy="13" stdDeviation="12" flood-color="#7c4525" flood-opacity=".2" />
+    </filter>
+    <clipPath id="overview-campaign-poster">
+      <rect x="40" y="31" width="393" height="526" />
+    </clipPath>
+    <clipPath id="overview-campaign-social">
+      <rect x="425" y="155" width="250" height="248" />
+    </clipPath>
+  </defs>
+  <rect width="720" height="620" rx="3" fill="#e8d7c2" />
+  <path d="M0 540H720M0 560H720" stroke="#d8c2a5" />
+  <g transform="rotate(-4 235 295)" filter="url(#overview-campaign-shadow)">
+    <rect x="40" y="31" width="393" height="526" fill="#f05a28" />
+    <g clip-path="url(#overview-campaign-poster)">
+      {bands.map((band) => (
+        <path
+          d={`M${-112 + band * 34} 615C${-91 + band * 34} 369 ${302 + band * 34} 429 ${334 + band * 34} 164`}
+          stroke={band % 2 ? '#ffb17c' : '#20201e'}
+          stroke-width="23"
+        />
+      ))}
+    </g>
+    <text x="65" y="68" font-size="9" letter-spacing="2.6" fill="#20201e">
+      DRAWNOUT / A CREATIVE STUDY
+    </text>
+    <text x="63" y="149" font-size="76" font-weight="600" letter-spacing="-5" fill="#20201e">
+      Make it
+    </text>
+    <text x="63" y="224" font-size="76" font-weight="600" letter-spacing="-5" fill="#20201e">
+      matter.
+    </text>
+    <rect x="62" y="506" width="200" height="28" fill="#f05a28" />
+    <text x="70" y="524" font-size="8" letter-spacing="1.7" fill="#20201e">
+      ONE IDEA. MANY IMPRESSIONS.
+    </text>
+  </g>
+  <g transform="rotate(5 550 279)" filter="url(#overview-campaign-shadow)">
+    <rect x="425" y="155" width="250" height="248" fill="#fff8ee" />
+    <g clip-path="url(#overview-campaign-social)">
+      {bands.slice(0, 5).map((band) => (
+        <path
+          d={`M${448 + band * 26} 454C${348 + band * 26} 336 ${542 + band * 26} 319 ${509 + band * 26} 225`}
+          stroke={band % 2 ? '#f05a28' : '#20201e'}
+          stroke-width="15"
+        />
+      ))}
+    </g>
+    <text x="444" y="183" font-size="7" letter-spacing="1.7" fill="#666050">
+      CREATIVE EXPRESSION / 03
+    </text>
+    <text x="444" y="221" font-size="31" font-weight="550" letter-spacing="-1.7" fill="#20201e">
+      Make it matter.
+    </text>
+    <rect x="594" y="366" width="61" height="21" rx="10.5" fill="#f05a28" />
+    <path d="M614 376H637M632 371 637 376 632 381" stroke="#20201e" stroke-width="1.4" />
+  </g>
+  <g filter="url(#overview-campaign-shadow)">
+    <rect x="329" y="446" width="355" height="121" fill="#20201e" />
+    <text x="350" y="469" font-size="7" letter-spacing="1.6" fill="#cfc6b5">
+      SAME IDEA / ANOTHER FORMAT
+    </text>
+    <text x="349" y="514" font-size="34" font-weight="500" letter-spacing="-1.8" fill="#fff8ee">
+      Make it matter.
+    </text>
+    <path d="M350 539H551" stroke="#6e675b" />
+    <circle cx="627" cy="510" r="28" fill="#f05a28" />
+    <path d="M610 521 643 488M611 489H643V521" stroke="#20201e" stroke-width="2" />
+  </g>
+  <text x="31" y="594" font-size="8" letter-spacing="2" fill="#655340">
+    POSTER / SOCIAL / CAMPAIGN SYSTEM
+  </text>
+</svg>
