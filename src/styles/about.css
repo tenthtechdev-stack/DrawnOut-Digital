@@ -122,8 +122,8 @@
   pointer-events: none;
   /* Soft radial falloff localizes the atmosphere behind the portrait. No
      canvas, full-page filter or hard-edged circular disc is needed. */
-  -webkit-mask-image: radial-gradient(ellipse at 52% 46%, #000 15%, transparent 69%);
-  mask-image: radial-gradient(ellipse at 52% 46%, #000 15%, transparent 69%);
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 18%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 18%, transparent 100%);
 }
 
 .about-hero__glow {

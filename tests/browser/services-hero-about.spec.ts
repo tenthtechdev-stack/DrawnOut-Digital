@@ -33,8 +33,9 @@ async function observeBoot(page: Page) {
           transform: getComputedStyle(composition).transform,
           headline: Number(getComputedStyle(headline).opacity),
           intro: Number(getComputedStyle(intro).opacity),
-          paragraphs: [...intro.querySelectorAll('p')].map((node) =>
-            Number(getComputedStyle(node).opacity),
+          paragraphs: [...intro.querySelectorAll('p')].map(
+            (node) =>
+              Number(getComputedStyle(intro).opacity) * Number(getComputedStyle(node).opacity),
           ),
         });
       }

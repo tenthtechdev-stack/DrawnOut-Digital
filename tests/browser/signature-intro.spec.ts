@@ -387,18 +387,20 @@ test('direct case loads use the loader while hash destinations reach content imm
 test('reduced motion reaches the homepage immediately and remains readable without JavaScript', async ({
   page,
   browser,
+  baseURL,
 }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   await expect(page.locator(overlay)).toBeHidden();
   await expect(page.locator('main h1')).toBeVisible();
   const context = await browser.newContext({
+    baseURL,
     javaScriptEnabled: false,
     viewport: { width: 390, height: 844 },
   });
   try {
     const staticPage = await context.newPage();
-    await staticPage.goto('http://127.0.0.1:4321/');
+    await staticPage.goto('/');
     await expect(staticPage.locator(overlay)).toBeHidden();
     await expect(staticPage.locator('main h1')).toHaveText('We make ideas impossible to ignore.');
     await expect(staticPage.locator('[data-work] a[href^="/work/"]').first()).toBeVisible();
@@ -451,9 +453,9 @@ test('unavailable session storage fails open', async ({ page }) => {
   await expect(page.locator('[data-work] a[href^="/work/"]').first()).toBeVisible();
 });
 
-test('a mobile tap immediately bypasses the intro', async ({ browser }) => {
+test('a mobile tap immediately bypasses the intro', async ({ browser, baseURL }) => {
   const context = await browser.newContext({
-    baseURL: 'http://127.0.0.1:4321',
+    baseURL,
     viewport: { width: 390, height: 844 },
     hasTouch: true,
   });
@@ -477,9 +479,19 @@ test('live reduced-motion preference immediately cancels the opening', async ({ 
   await expectSkipped(page);
 });
 
-test('delayed optional module never delays or replays the inline opening', async ({ page }) => {
-  await page.route('**/src/scripts/signature-intro.ts*', async (route) => {
-    await new Promise((resolve) => setTimeout(resolve, 5500));
+test('delayed external scripts never delay or replay the inline opening', async ({ page }) => {
+  let delayedScripts = 0;
+  let releasedScripts = 0;
+  const releaseAt = Date.now() + 5500;
+  await page.route('**/*', async (route) => {
+    const request = route.request();
+    // Astro may inline the small intro coordinator in production. Delay actual
+    // deferred script requests in either build, and prove interception occurred.
+    if (request.resourceType() === 'script') {
+      delayedScripts += 1;
+      await new Promise((resolve) => setTimeout(resolve, Math.max(0, releaseAt - Date.now())));
+      releasedScripts += 1;
+    }
     await route.continue();
   });
   await page.goto('/', { waitUntil: 'commit' });
@@ -487,6 +499,9 @@ test('delayed optional module never delays or replays the inline opening', async
   await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'completed');
   const ended = Number(await page.locator('html').getAttribute('data-signature-intro-ended'));
   expect(ended).toBeLessThanOrEqual(5000);
+  expect(delayedScripts).toBeGreaterThan(0);
+  await page.waitForLoadState('load');
+  expect(releasedScripts).toBeGreaterThan(0);
   await page.waitForTimeout(1800);
   await expect(page.locator(overlay)).toBeHidden();
   expect(Number(await page.locator('html').getAttribute('data-signature-intro-ended'))).toBe(ended);
