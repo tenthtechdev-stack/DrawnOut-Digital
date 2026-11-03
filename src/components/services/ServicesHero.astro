@@ -1,0 +1,127 @@
+---
+import BrandEmblem from '../BrandEmblem.astro';
+import Arrow from '../Arrow.astro';
+import BrandIdentityScene from './scenes/BrandIdentityScene.astro';
+import DigitalDesignScene from './scenes/DigitalDesignScene.astro';
+import CampaignScene from './scenes/CampaignScene.astro';
+import StorytellingScene from './scenes/StorytellingScene.astro';
+import CreativeDirectionScene from './scenes/CreativeDirectionScene.astro';
+import { serviceIndex } from '../../data/service-index';
+import '../../styles/services-hero.css';
+
+const services = Object.entries(serviceIndex);
+const scenes = [
+  BrandIdentityScene,
+  DigitalDesignScene,
+  CampaignScene,
+  StorytellingScene,
+  CreativeDirectionScene,
+];
+---
+
+<section
+  class="services-hero page-frame"
+  aria-labelledby="services-hero-heading"
+  data-services-hero
+>
+  <header class="services-hero__intro">
+    <div>
+      <p class="eyebrow">Design. Strategy. Storytelling. Digital.</p>
+      <h1 id="services-hero-heading">We think beyond the brief.</h1>
+    </div>
+    <p class="services-hero__description">
+      Good design gets attention. Great thinking gives people a reason to stay.
+    </p>
+  </header>
+
+  <div class="services-hero__stage" data-services-stage aria-hidden="true">
+    <div class="services-hero__registration">
+      <span>DRAWNOUT / CREATIVE PRACTICE</span>
+      <span>FIVE WAYS TO GIVE AN IDEA FORM</span>
+    </div>
+    <div class="services-hero__travel" data-services-travel>
+      <div class="services-hero__emblem" data-services-emblem>
+        <BrandEmblem />
+      </div>
+    </div>
+    <div class="services-hero__scenes">
+      {scenes.map((Scene, index) => (
+        <div class="services-hero__scene" data-services-scene={index} hidden={index !== 0}>
+          <Scene />
+        </div>
+      ))}
+    </div>
+    <div class="services-hero__wordmark" data-services-wordmark hidden>
+      <span>DrawnOut</span>
+      <span class="services-hero__wordmark-note">
+        THINK IT THROUGH. DRAW IT OUT. MAKE IT MATTER.
+      </span>
+    </div>
+    <div class="services-hero__stage-baseline" />
+  </div>
+
+  <div class="services-hero__below-stage">
+    <div class="services-hero__captions" data-services-caption-group>
+      {services.map(([, service], index) => (
+        <div
+          class="services-hero__caption"
+          id={`services-caption-${index}`}
+          data-services-caption={index}
+          hidden={index !== 0}
+        >
+          <p class="eyebrow services-hero__caption-number">0{index + 1} / SERVICES</p>
+          <h2>{service.title}</h2>
+          <p class="services-hero__proposition">{service.headline}</p>
+        </div>
+      ))}
+    </div>
+    <div class="services-hero__playback">
+      <button
+        class="services-hero__pause"
+        type="button"
+        data-services-pause
+        aria-pressed="false"
+        aria-describedby="services-motion-help"
+        hidden
+      >
+        <span class="services-hero__pause-icon" aria-hidden="true">
+          <i />
+          <i />
+        </span>
+        <span data-services-pause-label>Pause animation</span>
+      </button>
+      <p id="services-motion-help" class="services-hero__help">
+        Motion pauses while you use these controls.
+      </p>
+    </div>
+  </div>
+
+  <nav class="services-hero__navigation" aria-label="Explore our five services">
+    <ol>
+      {services.map(([slug, service], index) => (
+        <li class="services-hero__service">
+          <button
+            class="services-hero__select"
+            type="button"
+            data-services-select={index}
+            aria-label={`Preview ${service.title}`}
+            aria-controls={`services-caption-${index}`}
+            aria-pressed="false"
+            aria-describedby="services-motion-help"
+            hidden
+          >
+            <span aria-hidden="true">0{index + 1}</span>
+          </button>
+          <a href={`/services/${slug}`}>
+            <span>{service.title}</span>
+            <Arrow />
+          </a>
+        </li>
+      ))}
+    </ol>
+  </nav>
+</section>
+
+<script>
+  import '../../scripts/services-hero';
+</script>

@@ -89,7 +89,9 @@ test('homepage and overview links open service pages and the enquiry CTA reaches
   await expect(page.locator('[data-enquiry-form]')).not.toHaveAttribute('action');
   await page.goto('/services');
   for (const service of servicePages)
-    await expect(page.locator(`main a[href="/services/${service.slug}"]`)).toHaveCount(1);
+    await expect(
+      page.locator(`.service-foundation a[href="/services/${service.slug}"]`),
+    ).toHaveCount(1);
 });
 
 test('service copy, native FAQ controls and navigation work without JavaScript', async ({
