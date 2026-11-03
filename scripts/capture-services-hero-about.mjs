@@ -13,6 +13,12 @@ const argument = (name, fallback) => {
 const baseURL = argument('--base-url', process.env.ABOUT_CORRECTION_URL ?? 'http://127.0.0.1:4393');
 const output = path.resolve(argument('--out', 'artifacts/services-hero'));
 const nativeDirectory = path.resolve('/tmp/drawnout-services-hero-about-native');
+const leadingRecorderSetupTrimSeconds = Number(argument('--leading-recorder-trim-seconds', '0.12'));
+assert.ok(
+  Number.isFinite(leadingRecorderSetupTrimSeconds) &&
+    leadingRecorderSetupTrimSeconds >= 0 &&
+    leadingRecorderSetupTrimSeconds <= 0.5,
+);
 const previewOnly = process.argv.includes('--preview-only');
 const viewportFor = (width) => ({ width, height: width < 768 ? 844 : 900 });
 const evidence = {
@@ -42,7 +48,8 @@ const evidence = {
   route: '/about',
   captureMode: previewOnly ? 'private-quick-preview' : 'complete-about-correction-evidence',
   method:
-    'Unedited production-browser screenshots at DPR 1 and native real-time Playwright recordings transcoded at unchanged speed to silent H.264 MP4. No animation seeking, replacement CSS or fabricated frames. Process footage uses native document scrolling, including rapid reversal. Software rendering is not a physical-device performance benchmark.',
+    'Unedited production-browser screenshots at DPR 1 and native real-time Playwright recordings transcoded at unchanged speed to silent H.264 MP4. Published clips omit only the declared leading recorder-surface setup interval. No animation seeking, replacement CSS or fabricated frames. Process footage uses native document scrolling, including rapid reversal. Software rendering is not a physical-device performance benchmark.',
+  leadingRecorderSetupTrimSeconds,
   artwork:
     'The previously approved derived raster portrait is unchanged. This revised arrival moves the complete portrait, high-resolution emblem and circle together; it does not draw independent portrait strokes. No private original photograph or rejected candidate is used.',
   browser: '',
@@ -171,6 +178,13 @@ async function warmFullPage(page) {
 
 function transcode(source, filename) {
   const destination = path.join(output, filename);
+  const nativeMetadata = JSON.parse(
+    execFileSync(
+      process.env.FFPROBE_PATH ?? '/usr/bin/ffprobe',
+      ['-v', 'error', '-show_format', '-of', 'json', source],
+      { encoding: 'utf8' },
+    ),
+  );
   execFileSync(process.env.FFMPEG_PATH ?? '/usr/bin/ffmpeg', [
     '-hide_banner',
     '-loglevel',
@@ -178,6 +192,8 @@ function transcode(source, filename) {
     '-y',
     '-i',
     source,
+    '-ss',
+    String(leadingRecorderSetupTrimSeconds),
     '-an',
     '-c:v',
     'libx264',
@@ -203,6 +219,9 @@ function transcode(source, filename) {
   assert.equal(metadata.streams.filter(({ codec_type }) => codec_type === 'audio').length, 0);
   return {
     filename,
+    nativeFile: source,
+    leadingRecorderSetupTrimSeconds,
+    untrimmedDurationSeconds: Number(nativeMetadata.format.duration),
     durationSeconds: Number(metadata.format.duration),
     bytes: Number(metadata.format.size),
     streams: metadata.streams
@@ -478,7 +497,7 @@ await save();
 const gallery = [
   '# About correction — actual production evidence',
   '',
-  'Unedited browser frames and native real-time MP4s for the revised dark About arrival and directly synchronized process. Historical About evidence remains unchanged in `artifacts/about`.',
+  `Unedited browser frames and native real-time MP4s for the revised dark About arrival and directly synchronized process. Published clips omit only the first ${leadingRecorderSetupTrimSeconds}s of recorder-surface initialization, without changing playback speed or source-clock measurements. Historical About evidence remains unchanged in \`artifacts/about\`.`,
   '',
   '[Capture measurements and hashes](about-capture-evidence.json) · [Browser acceptance report](about-browser-tests.json)',
   '',

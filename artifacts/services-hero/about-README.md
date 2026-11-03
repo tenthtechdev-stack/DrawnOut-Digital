@@ -1,6 +1,6 @@
 # About correction — actual production evidence
 
-Unedited browser frames and native real-time MP4s for the revised dark About arrival and directly synchronized process. Historical About evidence remains unchanged in `artifacts/about`.
+Unedited browser frames and native real-time MP4s for the revised dark About arrival and directly synchronized process. Published clips omit only the first 0.12s of recorder-surface initialization, without changing playback speed or source-clock measurements. Historical About evidence remains unchanged in `artifacts/about`.
 
 [Capture measurements and hashes](about-capture-evidence.json) · [Browser acceptance report](about-browser-tests.json)
 

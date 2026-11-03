@@ -12,7 +12,7 @@
   "baseURL": "http://127.0.0.1:4393",
   "route": "/about",
   "captureMode": "complete-about-correction-evidence",
-  "method": "Unedited production-browser screenshots at DPR 1 and native real-time Playwright recordings transcoded at unchanged speed to silent H.264 MP4. No animation seeking, replacement CSS or fabricated frames. Process footage uses native document scrolling, including rapid reversal. Software rendering is not a physical-device performance benchmark.",
+  "method": "Unedited production-browser screenshots at DPR 1 and native real-time Playwright recordings transcoded at unchanged speed to silent H.264 MP4, omitting only the first 0.12s of recorder-surface initialization. No animation seeking, replacement CSS or fabricated frames. Process footage uses native document scrolling, including rapid reversal. Software rendering is not a physical-device performance benchmark.",
   "artwork": "The previously approved derived raster portrait is unchanged. This revised arrival moves the complete portrait, high-resolution emblem and circle together; it does not draw independent portrait strokes. No private original photograph or rejected candidate is used.",
   "browser": "154.0.8037.57",
   "screenshots": [
@@ -842,8 +842,8 @@
   "recordings": [
     {
       "filename": "about-390-arrival.mp4",
-      "durationSeconds": 6.4,
-      "bytes": 208774,
+      "durationSeconds": 6.28,
+      "bytes": 208401,
       "streams": [
         {
           "codec": "h264",
@@ -853,12 +853,15 @@
         }
       ],
       "width": 390,
-      "scene": "arrival"
+      "scene": "arrival",
+      "nativeFile": "/tmp/drawnout-services-hero-about-native/page@acd472382288c1a5c6b147b059a5b35f.webm",
+      "leadingRecorderSetupTrimSeconds": 0.12,
+      "untrimmedDurationSeconds": 6.4
     },
     {
       "filename": "about-390-process-sync.mp4",
-      "durationSeconds": 7.48,
-      "bytes": 969941,
+      "durationSeconds": 7.36,
+      "bytes": 964489,
       "streams": [
         {
           "codec": "h264",
@@ -868,12 +871,15 @@
         }
       ],
       "width": 390,
-      "scene": "process-forward-reverse"
+      "scene": "process-forward-reverse",
+      "nativeFile": "/tmp/drawnout-services-hero-about-native/page@d6cccde77c11a6a49e345bbbb7adba6e.webm",
+      "leadingRecorderSetupTrimSeconds": 0.12,
+      "untrimmedDurationSeconds": 7.48
     },
     {
       "filename": "about-1440-arrival.mp4",
-      "durationSeconds": 5.84,
-      "bytes": 700085,
+      "durationSeconds": 5.72,
+      "bytes": 697193,
       "streams": [
         {
           "codec": "h264",
@@ -883,12 +889,15 @@
         }
       ],
       "width": 1440,
-      "scene": "arrival"
+      "scene": "arrival",
+      "nativeFile": "/tmp/drawnout-services-hero-about-native/page@c46e89eda5446ac12b5ffda2b9eeaac5.webm",
+      "leadingRecorderSetupTrimSeconds": 0.12,
+      "untrimmedDurationSeconds": 5.84
     },
     {
       "filename": "about-1440-process-sync.mp4",
-      "durationSeconds": 7.48,
-      "bytes": 1215693,
+      "durationSeconds": 7.36,
+      "bytes": 1118164,
       "streams": [
         {
           "codec": "h264",
@@ -898,7 +907,10 @@
         }
       ],
       "width": 1440,
-      "scene": "process-forward-reverse"
+      "scene": "process-forward-reverse",
+      "nativeFile": "/tmp/drawnout-services-hero-about-native/page@7820ec38f31710002c143dcebbca3b91.webm",
+      "leadingRecorderSetupTrimSeconds": 0.12,
+      "untrimmedDurationSeconds": 7.48
     }
   ],
   "measurements": [
@@ -1182,5 +1194,13 @@
     }
   ],
   "errors": [],
-  "failedRequests": []
+  "failedRequests": [],
+  "leadingRecorderSetupTrimSeconds": 0.12,
+  "exportedAtUTC": "2026-11-03T09:37:28.767476+00:00",
+  "exportNormalization": {
+    "source": "Preserved native WebM",
+    "leadingRecorderSetupTrimSeconds": 0.12,
+    "speedChanged": false,
+    "sourceClockMeasurementsUnchanged": true
+  }
 }

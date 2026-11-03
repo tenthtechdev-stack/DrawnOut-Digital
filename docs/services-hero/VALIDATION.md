@@ -1,6 +1,6 @@
 # About refinements and Services hero — observed validation
 
-This is the validation checkpoint for draft PR #12 on `feature/services-cinematic-hero`, stacked on the still-open About PR #10. The final Services browser and recording results are being completed; they are not claimed below until observed.
+This is the observed validation for draft PR #12 on `feature/services-cinematic-hero`, stacked on the still-open About PR #10. The implementation and visual evidence were preserved in separate checkpoints. Final route-preservation checks are being completed.
 
 [Review gallery](../../artifacts/services-hero/README.md) · [Handoff and later-stage boundaries](HANDOFF.md) · [Asset provenance](ASSET_PROVENANCE.md)
 
@@ -12,8 +12,11 @@ This is the validation checkpoint for draft PR #12 on `feature/services-cinemati
 | Formatting                             | PASS                                                         |
 | Unit tests                             | PASS — 46, including four Services timing/pause-policy cases |
 | About production browser acceptance    | PASS — 23/23, zero retries, skips or flaky results           |
-| Services production browser acceptance | Pending                                                      |
-| Services cycle recordings and timings  | Pending                                                      |
+| Services production browser acceptance | PASS — 15/15; zero failures, skips or flaky results          |
+| Strict homepage production loader      | PASS — 7/7                                                   |
+| Existing static output checks          | PASS — 6/6                                                   |
+| About output and asset/privacy checks  | PASS — 2/2                                                   |
+| Combined production route preservation | Running                                                      |
 
 ## About: actual rendered evidence
 
@@ -23,9 +26,18 @@ Additional checks compare actual fractional SVG dash offsets with native scroll 
 
 The [capture manifest](../../artifacts/services-hero/about-capture-evidence.json) pins the About source checkpoint `52640f57ef42eef8bc4c4449a82f1ac54730ffd4`, 22 PNG hashes and four real-time silent H.264 recordings. All image hashes match. The observed running-to-settled intervals are approximately 2.9s desktop and 3.65s mobile. Completed mobile text is clear of the emblem; both faces remain visible. Historical `artifacts/about/` evidence is unchanged. Initial test-fixture reports are retained separately; the final 23-case report passes.
 
-## Remaining verification at this checkpoint
+## Services: rendered motion and recordings
 
-Services testing must observe the real five-scene cycle, wordmark return, combined pause reasons, focused controls, responsive caption stability, static/manual preferences and native fallback links. Desktop and mobile recordings must each run at least 20 seconds. Existing service routes, publication boundaries and portfolio exports will receive final preservation checks before handoff.
+The [15-case browser report](../../artifacts/services-hero/services-browser-tests.json) observes real child-SVG transforms, opacity and fractional drawing through the 14-second timeline. It covers four responsive layouts, WCAG A/AA scans, all five scenes, the visible wordmark reveal, matching return/start poses, focused controls, explicit pause intent, resize, combined hidden/offscreen reasons, native scrolling, direct links, reduced motion, Save Data, no JavaScript and missing-bundle fallback. The actual page remains scrollable; no animation time is sought to manufacture the evidence.
+
+| Viewport | Observed cycle | Observed service spans | Final MP4 duration |
+| -------- | -------------- | ---------------------- | ------------------ |
+| 390px    | 13.936s        | 2.010–2.083s           | 23.32s             |
+| 1440px   | 14.033s        | 2.017–2.065s           | 23.64s             |
+
+The [Services manifest](../../artifacts/services-hero/services-capture-evidence.json) pins source `2841392368c0b56631610c16eed1c1446eec7e58`, 28 screenshots, native recordings and sampled rendered-part states. The configured service windows are 2.1 seconds; sampled observations have frame-boundary quantization. Each recording includes the initial right-side emblem, all five scenes, the wordmark, return and a second cycle. One early native scroll by the recording driver keeps art, caption and controls together; the application itself never auto-scrolls.
+
+There are 50 PNGs, six MP4s and two GIF previews across both parts. Only the first 0.12s of native recorder surface initialization was trimmed from exports; playback speed, animation frames after that setup interval and DOM-clock measurements are unchanged. Untrimmed recordings and native inputs remain archived outside Git. Final MP4 metadata and screenshot hashes are verified before delivery. These are software-rendered browser observations, not physical-device performance measurements.
 
 ## Limits and approval boundary
 

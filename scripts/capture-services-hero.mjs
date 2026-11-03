@@ -17,6 +17,12 @@ const nativeDirectory = path.resolve(
 );
 const ffmpeg = process.env.FFMPEG_PATH ?? '/usr/bin/ffmpeg';
 const ffprobe = process.env.FFPROBE_PATH ?? '/usr/bin/ffprobe';
+const leadingRecorderSetupTrimSeconds = Number(argument('--leading-recorder-trim-seconds', '0.12'));
+assert.ok(
+  Number.isFinite(leadingRecorderSetupTrimSeconds) &&
+    leadingRecorderSetupTrimSeconds >= 0 &&
+    leadingRecorderSetupTrimSeconds <= 0.5,
+);
 const viewportFor = (width) => ({ width, height: width === 390 ? 844 : 900 });
 const evidence = {
   capturedAt: new Date().toISOString(),
@@ -24,7 +30,8 @@ const evidence = {
   route: '/services',
   baseURL,
   method:
-    'Actual local production Chromium screenshots at DPR 1 and continuous native Playwright browser recordings. MP4/GIF conversions change encoding only, without seeking the app timeline, changing playback speed, replacing CSS or constructing frames. A single native scroll early in each recording keeps the stage and caption visible; the initial top view is retained separately. Reduced-motion and no-JavaScript full pages are explicitly separate static evidence. Software rendering is not a physical-device performance benchmark.',
+    'Actual local production Chromium screenshots at DPR 1 and continuous native Playwright browser recordings. Published exports omit only the declared leading recorder-surface setup interval; encoding and that trim do not seek the app timeline, change playback speed, replace CSS or construct frames. A single native scroll early in each recording keeps the stage and caption visible; the initial top view is retained separately. Reduced-motion and no-JavaScript full pages are explicitly separate static evidence. Software rendering is not a physical-device performance benchmark.',
+  leadingRecorderSetupTrimSeconds,
   browser: '',
   screenshots: [],
   recordings: [],
@@ -195,6 +202,11 @@ function validateSamples(samples, width) {
 function transcode(nativeFile, stem) {
   const mp4 = path.join(output, `${stem}.mp4`);
   const gif = path.join(output, `${stem}.gif`);
+  const nativeMetadata = JSON.parse(
+    execFileSync(ffprobe, ['-v', 'error', '-show_format', '-of', 'json', nativeFile], {
+      encoding: 'utf8',
+    }),
+  );
   execFileSync(ffmpeg, [
     '-hide_banner',
     '-loglevel',
@@ -202,6 +214,8 @@ function transcode(nativeFile, stem) {
     '-y',
     '-i',
     nativeFile,
+    '-ss',
+    String(leadingRecorderSetupTrimSeconds),
     '-an',
     '-c:v',
     'libx264',
@@ -223,7 +237,7 @@ function transcode(nativeFile, stem) {
     'error',
     '-y',
     '-i',
-    nativeFile,
+    mp4,
     '-filter_complex',
     'fps=5,scale=480:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=128[p];[b][p]paletteuse=dither=bayer',
     '-threads',
@@ -244,6 +258,8 @@ function transcode(nativeFile, stem) {
     mp4: path.basename(mp4),
     gif: path.basename(gif),
     nativeFile,
+    leadingRecorderSetupTrimSeconds,
+    untrimmedDurationSeconds: Number(nativeMetadata.format.duration),
     durationSeconds: Number(metadata.format.duration),
     bytes: Number(metadata.format.size),
     width: video.width,
@@ -423,7 +439,7 @@ try {
   await save();
   const gallery = `# Services cinematic hero — actual production evidence
 
-The first Services hero prototype uses the original supplied emblem and five custom SVG compositions. Existing overview content and detail pages remain below it. These are real browser views and continuous recordings from the local production build; no timeline seeking, CSS replacement or fabricated frames is used.
+The first Services hero prototype uses the original supplied emblem and five custom SVG compositions. Existing overview content and detail pages remain below it. These are real browser views and continuous recordings from the local production build; no timeline seeking, CSS replacement or fabricated frames is used. Published clips omit only the first ${leadingRecorderSetupTrimSeconds}s of recorder-surface initialization, keeping playback speed and source-clock measurements unchanged.
 
 [Capture facts, timings and screenshot hashes](services-capture-evidence.json) · [Production browser report](services-browser-tests.json) · [About refinement gallery](about-README.md)
 
@@ -467,7 +483,7 @@ Both recordings exceed twenty seconds and show the initial right-side emblem, al
 | Width | Reduced motion | No JavaScript |
 | --- | --- | --- |
 | 390px | [Hero](services-390-reduced.png) · [Full page](services-390-full-reduced.png) | [Hero](services-390-no-js.png) · [Full page](services-390-full-no-js.png) |
-| 768px | [Hero](services-768-reduced.png) · [Full page](services-768-full-reduced.png) | Covered by responsive browser checks |
+| 768px | [Hero](services-768-reduced.png) · [Full page](services-768-full-reduced.png) | Not separately captured |
 | 1440px | [Hero](services-1440-reduced.png) · [Full page](services-1440-full-reduced.png) | [Hero](services-1440-no-js.png) · [Full page](services-1440-full-no-js.png) |
 
 The SVG stage is decorative; service names, official copy and direct links remain semantic page content. Native scrolling and keyboard controls remain available. Software-rendered Chromium evidence does not establish field performance on physical devices, Safari or Firefox. The rest of the Services experience is intentionally unchanged pending hero approval. No merge, deployment or Netlify repository push is performed by this capture.

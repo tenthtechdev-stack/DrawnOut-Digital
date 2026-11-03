@@ -1,3 +1,5 @@
+[Services cinematic hero and dark About refinements — galleries and recordings](services-hero/README.md)
+
 [About brand story — approved sketch, responsive pages and real-time recordings](about/README.md)
 
 [Curated portfolio rhythm — Home and Work recordings](portfolio-rhythm/README.md)

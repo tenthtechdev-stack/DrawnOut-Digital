@@ -18,6 +18,7 @@
     "test:browser": "playwright test",
     "test:about-browser": "playwright test --config playwright.services-hero-about.config.ts",
     "test:services-hero": "playwright test --config playwright.services-hero.config.ts",
+    "test:services-regression": "playwright test --config playwright.services-regression.config.ts",
     "test:about-build": "node --import tsx --test tests/about-build.test.mjs",
     "test:production-browser": "playwright test --config playwright.production.config.ts",
     "test:build": "node --test tests/build-output.test.mjs",
