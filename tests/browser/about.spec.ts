@@ -256,8 +256,9 @@ async function sampleArrival(page: Page) {
           intro: Number(getComputedStyle(intro).opacity),
           artwork: Number(getComputedStyle(artwork).opacity),
           gradient: Number(getComputedStyle(gradient).opacity),
-          paragraphs: [...intro.querySelectorAll('p')].map((node) =>
-            Number(getComputedStyle(node).opacity),
+          paragraphs: [...intro.querySelectorAll('p')].map(
+            (node) =>
+              Number(getComputedStyle(intro).opacity) * Number(getComputedStyle(node).opacity),
           ),
           overlay: document.querySelector('[data-signature-intro-overlay]') !== null,
         });
@@ -310,10 +311,14 @@ for (const width of [320, 390, 768, 1440]) {
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');
     await expectReleased(page);
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');
-    await expect(page.locator(hero)).toHaveAttribute('data-about-settle-reason', 'complete');
     const frames = (await page.evaluate(() =>
       Reflect.get(window, '__aboutCorrectionFrames'),
     )) as ArrivalFrame[];
+    await test.info().attach('arrival-frame-samples', {
+      body: JSON.stringify({ width, frames }),
+      contentType: 'application/json',
+    });
+    await expect(page.locator(hero)).toHaveAttribute('data-about-settle-reason', 'complete');
     const running = frames.filter(({ state }) => state === 'running');
     const final = frames.find(({ state }) => state === 'settled')!;
     expect(running.length).toBeGreaterThan(10);

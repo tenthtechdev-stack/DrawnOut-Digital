@@ -235,7 +235,7 @@ async function initialize() {
           // Let it clear that reading area before the title begins to reveal.
           const mobile = window.matchMedia('(max-width: 767px)').matches;
           const headlineDelay = mobile ? 2100 : 1700;
-          const copyDelay = mobile ? 2550 : 2350;
+          const copyDelay = mobile ? 2500 : 2350;
           // Arm rollback before any copy fades or composition movement begins.
           deadline = schedule(
             () => settleHero('deadline'),
@@ -325,7 +325,9 @@ async function initialize() {
           });
           for (const detail of hero.querySelectorAll('[data-about-caption], [data-about-signoff]'))
             play(detail, [{ opacity: 0 }, { opacity: 1 }], { delay: 2700, duration: 750 });
-          schedule(() => settleHero('complete'), mobile ? 3750 : 3600);
+          // All copy finishes by 3450ms. Complete within the existing absolute
+          // 4050ms watchdog even when an otherwise healthy startup takes 550ms.
+          schedule(() => settleHero('complete'), 3500);
         } catch {
           settleHero('failure');
         }
