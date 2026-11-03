@@ -1,0 +1,789 @@
+{
+  "generatedAt": "2026-11-03T09:50:04.440307+00:00",
+  "method": "Aggregate of separate focused production runs, not a single 90-test invocation. The initial 68-case preservation run had one legacy footer timing-sample failure. All six footer cases passed after waiting for actual rendered stability; approved footer application code was unchanged. Initial and investigation reports are retained.",
+  "applicationSourceCheckpoint": "2841392368c0b56631610c16eed1c1446eec7e58",
+  "aboutSourceCheckpoint": "52640f57ef42eef8bc4c4449a82f1ac54730ffd4",
+  "uniquePassingBrowserCases": 90,
+  "unresolvedBrowserCases": 0,
+  "initialPreservationFailures": 1,
+  "correctedFooterRunPasses": 6,
+  "runs": [
+    {
+      "report": "artifacts/services-hero/about-browser-tests.json",
+      "stats": {
+        "startTime": "2026-11-02T19:02:25.894Z",
+        "duration": 62935.709,
+        "expected": 23,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "stats": {
+        "startTime": "2026-11-03T09:21:21.790Z",
+        "duration": 52469.87,
+        "expected": 15,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/services-hero/loader-browser-tests.json",
+      "stats": {
+        "startTime": "2026-11-03T09:27:53.504Z",
+        "duration": 74097.201,
+        "expected": 7,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "stats": {
+        "startTime": "2026-11-03T09:39:11.925Z",
+        "duration": 144990.103,
+        "expected": 67,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/services-hero/footer-settled-tests.json",
+      "stats": {
+        "startTime": "2026-11-03T09:47:02.600Z",
+        "duration": 26328.107,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "cases": [
+    {
+      "file": "about.spec.ts",
+      "title": "actual centered founder/logo composition moves right and settles nonblockingly at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 4628
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "actual centered founder/logo composition moves right and settles nonblockingly at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 4831
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "changing motion preferences during arrival releases the full portrait immediately",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 822
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "direct, internal and refresh About arrivals stay nonblocking; Work is immediate and Home retains its full loop",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 7015
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "early keyboard settles the entrance without blocking content",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1035
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "early scroll settles the entrance without blocking content",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 825
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "hidden provides the complete static story",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1276
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "init-failure provides the complete static story",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1256
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "no-JavaScript mobile story, native menu, portrait and invitation remain usable",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 896
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "origin and process drawing reverse with native scrolling; names and principles reveal once at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 6849
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "origin and process drawing reverse with native scrolling; names and principles reveal once at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 6408
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "reduced provides the complete static story",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1220
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "save-data provides the complete static story",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1247
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 2778
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 3411
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 2828
+    },
+    {
+      "file": "about.spec.ts",
+      "title": "seven chapters, full portrait, metadata, keyboard and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 2475
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "Contact is responsive and accessible at 1440px with official contact links",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1906
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "Contact is responsive and accessible at 390px with official contact links",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1798
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "Contact is responsive and accessible at 768px with official contact links",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1883
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "a configured form has a native POST fallback without JavaScript",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1160
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "a timed-out request reports uncertainty without an automatic retry",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 921
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "an unconfigured form never posts or reports success and offers email instead",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1091
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "conflicting-error provider failure keeps the enquiry and never announces success",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1070
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "correcting errors and explicitly retrying a rejected submission preserves a valid enquiry",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1154
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "http provider failure keeps the enquiry and never announces success",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1156
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "input limits and the honeypot reject oversized or automated submissions",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1352
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "malformed provider failure keeps the enquiry and never announces success",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 991
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "network provider failure keeps the enquiry and never announces success",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 874
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "no JavaScript leaves the unconfigured form safe and direct contact usable",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 2252
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "not-accepted provider failure keeps the enquiry and never announces success",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1053
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "provider acceptance is announced honestly and duplicate submissions stay blocked",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1155
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "required fields announce errors, focus the summary and link back to controls",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1672
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "whitespace-only values and malformed email are rejected without a request",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1002
+    },
+    {
+      "file": "footer-social.spec.ts",
+      "title": "footer social and attribution links remain usable without JavaScript",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 898
+    },
+    {
+      "file": "footer-social.spec.ts",
+      "title": "footer social icons and exact development credit are usable at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 2011
+    },
+    {
+      "file": "footer-social.spec.ts",
+      "title": "footer social icons and exact development credit are usable at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1463
+    },
+    {
+      "file": "footer-social.spec.ts",
+      "title": "footer social icons and exact development credit are usable at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1575
+    },
+    {
+      "file": "footer-social.spec.ts",
+      "title": "footer social icons and exact development credit are usable at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1757
+    },
+    {
+      "file": "loader.spec.ts",
+      "title": "failed storyboard clock initialization reveals a working homepage",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/loader-browser-tests.json",
+      "durationMs": 1115
+    },
+    {
+      "file": "loader.spec.ts",
+      "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/loader-browser-tests.json",
+      "durationMs": 23838
+    },
+    {
+      "file": "loader.spec.ts",
+      "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/loader-browser-tests.json",
+      "durationMs": 23348
+    },
+    {
+      "file": "services-hero-about.spec.ts",
+      "title": "centered composition leaves navigation pointer targets immediately usable at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1167
+    },
+    {
+      "file": "services-hero-about.spec.ts",
+      "title": "centered composition leaves navigation pointer targets immediately usable at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1059
+    },
+    {
+      "file": "services-hero-about.spec.ts",
+      "title": "inline About prepaint fails open when all JavaScript bundles are blocked",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1218
+    },
+    {
+      "file": "services-hero-about.spec.ts",
+      "title": "inline About prepaint fails open when all JavaScript bundles are delayed",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 2818
+    },
+    {
+      "file": "services-hero-about.spec.ts",
+      "title": "process stays directly synchronized through rapid scroll, reversal and resize at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1774
+    },
+    {
+      "file": "services-hero-about.spec.ts",
+      "title": "process stays directly synchronized through rapid scroll, reversal and resize at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1405
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "Save Data remains static and can preview a different service",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 705
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "Services hero preserves readable layout, authentic emblem, five links and overview at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 1585
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "Services hero preserves readable layout, authentic emblem, five links and overview at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 1822
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "Services hero preserves readable layout, authentic emblem, five links and overview at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 1482
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "Services hero preserves readable layout, authentic emblem, five links and overview at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 1485
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "Services permits immediate native scrolling and ordinary internal navigation without a loader",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 1258
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "a failed external script bundle leaves the Services content and five links usable",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 781
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "focus, explicit pause and resize preserve the active service at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 2466
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "focus, explicit pause and resize preserve the active service at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 2470
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "hidden/offscreen pauses combine without losing an explicit user pause",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 1951
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "native no-JavaScript 1440px view keeps all five service links and complete content",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 678
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "native no-JavaScript 390px view keeps all five service links and complete content",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 608
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "real rendered 1440px loop features all five scenes, wordmark and return in fourteen seconds",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 15306
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "real rendered 390px loop features all five scenes, wordmark and return in fourteen seconds",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 15308
+    },
+    {
+      "file": "services-hero.spec.ts",
+      "title": "reduced motion offers static manual previews and every direct service route",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/services-browser-tests.json",
+      "durationMs": 1409
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "brand-identity copy, FAQs, navigation and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1954
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "brand-identity copy, FAQs, navigation and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1728
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "brand-identity copy, FAQs, navigation and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1762
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "creative-direction copy, FAQs, navigation and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1999
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "creative-direction copy, FAQs, navigation and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1692
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "creative-direction copy, FAQs, navigation and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1785
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "digital-design copy, FAQs, navigation and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1914
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "digital-design copy, FAQs, navigation and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1771
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "digital-design copy, FAQs, navigation and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1769
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "homepage and overview links open service pages and the enquiry CTA reaches Contact",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1426
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1979
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1696
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1793
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "service copy, native FAQ controls and navigation work without JavaScript",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 650
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "words-storytelling copy, FAQs, navigation and accessibility at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 2011
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "words-storytelling copy, FAQs, navigation and accessibility at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1746
+    },
+    {
+      "file": "services.spec.ts",
+      "title": "words-storytelling copy, FAQs, navigation and accessibility at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/regression-initial-browser-tests.json",
+      "durationMs": 1756
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "footer reduced-motion preference restores composed static artwork and working navigation",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/footer-settled-tests.json",
+      "durationMs": 3365
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "footer remains composed with JavaScript disabled",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/footer-settled-tests.json",
+      "durationMs": 1134
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "footer stays available when the animation libraries fail to load",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/footer-settled-tests.json",
+      "durationMs": 1904
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/footer-settled-tests.json",
+      "durationMs": 5670
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/footer-settled-tests.json",
+      "durationMs": 5206
+    },
+    {
+      "file": "signature-footer.spec.ts",
+      "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/footer-settled-tests.json",
+      "durationMs": 6218
+    },
+    {
+      "file": "signature-squares.spec.ts",
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 1440px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/loader-browser-tests.json",
+      "durationMs": 5246
+    },
+    {
+      "file": "signature-squares.spec.ts",
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 320px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/loader-browser-tests.json",
+      "durationMs": 5055
+    },
+    {
+      "file": "signature-squares.spec.ts",
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 390px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/loader-browser-tests.json",
+      "durationMs": 5115
+    },
+    {
+      "file": "signature-squares.spec.ts",
+      "title": "six approved project posters reveal with the wave and keep SOL prominent at 768px",
+      "project": "",
+      "status": "passed",
+      "report": "artifacts/services-hero/loader-browser-tests.json",
+      "durationMs": 5219
+    }
+  ]
+}

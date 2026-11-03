@@ -1,0 +1,331 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-services-hero/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.services-regression.config.ts",
+      "--reporter=list,json",
+      "tests/browser/signature-footer.spec.ts"
+    ],
+    "configFile": "/workspace/drawnout-services-hero/playwright.services-regression.config.ts",
+    "rootDir": "/workspace/drawnout-services-hero/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-services-hero/test-results/services-regression",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-services-hero/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "about.spec.ts",
+          "services-hero-about.spec.ts",
+          "services.spec.ts",
+          "contact.spec.ts",
+          "footer-social.spec.ts",
+          "signature-footer.spec.ts"
+        ],
+        "timeout": 70000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-services-hero/test-results/services-regression",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-services-hero/tests/browser",
+        "snapshotDir": "/workspace/drawnout-services-hero/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "about.spec.ts",
+          "services-hero-about.spec.ts",
+          "services.spec.ts",
+          "contact.spec.ts",
+          "footer-social.spec.ts",
+          "signature-footer.spec.ts"
+        ],
+        "timeout": 70000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4397",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [["list"], ["json"]],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4397",
+      "url": "http://127.0.0.1:4397",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "signature-footer.spec.ts",
+      "file": "signature-footer.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5206,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T09:47:04.987Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-0e7ddaead3ee8fbe51d2",
+          "file": "signature-footer.spec.ts",
+          "line": 97,
+          "column": 3
+        },
+        {
+          "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6218,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T09:47:10.434Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-9d7a5f54b6daefead07e",
+          "file": "signature-footer.spec.ts",
+          "line": 97,
+          "column": 3
+        },
+        {
+          "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5670,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T09:47:16.668Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-3bc227a139aec0dc7ace",
+          "file": "signature-footer.spec.ts",
+          "line": 97,
+          "column": 3
+        },
+        {
+          "title": "footer reduced-motion preference restores composed static artwork and working navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3365,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T09:47:22.354Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-943a5b04170abd42fd1f",
+          "file": "signature-footer.spec.ts",
+          "line": 145,
+          "column": 1
+        },
+        {
+          "title": "footer remains composed with JavaScript disabled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1134,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T09:47:25.733Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-5e97f9abd413cbe2de5f",
+          "file": "signature-footer.spec.ts",
+          "line": 168,
+          "column": 1
+        },
+        {
+          "title": "footer stays available when the animation libraries fail to load",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1904,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T09:47:26.884Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-39164565ef84fb6ad94d",
+          "file": "signature-footer.spec.ts",
+          "line": 185,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T09:47:02.600Z",
+    "duration": 26328.107,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

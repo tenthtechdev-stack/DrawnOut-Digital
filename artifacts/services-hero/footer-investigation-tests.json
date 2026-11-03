@@ -1,0 +1,201 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-services-hero/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.services-regression.config.ts",
+      "--reporter=list,json",
+      "--grep=signature footer hand rises.*768px"
+    ],
+    "configFile": "/workspace/drawnout-services-hero/playwright.services-regression.config.ts",
+    "rootDir": "/workspace/drawnout-services-hero/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-services-hero/test-results/services-regression",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-services-hero/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "about.spec.ts",
+          "services-hero-about.spec.ts",
+          "services.spec.ts",
+          "contact.spec.ts",
+          "footer-social.spec.ts",
+          "signature-footer.spec.ts"
+        ],
+        "timeout": 70000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-services-hero/test-results/services-regression",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-services-hero/tests/browser",
+        "snapshotDir": "/workspace/drawnout-services-hero/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "about.spec.ts",
+          "services-hero-about.spec.ts",
+          "services.spec.ts",
+          "contact.spec.ts",
+          "footer-social.spec.ts",
+          "signature-footer.spec.ts"
+        ],
+        "timeout": 70000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4397",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [["list"], ["json"]],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4397",
+      "url": "http://127.0.0.1:4397",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "signature-footer.spec.ts",
+      "file": "signature-footer.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 768px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5787,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeCloseTo\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m, \u001b[22mprecision\u001b[2m)\u001b[22m\n\nExpected: \u001b[32m236.67\u001b[39m\nReceived: \u001b[31m246.365\u001b[39m\n\nExpected precision:    0\nExpected difference: < \u001b[32m0.5\u001b[39m\nReceived difference:   \u001b[31m9.695000000000022\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeCloseTo\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m, \u001b[22mprecision\u001b[2m)\u001b[22m\n\nExpected: \u001b[32m236.67\u001b[39m\nReceived: \u001b[31m246.365\u001b[39m\n\nExpected precision:    0\nExpected difference: < \u001b[32m0.5\u001b[39m\nReceived difference:   \u001b[31m9.695000000000022\u001b[39m\n    at /workspace/drawnout-services-hero/tests/browser/signature-footer.spec.ts:99:33",
+                    "location": {
+                      "file": "/workspace/drawnout-services-hero/tests/browser/signature-footer.spec.ts",
+                      "column": 33,
+                      "line": 99
+                    },
+                    "snippet": "   97 |     expectAssembled(expanded);\n   98 |     for (const layer of ['hand', 'plaque'] as const) {\n>  99 |       expect(reversed[layer].y).toBeCloseTo(beginning[layer].y, 0);\n      |                                 ^\n  100 |       expect(reversed[layer].opacity).toBeCloseTo(beginning[layer].opacity, 2);\n  101 |     }\n  102 |     expect(reversed.scale).toBeCloseTo(beginning.scale, 1);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-services-hero/tests/browser/signature-footer.spec.ts",
+                        "column": 33,
+                        "line": 99
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeCloseTo\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m, \u001b[22mprecision\u001b[2m)\u001b[22m\n\nExpected: \u001b[32m236.67\u001b[39m\nReceived: \u001b[31m246.365\u001b[39m\n\nExpected precision:    0\nExpected difference: < \u001b[32m0.5\u001b[39m\nReceived difference:   \u001b[31m9.695000000000022\u001b[39m\n\n   97 |     expectAssembled(expanded);\n   98 |     for (const layer of ['hand', 'plaque'] as const) {\n>  99 |       expect(reversed[layer].y).toBeCloseTo(beginning[layer].y, 0);\n      |                                 ^\n  100 |       expect(reversed[layer].opacity).toBeCloseTo(beginning[layer].opacity, 2);\n  101 |     }\n  102 |     expect(reversed.scale).toBeCloseTo(beginning.scale, 1);\n    at /workspace/drawnout-services-hero/tests/browser/signature-footer.spec.ts:99:33"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T09:43:34.798Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-services-hero/test-results/services-regression/signature-footer-signature-76d16-hout-moving-layout-at-768px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-services-hero/test-results/services-regression/signature-footer-signature-76d16-hout-moving-layout-at-768px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-services-hero/test-results/services-regression/signature-footer-signature-76d16-hout-moving-layout-at-768px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-services-hero/tests/browser/signature-footer.spec.ts",
+                    "column": 33,
+                    "line": 99
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-9d7a5f54b6daefead07e",
+          "file": "signature-footer.spec.ts",
+          "line": 70,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T09:43:32.292Z",
+    "duration": 8847.228,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

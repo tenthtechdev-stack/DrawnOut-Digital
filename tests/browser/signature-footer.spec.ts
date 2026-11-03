@@ -12,8 +12,35 @@ async function footerProgress(page: Page, progress: number) {
     .poll(async () =>
       Number(await page.locator('[data-site-footer]').getAttribute('data-footer-progress')),
     )
-    .toBeCloseTo(progress, 1);
-  await page.waitForTimeout(500);
+    .toBeCloseTo(progress, 2);
+  // The target attribute updates before the existing numeric GSAP scrub has
+  // settled. Observe the rendered pose instead of assuming 500ms is sufficient.
+  let previous: Awaited<ReturnType<typeof composition>> | undefined;
+  let stable = 0;
+  await expect
+    .poll(
+      async () => {
+        const current = await composition(page);
+        const target = Number(
+          await page.locator('[data-site-footer]').getAttribute('data-footer-progress'),
+        );
+        const same =
+          previous &&
+          Math.abs(target - progress) < 0.005 &&
+          Math.abs(current.hand.y - previous.hand.y) < 0.02 &&
+          Math.abs(current.plaque.y - previous.plaque.y) < 0.02 &&
+          Math.abs(current.hand.opacity - previous.hand.opacity) < 0.0001 &&
+          Math.abs(current.plaque.opacity - previous.plaque.opacity) < 0.0001 &&
+          Math.abs(current.scale - previous.scale) < 0.0001 &&
+          current.footerHeight === previous.footerHeight &&
+          current.documentHeight === previous.documentHeight;
+        stable = same ? stable + 1 : 0;
+        previous = current;
+        return stable;
+      },
+      { timeout: 5000, intervals: [100] },
+    )
+    .toBeGreaterThanOrEqual(4);
 }
 
 async function composition(page: Page) {

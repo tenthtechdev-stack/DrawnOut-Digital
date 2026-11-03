@@ -4,6 +4,8 @@ This milestone builds on the owner-reviewed About branch. The About refinement w
 
 [Complete Services gallery: all five scenes, start, wordmark, loop and fallbacks](services-README.md) · [About gallery](about-README.md) · [Validation and measured timings](../../docs/services-hero/VALIDATION.md) · [Handoff and later stages](../../docs/services-hero/HANDOFF.md)
 
+[Passing browser coverage with original/corrected report provenance](validation-summary.json)
+
 ## Services cinematic hero
 
 ![Brand Identity and Design scene at 1440px](services-1440-scene-1.png)
