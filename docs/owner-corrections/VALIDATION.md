@@ -80,8 +80,8 @@ application contract was weakened. Raw results remain accessible:
 - [About initial](../../artifacts/owner-corrections/about-initial-browser-tests.json) and [final](../../artifacts/owner-corrections/about-browser-tests.json).
 - [Intro initial](../../artifacts/owner-corrections/intro-browser-tests.json), [corrected contexts](../../artifacts/owner-corrections/intro-corrected-browser-tests.json) and [actual delayed scripts](../../artifacts/owner-corrections/intro-delayed-browser-tests.json).
 
-The restricted-sandbox unit attempt could not start an asset-test subprocess;
-the complete host rerun passed. A usage interruption stopped another browser run
+The restricted-sandbox unit invocation reported one failed asset-test file
+without a detailed nested diagnostic; the complete host rerun passed all 46 tests. A usage interruption stopped another browser run
 after five cases; that incomplete run is not counted as a pass.
 
 ## Preserved scope and limits
