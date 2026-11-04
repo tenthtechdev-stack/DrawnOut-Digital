@@ -13,6 +13,10 @@
   overflow: clip;
 }
 
+.about-page :is(h1, h2, h3) {
+  word-spacing: 0.05em;
+}
+
 .ap-section {
   padding-block: clamp(76px, 8.5vw, 124px);
 }
@@ -284,7 +288,7 @@
   line-height: 1;
   letter-spacing: -0.09em;
   font-weight: 600;
-  color: #d6ccba;
+  color: #82765f;
 }
 
 .ap-founders-art img {

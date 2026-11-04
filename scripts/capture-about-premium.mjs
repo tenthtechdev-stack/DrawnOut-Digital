@@ -323,13 +323,15 @@ try {
       await scrolling.goto('/about');
       await ready(scrolling);
       const snapshots = [];
-      const sections = scrolling.locator('[data-about-page] > section');
+      const sections = scrolling.locator(
+        '[data-about-page] > section, [data-about-editorial] > section',
+      );
       for (let index = 1; index < (await sections.count()); index++) {
         const top = await sections
           .nth(index)
           .evaluate((node) => node.getBoundingClientRect().top + scrollY - 90);
-        await wheelTo(scrolling, top, { step: width < 768 ? 260 : 320, delay: 100 });
-        await scrolling.waitForTimeout(500);
+        await wheelTo(scrolling, top, { step: width < 768 ? 150 : 190, delay: 140 });
+        await scrolling.waitForTimeout(700);
         snapshots.push({ direction: 'forward', section: index, facts: await facts(scrolling) });
       }
       const process = scrolling.locator('[data-about-process]');
@@ -340,8 +342,8 @@ try {
       await wheelTo(scrolling, processBox.top + processBox.height - 180, { step: 430, delay: 90 });
       for (const fraction of [1, 0.75, 0.5, 0.25, 0]) {
         await wheelTo(scrolling, processBox.top + processBox.height * fraction - 180, {
-          step: 170,
-          delay: 110,
+          step: 120,
+          delay: 150,
         });
         snapshots.push({ direction: 'reverse', fraction, facts: await facts(scrolling) });
       }

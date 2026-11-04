@@ -357,7 +357,7 @@ function changedFraction(before: Buffer, after: Buffer) {
       Math.abs(before[index]! - after[index]!) +
         Math.abs(before[index + 1]! - after[index + 1]!) +
         Math.abs(before[index + 2]! - after[index + 2]!) >
-      24
+      6
     )
       changed += 1;
   return changed / (before.length / 3);
@@ -372,6 +372,11 @@ for (const width of [390, 1440]) {
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');
     await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'running');
     const before = await heroPixels(page);
+    const gradientTransforms = () =>
+      page
+        .locator('[data-about-gradient] span')
+        .evaluateAll((nodes) => nodes.map((node) => getComputedStyle(node).transform));
+    const initialTransforms = await gradientTransforms();
     const copyGeometry = () =>
       page.locator('[data-about-headline], [data-about-intro] > p').evaluateAll((nodes) =>
         nodes.map((node) => {
@@ -385,9 +390,12 @@ for (const width of [390, 1440]) {
         }),
       );
     const stableCopy = await copyGeometry();
-    await page.waitForTimeout(1100);
+    // This intentionally quiet atmosphere has low contrast. Observe a meaningful
+    // part of its 17–21s cycle and check actual paint as well as layer movement.
+    await page.waitForTimeout(2400);
     const changed = changedFraction(before, await heroPixels(page));
     expect(changed).toBeGreaterThan(0.0001);
+    expect(await gradientTransforms()).not.toEqual(initialTransforms);
     expect(await copyGeometry()).toEqual(stableCopy);
     await page.locator('[data-about-philosophy]').scrollIntoViewIfNeeded();
     await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'paused');
