@@ -230,68 +230,75 @@ test('early resize and rapid internal navigation cannot leave stale arrival tran
   await expect(page.locator('main')).not.toHaveAttribute('inert');
 });
 
-async function processFrame(page: Page, requestedProgress: number) {
-  return page.locator(processSystem).evaluate(async (node, requested) => {
-    const initial = node.getBoundingClientRect();
-    const absolute = initial.top + scrollY;
-    const start = absolute - innerHeight * 0.84;
-    const end = absolute + initial.height - innerHeight * 0.34;
-    window.scrollTo({ top: start + (end - start) * requested, behavior: 'instant' });
-    await new Promise<void>((resolve) =>
-      requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
-    );
-    const box = node.getBoundingClientRect();
-    const expected = Math.max(
-      0,
-      Math.min(1, (innerHeight * 0.84 - box.top) / (box.height + innerHeight * 0.5)),
-    );
-    const line = node.querySelector('[data-about-process-line]')!;
-    return {
-      expected,
-      progress: Number((node as HTMLElement).dataset.aboutProcessProgress),
-      scrollProgress: Number((node as HTMLElement).dataset.aboutScrollProgress),
-      lineOffset: Number.parseFloat(getComputedStyle(line).strokeDashoffset),
-      scrollY,
-      phases: [...node.querySelectorAll<HTMLElement>('[data-about-process-phase]')].map((phase) =>
-        Number(phase.dataset.aboutPhaseProgress),
-      ),
-    };
-  }, requestedProgress);
+async function processFrame(page: Page, index: number, requestedProgress: number) {
+  return page
+    .locator(`${processSystem} [data-about-process-phase]`)
+    .nth(index)
+    .evaluate(async (node, requested) => {
+      const initial = node.getBoundingClientRect();
+      const absolute = initial.top + scrollY;
+      const start = absolute - innerHeight * 0.82;
+      const end = absolute - innerHeight * 0.3;
+      window.scrollTo({ top: start + (end - start) * requested, behavior: 'instant' });
+      await new Promise<void>((resolve) =>
+        requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
+      );
+      const box = node.getBoundingClientRect();
+      const expected = Math.max(
+        0,
+        Math.min(1, (innerHeight * 0.82 - box.top) / (innerHeight * 0.52)),
+      );
+      return {
+        expected,
+        progress: Number((node as HTMLElement).dataset.aboutPhaseProgress),
+        scrollProgress: Number((node as HTMLElement).dataset.aboutScrollProgress),
+        offsets: [...node.querySelectorAll('[data-about-process-stroke]')].map((stroke) =>
+          Number.parseFloat(getComputedStyle(stroke).strokeDashoffset),
+        ),
+        scrollY,
+      };
+    }, requestedProgress);
 }
 
 for (const width of [390, 1440]) {
-  test(`process stays directly synchronized through rapid scroll, reversal and resize at ${width}px`, async ({
+  test(`all four process artworks stay directly synchronized through rapid scroll, reversal and resize at ${width}px`, async ({
     page,
   }) => {
     await page.setViewportSize(viewportFor(width));
     await page.goto('/about');
     await page.keyboard.press('Escape');
     await expect(page.locator('[data-about-page]')).toHaveAttribute('data-about-motion', 'ready');
+    await expect(page.locator(`${processSystem} [data-about-process-phase]`)).toHaveCount(4);
     const samples = [];
-    for (const progress of [0.12, 0.58, 0.86, 0.24, 0.76, 0.04, 0.5]) {
-      const sample = await processFrame(page, progress);
-      samples.push(sample);
-      expect(Math.abs(sample.progress - sample.expected)).toBeLessThan(0.02);
-      expect(Math.abs(sample.scrollProgress - sample.expected)).toBeLessThan(0.02);
-      expect(Math.abs(sample.lineOffset - (1 - sample.expected))).toBeLessThan(0.025);
-      sample.phases.forEach((value, index) =>
-        expect(
-          Math.abs(value - Math.max(0, Math.min(1, sample.expected * 4 - index))),
-        ).toBeLessThan(0.025),
-      );
+    for (let index = 0; index < 4; index += 1) {
+      for (const progress of [0.12, 0.58, 0.86, 0.24, 0.76, 0.04, 0.5]) {
+        const sample = await processFrame(page, index, progress);
+        samples.push({ index, ...sample });
+        expect(Math.abs(sample.progress - sample.expected)).toBeLessThan(0.02);
+        expect(Math.abs(sample.scrollProgress - sample.expected)).toBeLessThan(0.02);
+        expect(sample.offsets.length).toBeGreaterThan(0);
+        for (const offset of sample.offsets)
+          expect(Math.abs(offset - (1 - sample.expected))).toBeLessThan(0.025);
+      }
+      const stopped = samples.at(-1)!;
+      await page.waitForTimeout(120);
+      const held = await page
+        .locator(`${processSystem} [data-about-process-phase]`)
+        .nth(index)
+        .locator('[data-about-process-stroke]')
+        .evaluateAll((nodes) =>
+          nodes.map((node) => Number.parseFloat(getComputedStyle(node).strokeDashoffset)),
+        );
+      for (const [strokeIndex, offset] of held.entries())
+        expect(Math.abs(offset - stopped.offsets[strokeIndex]!)).toBeLessThan(0.005);
     }
-    const stopped = samples.at(-1)!;
-    await page.waitForTimeout(120);
-    const held = await page
-      .locator('[data-about-process-line]')
-      .evaluate((node) => Number.parseFloat(getComputedStyle(node).strokeDashoffset));
-    expect(Math.abs(held - stopped.lineOffset)).toBeLessThan(0.005);
     const resizedWidth = width === 1440 ? 768 : 320;
     await page.setViewportSize(viewportFor(resizedWidth));
     await page.waitForTimeout(300);
-    const resized = await processFrame(page, 0.43);
+    const resized = await processFrame(page, 2, 0.43);
     expect(Math.abs(resized.progress - resized.expected)).toBeLessThan(0.02);
-    expect(Math.abs(resized.lineOffset - (1 - resized.expected))).toBeLessThan(0.025);
+    for (const offset of resized.offsets)
+      expect(Math.abs(offset - (1 - resized.expected))).toBeLessThan(0.025);
     expect(await page.locator('[data-about-page] .pin-spacer').count()).toBe(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
       resizedWidth,

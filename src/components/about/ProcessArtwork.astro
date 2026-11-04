@@ -1,0 +1,153 @@
+---
+interface Props {
+  phase: 'Thought' | 'Direction' | 'Form' | 'Connection';
+}
+const { phase } = Astro.props;
+---
+
+<!-- Original process studies: abstract demonstrations, not client project evidence. -->
+<svg
+  viewBox="0 0 640 480"
+  fill="none"
+  class="ap-process-artwork"
+  aria-hidden="true"
+  focusable="false"
+>
+  {phase === 'Thought' && (
+    <>
+      <rect width="640" height="480" fill="#e8e0d1" />
+      <path d="M0 120H640M0 240H640M0 360H640M160 0V480M320 0V480M480 0V480" stroke="#cec5b6" />
+      <path d="M66 68H574V412H66Z" stroke="#afa697" />
+      <g data-about-process-part>
+        <rect
+          x="170"
+          y="77"
+          width="300"
+          height="326"
+          rx="2"
+          fill="#fff8ee"
+          transform="rotate(-8 320 240)"
+        />
+        <path
+          d="M212 330C110 256 330 117 368 198S218 354 250 223 450 155 426 272 273 348 299 218 475 203 465 297"
+          stroke="#262522"
+          stroke-width="2"
+        />
+        <path
+          d="M213 330C110 256 330 117 368 198S218 354 250 223 450 155 426 272 273 348 299 218 475 203 465 297"
+          stroke="#f05a28"
+          stroke-width="7"
+          stroke-linecap="round"
+          data-about-process-stroke
+          pathLength="1"
+        />
+        <circle cx="262" cy="226" r="6" fill="#262522" />
+      </g>
+      <path d="M40 39H62M51 28V50M578 441H600M589 430V452" stroke="#262522" />
+      <text x="88" y="104" fill="#514c43" font-size="10" letter-spacing="2">
+        A THOUGHT, STILL OPEN.
+      </text>
+      <text x="466" y="391" fill="#514c43" font-size="10" letter-spacing="2">
+        01 / ASK
+      </text>
+    </>
+  )}
+  {phase === 'Direction' && (
+    <>
+      <rect width="640" height="480" fill="#252722" />
+      <path d="M0 240H640M320 0V480" stroke="#575a4e" />
+      <circle cx="320" cy="240" r="176" stroke="#6d705f" />
+      <circle cx="320" cy="240" r="116" stroke="#6d705f" stroke-dasharray="3 7" />
+      <path d="M63 358 320 240 563 101M96 77 320 240 550 369M320 38V443" stroke="#777c68" />
+      <g data-about-process-part>
+        <path d="M320 240 552 108 471 328Z" fill="#f05a28" />
+        <path d="M320 240 471 328 287 380Z" fill="#b2ba96" />
+        <path d="M88 151 320 240 287 380Z" fill="#ece7d9" />
+      </g>
+      <path
+        d="M88 151 320 240 552 108M513 107 552 108 533 144"
+        stroke="#fff8ee"
+        stroke-width="3"
+        data-about-process-stroke
+        pathLength="1"
+      />
+      <circle cx="320" cy="240" r="9" fill="#252722" stroke="#fff8ee" stroke-width="2" />
+      <text x="35" y="42" fill="#e6e5da" font-size="10" letter-spacing="2">
+        POSSIBILITY → DIRECTION
+      </text>
+      <text x="480" y="445" fill="#e6e5da" font-size="10" letter-spacing="2">
+        02 / EXPLORE
+      </text>
+    </>
+  )}
+  {phase === 'Form' && (
+    <>
+      <rect width="640" height="480" fill="#ed6b3c" />
+      <path d="M50 70H590M50 410H590M96 35V445M544 35V445" stroke="#973e22" />
+      <g data-about-process-part>
+        <path d="M180 117H400V337H180Z" fill="#f8ecd9" />
+        <path d="M400 117 480 197V417L400 337Z" fill="#c84927" />
+        <path d="M180 337H400L480 417H260Z" fill="#e3a778" />
+        <circle cx="290" cy="227" r="110" fill="#262522" />
+        <path d="M180 227H400M290 117V337" stroke="#f8ecd9" stroke-width="1.5" />
+        <path
+          d="M290 117 400 227 290 337 180 227Z"
+          stroke="#ef6b3b"
+          stroke-width="4"
+          data-about-process-stroke
+          pathLength="1"
+        />
+      </g>
+      <path d="M96 70 544 410M96 410 544 70" stroke="#983e23" stroke-dasharray="3 8" />
+      <text x="35" y="42" fill="#34261f" font-size="10" letter-spacing="2">
+        AN IDEA, GIVEN FORM.
+      </text>
+      <text x="484" y="455" fill="#34261f" font-size="10" letter-spacing="2">
+        03 / SHAPE
+      </text>
+    </>
+  )}
+  {phase === 'Connection' && (
+    <>
+      <rect width="640" height="480" fill="#e7e3d9" />
+      <path d="M54 49H586V431H54Z" stroke="#b7b1a5" />
+      <path d="M320 49V431M54 240H586" stroke="#b7b1a5" stroke-dasharray="3 7" />
+      <g data-about-process-part>
+        <rect x="93" y="87" width="178" height="258" fill="#282923" />
+        <circle cx="182" cy="171" r="50" fill="#f05a28" />
+        <path
+          d="M120 258H243M120 270H225M120 282H237M120 311H180"
+          stroke="#eae4d6"
+          stroke-width="3"
+        />
+        <rect x="299" y="117" width="236" height="155" fill="#f8f3e9" stroke="#b7b1a5" />
+        <circle cx="360" cy="184" r="38" fill="#f05a28" />
+        <path
+          d="M417 163H507M417 176H496M417 210H469M314 250H518"
+          stroke="#373930"
+          stroke-width="3"
+        />
+        <rect x="329" y="300" width="160" height="91" fill="#f05a28" />
+        <path d="M352 323H467M352 336H436M352 369H407" stroke="#272923" stroke-width="3" />
+      </g>
+      <path
+        d="M182 171H281V184H360M360 184H564V346H489M329 346H289V310H271"
+        stroke="#6f775f"
+        stroke-width="2"
+      />
+      <path
+        d="M182 171H281V184H360M360 184H564V346H489M329 346H289V310H271"
+        stroke="#272923"
+        stroke-width="3"
+        data-about-process-stroke
+        pathLength="1"
+      />
+      <text x="35" y="31" fill="#514c43" font-size="10" letter-spacing="2">
+        ONE STORY. EVERY DETAIL.
+      </text>
+      <text x="486" y="457" fill="#514c43" font-size="10" letter-spacing="2">
+        04 / REFINE
+      </text>
+    </>
+  )}
+</svg>

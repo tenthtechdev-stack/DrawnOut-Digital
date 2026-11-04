@@ -172,8 +172,8 @@ export const aboutPage = {
   },
   invitation: {
     eyebrow: '07 / YOUR TURN',
-    heading: "Have an idea you can't stop thinking about?",
-    supportingCopy: "We know that feeling. It's how DrawnOut began.",
+    heading: "Have something in mind? Let's make it matter.",
+    supportingCopy: 'Every meaningful brand starts somewhere. Tell us where yours begins.',
     cta: { label: "Tell us what you're thinking", href: '/contact' },
   },
 } as const satisfies AboutPageContent;

@@ -1,0 +1,191 @@
+---
+import { Image } from 'astro:assets';
+import { aboutPage } from '../../data/about';
+import plaque from '../../assets/signature/emblem-plaque.png';
+import FounderPortrait from './FounderPortrait.astro';
+import '../../styles/about-premium-hero.css';
+
+const { hero } = aboutPage;
+const headline = ['Two twins.', 'One idea.', 'A whole lot', 'of creativity.'];
+---
+
+<section
+  class="premium-about-hero"
+  aria-labelledby="about-title"
+  data-about-hero
+  data-theme="dark"
+  data-about-hero-phase="settled"
+  data-about-emblem-status="approved-raster-prototype"
+>
+  <div class="premium-about-hero__layout page-frame" data-about-hero-layout>
+    <header class="premium-about-hero__heading">
+      <h1 id="about-title" aria-label={hero.heading}>
+        {headline.map((line) => (
+          <span class="premium-about-hero__line">
+            <span data-about-headline>{line} </span>
+          </span>
+        ))}
+      </h1>
+    </header>
+
+    <figure class="premium-about-hero__portrait" data-about-portrait>
+      <div class="premium-about-hero__composition" data-about-composition>
+        <div class="premium-about-hero__atmosphere" data-about-gradient aria-hidden="true">
+          <span class="premium-about-hero__glow premium-about-hero__glow--amber" />
+          <span class="premium-about-hero__glow premium-about-hero__glow--coral" />
+          <span class="premium-about-hero__glow premium-about-hero__glow--orange" />
+        </div>
+        <div class="premium-about-hero__registration" aria-hidden="true">
+          <span>From one thought</span>
+          <span>to something real.</span>
+        </div>
+        <!-- The approved plaque's source-pixel layer, framed to its alpha bounds.
+             Layered raster presentation; this is not a new editable 3D model. -->
+        <div
+          class="premium-about-hero__plaque"
+          data-about-plaque
+          data-about-plaque-source="signature/emblem-plaque.png"
+          aria-hidden="true"
+        >
+          <div class="premium-about-hero__plaque-frame">
+            <Image
+              src={plaque}
+              alt=""
+              widths={[450, 810]}
+              sizes="(max-width: 639px) 55vw, (max-width: 1023px) 35vw, 440px"
+              loading="eager"
+              decoding="async"
+              format="webp"
+              quality={92}
+              data-about-plaque-image
+            />
+          </div>
+        </div>
+        <div class="premium-about-hero__artwork" data-about-artwork>
+          <FounderPortrait />
+        </div>
+        <div class="premium-about-hero__axis" aria-hidden="true">
+          <span>02</span>
+          <i />
+        </div>
+      </div>
+      <figcaption data-about-caption>
+        <span>{hero.caption}</span>
+        <span aria-hidden="true">DrawnOut / The founders</span>
+      </figcaption>
+    </figure>
+
+    <div class="premium-about-hero__intro" data-about-intro>
+      {hero.paragraphs.map((paragraph) => (
+        <p data-about-hero-paragraph>{paragraph}</p>
+      ))}
+    </div>
+
+    <div class="premium-about-hero__signoff" data-about-signoff>
+      <p>{hero.supportingLabel}</p>
+      <a href="#our-beginning" class="premium-about-hero__story-link">
+        Follow the thought <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // Static HTML is complete. This short gate owns its own fail-open deadline,
+  // so a delayed/failed external module cannot leave the composition hidden.
+  (() => {
+    const hero = document.currentScript?.previousElementSibling;
+    const page = hero?.closest('[data-about-page]');
+    if (!hero?.matches('[data-about-hero]') || !page) return;
+    page.dataset.aboutArrivalAt = String(performance.now());
+    let deadline;
+    let controller;
+    const clean = () => {
+      clearTimeout(deadline);
+      controller?.abort();
+      hero.removeAttribute('data-about-prepaint');
+    };
+    const release = (reason) => {
+      if (hero.dataset.aboutBoot !== 'pending') return;
+      clean();
+      hero.dataset.aboutBoot = 'released';
+      hero.dataset.aboutEntrance = 'static';
+      hero.dataset.aboutHeroPhase = 'settled';
+      hero.dataset.aboutArrivalScene = 'settled';
+      hero.dataset.aboutSettleReason = `boot-${reason}`;
+    };
+    try {
+      const preference = matchMedia('(prefers-reduced-motion: reduce)');
+      const connection = Reflect.get(navigator, 'connection');
+      const navigation = performance.getEntriesByType('navigation')[0];
+      if (
+        preference.matches ||
+        connection?.saveData ||
+        document.hidden ||
+        location.hash ||
+        scrollY > 0 ||
+        navigation?.type === 'back_forward' ||
+        typeof Element.prototype.animate !== 'function' ||
+        (document.activeElement && document.activeElement !== document.body)
+      ) {
+        hero.dataset.aboutBoot = 'skipped';
+        return;
+      }
+      controller = new AbortController();
+      const { signal } = controller;
+      const input = (event) => {
+        if (event.type === 'scroll' && scrollX === 0 && scrollY === 0) return;
+        release('input');
+      };
+      window.addEventListener('wheel', input, { passive: true, signal });
+      window.addEventListener('touchstart', input, { passive: true, signal });
+      window.addEventListener('pointerdown', input, { capture: true, passive: true, signal });
+      window.addEventListener('keydown', input, { capture: true, signal });
+      window.addEventListener('scroll', input, { passive: true, signal });
+      window.addEventListener('resize', () => release('resize'), { signal });
+      window.addEventListener('pagehide', () => release('navigation'), { signal });
+      document.addEventListener('focusin', input, { signal });
+      document.addEventListener(
+        'visibilitychange',
+        () => {
+          if (document.hidden) release('hidden');
+        },
+        { signal },
+      );
+      preference.addEventListener(
+        'change',
+        () => {
+          if (preference.matches) release('reduced-motion');
+        },
+        { signal },
+      );
+      connection?.addEventListener?.(
+        'change',
+        () => {
+          if (connection.saveData) release('save-data');
+        },
+        { signal },
+      );
+      hero.addEventListener('about:boot-release', () => release('module'), { signal });
+      hero.addEventListener(
+        'about:boot-handoff',
+        () => {
+          clean();
+          hero.dataset.aboutBoot = 'handed-off';
+        },
+        { signal },
+      );
+      deadline = setTimeout(() => release('deadline'), 550);
+      hero.dataset.aboutBoot = 'pending';
+      hero.dataset.aboutHeroPhase = 'arrival';
+      hero.dataset.aboutArrivalScene = 'portrait';
+      hero.setAttribute('data-about-prepaint', '');
+    } catch {
+      clean();
+      hero.dataset.aboutBoot = 'released';
+      hero.dataset.aboutHeroPhase = 'settled';
+      hero.dataset.aboutArrivalScene = 'settled';
+      hero.dataset.aboutSettleReason = 'boot-failure';
+    }
+  })();
+</script>

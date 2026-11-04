@@ -17,7 +17,7 @@ test('production About includes the full story, approved derived portrait and tr
   const html = await readFile('dist/about/index.html', 'utf8');
   const text = decode(html.replace(/<[^>]*>/g, ' '));
   assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1);
-  assert.equal((html.match(/<section\b[^>]*aria-labelledby="about-/g) ?? []).length, 7);
+  assert.equal((html.match(/<section\b[^>]*aria-labelledby="about-/g) ?? []).length, 8);
   assert.ok(html.includes(`<title>${aboutPage.metadata.title}</title>`));
   assert.ok(html.includes(aboutPage.metadata.description));
   assert.match(html, /name="robots" content="noindex, nofollow"/);
@@ -29,14 +29,12 @@ test('production About includes the full story, approved derived portrait and tr
     aboutPage.founders,
     aboutPage.philosophy,
     aboutPage.approach,
-    aboutPage.audience,
     aboutPage.invitation,
   ])
     assert.ok(text.includes(chapter.heading), `Missing chapter: ${chapter.heading}`);
   for (const paragraph of [
     ...aboutPage.hero.paragraphs,
     ...aboutPage.origin.paragraphs,
-    ...aboutPage.audience.paragraphs,
     ...aboutPage.founders.profiles.flatMap(({ role, experience, description }) => [
       role,
       experience,
@@ -50,6 +48,20 @@ test('production About includes the full story, approved derived portrait and tr
     ...aboutPage.approach.phases.flatMap(({ heading, description }) => [heading, description]),
   ])
     assert.ok(text.includes(paragraph), `Missing supplied copy: ${paragraph}`);
+  assert.equal((html.match(/data-about-section="0[1-7]"/g) ?? []).length, 7);
+  assert.match(html, /data-about-capabilities/);
+  assert.match(html, /data-about-difference/);
+  assert.match(html, /emblem-plaque/);
+  assert.ok(text.includes("Have something in mind? Let's make it matter."));
+  assert.ok(text.includes('Every meaningful brand starts somewhere. Tell us where yours begins.'));
+  for (const slug of [
+    'brand-identity',
+    'digital-design',
+    'marketing-campaigns',
+    'words-storytelling',
+    'creative-direction',
+  ])
+    assert.ok(html.includes(`href="/services/${slug}"`), `Missing service: ${slug}`);
   assert.match(html, /data-portrait-state="approved"/);
   assert.match(html, /founders-sketch-approved/);
   assert.doesNotMatch(html, /data-private-portrait-review|data:image\/|Private portrait review/);

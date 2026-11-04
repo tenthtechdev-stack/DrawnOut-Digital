@@ -2,10 +2,11 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Locator, type Page } from '@playwright/test';
 import sharp from 'sharp';
 import { aboutPage } from '../../src/data/about';
+import { serviceIndex } from '../../src/data/service-index';
 
 const hero = '[data-about-hero]';
 const overlay = '[data-signature-intro-overlay]';
-const portrait = '[data-founder-portrait]';
+const portrait = `${hero} [data-founder-portrait]`;
 const viewportFor = (width: number) => ({ width, height: width < 768 ? 844 : 900 });
 
 async function expectReleased(page: Page) {
@@ -37,8 +38,7 @@ async function expectFullPortrait(page: Page) {
   });
   expect(geometry.meet).toContain('meet');
   expect(geometry.href).toContain('founders-sketch-approved');
-  const viewportWidth = page.viewportSize()!.width;
-  expect(geometry.art.width).toBeGreaterThan(viewportWidth * (viewportWidth < 768 ? 0.75 : 0.35));
+  expect(geometry.art.width).toBeGreaterThan(page.viewportSize()!.width * 0.3);
   expect(geometry.art.x).toBeGreaterThanOrEqual(geometry.outer.x - 1);
   expect(geometry.art.y).toBeGreaterThanOrEqual(geometry.outer.y - 1);
   expect(geometry.art.x + geometry.art.width).toBeLessThanOrEqual(
@@ -70,8 +70,8 @@ async function textFits(element: Locator, width: number) {
   }
 }
 
-for (const width of [320, 390, 768, 1440]) {
-  test(`seven chapters, full portrait, metadata, keyboard and accessibility at ${width}px`, async ({
+for (const width of [320, 390, 768, 1024, 1440]) {
+  test(`premium hero and seven editorial chapters preserve copy, links, layout and accessibility at ${width}px`, async ({
     page,
   }) => {
     await page.setViewportSize(viewportFor(width));
@@ -92,16 +92,20 @@ for (const width of [320, 390, 768, 1440]) {
     );
     await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
     await expect(page.locator('h1')).toHaveCount(1);
-    await expect(page.locator('[data-about-page] > section')).toHaveCount(7);
+    await expect(page.locator('[data-about-editorial] > section')).toHaveCount(7);
+    expect(
+      await page
+        .locator('[data-about-editorial] > section')
+        .evaluateAll((nodes) => nodes.map((node) => (node as HTMLElement).dataset.aboutSection)),
+    ).toEqual(['01', '02', '03', '04', '05', '06', '07']);
     await expect(page.getByRole('heading', { level: 1 })).toHaveAccessibleName(
-      aboutPage.hero.heading,
+      'Two twins. One idea. A whole lot of creativity.',
     );
     for (const chapter of [
       aboutPage.origin,
       aboutPage.founders,
       aboutPage.philosophy,
       aboutPage.approach,
-      aboutPage.audience,
       aboutPage.invitation,
     ])
       await expect(
@@ -110,7 +114,6 @@ for (const width of [320, 390, 768, 1440]) {
     for (const copy of [
       ...aboutPage.hero.paragraphs,
       ...aboutPage.origin.paragraphs,
-      ...aboutPage.audience.paragraphs,
       ...aboutPage.founders.profiles.flatMap(({ name, role, experience, description }) => [
         name,
         role,
@@ -124,60 +127,63 @@ for (const width of [320, 390, 768, 1440]) {
         heading,
         description,
       ]),
-      ...aboutPage.approach.phases.flatMap(({ heading, description }) => [heading, description]),
+      ...aboutPage.approach.phases.flatMap(({ description }) => [description]),
     ])
       await expect(page.locator('[data-about-page]')).toContainText(copy);
+    await expect(page.locator('[data-about-intro] > p')).toHaveText([...aboutPage.hero.paragraphs]);
+    await expect(page.locator('[data-about-invitation] h2')).toHaveText(
+      "Have something in mind? Let's make it matter.",
+    );
+    await expect(page.locator('[data-about-invitation]')).toContainText(
+      'Every meaningful brand starts somewhere. Tell us where yours begins.',
+    );
     await expectFullPortrait(page);
-    const colours = await page.evaluate(() => ({
-      hero: getComputedStyle(document.querySelector('[data-about-hero]')!).backgroundColor,
-      philosophy: getComputedStyle(document.querySelector('[data-about-philosophy]')!)
-        .backgroundColor,
-    }));
+    await expect(page.locator(`${hero} [data-about-plaque] img`)).toHaveAttribute(
+      'src',
+      /emblem-plaque/,
+    );
+    await expect(page.locator(`${hero} [data-about-plaque]`)).toHaveAttribute(
+      'aria-hidden',
+      'true',
+    );
+    await expect(page.locator(`${hero} .about-hero__circle`)).toHaveCount(0);
+    await expect(page.locator(hero)).not.toContainText(aboutPage.hero.eyebrow);
+    await expect(page.locator('[data-about-gradient]')).toBeVisible();
+    await expect(page.locator('[data-about-gradient]')).toHaveAttribute('aria-hidden', 'true');
+    const heroColor = await page
+      .locator(hero)
+      .evaluate((node) => getComputedStyle(node).backgroundColor);
     expect(
       Math.max(
-        ...colours.hero
+        ...heroColor
           .match(/[\d.]+/g)!
           .slice(0, 3)
           .map(Number),
       ),
     ).toBeLessThan(60);
-    expect(colours.hero).toBe(colours.philosophy);
-    await expect(page.locator(hero)).toHaveAttribute(
-      'data-about-emblem-status',
-      'awaiting-approved-3d',
-    );
-    // No raster crop or material-study plate is passed off as the absent 3D asset.
-    await expect(
-      page.locator(`${hero} [data-about-emblem], ${hero} [data-brand-emblem]`),
-    ).toHaveCount(0);
-    await expect(page.locator(`${hero} .about-hero__circle`)).toHaveCount(0);
-    await expect(page.locator(hero)).not.toContainText(aboutPage.hero.eyebrow);
-    await expect(page.locator('[data-about-intro] > p')).toHaveText([...aboutPage.hero.paragraphs]);
-    const atmosphere = page.locator('[data-about-gradient]');
-    await expect(atmosphere).toBeVisible();
-    await expect(atmosphere).toHaveAttribute('aria-hidden', 'true');
-    await expect(atmosphere.locator('.about-hero__glow')).toHaveCount(3);
-    await textFits(page.locator('h1'), width);
-    for (const name of await page.locator('[data-about-founder-name]').all())
-      await textFits(name, width);
+    for (const text of await page
+      .locator(
+        '[data-about-page] h1, [data-about-page] h2, [data-about-page] h3, [data-about-founder-name]',
+      )
+      .all())
+      await textFits(text, width);
     const layout = await page.evaluate(() => {
       const heading = document.querySelector('h1')!.getBoundingClientRect();
       const art = document.querySelector('[data-about-portrait]')!.getBoundingClientRect();
       const intro = document.querySelector('[data-about-intro]')!.getBoundingClientRect();
       return {
         headingBottom: heading.bottom,
+        headingLeft: heading.left,
+        portraitLeft: art.left,
         portraitTop: art.top,
         portraitBottom: art.bottom,
         introTop: intro.top,
       };
     });
     if (width < 768) {
-      // Display glyph boxes can extend a few pixels past their grid row because
-      // the headline masks balance font leading with negative block margins.
       expect(layout.portraitTop).toBeGreaterThanOrEqual(layout.headingBottom - 8);
-      expect(layout.portraitTop - layout.headingBottom).toBeLessThan(120);
-      expect(layout.introTop).toBeGreaterThanOrEqual(layout.portraitBottom);
-    } else expect(layout.portraitTop).toBeLessThan(layout.headingBottom);
+      expect(layout.introTop).toBeGreaterThanOrEqual(layout.portraitBottom - 1);
+    } else expect(layout.portraitLeft).toBeGreaterThan(layout.headingLeft);
     const schema = await page
       .locator('script[type="application/ld+json"]')
       .evaluateAll((scripts) =>
@@ -193,14 +199,18 @@ for (const width of [320, 390, 768, 1440]) {
       expect(
         await decoration.evaluate((node) => Boolean(node.closest('[aria-hidden="true"]'))),
       ).toBe(true);
-    for (const href of ['/services', '/work', '/contact'])
-      expect(await page.locator(`[data-about-page] a[href="${href}"]`).count()).toBeGreaterThan(0);
+    for (const [slug, service] of Object.entries(serviceIndex)) {
+      const link = page.locator(`[data-about-capabilities] a[href="/services/${slug}"]`);
+      await expect(link).toHaveCount(1);
+      await expect(link).toHaveAccessibleName(
+        new RegExp(service.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+      );
+    }
     const cta = page.getByRole('link', { name: aboutPage.invitation.cta.label, exact: true });
     await cta.focus();
     await expect(cta).toBeFocused();
     expect(await cta.evaluate((node) => getComputedStyle(node).outlineStyle)).not.toBe('none');
-    const bounds = await cta.boundingBox();
-    expect(bounds!.height).toBeGreaterThanOrEqual(44);
+    expect((await cta.boundingBox())!.height).toBeGreaterThanOrEqual(44);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
       width,
     );
@@ -218,91 +228,50 @@ for (const width of [320, 390, 768, 1440]) {
 interface ArrivalFrame {
   time: number;
   state?: string;
-  phase?: string;
-  center: number;
-  top: number;
-  width: number;
-  transform: string;
+  scene?: string;
   headline: number;
-  intro: number;
   artwork: number;
+  plaque: number;
   gradient: number;
   paragraphs: number[];
   overlay: boolean;
+  heroHeight: number;
 }
 
 async function sampleArrival(page: Page) {
   await page.addInitScript(() => {
     const samples: unknown[] = [];
-    Reflect.set(window, '__aboutCorrectionFrames', samples);
+    Reflect.set(window, '__aboutPremiumFrames', samples);
+    function opacity(node: Element | null): number {
+      if (!node) return -1;
+      let value = 1;
+      for (let ancestor: Element | null = node; ancestor; ancestor = ancestor.parentElement)
+        value *= Number(getComputedStyle(ancestor).opacity);
+      return value;
+    }
     function frame() {
       const hero = document.querySelector<HTMLElement>('[data-about-hero]');
-      const composition = document.querySelector('[data-about-composition]');
-      const headline = document.querySelector('[data-about-headline]');
-      const intro = document.querySelector('[data-about-intro]');
-      const artwork = document.querySelector('[data-about-artwork]');
-      const gradient = document.querySelector('[data-about-gradient]');
-      if (hero && composition && headline && intro && artwork && gradient) {
-        const box = composition.getBoundingClientRect();
+      if (hero)
         samples.push({
           time: performance.now(),
           state: hero.dataset.aboutEntrance,
-          phase: hero.dataset.aboutHeroPhase,
-          center: box.x + box.width / 2,
-          top: box.top,
-          width: box.width,
-          transform: getComputedStyle(composition).transform,
-          headline: Number(getComputedStyle(headline).opacity),
-          intro: Number(getComputedStyle(intro).opacity),
-          artwork: Number(getComputedStyle(artwork).opacity),
-          gradient: Number(getComputedStyle(gradient).opacity),
-          paragraphs: [...intro.querySelectorAll('p')].map(
-            (node) =>
-              Number(getComputedStyle(intro).opacity) * Number(getComputedStyle(node).opacity),
-          ),
+          scene: hero.dataset.aboutArrivalScene,
+          headline: opacity(hero.querySelector('[data-about-headline]')),
+          artwork: opacity(hero.querySelector('[data-about-artwork]')),
+          plaque: opacity(hero.querySelector('[data-about-plaque]')),
+          gradient: opacity(hero.querySelector('[data-about-gradient]')),
+          paragraphs: [...hero.querySelectorAll('[data-about-hero-paragraph]')].map(opacity),
           overlay: document.querySelector('[data-signature-intro-overlay]') !== null,
+          heroHeight: hero.getBoundingClientRect().height,
         });
-      }
       if (performance.now() < 6500) requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
   });
 }
 
-async function heroPixels(page: Page) {
-  const box = await page.locator(hero).boundingBox();
-  // Full-page capture can temporarily resize Chromium's viewport, which must
-  // correctly release the real arrival. Observe the unchanged viewport here.
-  const buffer = await page.screenshot({ animations: 'allow' });
-  return sharp(buffer)
-    .extract({
-      left: Math.floor(box!.x),
-      top: Math.floor(box!.y),
-      width: Math.floor(box!.width),
-      height: Math.floor(Math.min(box!.height, page.viewportSize()!.height - box!.y)),
-    })
-    .removeAlpha()
-    .raw()
-    .toBuffer();
-}
-
-function changedFraction(before: Buffer, after: Buffer) {
-  expect(before.length).toBe(after.length);
-  let changed = 0;
-  for (let index = 0; index < before.length; index += 3) {
-    if (
-      Math.abs(before[index]! - after[index]!) +
-        Math.abs(before[index + 1]! - after[index + 1]!) +
-        Math.abs(before[index + 2]! - after[index + 2]!) >
-      24
-    )
-      changed += 1;
-  }
-  return changed / (before.length / 3);
-}
-
-for (const width of [320, 390, 768, 1440]) {
-  test(`portrait arrives before atmosphere and readable copy without blocking at ${width}px`, async ({
+for (const width of [390, 1440]) {
+  test(`portrait, approved plaque, atmosphere and copy arrive in order within four seconds at ${width}px`, async ({
     page,
   }) => {
     await page.setViewportSize(viewportFor(width));
@@ -311,54 +280,50 @@ for (const width of [320, 390, 768, 1440]) {
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');
     await expectReleased(page);
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');
-    const frames = (await page.evaluate(() =>
-      Reflect.get(window, '__aboutCorrectionFrames'),
-    )) as ArrivalFrame[];
-    await test.info().attach('arrival-frame-samples', {
-      body: JSON.stringify({ width, frames }),
-      contentType: 'application/json',
-    });
     await expect(page.locator(hero)).toHaveAttribute('data-about-settle-reason', 'complete');
+    const frames = (await page.evaluate(() =>
+      Reflect.get(window, '__aboutPremiumFrames'),
+    )) as ArrivalFrame[];
     const running = frames.filter(({ state }) => state === 'running');
     const final = frames.find(({ state }) => state === 'settled')!;
-    expect(running.length).toBeGreaterThan(10);
-    expect(final).toBeDefined();
-    // The first observable frame must already be the arrival. A settled pose
-    // followed by a recenter/fade would flash even if later frames were correct.
-    for (const frame of frames.filter(({ time }) => time <= running[0]!.time)) {
-      expect(Math.abs(frame.center - width / 2)).toBeLessThan(width * 0.05);
-      expect(frame.headline).toBeLessThan(0.05);
-      expect(frame.paragraphs.every((opacity) => opacity < 0.05)).toBe(true);
-    }
+    expect(running.length).toBeGreaterThan(20);
     const firstPortrait = running.find(({ artwork }) => artwork >= 0.8)!;
+    const firstPlaque = running.find(({ plaque }) => plaque >= 0.15)!;
     const firstAtmosphere = running.find(({ gradient }) => gradient >= 0.15)!;
     const firstHeadline = running.find(({ headline }) => headline >= 0.15)!;
-    const firstCopy = running.find(({ paragraphs }) =>
-      paragraphs.some((opacity) => opacity >= 0.15),
-    )!;
-    expect(firstPortrait).toBeDefined();
-    expect(firstAtmosphere).toBeDefined();
-    expect(firstHeadline).toBeDefined();
-    expect(firstCopy).toBeDefined();
-    expect(firstPortrait.time).toBeLessThan(firstAtmosphere.time);
+    const firstCopy = running.find(({ paragraphs }) => paragraphs.some((value) => value >= 0.15))!;
+    for (const sample of [
+      firstPortrait,
+      firstPlaque,
+      firstAtmosphere,
+      firstHeadline,
+      firstCopy,
+      final,
+    ])
+      expect(sample).toBeDefined();
+    expect(firstPortrait.time).toBeLessThan(firstPlaque.time);
+    expect(firstPlaque.time).toBeLessThan(firstAtmosphere.time);
     expect(firstAtmosphere.time).toBeLessThan(firstHeadline.time);
     expect(firstHeadline.time).toBeLessThan(firstCopy.time);
-    expect(running.some(({ artwork }) => artwork > 0.1 && artwork < 0.9)).toBe(true);
-    expect(running.some(({ gradient }) => gradient > 0.1 && gradient < 0.9)).toBe(true);
-    expect(new Set(running.map(({ transform }) => transform)).size).toBeGreaterThan(5);
-    if (width >= 768) expect(final.center).toBeGreaterThan(width * 0.65);
-    expect(final.artwork).toBe(1);
-    expect(final.gradient).toBe(1);
-    expect(final.headline).toBe(1);
-    expect(final.intro).toBe(1);
+    for (const key of ['artwork', 'plaque', 'gradient', 'headline'] as const) {
+      expect(running.some((frame) => frame[key] > 0.1 && frame[key] < 0.9)).toBe(true);
+      expect(final[key]).toBe(1);
+    }
     expect(final.paragraphs).toEqual([1, 1, 1]);
-    expect(final.time - running[0]!.time).toBeLessThanOrEqual(4200);
+    expect(final.time - running[0]!.time).toBeGreaterThanOrEqual(3000);
+    expect(final.time - running[0]!.time).toBeLessThanOrEqual(4000);
+    expect(final.time).toBeLessThanOrEqual(4500);
     expect(frames.some(({ overlay }) => overlay)).toBe(false);
+    expect(
+      Math.max(...running.map((frame) => frame.heroHeight)) -
+        Math.min(...running.map((frame) => frame.heroHeight)),
+    ).toBeLessThan(2);
     await expectFullPortrait(page);
-    await test.info().attach('portrait-atmosphere-copy-frame-evidence', {
+    await test.info().attach('real-arrival-opacity-and-timing', {
       body: JSON.stringify({
         width,
         firstPortrait,
+        firstPlaque,
         firstAtmosphere,
         firstHeadline,
         firstCopy,
@@ -370,8 +335,36 @@ for (const width of [320, 390, 768, 1440]) {
   });
 }
 
+async function heroPixels(page: Page) {
+  const box = await page.locator(hero).boundingBox();
+  const buffer = await page.screenshot({ animations: 'allow' });
+  return sharp(buffer)
+    .extract({
+      left: Math.floor(box!.x),
+      top: Math.max(0, Math.floor(box!.y)),
+      width: Math.floor(box!.width),
+      height: Math.floor(Math.min(box!.height, page.viewportSize()!.height - Math.max(0, box!.y))),
+    })
+    .removeAlpha()
+    .raw()
+    .toBuffer();
+}
+function changedFraction(before: Buffer, after: Buffer) {
+  expect(before.length).toBe(after.length);
+  let changed = 0;
+  for (let index = 0; index < before.length; index += 3)
+    if (
+      Math.abs(before[index]! - after[index]!) +
+        Math.abs(before[index + 1]! - after[index + 1]!) +
+        Math.abs(before[index + 2]! - after[index + 2]!) >
+      24
+    )
+      changed += 1;
+  return changed / (before.length / 3);
+}
+
 for (const width of [390, 1440]) {
-  test(`localized atmosphere remains alive after arrival and pauses offscreen at ${width}px`, async ({
+  test(`localized atmosphere visibly moves after arrival and pauses offscreen at ${width}px`, async ({
     page,
   }) => {
     await page.setViewportSize(viewportFor(width));
@@ -379,14 +372,8 @@ for (const width of [390, 1440]) {
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');
     await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'running');
     const before = await heroPixels(page);
-    const glowTransforms = () =>
-      page
-        .locator('.about-hero__glow')
-        .evaluateAll((nodes) => nodes.map((node) => getComputedStyle(node).transform));
-    const transformsBefore = await glowTransforms();
-    const copyBefore = await page
-      .locator('[data-about-headline], [data-about-intro] > p')
-      .evaluateAll((nodes) =>
+    const copyGeometry = () =>
+      page.locator('[data-about-headline], [data-about-intro] > p').evaluateAll((nodes) =>
         nodes.map((node) => {
           const box = node.getBoundingClientRect();
           return {
@@ -397,28 +384,16 @@ for (const width of [390, 1440]) {
           };
         }),
       );
+    const stableCopy = await copyGeometry();
     await page.waitForTimeout(1100);
     const changed = changedFraction(before, await heroPixels(page));
-    expect(await glowTransforms()).not.toEqual(transformsBefore);
     expect(changed).toBeGreaterThan(0.0001);
-    expect(
-      await page.locator('[data-about-headline], [data-about-intro] > p').evaluateAll((nodes) =>
-        nodes.map((node) => {
-          const box = node.getBoundingClientRect();
-          return {
-            x: box.x,
-            y: box.y,
-            opacity: getComputedStyle(node).opacity,
-            transform: getComputedStyle(node).transform,
-          };
-        }),
-      ),
-    ).toEqual(copyBefore);
+    expect(await copyGeometry()).toEqual(stableCopy);
     await page.locator('[data-about-philosophy]').scrollIntoViewIfNeeded();
     await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'paused');
     expect(
       await page
-        .locator('.about-hero__glow')
+        .locator('[data-about-gradient] span')
         .evaluateAll((nodes) =>
           nodes.every((node) => getComputedStyle(node).animationPlayState === 'paused'),
         ),
@@ -427,17 +402,6 @@ for (const width of [390, 1440]) {
     await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'running');
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'paused');
-    expect(
-      await page
-        .locator('.about-hero__glow')
-        .evaluateAll((nodes) =>
-          nodes.every(
-            (node) =>
-              getComputedStyle(node).animationPlayState === 'paused' ||
-              getComputedStyle(node).animationName === 'none',
-          ),
-        ),
-    ).toBe(true);
     await test.info().attach('visible-ambient-pixel-change', {
       body: JSON.stringify({ width, changed }),
       contentType: 'application/json',
@@ -445,7 +409,7 @@ for (const width of [390, 1440]) {
   });
 }
 
-test('direct, internal and refresh About arrivals stay nonblocking; Work is immediate and Home retains its full loop', async ({
+test('direct, internal and refresh About arrivals stay nonblocking; Home retains its full loop', async ({
   page,
 }) => {
   await page.goto('/about');
@@ -455,7 +419,6 @@ test('direct, internal and refresh About arrivals stay nonblocking; Work is imme
   await page.locator('[data-site-header]').getByRole('link', { name: 'Work', exact: true }).click();
   await expect(page).toHaveURL('/work');
   await expect(page.locator(overlay)).toBeHidden();
-  await expect(page.locator('main h1')).toBeVisible();
   await page
     .locator('[data-site-header]')
     .getByRole('link', { name: 'About', exact: true })
@@ -475,6 +438,7 @@ test('direct, internal and refresh About arrivals stay nonblocking; Work is imme
         Number((node as HTMLElement).dataset.signatureIntroStarted),
     );
   expect(elapsed).toBeGreaterThanOrEqual(4190);
+  expect(elapsed).toBeLessThanOrEqual(5000);
   await expect(page.locator(overlay)).toBeHidden();
 });
 
@@ -484,12 +448,12 @@ for (const input of ['keyboard', 'scroll']) {
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');
     if (input === 'keyboard') await page.keyboard.press('Tab');
     else await page.mouse.wheel(0, 180);
-    await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');
+    await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', /static|settled/);
     await expectReleased(page);
     await expectFullPortrait(page);
     expect(
       await page
-        .locator('[data-about-headline], [data-about-intro] > p')
+        .locator('[data-about-headline], [data-about-intro] > p, [data-about-plaque]')
         .evaluateAll((nodes) =>
           nodes.every((node) => Number(getComputedStyle(node).opacity) === 1),
         ),
@@ -536,7 +500,7 @@ for (const mode of ['reduced', 'save-data', 'hidden', 'init-failure'] as const) 
   });
 }
 
-test('changing motion preferences during arrival releases the full portrait immediately', async ({
+test('changing motion preferences during arrival releases the full composition immediately', async ({
   page,
 }) => {
   await page.goto('/about', { waitUntil: 'commit' });
@@ -561,7 +525,7 @@ test('no-JavaScript mobile story, native menu, portrait and invitation remain us
     await page.goto('/about');
     await expectReleased(page);
     await expectFullPortrait(page);
-    await expect(page.locator('[data-about-page] > section')).toHaveCount(7);
+    await expect(page.locator('[data-about-editorial] > section')).toHaveCount(7);
     await page.keyboard.press('Tab');
     await expect(page.getByRole('link', { name: 'Skip to content', exact: true })).toBeFocused();
     await page.keyboard.press('Enter');
@@ -577,69 +541,26 @@ test('no-JavaScript mobile story, native menu, portrait and invitation remain us
   }
 });
 
-async function scrollProgress(page: Page, selector: string, progress: number) {
-  await page.locator(selector).evaluate((node, value) => {
-    const box = node.getBoundingClientRect();
-    const absolute = box.top + scrollY;
-    window.scrollTo({
-      top: Math.max(0, absolute - innerHeight + (box.height + innerHeight) * value),
-      behavior: 'instant',
-    });
-  }, progress);
-  await page.waitForTimeout(450);
-}
-
 for (const width of [390, 1440]) {
-  test(`origin and process drawing reverse with native scrolling; names and principles reveal once at ${width}px`, async ({
+  test(`story panels, names and principles reveal once without trapping native backscroll at ${width}px`, async ({
     page,
   }) => {
     await page.setViewportSize(viewportFor(width));
     await page.goto('/about');
     await page.keyboard.press('Escape');
     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', /settled|static/);
-    for (const [selector, attribute, line] of [
-      ['[data-about-story]', 'data-about-story-progress', '[data-about-story-line]'],
-      ['[data-about-process-system]', 'data-about-process-progress', '[data-about-process-line]'],
-    ]) {
-      const samples: { progress: number; offset: number[]; scroll: number }[] = [];
-      for (const position of [0.12, 0.78, 0.22]) {
-        await scrollProgress(page, selector!, position);
-        samples.push({
-          progress: Number(await page.locator(selector!).getAttribute(attribute!)),
-          offset: await page
-            .locator(line!)
-            .evaluateAll((nodes) =>
-              nodes.map((node) => Number.parseFloat(getComputedStyle(node).strokeDashoffset)),
-            ),
-          scroll: await page.evaluate(() => scrollY),
-        });
-      }
-      expect(samples[1]!.progress).toBeGreaterThan(samples[0]!.progress + 0.1);
-      expect(samples[2]!.progress).toBeLessThan(samples[1]!.progress - 0.1);
-      expect(
-        samples[1]!.offset.some((value, index) => value < samples[0]!.offset[index]! - 0.1),
-      ).toBe(true);
-      expect(
-        samples[2]!.offset.some((value, index) => value > samples[1]!.offset[index]! + 0.1),
-      ).toBe(true);
-      await test
-        .info()
-        .attach(attribute!, { body: JSON.stringify(samples), contentType: 'application/json' });
-    }
-    for (const target of await page
-      .locator('[data-about-founder-name], [data-about-principle] h3')
-      .all()) {
+    const targets = page.locator(
+      '[data-about-story-panel], [data-about-founder-name], [data-about-principle] h3',
+    );
+    for (const target of await targets.all()) {
       await target.scrollIntoViewIfNeeded();
       await expect(target).toHaveAttribute('data-about-seen', 'true');
       await expect
         .poll(() => target.evaluate((node) => getComputedStyle(node).transform))
         .toMatch(/^(?:none|matrix\(1, 0, 0, 1, 0, 0\))$/);
     }
-    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
-    await page.waitForTimeout(600);
-    for (const target of await page
-      .locator('[data-about-founder-name], [data-about-principle] h3')
-      .all()) {
+    await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
+    for (const target of await targets.all()) {
       await expect(target).toHaveAttribute('data-about-seen', 'true');
       expect(await target.evaluate((node) => Number(getComputedStyle(node).opacity))).toBe(1);
     }

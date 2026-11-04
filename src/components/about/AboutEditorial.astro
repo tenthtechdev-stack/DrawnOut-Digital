@@ -1,0 +1,376 @@
+---
+import { Image } from 'astro:assets';
+import Arrow from '../Arrow.astro';
+import ProcessArtwork from './ProcessArtwork.astro';
+import { aboutPage } from '../../data/about';
+import { founderPortrait } from '../../data/founder-portrait';
+import { capabilities } from '../../data/site';
+import '../../styles/about-premium-editorial.css';
+
+const { origin, founders, philosophy, approach, invitation } = aboutPage;
+const processVerbs = ['Ask', 'Explore', 'Shape', 'Refine'];
+---
+
+<div class="ap-editorial" data-about-editorial>
+  <section
+    class="ap-origin ap-section"
+    id="our-beginning"
+    data-about-origin
+    data-about-section="01"
+    data-theme="dark"
+    aria-labelledby="about-origin-title"
+  >
+    <div class="page-frame">
+      <header class="ap-section-head">
+        <p class="ap-index">
+          <span>01</span> Origin story
+        </p>
+        <h2 class="ap-heading" id="about-origin-title" data-about-reveal>
+          {origin.heading}
+        </h2>
+      </header>
+      <div class="ap-origin-grid" data-about-story>
+        <div class="ap-thought ap-story-panel" data-about-story-panel>
+          <p class="ap-micro">The thought</p>
+          <p class="ap-thought__type">
+            What
+            <br />
+            if<span>?</span>
+          </p>
+          <svg viewBox="0 0 420 250" fill="none" aria-hidden="true">
+            <path
+              d="M-4 173C58 173 37 68 116 68S195 206 261 157 222 54 170 112 301 221 347 104 396 122 424 108"
+              stroke="currentColor"
+              stroke-width="3"
+            />
+          </svg>
+          <p class="ap-thought__caption">
+            One night. Two sisters.
+            <br />
+            An idea we couldn't leave alone.
+          </p>
+        </div>
+        <div class="ap-thesis ap-story-panel" data-about-story-panel>
+          <p class="ap-micro">The university thesis</p>
+          <div class="ap-thesis__book" aria-hidden="true">
+            <span class="ap-thesis__edition">A SHARED IDEA / DRAWNOUT</span>
+            <span class="ap-thesis__title">
+              From
+              <br />
+              thought
+              <br />
+              to thesis.
+            </span>
+            <span class="ap-thesis__mark">
+              <i></i>
+              <i></i>
+            </span>
+          </div>
+          <p class="ap-thesis__caption">
+            An academic beginning.
+            <br />A bigger possibility.
+          </p>
+        </div>
+        <div class="ap-ambition ap-story-panel" data-about-story-panel>
+          <p class="ap-micro">From thesis to studio ambition</p>
+          <h3>
+            Something
+            <br />
+            <span>of our own.</span>
+          </h3>
+          <p class="ap-body">{origin.paragraphs[0]}</p>
+          <span class="ap-ambition__corner" aria-hidden="true">
+            ↗
+          </span>
+        </div>
+        <div class="ap-studio ap-story-panel" data-about-story-panel>
+          <p class="ap-micro">DrawnOut Digital</p>
+          <p class="ap-studio__type" aria-hidden="true">
+            Drawn
+            <br />
+            <span>Out.</span>
+          </p>
+          <p class="ap-body">{origin.paragraphs[1]}</p>
+        </div>
+        <div class="ap-origin-belief" data-about-reveal>
+          <p class="ap-micro">The belief behind the work</p>
+          <p>{origin.paragraphs[2]}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="ap-founders ap-section"
+    data-about-founders
+    data-about-section="02"
+    aria-labelledby="about-founders-title"
+  >
+    <div class="page-frame">
+      <header class="ap-section-head">
+        <p class="ap-index">
+          <span>02</span> Meet the founders
+        </p>
+        <h2 class="ap-heading" id="about-founders-title" data-about-reveal>
+          {founders.heading}
+        </h2>
+      </header>
+      <div class="ap-founders-layout">
+        <figure class="ap-founders-art" data-about-reveal>
+          <span class="ap-founders-art__number" aria-hidden="true">
+            02
+          </span>
+          <Image
+            src={founderPortrait.src}
+            alt={founderPortrait.alt}
+            widths={[520, 800, 1200]}
+            sizes="(max-width: 767px) 90vw, 48vw"
+            format="webp"
+            quality={85}
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Two minds. One shared direction.</figcaption>
+        </figure>
+        <div class="ap-founder-profiles">
+          {founders.profiles.map((founder) => (
+            <section
+              class="ap-founder"
+              aria-labelledby={`founder-${founder.name.toLowerCase()}`}
+              data-about-founder
+            >
+              <h3 id={`founder-${founder.name.toLowerCase()}`}>
+                <span data-about-founder-name>{founder.name}</span>
+              </h3>
+              <div class="ap-founder__facts">
+                <p>{founder.role}</p>
+                <p>{founder.experience}</p>
+              </div>
+              <p class="ap-founder__description">{founder.description}</p>
+            </section>
+          ))}
+        </div>
+      </div>
+      <p class="ap-founders-signoff" data-about-reveal>
+        {founders.signoff}
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="ap-manifesto ap-section"
+    data-about-philosophy
+    data-about-section="03"
+    data-theme="dark"
+    aria-labelledby="about-philosophy-title"
+  >
+    <div class="page-frame">
+      <header class="ap-section-head">
+        <p class="ap-index">
+          <span>03</span> What we believe
+        </p>
+        <div>
+          <h2 class="ap-heading" id="about-philosophy-title" data-about-reveal>
+            {philosophy.heading}
+          </h2>
+          <p class="ap-manifesto-intro">{philosophy.intro}</p>
+        </div>
+      </header>
+      <ol class="ap-principles">
+        {philosophy.principles.map((principle) => (
+          <li data-about-principle>
+            <span class="ap-principle-number" aria-hidden="true">
+              {principle.number}
+            </span>
+            <h3 data-about-reveal>{principle.heading}</h3>
+            <p>{principle.description}</p>
+            <span class="ap-principle-rule" data-about-principle-rule aria-hidden="true"></span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section
+    class="ap-process ap-section"
+    data-about-process
+    data-about-section="04"
+    aria-labelledby="about-approach-title"
+  >
+    <div class="page-frame">
+      <header class="ap-section-head">
+        <p class="ap-index">
+          <span>04</span> How we think
+        </p>
+        <h2 class="ap-heading" id="about-approach-title" data-about-reveal>
+          {approach.heading}
+        </h2>
+      </header>
+      <ol class="ap-process-rows" data-about-process-system>
+        {approach.phases.map((phase, index) => (
+          <li
+            class="ap-process-row"
+            data-about-process-phase
+            data-about-phase={phase.concept.toLowerCase()}
+          >
+            <div class="ap-process-copy">
+              <p class="ap-process-step">
+                <span>{phase.number}</span> / {processVerbs[index]}
+              </p>
+              <h3>{phase.heading}</h3>
+              <p class="ap-body">{phase.description}</p>
+              <span class="ap-process-concept">{phase.concept}</span>
+            </div>
+            <figure class="ap-process-figure">
+              <div class="ap-process-art" data-about-process-art>
+                <ProcessArtwork phase={phase.concept} />
+              </div>
+              <figcaption>
+                <span>Illustrative process study</span>
+                <span>0{index + 1} / 04</span>
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section
+    class="ap-difference ap-section"
+    data-about-difference
+    data-about-section="05"
+    aria-labelledby="about-difference-title"
+  >
+    <div class="page-frame">
+      <header class="ap-section-head">
+        <p class="ap-index">
+          <span>05</span> The DrawnOut difference
+        </p>
+        <h2 class="ap-heading" id="about-difference-title" data-about-reveal>
+          Our perspective.
+          <br />
+          Your possibility.
+        </h2>
+      </header>
+      <div class="ap-difference-grid">
+        <div class="ap-difference-main" data-about-reveal>
+          <p class="ap-micro">Twin-led creative studio</p>
+          <p class="ap-difference-number">
+            02<span>founders</span>
+          </p>
+          <p class="ap-difference-statement">
+            One shared ambition.
+            <br />
+            Independent creative perspective.
+          </p>
+        </div>
+        <div class="ap-difference-facts">
+          <div data-about-reveal>
+            <span class="ap-micro">Our beginning</span>
+            <h3>
+              Born from
+              <br />a thesis.
+            </h3>
+            <p>A university project that grew into a creative studio.</p>
+          </div>
+          <div data-about-reveal>
+            <span class="ap-micro">Our thinking</span>
+            <h3>
+              Brand
+              <br />
+              comes first.
+            </h3>
+            <p>Thought, character and a reason to be remembered.</p>
+          </div>
+          <div class="ap-difference-connected" data-about-reveal>
+            <span class="ap-micro">Our disciplines</span>
+            <h3>
+              Connected
+              <br />
+              by design.
+            </h3>
+            <p>Design. Branding. Digital marketing. Storytelling.</p>
+          </div>
+          <div class="ap-difference-date" data-about-reveal>
+            <span class="ap-micro">DrawnOut Digital</span>
+            <p>
+              Creating impact
+              <br />
+              since <strong>2022.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="ap-capabilities ap-section"
+    data-about-capabilities
+    data-about-section="06"
+    data-theme="dark"
+    aria-labelledby="about-capabilities-title"
+  >
+    <div class="page-frame">
+      <header class="ap-section-head">
+        <p class="ap-index">
+          <span>06</span> Connected capabilities
+        </p>
+        <h2 class="ap-heading" id="about-capabilities-title" data-about-reveal>
+          One idea.
+          <br />
+          Every expression.
+        </h2>
+      </header>
+      <ol class="ap-capability-list">
+        {capabilities.map((capability, index) => (
+          <li>
+            <a href={`/services/${capability.id}`}>
+              <span class="ap-capability-number" aria-hidden="true">
+                0{index + 1}
+              </span>
+              <span>{capability.title}</span>
+              <Arrow />
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section
+    class="ap-invitation ap-section"
+    data-about-invitation
+    data-about-section="07"
+    data-theme="dark"
+    aria-labelledby="about-invitation-title"
+  >
+    <div class="page-frame">
+      <p class="ap-index">
+        <span>07</span> Your turn
+      </p>
+      <h2 id="about-invitation-title" aria-label={invitation.heading} data-about-reveal>
+        Have something
+        <br />
+        in mind?{' '}
+        <span>
+          Let's make
+          <br />
+          it matter.
+        </span>
+      </h2>
+      <div class="ap-invitation-bottom">
+        <p>{invitation.supportingCopy}</p>
+        <a href={invitation.cta.href} class="ap-enquiry-link">
+          {invitation.cta.label}
+          <Arrow />
+        </a>
+      </div>
+      <div class="ap-invitation-footnote" aria-hidden="true">
+        <span>From one thought to something real.</span>
+        <span>DrawnOut Digital ↘</span>
+      </div>
+    </div>
+  </section>
+</div>
