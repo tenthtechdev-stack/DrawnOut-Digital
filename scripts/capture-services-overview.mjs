@@ -9,6 +9,10 @@ import { chromium } from '@playwright/test';
 const baseURL = process.env.REVIEW_URL ?? 'http://127.0.0.1:4406';
 const output = path.resolve('artifacts/services-overview');
 const native = '/workspace/services-overview-review/native';
+const screenshotsOnly = process.argv.includes('--screenshots-only');
+const previous = screenshotsOnly
+  ? JSON.parse(await readFile(path.join(output, 'capture-evidence.json'), 'utf8'))
+  : undefined;
 const slugs = [
   'brand-identity',
   'digital-design',
@@ -39,7 +43,8 @@ const evidence = {
   method:
     'Real production Chromium screenshots and native Playwright recordings at original speed, with ordinary browser scrolling, reverse scrolling and actual service-link navigation. No timeline seeking or replacement styles. Software rendering only; no physical-device or Safari claim.',
   screenshots: [],
-  recordings: [],
+  recordings: previous?.recordings ?? [],
+  recordingsCapturedAt: previous?.recordingsCapturedAt ?? previous?.capturedAt,
   errors: [],
   failedRequests: [],
 };
@@ -103,7 +108,7 @@ const browser = await chromium.launch({
   args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'],
 });
 try {
-  for (const width of [390, 1440]) {
+  for (const width of screenshotsOnly ? [] : [390, 1440]) {
     const context = await browser.newContext({
       baseURL,
       viewport: viewport(width),
@@ -196,7 +201,11 @@ try {
     await save();
   }
   for (const width of [320, 390, 768, 1440]) {
-    const context = await browser.newContext({ baseURL, viewport: viewport(width) });
+    // Fit each complete chapter in the actual viewport before capturing it.
+    // Chromium can cull SVG compositing below the visible viewport when a
+    // locator capture temporarily expands beyond it. Widths stay authoritative;
+    // videos and responsive tests retain the ordinary 844/900px heights.
+    const context = await browser.newContext({ baseURL, viewport: { width, height: 1100 } });
     const page = await context.newPage();
     watch(page);
     await page.goto('/services');
