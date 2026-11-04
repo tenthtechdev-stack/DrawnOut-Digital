@@ -1,0 +1,573 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-services-overview/node_modules/.bin/playwright",
+      "test",
+      "tests/browser/portfolio-motion.spec.ts",
+      "--config",
+      "playwright.owner-corrections.config.ts",
+      "--project",
+      "preservation"
+    ],
+    "configFile": "/workspace/drawnout-services-overview/playwright.owner-corrections.config.ts",
+    "rootDir": "/workspace/drawnout-services-overview/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-services-overview/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "about",
+        "name": "about",
+        "testDir": "/workspace/drawnout-services-overview/tests",
+        "testIgnore": [],
+        "testMatch": ["browser/about.spec.ts", "browser/services-hero-about.spec.ts"],
+        "timeout": 70000
+      },
+      {
+        "outputDir": "/workspace/drawnout-services-overview/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "intro",
+        "name": "intro",
+        "testDir": "/workspace/drawnout-services-overview/tests",
+        "testIgnore": [],
+        "testMatch": ["production-browser/*.spec.ts", "browser/signature-intro.spec.ts"],
+        "timeout": 70000
+      },
+      {
+        "outputDir": "/workspace/drawnout-services-overview/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "preservation",
+        "name": "preservation",
+        "testDir": "/workspace/drawnout-services-overview/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/services-hero.spec.ts",
+          "browser/services.spec.ts",
+          "browser/contact.spec.ts",
+          "browser/footer-social.spec.ts",
+          "browser/signature-footer.spec.ts",
+          "browser/portfolio-motion.spec.ts"
+        ],
+        "timeout": 70000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-services-overview/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "preservation",
+        "testDir": "/workspace/drawnout-services-overview/tests",
+        "snapshotDir": "/workspace/drawnout-services-overview/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/services-hero.spec.ts",
+          "browser/services.spec.ts",
+          "browser/contact.spec.ts",
+          "browser/footer-social.spec.ts",
+          "browser/signature-footer.spec.ts",
+          "browser/portfolio-motion.spec.ts"
+        ],
+        "timeout": 70000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4401",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "preservation"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      ["list", null],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/services-overview/portfolio-motion-regression.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4401",
+      "url": "http://127.0.0.1:4401",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "browser/portfolio-motion.spec.ts",
+      "file": "browser/portfolio-motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "homepage defers curated footage until 35% visibility and retains six compositions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7143,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:05.869Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-eb6114677fecf33dc5cd",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "curated Home and Work motion alternates with posters and respects the decoder budget at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3423,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:13.230Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-5f81f286e9e914b276fc",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "curated Home and Work motion alternates with posters and respects the decoder budget at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4746,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:16.674Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-31f5f0d3ff4ae79873d6",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "keyboard pause control stays separate from project links and preserves a descriptive poster",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1110,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:21.439Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-40321a69e9352f4cf594",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 141,
+          "column": 1
+        },
+        {
+          "title": "document visibility changes release decoders and visible cards resume",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1031,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:22.558Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-5fc1a6695782d1b627d9",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 165,
+          "column": 1
+        },
+        {
+          "title": "reduced-motion retains meaningful project posters without a broken player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3062,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:23.602Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-bb8382036901da48f68b",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 184,
+          "column": 3
+        },
+        {
+          "title": "save-data retains meaningful project posters without a broken player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2798,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:26.679Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-4e87cebfb7eb8a2b9aac",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 184,
+          "column": 3
+        },
+        {
+          "title": "autoplay-blocked retains meaningful project posters without a broken player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3419,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:29.486Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-db66f39aa84bd4e42d12",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 184,
+          "column": 3
+        },
+        {
+          "title": "no JavaScript leaves clickable descriptive cards and official contact links without video requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1279,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:32.915Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-67625e2e16cbee8fa88b",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 222,
+          "column": 1
+        },
+        {
+          "title": "filters curate the visible sequence, release hidden footage and preserve project links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2102,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:34.212Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-39dbc84cfdf3d476368d",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 266,
+          "column": 1
+        },
+        {
+          "title": "unchanged DOM and repeated filter events retain playing footage without source or play resets",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 920,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:36.322Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-cbec0629a4da2c1b209d",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 309,
+          "column": 1
+        },
+        {
+          "title": "project copy reveals once, stays readable and completes immediately for keyboard focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2327,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:37.257Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d0c6055394433020e246-cf8d4bb2d161170936c8",
+          "file": "browser/portfolio-motion.spec.ts",
+          "line": 349,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T10:21:04.637Z",
+    "duration": 35098.971,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -41,7 +41,7 @@ components, scoped styles/entry module and their integration into `/services`.
 | About output/privacy tests                                | Passed, 2 tests                                                                   |
 | Publication/withdrawal integration                        | Passed, 1 test                                                                    |
 | Focused overview browser checks                           | All 11 cases have passing observations: 9 initial + 2 corrected navigation checks |
-| Service hero/detail and portfolio integration regressions | Final run pending                                                                 |
+| Service hero/detail and portfolio integration regressions | Passed, 44 tests: 15 hero + 17 service/detail + 12 portfolio motion               |
 
 Focused checks cover 320/390/768/1440 layouts, one H1, exact canonical copy and
 routes, zero horizontal overflow, alternating desktop geometry, visible keyboard
@@ -56,6 +56,15 @@ behavior was changed to satisfy the test. The
 [initial report](../../artifacts/services-overview/initial-browser-tests.json) and
 [corrected navigation report](../../artifacts/services-overview/navigation-browser-tests.json)
 are retained. There are no retries or skipped cases in those runs.
+
+The final integration regressions passed in three complete, separately saved
+batches, with no failures, retries or skipped cases:
+[Services hero: 15/15](../../artifacts/services-overview/services-hero-regression.json),
+[service pages and navigation: 17/17](../../artifacts/services-overview/services-regression.json),
+and [portfolio motion: 12/12](../../artifacts/services-overview/portfolio-motion-regression.json).
+An earlier combined run was interrupted by the environment after two cases and
+is not counted as a completed run. The final batches ran against the same
+production build used for the captured implementation.
 
 Parent corrections have 139 distinct passing browser observations across the
 appropriate production/development runs; see the

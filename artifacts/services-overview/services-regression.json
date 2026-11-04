@@ -1,0 +1,743 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-services-overview/node_modules/.bin/playwright",
+      "test",
+      "tests/browser/services.spec.ts",
+      "--config",
+      "playwright.owner-corrections.config.ts",
+      "--project",
+      "preservation"
+    ],
+    "configFile": "/workspace/drawnout-services-overview/playwright.owner-corrections.config.ts",
+    "rootDir": "/workspace/drawnout-services-overview/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-services-overview/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "about",
+        "name": "about",
+        "testDir": "/workspace/drawnout-services-overview/tests",
+        "testIgnore": [],
+        "testMatch": ["browser/about.spec.ts", "browser/services-hero-about.spec.ts"],
+        "timeout": 70000
+      },
+      {
+        "outputDir": "/workspace/drawnout-services-overview/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "intro",
+        "name": "intro",
+        "testDir": "/workspace/drawnout-services-overview/tests",
+        "testIgnore": [],
+        "testMatch": ["production-browser/*.spec.ts", "browser/signature-intro.spec.ts"],
+        "timeout": 70000
+      },
+      {
+        "outputDir": "/workspace/drawnout-services-overview/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "preservation",
+        "name": "preservation",
+        "testDir": "/workspace/drawnout-services-overview/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/services-hero.spec.ts",
+          "browser/services.spec.ts",
+          "browser/contact.spec.ts",
+          "browser/footer-social.spec.ts",
+          "browser/signature-footer.spec.ts",
+          "browser/portfolio-motion.spec.ts"
+        ],
+        "timeout": 70000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-services-overview/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "preservation",
+        "testDir": "/workspace/drawnout-services-overview/tests",
+        "snapshotDir": "/workspace/drawnout-services-overview/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/services-hero.spec.ts",
+          "browser/services.spec.ts",
+          "browser/contact.spec.ts",
+          "browser/footer-social.spec.ts",
+          "browser/signature-footer.spec.ts",
+          "browser/portfolio-motion.spec.ts"
+        ],
+        "timeout": 70000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4401",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "preservation"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      ["list", null],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/services-overview/services-regression.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4401",
+      "url": "http://127.0.0.1:4401",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "browser/services.spec.ts",
+      "file": "browser/services.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "brand-identity copy, FAQs, navigation and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1819,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:36.456Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-335bbcae9e2825942f6b",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "digital-design copy, FAQs, navigation and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1672,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:38.480Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-6b6053431146c40a3b29",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1591,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:40.162Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-17ae624791d5a866ffc2",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "words-storytelling copy, FAQs, navigation and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1566,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:41.766Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-f9912db3520bc45a5795",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "creative-direction copy, FAQs, navigation and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1472,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:43.343Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-ef9a4810dfbfeb747cf5",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "brand-identity copy, FAQs, navigation and accessibility at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1599,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:44.826Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-3acfb078420d670f3203",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "digital-design copy, FAQs, navigation and accessibility at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1507,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:46.436Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-76fd972732e55ed2419c",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1622,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:47.951Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-b19f8460094635d284cb",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "words-storytelling copy, FAQs, navigation and accessibility at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1587,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:49.588Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-ec5d8d93f8618bf82a14",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "creative-direction copy, FAQs, navigation and accessibility at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1574,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:51.189Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-cbbcd8fd3087e0183f66",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "brand-identity copy, FAQs, navigation and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1814,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:52.770Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-8b822268068eeab98714",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "digital-design copy, FAQs, navigation and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1741,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:54.596Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-23c2f84bef337004a944",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "marketing-campaigns copy, FAQs, navigation and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1748,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:56.347Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-d2dd3488b8417459aa75",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "words-storytelling copy, FAQs, navigation and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1691,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:58.104Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-77ae750f39c2abd056e2",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "creative-direction copy, FAQs, navigation and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1808,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:20:59.801Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-3f9a9c3f3be70be54de6",
+          "file": "browser/services.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "homepage and overview links open service pages and the enquiry CTA reaches Contact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1699,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:01.619Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-659d70bbeb7b0dea544c",
+          "file": "browser/services.spec.ts",
+          "line": 72,
+          "column": 1
+        },
+        {
+          "title": "service copy, native FAQ controls and navigation work without JavaScript",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "preservation",
+              "projectName": "preservation",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 582,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:21:03.325Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d6b964530307f26e1d6-912ce87c32b7333c969b",
+          "file": "browser/services.spec.ts",
+          "line": 97,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T10:20:35.127Z",
+    "duration": 28887.023999999998,
+    "expected": 17,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
