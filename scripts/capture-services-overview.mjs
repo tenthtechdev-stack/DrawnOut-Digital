@@ -5,7 +5,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { chromium } from '@playwright/test';
 
-/* global document, window, scrollY */
+/* global document, window, scrollY, innerWidth, getComputedStyle */
 const baseURL = process.env.REVIEW_URL ?? 'http://127.0.0.1:4406';
 const output = path.resolve('artifacts/services-overview');
 const native = '/workspace/services-overview-review/native';
@@ -21,17 +21,36 @@ const hash = (data) => createHash('sha256').update(data).digest('hex');
 const evidence = {
   capturedAt: new Date().toISOString(),
   sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
+  sourceFiles: Object.fromEntries(
+    await Promise.all(
+      [
+        'src/components/services/ServicesOverview.astro',
+        'src/components/services/overview-art/IdentityArtwork.astro',
+        'src/components/services/overview-art/DigitalArtwork.astro',
+        'src/components/services/overview-art/CampaignArtwork.astro',
+        'src/components/services/overview-art/StorytellingArtwork.astro',
+        'src/components/services/overview-art/DirectionArtwork.astro',
+        'src/styles/services-overview.css',
+        'src/scripts/services-overview.ts',
+        'src/pages/services.astro',
+      ].map(async (file) => [file, hash(await readFile(file))]),
+    ),
+  ),
   method:
     'Real production Chromium screenshots and native Playwright recordings at original speed, with ordinary browser scrolling, reverse scrolling and actual service-link navigation. No timeline seeking or replacement styles. Software rendering only; no physical-device or Safari claim.',
   screenshots: [],
   recordings: [],
   errors: [],
+  failedRequests: [],
 };
 await mkdir(output, { recursive: true });
 await mkdir(native, { recursive: true });
 const save = () =>
   writeFile(path.join(output, 'capture-evidence.json'), `${JSON.stringify(evidence, null, 2)}\n`);
 async function shot(page, filename, target, description) {
+  assert(
+    (await page.evaluate(() => document.documentElement.scrollWidth)) <= page.viewportSize().width,
+  );
   const bytes = target
     ? await page
         .locator(target)
@@ -50,13 +69,34 @@ async function shot(page, filename, target, description) {
 }
 function watch(page) {
   page.on('pageerror', (error) => evidence.errors.push(error.message));
+  page.on('requestfailed', (request) =>
+    evidence.failedRequests.push({ url: request.url(), error: request.failure()?.errorText }),
+  );
 }
 async function scrollChapter(page, slug) {
   const target = page.locator(`[data-service-chapter][id="${slug}"]`);
-  await target.evaluate((node) =>
-    window.scrollTo({ top: node.getBoundingClientRect().top + scrollY - 84, behavior: 'smooth' }),
-  );
+  await target.evaluate((node) => {
+    const header = document.querySelector('[data-site-header]');
+    const inset = header ? header.getBoundingClientRect().height + 16 : 100;
+    window.scrollTo({
+      top: node.getBoundingClientRect().top + scrollY - inset,
+      behavior: 'smooth',
+    });
+  });
   await page.waitForTimeout(1500);
+  return target.evaluate((node) => {
+    const rect = node.getBoundingClientRect();
+    const art = node.querySelector('[data-service-chapter-art]');
+    return {
+      id: node.id,
+      scrollY,
+      top: rect.top,
+      width: rect.width,
+      height: rect.height,
+      overflow: document.documentElement.scrollWidth > innerWidth,
+      artOpacity: art ? Number(getComputedStyle(art).opacity) : null,
+    };
+  });
 }
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH ?? '/usr/bin/chromium',
@@ -73,11 +113,12 @@ try {
     watch(page);
     const video = page.video();
     const visits = [];
+    const scrolls = [];
     await page.goto('/services');
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(2500);
     for (const slug of slugs) {
-      await scrollChapter(page, slug);
+      scrolls.push({ direction: 'forward', ...(await scrollChapter(page, slug)) });
       if (width < 768) {
         await page
           .locator(`[data-service-chapter][id="${slug}"] [data-service-chapter-art]`)
@@ -90,11 +131,13 @@ try {
         await page.waitForTimeout(1300);
       }
     }
-    for (const slug of [...slugs].reverse()) await scrollChapter(page, slug);
+    for (const slug of [...slugs].reverse())
+      scrolls.push({ direction: 'reverse', ...(await scrollChapter(page, slug)) });
     for (const slug of slugs) {
       await scrollChapter(page, slug);
       await page.locator(`[data-service-chapter][id="${slug}"] a`).click();
       await page.waitForURL(`**/services/${slug}`);
+      assert.equal(await page.locator('h1').count(), 1);
       assert.equal(await page.locator('[data-service-faq] details').count(), 5);
       await page.waitForTimeout(1000);
       visits.push({ slug, title: await page.locator('h1').innerText(), url: page.url(), faqs: 5 });
@@ -116,6 +159,8 @@ try {
         'fast',
         '-crf',
         '24',
+        '-threads',
+        '2',
         '-pix_fmt',
         'yuv420p',
         '-movflags',
@@ -138,6 +183,14 @@ try {
       bytes: Number(meta.format.size),
       viewport: viewport(width),
       visits,
+      scrolls,
+      streams: meta.streams.map(({ codec_type, codec_name, width, height, r_frame_rate }) => ({
+        type: codec_type,
+        codec: codec_name,
+        width,
+        height,
+        frameRate: r_frame_rate,
+      })),
       sha256: hash(await readFile(path.join(output, file))),
     });
     await save();

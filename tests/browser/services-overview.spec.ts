@@ -129,7 +129,11 @@ for (const width of [390, 1440]) {
       const faq = page.locator('[data-service-faq] details');
       await expect(faq).toHaveCount(5);
       for (let index = 0; index < service.faqs.length; index += 1) {
-        await expect(faq.nth(index).locator('summary')).toHaveText(service.faqs[index]!.question);
+        // The unchanged FAQ includes an aria-hidden plus affordance alongside
+        // its question. Verify the exact accessible question, not that glyph.
+        await expect(faq.nth(index).locator('summary')).toHaveAccessibleName(
+          service.faqs[index]!.question,
+        );
         await expect(faq.nth(index).locator('p')).toHaveText(service.faqs[index]!.answer);
       }
       await faq.first().locator('summary').focus();

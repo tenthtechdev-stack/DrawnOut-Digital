@@ -1,0 +1,586 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-services-overview/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.services-overview.config.ts"
+    ],
+    "configFile": "/workspace/drawnout-services-overview/playwright.services-overview.config.ts",
+    "rootDir": "/workspace/drawnout-services-overview/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-services-overview/test-results/services-overview",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-services-overview/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["services-overview.spec.ts"],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-services-overview/test-results/services-overview",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-services-overview/tests/browser",
+        "snapshotDir": "/workspace/drawnout-services-overview/tests/browser",
+        "testIgnore": [],
+        "testMatch": "services-overview.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4405",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      ["list", null],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/services-overview/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4405",
+      "url": "http://127.0.0.1:4405",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "services-overview.spec.ts",
+      "file": "services-overview.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "five complete editorial chapters, canonical links and accessibility at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2799,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T00:58:45.611Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-593ee26032ac8be67c85",
+          "file": "services-overview.spec.ts",
+          "line": 67,
+          "column": 3
+        },
+        {
+          "title": "five complete editorial chapters, canonical links and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2170,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T00:58:48.629Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-d196874982fce9875f3e",
+          "file": "services-overview.spec.ts",
+          "line": 67,
+          "column": 3
+        },
+        {
+          "title": "five complete editorial chapters, canonical links and accessibility at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2501,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T00:58:50.816Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-009f3dbe0bd6c0c60ab9",
+          "file": "services-overview.spec.ts",
+          "line": 67,
+          "column": 3
+        },
+        {
+          "title": "five complete editorial chapters, canonical links and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2910,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T00:58:53.327Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-53c748c89ab5fa79bd9b",
+          "file": "services-overview.spec.ts",
+          "line": 67,
+          "column": 3
+        },
+        {
+          "title": "all five chapter links open the original service content and FAQs at 390px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10810,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-service-faq] details').first().locator('summary')\nExpected: \u001b[32m\"Do I need a full rebrand or just a logo refresh?\"\u001b[39m\nReceived: \u001b[31m\"Do I need a full rebrand or just a logo refresh?\u001b[7m+\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('[data-service-faq] details').first().locator('summary') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-service-faq] details').first().locator('summary')\u001b[22m\n\u001b[2m    24 × locator resolved to <summary data-astro-cid-hyttk6tl=\"\">…</summary>\u001b[22m\n\u001b[2m       - unexpected value \"Do I need a full rebrand or just a logo refresh?+\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-service-faq] details').first().locator('summary')\nExpected: \u001b[32m\"Do I need a full rebrand or just a logo refresh?\"\u001b[39m\nReceived: \u001b[31m\"Do I need a full rebrand or just a logo refresh?\u001b[7m+\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('[data-service-faq] details').first().locator('summary') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-service-faq] details').first().locator('summary')\u001b[22m\n\u001b[2m    24 × locator resolved to <summary data-astro-cid-hyttk6tl=\"\">…</summary>\u001b[22m\n\u001b[2m       - unexpected value \"Do I need a full rebrand or just a logo refresh?+\"\u001b[22m\n\n    at /workspace/drawnout-services-overview/tests/browser/services-overview.spec.ts:132:57",
+                    "location": {
+                      "file": "/workspace/drawnout-services-overview/tests/browser/services-overview.spec.ts",
+                      "column": 57,
+                      "line": 132
+                    },
+                    "snippet": "  130 |       await expect(faq).toHaveCount(5);\n  131 |       for (let index = 0; index < service.faqs.length; index += 1) {\n> 132 |         await expect(faq.nth(index).locator('summary')).toHaveText(service.faqs[index]!.question);\n      |                                                         ^\n  133 |         await expect(faq.nth(index).locator('p')).toHaveText(service.faqs[index]!.answer);\n  134 |       }\n  135 |       await faq.first().locator('summary').focus();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-services-overview/tests/browser/services-overview.spec.ts",
+                        "column": 57,
+                        "line": 132
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-service-faq] details').first().locator('summary')\nExpected: \u001b[32m\"Do I need a full rebrand or just a logo refresh?\"\u001b[39m\nReceived: \u001b[31m\"Do I need a full rebrand or just a logo refresh?\u001b[7m+\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('[data-service-faq] details').first().locator('summary') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-service-faq] details').first().locator('summary')\u001b[22m\n\u001b[2m    24 × locator resolved to <summary data-astro-cid-hyttk6tl=\"\">…</summary>\u001b[22m\n\u001b[2m       - unexpected value \"Do I need a full rebrand or just a logo refresh?+\"\u001b[22m\n\n\n  130 |       await expect(faq).toHaveCount(5);\n  131 |       for (let index = 0; index < service.faqs.length; index += 1) {\n> 132 |         await expect(faq.nth(index).locator('summary')).toHaveText(service.faqs[index]!.question);\n      |                                                         ^\n  133 |         await expect(faq.nth(index).locator('p')).toHaveText(service.faqs[index]!.answer);\n  134 |       }\n  135 |       await faq.first().locator('summary').focus();\n    at /workspace/drawnout-services-overview/tests/browser/services-overview.spec.ts:132:57"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T00:58:56.246Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-services-overview/test-results/services-overview/services-overview-all-five-068f0-e-content-and-FAQs-at-390px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-services-overview/test-results/services-overview/services-overview-all-five-068f0-e-content-and-FAQs-at-390px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-services-overview/test-results/services-overview/services-overview-all-five-068f0-e-content-and-FAQs-at-390px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-services-overview/tests/browser/services-overview.spec.ts",
+                    "column": 57,
+                    "line": 132
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-902c43bd7181fae67f49",
+          "file": "services-overview.spec.ts",
+          "line": 113,
+          "column": 3
+        },
+        {
+          "title": "all five chapter links open the original service content and FAQs at 1440px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10777,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-service-faq] details').first().locator('summary')\nExpected: \u001b[32m\"Do I need a full rebrand or just a logo refresh?\"\u001b[39m\nReceived: \u001b[31m\"Do I need a full rebrand or just a logo refresh?\u001b[7m+\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('[data-service-faq] details').first().locator('summary') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-service-faq] details').first().locator('summary')\u001b[22m\n\u001b[2m    24 × locator resolved to <summary data-astro-cid-hyttk6tl=\"\">…</summary>\u001b[22m\n\u001b[2m       - unexpected value \"Do I need a full rebrand or just a logo refresh?+\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-service-faq] details').first().locator('summary')\nExpected: \u001b[32m\"Do I need a full rebrand or just a logo refresh?\"\u001b[39m\nReceived: \u001b[31m\"Do I need a full rebrand or just a logo refresh?\u001b[7m+\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('[data-service-faq] details').first().locator('summary') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-service-faq] details').first().locator('summary')\u001b[22m\n\u001b[2m    24 × locator resolved to <summary data-astro-cid-hyttk6tl=\"\">…</summary>\u001b[22m\n\u001b[2m       - unexpected value \"Do I need a full rebrand or just a logo refresh?+\"\u001b[22m\n\n    at /workspace/drawnout-services-overview/tests/browser/services-overview.spec.ts:132:57",
+                    "location": {
+                      "file": "/workspace/drawnout-services-overview/tests/browser/services-overview.spec.ts",
+                      "column": 57,
+                      "line": 132
+                    },
+                    "snippet": "  130 |       await expect(faq).toHaveCount(5);\n  131 |       for (let index = 0; index < service.faqs.length; index += 1) {\n> 132 |         await expect(faq.nth(index).locator('summary')).toHaveText(service.faqs[index]!.question);\n      |                                                         ^\n  133 |         await expect(faq.nth(index).locator('p')).toHaveText(service.faqs[index]!.answer);\n  134 |       }\n  135 |       await faq.first().locator('summary').focus();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-services-overview/tests/browser/services-overview.spec.ts",
+                        "column": 57,
+                        "line": 132
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-service-faq] details').first().locator('summary')\nExpected: \u001b[32m\"Do I need a full rebrand or just a logo refresh?\"\u001b[39m\nReceived: \u001b[31m\"Do I need a full rebrand or just a logo refresh?\u001b[7m+\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('[data-service-faq] details').first().locator('summary') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-service-faq] details').first().locator('summary')\u001b[22m\n\u001b[2m    24 × locator resolved to <summary data-astro-cid-hyttk6tl=\"\">…</summary>\u001b[22m\n\u001b[2m       - unexpected value \"Do I need a full rebrand or just a logo refresh?+\"\u001b[22m\n\n\n  130 |       await expect(faq).toHaveCount(5);\n  131 |       for (let index = 0; index < service.faqs.length; index += 1) {\n> 132 |         await expect(faq.nth(index).locator('summary')).toHaveText(service.faqs[index]!.question);\n      |                                                         ^\n  133 |         await expect(faq.nth(index).locator('p')).toHaveText(service.faqs[index]!.answer);\n  134 |       }\n  135 |       await faq.first().locator('summary').focus();\n    at /workspace/drawnout-services-overview/tests/browser/services-overview.spec.ts:132:57"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T00:59:07.581Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-services-overview/test-results/services-overview/services-overview-all-five-8838a--content-and-FAQs-at-1440px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-services-overview/test-results/services-overview/services-overview-all-five-8838a--content-and-FAQs-at-1440px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-services-overview/test-results/services-overview/services-overview-all-five-8838a--content-and-FAQs-at-1440px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-services-overview/tests/browser/services-overview.spec.ts",
+                    "column": 57,
+                    "line": 132
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-ff8da820ee0cc251ac65",
+          "file": "services-overview.spec.ts",
+          "line": 113,
+          "column": 3
+        },
+        {
+          "title": "no-javascript preserves the complete overview and native service navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1959,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T00:59:19.089Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-a55fb2a5c1c1f7110e03",
+          "file": "services-overview.spec.ts",
+          "line": 150,
+          "column": 3
+        },
+        {
+          "title": "failed-bundles preserves the complete overview and native service navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1348,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T00:59:21.246Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-2be3ef94852a581db7cc",
+          "file": "services-overview.spec.ts",
+          "line": 150,
+          "column": 3
+        },
+        {
+          "title": "save-data preserves the complete overview and native service navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1158,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T00:59:22.604Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-583d3c71866f72d702f1",
+          "file": "services-overview.spec.ts",
+          "line": 150,
+          "column": 3
+        },
+        {
+          "title": "native forward and reverse scrolling keep all five chapters readable at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6403,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T00:59:23.775Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "native-service-scroll-390",
+                      "contentType": "application/json",
+                      "body": "W3siaW5kZXgiOjAsImV4cGVjdGVkIjoxMTg1LjI1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjAuNzU4MDUyLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMTkuMDEwMikifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MSwiZXhwZWN0ZWQiOjE5MzcuNjQwNjI1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjAuNzM5MjA1LCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMjAuNDkxKSJ9LCJzZXR0bGVkIjp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9fSx7ImluZGV4IjoyLCJleHBlY3RlZCI6MjY0NS43OTY4NzUsImF0RW50cnkiOnsib3BhY2l0eSI6MC43MiwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDIyKSJ9LCJzZXR0bGVkIjp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9fSx7ImluZGV4IjozLCJleHBlY3RlZCI6MzM5OC4xODc1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjAuNzIsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAyMikifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6NCwiZXhwZWN0ZWQiOjQxNTAuNTc4MTI1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjAuNzIsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAyMikifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MywiZXhwZWN0ZWQiOjMzOTguMTg3NSwiYXRFbnRyeSI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MiwiZXhwZWN0ZWQiOjI2NDUuNzk2ODc1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9LCJzZXR0bGVkIjp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9fSx7ImluZGV4IjoxLCJleHBlY3RlZCI6MTkzNy42NDA2MjUsImF0RW50cnkiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn0sInNldHRsZWQiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn19LHsiaW5kZXgiOjAsImV4cGVjdGVkIjoxMTg1LjI1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9LCJzZXR0bGVkIjp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9fV0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-702306d845b5faa78ab9",
+          "file": "services-overview.spec.ts",
+          "line": 192,
+          "column": 3
+        },
+        {
+          "title": "native forward and reverse scrolling keep all five chapters readable at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6741,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T00:59:30.188Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "native-service-scroll-1440",
+                      "contentType": "application/json",
+                      "body": "W3siaW5kZXgiOjAsImV4cGVjdGVkIjoxMTA4LjYyNSwiYXRFbnRyeSI6eyJvcGFjaXR5IjowLjcyLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMjIpIn0sInNldHRsZWQiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn19LHsiaW5kZXgiOjEsImV4cGVjdGVkIjoxOTY3LjczNDM3NSwiYXRFbnRyeSI6eyJvcGFjaXR5IjowLjc5NDM5LCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMTYuMTU1MSkifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MiwiZXhwZWN0ZWQiOjI4MjYuODQzNzUsImF0RW50cnkiOnsib3BhY2l0eSI6MC43MiwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDIyKSJ9LCJzZXR0bGVkIjp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9fSx7ImluZGV4IjozLCJleHBlY3RlZCI6MzcwNy4yOTY4NzUsImF0RW50cnkiOnsib3BhY2l0eSI6MC43MiwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDIyKSJ9LCJzZXR0bGVkIjp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9fSx7ImluZGV4Ijo0LCJleHBlY3RlZCI6NDU2Ni40MDYyNSwiYXRFbnRyeSI6eyJvcGFjaXR5IjowLjcyLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMjIpIn0sInNldHRsZWQiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn19LHsiaW5kZXgiOjMsImV4cGVjdGVkIjozNzA3LjI5Njg3NSwiYXRFbnRyeSI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MiwiZXhwZWN0ZWQiOjI4MjYuODQzNzUsImF0RW50cnkiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn0sInNldHRsZWQiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn19LHsiaW5kZXgiOjEsImV4cGVjdGVkIjoxOTY3LjczNDM3NSwiYXRFbnRyeSI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MCwiZXhwZWN0ZWQiOjExMDguNjI1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9LCJzZXR0bGVkIjp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9fV0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-bcb5d9ae91303d1d4c26",
+          "file": "services-overview.spec.ts",
+          "line": 192,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T00:58:44.237Z",
+    "duration": 52790.439,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}
