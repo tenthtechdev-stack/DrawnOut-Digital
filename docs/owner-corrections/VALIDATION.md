@@ -43,19 +43,19 @@ Desktop/mobile screenshots and native video keyframes were visually inspected.
 
 ## Actual checks
 
-| Check                                                  | Result                                                                                                                                             |
-| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Production build                                       | Passed, 22 routes                                                                                                                                  |
-| Astro/TypeScript                                       | Passed, 148 files; zero errors/warnings/hints                                                                                                      |
-| ESLint                                                 | Passed                                                                                                                                             |
-| Unit suite                                             | Passed, 46 tests                                                                                                                                   |
-| Build-output tests                                     | Passed, 6 tests                                                                                                                                    |
-| About output/privacy tests                             | Passed, 2 tests                                                                                                                                    |
-| Publication/withdrawal integration                     | Passed, 1 test including unique artwork/video withdrawal                                                                                           |
-| About production browser                               | Passed, 30/30                                                                                                                                      |
-| Intro production browser                               | All 28 cases have passing observations across original and corrected runs                                                                          |
-| Contact/service/portfolio/gradient/footer preservation | 72 production preservation checks passed; seven development-only diagnostic cases are being rerun in development (two other gradient cases passed) |
-| Formatting                                             | Source passed; generated JSON final check pending                                                                                                  |
+| Check                                                  | Result                                                                                                     |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| Production build                                       | Passed, 22 routes                                                                                          |
+| Astro/TypeScript                                       | Passed, 148 files; zero errors/warnings/hints                                                              |
+| ESLint                                                 | Passed                                                                                                     |
+| Unit suite                                             | Passed, 46 tests                                                                                           |
+| Build-output tests                                     | Passed, 6 tests                                                                                            |
+| About output/privacy tests                             | Passed, 2 tests                                                                                            |
+| Publication/withdrawal integration                     | Passed, 1 test including unique artwork/video withdrawal                                                   |
+| About production browser                               | Passed, 30/30                                                                                              |
+| Intro production browser                               | All 28 cases have passing observations across original and corrected runs                                  |
+| Contact/service/portfolio/gradient/footer preservation | 72/72 production preservation cases passed; 9/9 gradient diagnostic cases passed separately in development |
+| Formatting                                             | Passed after formatting the generated review JSON                                                          |
 
 About checks cover actual sequence order at four widths, copy, overflow,
 keyboard/axe, no-JS, reduced motion, Save Data, blocked/delayed modules and
@@ -96,3 +96,14 @@ The existing hand/plaque is a separated raster prototype. Formspree needs owner
 configuration and real delivery verification. Chromium software rendering is not
 a physical-device or Safari/Firefox benchmark; those browsers were not tested.
 No PR was merged, no deployment occurred and no Netlify mirror was pushed.
+
+The first combined preservation invocation reported 74/81: its seven failures
+read the development-only gradient diagnostic object from production output.
+The 72 intended production preservation cases all passed. The unchanged nine
+gradient tests were then run in their intended development mode and all passed.
+Production recordings separately verify continued WebGL draws after the intro.
+The [initial mixed-mode report](../../artifacts/owner-corrections/preservation-browser-tests.json)
+and [correct-mode gradient report](../../artifacts/owner-corrections/gradient-dev-browser-tests.json)
+are retained. Across the final appropriate modes, 139 distinct browser cases
+have passing observations (30 About, 28 intro, 72 preservation, 9 gradient).
+This is not a claim of one uninterrupted clean 139-case invocation.
