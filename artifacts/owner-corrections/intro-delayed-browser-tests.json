@@ -1,0 +1,194 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-services-hero/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.owner-corrections.config.ts",
+      "--project",
+      "intro",
+      "--grep",
+      "delayed"
+    ],
+    "configFile": "/workspace/drawnout-services-hero/playwright.owner-corrections.config.ts",
+    "rootDir": "/workspace/drawnout-services-hero/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-services-hero/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "about",
+        "name": "about",
+        "testDir": "/workspace/drawnout-services-hero/tests",
+        "testIgnore": [],
+        "testMatch": ["browser/about.spec.ts", "browser/services-hero-about.spec.ts"],
+        "timeout": 70000
+      },
+      {
+        "outputDir": "/workspace/drawnout-services-hero/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "intro",
+        "name": "intro",
+        "testDir": "/workspace/drawnout-services-hero/tests",
+        "testIgnore": [],
+        "testMatch": ["production-browser/*.spec.ts", "browser/signature-intro.spec.ts"],
+        "timeout": 70000
+      },
+      {
+        "outputDir": "/workspace/drawnout-services-hero/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "preservation",
+        "name": "preservation",
+        "testDir": "/workspace/drawnout-services-hero/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/services-hero.spec.ts",
+          "browser/services.spec.ts",
+          "browser/contact.spec.ts",
+          "browser/footer-social.spec.ts",
+          "browser/signature-footer.spec.ts",
+          "browser/portfolio-motion.spec.ts",
+          "browser/signature-gradient.spec.ts"
+        ],
+        "timeout": 70000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-services-hero/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "intro",
+        "testDir": "/workspace/drawnout-services-hero/tests",
+        "snapshotDir": "/workspace/drawnout-services-hero/tests",
+        "testIgnore": [],
+        "testMatch": ["production-browser/*.spec.ts", "browser/signature-intro.spec.ts"],
+        "timeout": 70000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4401",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "intro"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      ["list", null],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/owner-corrections/intro-delayed-browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4401",
+      "url": "http://127.0.0.1:4401",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "browser/signature-intro.spec.ts",
+      "file": "browser/signature-intro.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "delayed external scripts never delay or replay the inline opening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7712,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:39:02.756Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-733dc6e6842b371c7fde",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 482,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T19:39:01.448Z",
+    "duration": 9473.82,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

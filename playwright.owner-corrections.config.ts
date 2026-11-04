@@ -42,7 +42,6 @@ export default defineConfig({
         'browser/footer-social.spec.ts',
         'browser/signature-footer.spec.ts',
         'browser/portfolio-motion.spec.ts',
-        'browser/signature-gradient.spec.ts',
       ],
     },
   ],

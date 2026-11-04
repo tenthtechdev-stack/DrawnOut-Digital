@@ -1,0 +1,1277 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-services-hero/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.owner-corrections.config.ts",
+      "--project",
+      "intro"
+    ],
+    "configFile": "/workspace/drawnout-services-hero/playwright.owner-corrections.config.ts",
+    "rootDir": "/workspace/drawnout-services-hero/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-services-hero/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "about",
+        "name": "about",
+        "testDir": "/workspace/drawnout-services-hero/tests",
+        "testIgnore": [],
+        "testMatch": ["browser/about.spec.ts", "browser/services-hero-about.spec.ts"],
+        "timeout": 70000
+      },
+      {
+        "outputDir": "/workspace/drawnout-services-hero/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "intro",
+        "name": "intro",
+        "testDir": "/workspace/drawnout-services-hero/tests",
+        "testIgnore": [],
+        "testMatch": ["production-browser/*.spec.ts", "browser/signature-intro.spec.ts"],
+        "timeout": 70000
+      },
+      {
+        "outputDir": "/workspace/drawnout-services-hero/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "preservation",
+        "name": "preservation",
+        "testDir": "/workspace/drawnout-services-hero/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/services-hero.spec.ts",
+          "browser/services.spec.ts",
+          "browser/contact.spec.ts",
+          "browser/footer-social.spec.ts",
+          "browser/signature-footer.spec.ts",
+          "browser/portfolio-motion.spec.ts",
+          "browser/signature-gradient.spec.ts"
+        ],
+        "timeout": 70000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-services-hero/test-results/owner-corrections",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "intro",
+        "testDir": "/workspace/drawnout-services-hero/tests",
+        "snapshotDir": "/workspace/drawnout-services-hero/tests",
+        "testIgnore": [],
+        "testMatch": ["production-browser/*.spec.ts", "browser/signature-intro.spec.ts"],
+        "timeout": 70000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4401",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "intro"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      ["list", null],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/owner-corrections/intro-browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4401",
+      "url": "http://127.0.0.1:4401",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "browser/signature-intro.spec.ts",
+      "file": "browser/signature-intro.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "opening completes automatically within five navigation seconds at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5159,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:12:58.773Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "intro-320",
+                      "contentType": "application/json",
+                      "body": "eyJsYXlvdXRTaGlmdFN1bSI6MC4wMDIwMjM5ODA0NTY2OTM2NzI4LCJsYXN0VmlzaWJsZSI6NDQyOS42MDAwMDAwMDE0OSwiZW5kZWQiOjQ0OTIuMiwicmVhc29uIjoiY29tcGxldGUiLCJjb25uZWN0aW5nV2F2ZUNvdW50IjowLCJyZXZlYWxDaGVja3BvaW50cyI6W3sidGltZSI6MTA4OS4zOTk5OTk5OTg1MDk5LCJ0ZXh0UmVtYWluaW5nIjowLjg1NzAyOX0seyJ0aW1lIjoxNTY5LjY5OTk5OTk5OTI1NSwidGV4dFJlbWFpbmluZyI6MC41NjE3NzF9LHsidGltZSI6MTkyNC44OTk5OTk5OTg1MDk5LCJ0ZXh0UmVtYWluaW5nIjowLjM1MjIyOX0seyJ0aW1lIjoyMjkxLjM5OTk5OTk5ODUxLCJ0ZXh0UmVtYWluaW5nIjowLjE0Mjc0M31dLCJzYXdGdWxsTmFtZSI6dHJ1ZSwic2F3Q29tcGxldGVkV2lwZSI6dHJ1ZSwicmVhZGFibGVQYXJ0aWFsU2FtcGxlcyI6NDMsImhvbGQiOnsiZnJvbSI6MjU0MC4zLCJ1bnRpbCI6Mjc0MC4zLCJkdXJhdGlvbiI6MjAwLCJ3b3JkU3RhcnQiOjc5MC4zLCJ3b3JkRW5kIjoyNTQwLjMsImNvbXBsZXRlQ2xpcCI6Imluc2V0KDBweCkiLCJmYWRlRnJvbSI6MSwiZmFkZVRvIjowfSwiaG9sZFNhbXBsZXMiOlt7InRpbWUiOjI1NTcuMiwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI1NzMuOCwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI1OTAuNSwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI2MDcuMSwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI2MjMuOCwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI2NDAuNSwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI2NTcuMiwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI2NzMuOCwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI2OTAuNCwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI3MDcuMSwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI3MjMuOCwiZnVsbHlWaXNpYmxlIjp0cnVlfV0sIm1heGltdW1TYW1wbGVHYXAiOjUxNi43LCJmdWxsTmFtZUdlb21ldHJ5Ijp7InRleHQiOiJEcmF3bk91dCIsImxlZnQiOjIyLCJyaWdodCI6MjUwLjE3MTg3NSwidG9wIjo3MjcuNTkzNzUsImJvdHRvbSI6ODAxLjU5Mzc1LCJib3hUb3AiOjczNy41OTM3NSwiYm94Qm90dG9tIjo3OTIsIndpZHRoIjoyMjguMTcxODc1LCJmb250U2l6ZSI6NTQuNCwiZ3JpZExlZnQiOjIyLCJza2lwVG9wIjo4MzEsInZpZXdwb3J0V2lkdGgiOjMyMCwidmlld3BvcnRIZWlnaHQiOjkwMH0sInNhd0luZGVwZW5kZW50RW50cmFuY2UiOnRydWUsInNhd0hlbGRQb3NlIjp0cnVlLCJsYXllckNoZWNrcG9pbnRzIjpbeyJwaGFzZSI6InNlcGFyYXRlIGVudHJhbmNlIiwidGltZSI6Mjg0MS4zOTk5OTk5OTg1MSwiaGFuZFkiOjMwNy45NTUsInBsYXF1ZVkiOi01MTMuMjU5LCJpbWFnZXNMb2FkZWQiOnRydWV9LHsicGhhc2UiOiJyZWdpc3RlcmVkIGhlbGQgcG9zZSIsInRpbWUiOjM1NTcuNjAwMDAwMDAxNDksImhhbmRZIjowLjEwODY5LCJwbGFxdWVZIjotMC4xODExNSwiaW1hZ2VzTG9hZGVkIjp0cnVlfV0sImltYWdlU291cmNlcyI6WyJodHRwOi8vMTI3LjAuMC4xOjQ0MDEvX2FzdHJvL2VtYmxlbS1wbGFxdWUuQ3dGU3hhcklfWndCWTgwLndlYnAiLCJodHRwOi8vMTI3LjAuMC4xOjQ0MDEvX2FzdHJvL2hhbmQtZW1wdHkucVctTzVjS3hfWjFDRlluWS53ZWJwIl0sImxlZ2FjeUNvbXBvc2l0ZUNvdW50IjowfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-c0abed8c856436891544",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 72,
+          "column": 3
+        },
+        {
+          "title": "opening completes automatically within five navigation seconds at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5049,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:04.286Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "intro-390",
+                      "contentType": "application/json",
+                      "body": "eyJsYXlvdXRTaGlmdFN1bSI6MC4wMDE5MDc2OTIzMDc2OTIzMDc3LCJsYXN0VmlzaWJsZSI6NDI5OS40MDAwMDAwMDIyMzUsImVuZGVkIjo0NDEyLjcsInJlYXNvbiI6ImNvbXBsZXRlIiwiY29ubmVjdGluZ1dhdmVDb3VudCI6MCwicmV2ZWFsQ2hlY2twb2ludHMiOlt7InRpbWUiOjc0MCwidGV4dFJlbWFpbmluZyI6MC45NDQwMDAwMDAwMDAwMDAxfSx7InRpbWUiOjExMDYuNSwidGV4dFJlbWFpbmluZyI6MC43MzQ1MTQwMDAwMDAwMDAxfSx7InRpbWUiOjE0NTYuMjAwMDAwMDAyOTgwMiwidGV4dFJlbWFpbmluZyI6MC41MzQ1MTR9LHsidGltZSI6MTgwNi4yMDAwMDAwMDI5ODAyLCJ0ZXh0UmVtYWluaW5nIjowLjMzNDUxNH0seyJ0aW1lIjoyMTcyLjkwMDAwMDAwMjIzNSwidGV4dFJlbWFpbmluZyI6MC4xMjQ5NzF9XSwic2F3RnVsbE5hbWUiOnRydWUsInNhd0NvbXBsZXRlZFdpcGUiOnRydWUsInJlYWRhYmxlUGFydGlhbFNhbXBsZXMiOjg5LCJob2xkIjp7ImZyb20iOjIzOTAuOSwidW50aWwiOjI1OTAuOSwiZHVyYXRpb24iOjIwMCwid29yZFN0YXJ0Ijo2NDAuOSwid29yZEVuZCI6MjM5MC45LCJjb21wbGV0ZUNsaXAiOiJpbnNldCgwcHgpIiwiZmFkZUZyb20iOjEsImZhZGVUbyI6MH0sImhvbGRTYW1wbGVzIjpbeyJ0aW1lIjoyNDA1LjQsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNDIyLjEsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNDM4LjgsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNDU1LjUsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNDg4LjcsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNTA1LjQsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNTIyLjEsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNTM4LjgsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNTU1LjQsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNTcyLjEsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNTg4LjgsImZ1bGx5VmlzaWJsZSI6dHJ1ZX1dLCJtYXhpbXVtU2FtcGxlR2FwIjoyNDkuOTEwMDAwMDAwMDAwMDMsImZ1bGxOYW1lR2VvbWV0cnkiOnsidGV4dCI6IkRyYXduT3V0IiwibGVmdCI6MjIsInJpZ2h0IjozMDAuMTI1LCJ0b3AiOjcxMi43MDMxMjUsImJvdHRvbSI6ODAzLjcwMzEyNSwiYm94VG9wIjo3MjUuNzAzMTI1LCJib3hCb3R0b20iOjc5Miwid2lkdGgiOjI3OC4xMjUsImZvbnRTaXplIjo2Ni4zLCJncmlkTGVmdCI6MjIsInNraXBUb3AiOjgzMSwidmlld3BvcnRXaWR0aCI6MzkwLCJ2aWV3cG9ydEhlaWdodCI6OTAwfSwic2F3SW5kZXBlbmRlbnRFbnRyYW5jZSI6dHJ1ZSwic2F3SGVsZFBvc2UiOnRydWUsImxheWVyQ2hlY2twb2ludHMiOlt7InBoYXNlIjoic2VwYXJhdGUgZW50cmFuY2UiLCJ0aW1lIjoyNjg5LjcwMDAwMDAwMjk4MDIsImhhbmRZIjozMTEuNzU5LCJwbGFxdWVZIjotNTE5LjU5OCwiaW1hZ2VzTG9hZGVkIjp0cnVlfSx7InBoYXNlIjoicmVnaXN0ZXJlZCBoZWxkIHBvc2UiLCJ0aW1lIjozNDIyLjcwMDAwMDAwMjk4MDIsImhhbmRZIjowLjAzNDI3NDYsInBsYXF1ZVkiOi0wLjA1NzEyNDQsImltYWdlc0xvYWRlZCI6dHJ1ZX1dLCJpbWFnZVNvdXJjZXMiOlsiaHR0cDovLzEyNy4wLjAuMTo0NDAxL19hc3Ryby9lbWJsZW0tcGxhcXVlLkN3RlN4YXJJX1p3Qlk4MC53ZWJwIiwiaHR0cDovLzEyNy4wLjAuMTo0NDAxL19hc3Ryby9oYW5kLWVtcHR5LnFXLU81Y0t4X1oxQ0ZZblkud2VicCJdLCJsZWdhY3lDb21wb3NpdGVDb3VudCI6MH0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-a61c781118d8853fcad2",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 72,
+          "column": 3
+        },
+        {
+          "title": "opening completes automatically within five navigation seconds at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5346,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:09.353Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "intro-768",
+                      "contentType": "application/json",
+                      "body": "eyJsYXlvdXRTaGlmdFN1bSI6MC4wMDIxNzU1OTMxNzEyOTYyOTY2LCJsYXN0VmlzaWJsZSI6NDM0Ny4xMDAwMDAwMDE0OSwiZW5kZWQiOjQ0NDguMiwicmVhc29uIjoiY29tcGxldGUiLCJjb25uZWN0aW5nV2F2ZUNvdW50IjowLCJyZXZlYWxDaGVja3BvaW50cyI6W3sidGltZSI6ODQ3LjE5OTk5OTk5OTI1NDksInRleHRSZW1haW5pbmciOjAuOTM0NTE0MDAwMDAwMDAwMX0seyJ0aW1lIjoxMjIwLjEwMDAwMDAwMTQ5MDEsInRleHRSZW1haW5pbmciOjAuNzI0OTcxfSx7InRpbWUiOjE1ODYuMzk5OTk5OTk4NTA5OSwidGV4dFJlbWFpbmluZyI6MC41MTU0ODZ9LHsidGltZSI6MTk3Mi44MDAwMDAwMDA3NDUsInRleHRSZW1haW5pbmciOjAuMjk2NDU3fSx7InRpbWUiOjIzNDYuNSwidGV4dFJlbWFpbmluZyI6MC4wNzczNzE0fV0sInNhd0Z1bGxOYW1lIjp0cnVlLCJzYXdDb21wbGV0ZWRXaXBlIjp0cnVlLCJyZWFkYWJsZVBhcnRpYWxTYW1wbGVzIjo1OCwiaG9sZCI6eyJmcm9tIjoyNDgxLjIsInVudGlsIjoyNjgxLjIsImR1cmF0aW9uIjoyMDAsIndvcmRTdGFydCI6NzMxLjIsIndvcmRFbmQiOjI0ODEuMiwiY29tcGxldGVDbGlwIjoiaW5zZXQoMHB4KSIsImZhZGVGcm9tIjoxLCJmYWRlVG8iOjB9LCJob2xkU2FtcGxlcyI6W3sidGltZSI6MjUxMi40LCJmdWxseVZpc2libGUiOnRydWV9LHsidGltZSI6MjUyOS4xLCJmdWxseVZpc2libGUiOnRydWV9LHsidGltZSI6MjU3OSwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI1OTUuNywiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI2MTIuNCwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI2NDUuOCwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI2NzkuMSwiZnVsbHlWaXNpYmxlIjp0cnVlfV0sIm1heGltdW1TYW1wbGVHYXAiOjE1MCwiZnVsbE5hbWVHZW9tZXRyeSI6eyJ0ZXh0IjoiRHJhd25PdXQiLCJsZWZ0IjozMi4yNSwicmlnaHQiOjU3OS44OTA2MjUsInRvcCI6NjM3LjQzNzUsImJvdHRvbSI6ODE1LjQzNzUsImJveFRvcCI6NjYxLjQzNzUsImJveEJvdHRvbSI6NzkyLCJ3aWR0aCI6NTQ3LjY0MDYyNSwiZm9udFNpemUiOjEzMC41NiwiZ3JpZExlZnQiOjMyLjI1LCJza2lwVG9wIjo4MzEsInZpZXdwb3J0V2lkdGgiOjc2OCwidmlld3BvcnRIZWlnaHQiOjkwMH0sInNhd0luZGVwZW5kZW50RW50cmFuY2UiOnRydWUsInNhd0hlbGRQb3NlIjp0cnVlLCJsYXllckNoZWNrcG9pbnRzIjpbeyJwaGFzZSI6InNlcGFyYXRlIGVudHJhbmNlIiwidGltZSI6Mjc4OC41LCJoYW5kWSI6MzE4LjI1NCwicGxhcXVlWSI6LTUzMC40MjMsImltYWdlc0xvYWRlZCI6dHJ1ZX0seyJwaGFzZSI6InJlZ2lzdGVyZWQgaGVsZCBwb3NlIiwidGltZSI6MzUxNC41LCJoYW5kWSI6MC4wMzQ5ODg3LCJwbGFxdWVZIjotMC4wNTgzMTQ0LCJpbWFnZXNMb2FkZWQiOnRydWV9XSwiaW1hZ2VTb3VyY2VzIjpbImh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vZW1ibGVtLXBsYXF1ZS5Dd0ZTeGFySV9aNUVDRU4ud2VicCIsImh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vaGFuZC1lbXB0eS5xVy1PNWNLeF8xd1FVZmcud2VicCJdLCJsZWdhY3lDb21wb3NpdGVDb3VudCI6MH0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-0413d58a59d71c5c65b2",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 72,
+          "column": 3
+        },
+        {
+          "title": "opening completes automatically within five navigation seconds at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5565,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:14.726Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "intro-1440",
+                      "contentType": "application/json",
+                      "body": "eyJsYXlvdXRTaGlmdFN1bSI6MC4wMDkxMTMwMjQwNDgzNTM5MDksImxhc3RWaXNpYmxlIjo0MzgyLjUsImVuZGVkIjo0NDQ0LjQsInJlYXNvbiI6ImNvbXBsZXRlIiwiY29ubmVjdGluZ1dhdmVDb3VudCI6MCwicmV2ZWFsQ2hlY2twb2ludHMiOlt7InRpbWUiOjk3Ni4wOTk5OTk5OTc3NjQ4LCJ0ZXh0UmVtYWluaW5nIjowLjg3MDh9LHsidGltZSI6MTMzOC41OTk5OTk5OTc3NjQ4LCJ0ZXh0UmVtYWluaW5nIjowLjY2MTI1N30seyJ0aW1lIjoxNzM3LjM5OTk5OTk5ODUwOTksInRleHRSZW1haW5pbmciOjAuNDMyNzQzfSx7InRpbWUiOjIwODcuMzAwMDAwMDAwNzQ1LCJ0ZXh0UmVtYWluaW5nIjowLjIzMjY4Nn1dLCJzYXdGdWxsTmFtZSI6dHJ1ZSwic2F3Q29tcGxldGVkV2lwZSI6dHJ1ZSwicmVhZGFibGVQYXJ0aWFsU2FtcGxlcyI6MzQsImhvbGQiOnsiZnJvbSI6MjQ5NCwidW50aWwiOjI2OTQsImR1cmF0aW9uIjoyMDAsIndvcmRTdGFydCI6NzQ0LCJ3b3JkRW5kIjoyNDk0LCJjb21wbGV0ZUNsaXAiOiJpbnNldCgwcHgpIiwiZmFkZUZyb20iOjEsImZhZGVUbyI6MH0sImhvbGRTYW1wbGVzIjpbeyJ0aW1lIjoyNTAzLjQsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNTM2LjcsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNTg2LjcsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNjIwLjEsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNjg2LjcsImZ1bGx5VmlzaWJsZSI6dHJ1ZX1dLCJtYXhpbXVtU2FtcGxlR2FwIjozNjYuNiwiZnVsbE5hbWVHZW9tZXRyeSI6eyJ0ZXh0IjoiRHJhd25PdXQiLCJsZWZ0Ijo2MC40Njg3NSwicmlnaHQiOjEwODcuMzkwNjI1LCJ0b3AiOjUwMi4yMDMxMjUsImJvdHRvbSI6ODM2LjIwMzEyNSwiYm94VG9wIjo1NDcuMjAzMTI1LCJib3hCb3R0b20iOjc5Miwid2lkdGgiOjEwMjYuOTIxODc1LCJmb250U2l6ZSI6MjQ0LjgsImdyaWRMZWZ0Ijo2MC40Njg3NSwic2tpcFRvcCI6ODMxLCJ2aWV3cG9ydFdpZHRoIjoxNDQwLCJ2aWV3cG9ydEhlaWdodCI6OTAwfSwic2F3SW5kZXBlbmRlbnRFbnRyYW5jZSI6dHJ1ZSwic2F3SGVsZFBvc2UiOnRydWUsImxheWVyQ2hlY2twb2ludHMiOlt7InBoYXNlIjoic2VwYXJhdGUgZW50cmFuY2UiLCJ0aW1lIjoyODA4LjM5OTk5OTk5ODUxLCJoYW5kWSI6Mjk4LjgyMSwicGxhcXVlWSI6LTQ5OC4wMzUsImltYWdlc0xvYWRlZCI6dHJ1ZX0seyJwaGFzZSI6InJlZ2lzdGVyZWQgaGVsZCBwb3NlIiwidGltZSI6MzUzNC4xOTk5OTk5OTkyNTUsImhhbmRZIjowLjA1NzM2NDEsInBsYXF1ZVkiOi0wLjA5NTYwNjgsImltYWdlc0xvYWRlZCI6dHJ1ZX1dLCJpbWFnZVNvdXJjZXMiOlsiaHR0cDovLzEyNy4wLjAuMTo0NDAxL19hc3Ryby9lbWJsZW0tcGxhcXVlLkN3RlN4YXJJX1o1RUNFTi53ZWJwIiwiaHR0cDovLzEyNy4wLjAuMTo0NDAxL19hc3Ryby9oYW5kLWVtcHR5LnFXLU81Y0t4XzF3UVVmZy53ZWJwIl0sImxlZ2FjeUNvbXBvc2l0ZUNvdW50IjowfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-c9d9c74ac8075b0e2856",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 72,
+          "column": 3
+        },
+        {
+          "title": "opening completes automatically within five navigation seconds at 1920px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5666,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:20.312Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "intro-1920",
+                      "contentType": "application/json",
+                      "body": "eyJsYXlvdXRTaGlmdFN1bSI6MCwibGFzdFZpc2libGUiOjQyNDIuODk5OTk5OTk4NTEsImVuZGVkIjo0NDI3LjgsInJlYXNvbiI6ImNvbXBsZXRlIiwiY29ubmVjdGluZ1dhdmVDb3VudCI6MCwicmV2ZWFsQ2hlY2twb2ludHMiOlt7InRpbWUiOjc3NiwidGV4dFJlbWFpbmluZyI6MC45MzEwODZ9LHsidGltZSI6MTE1MC41LCJ0ZXh0UmVtYWluaW5nIjowLjcyMTU0M30seyJ0aW1lIjoxNTMwLjUsInRleHRSZW1haW5pbmciOjAuNTAyNTE0fSx7InRpbWUiOjE5MDYuNSwidGV4dFJlbWFpbmluZyI6MC4yODM0ODZ9LHsidGltZSI6MjI4NCwidGV4dFJlbWFpbmluZyI6MC4wNzM5NDI4OTk5OTk5OTk5OX1dLCJzYXdGdWxsTmFtZSI6dHJ1ZSwic2F3Q29tcGxldGVkV2lwZSI6dHJ1ZSwicmVhZGFibGVQYXJ0aWFsU2FtcGxlcyI6MzEsImhvbGQiOnsiZnJvbSI6MjQwMS4xLCJ1bnRpbCI6MjYwMS4xLCJkdXJhdGlvbiI6MjAwLCJ3b3JkU3RhcnQiOjY1MS4xLCJ3b3JkRW5kIjoyNDAxLjEsImNvbXBsZXRlQ2xpcCI6Imluc2V0KDBweCkiLCJmYWRlRnJvbSI6MSwiZmFkZVRvIjowfSwiaG9sZFNhbXBsZXMiOlt7InRpbWUiOjI0MjEuNywiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI0NzEuNiwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI1MDQuOSwiZnVsbHlWaXNpYmxlIjp0cnVlfSx7InRpbWUiOjI1NTUsImZ1bGx5VmlzaWJsZSI6dHJ1ZX0seyJ0aW1lIjoyNTg4LjMsImZ1bGx5VmlzaWJsZSI6dHJ1ZX1dLCJtYXhpbXVtU2FtcGxlR2FwIjoxMTYuNjk5OTk5OTk5OTk5OTksImZ1bGxOYW1lR2VvbWV0cnkiOnsidGV4dCI6IkRyYXduT3V0IiwibGVmdCI6MjQwLjYyNSwicmlnaHQiOjE0OTkuMTQwNjI1LCJ0b3AiOjQzNywiYm90dG9tIjo4NDcsImJveFRvcCI6NDkyLCJib3hCb3R0b20iOjc5Miwid2lkdGgiOjEyNTguNTE1NjI1LCJmb250U2l6ZSI6MzAwLCJncmlkTGVmdCI6MjQwLjYyNSwic2tpcFRvcCI6ODMxLCJ2aWV3cG9ydFdpZHRoIjoxOTIwLCJ2aWV3cG9ydEhlaWdodCI6OTAwfSwic2F3SW5kZXBlbmRlbnRFbnRyYW5jZSI6dHJ1ZSwic2F3SGVsZFBvc2UiOnRydWUsImxheWVyQ2hlY2twb2ludHMiOlt7InBoYXNlIjoic2VwYXJhdGUgZW50cmFuY2UiLCJ0aW1lIjoyNzA3LCJoYW5kWSI6MzA4LjI4OCwicGxhcXVlWSI6LTUxMy44MTMsImltYWdlc0xvYWRlZCI6dHJ1ZX0seyJwaGFzZSI6InJlZ2lzdGVyZWQgaGVsZCBwb3NlIiwidGltZSI6MzQ0MS44MDAwMDAwMDA3NDUsImhhbmRZIjowLjAxNjM2MjYsInBsYXF1ZVkiOi0wLjAyNzI3MTEsImltYWdlc0xvYWRlZCI6dHJ1ZX1dLCJpbWFnZVNvdXJjZXMiOlsiaHR0cDovLzEyNy4wLjAuMTo0NDAxL19hc3Ryby9lbWJsZW0tcGxhcXVlLkN3RlN4YXJJX1o1RUNFTi53ZWJwIiwiaHR0cDovLzEyNy4wLjAuMTo0NDAxL19hc3Ryby9oYW5kLWVtcHR5LnFXLU81Y0t4XzF3UVVmZy53ZWJwIl0sImxlZ2FjeUNvbXBvc2l0ZUNvdW50IjowfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-69eb3e326acf64bdcf05",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 72,
+          "column": 3
+        },
+        {
+          "title": "Escape immediately bypasses the opening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1879,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:25.998Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-6bfc11aa2799841f3288",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 330,
+          "column": 3
+        },
+        {
+          "title": "Enter immediately bypasses the opening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1912,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:27.887Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-d8d884a2ef121d57a2e4",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 330,
+          "column": 3
+        },
+        {
+          "title": "Space immediately bypasses the opening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2075,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:29.827Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-bf1d927005e5e54b0c21",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 330,
+          "column": 3
+        },
+        {
+          "title": "Tab immediately bypasses the opening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1855,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:31.926Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-412181e7eac07aad28ba",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 330,
+          "column": 3
+        },
+        {
+          "title": "wheel bypass preserves the original native scroll input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2203,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:33.801Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-b02cf30ff6a2613390c7",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 340,
+          "column": 1
+        },
+        {
+          "title": "visible skip control immediately reveals the homepage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2792,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:36.021Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-00be4adddd63d169e794",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 347,
+          "column": 1
+        },
+        {
+          "title": "internal navigation keeps its first action and the next manual refresh replays",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8032,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:38.828Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-db69092845e426dd80cb",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 355,
+          "column": 1
+        },
+        {
+          "title": "direct case loads use the loader while hash destinations reach content immediately",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2128,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:46.876Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-9bbb0d3ccc411991b7ed",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 374,
+          "column": 1
+        },
+        {
+          "title": "reduced motion reaches the homepage immediately and remains readable without JavaScript",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2021,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4321/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4321/\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4321/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4321/\", waiting until \"load\"\u001b[22m\n\n    at /workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts:401:22",
+                    "location": {
+                      "file": "/workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts",
+                      "column": 22,
+                      "line": 401
+                    },
+                    "snippet": "  399 |   try {\n  400 |     const staticPage = await context.newPage();\n> 401 |     await staticPage.goto('http://127.0.0.1:4321/');\n      |                      ^\n  402 |     await expect(staticPage.locator(overlay)).toBeHidden();\n  403 |     await expect(staticPage.locator('main h1')).toHaveText('We make ideas impossible to ignore.');\n  404 |     await expect(staticPage.locator('[data-work] a[href^=\"/work/\"]').first()).toBeVisible();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts",
+                        "column": 22,
+                        "line": 401
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4321/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4321/\", waiting until \"load\"\u001b[22m\n\n\n  399 |   try {\n  400 |     const staticPage = await context.newPage();\n> 401 |     await staticPage.goto('http://127.0.0.1:4321/');\n      |                      ^\n  402 |     await expect(staticPage.locator(overlay)).toBeHidden();\n  403 |     await expect(staticPage.locator('main h1')).toHaveText('We make ideas impossible to ignore.');\n  404 |     await expect(staticPage.locator('[data-work] a[href^=\"/work/\"]').first()).toBeVisible();\n    at /workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts:401:22"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:49.020Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-services-hero/test-results/owner-corrections/browser-signature-intro-re-6ff8d-readable-without-JavaScript-intro/test-failed-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-services-hero/test-results/owner-corrections/browser-signature-intro-re-6ff8d-readable-without-JavaScript-intro/test-failed-2.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-services-hero/test-results/owner-corrections/browser-signature-intro-re-6ff8d-readable-without-JavaScript-intro/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-services-hero/test-results/owner-corrections/browser-signature-intro-re-6ff8d-readable-without-JavaScript-intro/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts",
+                    "column": 22,
+                    "line": 401
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-592ff5838706bdbefdb2",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 387,
+          "column": 1
+        },
+        {
+          "title": "data saving bypasses the opening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1797,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:51.676Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-2ca86a602509ed8340b0",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 410,
+          "column": 1
+        },
+        {
+          "title": "a homepage return respects the current motion preference instead of a past opt-out",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2917,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:53.762Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-f6e21c93fd4dc32210c6",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 424,
+          "column": 1
+        },
+        {
+          "title": "unavailable session storage fails open",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1644,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:56.699Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-9624cffd8489d7677d06",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 443,
+          "column": 1
+        },
+        {
+          "title": "a mobile tap immediately bypasses the intro",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 492,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4321/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4321/\", waiting until \"commit\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4321/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4321/\", waiting until \"commit\"\u001b[22m\n\n    at openIntro (/workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts:59:14)\n    at /workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts:462:11",
+                    "location": {
+                      "file": "/workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts",
+                      "column": 14,
+                      "line": 59
+                    },
+                    "snippet": "  57 |\n  58 | async function openIntro(page: Page) {\n> 59 |   await page.goto('/', { waitUntil: 'commit' });\n     |              ^\n  60 |   await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');\n  61 |   await expect(page.locator(overlay)).toBeVisible();\n  62 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts",
+                        "column": 14,
+                        "line": 59
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4321/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4321/\", waiting until \"commit\"\u001b[22m\n\n\n  57 |\n  58 | async function openIntro(page: Page) {\n> 59 |   await page.goto('/', { waitUntil: 'commit' });\n     |              ^\n  60 |   await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');\n  61 |   await expect(page.locator(overlay)).toBeVisible();\n  62 | }\n    at openIntro (/workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts:59:14)\n    at /workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts:462:11"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:58.359Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-services-hero/test-results/owner-corrections/browser-signature-intro-a--3e4f5-ediately-bypasses-the-intro-intro/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-services-hero/test-results/owner-corrections/browser-signature-intro-a--3e4f5-ediately-bypasses-the-intro-intro/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-services-hero/test-results/owner-corrections/browser-signature-intro-a--3e4f5-ediately-bypasses-the-intro-intro/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-services-hero/tests/browser/signature-intro.spec.ts",
+                    "column": 14,
+                    "line": 59
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-eced42c646fe55f22cd4",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 454,
+          "column": 1
+        },
+        {
+          "title": "live reduced-motion preference immediately cancels the opening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2498,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:13:59.397Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-4c152973b19deed05a35",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 474,
+          "column": 1
+        },
+        {
+          "title": "delayed optional module never delays or replays the inline opening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6821,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:14:02.184Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-b603b930939305514fe2",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 480,
+          "column": 1
+        },
+        {
+          "title": "failed signature media reveals the working homepage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2270,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:14:09.027Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1bcab83bcf7464ad9b11-3da48b0589290e7545aa",
+          "file": "browser/signature-intro.spec.ts",
+          "line": 495,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "production-browser/loader.spec.ts",
+      "file": "production-browser/loader.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24582,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:14:11.344Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "production-journeys-390",
+                      "contentType": "application/json",
+                      "body": "W3siYXJyaXZhbCI6ImNvbGQgZGlyZWN0IiwibW9kZSI6ImZ1bGwiLCJyZWFzb24iOiJjb21wbGV0ZSIsInN0YXJ0ZWQiOjEwMS44LCJlbmRlZCI6NDQxMC40LCJ2aXNpYmxlRnJhbWVzIjoxOTUsInZpc2libGVNcyI6MzQxOC4xOTk5OTk5OTkyNTUsImNvbm5lY3RpbmdXYXZlQ291bnQiOjAsInBhcnRpYWxXb3JkIjp0cnVlLCJzaXhSZXZlYWxlZCI6dHJ1ZSwiaW5kZXBlbmRlbnRFbnRyYW5jZSI6dHJ1ZSwid29yZEdlb21ldHJ5Ijp7ImxlZnQiOjIyLCJ3aWR0aCI6Mjc4LjEyNSwiYm90dG9tIjo3NDIuNzM0Mzc1LCJmb250U2l6ZSI6NjYuM30sInZpZXdwb3J0Ijp7IndpZHRoIjozOTAsImhlaWdodCI6ODQ0fSwib3ZlcmZsb3ciOmZhbHNlfSx7ImFycml2YWwiOiJyZWZyZXNoIDEiLCJtb2RlIjoiZnVsbCIsInJlYXNvbiI6ImNvbXBsZXRlIiwic3RhcnRlZCI6MTU0LjgsImVuZGVkIjo0MzY0LCJ2aXNpYmxlRnJhbWVzIjoyMDAsInZpc2libGVNcyI6MzcyNC41LCJjb25uZWN0aW5nV2F2ZUNvdW50IjowLCJwYXJ0aWFsV29yZCI6dHJ1ZSwic2l4UmV2ZWFsZWQiOnRydWUsImluZGVwZW5kZW50RW50cmFuY2UiOnRydWUsIndvcmRHZW9tZXRyeSI6eyJsZWZ0IjoyMiwid2lkdGgiOjI3OC4xMjUsImJvdHRvbSI6NzQyLjczNDM3NSwiZm9udFNpemUiOjY2LjN9LCJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NH0sIm92ZXJmbG93IjpmYWxzZX0seyJhcnJpdmFsIjoicmVmcmVzaCAyIiwibW9kZSI6ImZ1bGwiLCJyZWFzb24iOiJjb21wbGV0ZSIsInN0YXJ0ZWQiOjEyOC40LCJlbmRlZCI6NDMyOC43LCJ2aXNpYmxlRnJhbWVzIjoyMjEsInZpc2libGVNcyI6Mzc5Mi41LCJjb25uZWN0aW5nV2F2ZUNvdW50IjowLCJwYXJ0aWFsV29yZCI6dHJ1ZSwic2l4UmV2ZWFsZWQiOnRydWUsImluZGVwZW5kZW50RW50cmFuY2UiOnRydWUsIndvcmRHZW9tZXRyeSI6eyJsZWZ0IjoyMiwid2lkdGgiOjI3OC4xMjUsImJvdHRvbSI6NzQyLjczNDM3NSwiZm9udFNpemUiOjY2LjN9LCJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NH0sIm92ZXJmbG93IjpmYWxzZX0seyJhcnJpdmFsIjoiL2NvbnRhY3QgSG9tZSIsIm1vZGUiOiJmdWxsIiwicmVhc29uIjoiY29tcGxldGUiLCJzdGFydGVkIjoxMTEuNywiZW5kZWQiOjQzMTIsInZpc2libGVGcmFtZXMiOjIxNywidmlzaWJsZU1zIjozODI2LjM5OTk5OTk5ODUxLCJjb25uZWN0aW5nV2F2ZUNvdW50IjowLCJwYXJ0aWFsV29yZCI6dHJ1ZSwic2l4UmV2ZWFsZWQiOnRydWUsImluZGVwZW5kZW50RW50cmFuY2UiOnRydWUsIndvcmRHZW9tZXRyeSI6eyJsZWZ0IjoyMiwid2lkdGgiOjI3OC4xMjUsImJvdHRvbSI6NzQyLjczNDM3NSwiZm9udFNpemUiOjY2LjN9LCJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NH0sIm92ZXJmbG93IjpmYWxzZX0seyJhcnJpdmFsIjoiL3dvcmsgSG9tZSIsIm1vZGUiOiJmdWxsIiwicmVhc29uIjoiY29tcGxldGUiLCJzdGFydGVkIjoxNDkuNSwiZW5kZWQiOjQzNTIuMywidmlzaWJsZUZyYW1lcyI6MjIyLCJ2aXNpYmxlTXMiOjM4MjguMzAwMDAwMDAwNzQ1LCJjb25uZWN0aW5nV2F2ZUNvdW50IjowLCJwYXJ0aWFsV29yZCI6dHJ1ZSwic2l4UmV2ZWFsZWQiOnRydWUsImluZGVwZW5kZW50RW50cmFuY2UiOnRydWUsIndvcmRHZW9tZXRyeSI6eyJsZWZ0IjoyMiwid2lkdGgiOjI3OC4xMjUsImJvdHRvbSI6NzQyLjczNDM3NSwiZm9udFNpemUiOjY2LjN9LCJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NH0sIm92ZXJmbG93IjpmYWxzZX1d"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179e946b00b4ff7f27a2-63351973691dc7e5dc25",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "column": 3
+        },
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24674,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:14:35.960Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "production-journeys-1440",
+                      "contentType": "application/json",
+                      "body": "W3siYXJyaXZhbCI6ImNvbGQgZGlyZWN0IiwibW9kZSI6ImZ1bGwiLCJyZWFzb24iOiJjb21wbGV0ZSIsInN0YXJ0ZWQiOjIzNS40LCJlbmRlZCI6NDQ1NC43LCJ2aXNpYmxlRnJhbWVzIjo5NSwidmlzaWJsZU1zIjozNTQzLjgwMDAwMDAwMDc0NSwiY29ubmVjdGluZ1dhdmVDb3VudCI6MCwicGFydGlhbFdvcmQiOnRydWUsInNpeFJldmVhbGVkIjp0cnVlLCJpbmRlcGVuZGVudEVudHJhbmNlIjp0cnVlLCJ3b3JkR2VvbWV0cnkiOnsibGVmdCI6NjAuNDY4NzUsIndpZHRoIjoxMDI2LjkyMTg3NSwiYm90dG9tIjo3OTIsImZvbnRTaXplIjoyNDQuOH0sInZpZXdwb3J0Ijp7IndpZHRoIjoxNDQwLCJoZWlnaHQiOjkwMH0sIm92ZXJmbG93IjpmYWxzZX0seyJhcnJpdmFsIjoicmVmcmVzaCAxIiwibW9kZSI6ImZ1bGwiLCJyZWFzb24iOiJjb21wbGV0ZSIsInN0YXJ0ZWQiOjE2Ny40LCJlbmRlZCI6NDM3OC4yLCJ2aXNpYmxlRnJhbWVzIjo5NywidmlzaWJsZU1zIjozNzI3LjM5OTk5OTk5ODUxLCJjb25uZWN0aW5nV2F2ZUNvdW50IjowLCJwYXJ0aWFsV29yZCI6dHJ1ZSwic2l4UmV2ZWFsZWQiOnRydWUsImluZGVwZW5kZW50RW50cmFuY2UiOnRydWUsIndvcmRHZW9tZXRyeSI6eyJsZWZ0Ijo2MC40Njg3NSwid2lkdGgiOjEwMjYuOTIxODc1LCJib3R0b20iOjc5MiwiZm9udFNpemUiOjI0NC44fSwidmlld3BvcnQiOnsid2lkdGgiOjE0NDAsImhlaWdodCI6OTAwfSwib3ZlcmZsb3ciOmZhbHNlfSx7ImFycml2YWwiOiJyZWZyZXNoIDIiLCJtb2RlIjoiZnVsbCIsInJlYXNvbiI6ImNvbXBsZXRlIiwic3RhcnRlZCI6MTEyLjcsImVuZGVkIjo0MzM1LjEsInZpc2libGVGcmFtZXMiOjEwNCwidmlzaWJsZU1zIjozNzg1LjU5OTk5OTk5Nzc2NSwiY29ubmVjdGluZ1dhdmVDb3VudCI6MCwicGFydGlhbFdvcmQiOnRydWUsInNpeFJldmVhbGVkIjp0cnVlLCJpbmRlcGVuZGVudEVudHJhbmNlIjp0cnVlLCJ3b3JkR2VvbWV0cnkiOnsibGVmdCI6NjAuNDY4NzUsIndpZHRoIjoxMDI2LjkyMTg3NSwiYm90dG9tIjo3OTIsImZvbnRTaXplIjoyNDQuOH0sInZpZXdwb3J0Ijp7IndpZHRoIjoxNDQwLCJoZWlnaHQiOjkwMH0sIm92ZXJmbG93IjpmYWxzZX0seyJhcnJpdmFsIjoiL2NvbnRhY3QgSG9tZSIsIm1vZGUiOiJmdWxsIiwicmVhc29uIjoiY29tcGxldGUiLCJzdGFydGVkIjo4Ni43LCJlbmRlZCI6NDI5My45LCJ2aXNpYmxlRnJhbWVzIjo5OSwidmlzaWJsZU1zIjozNjYwLjkwMDAwMDAwMjIzNSwiY29ubmVjdGluZ1dhdmVDb3VudCI6MCwicGFydGlhbFdvcmQiOnRydWUsInNpeFJldmVhbGVkIjp0cnVlLCJpbmRlcGVuZGVudEVudHJhbmNlIjp0cnVlLCJ3b3JkR2VvbWV0cnkiOnsibGVmdCI6NjAuNDY4NzUsIndpZHRoIjoxMDI2LjkyMTg3NSwiYm90dG9tIjo3OTIsImZvbnRTaXplIjoyNDQuOH0sInZpZXdwb3J0Ijp7IndpZHRoIjoxNDQwLCJoZWlnaHQiOjkwMH0sIm92ZXJmbG93IjpmYWxzZX0seyJhcnJpdmFsIjoiL3dvcmsgSG9tZSIsIm1vZGUiOiJmdWxsIiwicmVhc29uIjoiY29tcGxldGUiLCJzdGFydGVkIjoxMTcuMSwiZW5kZWQiOjQzMTcuOCwidmlzaWJsZUZyYW1lcyI6ODgsInZpc2libGVNcyI6MzYzMy40MDAwMDAwMDIyMzUsImNvbm5lY3RpbmdXYXZlQ291bnQiOjAsInBhcnRpYWxXb3JkIjp0cnVlLCJzaXhSZXZlYWxlZCI6dHJ1ZSwiaW5kZXBlbmRlbnRFbnRyYW5jZSI6dHJ1ZSwid29yZEdlb21ldHJ5Ijp7ImxlZnQiOjYwLjQ2ODc1LCJ3aWR0aCI6MTAyNi45MjE4NzUsImJvdHRvbSI6NzkyLCJmb250U2l6ZSI6MjQ0Ljh9LCJ2aWV3cG9ydCI6eyJ3aWR0aCI6MTQ0MCwiaGVpZ2h0Ijo5MDB9LCJvdmVyZmxvdyI6ZmFsc2V9XQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179e946b00b4ff7f27a2-f4d39c84d8763dbc14ca",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "column": 3
+        },
+        {
+          "title": "failed storyboard clock initialization reveals a working homepage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2609,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:15:00.656Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179e946b00b4ff7f27a2-0611d772c70b71a00a67",
+          "file": "production-browser/loader.spec.ts",
+          "line": 168,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "production-browser/signature-squares.spec.ts",
+      "file": "production-browser/signature-squares.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4922,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:15:03.320Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "project-squares-320",
+                      "contentType": "application/json",
+                      "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkRBWW1TWGhqX050YnloLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjo4MywiaGVpZ2h0Ijo4MywiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vdHJpYXJjaC1idXNpbmVzcy1jYXJkLkIya0JEUmxIXzJ1c2VzZi53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6ODMsImhlaWdodCI6ODMsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0MDEvX2FzdHJvL3NvbC1jb21tdW5pdHktc2lnbmFnZS5CZ3RzWnpma18xQ21UQk8ud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjgzLCJoZWlnaHQiOjUwLCJmaXQiOiJjb250YWluIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0MDEvX2FzdHJvL2NodXJyb3MtYXBwbGljYXRpb25zLkpJclllY3h4XzJOVnZsLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjo4MywiaGVpZ2h0Ijo4MywiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vYnktdGVjaC1hcHBsaWNhdGlvbnMuREFYcmhZVDRfWlBEaU9xLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjo4MywiaGVpZ2h0Ijo4MywiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vY2FwdHVyZS1hcHBsaWNhdGlvbnMubGhCcl9kS2JfU1lkWVQud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjgzLCJoZWlnaHQiOjgzLCJmaXQiOiJjb3ZlciJ9XSwiY29ubmVjdGluZ1dhdmVDb3VudCI6MCwiYXJ0d29ya0FmdGVySGFuZEVudHJhbmNlIjpmYWxzZSwic3R5bGVzIjpbeyJib3JkZXIiOjAsInJhZGl1cyI6OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OH1dLCJhcnR3b3JrVGltaW5ncyI6W3siY2xvY2tPZmZzZXQiOjAsInN0YXJ0Ijo2MDAsImVuZCI6ODgwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjg0MCwiZW5kIjoxMTIwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjEwODAsImVuZCI6MTM2MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxMzIwLCJlbmQiOjE2MDAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTU2MCwiZW5kIjoxODQwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjE4MDAsImVuZCI6MjA4MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9XSwic2F3RW1wdHlUaWxlIjpbdHJ1ZSx0cnVlLHRydWUsdHJ1ZSx0cnVlLHRydWVdLCJyZXZlYWxTdGFydHMiOls2MTYuNiw4NTAuMDAwMDAwMDAwMDAwMSwxMDk5Ljg5OTk5OTk5OTk5OTksMTMzMy4zLDE1ODMuMywxODE2LjddLCJsYXN0VW5yZXZlYWxlZCI6WzYwMC4wMDAwMDAwMDAwMDAxLDgzMy4zMDAwMDAwMDAwMDAxLDEwODMuMzk5OTk5OTk5OTk5OSwxMzE2LjcsMTU2Ni42LDE3OTkuOTk5OTk5OTk5OTk5OF0sImxhc3RJbmNvbXBsZXRlIjoyMDY2LjcsIm1heGltdW1TYW1wbGVHYXAiOjE2Ni42MDYsInNhd01peGVkUmV2ZWFsIjp0cnVlLCJmdWxseVZpc2libGVBdCI6MjA4My4yLCJnZW9tZXRyeSI6eyJmcmFtZXMiOlt7ImxlZnQiOjE1Ljc0MjE4NzUsInJpZ2h0Ijo5Mi4yNzM0Mzc1LCJ0b3AiOjM2Mi41NDY4NzUsImJvdHRvbSI6NDM5LjA3ODEyNSwid2lkdGgiOjc2LjUzMTI1LCJoZWlnaHQiOjc2LjUzMTI1fSx7ImxlZnQiOjE1Ljc0MjE4NzUsInJpZ2h0Ijo5Mi4yNzM0Mzc1LCJ0b3AiOjI4MS43ODEyNSwiYm90dG9tIjozNTguMzEyNSwid2lkdGgiOjc2LjUzMTI1LCJoZWlnaHQiOjc2LjUzMTI1fSx7ImxlZnQiOjExOC4wNDY4NzUsInJpZ2h0IjoyMDEuOTM3NSwidG9wIjoyNzguMTAxNTYyNSwiYm90dG9tIjozNjEuOTkyMTg3NSwid2lkdGgiOjgzLjg5MDYyNSwiaGVpZ2h0Ijo4My44OTA2MjV9LHsibGVmdCI6MTIxLjcyNjU2MjUsInJpZ2h0IjoxOTguMjU3ODEyNSwidG9wIjozNjkuMTQwNjI1LCJib3R0b20iOjQ0NS42NzE4NzUsIndpZHRoIjo3Ni41MzEyNSwiaGVpZ2h0Ijo3Ni41MzEyNX0seyJsZWZ0IjoyMjcuNzEwOTM3NSwicmlnaHQiOjMwNC4yNDIxODc1LCJ0b3AiOjM2Mi41NDY4NzUsImJvdHRvbSI6NDM5LjA3ODEyNSwid2lkdGgiOjc2LjUzMTI1LCJoZWlnaHQiOjc2LjUzMTI1fSx7ImxlZnQiOjIyNy41ODU1NzEyODkwNjI1LCJyaWdodCI6MzA0LjM2NzU1MzcxMDkzNzUsInRvcCI6MjgxLjY1NTg4Mzc4OTA2MjUsImJvdHRvbSI6MzU4LjQzNzg2NjIxMDkzNzUsIndpZHRoIjo3Ni43ODE5ODI0MjE4NzUsImhlaWdodCI6NzYuNzgxOTgyNDIxODc1fV0sInNsb3RXaWR0aHMiOls3Ni41MzEyNSw3Ni41MzEyNSw4My44OTA2MjUsNzYuNTMxMjUsNzYuNTMxMjUsNzYuNTMxMjVdLCJncm91cFdpZHRoIjoyOTQuMzkwNjI1LCJ3b3JkbWFyayI6eyJsZWZ0IjoyMiwicmlnaHQiOjI1MC4xNzE4NzUsInRvcCI6Njg4LjMyODEyNSwiYm90dG9tIjo3NDIuNzM0Mzc1LCJ3aWR0aCI6MjI4LjE3MTg3NSwiaGVpZ2h0Ijo1NC40MDYyNX0sInNraXAiOnsibGVmdCI6MTg1LjUsInJpZ2h0IjoyOTgsInRvcCI6Nzc1LCJib3R0b20iOjgxOSwid2lkdGgiOjExMi41LCJoZWlnaHQiOjQ0fX0sImVuZGVkIjo0Mzg5LjEsInJlYXNvbiI6ImNvbXBsZXRlIiwib3ZlcmZsb3ciOmZhbHNlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7ca29255cf042bcd47a2-7e549c4119d258de3432",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4989,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:15:08.268Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "project-squares-390",
+                      "contentType": "application/json",
+                      "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkRBWW1TWGhqX050YnloLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxMDEsImhlaWdodCI6MTAxLCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0NDAxL19hc3Ryby90cmlhcmNoLWJ1c2luZXNzLWNhcmQuQjJrQkRSbEhfMnVzZXNmLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxMDEsImhlaWdodCI6MTAxLCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0NDAxL19hc3Ryby9zb2wtY29tbXVuaXR5LXNpZ25hZ2UuQmd0c1p6ZmtfMUNtVEJPLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxMDEsImhlaWdodCI6NjIsImZpdCI6ImNvbnRhaW4ifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vY2h1cnJvcy1hcHBsaWNhdGlvbnMuSklyWWVjeHhfMk5Wdmwud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjEwMSwiaGVpZ2h0IjoxMDEsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0MDEvX2FzdHJvL2J5LXRlY2gtYXBwbGljYXRpb25zLkRBWHJoWVQ0X1pQRGlPcS53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MTAxLCJoZWlnaHQiOjEwMSwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vY2FwdHVyZS1hcHBsaWNhdGlvbnMubGhCcl9kS2JfU1lkWVQud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjEwMSwiaGVpZ2h0IjoxMDEsImZpdCI6ImNvdmVyIn1dLCJjb25uZWN0aW5nV2F2ZUNvdW50IjowLCJhcnR3b3JrQWZ0ZXJIYW5kRW50cmFuY2UiOmZhbHNlLCJzdHlsZXMiOlt7ImJvcmRlciI6MCwicmFkaXVzIjo4fSx7ImJvcmRlciI6MCwicmFkaXVzIjo4fSx7ImJvcmRlciI6MCwicmFkaXVzIjo4fSx7ImJvcmRlciI6MCwicmFkaXVzIjo4fSx7ImJvcmRlciI6MCwicmFkaXVzIjo4fSx7ImJvcmRlciI6MCwicmFkaXVzIjo4fV0sImFydHdvcmtUaW1pbmdzIjpbeyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjYwMCwiZW5kIjo4ODAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6ODQwLCJlbmQiOjExMjAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTA4MCwiZW5kIjoxMzYwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjEzMjAsImVuZCI6MTYwMCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxNTYwLCJlbmQiOjE4NDAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTgwMCwiZW5kIjoyMDgwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn1dLCJzYXdFbXB0eVRpbGUiOlt0cnVlLHRydWUsdHJ1ZSx0cnVlLHRydWUsdHJ1ZV0sInJldmVhbFN0YXJ0cyI6WzYyMy4xLDg1Ni40MDAwMDAwMDAwMDAxLDEwODkuODAwMDAwMDAwMDAwMiwxMzM5LjgwMDAwMDAwMDAwMDIsMTU3MywxODIzLjFdLCJsYXN0VW5yZXZlYWxlZCI6WzYwNi40MDAwMDAwMDAwMDAxLDgzOS44LDEwNzMuMSwxMzIzLjEsMTU1Ni4zLDE4MDYuNF0sImxhc3RJbmNvbXBsZXRlIjoyMDU2LjQsIm1heGltdW1TYW1wbGVHYXAiOjEzMy4yOTk5OTk5OTk5OTk5NSwic2F3TWl4ZWRSZXZlYWwiOnRydWUsImZ1bGx5VmlzaWJsZUF0IjoyMDczLjEwMDAwMDAwMDAwMDQsImdlb21ldHJ5Ijp7ImZyYW1lcyI6W3sibGVmdCI6MTkuMTc5Njg3NSwicmlnaHQiOjExMi40NjA5Mzc1LCJ0b3AiOjM2Mi40NzY1NjI1LCJib3R0b20iOjQ1NS43NTc4MTI1LCJ3aWR0aCI6OTMuMjgxMjUsImhlaWdodCI6OTMuMjgxMjV9LHsibGVmdCI6MTkuMTc5Njg3NSwicmlnaHQiOjExMi40NjA5Mzc1LCJ0b3AiOjI2NC4wMjM0Mzc1LCJib3R0b20iOjM1Ny4zMDQ2ODc1LCJ3aWR0aCI6OTMuMjgxMjUsImhlaWdodCI6OTMuMjgxMjV9LHsibGVmdCI6MTQzLjg2NzE4NzUsInJpZ2h0IjoyNDYuMTE3MTg3NSwidG9wIjoyNTkuNTM5MDYyNSwiYm90dG9tIjozNjEuNzg5MDYyNSwid2lkdGgiOjEwMi4yNSwiaGVpZ2h0IjoxMDIuMjV9LHsibGVmdCI6MTQ4LjM1MTU2MjUsInJpZ2h0IjoyNDEuNjMyODEyNSwidG9wIjozNzAuNTA3ODEyNSwiYm90dG9tIjo0NjMuNzg5MDYyNSwid2lkdGgiOjkzLjI4MTI1LCJoZWlnaHQiOjkzLjI4MTI1fSx7ImxlZnQiOjI3Ny41MjM0Mzc1LCJyaWdodCI6MzcwLjgwNDY4NzUsInRvcCI6MzYyLjQ3NjU2MjUsImJvdHRvbSI6NDU1Ljc1NzgxMjUsIndpZHRoIjo5My4yODEyNSwiaGVpZ2h0Ijo5My4yODEyNX0seyJsZWZ0IjoyNzcuMzMwNTY2NDA2MjUsInJpZ2h0IjozNzAuOTk3NTU4NTkzNzUsInRvcCI6MjYzLjgzMDU2NjQwNjI1LCJib3R0b20iOjM1Ny40OTc1NTg1OTM3NSwid2lkdGgiOjkzLjY2Njk5MjE4NzUsImhlaWdodCI6OTMuNjY2OTkyMTg3NX1dLCJzbG90V2lkdGhzIjpbOTMuMjgxMjUsOTMuMjgxMjUsMTAyLjI1LDkzLjI4MTI1LDkzLjI4MTI1LDkzLjI4MTI1XSwiZ3JvdXBXaWR0aCI6MzU4Ljc5Njg3NSwid29yZG1hcmsiOnsibGVmdCI6MjIsInJpZ2h0IjozMDAuMTI1LCJ0b3AiOjY3Ni40Mzc1LCJib3R0b20iOjc0Mi43MzQzNzUsIndpZHRoIjoyNzguMTI1LCJoZWlnaHQiOjY2LjI5Njg3NX0sInNraXAiOnsibGVmdCI6MjU1LjUsInJpZ2h0IjozNjgsInRvcCI6Nzc1LCJib3R0b20iOjgxOSwid2lkdGgiOjExMi41LCJoZWlnaHQiOjQ0fX0sImVuZGVkIjo0Mzk0LjMsInJlYXNvbiI6ImNvbXBsZXRlIiwib3ZlcmZsb3ciOmZhbHNlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7ca29255cf042bcd47a2-e1f752b008e20b06cd79",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5191,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:15:13.272Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "project-squares-768",
+                      "contentType": "application/json",
+                      "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkRBWW1TWGhqX0w0VHNXLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxOTEsImhlaWdodCI6MTkxLCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0NDAxL19hc3Ryby90cmlhcmNoLWJ1c2luZXNzLWNhcmQuQjJrQkRSbEhfelAzejEud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjE5MSwiaGVpZ2h0IjoxOTEsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0MDEvX2FzdHJvL3NvbC1jb21tdW5pdHktc2lnbmFnZS5CZ3RzWnpma19aMnRJMEt2LndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxOTEsImhlaWdodCI6MTE3LCJmaXQiOiJjb250YWluIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0MDEvX2FzdHJvL2NodXJyb3MtYXBwbGljYXRpb25zLkpJclllY3h4X1oxUU5lbVMud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjE5MSwiaGVpZ2h0IjoxOTEsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0MDEvX2FzdHJvL2J5LXRlY2gtYXBwbGljYXRpb25zLkRBWHJoWVQ0XzJqVUU2aC53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MTkxLCJoZWlnaHQiOjE5MSwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vY2FwdHVyZS1hcHBsaWNhdGlvbnMubGhCcl9kS2JfWjEwQ1ZTay53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MTkxLCJoZWlnaHQiOjE5MSwiZml0IjoiY292ZXIifV0sImNvbm5lY3RpbmdXYXZlQ291bnQiOjAsImFydHdvcmtBZnRlckhhbmRFbnRyYW5jZSI6ZmFsc2UsInN0eWxlcyI6W3siYm9yZGVyIjowLCJyYWRpdXMiOjguNDQ4fSx7ImJvcmRlciI6MCwicmFkaXVzIjo4LjQ0OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OC40NDh9LHsiYm9yZGVyIjowLCJyYWRpdXMiOjguNDQ4fSx7ImJvcmRlciI6MCwicmFkaXVzIjo4LjQ0OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OC40NDh9XSwiYXJ0d29ya1RpbWluZ3MiOlt7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6NjAwLCJlbmQiOjg4MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0Ijo4NDAsImVuZCI6MTEyMCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxMDgwLCJlbmQiOjEzNjAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTMyMCwiZW5kIjoxNjAwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjE1NjAsImVuZCI6MTg0MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxODAwLCJlbmQiOjIwODAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifV0sInNhd0VtcHR5VGlsZSI6W3RydWUsdHJ1ZSx0cnVlLHRydWUsdHJ1ZSx0cnVlXSwicmV2ZWFsU3RhcnRzIjpbNjIzLjMsODU2LjcsMTA5MCwxMzU2LjYwMDAwMDAwMDAwMDEsMTU3My4zMDAwMDAwMDAwMDAyLDE4NTYuNjAwMDAwMDAwMDAwMV0sImxhc3RVbnJldmVhbGVkIjpbNTczLjMsODQwLDEwNTYuNzAwMDAwMDAwMDAwMywxMzIzLjMwMDAwMDAwMDAwMDIsMTU0MCwxODA2LjZdLCJsYXN0SW5jb21wbGV0ZSI6MjA1Ni42LCJtYXhpbXVtU2FtcGxlR2FwIjoxNjYuNTk5OTk5OTk5OTk5OTcsInNhd01peGVkUmV2ZWFsIjp0cnVlLCJmdWxseVZpc2libGVBdCI6MjA4OS45LCJnZW9tZXRyeSI6eyJmcmFtZXMiOlt7ImxlZnQiOjM3Ljc4OTA2MjUsInJpZ2h0IjoyMjEuNDc2NTYyNSwidG9wIjozODYuMTU2MjUsImJvdHRvbSI6NTY5Ljg0Mzc1LCJ3aWR0aCI6MTgzLjY4NzUsImhlaWdodCI6MTgzLjY4NzV9LHsibGVmdCI6MzcuNzg5MDYyNSwicmlnaHQiOjIyMS40NzY1NjI1LCJ0b3AiOjE5Mi4yODEyNSwiYm90dG9tIjozNzUuOTY4NzUsIndpZHRoIjoxODMuNjg3NSwiaGVpZ2h0IjoxODMuNjg3NX0seyJsZWZ0IjoyODMuMzEyNSwicmlnaHQiOjQ4NC42NzE4NzUsInRvcCI6MTgzLjQ0NTMxMjUsImJvdHRvbSI6Mzg0LjgwNDY4NzUsIndpZHRoIjoyMDEuMzU5Mzc1LCJoZWlnaHQiOjIwMS4zNTkzNzV9LHsibGVmdCI6MjkyLjE0ODQzNzUsInJpZ2h0Ijo0NzUuODM1OTM3NSwidG9wIjo0MDEuOTY4NzUsImJvdHRvbSI6NTg1LjY1NjI1LCJ3aWR0aCI6MTgzLjY4NzUsImhlaWdodCI6MTgzLjY4NzV9LHsibGVmdCI6NTQ2LjUwNzgxMjUsInJpZ2h0Ijo3MzAuMTk1MzEyNSwidG9wIjozODYuMTU2MjUsImJvdHRvbSI6NTY5Ljg0Mzc1LCJ3aWR0aCI6MTgzLjY4NzUsImhlaWdodCI6MTgzLjY4NzV9LHsibGVmdCI6NTQ2LjI1MjgwNzYxNzE4NzUsInJpZ2h0Ijo3MzAuNDUwMzE3MzgyODEyNSwidG9wIjoxOTIuMDI2MjE0NTk5NjA5MzgsImJvdHRvbSI6Mzc2LjIyMzc4NTQwMDM5MDYsIndpZHRoIjoxODQuMTk3NTA5NzY1NjI1LCJoZWlnaHQiOjE4NC4xOTc1NzA4MDA3ODEyNX1dLCJzbG90V2lkdGhzIjpbMTgzLjY4NzUsMTgzLjY4NzUsMjAxLjM1OTM3NSwxODMuNjg3NSwxODMuNjg3NSwxODMuNjg3NV0sImdyb3VwV2lkdGgiOjcwNi41NDY4NzUsIndvcmRtYXJrIjp7ImxlZnQiOjMyLjI1LCJyaWdodCI6NTc5Ljg5MDYyNSwidG9wIjo2NjEuNDM3NSwiYm90dG9tIjo3OTIsIndpZHRoIjo1NDcuNjQwNjI1LCJoZWlnaHQiOjEzMC41NjI1fSwic2tpcCI6eyJsZWZ0Ijo2MDUuMjUsInJpZ2h0Ijo3MzUuNzUsInRvcCI6ODMxLCJib3R0b20iOjg3NSwid2lkdGgiOjEzMC41LCJoZWlnaHQiOjQ0fX0sImVuZGVkIjo0Mzk5LjYsInJlYXNvbiI6ImNvbXBsZXRlIiwib3ZlcmZsb3ciOmZhbHNlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7ca29255cf042bcd47a2-5a51426eb2f17190e709",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "intro",
+              "projectName": "intro",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5763,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T19:15:18.485Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "project-squares-1440",
+                      "contentType": "application/json",
+                      "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkRBWW1TWGhqX0w0VHNXLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoyODAsImhlaWdodCI6MjgwLCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0NDAxL19hc3Ryby90cmlhcmNoLWJ1c2luZXNzLWNhcmQuQjJrQkRSbEhfelAzejEud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjI4MCwiaGVpZ2h0IjoyODAsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0MDEvX2FzdHJvL3NvbC1jb21tdW5pdHktc2lnbmFnZS5CZ3RzWnpma19aMnRJMEt2LndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoyODAsImhlaWdodCI6MTcxLCJmaXQiOiJjb250YWluIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0MDEvX2FzdHJvL2NodXJyb3MtYXBwbGljYXRpb25zLkpJclllY3h4X1oxUU5lbVMud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjI4MCwiaGVpZ2h0IjoyODAsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0MDEvX2FzdHJvL2J5LXRlY2gtYXBwbGljYXRpb25zLkRBWHJoWVQ0XzJqVUU2aC53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MjgwLCJoZWlnaHQiOjI4MCwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQwMS9fYXN0cm8vY2FwdHVyZS1hcHBsaWNhdGlvbnMubGhCcl9kS2JfWjEwQ1ZTay53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MjgwLCJoZWlnaHQiOjI4MCwiZml0IjoiY292ZXIifV0sImNvbm5lY3RpbmdXYXZlQ291bnQiOjAsImFydHdvcmtBZnRlckhhbmRFbnRyYW5jZSI6ZmFsc2UsInN0eWxlcyI6W3siYm9yZGVyIjowLCJyYWRpdXMiOjE0fSx7ImJvcmRlciI6MCwicmFkaXVzIjoxNH0seyJib3JkZXIiOjAsInJhZGl1cyI6MTR9LHsiYm9yZGVyIjowLCJyYWRpdXMiOjE0fSx7ImJvcmRlciI6MCwicmFkaXVzIjoxNH0seyJib3JkZXIiOjAsInJhZGl1cyI6MTR9XSwiYXJ0d29ya1RpbWluZ3MiOlt7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6NjAwLCJlbmQiOjg4MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0Ijo4NDAsImVuZCI6MTEyMCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxMDgwLCJlbmQiOjEzNjAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTMyMCwiZW5kIjoxNjAwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjE1NjAsImVuZCI6MTg0MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxODAwLCJlbmQiOjIwODAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifV0sInNhd0VtcHR5VGlsZSI6W3RydWUsdHJ1ZSx0cnVlLHRydWUsdHJ1ZSx0cnVlXSwicmV2ZWFsU3RhcnRzIjpbNzk5LjQsODgyLjcsMTExNi4xLDEzMzIuNywxNTgyLjcsMTgzMi43XSwibGFzdFVucmV2ZWFsZWQiOls0NDkuNDAwMDAwMDAwMDAwMDMsODQ5LjQsMTA2Ni4xMDAwMDAwMDAwMDAxLDEyODIuNywxNTQ5LjM5OTk5OTk5OTk5OTksMTc4Mi43XSwibGFzdEluY29tcGxldGUiOjIwNDkuNDAwMDAwMDAwMDAwNSwibWF4aW11bVNhbXBsZUdhcCI6MzQ5Ljk5OTk5OTk5OTk5OTk0LCJzYXdNaXhlZFJldmVhbCI6dHJ1ZSwiZnVsbHlWaXNpYmxlQXQiOjIwODIuNjAwMDAwMDAwMDAwNCwiZ2VvbWV0cnkiOnsiZnJhbWVzIjpbeyJsZWZ0IjozNDUuMTAxNTYyNSwicmlnaHQiOjU0NC4wMjM0Mzc1LCJ0b3AiOjMwMi4zODI4MTI1LCJib3R0b20iOjUwMS4zMDQ2ODc1LCJ3aWR0aCI6MTk4LjkyMTg3NSwiaGVpZ2h0IjoxOTguOTIxODc1fSx7ImxlZnQiOjM0NS4xMDE1NjI1LCJyaWdodCI6NTQ0LjAyMzQzNzUsInRvcCI6OTIuNDQ1MzEyNSwiYm90dG9tIjoyOTEuMzY3MTg3NSwid2lkdGgiOjE5OC45MjE4NzUsImhlaWdodCI6MTk4LjkyMTg3NX0seyJsZWZ0Ijo2MTAuOTc2NTYyNSwicmlnaHQiOjgyOS4wMjM0Mzc1LCJ0b3AiOjgyLjg4MjgxMjUsImJvdHRvbSI6MzAwLjkyOTY4NzUsIndpZHRoIjoyMTguMDQ2ODc1LCJoZWlnaHQiOjIxOC4wNDY4NzV9LHsibGVmdCI6NjIwLjUzOTA2MjUsInJpZ2h0Ijo4MTkuNDYwOTM3NSwidG9wIjozMTkuNTIzNDM3NSwiYm90dG9tIjo1MTguNDQ1MzEyNSwid2lkdGgiOjE5OC45MjE4NzUsImhlaWdodCI6MTk4LjkyMTg3NX0seyJsZWZ0Ijo4OTUuOTYwOTM3NSwicmlnaHQiOjEwOTQuODgyODEyNSwidG9wIjozMDIuMzgyODEyNSwiYm90dG9tIjo1MDEuMzA0Njg3NSwid2lkdGgiOjE5OC45MjE4NzUsImhlaWdodCI6MTk4LjkyMTg3NX0seyJsZWZ0Ijo4OTUuNjMwMzcxMDkzNzUsInJpZ2h0IjoxMDk1LjIxMzM3ODkwNjI1LCJ0b3AiOjkyLjExNDczODQ2NDM1NTQ3LCJib3R0b20iOjI5MS42OTc3NDYyNzY4NTU0Nywid2lkdGgiOjE5OS41ODMwMDc4MTI1LCJoZWlnaHQiOjE5OS41ODMwMDc4MTI1fV0sInNsb3RXaWR0aHMiOlsxOTguOTIxODc1LDE5OC45MjE4NzUsMjE4LjA0Njg3NSwxOTguOTIxODc1LDE5OC45MjE4NzUsMTk4LjkyMTg3NV0sImdyb3VwV2lkdGgiOjc2NS4wOTM3NSwid29yZG1hcmsiOnsibGVmdCI6NjAuNDY4NzUsInJpZ2h0IjoxMDg3LjM5MDYyNSwidG9wIjo1NDcuMjAzMTI1LCJib3R0b20iOjc5Miwid2lkdGgiOjEwMjYuOTIxODc1LCJoZWlnaHQiOjI0NC43OTY4NzV9LCJza2lwIjp7ImxlZnQiOjEyNDkuMDMxMjUsInJpZ2h0IjoxMzc5LjUzMTI1LCJ0b3AiOjgzMSwiYm90dG9tIjo4NzUsIndpZHRoIjoxMzAuNSwiaGVpZ2h0Ijo0NH19LCJlbmRlZCI6NDQwMi40LCJyZWFzb24iOiJjb21wbGV0ZSIsIm92ZXJmbG93IjpmYWxzZX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7ca29255cf042bcd47a2-48ffbf709957618d847b",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T19:12:57.103Z",
+    "duration": 147317.889,
+    "expected": 26,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}
