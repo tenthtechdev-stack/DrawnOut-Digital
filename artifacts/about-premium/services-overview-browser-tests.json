@@ -1,0 +1,515 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-about-premium/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.services-overview.config.ts"
+    ],
+    "configFile": "/workspace/drawnout-about-premium/playwright.services-overview.config.ts",
+    "rootDir": "/workspace/drawnout-about-premium/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-about-premium/test-results/services-overview",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-about-premium/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "services-overview.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-about-premium/test-results/services-overview",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-about-premium/tests/browser",
+        "snapshotDir": "/workspace/drawnout-about-premium/tests/browser",
+        "testIgnore": [],
+        "testMatch": "services-overview.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4405",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": [
+              "--use-gl=angle",
+              "--use-angle=swiftshader",
+              "--enable-unsafe-swiftshader"
+            ]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/about-premium/services-overview-browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4405",
+      "url": "http://127.0.0.1:4405",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "services-overview.spec.ts",
+      "file": "services-overview.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "five complete editorial chapters, canonical links and accessibility at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3192,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T22:36:02.499Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-593ee26032ac8be67c85",
+          "file": "services-overview.spec.ts",
+          "line": 67,
+          "column": 3
+        },
+        {
+          "title": "five complete editorial chapters, canonical links and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2752,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T22:36:05.918Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-d196874982fce9875f3e",
+          "file": "services-overview.spec.ts",
+          "line": 67,
+          "column": 3
+        },
+        {
+          "title": "five complete editorial chapters, canonical links and accessibility at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2923,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T22:36:08.688Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-009f3dbe0bd6c0c60ab9",
+          "file": "services-overview.spec.ts",
+          "line": 67,
+          "column": 3
+        },
+        {
+          "title": "five complete editorial chapters, canonical links and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3229,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T22:36:11.628Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-53c748c89ab5fa79bd9b",
+          "file": "services-overview.spec.ts",
+          "line": 67,
+          "column": 3
+        },
+        {
+          "title": "all five chapter links open the original service content and FAQs at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5398,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T22:36:14.888Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-902c43bd7181fae67f49",
+          "file": "services-overview.spec.ts",
+          "line": 113,
+          "column": 3
+        },
+        {
+          "title": "all five chapter links open the original service content and FAQs at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6362,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T22:36:20.306Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-ff8da820ee0cc251ac65",
+          "file": "services-overview.spec.ts",
+          "line": 113,
+          "column": 3
+        },
+        {
+          "title": "no-javascript preserves the complete overview and native service navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1465,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T22:36:26.692Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-a55fb2a5c1c1f7110e03",
+          "file": "services-overview.spec.ts",
+          "line": 154,
+          "column": 3
+        },
+        {
+          "title": "failed-bundles preserves the complete overview and native service navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1483,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T22:36:28.172Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-2be3ef94852a581db7cc",
+          "file": "services-overview.spec.ts",
+          "line": 154,
+          "column": 3
+        },
+        {
+          "title": "save-data preserves the complete overview and native service navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1479,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T22:36:29.669Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-583d3c71866f72d702f1",
+          "file": "services-overview.spec.ts",
+          "line": 154,
+          "column": 3
+        },
+        {
+          "title": "native forward and reverse scrolling keep all five chapters readable at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6985,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T22:36:31.166Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "native-service-scroll-390",
+                      "contentType": "application/json",
+                      "body": "W3siaW5kZXgiOjAsImV4cGVjdGVkIjoxMTg1LjI1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjAuNzc2NTA2LCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMTcuNTYwMikifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MSwiZXhwZWN0ZWQiOjE5MzcuNjQwNjI1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjAuNzk0Mzg2LCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMTYuMTU1NCkifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MiwiZXhwZWN0ZWQiOjI2NDUuNzk2ODc1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjAuODExNDUzLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMTQuODE0NCkifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MywiZXhwZWN0ZWQiOjMzOTguMTg3NSwiYXRFbnRyeSI6eyJvcGFjaXR5IjowLjczOTA2NiwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDIwLjUwMikifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6NCwiZXhwZWN0ZWQiOjQxNTAuNTc4MTI1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjAuNzc2NTU2LCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMTcuNTU2MykifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MywiZXhwZWN0ZWQiOjMzOTguMTg3NSwiYXRFbnRyeSI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MiwiZXhwZWN0ZWQiOjI2NDUuNzk2ODc1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9LCJzZXR0bGVkIjp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9fSx7ImluZGV4IjoxLCJleHBlY3RlZCI6MTkzNy42NDA2MjUsImF0RW50cnkiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn0sInNldHRsZWQiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn19LHsiaW5kZXgiOjAsImV4cGVjdGVkIjoxMTg1LjI1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9LCJzZXR0bGVkIjp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9fV0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-702306d845b5faa78ab9",
+          "file": "services-overview.spec.ts",
+          "line": 196,
+          "column": 3
+        },
+        {
+          "title": "native forward and reverse scrolling keep all five chapters readable at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7672,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T22:36:38.162Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "native-service-scroll-1440",
+                      "contentType": "application/json",
+                      "body": "W3siaW5kZXgiOjAsImV4cGVjdGVkIjoxMTA4LjYyNSwiYXRFbnRyeSI6eyJvcGFjaXR5IjowLjcyLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMjIpIn0sInNldHRsZWQiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn19LHsiaW5kZXgiOjEsImV4cGVjdGVkIjoxOTY3LjczNDM3NSwiYXRFbnRyeSI6eyJvcGFjaXR5IjowLjk0NTY3MiwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDQuMjY4NjMpIn0sInNldHRsZWQiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn19LHsiaW5kZXgiOjIsImV4cGVjdGVkIjoyODI2Ljg0Mzc1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjAuNzIsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAyMikifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6MywiZXhwZWN0ZWQiOjM3MDcuMjk2ODc1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjAuNzIsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAyMikifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX0seyJpbmRleCI6NCwiZXhwZWN0ZWQiOjQ1NjYuNDA2MjUsImF0RW50cnkiOnsib3BhY2l0eSI6MC43MiwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDIyKSJ9LCJzZXR0bGVkIjp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9fSx7ImluZGV4IjozLCJleHBlY3RlZCI6MzcwNy4yOTY4NzUsImF0RW50cnkiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn0sInNldHRsZWQiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn19LHsiaW5kZXgiOjIsImV4cGVjdGVkIjoyODI2Ljg0Mzc1LCJhdEVudHJ5Ijp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9LCJzZXR0bGVkIjp7Im9wYWNpdHkiOjEsInRyYW5zZm9ybSI6Im1hdHJpeCgxLCAwLCAwLCAxLCAwLCAwKSJ9fSx7ImluZGV4IjoxLCJleHBlY3RlZCI6MTk2Ny43MzQzNzUsImF0RW50cnkiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn0sInNldHRsZWQiOnsib3BhY2l0eSI6MSwidHJhbnNmb3JtIjoibWF0cml4KDEsIDAsIDAsIDEsIDAsIDApIn19LHsiaW5kZXgiOjAsImV4cGVjdGVkIjoxMTA4LjYyNSwiYXRFbnRyeSI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifSwic2V0dGxlZCI6eyJvcGFjaXR5IjoxLCJ0cmFuc2Zvcm0iOiJtYXRyaXgoMSwgMCwgMCwgMSwgMCwgMCkifX1d"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3cd6199b5f733d0dcf10-bcb5d9ae91303d1d4c26",
+          "file": "services-overview.spec.ts",
+          "line": 196,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T22:36:01.055Z",
+    "duration": 44914.176999999996,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
