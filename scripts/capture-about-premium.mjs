@@ -15,7 +15,11 @@ const baseURL = argument('--base-url', 'http://127.0.0.1:4411');
 const output = path.resolve(argument('--out', 'artifacts/about-premium'));
 const native = path.resolve(argument('--native-dir', '/workspace/about-premium-review/native'));
 const only = argument('--only', 'all');
-assert(['all', 'recordings', 'stills'].includes(only), 'Use --only all, recordings or stills');
+assert(
+  ['all', 'recordings', 'stills', 'full-pages'].includes(only),
+  'Use --only all, recordings, stills or full-pages',
+);
+const preserveRecordings = only === 'stills' || only === 'full-pages';
 const suppliedWidths = argument('--widths', '');
 const videoWidths = suppliedWidths ? suppliedWidths.split(',').map(Number) : [1440, 390];
 const stillWidths = suppliedWidths
@@ -64,8 +68,12 @@ const evidence = {
   browser: '',
   screenshots: only !== 'all' ? (previous?.screenshots ?? []) : [],
   recordings: only !== 'all' ? (previous?.recordings ?? []) : [],
-  recordingsCapturedAt: only === 'stills' ? previous?.recordingsCapturedAt : undefined,
-  measurements: only === 'stills' ? (previous?.measurements ?? []) : [],
+  recordingsCapturedAt: preserveRecordings ? previous?.recordingsCapturedAt : undefined,
+  fullPageCaptureMethod:
+    only === 'full-pages'
+      ? 'Native Chromium software compositor (--disable-gpu) at unchanged viewport; avoids the cloud SwiftShader 8192px tall-image repetition. No stitching or injected styles.'
+      : previous?.fullPageCaptureMethod,
+  measurements: preserveRecordings ? (previous?.measurements ?? []) : [],
   errors: [],
   failedRequests: [],
 };
@@ -264,11 +272,14 @@ function transcode(source, file, width, kind) {
 }
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH ?? '/usr/bin/chromium',
-  args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'],
+  args:
+    only === 'full-pages'
+      ? ['--disable-gpu']
+      : ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'],
 });
 evidence.browser = browser.version();
 try {
-  if (only !== 'stills') {
+  if (!preserveRecordings) {
     evidence.recordingsCapturedAt = evidence.capturedAt;
     for (const width of videoWidths) {
       const context = await browser.newContext({
@@ -380,11 +391,12 @@ try {
       watch(page, width, 'stills');
       await page.goto('/about');
       await ready(page);
-      await shot(
-        page,
-        `about-${width}-hero.png`,
-        'Settled hero at the ordinary responsive viewport.',
-      );
+      if (only !== 'full-pages')
+        await shot(
+          page,
+          `about-${width}-hero.png`,
+          'Settled hero at the ordinary responsive viewport.',
+        );
       await visitWholePage(page);
       await wheelTo(page, 0, { step: 900, delay: 70 });
       await shot(
@@ -393,7 +405,7 @@ try {
         'Complete rendered page after ordinary scrolling has visited the editorial sections. Decorative process artwork reflects this real scroll position.',
         { fullPage: true },
       );
-      if ([390, 1440].includes(width)) {
+      if (only !== 'full-pages' && [390, 1440].includes(width)) {
         const selectors = [
           ['origin', '[data-about-origin]'],
           ['founders', '[data-about-founders]'],
@@ -432,12 +444,13 @@ try {
         watch(page, width, mode);
         await page.goto('/about');
         await ready(page, false);
-        await shot(
-          page,
-          `about-${width}-${mode}-hero.png`,
-          `Native ${mode} hero fallback; no replacement CSS.`,
-          { mode },
-        );
+        if (only !== 'full-pages')
+          await shot(
+            page,
+            `about-${width}-${mode}-hero.png`,
+            `Native ${mode} hero fallback; no replacement CSS.`,
+            { mode },
+          );
         await visitWholePage(page);
         await wheelTo(page, 0, { step: 900, delay: 60 });
         await shot(

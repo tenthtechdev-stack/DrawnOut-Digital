@@ -34,9 +34,7 @@
         "name": "",
         "testDir": "/workspace/drawnout-about-premium/tests/browser",
         "testIgnore": [],
-        "testMatch": [
-          "services-overview.spec.ts"
-        ],
+        "testMatch": ["services-overview.spec.ts"],
         "timeout": 60000
       }
     ],
@@ -64,11 +62,7 @@
           },
           "launchOptions": {
             "executablePath": "/usr/bin/chromium",
-            "args": [
-              "--use-gl=angle",
-              "--use-angle=swiftshader",
-              "--enable-unsafe-swiftshader"
-            ]
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
           },
           "screenshot": "only-on-failure",
           "trace": "retain-on-failure"
@@ -80,10 +74,7 @@
     ],
     "quiet": false,
     "reporter": [
-      [
-        "list",
-        null
-      ],
+      ["list", null],
       [
         "json",
         {

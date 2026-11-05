@@ -34,10 +34,7 @@
         "name": "",
         "testDir": "/workspace/drawnout-about-premium/tests/browser",
         "testIgnore": [],
-        "testMatch": [
-          "about.spec.ts",
-          "services-hero-about.spec.ts"
-        ],
+        "testMatch": ["about.spec.ts", "services-hero-about.spec.ts"],
         "timeout": 70000
       }
     ],
@@ -55,10 +52,7 @@
         "testDir": "/workspace/drawnout-about-premium/tests/browser",
         "snapshotDir": "/workspace/drawnout-about-premium/tests/browser",
         "testIgnore": [],
-        "testMatch": [
-          "about.spec.ts",
-          "services-hero-about.spec.ts"
-        ],
+        "testMatch": ["about.spec.ts", "services-hero-about.spec.ts"],
         "timeout": 70000,
         "use": {
           "baseURL": "http://127.0.0.1:4410",
@@ -68,11 +62,7 @@
           },
           "launchOptions": {
             "executablePath": "/usr/bin/chromium",
-            "args": [
-              "--use-gl=angle",
-              "--use-angle=swiftshader",
-              "--enable-unsafe-swiftshader"
-            ]
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
           },
           "screenshot": "only-on-failure",
           "trace": "retain-on-failure"
@@ -84,10 +74,7 @@
     ],
     "quiet": false,
     "reporter": [
-      [
-        "list",
-        null
-      ],
+      ["list", null],
       [
         "json",
         {

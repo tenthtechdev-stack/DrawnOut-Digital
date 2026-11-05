@@ -1,0 +1,6475 @@
+{
+  "capturedAt": "2026-11-05T10:53:32.621Z",
+  "sourceCommit": "ebd113853c5d6d30f9fc3903df830ce73ce0a291",
+  "sourceFiles": {
+    "src/components/about/AboutPage.astro": "eb49db459eb11b1ee7689be4bf3e78095cf1442df583d01dd0be0f68922105df",
+    "src/components/about/PremiumAboutHero.astro": "c9fc4a13a3229412b951e953c5d239a80f463c01584fec0329662dd61fbbba49",
+    "src/components/about/AboutEditorial.astro": "d98adcb1e87c8112b89c4a6289eb27e803fd681ea757e0d443bfe7bbe06ea9c5",
+    "src/components/about/ProcessArtwork.astro": "dc86cc78b3ca64e28a0957117722d04ae9bdbfad6a44fb0cea35f080e0262b44",
+    "src/components/about/FounderPortrait.astro": "ed1c5173d972a4ff847746145e1d0155e50543723ea8153d9e2e2c626e6e5e96",
+    "src/styles/about-premium-hero.css": "221a0ffb30ca9c2509dfa164f773dfad2dae76c7c97c47269739e6bd0056fc1c",
+    "src/styles/about-premium-editorial.css": "ca85403f02aae0ee99a29e2175d8ebacb845ed6b1e7596151d535747f4732e1e",
+    "src/scripts/about-motion.ts": "571570e310ce7b0c33ba19181784315d26ae3bcb9a080eec3ff5d639b2688102",
+    "src/data/about.ts": "b03d1b580e6fc13b5dfa488eabfbeee969c20c08103c412ac79f1e2fc2ccf610",
+    "src/assets/about/founders-sketch-approved.png": "989f50e3c9be6007d56af6ef42afdd9f026f76fa4d902cc8cb0eec8feb740092",
+    "src/assets/signature/emblem-plaque.png": "c29dd991fbf6d004d590306b4264a43e85df014f799f92d19102033b946be6e6"
+  },
+  "baseURL": "http://127.0.0.1:4411",
+  "method": "Real production Chromium screenshots and native Playwright video. H.264 transcodes preserve the full original timing. Scrolling uses browser wheel input, including reverse scrolling. No application timeline seeking, injected styles or synthesized imagery. Full-page screenshots are taken after visiting the whole page. Software rendering is not a physical-device benchmark.",
+  "assetStatus": "The owner-approved founders sketch and existing illuminated emblem-plaque.png are reused. The plaque is an approved separated raster prototype presented in layers, not an editable or newly rendered 3D model. The new brief authorizes this appearance. The original private photograph is not published.",
+  "browser": "154.0.8037.57",
+  "screenshots": [
+    {
+      "file": "about-1440-settled.png",
+      "description": "Unmodified viewport after the coordinated hero arrival.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 670166,
+      "sha256": "9344e0884d8b1a91b359dfb30ee05591f7187b592f340436f7f155f232a76ef7",
+      "before": {
+        "at": 4056.2000000029802,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 510,
+          "endedAt": 4014.6,
+          "portrait": {
+            "x": 807.625,
+            "y": 388.0625,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": 249.4375,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 5930.265625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 6551.203125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7172.140625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7793.078125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-settled.png",
+      "description": "Unmodified viewport after the coordinated hero arrival.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 242449,
+      "sha256": "0d5fe8dfe5d65da9bfdbb9936e97bac765e59a2ac819316f4433b87cf3264323",
+      "before": {
+        "at": 3813,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 282.5,
+          "endedAt": 3786.7,
+          "portrait": {
+            "x": 18.546875,
+            "y": 475.359375,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": 395.0625,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 6576.046875,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7164.75,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7727.953125,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 8316.65625,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-hero.png",
+      "description": "Settled hero at the ordinary responsive viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 669801,
+      "sha256": "9cd39c269a76be0c6e8b20928f61842789769382840eeab8c804291d976b88cb",
+      "before": {
+        "at": 3841.60000000149,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 302.4,
+          "endedAt": 3806.4,
+          "portrait": {
+            "x": 807.625,
+            "y": 388.0625,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": 249.4375,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 5930.265625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 6551.203125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7172.140625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7793.078125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-origin.png",
+      "description": "Actual origin section viewport at 1440px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 107307,
+      "sha256": "d16cb759962eb21508cb2b0429d081bb7feddb6e2e11c3f1f8e17f8256ac2cec",
+      "before": {
+        "at": 14768.60000000149,
+        "scrollY": 1049,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 302.4,
+          "endedAt": 3806.4,
+          "portrait": {
+            "x": 807.625,
+            "y": -660.9375,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": -799.5625,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 4880.984375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 5501.921875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 6122.859375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 6743.796875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-founders.png",
+      "description": "Actual founders section viewport at 1440px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 480747,
+      "sha256": "01920267110aaf23ad11e9b76c30a0eda411c3a37b1b25946797a1b286ea5929",
+      "before": {
+        "at": 16217.5,
+        "scrollY": 2713,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 302.4,
+          "endedAt": 3806.4,
+          "portrait": {
+            "x": 807.625,
+            "y": -2324.9375,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": -2463.5625,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 3216.984375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 3837.921875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 4458.859375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 5079.796875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-manifesto.png",
+      "description": "Actual manifesto section viewport at 1440px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 94660,
+      "sha256": "de0e0f492ab042b3172ed53261c8140406c0a2b6aa21fb222c13b374e06eaaa4",
+      "before": {
+        "at": 17583.19999999553,
+        "scrollY": 3947,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 302.4,
+          "endedAt": 3806.4,
+          "portrait": {
+            "x": 807.625,
+            "y": -3558.9375,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": -3697.5625,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 1982.984375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 2603.921875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 3224.859375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 3845.796875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-process.png",
+      "description": "Actual process section viewport at 1440px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 69546,
+      "sha256": "e2d9b249e438615deef2d332dc6d9ab87cfd61ac6fea09f270e2ed0c1d2991bc",
+      "before": {
+        "at": 19053,
+        "scrollY": 5391,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 302.4,
+          "endedAt": 3806.4,
+          "portrait": {
+            "x": 807.625,
+            "y": -5002.9375,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": -5141.5625,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.4252",
+            "scrollProgress": "0.4252",
+            "bounds": {
+              "x": 60.46875,
+              "y": 538.984375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 1159.921875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 1780.859375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 2401.796875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-difference.png",
+      "description": "Actual difference section viewport at 1440px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 100530,
+      "sha256": "89a50f837a01be21577363a1effc9330dbfe44a4bed8541c496e556d437784bd",
+      "before": {
+        "at": 20936.29999999702,
+        "scrollY": 8368,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 302.4,
+          "endedAt": 3806.4,
+          "portrait": {
+            "x": 807.625,
+            "y": -7979.9375,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": -8118.5625,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -2438.015625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -1817.078125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -1196.140625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -575.203125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-capabilities.png",
+      "description": "Actual capabilities section viewport at 1440px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 81418,
+      "sha256": "d7276190a436e071b6ebd2edd334e3a3b22a82788afca3052354e61e0fb98fb9",
+      "before": {
+        "at": 22266.10000000149,
+        "scrollY": 9397,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 302.4,
+          "endedAt": 3806.4,
+          "portrait": {
+            "x": 807.625,
+            "y": -9008.9375,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": -9147.5625,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -3467.015625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -2846.078125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -2225.140625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -1604.203125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-invitation.png",
+      "description": "Actual invitation section viewport at 1440px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 87980,
+      "sha256": "12521a1cfbc54d4a642ac6ac7cfcdf01f62bfaed0a24813791b85812ef0d328c",
+      "before": {
+        "at": 23589.79999999702,
+        "scrollY": 10513,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 302.4,
+          "endedAt": 3806.4,
+          "portrait": {
+            "x": 807.625,
+            "y": -10124.9375,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": -10263.5625,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -4583.015625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -3962.078125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -3341.140625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": -2720.203125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1024-hero.png",
+      "description": "Settled hero at the ordinary responsive viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "width": 1024,
+      "height": 900,
+      "bytes": 403054,
+      "sha256": "1633f0d989d4a840942369bdf1d19fc12ce3e581d4a711dceed73370863884ab",
+      "before": {
+        "at": 3820,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 298.9,
+          "endedAt": 3803,
+          "portrait": {
+            "x": 574.3125,
+            "y": 365.234375,
+            "width": 433.296875,
+            "height": 326.234375
+          },
+          "plaque": {
+            "x": 813.765625,
+            "y": 266.65625,
+            "width": 167.234375,
+            "height": 162.84375
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 43,
+              "y": 4925,
+              "width": 938,
+              "height": 481.421875
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 43,
+              "y": 5406.421875,
+              "width": 938,
+              "height": 481.421875
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 43,
+              "y": 5887.84375,
+              "width": 938,
+              "height": 481.421875
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 43,
+              "y": 6369.265625,
+              "width": 938,
+              "height": 481.421875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-768-hero.png",
+      "description": "Settled hero at the ordinary responsive viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "width": 768,
+      "height": 900,
+      "bytes": 291039,
+      "sha256": "3ba9f05e00558c2efed549f0b79fa3aaf350afbc9ce9fac5b1eb29c667c6c969",
+      "before": {
+        "at": 3816.7999999970198,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 286.6,
+          "endedAt": 3791.2,
+          "portrait": {
+            "x": 433.34375,
+            "y": 343.03125,
+            "width": 322.1875,
+            "height": 242.578125
+          },
+          "plaque": {
+            "x": 611.40625,
+            "y": 202.03125,
+            "width": 124.34375,
+            "height": 121.078125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 32.25,
+              "y": 4614.78125,
+              "width": 703.5,
+              "height": 404.15625
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 32.25,
+              "y": 5018.9375,
+              "width": 703.5,
+              "height": 378.65625
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 32.25,
+              "y": 5397.59375,
+              "width": 703.5,
+              "height": 404.15625
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 32.25,
+              "y": 5801.75,
+              "width": 703.5,
+              "height": 404.15625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-hero.png",
+      "description": "Settled hero at the ordinary responsive viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 242389,
+      "sha256": "da844d7cd29f22a076e5ce10783254d557c591d7c241cdb46473b5e145f3decb",
+      "before": {
+        "at": 3786.60000000149,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 262.7,
+          "endedAt": 3768.3,
+          "portrait": {
+            "x": 18.546875,
+            "y": 475.359375,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": 395.0625,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 6576.046875,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7164.75,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7727.953125,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 8316.65625,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-origin.png",
+      "description": "Actual origin section viewport at 390px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 40256,
+      "sha256": "ac29f8c821e7d1a5ca0d326e62e9f8405f3f25ada238cc3e8ffe3b8595b05bb7",
+      "before": {
+        "at": 11170,
+        "scrollY": 1281,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 262.7,
+          "endedAt": 3768.3,
+          "portrait": {
+            "x": 18.546875,
+            "y": -805.640625,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": -885.9375,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 5295.359375,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 5884.0625,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 6447.265625,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7035.96875,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-founders.png",
+      "description": "Actual founders section viewport at 390px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 186383,
+      "sha256": "e90dfc42d2ff01e1cdb29aca13c1554a50fc59196b45719fe3ebd291f682b021",
+      "before": {
+        "at": 12734.30000000447,
+        "scrollY": 3495,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 262.7,
+          "endedAt": 3768.3,
+          "portrait": {
+            "x": 18.546875,
+            "y": -3019.640625,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": -3099.9375,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 3081.359375,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 3670.0625,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 4233.265625,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 4821.96875,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-manifesto.png",
+      "description": "Actual manifesto section viewport at 390px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 55720,
+      "sha256": "e012e02ccd19d287335eb3a09a55964338cfe8b067992b8bca8c06c15040713f",
+      "before": {
+        "at": 14185.10000000149,
+        "scrollY": 4953,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 262.7,
+          "endedAt": 3768.3,
+          "portrait": {
+            "x": 18.546875,
+            "y": -4477.640625,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": -4557.9375,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 1623.359375,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 2212.0625,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 2775.265625,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 3363.96875,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-process.png",
+      "description": "Actual process section viewport at 390px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 39876,
+      "sha256": "accd0ba5ef714d09a0b2335dbd4b710fa781187b455836a654012a84563d8029",
+      "before": {
+        "at": 15501.80000000447,
+        "scrollY": 6190,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 262.7,
+          "endedAt": 3768.3,
+          "portrait": {
+            "x": 18.546875,
+            "y": -5714.640625,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": -5794.9375,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.6970",
+            "scrollProgress": "0.6970",
+            "bounds": {
+              "x": 22,
+              "y": 386.359375,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 975.0625,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 1538.265625,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 2126.96875,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-difference.png",
+      "description": "Actual difference section viewport at 390px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 43012,
+      "sha256": "47ac45f30d2729d1308ca54ec75fe6d611d321fb2f41357766e820a80e8e1105",
+      "before": {
+        "at": 17151.5,
+        "scrollY": 8884,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 262.7,
+          "endedAt": 3768.3,
+          "portrait": {
+            "x": 18.546875,
+            "y": -8408.640625,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": -8488.9375,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -2307.640625,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -1718.9375,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -1155.734375,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -567.03125,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-capabilities.png",
+      "description": "Actual capabilities section viewport at 390px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 47437,
+      "sha256": "58205699f5994411ba3787bd6755b036874786e640a25ba0d77592092608ae83",
+      "before": {
+        "at": 18454.80000000447,
+        "scrollY": 10099,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 262.7,
+          "endedAt": 3768.3,
+          "portrait": {
+            "x": 18.546875,
+            "y": -9623.640625,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": -9703.9375,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -3522.640625,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -2933.9375,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -2370.734375,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -1782.03125,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-invitation.png",
+      "description": "Actual invitation section viewport at 390px. Long sections continue below this viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 92003,
+      "sha256": "d07f62aecc1ed8d121bba59e8608c0c6b10af1d56790835be2a3bc178e7161bb",
+      "before": {
+        "at": 19771.20000000298,
+        "scrollY": 10823,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 262.7,
+          "endedAt": 3768.3,
+          "portrait": {
+            "x": 18.546875,
+            "y": -10347.640625,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": -10427.9375,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -4246.640625,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -3657.9375,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -3094.734375,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "1.0000",
+            "scrollProgress": "1.0000",
+            "bounds": {
+              "x": 22,
+              "y": -2506.03125,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-320-hero.png",
+      "description": "Settled hero at the ordinary responsive viewport.",
+      "mode": "normal",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 844,
+      "bytes": 179272,
+      "sha256": "28eb133ea85e60e0bbb0a85b390ab82b504368d23b6924044b441c4efd99d0cd",
+      "before": {
+        "at": 3835.7000000029802,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 313,
+          "endedAt": 3821.2,
+          "portrait": {
+            "x": 19.25,
+            "y": 433.9375,
+            "width": 281.515625,
+            "height": 211.953125
+          },
+          "plaque": {
+            "x": 195.90625,
+            "y": 369.890625,
+            "width": 93.828125,
+            "height": 91.359375
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 6869.78125,
+              "width": 276,
+              "height": 536.203125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7405.984375,
+              "width": 276,
+              "height": 576.90625
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7982.890625,
+              "width": 276,
+              "height": 561.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 8544.59375,
+              "width": 276,
+              "height": 576.90625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-reduced-motion-hero.png",
+      "description": "Native reduced-motion hero fallback; no replacement CSS.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 670301,
+      "sha256": "143d567f153b66a38edf28dcdaada6ab09656bf7001bd935b446131583d7b2cf",
+      "before": {
+        "at": 258.09999999403954,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "static",
+          "scene": "settled",
+          "reason": "reduced-motion",
+          "startedAt": null,
+          "endedAt": 206.1,
+          "portrait": {
+            "x": 807.625,
+            "y": 388.0625,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": 249.4375,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 60.46875,
+              "y": 5930.265625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 60.46875,
+              "y": 6551.203125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7172.140625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7793.078125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-no-js-hero.png",
+      "description": "Native no-js hero fallback; no replacement CSS.",
+      "mode": "no-js",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 671566,
+      "sha256": "ccb182bf6bcb8891c20208e4227f567c3c0cce7379fb3f1a28bd6ad77d3ec571",
+      "before": {
+        "at": 264.20000000298023,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "startedAt": null,
+          "endedAt": null,
+          "portrait": {
+            "x": 807.625,
+            "y": 388.0625,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": 249.4375,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "bounds": {
+              "x": 60.46875,
+              "y": 5929.984375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "bounds": {
+              "x": 60.46875,
+              "y": 6550.921875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7171.859375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7792.796875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-reduced-motion-hero.png",
+      "description": "Native reduced-motion hero fallback; no replacement CSS.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 235890,
+      "sha256": "146cc96cd3f73f5dff47251f6bcebfb2ca2df751bc934263529e1c71b4cfb95a",
+      "before": {
+        "at": 240.60000000149012,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "static",
+          "scene": "settled",
+          "reason": "reduced-motion",
+          "startedAt": null,
+          "endedAt": 197.7,
+          "portrait": {
+            "x": 18.546875,
+            "y": 475.359375,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": 395.0625,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 22,
+              "y": 6576.046875,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 22,
+              "y": 7164.75,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 22,
+              "y": 7727.953125,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 22,
+              "y": 8316.65625,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-no-js-hero.png",
+      "description": "Native no-js hero fallback; no replacement CSS.",
+      "mode": "no-js",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 231319,
+      "sha256": "231a8f55558648a1dc1300e9041c936c579d96485de4646227c7d763f02982bb",
+      "before": {
+        "at": 223.89999999850988,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "startedAt": null,
+          "endedAt": null,
+          "portrait": {
+            "x": 18.546875,
+            "y": 475.359375,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": 395.0625,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "bounds": {
+              "x": 22,
+              "y": 6576.359375,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "bounds": {
+              "x": 22,
+              "y": 7165.0625,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "bounds": {
+              "x": 22,
+              "y": 7728.265625,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "bounds": {
+              "x": 22,
+              "y": 8316.96875,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-full-page.png",
+      "description": "Complete rendered page after ordinary scrolling has visited the editorial sections. Decorative process artwork reflects this real scroll position.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 12399,
+      "bytes": 2773241,
+      "sha256": "3006a6992af578ea90133f2face3b2f97e48ef5a9890dc42d94ccd6b07712018",
+      "before": {
+        "at": 9136.29999999702,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 352.7,
+          "endedAt": 3859.9,
+          "portrait": {
+            "x": 807.625,
+            "y": 388.0625,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": 249.4375,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 5929.984375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 6550.921875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7171.859375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7792.796875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1024-full-page.png",
+      "description": "Complete rendered page after ordinary scrolling has visited the editorial sections. Decorative process artwork reflects this real scroll position.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "width": 1024,
+      "height": 10141,
+      "bytes": 1688555,
+      "sha256": "c230399970eaa11f2c5034b4dd989501ec9e4c51c4e9ddbcdb5342fc98cbd664",
+      "before": {
+        "at": 8340.10000000149,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 300.6,
+          "endedAt": 3804.5,
+          "portrait": {
+            "x": 574.3125,
+            "y": 365.234375,
+            "width": 433.296875,
+            "height": 326.234375
+          },
+          "plaque": {
+            "x": 813.765625,
+            "y": 266.65625,
+            "width": 167.234375,
+            "height": 162.84375
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 43,
+              "y": 4925,
+              "width": 938,
+              "height": 481.421875
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 43,
+              "y": 5406.421875,
+              "width": 938,
+              "height": 481.421875
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 43,
+              "y": 5887.84375,
+              "width": 938,
+              "height": 481.421875
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 43,
+              "y": 6369.265625,
+              "width": 938,
+              "height": 481.421875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-768-full-page.png",
+      "description": "Complete rendered page after ordinary scrolling has visited the editorial sections. Decorative process artwork reflects this real scroll position.",
+      "mode": "normal",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "width": 768,
+      "height": 9153,
+      "bytes": 1303729,
+      "sha256": "47548cd6bf50c345de5b198d3e5882cc1cc140eeb3b5048689d9a3c1d590df7d",
+      "before": {
+        "at": 8177.10000000149,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 329.4,
+          "endedAt": 3834.4,
+          "portrait": {
+            "x": 433.34375,
+            "y": 343.03125,
+            "width": 322.1875,
+            "height": 242.578125
+          },
+          "plaque": {
+            "x": 611.40625,
+            "y": 202.03125,
+            "width": 124.34375,
+            "height": 121.078125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 32.25,
+              "y": 4614.78125,
+              "width": 703.5,
+              "height": 404.15625
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 32.25,
+              "y": 5018.9375,
+              "width": 703.5,
+              "height": 378.65625
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 32.25,
+              "y": 5397.59375,
+              "width": 703.5,
+              "height": 404.15625
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 32.25,
+              "y": 5801.75,
+              "width": 703.5,
+              "height": 404.15625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-full-page.png",
+      "description": "Complete rendered page after ordinary scrolling has visited the editorial sections. Decorative process artwork reflects this real scroll position.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 12316,
+      "bytes": 1099836,
+      "sha256": "8c4bdd4d4779370f6ad55faaaed835435fd97415463837ba6fa2e7e8d062c02f",
+      "before": {
+        "at": 9014.20000000298,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 313.8,
+          "endedAt": 3817.5,
+          "portrait": {
+            "x": 18.546875,
+            "y": 475.359375,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": 395.0625,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 6576.359375,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7165.0625,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7728.265625,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 8316.96875,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-320-full-page.png",
+      "description": "Complete rendered page after ordinary scrolling has visited the editorial sections. Decorative process artwork reflects this real scroll position.",
+      "mode": "normal",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 12733,
+      "bytes": 955550,
+      "sha256": "5316884013702560d9574ae1ec34b1a693ad61adf80b11b2c98b67f9f21aca2d",
+      "before": {
+        "at": 9205.5,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 288.8,
+          "endedAt": 3793.2,
+          "portrait": {
+            "x": 19.25,
+            "y": 433.9375,
+            "width": 281.515625,
+            "height": 211.953125
+          },
+          "plaque": {
+            "x": 195.90625,
+            "y": 369.890625,
+            "width": 93.828125,
+            "height": 91.359375
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 6870.03125,
+              "width": 276,
+              "height": 536.203125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7406.234375,
+              "width": 276,
+              "height": 576.90625
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7983.140625,
+              "width": 276,
+              "height": 561.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 8544.84375,
+              "width": 276,
+              "height": 576.90625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-reduced-motion-full-page.png",
+      "description": "Complete native reduced-motion fallback after loading all lazy images.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 12399,
+      "bytes": 3145002,
+      "sha256": "5b827ac14681e9f373cfb2645b8c4b5869268117591b49c41a4acb63965b0984",
+      "before": {
+        "at": 5088.19999999553,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "static",
+          "scene": "settled",
+          "reason": "reduced-motion",
+          "startedAt": null,
+          "endedAt": 290,
+          "portrait": {
+            "x": 807.625,
+            "y": 388.0625,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": 249.4375,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 60.46875,
+              "y": 5929.984375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 60.46875,
+              "y": 6550.921875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7171.859375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7792.796875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-1440-no-js-full-page.png",
+      "description": "Complete native no-js fallback after loading all lazy images.",
+      "mode": "no-js",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 12399,
+      "bytes": 3141766,
+      "sha256": "e2212acc8e5eb5df03806bef99b07dfbd73ccfb9fd3a80b37381e1bb7dcca003",
+      "before": {
+        "at": 4971.19999999553,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "startedAt": null,
+          "endedAt": null,
+          "portrait": {
+            "x": 807.625,
+            "y": 388.0625,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": 249.4375,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "bounds": {
+              "x": 60.46875,
+              "y": 5929.984375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "bounds": {
+              "x": 60.46875,
+              "y": 6550.921875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7171.859375,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7792.796875,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-reduced-motion-full-page.png",
+      "description": "Complete native reduced-motion fallback after loading all lazy images.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 12316,
+      "bytes": 1180006,
+      "sha256": "794d3f1cd41faa431a5d1a4f1a910a4a112fc6a9662eed140d3117b16dec8f25",
+      "before": {
+        "at": 4955.39999999851,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "static",
+          "scene": "settled",
+          "reason": "reduced-motion",
+          "startedAt": null,
+          "endedAt": 204.6,
+          "portrait": {
+            "x": 18.546875,
+            "y": 475.359375,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": 395.0625,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 22,
+              "y": 6576.359375,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 22,
+              "y": 7165.0625,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 22,
+              "y": 7728.265625,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "1",
+            "scrollProgress": "1",
+            "bounds": {
+              "x": 22,
+              "y": 8316.96875,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "about-390-no-js-full-page.png",
+      "description": "Complete native no-js fallback after loading all lazy images.",
+      "mode": "no-js",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 12316,
+      "bytes": 1180880,
+      "sha256": "29df8849ae36c6630ef8b1791ff2642b56964f1ed8e16b9fe37d8c2353bb229c",
+      "before": {
+        "at": 4942.89999999851,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "startedAt": null,
+          "endedAt": null,
+          "portrait": {
+            "x": 18.546875,
+            "y": 475.359375,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": 395.0625,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "bounds": {
+              "x": 22,
+              "y": 6576.359375,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "bounds": {
+              "x": 22,
+              "y": 7165.0625,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "bounds": {
+              "x": 22,
+              "y": 7728.265625,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "bounds": {
+              "x": 22,
+              "y": 8316.96875,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "recordings": [
+    {
+      "file": "about-1440-arrival.mp4",
+      "kind": "arrival",
+      "nativeFile": "/workspace/about-premium-review/native/page@dc05a3e16d7ca087a4ee7fc83e89a03d.webm",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "durationSeconds": 7.28,
+      "bytes": 497977,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 1440,
+          "height": 900,
+          "frameRate": "25/1"
+        }
+      ]
+    },
+    {
+      "file": "about-1440-scroll-and-reverse.mp4",
+      "kind": "editorial-scroll-and-reverse-process",
+      "nativeFile": "/workspace/about-premium-review/native/page@3974291e211e109d88302799f3d2a5ba.webm",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "durationSeconds": 28.52,
+      "bytes": 3127680,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 1440,
+          "height": 900,
+          "frameRate": "25/1"
+        }
+      ]
+    },
+    {
+      "file": "about-390-arrival.mp4",
+      "kind": "arrival",
+      "nativeFile": "/workspace/about-premium-review/native/page@8e4c665004410f4968f486ac7cd98739.webm",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "durationSeconds": 7.8,
+      "bytes": 252984,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 390,
+          "height": 844,
+          "frameRate": "25/1"
+        }
+      ]
+    },
+    {
+      "file": "about-390-scroll-and-reverse.mp4",
+      "kind": "editorial-scroll-and-reverse-process",
+      "nativeFile": "/workspace/about-premium-review/native/page@6dc7837195aa9b62924fc37911289813.webm",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "durationSeconds": 28.24,
+      "bytes": 1938287,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 390,
+          "height": 844,
+          "frameRate": "25/1"
+        }
+      ]
+    }
+  ],
+  "recordingsCapturedAt": "2026-11-05T10:45:38.298Z",
+  "fullPageCaptureMethod": "Native Chromium software compositor (--disable-gpu) at unchanged viewport; avoids the cloud SwiftShader 8192px tall-image repetition. No stitching or injected styles.",
+  "measurements": [
+    {
+      "kind": "arrival",
+      "width": 1440,
+      "final": {
+        "at": 4031,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 510,
+          "endedAt": 4014.6,
+          "portrait": {
+            "x": 807.625,
+            "y": 388.0625,
+            "width": 609.296875,
+            "height": 458.75
+          },
+          "plaque": {
+            "x": 1144.34375,
+            "y": 249.4375,
+            "width": 235.171875,
+            "height": 229
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 5930.265625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 6551.203125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7172.140625,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 60.46875,
+              "y": 7793.078125,
+              "width": 1319.0625,
+              "height": 620.9375
+            }
+          }
+        ]
+      },
+      "samples": [
+        {
+          "at": 146.5,
+          "scene": "portrait",
+          "portraitOpacity": 0,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 513.1,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.874091,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 696.5,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.961591,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 963.2,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.998464,
+          "plaqueOpacity": 0.422598,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1046.4,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.653839,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1129.8,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.792498,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1213.1,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.874091,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1296.4,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.924527,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1379.8,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.956699,
+          "gradientOpacity": 0.0980554,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1463.1,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.977201,
+          "gradientOpacity": 0.348567,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1546.4,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.989831,
+          "gradientOpacity": 0.565583,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1629.8,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.99687,
+          "gradientOpacity": 0.715995,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1729.8,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.999942,
+          "gradientOpacity": 0.82704,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1813.1,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.885092,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1896.4,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.924536,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2029.7,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.964045,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2113,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.979175,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2229.8,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.992239,
+          "headlineOpacity": 0.369531,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2313.1,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.997285,
+          "headlineOpacity": 0.659667,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2396.4,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.999644,
+          "headlineOpacity": 0.816711,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2496.4,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 0.912091,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2596.3,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 0.960759,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2696.4,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 0.985869,
+          "paragraphOpacity": 0.252694
+        },
+        {
+          "at": 2813.1,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 0.998224,
+          "paragraphOpacity": 0.714037
+        },
+        {
+          "at": 2913,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 0.875896
+        },
+        {
+          "at": 3013,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 0.948213
+        },
+        {
+          "at": 3113,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 0.982405
+        },
+        {
+          "at": 3196.3,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 0.995462
+        },
+        {
+          "at": 3296.3,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3396.3,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3496.4,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3579.7,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3663,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3746.3,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3829.6,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3913,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4013,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4113,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4213,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4329.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4446.3,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4546.4,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4646.3,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4729.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4812.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4896.3,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4996.3,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5079.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5162.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5246.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5329.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5412.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5496.3,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5629.5,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5729.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5846.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5929.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6012.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6112.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6196.3,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6296.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6412.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6496.3,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6596.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6679.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6762.8,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6846.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6929.5,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 7012.8,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        }
+      ]
+    },
+    {
+      "kind": "editorial-scroll-and-reverse-process",
+      "width": 1440,
+      "snapshots": [
+        {
+          "direction": "forward",
+          "section": 1,
+          "facts": {
+            "at": 6262.30000000447,
+            "scrollY": 1049,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -660.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -799.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 4881.265625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 5502.203125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 6123.140625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 6744.078125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 2,
+          "facts": {
+            "at": 8939.60000000149,
+            "scrollY": 2713,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -2324.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -2463.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 3216.984375,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 3837.921875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 4458.859375,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 5079.796875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 3,
+          "facts": {
+            "at": 11229,
+            "scrollY": 3947,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -3558.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -3697.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 1982.984375,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 2603.921875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 3224.859375,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 3845.796875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 4,
+          "facts": {
+            "at": 13897.20000000298,
+            "scrollY": 5391,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -5002.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -5141.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "0.4252",
+                "scrollProgress": "0.4252",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 538.984375,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 1159.921875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 1780.859375,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 2401.796875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 5,
+          "facts": {
+            "at": 17506.10000000149,
+            "scrollY": 8368,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -7979.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -8118.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -2438.015625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -1817.078125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -1196.140625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -575.203125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 6,
+          "facts": {
+            "at": 19378.10000000149,
+            "scrollY": 9397,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -9008.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -9147.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -3467.015625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -2846.078125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -2225.140625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -1604.203125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 7,
+          "facts": {
+            "at": 21325.40000000596,
+            "scrollY": 10513,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -10124.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -10263.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -4583.015625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -3962.078125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -3341.140625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -2720.203125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "reverse",
+          "fraction": 1,
+          "facts": {
+            "at": 22313,
+            "scrollY": 8277,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -7888.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -8027.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -2347.015625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -1726.078125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -1105.140625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -484.203125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "reverse",
+          "fraction": 0.75,
+          "facts": {
+            "at": 23683.40000000596,
+            "scrollY": 7534,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -7145.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -7284.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -1604.015625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -983.078125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -362.140625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 258.796875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "reverse",
+          "fraction": 0.5,
+          "facts": {
+            "at": 25116.70000000298,
+            "scrollY": 6789,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -6400.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -6539.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -859.015625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -238.078125,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.7585",
+                "scrollProgress": "0.7585",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 382.859375,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 1003.796875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "reverse",
+          "fraction": 0.25,
+          "facts": {
+            "at": 26466.30000000447,
+            "scrollY": 6045,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -5656.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -5795.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": -115.015625,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.4957",
+                "scrollProgress": "0.4957",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 505.921875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 1126.859375,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 1747.796875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "reverse",
+          "fraction": 0,
+          "facts": {
+            "at": 27817.90000000596,
+            "scrollY": 5300,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 414.5,
+              "endedAt": 3920.3,
+              "portrait": {
+                "x": 807.625,
+                "y": -4911.9375,
+                "width": 609.296875,
+                "height": 458.75
+              },
+              "plaque": {
+                "x": 1144.34375,
+                "y": -5050.5625,
+                "width": 235.171875,
+                "height": 229
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "0.2308",
+                "scrollProgress": "0.2308",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 629.984375,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 1250.921875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 1871.859375,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 60.46875,
+                  "y": 2492.796875,
+                  "width": 1319.0625,
+                  "height": 620.9375
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "kind": "arrival",
+      "width": 390,
+      "final": {
+        "at": 3807.60000000149,
+        "scrollY": 0,
+        "overflow": false,
+        "h1": ["Two twins. One idea. A whole lot of creativity."],
+        "hero": {
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "startedAt": 282.5,
+          "endedAt": 3786.7,
+          "portrait": {
+            "x": 18.546875,
+            "y": 475.359375,
+            "width": 352.90625,
+            "height": 265.703125
+          },
+          "plaque": {
+            "x": 240,
+            "y": 395.0625,
+            "width": 117.625,
+            "height": 114.53125
+          }
+        },
+        "process": [
+          {
+            "phase": "thought",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 6576.046875,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "direction",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7164.75,
+              "width": 346,
+              "height": 563.203125
+            }
+          },
+          {
+            "phase": "form",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 7727.953125,
+              "width": 346,
+              "height": 588.703125
+            }
+          },
+          {
+            "phase": "connection",
+            "progress": "0.0000",
+            "scrollProgress": "0.0000",
+            "bounds": {
+              "x": 22,
+              "y": 8316.65625,
+              "width": 346,
+              "height": 629.40625
+            }
+          }
+        ]
+      },
+      "samples": [
+        {
+          "at": 65.4,
+          "scene": "portrait",
+          "portraitOpacity": 0,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 198.8,
+          "state": "pending",
+          "scene": "portrait",
+          "portraitOpacity": 0,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 282.1,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.120614,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 365.4,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.422598,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 448.8,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.654271,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 532.1,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.792624,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 615.4,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.874166,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 698.7,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.924575,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 782,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.956699,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 865.4,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.97722,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 948.7,
+          "state": "running",
+          "scene": "portrait",
+          "portraitOpacity": 0.989842,
+          "plaqueOpacity": 0,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1032.1,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 0.996876,
+          "plaqueOpacity": 0.305252,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1115.4,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 0.999767,
+          "plaqueOpacity": 0.574015,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1198.7,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.746026,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1282,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.846269,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1365.4,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.907145,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1448.7,
+          "state": "running",
+          "scene": "plaque",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.945536,
+          "gradientOpacity": 0,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1532.1,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.970139,
+          "gradientOpacity": 0.24953,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1615.4,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.985572,
+          "gradientOpacity": 0.486483,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1698.7,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.994625,
+          "gradientOpacity": 0.663725,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1782,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 0.999032,
+          "gradientOpacity": 0.778775,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1865.3,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.853065,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 1948.7,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.902699,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2032,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.936686,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2115.3,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.960287,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2198.6,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.976607,
+          "headlineOpacity": 0,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2282,
+          "state": "running",
+          "scene": "atmosphere",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.987624,
+          "headlineOpacity": 0.146772,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2365.3,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.994621,
+          "headlineOpacity": 0.503145,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2448.7,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.99852,
+          "headlineOpacity": 0.735302,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2532,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 0.999962,
+          "headlineOpacity": 0.856284,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2615.3,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 0.922577,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2698.7,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 0.960829,
+          "paragraphOpacity": 0
+        },
+        {
+          "at": 2798.7,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 0.985886,
+          "paragraphOpacity": 0.253206
+        },
+        {
+          "at": 2882,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 0.996071,
+          "paragraphOpacity": 0.619027
+        },
+        {
+          "at": 2965.4,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 0.999832,
+          "paragraphOpacity": 0.812386
+        },
+        {
+          "at": 3048.7,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 0.90639
+        },
+        {
+          "at": 3131.9,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 0.955861
+        },
+        {
+          "at": 3215.3,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 0.982427
+        },
+        {
+          "at": 3298.6,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 0.995472
+        },
+        {
+          "at": 3381.9,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 0.999888
+        },
+        {
+          "at": 3465.2,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3548.6,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3631.9,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3715.3,
+          "state": "running",
+          "scene": "copy",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3798.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3882,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 3965.3,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4048.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4131.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4215.3,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4298.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4381.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4465.3,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4548.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4632,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4715.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4798.5,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4881.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 4965.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5048.5,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5148.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5231.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5315.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5398.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5481.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5565.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5648.5,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5731.9,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5815.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5898.5,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 5981.8,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6065.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6148.5,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6231.8,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6315.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6398.6,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6481.8,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6565.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6648.5,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6731.8,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6815.2,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6898.5,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        },
+        {
+          "at": 6981.8,
+          "state": "settled",
+          "scene": "settled",
+          "reason": "complete",
+          "portraitOpacity": 1,
+          "plaqueOpacity": 1,
+          "gradientOpacity": 1,
+          "headlineOpacity": 1,
+          "paragraphOpacity": 1
+        }
+      ]
+    },
+    {
+      "kind": "editorial-scroll-and-reverse-process",
+      "width": 390,
+      "snapshots": [
+        {
+          "direction": "forward",
+          "section": 1,
+          "facts": {
+            "at": 6214,
+            "scrollY": 1281,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -805.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -885.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 5295.046875,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 5883.75,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 6446.953125,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 7035.65625,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 2,
+          "facts": {
+            "at": 9414.5,
+            "scrollY": 3495,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -3019.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -3099.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 3081.359375,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 3670.0625,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 4233.265625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 4821.96875,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 3,
+          "facts": {
+            "at": 11916.10000000149,
+            "scrollY": 4953,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -4477.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -4557.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 1623.359375,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 2212.0625,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 2775.265625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 3363.96875,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 4,
+          "facts": {
+            "at": 14196.10000000149,
+            "scrollY": 6190,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -5714.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -5794.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "0.6970",
+                "scrollProgress": "0.6970",
+                "bounds": {
+                  "x": 22,
+                  "y": 386.359375,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 975.0625,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 1538.265625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 2126.96875,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 5,
+          "facts": {
+            "at": 17817.5,
+            "scrollY": 8884,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -8408.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -8488.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -2307.640625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -1718.9375,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -1155.734375,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -567.03125,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 6,
+          "facts": {
+            "at": 20064.69999999553,
+            "scrollY": 10099,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -9623.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -9703.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -3522.640625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -2933.9375,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -2370.734375,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -1782.03125,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "forward",
+          "section": 7,
+          "facts": {
+            "at": 21756.5,
+            "scrollY": 10823,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -10347.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -10427.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -4246.640625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -3657.9375,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -3094.734375,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -2506.03125,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "reverse",
+          "fraction": 1,
+          "facts": {
+            "at": 22661.5,
+            "scrollY": 8794,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -8318.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -8398.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -2217.640625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -1628.9375,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -1065.734375,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -477.03125,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "reverse",
+          "fraction": 0.75,
+          "facts": {
+            "at": 23837.60000000149,
+            "scrollY": 8121,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -7645.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -7725.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -1544.640625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -955.9375,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -392.734375,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 195.96875,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "reverse",
+          "fraction": 0.5,
+          "facts": {
+            "at": 25020.39999999851,
+            "scrollY": 7447,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -6971.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -7051.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -870.640625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -281.9375,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.9362",
+                "scrollProgress": "0.9362",
+                "bounds": {
+                  "x": 22,
+                  "y": 281.265625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 869.96875,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "reverse",
+          "fraction": 0.25,
+          "facts": {
+            "at": 26205.5,
+            "scrollY": 6774,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -6298.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -6378.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "1.0000",
+                "scrollProgress": "1.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": -197.640625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.6856",
+                "scrollProgress": "0.6856",
+                "bounds": {
+                  "x": 22,
+                  "y": 391.0625,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 954.265625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 1542.96875,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        },
+        {
+          "direction": "reverse",
+          "fraction": 0,
+          "facts": {
+            "at": 27386.89999999851,
+            "scrollY": 6101,
+            "overflow": false,
+            "h1": ["Two twins. One idea. A whole lot of creativity."],
+            "hero": {
+              "state": "settled",
+              "scene": "settled",
+              "reason": "complete",
+              "startedAt": 368.4,
+              "endedAt": 3875.4,
+              "portrait": {
+                "x": 18.546875,
+                "y": -5625.640625,
+                "width": 352.90625,
+                "height": 265.703125
+              },
+              "plaque": {
+                "x": 240,
+                "y": -5705.9375,
+                "width": 117.625,
+                "height": 114.53125
+              }
+            },
+            "process": [
+              {
+                "phase": "thought",
+                "progress": "0.4943",
+                "scrollProgress": "0.4943",
+                "bounds": {
+                  "x": 22,
+                  "y": 475.359375,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "direction",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 1064.0625,
+                  "width": 346,
+                  "height": 563.203125
+                }
+              },
+              {
+                "phase": "form",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 1627.265625,
+                  "width": 346,
+                  "height": 588.703125
+                }
+              },
+              {
+                "phase": "connection",
+                "progress": "0.0000",
+                "scrollProgress": "0.0000",
+                "bounds": {
+                  "x": 22,
+                  "y": 2215.96875,
+                  "width": 346,
+                  "height": 629.40625
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "failedRequests": []
+}
