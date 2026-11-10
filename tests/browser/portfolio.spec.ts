@@ -126,12 +126,17 @@ for (const width of [320, 390, 768, 1440, 1920]) {
     await page.evaluate(() => document.fonts.ready);
     if ([390, 768, 1440].includes(width)) {
       await page.evaluate(() => window.scrollTo(0, 0));
-      await page.screenshot({ path: `artifacts/phase-3/work-${width}.png`, fullPage: true });
+      await page.screenshot({
+        path: `test-results/work-regression/portfolio/work-${width}.png`,
+        fullPage: true,
+      });
       await page.locator('[data-filter="packaging"]').click();
       await expectCategory(page, 'packaging');
       await loadImages(page.locator('[data-work-card]:visible img'));
       await page.locator('[data-work-filters]').scrollIntoViewIfNeeded();
-      await page.screenshot({ path: `artifacts/phase-3/work-${width}-filters.png` });
+      await page.screenshot({
+        path: `test-results/work-regression/portfolio/work-${width}-filters.png`,
+      });
     }
   });
 }
@@ -228,12 +233,14 @@ for (const slug of ['bunzo', 'triarch']) {
       await page.evaluate(() => document.fonts.ready);
       await page.evaluate(() => window.scrollTo(0, 0));
       await page.screenshot({
-        path: `artifacts/phase-3/case-${slug}-${width}.png`,
+        path: `test-results/work-regression/portfolio/case-${slug}-${width}.png`,
         fullPage: true,
       });
-      await page.screenshot({ path: `artifacts/phase-3/case-${slug}-${width}-hero.png` });
+      await page.screenshot({
+        path: `test-results/work-regression/portfolio/case-${slug}-${width}-hero.png`,
+      });
       await page.locator('[data-case-gallery]').screenshot({
-        path: `artifacts/phase-3/case-${slug}-${width}-gallery.png`,
+        path: `test-results/work-regression/portfolio/case-${slug}-${width}-gallery.png`,
         style: '[data-site-header], .skip-link { visibility: hidden !important; }',
       });
     });

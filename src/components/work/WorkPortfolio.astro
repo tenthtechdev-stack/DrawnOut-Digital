@@ -15,14 +15,14 @@ const count = projects.length;
 
 <section
   id="project-index"
-  class="work-index page-frame"
+  class="work-index"
   data-work-index
   data-portfolio-rhythm
   data-filter-active="false"
   aria-label="Project index"
 >
   {preview && (
-    <aside class="work-review-note" aria-label="Private portfolio review">
+    <aside class="work-review-note page-frame" aria-label="Private portfolio review">
       <span class="review-indicator" aria-hidden="true"></span>
       <p>
         <strong>Local portfolio preview</strong> · Supplied artwork, unpublished projects.
@@ -33,7 +33,7 @@ const count = projects.length;
   )}
   {count > 0 ? (
     <>
-      <div class="work-toolbar">
+      <div class="work-toolbar page-frame">
         <div class="work-index-label">
           <p class="eyebrow">01 / The index</p>
           <p class="work-count" role="status" aria-live="polite" data-work-count>
@@ -70,7 +70,7 @@ const count = projects.length;
       <p class="work-filter-empty" data-work-empty hidden>
         There are no projects in this selection. Choose All work to explore the complete index.
       </p>
-      <div class="work-closing-note">
+      <div class="work-closing-note page-frame">
         <p class="eyebrow">Ideas with character.</p>
         <p>
           Design with intention.
@@ -80,7 +80,7 @@ const count = projects.length;
       </div>
     </>
   ) : (
-    <div class="work-unpublished" data-work-unpublished>
+    <div class="work-unpublished page-frame" data-work-unpublished>
       <div class="unpublished-mark" aria-hidden="true">
         <span></span>
         <span></span>
@@ -103,6 +103,8 @@ const count = projects.length;
 </section>
 
 <script>
+  import '../../scripts/work-immersive';
+
   function initializeWorkFilters() {
     for (const index of document.querySelectorAll<HTMLElement>('[data-work-index]')) {
       if (index.dataset.filtersReady === 'true') continue;
@@ -247,12 +249,12 @@ const count = projects.length;
   }
   .work-project-list {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    align-items: start;
-    gap: clamp(55px, 8vw, 125px) clamp(25px, 5vw, 80px);
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: clamp(48px, 7vw, 112px);
+    width: min(100%, var(--page-max));
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 clamp(12px, 1.6vw, 30px);
   }
   .work-project-list > :global([hidden]) {
     display: none;
@@ -352,7 +354,7 @@ const count = projects.length;
       font-size: 11px;
     }
     .work-project-list {
-      row-gap: 55px;
+      row-gap: 48px;
     }
     .work-closing-note {
       flex-direction: column;

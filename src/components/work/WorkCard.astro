@@ -25,36 +25,24 @@ const titleId = `index-project-${data.slug}`;
 ---
 
 <li
-  class:list={['work-item', `work-item--${data.presentation}`]}
+  class:list={[
+    'work-item',
+    `work-item--${data.presentation}`,
+    index % 2 ? 'work-item--right' : 'work-item--left',
+  ]}
   data-work-card
+  data-work-scene
   data-portfolio-card
   data-categories={data.categories.join(' ')}
   data-project-slug={data.slug}
 >
-  <article aria-labelledby={titleId} data-project-scene>
+  <article
+    class="work-composition"
+    aria-labelledby={titleId}
+    data-project-scene
+    data-work-composition
+  >
     <a class="work-card-link" href={href} aria-labelledby={titleId}>
-      <div class="work-card-media" data-image-reveal data-expansion-frame>
-        <MediaSlot
-          motion={motion}
-          motionId={motionId}
-          poster={poster}
-          mobilePoster={featuredDetail ? data.cover : undefined}
-          alt={featuredDetail?.alt ?? data.coverAlt}
-          aspectRatio={`${poster.width} / ${poster.height}`}
-          availability={unpublished ? 'placeholder' : 'approved'}
-          priority={index === 0}
-          sizes={
-            data.presentation === 'wide'
-              ? '(max-width: 1600px) 92vw, 1465px'
-              : data.presentation === 'portrait'
-                ? '(max-width: 639px) 79vw, (max-width: 1023px) 42vw, 37vw'
-                : '(max-width: 639px) 90vw, (max-width: 1023px) 46vw, 58vw'
-          }
-        />
-        <span class="work-open" aria-hidden="true">
-          <Arrow />
-        </span>
-      </div>
       <div class="work-card-caption" data-portfolio-caption>
         <div class="work-card-name">
           <span class="work-number" aria-hidden="true">
@@ -71,8 +59,26 @@ const titleId = `index-project-${data.slug}`;
           </span>
         </div>
       </div>
+      <div class="work-card-media" data-work-frame>
+        <MediaSlot
+          motion={motion}
+          motionId={motionId}
+          poster={poster}
+          mobilePoster={featuredDetail ? data.cover : undefined}
+          alt={featuredDetail?.alt ?? data.coverAlt}
+          aspectRatio={`${poster.width} / ${poster.height}`}
+          availability={unpublished ? 'placeholder' : 'approved'}
+          priority={index === 0}
+          sizes="(max-width: 639px) 94vw, (max-width: 1600px) 97vw, 1540px"
+        />
+        <span class="work-open" aria-hidden="true">
+          <Arrow />
+        </span>
+      </div>
     </a>
-    {motion && <PortfolioMotionToggle id={motionId} title={data.title} />}
+    <div class="work-controls-reservation">
+      {motion && <PortfolioMotionToggle id={motionId} title={data.title} />}
+    </div>
   </article>
 </li>
 
@@ -82,89 +88,76 @@ const titleId = `index-project-${data.slug}`;
 
 <style>
   .work-item {
+    --work-progress: 1;
+    --work-scroll-start: 0.36;
+    --work-scroll-end: 0.08;
+    --work-caption-height: 104px;
+    --work-frame-height: min(62svh, 52vw);
+    --work-scale-start: 0.73;
+    --work-inset-start: 9%;
+    --work-corner: 94px;
+    position: relative;
     min-width: 0;
-    grid-column: 1 / -1;
+    height: calc(var(--work-caption-height) + var(--work-frame-height) + 52px);
   }
-  .work-item--split {
-    grid-column: span 7;
+  .work-item--right {
+    --work-inset-start: 27%;
+    --work-corner: 130px;
   }
   .work-item--portrait {
-    grid-column: span 5;
-    padding-top: clamp(50px, 7vw, 110px);
+    --work-scale-start: 0.78;
+    --work-inset-start: 3%;
+    --work-corner: 56px;
   }
   .work-item--offset {
-    grid-column: 4 / -1;
+    --work-scale-start: 0.8;
+    --work-inset-start: 18%;
+  }
+  .work-composition {
+    width: 100%;
+    margin-left: 0;
+  }
+  .work-item[data-work-enhanced] .work-composition {
+    width: calc(
+      100% * (var(--work-scale-start) + (1 - var(--work-scale-start)) * var(--work-progress))
+    );
+    margin-left: calc(var(--work-inset-start) * (1 - var(--work-progress)));
   }
   .work-card-link {
     display: block;
     text-decoration: none;
-    border-radius: 2px;
+    border-radius: 6px;
   }
-  .work-card-media {
-    position: relative;
-    overflow: hidden;
-    border-radius: 3px;
-  }
-  .work-item--split .work-card-media {
-    border-bottom-right-radius: var(--radius-editorial);
-  }
-  .work-card-media :global(.media-slot) {
-    transition: transform 500ms var(--ease-ui);
-  }
-  .work-open {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    color: var(--ink);
-    background: var(--paper);
-    border: 1px solid #20201e1f;
-    border-radius: 50%;
-    transition: background-color var(--duration-ui) var(--ease-ui);
-  }
-  .work-open :global(svg) {
-    width: 18px;
-    height: 18px;
-    transition: transform var(--duration-ui) var(--ease-ui);
-  }
-  .work-card-link:hover .work-card-media :global(.media-slot),
-  .work-card-link:focus-visible .work-card-media :global(.media-slot) {
-    transform: scale(1.015);
-  }
-  .work-card-link:hover .work-open,
-  .work-card-link:focus-visible .work-open {
-    background: var(--cream);
-  }
-  .work-card-link:hover .work-open :global(svg),
-  .work-card-link:focus-visible .work-open :global(svg) {
-    transform: translate(2px, -2px);
+  .work-card-link:focus-visible {
+    outline: 3px solid var(--accent-strong);
+    outline-offset: 6px;
   }
   .work-card-caption {
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    padding-top: 21px;
+    gap: 24px;
+    min-height: var(--work-caption-height);
+    padding: 12px clamp(0px, 0.8vw, 12px) 22px;
   }
   .work-card-name {
     display: flex;
     align-items: baseline;
-    gap: 18px;
+    gap: clamp(12px, 1.4vw, 24px);
     min-width: 0;
   }
   .work-number {
-    color: var(--muted);
-    font-size: 10px;
+    color: var(--accent-strong);
+    font-size: 11px;
+    flex-shrink: 0;
   }
   h2 {
-    font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
     font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -0.05em;
+    line-height: 1.07;
+    letter-spacing: -0.06em;
     margin: 0;
+    text-wrap: balance;
   }
   .work-card-description {
     flex-shrink: 0;
@@ -179,98 +172,169 @@ const titleId = `index-project-${data.slug}`;
   .work-view {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 10px;
-    font-size: 10px;
+    gap: 14px;
+    min-height: 30px;
+    margin-top: 5px;
+    font-size: 11px;
     line-height: 1.5;
+    white-space: nowrap;
   }
   .work-view :global(svg) {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
+    transition: transform var(--duration-ui) var(--ease-ui);
   }
-  .work-item--portrait .work-card-caption {
-    display: block;
+  .work-card-media {
+    position: relative;
+    height: var(--work-frame-height);
+    overflow: hidden;
+    border-radius: 20px 20px 32px 20px;
+    background: var(--surface);
   }
-  .work-item--portrait .work-card-description {
-    margin-top: 15px;
-    padding-left: 30px;
-    text-align: left;
+  .work-item[data-work-enhanced] .work-card-media {
+    height: calc(
+      var(--work-frame-height) *
+        (var(--work-scale-start) + (1 - var(--work-scale-start)) * var(--work-progress))
+    );
+    border-radius: calc(22px + var(--work-corner) * (1 - var(--work-progress))) 22px
+      calc(32px + var(--work-corner) * (1 - var(--work-progress))) 22px;
   }
-  :global([data-filter-active='true']) .work-item {
-    grid-column: span 6;
-    padding-top: 0;
+  .work-item--right[data-work-enhanced] .work-card-media {
+    border-radius: 22px calc(22px + var(--work-corner) * (1 - var(--work-progress))) 22px
+      calc(32px + var(--work-corner) * (1 - var(--work-progress)));
   }
-  :global([data-filter-active='true']) .work-item--wide {
-    grid-column: 1 / -1;
+  .work-card-media :global(.media-slot) {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    background: transparent;
   }
-  :global([data-filter-active='true']) .work-card-caption {
-    display: block;
+  .work-card-media :global(img),
+  .work-card-media :global(video) {
+    object-fit: contain;
   }
-  :global([data-filter-active='true']) .work-card-description {
-    text-align: left;
-    margin-top: 14px;
-    padding-left: 30px;
+  .work-open {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid #20201e1f;
+    border-radius: 50%;
+    transition: background-color var(--duration-ui) var(--ease-ui);
+  }
+  .work-open :global(svg) {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--duration-ui) var(--ease-ui);
+  }
+  .work-card-link:hover .work-open,
+  .work-card-link:focus-visible .work-open {
+    background: var(--cream);
+  }
+  .work-card-link:hover .work-open :global(svg),
+  .work-card-link:focus-visible .work-open :global(svg),
+  .work-card-link:hover .work-view :global(svg) {
+    transform: translate(2px, -2px);
+  }
+  .work-controls-reservation {
+    min-height: 52px;
+    padding-inline: 4px;
   }
   @media (max-width: 1023px) {
-    .work-item--split,
-    .work-item--portrait {
-      grid-column: span 6;
+    .work-item {
+      --work-caption-height: 112px;
+      --work-frame-height: min(58svh, 58vw);
+      --work-scale-start: 0.78;
+      --work-inset-start: 3%;
     }
-    .work-item--offset {
-      grid-column: 3 / -1;
+    .work-item--right {
+      --work-inset-start: 22%;
     }
     .work-card-caption {
       display: block;
+      padding-top: 6px;
     }
     .work-card-description {
-      padding-left: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
       margin-top: 12px;
+      padding-left: 28px;
       text-align: left;
     }
-    h2 {
-      font-size: clamp(1.3rem, 2.8vw, 2rem);
+    .work-view {
+      margin-top: 0;
     }
   }
   @media (max-width: 639px) {
-    .work-item,
-    :global([data-filter-active='true']) .work-item {
-      grid-column: 1 / -1;
-      padding-top: 0;
+    .work-item {
+      --work-scroll-start: 0.29;
+      --work-scroll-end: 0.07;
+      --work-caption-height: 132px;
+      --work-frame-height: min(52svh, 112vw);
+      --work-scale-start: 0.82;
+      --work-inset-start: 2%;
+      --work-corner: 40px;
     }
-    .work-item--portrait {
-      width: 86%;
-      justify-self: end;
-    }
-    .work-item--offset {
-      width: 94%;
-      justify-self: start;
+    .work-item--right {
+      --work-inset-start: 18%;
+      --work-corner: 54px;
     }
     .work-card-caption {
-      padding-top: 18px;
-    }
-    h2 {
-      font-size: clamp(1.4rem, 6vw, 1.8rem);
+      padding-inline: 1px;
+      padding-bottom: 16px;
     }
     .work-card-name {
-      gap: 14px;
+      gap: 12px;
     }
-    .work-card-description,
-    .work-item--portrait .work-card-description,
-    :global([data-filter-active='true']) .work-card-description {
-      padding-left: 27px;
+    .work-number {
+      font-size: 9px;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 7.1vw, 2.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.055em;
+    }
+    .work-card-description {
+      align-items: start;
+      padding-left: 23px;
+      gap: 10px;
       margin-top: 12px;
     }
+    .work-card-description p {
+      font-size: 10px;
+      max-width: 155px;
+    }
+    .work-view {
+      gap: 6px;
+      min-height: 26px;
+      font-size: 10px;
+    }
+    .work-view :global(svg) {
+      width: 12px;
+      height: 12px;
+    }
     .work-open {
-      top: 12px;
+      bottom: 12px;
       right: 12px;
-      width: 35px;
-      height: 35px;
+      width: 36px;
+      height: 36px;
+    }
+    .work-open :global(svg) {
+      width: 16px;
+      height: 16px;
     }
   }
   @media (prefers-reduced-motion: reduce) {
-    .work-card-media :global(.media-slot),
     .work-open,
-    .work-open :global(svg) {
+    .work-open :global(svg),
+    .work-view :global(svg) {
       transition: none;
       transform: none !important;
     }

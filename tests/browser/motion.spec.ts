@@ -99,7 +99,9 @@ async function ready(page: Page, route = '/') {
   await page.goto(route);
   await expect(page.locator('html')).toHaveAttribute('data-motion-state', 'ready');
   await page.evaluate(() => document.fonts.ready);
-  await expect.poll(async () => (await snapshot(page)).sceneCount).toBeGreaterThan(0);
+  if (route === '/work')
+    await expect(page.locator('[data-work-index]')).toHaveAttribute('data-work-motion', 'active');
+  else await expect.poll(async () => (await snapshot(page)).sceneCount).toBeGreaterThan(0);
 }
 
 async function sceneAt(page: Page, prefix: string) {
@@ -214,9 +216,10 @@ for (const width of [320, 390, 768, 1440, 1920]) {
   });
 }
 
+// Work now expands its whole composition through a separate native-scroll runtime.
+// Real geometry/reversal at desktop, tablet and mobile is covered in work-immersive.spec.ts.
 const routes = [
   ['home', '/', '[data-work]'],
-  ['work', '/work', '[data-work-index]'],
   ['case', '/work/bunzo', '[data-case-gallery]'],
 ] as const;
 
@@ -278,17 +281,19 @@ for (const [name, route, prefix] of routes) {
   }
 }
 
-test('filter changes, resize and repeated initialization keep one scoped motion system', async ({
+test('filter changes, resize and repeated initialization keep Work and editorial motion scoped', async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 900 });
   await ready(page, '/work');
   const before = await snapshot(page);
+  await expect(page.locator('[data-work-enhanced]')).toHaveCount(11);
   await page.locator('[data-filter="packaging"]').click();
   await expect
     .poll(async () => (await snapshot(page)).refreshCount)
     .toBeGreaterThan(before.refreshCount);
   await expect(page.locator('[data-filter="packaging"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('[data-work-enhanced]')).toHaveCount(5);
   await page.locator('[data-filter="all"]').click();
   await page.setViewportSize({ width: 1440, height: 900 });
   await expect.poll(async () => (await snapshot(page)).sceneCount).toBe(before.sceneCount);
@@ -300,16 +305,20 @@ test('filter changes, resize and repeated initialization keep one scoped motion 
   await expect(page.locator('html')).toHaveAttribute('data-motion-state', 'ready');
   await expect.poll(async () => (await snapshot(page)).sceneCount).toBe(before.sceneCount);
   await expect.poll(async () => (await snapshot(page)).triggerCount).toBe(refreshed.triggerCount);
+  await expect(page.locator('[data-work-enhanced]')).toHaveCount(11);
   await page.evaluate(() => document.dispatchEvent(new Event('astro:before-swap')));
   await expect.poll(async () => (await snapshot(page)).triggerCount).toBe(0);
+  await expect(page.locator('[data-work-enhanced]')).toHaveCount(0);
   await page.evaluate(() => document.dispatchEvent(new Event('astro:page-load')));
   await expect(page.locator('html')).toHaveAttribute('data-motion-state', 'ready');
   await expect.poll(async () => (await snapshot(page)).sceneCount).toBe(before.sceneCount);
+  await expect(page.locator('[data-work-enhanced]')).toHaveCount(11);
   const restored = await snapshot(page);
   await page.evaluate(() =>
     window.dispatchEvent(new PageTransitionEvent('pagehide', { persisted: true })),
   );
   await expect.poll(async () => (await snapshot(page)).triggerCount).toBe(0);
+  await expect(page.locator('[data-work-enhanced]')).toHaveCount(0);
   await page.evaluate(() =>
     window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true })),
   );
@@ -318,6 +327,7 @@ test('filter changes, resize and repeated initialization keep one scoped motion 
   await expect
     .poll(async () => (await snapshot(page)).initializationCount)
     .toBe(restored.initializationCount + 1);
+  await expect(page.locator('[data-work-enhanced]')).toHaveCount(11);
 });
 
 test('live reduced-motion changes remove scroll choreography and restore it without duplicates', async ({
@@ -384,17 +394,30 @@ test('failed GSAP downloads leave visible content and a usable static page', asy
   await expect(page.locator('[data-work-card]:visible')).not.toHaveCount(0);
 });
 
-test('keyboard focus exposes the complete interactive portfolio image', async ({ page }) => {
+test('keyboard focus keeps Work artwork and its project title accessible', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await ready(page, '/work');
-  const { media, scene } = await sceneAt(page, '[data-work-index]');
-  await setProgress(page, media, scene, 0.08);
-  const card = media.locator('xpath=ancestor::a[1]');
+  const scene = page.locator('[data-work-scene]').first();
+  await scene.evaluate((element) => {
+    const start = Number(getComputedStyle(element).getPropertyValue('--work-scroll-start'));
+    window.scrollTo(0, scrollY + element.getBoundingClientRect().top - innerHeight * start);
+  });
+  const card = scene.locator('a');
   await card.focus();
   await expect(card).toBeFocused();
-  await expect
-    .poll(async () => Number(await media.getAttribute('data-motion-progress')))
-    .toBeGreaterThan(0.95);
+  await expect(scene.locator('[data-portfolio-caption]')).toHaveAttribute(
+    'data-portfolio-reveal',
+    'complete',
+  );
+  await expect(scene.locator('picture img')).toBeVisible();
+  expect(
+    await scene.locator('picture img').evaluate((element) => getComputedStyle(element).objectFit),
+  ).toBe('contain');
+  expect(
+    await scene
+      .locator('[data-portfolio-title]')
+      .evaluate((element) => getComputedStyle(element).opacity),
+  ).toBe('1');
   expect(await card.evaluate((element) => getComputedStyle(element).outlineStyle)).not.toBe('none');
   const destination = await card.getAttribute('href');
   await page.keyboard.press('Enter');
