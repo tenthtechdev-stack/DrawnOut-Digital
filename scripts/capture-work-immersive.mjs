@@ -5,7 +5,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { chromium } from '@playwright/test';
 
-/* global document, window, navigator, performance, getComputedStyle, scrollY, innerHeight */
+/* global document, window, navigator, performance, getComputedStyle, scrollY, innerHeight, EventTarget */
 // Real browser captures: no application timeline seeking, injected styles or synthesized frames.
 const argument = (name, fallback) => {
   const index = process.argv.indexOf(name);
@@ -15,7 +15,7 @@ const baseURL = argument('--base-url', 'http://127.0.0.1:4420');
 const output = path.resolve(argument('--out', 'artifacts/work-immersive'));
 const native = path.resolve(argument('--native-dir', '/workspace/work-immersive-review/native'));
 const only = argument('--only', 'all');
-assert(['all', 'recordings', 'stills', 'full-pages'].includes(only));
+assert(['all', 'recordings', 'stills', 'anchors', 'full-pages'].includes(only));
 const widthsArgument = argument('--widths', '');
 const widths = widthsArgument ? widthsArgument.split(',').map(Number) : [1440, 390];
 const viewport = (width) => ({ width, height: width < 768 ? 844 : 900 });
@@ -445,9 +445,11 @@ try {
           javaScriptEnabled: mode !== 'no-js',
         });
         if (mode === 'save-data')
-          await context.addInitScript(() =>
-            Object.defineProperty(navigator, 'connection', { value: { saveData: true } }),
-          );
+          await context.addInitScript(() => {
+            const connection = new EventTarget();
+            Object.defineProperty(connection, 'saveData', { value: true });
+            Object.defineProperty(navigator, 'connection', { value: connection });
+          });
         const fallback = await context.newPage();
         watch(fallback, width, mode);
         await fallback.goto('/work');
@@ -477,6 +479,27 @@ try {
         );
         await context.close();
       }
+  }
+  if (only === 'all' || only === 'anchors') {
+    for (const width of widths) {
+      const context = await browser.newContext(options(width));
+      const page = await context.newPage();
+      watch(page, width, 'sol-applications');
+      await page.goto('/work');
+      await ready(page);
+      await scrollProgress(page, 'sol-community-center', 1);
+      // Let the approved loop reach its real applications beat; never seek it.
+      await page.waitForFunction(() => {
+        const video = document.querySelector('#work-motion-sol-community-center');
+        return video && !video.paused && video.currentTime >= 3.15 && video.currentTime < 3.7;
+      });
+      await shot(
+        page,
+        `work-${width}-sol-applications.png`,
+        'SOL at full expansion during the naturally playing signage/applications beat of its approved loop. No video seeking or timeline manipulation.',
+      );
+      await context.close();
+    }
   }
 } finally {
   await browser.close();

@@ -1,0 +1,270 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-work-immersive/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.work-immersive.config.ts",
+      "--grep",
+      "Bunzo and SOL expand"
+    ],
+    "configFile": "/workspace/drawnout-work-immersive/playwright.work-immersive.config.ts",
+    "rootDir": "/workspace/drawnout-work-immersive/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-work-immersive/test-results/work-immersive",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-work-immersive/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["work-immersive.spec.ts"],
+        "timeout": 75000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-work-immersive/test-results/work-immersive",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-work-immersive/tests/browser",
+        "snapshotDir": "/workspace/drawnout-work-immersive/tests/browser",
+        "testIgnore": [],
+        "testMatch": "work-immersive.spec.ts",
+        "timeout": 75000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4421",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      ["list", null],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/work-immersive/browser-occlusion-before-fix.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4421",
+      "url": "http://127.0.0.1:4421",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "work-immersive.spec.ts",
+      "file": "work-immersive.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Bunzo and SOL expand frame and caption together, then restore native backscroll at 390px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2410,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m93\u001b[39m\nReceived:    \u001b[31m59.078125\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m93\u001b[39m\nReceived:    \u001b[31m59.078125\u001b[39m\n    at /workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts:130:34",
+                    "location": {
+                      "file": "/workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts",
+                      "column": 34,
+                      "line": 130
+                    },
+                    "snippet": "  128 |         expect(sample.frame.x).toBeGreaterThanOrEqual(-1);\n  129 |         expect(sample.frame.x + sample.frame.width).toBeLessThanOrEqual(width + 1);\n> 130 |         expect(sample.caption.y).toBeGreaterThanOrEqual(sample.headerBottom + 4);\n      |                                  ^\n  131 |         expect(sample.caption.y + sample.caption.height).toBeLessThanOrEqual(\n  132 |           viewportFor(width).height + 1,\n  133 |         );"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts",
+                        "column": 34,
+                        "line": 130
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m93\u001b[39m\nReceived:    \u001b[31m59.078125\u001b[39m\n\n  128 |         expect(sample.frame.x).toBeGreaterThanOrEqual(-1);\n  129 |         expect(sample.frame.x + sample.frame.width).toBeLessThanOrEqual(width + 1);\n> 130 |         expect(sample.caption.y).toBeGreaterThanOrEqual(sample.headerBottom + 4);\n      |                                  ^\n  131 |         expect(sample.caption.y + sample.caption.height).toBeLessThanOrEqual(\n  132 |           viewportFor(width).height + 1,\n  133 |         );\n    at /workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts:130:34"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-10T20:16:59.256Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-work-immersive/test-results/work-immersive/work-immersive-Bunzo-and-S-26fa1--native-backscroll-at-390px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-work-immersive/test-results/work-immersive/work-immersive-Bunzo-and-S-26fa1--native-backscroll-at-390px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-work-immersive/test-results/work-immersive/work-immersive-Bunzo-and-S-26fa1--native-backscroll-at-390px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts",
+                    "column": 34,
+                    "line": 130
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-39ce1b52408bdbbd125f",
+          "file": "work-immersive.spec.ts",
+          "line": 96,
+          "column": 3
+        },
+        {
+          "title": "Bunzo and SOL expand frame and caption together, then restore native backscroll at 1440px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3979,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m109\u001b[39m\nReceived:    \u001b[31m71.75\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m109\u001b[39m\nReceived:    \u001b[31m71.75\u001b[39m\n    at /workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts:130:34",
+                    "location": {
+                      "file": "/workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts",
+                      "column": 34,
+                      "line": 130
+                    },
+                    "snippet": "  128 |         expect(sample.frame.x).toBeGreaterThanOrEqual(-1);\n  129 |         expect(sample.frame.x + sample.frame.width).toBeLessThanOrEqual(width + 1);\n> 130 |         expect(sample.caption.y).toBeGreaterThanOrEqual(sample.headerBottom + 4);\n      |                                  ^\n  131 |         expect(sample.caption.y + sample.caption.height).toBeLessThanOrEqual(\n  132 |           viewportFor(width).height + 1,\n  133 |         );"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts",
+                        "column": 34,
+                        "line": 130
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m109\u001b[39m\nReceived:    \u001b[31m71.75\u001b[39m\n\n  128 |         expect(sample.frame.x).toBeGreaterThanOrEqual(-1);\n  129 |         expect(sample.frame.x + sample.frame.width).toBeLessThanOrEqual(width + 1);\n> 130 |         expect(sample.caption.y).toBeGreaterThanOrEqual(sample.headerBottom + 4);\n      |                                  ^\n  131 |         expect(sample.caption.y + sample.caption.height).toBeLessThanOrEqual(\n  132 |           viewportFor(width).height + 1,\n  133 |         );\n    at /workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts:130:34"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-10T20:17:02.615Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-work-immersive/test-results/work-immersive/work-immersive-Bunzo-and-S-c874f-native-backscroll-at-1440px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-work-immersive/test-results/work-immersive/work-immersive-Bunzo-and-S-c874f-native-backscroll-at-1440px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-work-immersive/test-results/work-immersive/work-immersive-Bunzo-and-S-c874f-native-backscroll-at-1440px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts",
+                    "column": 34,
+                    "line": 130
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-1a346b9caa46f02ef2e9",
+          "file": "work-immersive.spec.ts",
+          "line": 96,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-10T20:16:56.532Z",
+    "duration": 10806.733,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

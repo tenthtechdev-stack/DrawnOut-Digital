@@ -1,0 +1,784 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-work-immersive/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.work-immersive.config.ts"
+    ],
+    "configFile": "/workspace/drawnout-work-immersive/playwright.work-immersive.config.ts",
+    "rootDir": "/workspace/drawnout-work-immersive/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-work-immersive/test-results/work-immersive",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-work-immersive/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["work-immersive.spec.ts"],
+        "timeout": 75000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-work-immersive/test-results/work-immersive",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-work-immersive/tests/browser",
+        "snapshotDir": "/workspace/drawnout-work-immersive/tests/browser",
+        "testIgnore": [],
+        "testMatch": "work-immersive.spec.ts",
+        "timeout": 75000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4421",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      ["list", null],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/work-immersive/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4421",
+      "url": "http://127.0.0.1:4421",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "work-immersive.spec.ts",
+      "file": "work-immersive.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Bunzo and SOL expand frame and caption together, then restore native backscroll at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2503,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:10.737Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "work-expansion-390",
+                      "contentType": "application/json",
+                      "body": "WwogIHsKICAgICJzbHVnIjogImJ1bnpvIiwKICAgICJpbml0aWFsIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDczNy4wNzgxMjUsCiAgICAgICAgImhlaWdodCI6IDM5MC4xMjUKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogMTkuMzEyNSwKICAgICAgICAieSI6IDI4Ny4wNzgxMjUsCiAgICAgICAgIndpZHRoIjogMzAwLjEwOTM3NSwKICAgICAgICAiaGVpZ2h0IjogMzUzLjAxNTYyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiAxOS4zMTI1LAogICAgICAgICJ5IjogNDE5LjA3ODEyNSwKICAgICAgICAid2lkdGgiOiAzMDAuMTA5Mzc1LAogICAgICAgICJoZWlnaHQiOiAxNjkuMDE1NjI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogMTkuMzEyNSwKICAgICAgICAieSI6IDI4Ny4wNzgxMjUsCiAgICAgICAgIndpZHRoIjogMzAwLjEwOTM3NSwKICAgICAgICAiaGVpZ2h0IjogMTMyCiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiNjJweCAyMnB4IDcycHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogODksCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAzOTAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfSwKICAgICJtaWRkbGUiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogNzM3LjA3ODEyNSwKICAgICAgICAiaGVpZ2h0IjogMzkwLjEyNQogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiAxNS42NDA2MjUsCiAgICAgICAgInkiOiAxOTguMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xNTYyNSwKICAgICAgICAiaGVpZ2h0IjogMzcxLjYyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiAxNS42NDA2MjUsCiAgICAgICAgInkiOiAzMzAuMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xNTYyNSwKICAgICAgICAiaGVpZ2h0IjogMTg3LjYyNQogICAgICB9LAogICAgICAiY2FwdGlvbiI6IHsKICAgICAgICAieCI6IDE1LjY0MDYyNSwKICAgICAgICAieSI6IDE5OC4wNzgxMjUsCiAgICAgICAgIndpZHRoIjogMzMzLjE1NjI1LAogICAgICAgICJoZWlnaHQiOiAxMzIKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICI0MS45NHB4IDIycHggNTEuOTRweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiA4OSwKICAgICAgInBvc2l0aW9uIjogInJlbGF0aXZlIiwKICAgICAgInBpbm5lZCI6IGZhbHNlLAogICAgICAiZG9jdW1lbnRXaWR0aCI6IDM5MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgImV4cGFuZGVkIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDczNy4wNzgxMjUsCiAgICAgICAgImhlaWdodCI6IDM5MC4xMjUKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogMTIsCiAgICAgICAgInkiOiAxMTAuMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDM2NS44NTkzNzUsCiAgICAgICAgImhlaWdodCI6IDM5MC4wNDY4NzUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogMTIsCiAgICAgICAgInkiOiAyNDIuMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDM2NS44NTkzNzUsCiAgICAgICAgImhlaWdodCI6IDIwNi4wNDY4NzUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiAxMiwKICAgICAgICAieSI6IDExMC4wNzgxMjUsCiAgICAgICAgIndpZHRoIjogMzY1Ljg1OTM3NSwKICAgICAgICAiaGVpZ2h0IjogMTMyCiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiMjIuMDhweCAyMnB4IDMyLjA4cHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogODksCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAzOTAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfSwKICAgICJyZXZlcnNlTWlkZGxlIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDczNy4wNzgxMjUsCiAgICAgICAgImhlaWdodCI6IDM5MC4xMjUKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogMTUuNjQwNjI1LAogICAgICAgICJ5IjogMTk4LjA3ODEyNSwKICAgICAgICAid2lkdGgiOiAzMzMuMTU2MjUsCiAgICAgICAgImhlaWdodCI6IDM3MS42MjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogMTUuNjQwNjI1LAogICAgICAgICJ5IjogMzMwLjA3ODEyNSwKICAgICAgICAid2lkdGgiOiAzMzMuMTU2MjUsCiAgICAgICAgImhlaWdodCI6IDE4Ny42MjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiAxNS42NDA2MjUsCiAgICAgICAgInkiOiAxOTguMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xNTYyNSwKICAgICAgICAiaGVpZ2h0IjogMTMyCiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiNDEuOTRweCAyMnB4IDUxLjk0cHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogODksCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAzOTAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfSwKICAgICJyZXZlcnNlZCI6IHsKICAgICAgInNjZW5lIjogewogICAgICAgICJ0b3AiOiA3MzcuMDc4MTI1LAogICAgICAgICJoZWlnaHQiOiAzOTAuMTI1CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDE5LjMxMjUsCiAgICAgICAgInkiOiAyODcuMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDMwMC4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDM1My4wMTU2MjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogMTkuMzEyNSwKICAgICAgICAieSI6IDQxOS4wNzgxMjUsCiAgICAgICAgIndpZHRoIjogMzAwLjEwOTM3NSwKICAgICAgICAiaGVpZ2h0IjogMTY5LjAxNTYyNQogICAgICB9LAogICAgICAiY2FwdGlvbiI6IHsKICAgICAgICAieCI6IDE5LjMxMjUsCiAgICAgICAgInkiOiAyODcuMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDMwMC4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDEzMgogICAgICB9LAogICAgICAicmFkaXVzIjogIjYycHggMjJweCA3MnB4IiwKICAgICAgImhlYWRlckJvdHRvbSI6IDg5LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMzkwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0KICB9LAogIHsKICAgICJzbHVnIjogInNvbC1jb21tdW5pdHktY2VudGVyIiwKICAgICJpbml0aWFsIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDExNzUuMjAzMTI1LAogICAgICAgICJoZWlnaHQiOiA2NDEuNQogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiA3Ny44NzUsCiAgICAgICAgInkiOiAyODcuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMwMC4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDU1OS4xNDA2MjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogNzcuODc1LAogICAgICAgICJ5IjogNDE5LjIwMzEyNSwKICAgICAgICAid2lkdGgiOiAzMDAuMTA5Mzc1LAogICAgICAgICJoZWlnaHQiOiAzNzUuMTQwNjI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogNzcuODc1LAogICAgICAgICJ5IjogMjg3LjIwMzEyNSwKICAgICAgICAid2lkdGgiOiAzMDAuMTA5Mzc1LAogICAgICAgICJoZWlnaHQiOiAxMzIKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIyMnB4IDc2cHggMjJweCA4NnB4IiwKICAgICAgImhlYWRlckJvdHRvbSI6IDg5LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMzkwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0sCiAgICAibWlkZGxlIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDExNzUuMjAzMTI1LAogICAgICAgICJoZWlnaHQiOiA2NDEuNQogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiA0NC44NzUsCiAgICAgICAgInkiOiAxOTguMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDYwMC4zOTA2MjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogNDQuODc1LAogICAgICAgICJ5IjogMzMwLjIwMzEyNSwKICAgICAgICAid2lkdGgiOiAzMzMuMTA5Mzc1LAogICAgICAgICJoZWlnaHQiOiA0MTYuMzkwNjI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogNDQuODc1LAogICAgICAgICJ5IjogMTk4LjIwMzEyNSwKICAgICAgICAid2lkdGgiOiAzMzMuMTA5Mzc1LAogICAgICAgICJoZWlnaHQiOiAxMzIKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIyMnB4IDQ4Ljk1NjhweCAyMnB4IDU4Ljk1NjhweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiA4OSwKICAgICAgInBvc2l0aW9uIjogInJlbGF0aXZlIiwKICAgICAgInBpbm5lZCI6IGZhbHNlLAogICAgICAiZG9jdW1lbnRXaWR0aCI6IDM5MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgImV4cGFuZGVkIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDExNzUuMjAzMTI1LAogICAgICAgICJoZWlnaHQiOiA2NDEuNQogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiAxMi4xNzE4NzUsCiAgICAgICAgInkiOiAxMTAuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDM2NS44MTI1LAogICAgICAgICJoZWlnaHQiOiA2NDEuMjY1NjI1CiAgICAgIH0sCiAgICAgICJmcmFtZSI6IHsKICAgICAgICAieCI6IDEyLjE3MTg3NSwKICAgICAgICAieSI6IDI0Mi4yMDMxMjUsCiAgICAgICAgIndpZHRoIjogMzY1LjgxMjUsCiAgICAgICAgImhlaWdodCI6IDQ1Ny4yNjU2MjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiAxMi4xNzE4NzUsCiAgICAgICAgInkiOiAxMTAuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDM2NS44MTI1LAogICAgICAgICJoZWlnaHQiOiAxMzIKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIyMnB4IDIyLjE0NThweCAyMnB4IDMyLjE0NThweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiA4OSwKICAgICAgInBvc2l0aW9uIjogInJlbGF0aXZlIiwKICAgICAgInBpbm5lZCI6IGZhbHNlLAogICAgICAiZG9jdW1lbnRXaWR0aCI6IDM5MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgInJldmVyc2VNaWRkbGUiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogMTE3NS4yMDMxMjUsCiAgICAgICAgImhlaWdodCI6IDY0MS41CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDQ0Ljg3NSwKICAgICAgICAieSI6IDE5OC4yMDMxMjUsCiAgICAgICAgIndpZHRoIjogMzMzLjEwOTM3NSwKICAgICAgICAiaGVpZ2h0IjogNjAwLjM5MDYyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiA0NC44NzUsCiAgICAgICAgInkiOiAzMzAuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDQxNi4zOTA2MjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiA0NC44NzUsCiAgICAgICAgInkiOiAxOTguMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDEzMgogICAgICB9LAogICAgICAicmFkaXVzIjogIjIycHggNDguOTU2OHB4IDIycHggNTguOTU2OHB4IiwKICAgICAgImhlYWRlckJvdHRvbSI6IDg5LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMzkwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0sCiAgICAicmV2ZXJzZWQiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogMTE3NS4yMDMxMjUsCiAgICAgICAgImhlaWdodCI6IDY0MS41CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDc3Ljg3NSwKICAgICAgICAieSI6IDI4Ny4yMDMxMjUsCiAgICAgICAgIndpZHRoIjogMzAwLjEwOTM3NSwKICAgICAgICAiaGVpZ2h0IjogNTU5LjE0MDYyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiA3Ny44NzUsCiAgICAgICAgInkiOiA0MTkuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMwMC4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDM3NS4xNDA2MjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiA3Ny44NzUsCiAgICAgICAgInkiOiAyODcuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMwMC4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDEzMgogICAgICB9LAogICAgICAicmFkaXVzIjogIjIycHggNzZweCAyMnB4IDg2cHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogODksCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAzOTAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfQogIH0KXQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-39ce1b52408bdbbd125f",
+          "file": "work-immersive.spec.ts",
+          "line": 96,
+          "column": 3
+        },
+        {
+          "title": "the approved first-four rhythm and SOL decoder survive continuous expansion at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1857,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:13.517Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-085640ebefb33532ffca",
+          "file": "work-immersive.spec.ts",
+          "line": 156,
+          "column": 3
+        },
+        {
+          "title": "Bunzo and SOL expand frame and caption together, then restore native backscroll at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2691,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:15.386Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "work-expansion-1440",
+                      "contentType": "application/json",
+                      "body": "WwogIHsKICAgICJzbHVnIjogImJ1bnpvIiwKICAgICJpbml0aWFsIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDY2Ni43NSwKICAgICAgICAiaGVpZ2h0IjogNjExLjkyMTg3NQogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiAxNDguMzQzNzUsCiAgICAgICAgInkiOiAzNTkuNzUsCiAgICAgICAgIndpZHRoIjogMTAxNy45ODQzNzUsCiAgICAgICAgImhlaWdodCI6IDQ4OC45NTMxMjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogMTQ4LjM0Mzc1LAogICAgICAgICJ5IjogNDYzLjc1LAogICAgICAgICJ3aWR0aCI6IDEwMTcuOTg0Mzc1LAogICAgICAgICJoZWlnaHQiOiAzMzIuOTUzMTI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogMTQ4LjM0Mzc1LAogICAgICAgICJ5IjogMzU5Ljc1LAogICAgICAgICJ3aWR0aCI6IDEwMTcuOTg0Mzc1LAogICAgICAgICJoZWlnaHQiOiAxMDQKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIxMTUuODk3cHggMjJweCAxMjUuODk3cHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogMTA1LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMTQ0MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgIm1pZGRsZSI6IHsKICAgICAgInNjZW5lIjogewogICAgICAgICJ0b3AiOiA2NjYuNzUsCiAgICAgICAgImhlaWdodCI6IDYxMS45MjE4NzUKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogODUuNjA5Mzc1LAogICAgICAgICJ5IjogMjQyLjc1LAogICAgICAgICJ3aWR0aCI6IDEyMDYuMTU2MjUsCiAgICAgICAgImhlaWdodCI6IDU1MC41MTU2MjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogODUuNjA5Mzc1LAogICAgICAgICJ5IjogMzQ2Ljc1LAogICAgICAgICJ3aWR0aCI6IDEyMDYuMTU2MjUsCiAgICAgICAgImhlaWdodCI6IDM5NC41MTU2MjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiA4NS42MDkzNzUsCiAgICAgICAgInkiOiAyNDIuNzUsCiAgICAgICAgIndpZHRoIjogMTIwNi4xNTYyNSwKICAgICAgICAiaGVpZ2h0IjogMTA0CiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiNjguODk2NnB4IDIycHggNzguODk2NnB4IiwKICAgICAgImhlYWRlckJvdHRvbSI6IDEwNSwKICAgICAgInBvc2l0aW9uIjogInJlbGF0aXZlIiwKICAgICAgInBpbm5lZCI6IGZhbHNlLAogICAgICAiZG9jdW1lbnRXaWR0aCI6IDE0NDAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfSwKICAgICJleHBhbmRlZCI6IHsKICAgICAgInNjZW5lIjogewogICAgICAgICJ0b3AiOiA2NjYuNzUsCiAgICAgICAgImhlaWdodCI6IDYxMS45MjE4NzUKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogMjMuMDMxMjUsCiAgICAgICAgInkiOiAxMjUuNzUsCiAgICAgICAgIndpZHRoIjogMTM5My45Mzc1LAogICAgICAgICJoZWlnaHQiOiA2MTEuOTIxODc1CiAgICAgIH0sCiAgICAgICJmcmFtZSI6IHsKICAgICAgICAieCI6IDIzLjAzMTI1LAogICAgICAgICJ5IjogMjI5Ljc1LAogICAgICAgICJ3aWR0aCI6IDEzOTMuOTM3NSwKICAgICAgICAiaGVpZ2h0IjogNDU1LjkyMTg3NQogICAgICB9LAogICAgICAiY2FwdGlvbiI6IHsKICAgICAgICAieCI6IDIzLjAzMTI1LAogICAgICAgICJ5IjogMTI1Ljc1LAogICAgICAgICJ3aWR0aCI6IDEzOTMuOTM3NSwKICAgICAgICAiaGVpZ2h0IjogMTA0CiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiMjJweCAyMnB4IDMycHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogMTA1LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMTQ0MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgInJldmVyc2VNaWRkbGUiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogNjY2Ljc1LAogICAgICAgICJoZWlnaHQiOiA2MTEuOTIxODc1CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDg1LjYwOTM3NSwKICAgICAgICAieSI6IDI0Mi43NSwKICAgICAgICAid2lkdGgiOiAxMjA2LjE1NjI1LAogICAgICAgICJoZWlnaHQiOiA1NTAuNTE1NjI1CiAgICAgIH0sCiAgICAgICJmcmFtZSI6IHsKICAgICAgICAieCI6IDg1LjYwOTM3NSwKICAgICAgICAieSI6IDM0Ni43NSwKICAgICAgICAid2lkdGgiOiAxMjA2LjE1NjI1LAogICAgICAgICJoZWlnaHQiOiAzOTQuNTE1NjI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogODUuNjA5Mzc1LAogICAgICAgICJ5IjogMjQyLjc1LAogICAgICAgICJ3aWR0aCI6IDEyMDYuMTU2MjUsCiAgICAgICAgImhlaWdodCI6IDEwNAogICAgICB9LAogICAgICAicmFkaXVzIjogIjY4Ljg5NjZweCAyMnB4IDc4Ljg5NjZweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiAxMDUsCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAxNDQwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0sCiAgICAicmV2ZXJzZWQiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogNjY2Ljc1LAogICAgICAgICJoZWlnaHQiOiA2MTEuOTIxODc1CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDE0OC4zNDM3NSwKICAgICAgICAieSI6IDM1OS43NSwKICAgICAgICAid2lkdGgiOiAxMDE3Ljk4NDM3NSwKICAgICAgICAiaGVpZ2h0IjogNDg4Ljk1MzEyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiAxNDguMzQzNzUsCiAgICAgICAgInkiOiA0NjMuNzUsCiAgICAgICAgIndpZHRoIjogMTAxNy45ODQzNzUsCiAgICAgICAgImhlaWdodCI6IDMzMi45NTMxMjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiAxNDguMzQzNzUsCiAgICAgICAgInkiOiAzNTkuNzUsCiAgICAgICAgIndpZHRoIjogMTAxNy45ODQzNzUsCiAgICAgICAgImhlaWdodCI6IDEwNAogICAgICB9LAogICAgICAicmFkaXVzIjogIjExNS44OTdweCAyMnB4IDEyNS44OTdweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiAxMDUsCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAxNDQwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0KICB9LAogIHsKICAgICJzbHVnIjogInNvbC1jb21tdW5pdHktY2VudGVyIiwKICAgICJpbml0aWFsIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDEzNzkuNDY4NzUsCiAgICAgICAgImhlaWdodCI6IDg1OAogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiA0NzIuMzU5Mzc1LAogICAgICAgICJ5IjogMzYwLjQ2ODc1LAogICAgICAgICJ3aWR0aCI6IDkxMS4wMzEyNSwKICAgICAgICAiaGVpZ2h0IjogNjY4LjQ1MzEyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiA0NzIuMzU5Mzc1LAogICAgICAgICJ5IjogNDY0LjQ2ODc1LAogICAgICAgICJ3aWR0aCI6IDkxMS4wMzEyNSwKICAgICAgICAiaGVpZ2h0IjogNTEyLjQ1MzEyNQogICAgICB9LAogICAgICAiY2FwdGlvbiI6IHsKICAgICAgICAieCI6IDQ3Mi4zNTkzNzUsCiAgICAgICAgInkiOiAzNjAuNDY4NzUsCiAgICAgICAgIndpZHRoIjogOTExLjAzMTI1LAogICAgICAgICJoZWlnaHQiOiAxMDQKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIyMnB4IDE1MnB4IDIycHggMTYycHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogMTA1LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMTQ0MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgIm1pZGRsZSI6IHsKICAgICAgInNjZW5lIjogewogICAgICAgICJ0b3AiOiAxMzc5LjQ2ODc1LAogICAgICAgICJoZWlnaHQiOiA4NTgKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogMjg0LjkyMTg3NSwKICAgICAgICAieSI6IDI0My40Njg3NSwKICAgICAgICAid2lkdGgiOiAxMDc4Ljg0Mzc1LAogICAgICAgICJoZWlnaHQiOiA3NjIuODQzNzUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogMjg0LjkyMTg3NSwKICAgICAgICAieSI6IDM0Ny40Njg3NSwKICAgICAgICAid2lkdGgiOiAxMDc4Ljg0Mzc1LAogICAgICAgICJoZWlnaHQiOiA2MDYuODQzNzUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiAyODQuOTIxODc1LAogICAgICAgICJ5IjogMjQzLjQ2ODc1LAogICAgICAgICJ3aWR0aCI6IDEwNzguODQzNzUsCiAgICAgICAgImhlaWdodCI6IDEwNAogICAgICB9LAogICAgICAicmFkaXVzIjogIjIycHggODcuMjZweCAyMnB4IDk3LjI2cHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogMTA1LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMTQ0MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgImV4cGFuZGVkIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDEzNzkuNDY4NzUsCiAgICAgICAgImhlaWdodCI6IDg1OAogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiA5Ni43NSwKICAgICAgICAieSI6IDEyNi40Njg3NSwKICAgICAgICAid2lkdGgiOiAxMjQ3LjMxMjUsCiAgICAgICAgImhlaWdodCI6IDg1Ny42MDkzNzUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogOTYuNzUsCiAgICAgICAgInkiOiAyMzAuNDY4NzUsCiAgICAgICAgIndpZHRoIjogMTI0Ny4zMTI1LAogICAgICAgICJoZWlnaHQiOiA3MDEuNjA5Mzc1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogOTYuNzUsCiAgICAgICAgInkiOiAxMjYuNDY4NzUsCiAgICAgICAgIndpZHRoIjogMTI0Ny4zMTI1LAogICAgICAgICJoZWlnaHQiOiAxMDQKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIyMnB4IDIyLjI2cHggMjJweCAzMi4yNnB4IiwKICAgICAgImhlYWRlckJvdHRvbSI6IDEwNSwKICAgICAgInBvc2l0aW9uIjogInJlbGF0aXZlIiwKICAgICAgInBpbm5lZCI6IGZhbHNlLAogICAgICAiZG9jdW1lbnRXaWR0aCI6IDE0NDAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfSwKICAgICJyZXZlcnNlTWlkZGxlIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDEzNzkuNDY4NzUsCiAgICAgICAgImhlaWdodCI6IDg1OAogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiAyODQuOTIxODc1LAogICAgICAgICJ5IjogMjQzLjQ2ODc1LAogICAgICAgICJ3aWR0aCI6IDEwNzguODQzNzUsCiAgICAgICAgImhlaWdodCI6IDc2Mi44NDM3NQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiAyODQuOTIxODc1LAogICAgICAgICJ5IjogMzQ3LjQ2ODc1LAogICAgICAgICJ3aWR0aCI6IDEwNzguODQzNzUsCiAgICAgICAgImhlaWdodCI6IDYwNi44NDM3NQogICAgICB9LAogICAgICAiY2FwdGlvbiI6IHsKICAgICAgICAieCI6IDI4NC45MjE4NzUsCiAgICAgICAgInkiOiAyNDMuNDY4NzUsCiAgICAgICAgIndpZHRoIjogMTA3OC44NDM3NSwKICAgICAgICAiaGVpZ2h0IjogMTA0CiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiMjJweCA4Ny4yNnB4IDIycHggOTcuMjZweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiAxMDUsCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAxNDQwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0sCiAgICAicmV2ZXJzZWQiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogMTM3OS40Njg3NSwKICAgICAgICAiaGVpZ2h0IjogODU4CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDQ3Mi4zNTkzNzUsCiAgICAgICAgInkiOiAzNjAuNDY4NzUsCiAgICAgICAgIndpZHRoIjogOTExLjAzMTI1LAogICAgICAgICJoZWlnaHQiOiA2NjguNDUzMTI1CiAgICAgIH0sCiAgICAgICJmcmFtZSI6IHsKICAgICAgICAieCI6IDQ3Mi4zNTkzNzUsCiAgICAgICAgInkiOiA0NjQuNDY4NzUsCiAgICAgICAgIndpZHRoIjogOTExLjAzMTI1LAogICAgICAgICJoZWlnaHQiOiA1MTIuNDUzMTI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogNDcyLjM1OTM3NSwKICAgICAgICAieSI6IDM2MC40Njg3NSwKICAgICAgICAid2lkdGgiOiA5MTEuMDMxMjUsCiAgICAgICAgImhlaWdodCI6IDEwNAogICAgICB9LAogICAgICAicmFkaXVzIjogIjIycHggMTUycHggMjJweCAxNjJweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiAxMDUsCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAxNDQwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0KICB9Cl0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-1a346b9caa46f02ef2e9",
+          "file": "work-immersive.spec.ts",
+          "line": 96,
+          "column": 3
+        },
+        {
+          "title": "the approved first-four rhythm and SOL decoder survive continuous expansion at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3117,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:18.084Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-9390f448911045c93372",
+          "file": "work-immersive.spec.ts",
+          "line": 156,
+          "column": 3
+        },
+        {
+          "title": "all eleven ordered projects remain readable, linked and accessible at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1770,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:21.209Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-14c733cd9391914263e3",
+          "file": "work-immersive.spec.ts",
+          "line": 215,
+          "column": 3
+        },
+        {
+          "title": "all eleven ordered projects remain readable, linked and accessible at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1712,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:22.993Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-cc1aa76d55bfb7438667",
+          "file": "work-immersive.spec.ts",
+          "line": 215,
+          "column": 3
+        },
+        {
+          "title": "all eleven ordered projects remain readable, linked and accessible at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1783,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:24.717Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-4abfd1b6f0e9ea8a32d0",
+          "file": "work-immersive.spec.ts",
+          "line": 215,
+          "column": 3
+        },
+        {
+          "title": "all eleven ordered projects remain readable, linked and accessible at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2015,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:26.509Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-ced448efad962d8bb45c",
+          "file": "work-immersive.spec.ts",
+          "line": 215,
+          "column": 3
+        },
+        {
+          "title": "filters update the URL, preserve browser history and remeasure visible scenes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1764,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:28.549Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-8c3a8b158df40395c5c8",
+          "file": "work-immersive.spec.ts",
+          "line": 263,
+          "column": 1
+        },
+        {
+          "title": "mobile touch filtering and project navigation retain ordinary links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1821,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:30.330Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-924bf4fe3193528d63ef",
+          "file": "work-immersive.spec.ts",
+          "line": 308,
+          "column": 1
+        },
+        {
+          "title": "title reveals happen once and keyboard focus immediately restores semantic text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2617,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:32.163Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-49fbd9efaf719bc11f64",
+          "file": "work-immersive.spec.ts",
+          "line": 337,
+          "column": 1
+        },
+        {
+          "title": "reduced-motion leaves a complete static index and working case links without footage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1579,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:34.801Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-69b80a8a06ee8cddf52e",
+          "file": "work-immersive.spec.ts",
+          "line": 379,
+          "column": 3
+        },
+        {
+          "title": "save-data leaves a complete static index and working case links without footage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1377,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:36.394Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-ec0a96bdc358c1a13037",
+          "file": "work-immersive.spec.ts",
+          "line": 379,
+          "column": 3
+        },
+        {
+          "title": "no-javascript leaves a complete static index and working case links without footage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1289,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:37.790Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-022a962636b445c79f4c",
+          "file": "work-immersive.spec.ts",
+          "line": 379,
+          "column": 3
+        },
+        {
+          "title": "failed-bundles leaves a complete static index and working case links without footage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1454,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:39.090Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-3856744f7cf4adcc4261",
+          "file": "work-immersive.spec.ts",
+          "line": 379,
+          "column": 3
+        },
+        {
+          "title": "all eleven real case routes preserve display-only facts and circular neighbors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4499,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:40.553Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-1e15e18caf17ace5d314",
+          "file": "work-immersive.spec.ts",
+          "line": 456,
+          "column": 1
+        },
+        {
+          "title": "responsive resizing remeasures the scene without horizontal overflow or stale expansion",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1354,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0.978766\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0.978766\u001b[39m\n    at readable (/workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts:86:25)\n    at /workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts:498:5",
+                    "location": {
+                      "file": "/workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts",
+                      "column": 25,
+                      "line": 86
+                    },
+                    "snippet": "  84 |     };\n  85 |   });\n> 86 |   expect(state.opacity).toBe(1);\n     |                         ^\n  87 |   expect(state.visibility).toBe('visible');\n  88 |   expect(state.rects.length).toBeGreaterThan(0);\n  89 |   for (const rect of state.rects) {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts",
+                        "column": 25,
+                        "line": 86
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0.978766\u001b[39m\n\n  84 |     };\n  85 |   });\n> 86 |   expect(state.opacity).toBe(1);\n     |                         ^\n  87 |   expect(state.visibility).toBe('visible');\n  88 |   expect(state.rects.length).toBeGreaterThan(0);\n  89 |   for (const rect of state.rects) {\n    at readable (/workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts:86:25)\n    at /workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts:498:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:45.062Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-work-immersive/test-results/work-immersive/work-immersive-responsive--f8a2a-overflow-or-stale-expansion/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-work-immersive/test-results/work-immersive/work-immersive-responsive--f8a2a-overflow-or-stale-expansion/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-work-immersive/test-results/work-immersive/work-immersive-responsive--f8a2a-overflow-or-stale-expansion/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-work-immersive/tests/browser/work-immersive.spec.ts",
+                    "column": 25,
+                    "line": 86
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-67ca782b4f53e6c8969f",
+          "file": "work-immersive.spec.ts",
+          "line": 482,
+          "column": 1
+        },
+        {
+          "title": "changing reduced motion or Save Data restores static geometry and releases video immediately",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2100,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-11T01:18:47.008Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-06fe7dfc752346ec454a",
+          "file": "work-immersive.spec.ts",
+          "line": 502,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-11T01:18:08.268Z",
+    "duration": 41122.676999999996,
+    "expected": 17,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

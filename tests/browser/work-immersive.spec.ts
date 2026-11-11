@@ -73,6 +73,8 @@ async function geometry(scene: Locator) {
 
 async function readable(element: Locator, width: number) {
   await expect(element).toBeVisible();
+  // A normal title entrance may still be settling after fast resize input.
+  await expect(element).toHaveCSS('opacity', '1');
   const state = await element.evaluate((node) => {
     const style = getComputedStyle(node);
     const range = document.createRange();
