@@ -10,13 +10,21 @@ interface Props {
   project: CollectionEntry<'projects'>;
   index: number;
   preview?: boolean;
+  animated?: boolean;
 }
-const { project, index, preview = false } = Astro.props;
+const { project, index, preview = false, animated = false } = Astro.props;
 const { data } = project;
 const unpublished = !canPublish(data);
 const href = `${preview && unpublished ? '/_preview/work' : '/work'}/${data.slug}`;
 const landscapeDetail = data.gallery.find((media) => media.src.width / media.src.height > 2.1);
-const featuredDetail = data.presentation === 'wide' ? landscapeDetail : undefined;
+// The supplied letterform detail gives Triarch a landscape editorial opening.
+// Its original business-card cover remains the mobile composition.
+const featuredDetail =
+  data.slug === 'triarch'
+    ? data.gallery.find((media) => media.src.src.includes('triarch-letterform-detail'))
+    : data.presentation === 'wide'
+      ? landscapeDetail
+      : undefined;
 const poster = featuredDetail?.src ?? data.cover;
 const categories = data.categories.map((category) => projectCategoryLabels[category]);
 const motion = unpublished ? undefined : data.motion;
@@ -30,6 +38,8 @@ const titleId = `index-project-${data.slug}`;
     `work-item--${data.presentation}`,
     index % 2 ? 'work-item--right' : 'work-item--left',
   ]}
+  style={`--work-poster-ratio: ${poster.width / poster.height}; --work-mobile-poster-ratio: ${data.cover.width / data.cover.height}`}
+  data-project-presentation={animated ? 'animated' : 'static'}
   data-work-card
   data-work-scene
   data-portfolio-card
@@ -89,16 +99,21 @@ const titleId = `index-project-${data.slug}`;
 <style>
   .work-item {
     --work-progress: 1;
-    --work-scroll-start: 0.36;
-    --work-scroll-end: 0.08;
+    --work-scroll-start: 0.4;
+    --work-scroll-end: 0.14;
     --work-caption-height: 104px;
-    --work-frame-height: min(62svh, 52vw);
+    --work-frame-ratio: var(--work-poster-ratio);
+    --work-full-width: min(100cqw, calc(78svh * var(--work-frame-ratio)));
+    --work-frame-height: calc(var(--work-full-width) / var(--work-frame-ratio));
     --work-scale-start: 0.73;
     --work-inset-start: 9%;
     --work-corner: 94px;
     position: relative;
     min-width: 0;
     height: calc(var(--work-caption-height) + var(--work-frame-height) + 52px);
+  }
+  .work-item[data-project-presentation='animated'] {
+    --work-frame-ratio: 1.77777778;
   }
   .work-item--right {
     --work-inset-start: 27%;
@@ -114,14 +129,17 @@ const titleId = `index-project-${data.slug}`;
     --work-inset-start: 18%;
   }
   .work-composition {
-    width: 100%;
-    margin-left: 0;
+    width: var(--work-full-width);
+    margin-left: calc((100cqw - var(--work-full-width)) / 2);
   }
   .work-item[data-work-enhanced] .work-composition {
     width: calc(
-      100% * (var(--work-scale-start) + (1 - var(--work-scale-start)) * var(--work-progress))
+      var(--work-full-width) *
+        (var(--work-scale-start) + (1 - var(--work-scale-start)) * var(--work-progress))
     );
-    margin-left: calc(var(--work-inset-start) * (1 - var(--work-progress)));
+    margin-left: calc(
+      (100cqw - var(--work-full-width)) / 2 + var(--work-inset-start) * (1 - var(--work-progress))
+    );
   }
   .work-card-link {
     display: block;
@@ -248,7 +266,7 @@ const titleId = `index-project-${data.slug}`;
   @media (max-width: 1023px) {
     .work-item {
       --work-caption-height: 112px;
-      --work-frame-height: min(58svh, 58vw);
+      --work-full-width: min(100cqw, calc(74svh * var(--work-frame-ratio)));
       --work-scale-start: 0.78;
       --work-inset-start: 3%;
     }
@@ -274,13 +292,17 @@ const titleId = `index-project-${data.slug}`;
   }
   @media (max-width: 639px) {
     .work-item {
-      --work-scroll-start: 0.29;
-      --work-scroll-end: 0.07;
+      --work-scroll-start: 0.34;
+      --work-scroll-end: 0.13;
       --work-caption-height: 132px;
-      --work-frame-height: min(52svh, 112vw);
+      --work-frame-ratio: var(--work-mobile-poster-ratio);
+      --work-full-width: 100cqw;
       --work-scale-start: 0.82;
       --work-inset-start: 2%;
       --work-corner: 40px;
+    }
+    .work-item[data-project-presentation='animated'] {
+      --work-frame-ratio: 0.8;
     }
     .work-item--right {
       --work-inset-start: 18%;

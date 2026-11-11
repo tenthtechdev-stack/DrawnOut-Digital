@@ -190,7 +190,11 @@ async function scrollProgress(page, slug, progress, scrollOptions) {
     `Expected ${progress}, actual ${scene.progress}`,
   );
   assert(
-    scene.caption.y >= 0 && scene.caption.y + scene.caption.height <= page.viewportSize().height,
+    scene.caption.y >=
+      (await page
+        .locator('[data-site-header]')
+        .evaluate((node) => node.getBoundingClientRect().bottom)) +
+        4 && scene.caption.y + scene.caption.height <= page.viewportSize().height,
     `Caption must remain visible at ${slug} progress ${progress}`,
   );
   return state;
@@ -318,14 +322,12 @@ try {
         .locator('[data-work-filters]')
         .evaluate((node) => node.getBoundingClientRect().top + scrollY - 110);
       await wheelTo(active, controlsTop, { step: 90, delay: 40 });
-      const available = await active
-        .locator('[data-filter]')
-        .evaluateAll((buttons) =>
-          buttons.map((button) => ({
-            value: button.dataset.filter,
-            label: button.dataset.filterLabel,
-          })),
-        );
+      const available = await active.locator('[data-filter]').evaluateAll((buttons) =>
+        buttons.map((button) => ({
+          value: button.dataset.filter,
+          label: button.dataset.filterLabel,
+        })),
+      );
       const category =
         available.find(({ value }) => value === 'packaging') ??
         available.find(({ value }) => value !== 'all');
@@ -454,7 +456,14 @@ try {
           fallback,
           await fallback
             .locator('[data-project-slug="sol-community-center"]')
-            .evaluate((node) => node.getBoundingClientRect().top + scrollY - 95),
+            .evaluate(
+              (node) =>
+                node.getBoundingClientRect().top +
+                scrollY -
+                (document.querySelector('[data-site-header]')?.getBoundingClientRect().height ??
+                  104) -
+                20,
+            ),
           { step: 180, delay: 32 },
         );
         await fallback.waitForTimeout(450);

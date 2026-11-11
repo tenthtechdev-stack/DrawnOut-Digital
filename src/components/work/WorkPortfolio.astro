@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { getCategoryFilters } from '../../lib/portfolio';
+import { selectPortfolioRhythm } from '../../lib/portfolio-motion-policy';
 import WorkCard from './WorkCard.astro';
 import Button from '../Button.astro';
 
@@ -11,6 +12,15 @@ interface Props {
 const { projects, preview = false } = Astro.props;
 const filters = getCategoryFilters(projects);
 const count = projects.length;
+const animated = new Set(
+  selectPortfolioRhythm(
+    projects.map(({ data }) => ({
+      id: data.slug,
+      hasMotion: Boolean(data.motion),
+      priority: data.slug === 'sol-community-center' ? 1 : 0,
+    })),
+  ),
+);
 ---
 
 <section
@@ -64,7 +74,12 @@ const count = projects.length;
       </div>
       <ul class="work-project-list" id="work-project-list" data-work-project-list>
         {projects.map((project, index) => (
-          <WorkCard project={project} index={index} preview={preview} />
+          <WorkCard
+            project={project}
+            index={index}
+            preview={preview}
+            animated={animated.has(project.data.slug)}
+          />
         ))}
       </ul>
       <p class="work-filter-empty" data-work-empty hidden>
@@ -248,6 +263,7 @@ const count = projects.length;
     background: var(--surface);
   }
   .work-project-list {
+    container-type: inline-size;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     row-gap: clamp(48px, 7vw, 112px);

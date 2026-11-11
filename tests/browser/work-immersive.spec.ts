@@ -61,6 +61,8 @@ async function geometry(scene: Locator) {
       frame: rect(frame),
       caption: rect(caption),
       radius: getComputedStyle(frame).borderRadius,
+      headerBottom:
+        document.querySelector('[data-site-header]')?.getBoundingClientRect().bottom ?? 0,
       position: getComputedStyle(node).position,
       pinned: Boolean(node.closest('.pin-spacer')),
       documentWidth: document.documentElement.scrollWidth,
@@ -125,7 +127,7 @@ for (const width of [390, 1440]) {
         expect(sample.documentWidth).toBeLessThanOrEqual(width);
         expect(sample.frame.x).toBeGreaterThanOrEqual(-1);
         expect(sample.frame.x + sample.frame.width).toBeLessThanOrEqual(width + 1);
-        expect(sample.caption.y).toBeGreaterThanOrEqual(0);
+        expect(sample.caption.y).toBeGreaterThanOrEqual(sample.headerBottom + 4);
         expect(sample.caption.y + sample.caption.height).toBeLessThanOrEqual(
           viewportFor(width).height + 1,
         );
@@ -397,9 +399,18 @@ for (const mode of ['reduced-motion', 'save-data', 'no-javascript', 'failed-bund
     try {
       const page = await context.newPage();
       if (mode === 'failed-bundles')
-        await page.route('**/*', (route) =>
-          route.request().resourceType() === 'script' ? route.abort('failed') : route.continue(),
-        );
+        await page.route('**/*', async (route) => {
+          // Astro inlines small bundles. Blocking only script network requests
+          // would leave that runtime executing, so simulate blocked initialization
+          // with a script-only CSP while retaining ordinary HTML/CSS/images.
+          if (route.request().resourceType() === 'document') {
+            const response = await route.fetch();
+            await route.fulfill({
+              response,
+              headers: { ...response.headers(), 'content-security-policy': "script-src 'none'" },
+            });
+          } else await route.continue();
+        });
       await page.goto('/work');
       await expect(page.locator('[data-work-card]')).toHaveCount(11);
       await expect(page.locator('[data-work-enhanced]')).toHaveCount(0);
