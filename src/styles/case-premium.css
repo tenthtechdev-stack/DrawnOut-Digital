@@ -33,6 +33,44 @@
   --case-wash: #e9ede7;
   --case-deep: #183d36;
 }
+
+.premium-case--churros {
+  --case-accent: #7a4119;
+  --case-ground: #f2e9da;
+  --case-wash: #f0e7d8;
+  --case-deep: #633a25;
+}
+.premium-case--khalo {
+  --case-accent: #9f3a16;
+  --case-ground: #f6e8da;
+  --case-wash: #f4e8da;
+  --case-deep: #753b23;
+}
+.premium-case--fk-technology {
+  --case-accent: #a33e1b;
+  --case-ground: #292825;
+  --case-wash: #ede6df;
+  --case-deep: #30312e;
+}
+.premium-case--feed-n-seed {
+  --case-accent: #4a633d;
+  --case-ground: #f1efdd;
+  --case-wash: #eaf0e1;
+  --case-deep: #354b31;
+}
+.premium-case--abacus-immigration {
+  --case-accent: #264b86;
+  --case-ground: #e8edf1;
+  --case-wash: #e4ebf3;
+  --case-deep: #243f65;
+}
+.premium-case--u-wanna-smoothie {
+  --case-accent: #9c3157;
+  --case-ground: #f3e8ed;
+  --case-wash: #f5e9ef;
+  --case-deep: #552c40;
+}
+
 .premium-case a {
   text-decoration: none;
 }
@@ -236,30 +274,30 @@
 .cp-gallery--3 .cp-figure--lead .cp-artwork-frame {
   border-radius: 8px clamp(40px, 5vw, 72px) 8px 8px;
 }
-.premium-case--capture .cp-gallery--3 {
+.premium-case--landscape .cp-gallery--3 {
   height: auto;
   grid-template-columns: 1.2fr 1fr;
   grid-template-rows: auto auto;
   align-items: start;
 }
-.premium-case--capture .cp-gallery--3 .cp-figure:nth-child(1) {
+.premium-case--landscape .cp-gallery--3 .cp-figure:nth-child(1) {
   grid-column: 1 / -1;
   grid-row: 1;
 }
-.premium-case--capture .cp-gallery--3 .cp-figure:nth-child(2) {
+.premium-case--landscape .cp-gallery--3 .cp-figure:nth-child(2) {
   grid-column: 1;
   grid-row: 2;
 }
-.premium-case--capture .cp-gallery--3 .cp-figure:nth-child(3) {
+.premium-case--landscape .cp-gallery--3 .cp-figure:nth-child(3) {
   grid-column: 2;
   grid-row: 2;
   width: 80%;
   margin-top: 65px;
 }
-.premium-case--capture .cp-gallery--3 .cp-artwork-frame {
+.premium-case--landscape .cp-gallery--3 .cp-artwork-frame {
   flex: none;
 }
-.premium-case--capture .cp-gallery--3 .media-slot {
+.premium-case--landscape .cp-gallery--3 .media-slot {
   height: auto;
   aspect-ratio: var(--media-ratio);
 }
@@ -563,7 +601,7 @@
     gap: 30px 16px;
   }
   .cp-gallery .cp-figure:nth-child(n),
-  .premium-case--capture .cp-gallery--3 .cp-figure:nth-child(n) {
+  .premium-case--landscape .cp-gallery--3 .cp-figure:nth-child(n) {
     grid-column: 1 / -1;
     grid-row: auto;
     width: 100%;

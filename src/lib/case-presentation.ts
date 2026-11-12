@@ -10,7 +10,18 @@ export interface CaseImage {
   key: string;
 }
 
-export type CaseTone = 'sol' | 'bunzo' | 'triarch' | 'capture' | 'by-tech';
+export type CaseTone =
+  | 'sol'
+  | 'bunzo'
+  | 'triarch'
+  | 'capture'
+  | 'by-tech'
+  | 'churros'
+  | 'khalo'
+  | 'fk-technology'
+  | 'feed-n-seed'
+  | 'abacus-immigration'
+  | 'u-wanna-smoothie';
 
 export interface CasePresentation {
   heroLine: string;
@@ -31,7 +42,7 @@ type PresentationPlan = Omit<CasePresentation, 'lead' | 'gallery' | 'service'> &
   frames: readonly FramePlan[];
 };
 
-/** Only the five authorized pilots opt into the new presentation at this gate. */
+/** Historical first review group; its approved curation stays unchanged. */
 export const casePilotSlugs = [
   'sol-community-center',
   'bunzo',
@@ -40,12 +51,23 @@ export const casePilotSlugs = [
   'by-tech-group',
 ] as const;
 
+/** The owner approved the pilots before authorizing the remaining six cases. */
+export const casePresentationSlugs = [
+  ...casePilotSlugs,
+  'churros',
+  'khalo',
+  'fk-technology',
+  'feed-n-seed',
+  'abacus-immigration',
+  'u-wanna-smoothie',
+] as const;
+
 /*
  * Visual-only review copy adapted from the owner's editorial package. No SEO,
  * client, service-delivery, date, credit, result or factual verification fields
  * enter this adapter. The canonical project records remain unchanged.
  */
-const plans: Record<(typeof casePilotSlugs)[number], PresentationPlan> = {
+const plans: Record<(typeof casePresentationSlugs)[number], PresentationPlan> = {
   'sol-community-center': {
     heroLine: 'A mark that carries a sense of connection.',
     intro:
@@ -198,6 +220,164 @@ const plans: Record<(typeof casePilotSlugs)[number], PresentationPlan> = {
         key: 'by-tech-identity',
         alt: 'By Tech Group blue-to-green monogram on black, with monochrome logo treatments and icon mockups.',
         caption: 'Color, monochrome and icon treatments of the mark.',
+      },
+    ],
+  },
+  churros: {
+    heroLine: 'A dessert identity full of warmth and character.',
+    intro:
+      'Illustrated churros, ornamental lettering and warm red, cream and golden tones shape the Churros Dessert Shop presentation. Its signature badge and decorative motifs connect retail and packaging visuals.',
+    visualHeading: 'An illustration-led brand world.',
+    visualCopy:
+      'Takeaway bags, cups, signs and posters carry the same illustrated language. Stripes, floral forms and a sun-like motif add a different rhythm to the identity board.',
+    conclusion: 'An illustrated badge. A warm, decorative world.',
+    tone: 'churros',
+    mosaic: 'mosaic-3',
+    frames: [
+      {
+        key: 'churros-applications',
+        alt: 'Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.',
+        caption: 'Packaging, retail and object mockups in one presentation.',
+      },
+      {
+        key: 'churros-identity',
+        alt: 'Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.',
+        caption: 'The illustrated badge and warm red-and-cream palette.',
+      },
+      {
+        key: 'churros-patterns',
+        alt: 'Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.',
+        caption: 'Motifs, stripes and alternate badge treatments.',
+      },
+    ],
+  },
+  khalo: {
+    heroLine: 'An appetite for personality.',
+    intro:
+      'Khalo’s bold orange lettering is accompanied by a friendly illustrated character and food-themed patterns. Cream backgrounds give the orange marks room to stand out across the takeaway packaging.',
+    visualHeading: 'Character carried through every format.',
+    visualCopy:
+      'A paper bag, drink cup and fries container share the illustrated mark. Signage, apparel, wrapping paper and a phone mockup bring the same graphic personality to different surfaces.',
+    conclusion: 'Expressive lettering. A character-filled takeaway world.',
+    tone: 'khalo',
+    mosaic: 'mosaic-3',
+    frames: [
+      {
+        key: 'khalo-packaging',
+        alt: 'Khalo orange-and-cream takeaway packaging with an illustrated paper bag, drink cup and fries container below burger imagery.',
+        caption: 'The orange mark across takeaway packaging mockups.',
+      },
+      {
+        key: 'khalo-identity',
+        alt: 'Khalo orange illustrated wordmark and a cartoon character eating a burger against patterned cream artwork.',
+        caption: 'The illustrated wordmark, character and food doodles.',
+      },
+      {
+        key: 'khalo-applications',
+        alt: 'Khalo application board showing signage, apparel, wrapping paper and a phone mockup in orange and cream.',
+        caption: 'One graphic language across object and screen mockups.',
+      },
+    ],
+  },
+  'fk-technology': {
+    heroLine: 'One vivid mark against a dark canvas.',
+    intro:
+      'FK Technology’s presentation is anchored by an orange monogram on charcoal and black surfaces. White lettering and a limited palette give the mark prominence across stationery, packaging and device mockups.',
+    visualHeading: 'A strong mark, multiple surfaces.',
+    visualCopy:
+      'The orange symbol appears on a textured business card, a box and dark fabric. Phone and laptop screen concepts carry that same focal point into another part of the presentation.',
+    conclusion: 'Dark surfaces. A vivid orange focal point.',
+    tone: 'fk-technology',
+    mosaic: 'mosaic-3',
+    frames: [
+      {
+        key: 'fk-applications',
+        alt: 'FK Technology orange logo on dark phone and laptop screen mockups, a black card, packaging box and fabric.',
+        caption: 'The monogram across object and screen mockups.',
+      },
+      {
+        key: 'fk-identity',
+        alt: 'FK Technology orange monogram with white lettering and orange, black, gray and white palette swatches.',
+        caption: 'The mark, lettering and core palette.',
+      },
+      {
+        key: 'fk-card-detail',
+        alt: 'Orange FK Technology monogram on a black textured business-card mockup.',
+        caption: 'A closer crop of the card from the applications board.',
+      },
+    ],
+  },
+  'feed-n-seed': {
+    heroLine: 'A visual identity rooted in nature.',
+    intro:
+      'Crop imagery surrounds Feed N Seed’s circular green-and-orange emblem. The same curved symbol connects product-container and stationery mockups, with golden wheat imagery extending the agricultural theme.',
+    visualHeading: 'From the seal to the surface.',
+    visualCopy:
+      'The stationery board brings together letterhead, cards and five color treatments of the circular mark. Container lids, labels and a small card show the emblem at different scales against white and golden backgrounds.',
+    conclusion: 'Crop-inspired forms. Green, orange and gold.',
+    tone: 'feed-n-seed',
+    mosaic: 'mosaic-2',
+    frames: [
+      {
+        key: 'feed-n-seed-product',
+        alt: 'Feed N Seed circular green-and-orange mark on white product-container lids and labels with a golden wheat-field backdrop.',
+        caption: 'The crop-inspired emblem in a container presentation.',
+      },
+      {
+        key: 'feed-n-seed-stationery',
+        alt: 'Feed N Seed letterhead and card mockups above five green, orange and white treatments of the circular emblem.',
+        caption: 'Printed-material mockups and alternate color treatments.',
+      },
+    ],
+  },
+  'abacus-immigration': {
+    heroLine: 'A travel-inspired identity in blue and white.',
+    intro:
+      'Abacus Immigration’s visual presentation pairs a blue-and-white palette with a plane-inspired symbol. Luggage, signage and printed-object mockups repeat that travel-focused motif.',
+    visualHeading: 'A shared direction across the artwork.',
+    visualCopy:
+      'Blue fields, serif headlines and small line icons organize the social layouts. The same mark appears across a luggage tag, aircraft-tail mockup, passport cover, cup and tote, with changes in scale and material.',
+    conclusion: 'A travel motif, held together by blue and white.',
+    tone: 'abacus-immigration',
+    mosaic: 'mosaic-2',
+    frames: [
+      {
+        key: 'abacus-applications',
+        alt: 'Abacus Immigration blue-and-white collage with luggage tag, aircraft tail, sign, passport cover, cup and tote-bag mockups.',
+        caption: 'The plane-inspired symbol across travel and object mockups.',
+      },
+      {
+        key: 'abacus-social-layouts',
+        alt: 'Abacus Immigration blue-and-white social artwork with serif headings, travel icons and a social-post mockup.',
+        caption: 'Typographic social layouts in the same palette.',
+      },
+    ],
+  },
+  'u-wanna-smoothie': {
+    heroLine: 'Bright color, playful shapes and a fruity twist.',
+    intro:
+      'U Wanna Smoothie’s identity presentation combines fruit-inspired shapes, bright pink and lime green with a circular cup-and-fruit symbol. The same lively palette extends into drink imagery and folded-menu layouts.',
+    visualHeading: 'A bright system with room to play.',
+    visualCopy:
+      'The color board pairs citrus, leaf and cup shapes with a berry-drink image and soft flowing fields. Pink-and-green menu concepts give those graphic elements a different scale and arrangement.',
+    conclusion: 'Fruit-inspired shapes. Color with presence.',
+    tone: 'u-wanna-smoothie',
+    mosaic: 'mosaic-3',
+    frames: [
+      {
+        key: 'smoothie-identity',
+        alt: 'U Wanna Smoothie pink-and-green presentation with a circular fruit-and-cup symbol beside a hand holding a green drink in a clear cup.',
+        caption: 'The fruit-and-cup symbol alongside a drink presentation.',
+      },
+      {
+        key: 'smoothie-color',
+        alt: 'U Wanna Smoothie color swatches, citrus and leaf graphics, pink fields and a purple berry-drink image.',
+        caption: 'Color, fruit forms and graphic details.',
+      },
+      {
+        key: 'smoothie-menu',
+        alt: 'U Wanna Smoothie folded-menu concepts in pink and green surrounded by kiwi and berry imagery.',
+        caption: 'The same graphic vocabulary in folded-menu concepts.',
       },
     ],
   },

@@ -3,19 +3,31 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Locator, type Page } from '@playwright/test';
 import { canPublish } from '../../src/lib/project-schema';
 
-const pilotSlugs = [
+const caseSlugs = [
   'sol-community-center',
   'bunzo',
   'triarch',
   'capture',
   'by-tech-group',
+  'churros',
+  'khalo',
+  'fk-technology',
+  'feed-n-seed',
+  'abacus-immigration',
+  'u-wanna-smoothie',
 ] as const;
-const expectedArtworkCounts: Record<(typeof pilotSlugs)[number], number> = {
+const expectedArtworkCounts: Record<(typeof caseSlugs)[number], number> = {
   'sol-community-center': 5,
   bunzo: 5,
   triarch: 3,
   capture: 3,
   'by-tech-group': 2,
+  churros: 3,
+  khalo: 3,
+  'fk-technology': 3,
+  'feed-n-seed': 2,
+  'abacus-immigration': 2,
+  'u-wanna-smoothie': 3,
 };
 const contentDirectory = new URL('../../src/content/projects/', import.meta.url);
 const records = readdirSync(contentDirectory)
@@ -101,14 +113,14 @@ async function loadArtwork(page: Page, width: number) {
 }
 
 for (const width of [320, 390, 768, 1024, 1440, 1920]) {
-  test(`five pilot presentations load unique readable artwork without overflow at ${width}px`, async ({
+  test(`all eleven case presentations load unique readable artwork without overflow at ${width}px`, async ({
     page,
   }) => {
     await page.setViewportSize(viewportFor(width));
     await page.emulateMedia({ reducedMotion: 'reduce' });
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
-    for (const slug of pilotSlugs) {
+    for (const slug of caseSlugs) {
       await ready(page, slug);
       await expect(page.locator('h1')).toHaveCount(1);
       await expect(page.locator('h1')).toContainText(recordFor(slug).title);
@@ -119,7 +131,7 @@ for (const width of [320, 390, 768, 1024, 1440, 1920]) {
   });
 }
 
-for (const slug of pilotSlugs) {
+for (const slug of caseSlugs) {
   test(`${slug} uses the intended distinct mosaic without duplicated or empty tiles`, async ({
     page,
   }) => {
@@ -182,7 +194,7 @@ for (const slug of pilotSlugs) {
   });
 }
 
-test('exactly five approved routes receive the pilot design and metadata remains factual-gated', async ({
+test('all eleven approved routes receive the premium design and metadata remains factual-gated', async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -190,7 +202,7 @@ test('exactly five approved routes receive the pilot design and metadata remains
     const response = await page.goto(`/work/${record.slug}`);
     expect(response?.status()).toBe(200);
     await expect(page.locator('[data-case-study]')).toHaveCount(1);
-    await expect(rootFor(page)).toHaveCount(pilotSlugs.includes(record.slug) ? 1 : 0);
+    await expect(rootFor(page)).toHaveCount(1);
     await expect(page).toHaveTitle(`${record.title} — DrawnOut Digital`);
     await expect(page.locator('meta[name="description"]')).toHaveAttribute(
       'content',
@@ -248,7 +260,14 @@ for (const width of [390, 1440]) {
     page,
   }) => {
     await page.setViewportSize(viewportFor(width));
-    for (const slug of ['sol-community-center', 'bunzo', 'triarch', 'by-tech-group']) {
+    for (const slug of [
+      'sol-community-center',
+      'bunzo',
+      'triarch',
+      'by-tech-group',
+      'churros',
+      'u-wanna-smoothie',
+    ]) {
       await ready(page, slug);
       const video = rootFor(page).locator('[data-portfolio-video]');
       await expect(video).toHaveCount(1);
@@ -265,8 +284,10 @@ for (const width of [390, 1440]) {
       await page.locator('[data-site-footer]').scrollIntoViewIfNeeded();
       await expect(video).not.toHaveAttribute('src', /.+/);
     }
-    await ready(page, 'capture');
-    await expect(rootFor(page).locator('video')).toHaveCount(0);
+    for (const slug of ['capture', 'khalo', 'fk-technology', 'feed-n-seed', 'abacus-immigration']) {
+      await ready(page, slug);
+      await expect(rootFor(page).locator('video')).toHaveCount(0);
+    }
   });
 }
 
@@ -332,7 +353,7 @@ test('mobile touch navigation reaches the real project and returns to the Work i
 });
 
 for (const mode of ['reduced-motion', 'save-data', 'no-javascript', 'blocked-scripts'] as const) {
-  test(`${mode} leaves complete pilot artwork and ordinary links without downloading video`, async ({
+  test(`${mode} leaves all eleven presentations and ordinary links without downloading video`, async ({
     browser,
     baseURL,
   }) => {
@@ -363,7 +384,7 @@ for (const mode of ['reduced-motion', 'save-data', 'no-javascript', 'blocked-scr
             headers: { ...response.headers(), 'content-security-policy': "script-src 'none'" },
           });
         });
-      for (const slug of ['sol-community-center', 'bunzo', 'capture']) {
+      for (const slug of caseSlugs) {
         await ready(page, slug);
         await loadArtwork(page, 390);
         await expect(page.locator('[data-portfolio-video][src]')).toHaveCount(0);
@@ -377,8 +398,8 @@ for (const mode of ['reduced-motion', 'save-data', 'no-javascript', 'blocked-scr
         ).toBe(0);
       }
       expect(footage).toHaveLength(0);
-      await rootFor(page).locator('[data-case-next]').click();
-      await expect(page).toHaveURL('/work/by-tech-group');
+      await rootFor(page).getByRole('link', { name: 'All work', exact: true }).click();
+      await expect(page).toHaveURL('/work');
     } finally {
       await context.close();
     }
@@ -448,20 +469,35 @@ test('changing motion preferences releases case footage and immediately restores
   await playVisible(video);
 });
 
-test('Capture lead requests enough source resolution for its full-width desktop composition', async ({
-  page,
-}) => {
-  await page.setViewportSize(viewportFor(1440));
-  await page.emulateMedia({ reducedMotion: 'reduce' });
-  await ready(page, 'capture');
-  expect(await page.evaluate(() => devicePixelRatio)).toBe(1);
-  const image = rootFor(page).locator('[data-case-hero] picture img');
-  await image.scrollIntoViewIfNeeded();
-  await expect(image).toHaveJSProperty('complete', true);
-  const renderedWidth = await image.evaluate((node) => node.getBoundingClientRect().width);
-  // This artwork spans the composition rather than a half-width mosaic cell.
-  expect(renderedWidth).toBeGreaterThan(1200);
-  await expect
-    .poll(() => image.evaluate((node: HTMLImageElement) => node.naturalWidth))
-    .toBeGreaterThanOrEqual(renderedWidth * 0.9);
-});
+for (const slug of ['capture', 'khalo', 'fk-technology']) {
+  test(`${slug} requests enough available source resolution for its full-width desktop lead`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewportFor(1440));
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await ready(page, slug);
+    expect(await page.evaluate(() => devicePixelRatio)).toBe(1);
+    const image = rootFor(page).locator('[data-case-hero] picture img');
+    await image.scrollIntoViewIfNeeded();
+    await expect(image).toHaveJSProperty('complete', true);
+    const source = await image.evaluate((node: HTMLImageElement) => {
+      const candidates = node.srcset.split(',').map((candidate) => {
+        const [url, width] = candidate.trim().split(/\s+/);
+        return {
+          url: new URL(url!, document.baseURI).href,
+          width: Number(width?.replace('w', '')),
+        };
+      });
+      return {
+        displayed: node.getBoundingClientRect().width,
+        selected: candidates.find((candidate) => candidate.url === node.currentSrc)?.width ?? 0,
+        largest: Math.max(...candidates.map((candidate) => candidate.width)),
+      };
+    });
+    // Choose a suitable real resource without demanding an invented/upscaled export.
+    expect(source.displayed).toBeGreaterThan(1200);
+    expect(source.selected).toBeGreaterThanOrEqual(
+      Math.min(source.displayed * 0.9, source.largest),
+    );
+  });
+}

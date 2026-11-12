@@ -9,8 +9,9 @@ interface Props {
   title: string;
   motion?: CollectionEntry<'projects'>['data']['motion'];
   details?: boolean;
+  wideLead?: boolean;
 }
-const { images, slug, title, motion, details = false } = Astro.props;
+const { images, slug, title, motion, details = false, wideLead = false } = Astro.props;
 const motionId = `case-motion-${slug}`;
 const variant = Math.min(images.length, 4);
 ---
@@ -48,7 +49,7 @@ const variant = Math.min(images.length, 4);
           motion={index === 0 && !details ? motion : undefined}
           motionId={index === 0 && !details && motion ? motionId : undefined}
           sizes={
-            slug === 'capture' && index === 0 && !details
+            wideLead && index === 0 && !details
               ? '(max-width: 767px) 92vw, (max-width: 1600px) 96vw, 1536px'
               : index === 0
                 ? '(max-width: 767px) 92vw, 49vw'

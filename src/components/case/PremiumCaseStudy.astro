@@ -15,6 +15,10 @@ const { project, projects, presentation } = Astro.props;
 const { data } = project;
 const { previous, next } = getProjectNeighbors(projects, data.slug);
 const images = [presentation.lead, ...presentation.gallery];
+const wideLead =
+  images.length === 3 &&
+  !data.motion &&
+  presentation.lead.src.width / presentation.lead.src.height > 1.35;
 const primary = images.slice(0, 4);
 const details = images.slice(4);
 const categoryText = data.categories.map((category) => projectCategoryLabels[category]).join(' / ');
@@ -22,7 +26,11 @@ const ordinal = projects.findIndex((entry) => entry.data.slug === data.slug) + 1
 ---
 
 <article
-  class:list={['premium-case', `premium-case--${presentation.tone}`]}
+  class:list={[
+    'premium-case',
+    `premium-case--${presentation.tone}`,
+    { 'premium-case--landscape': wideLead },
+  ]}
   data-case-study
   data-premium-case
   data-case-premium
@@ -64,7 +72,13 @@ const ordinal = projects.findIndex((entry) => entry.data.slug === data.slug) + 1
   </header>
 
   <div class="cp-gallery-stage page-frame">
-    <PremiumCaseGallery images={primary} slug={data.slug} title={data.title} motion={data.motion} />
+    <PremiumCaseGallery
+      images={primary}
+      slug={data.slug}
+      title={data.title}
+      motion={data.motion}
+      wideLead={wideLead}
+    />
   </div>
 
   <section

@@ -216,12 +216,10 @@ for (const width of [320, 390, 768, 1440, 1920]) {
   });
 }
 
-// Work now expands its whole composition through a separate native-scroll runtime.
-// Real geometry/reversal at desktop, tablet and mobile is covered in work-immersive.spec.ts.
-const routes = [
-  ['home', '/', '[data-work]'],
-  ['case', '/work/churros', '[data-case-gallery]'],
-] as const;
+// Work composition expansion is covered in work-immersive.spec.ts.
+// All public cases now use the scoped, one-time arrival runtime covered by
+// case-premium.spec.ts, including native reverse scrolling and focus restoration.
+const routes = [['home', '/', '[data-work]']] as const;
 
 for (const [name, route, prefix] of routes) {
   for (const width of [390, 768, 1440]) {
