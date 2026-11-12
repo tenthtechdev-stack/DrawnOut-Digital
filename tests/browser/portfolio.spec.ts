@@ -221,11 +221,18 @@ for (const slug of ['bunzo', 'triarch']) {
         ).toHaveCount(0);
       }
       await expect(page.locator('[data-case-hero] img')).toHaveAttribute('loading', 'eager');
+      const premium = await page.locator('[data-premium-case]').count();
       for (const image of await page.locator('[data-case-gallery] img').all()) {
-        await expect(image).toHaveAttribute('loading', 'lazy');
+        const lead = await image.evaluate((node) => Boolean(node.closest('[data-case-hero]')));
+        await expect(image).toHaveAttribute('loading', premium && lead ? 'eager' : 'lazy');
       }
-      await expect(page.locator('video')).toHaveCount(0);
-      await expect(page.getByRole('button', { name: /play|watch/i })).toHaveCount(0);
+      if (premium) {
+        await expect(page.locator('[data-portfolio-video]')).toHaveCount(1);
+        await expect(page.locator('[data-portfolio-video]')).toHaveAttribute('preload', 'none');
+      } else {
+        await expect(page.locator('video')).toHaveCount(0);
+        await expect(page.getByRole('button', { name: /play|watch/i })).toHaveCount(0);
+      }
       await loadImages(page.locator('[data-case-study] img'));
       await expect(page.locator('[data-case-gallery] img')).not.toHaveCount(0);
       await assertNoOverflow(page, width);

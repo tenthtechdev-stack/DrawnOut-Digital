@@ -1,0 +1,60 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { CaseImage } from '../../lib/case-presentation';
+import MediaSlot from '../MediaSlot.astro';
+import PortfolioMotionToggle from '../PortfolioMotionToggle.astro';
+interface Props {
+  images: CaseImage[];
+  slug: string;
+  title: string;
+  motion?: CollectionEntry<'projects'>['data']['motion'];
+  details?: boolean;
+}
+const { images, slug, title, motion, details = false } = Astro.props;
+const motionId = `case-motion-${slug}`;
+const variant = Math.min(images.length, 4);
+---
+
+<section
+  class:list={['cp-gallery', `cp-gallery--${variant}`, { 'cp-gallery--details': details }]}
+  data-case-gallery={!details || undefined}
+  data-case-mosaic={!details ? `mosaic-${variant}` : undefined}
+  data-case-details={details || undefined}
+  aria-label={details ? 'Selected artwork details' : 'Project artwork gallery'}
+>
+  {images.map((image, index) => (
+    <figure
+      class:list={[
+        'cp-figure',
+        {
+          'cp-figure--lead': index === 0 && !details,
+          'cp-figure--motion': index === 0 && !details && motion,
+        },
+      ]}
+      data-case-figure
+      data-case-image-key={image.key}
+      data-case-hero={(index === 0 && !details) || undefined}
+      data-case-reveal
+      data-portfolio-card={(index === 0 && !details) || undefined}
+      data-project-slug={index === 0 && !details ? slug : undefined}
+    >
+      <div class="cp-artwork-frame" data-case-artwork>
+        <MediaSlot
+          poster={image.src}
+          alt={image.alt}
+          availability="approved"
+          priority={index === 0 && !details}
+          aspectRatio={`${image.src.width} / ${image.src.height}`}
+          motion={index === 0 && !details ? motion : undefined}
+          motionId={index === 0 && !details && motion ? motionId : undefined}
+          sizes={index === 0 ? '(max-width: 767px) 92vw, 49vw' : '(max-width: 767px) 92vw, 45vw'}
+        />
+      </div>
+      <figcaption>
+        <span aria-hidden="true">{String(index + (details ? 5 : 1)).padStart(2, '0')}</span>
+        <span>{image.caption}</span>
+      </figcaption>
+      {index === 0 && !details && motion && <PortfolioMotionToggle id={motionId} title={title} />}
+    </figure>
+  ))}
+</section>

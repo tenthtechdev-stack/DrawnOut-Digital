@@ -1,0 +1,172 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { CasePresentation } from '../../lib/case-presentation';
+import { getProjectNeighbors, projectCategoryLabels } from '../../lib/portfolio';
+import Arrow from '../Arrow.astro';
+import MediaSlot from '../MediaSlot.astro';
+import PremiumCaseGallery from './PremiumCaseGallery.astro';
+import '../../styles/case-premium.css';
+interface Props {
+  project: CollectionEntry<'projects'>;
+  projects: CollectionEntry<'projects'>[];
+  presentation: CasePresentation;
+}
+const { project, projects, presentation } = Astro.props;
+const { data } = project;
+const { previous, next } = getProjectNeighbors(projects, data.slug);
+const images = [presentation.lead, ...presentation.gallery];
+const primary = images.slice(0, 4);
+const details = images.slice(4);
+const categoryText = data.categories.map((category) => projectCategoryLabels[category]).join(' / ');
+const ordinal = projects.findIndex((entry) => entry.data.slug === data.slug) + 1;
+---
+
+<article
+  class:list={['premium-case', `premium-case--${presentation.tone}`]}
+  data-case-study
+  data-premium-case
+  data-case-premium
+  data-project-slug={data.slug}
+  data-portfolio-rhythm
+>
+  <header class="cp-arrival page-frame">
+    <div class="cp-breadcrumb">
+      <a href="/work" class="cp-back">
+        <span aria-hidden="true">
+          <Arrow />
+        </span>
+        All work
+      </a>
+      <span class="eyebrow">
+        Selected work <span aria-hidden="true">/</span> {String(ordinal).padStart(2, '0')}
+      </span>
+    </div>
+    <div class="cp-heading-row">
+      <div>
+        <p class="eyebrow cp-category" data-case-arrival>
+          {categoryText}
+        </p>
+        <h1 data-case-arrival>
+          {data.title}
+          <span aria-hidden="true">.</span>
+        </h1>
+      </div>
+      <p class="cp-hero-line" data-case-arrival>
+        {presentation.heroLine}
+      </p>
+    </div>
+    <div class="cp-opening-line">
+      <span>Artwork, up close.</span>
+      <a href="#case-overview">
+        Explore the details <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="cp-gallery-stage page-frame">
+    <PremiumCaseGallery images={primary} slug={data.slug} title={data.title} motion={data.motion} />
+  </div>
+
+  <section
+    class="cp-interlude page-frame"
+    data-case-overview
+    data-case-interlude
+    id="case-overview"
+    aria-labelledby="case-visual-title"
+  >
+    <div class="cp-interlude-heading" data-case-reveal>
+      <p class="eyebrow">A closer look</p>
+      <h2 id="case-visual-title">{presentation.visualHeading}</h2>
+    </div>
+    <div class="cp-editorial" data-case-reveal>
+      <p class="cp-intro-copy">{presentation.intro}</p>
+      <p>{presentation.visualCopy}</p>
+    </div>
+  </section>
+
+  {details.length > 0 && (
+    <div class="cp-detail-stage page-frame">
+      <PremiumCaseGallery images={details} slug={data.slug} title={data.title} details />
+    </div>
+  )}
+
+  <section class="cp-closing page-frame" data-case-reveal aria-label="Continue the conversation">
+    <div>
+      <p class="cp-conclusion">{presentation.conclusion}</p>
+      <a class="cp-service-link" href={presentation.service.href} data-case-service>
+        {presentation.service.label}
+        <span aria-hidden="true">
+          <Arrow />
+        </span>
+      </a>
+    </div>
+    <a class="cp-enquiry" href="/contact" data-case-enquiry>
+      <span>Have something in mind?</span>
+      <strong>Let's talk.</strong>
+      <span class="cp-enquiry-arrow" aria-hidden="true">
+        <Arrow />
+      </span>
+    </a>
+  </section>
+
+  {(previous || next) && (
+    <nav class="cp-navigation page-frame" data-case-navigation aria-label="More projects">
+      <div class="cp-navigation-title">
+        <p class="eyebrow">Keep looking</p>
+        <h2>
+          Another point
+          <br />
+          of view.
+        </h2>
+        <a href="/work" class="cp-all-work">
+          Return to all work{' '}
+          <span aria-hidden="true">
+            <Arrow />
+          </span>
+        </a>
+      </div>
+      <div class="cp-neighbors">
+        {previous && (
+          <a class="cp-previous" href={`/work/${previous.data.slug}`} data-case-previous>
+            <span class="eyebrow">Previous project</span>
+            <span class="cp-neighbor-title">{previous.data.title}</span>
+            <span aria-hidden="true">
+              <Arrow />
+            </span>
+          </a>
+        )}
+        {next && (
+          <a
+            class="cp-next"
+            href={`/work/${next.data.slug}`}
+            data-case-next
+            data-project-transition
+          >
+            <div class="cp-next-image">
+              <MediaSlot
+                poster={next.data.cover}
+                alt={next.data.coverAlt}
+                availability="approved"
+                aspectRatio={`${next.data.cover.width} / ${next.data.cover.height}`}
+                sizes="(max-width: 767px) 92vw, 43vw"
+              />
+            </div>
+            <div class="cp-next-meta">
+              <span>
+                <span class="eyebrow">Next project</span>
+                <span class="cp-neighbor-title">{next.data.title}</span>
+              </span>
+              <span aria-hidden="true">
+                <Arrow />
+              </span>
+            </div>
+          </a>
+        )}
+      </div>
+    </nav>
+  )}
+</article>
+
+<script>
+  import '../../scripts/case-premium-motion';
+</script>

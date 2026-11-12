@@ -21,10 +21,11 @@ function stop() {
 }
 
 function initialize() {
-  const root = document.querySelector<HTMLElement>('[data-premium-case]');
-  if (root === activeRoot && cleanup) return;
+  const candidate = document.querySelector<HTMLElement>('[data-premium-case]');
+  if (candidate === activeRoot && cleanup) return;
   stop();
-  if (!root) return;
+  if (!candidate) return;
+  const root: HTMLElement = candidate;
   activeRoot = root;
   const controller = new AbortController();
   const { signal } = controller;

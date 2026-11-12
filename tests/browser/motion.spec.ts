@@ -220,7 +220,7 @@ for (const width of [320, 390, 768, 1440, 1920]) {
 // Real geometry/reversal at desktop, tablet and mobile is covered in work-immersive.spec.ts.
 const routes = [
   ['home', '/', '[data-work]'],
-  ['case', '/work/bunzo', '[data-case-gallery]'],
+  ['case', '/work/churros', '[data-case-gallery]'],
 ] as const;
 
 for (const [name, route, prefix] of routes) {

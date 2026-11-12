@@ -3,6 +3,8 @@ import type { GetStaticPaths } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import CaseStudy from '../../components/case/CaseStudy.astro';
+import PremiumCaseStudy from '../../components/case/PremiumCaseStudy.astro';
+import { getCasePresentation } from '../../lib/case-presentation';
 import { getPublicWorkProjects } from '../../lib/projects';
 
 export const getStaticPaths = (async () => {
@@ -18,14 +20,20 @@ interface Props {
   projects: CollectionEntry<'projects'>[];
 }
 const { project, projects } = Astro.props;
+const presentation = getCasePresentation(project);
 // Free-form metadata can contain factual or attribution claims. Until both
 // reviews are complete, use only the approved visual title and description.
 const metadataApproved = project.data.contentVerified && project.data.creditApproved;
 ---
 
 <SiteLayout
+  enableLoader={!presentation}
   title={(metadataApproved && project.data.seoTitle) || `${project.data.title} — DrawnOut Digital`}
   description={(metadataApproved && project.data.seoDescription) || project.data.summary}
 >
-  <CaseStudy project={project} projects={projects} />
+  {presentation ? (
+    <PremiumCaseStudy project={project} projects={projects} presentation={presentation} />
+  ) : (
+    <CaseStudy project={project} projects={projects} />
+  )}
 </SiteLayout>
