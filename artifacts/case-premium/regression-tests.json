@@ -1,0 +1,2702 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-case-premium/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.case-regression.config.ts"
+    ],
+    "configFile": "/workspace/drawnout-case-premium/playwright.case-regression.config.ts",
+    "rootDir": "/workspace/drawnout-case-premium/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-case-premium/test-results/case-regression",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-case-premium/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "work-immersive.spec.ts",
+          "portfolio.spec.ts",
+          "portfolio-motion.spec.ts",
+          "contact.spec.ts",
+          "footer-social.spec.ts",
+          "signature-footer.spec.ts"
+        ],
+        "timeout": 75000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-case-premium/test-results/case-regression",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-case-premium/tests/browser",
+        "snapshotDir": "/workspace/drawnout-case-premium/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "work-immersive.spec.ts",
+          "portfolio.spec.ts",
+          "portfolio-motion.spec.ts",
+          "contact.spec.ts",
+          "footer-social.spec.ts",
+          "signature-footer.spec.ts"
+        ],
+        "timeout": 75000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4432",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      ["list", null],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/case-premium/regression-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4432",
+      "url": "http://127.0.0.1:4432",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "contact.spec.ts",
+      "file": "contact.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Contact is responsive and accessible at 390px with official contact links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4397,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:18:43.454Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-e5eb0487f0203ff54b4e",
+          "file": "contact.spec.ts",
+          "line": 56,
+          "column": 3
+        },
+        {
+          "title": "Contact is responsive and accessible at 768px with official contact links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3018,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:18:48.364Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-3f1a66f8861d14b61c88",
+          "file": "contact.spec.ts",
+          "line": 56,
+          "column": 3
+        },
+        {
+          "title": "Contact is responsive and accessible at 1440px with official contact links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2714,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:18:51.398Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-81c6a66c60a95360c2ad",
+          "file": "contact.spec.ts",
+          "line": 56,
+          "column": 3
+        },
+        {
+          "title": "an unconfigured form never posts or reports success and offers email instead",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1183,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:18:54.129Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-a4281db761e49f61331d",
+          "file": "contact.spec.ts",
+          "line": 105,
+          "column": 1
+        },
+        {
+          "title": "no JavaScript leaves the unconfigured form safe and direct contact usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2771,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:18:55.333Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-c29f492e4f7912f2cf81",
+          "file": "contact.spec.ts",
+          "line": 125,
+          "column": 1
+        },
+        {
+          "title": "required fields announce errors, focus the summary and link back to controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2685,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:18:58.124Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-077d07bf4e5c46620939",
+          "file": "contact.spec.ts",
+          "line": 150,
+          "column": 1
+        },
+        {
+          "title": "a configured form has a native POST fallback without JavaScript",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2078,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:00.833Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-6c07e2c7131ffd572bcd",
+          "file": "contact.spec.ts",
+          "line": 182,
+          "column": 1
+        },
+        {
+          "title": "whitespace-only values and malformed email are rejected without a request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1626,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:02.930Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-563c4f074167099eff3e",
+          "file": "contact.spec.ts",
+          "line": 213,
+          "column": 1
+        },
+        {
+          "title": "input limits and the honeypot reject oversized or automated submissions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2405,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:04.569Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-d3bcc18cb178011c7929",
+          "file": "contact.spec.ts",
+          "line": 232,
+          "column": 1
+        },
+        {
+          "title": "provider acceptance is announced honestly and duplicate submissions stay blocked",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2562,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:07.012Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-73891df14cfe72c6b6e7",
+          "file": "contact.spec.ts",
+          "line": 265,
+          "column": 1
+        },
+        {
+          "title": "http provider failure keeps the enquiry and never announces success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2246,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:09.594Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-dfec40b0b3235d5a2283",
+          "file": "contact.spec.ts",
+          "line": 314,
+          "column": 3
+        },
+        {
+          "title": "network provider failure keeps the enquiry and never announces success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1915,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:11.856Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-bea453489f64432ae6f7",
+          "file": "contact.spec.ts",
+          "line": 314,
+          "column": 3
+        },
+        {
+          "title": "malformed provider failure keeps the enquiry and never announces success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1803,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:13.785Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-ef06c4dd022762008a30",
+          "file": "contact.spec.ts",
+          "line": 314,
+          "column": 3
+        },
+        {
+          "title": "not-accepted provider failure keeps the enquiry and never announces success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1708,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:15.612Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-051c6858f4dd87fcc5e9",
+          "file": "contact.spec.ts",
+          "line": 314,
+          "column": 3
+        },
+        {
+          "title": "conflicting-error provider failure keeps the enquiry and never announces success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1573,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:17.362Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-216dd320f2c0c7ef9b67",
+          "file": "contact.spec.ts",
+          "line": 314,
+          "column": 3
+        },
+        {
+          "title": "a timed-out request reports uncertainty without an automatic retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1763,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:18.959Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-3765db83ce3ebd2da17b",
+          "file": "contact.spec.ts",
+          "line": 341,
+          "column": 1
+        },
+        {
+          "title": "correcting errors and explicitly retrying a rejected submission preserves a valid enquiry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2737,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:20.753Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-fcc397cc40ec3d945627",
+          "file": "contact.spec.ts",
+          "line": 361,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "footer-social.spec.ts",
+      "file": "footer-social.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "footer social icons and exact development credit are usable at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3189,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:23.647Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e99320b25cd6d811c92-1cdee320c2a44e5b5b02",
+          "file": "footer-social.spec.ts",
+          "line": 42,
+          "column": 3
+        },
+        {
+          "title": "footer social icons and exact development credit are usable at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2963,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:26.902Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e99320b25cd6d811c92-4e6c613134506b83e3e8",
+          "file": "footer-social.spec.ts",
+          "line": 42,
+          "column": 3
+        },
+        {
+          "title": "footer social icons and exact development credit are usable at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3249,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:29.893Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e99320b25cd6d811c92-aba90273078f8c162e8c",
+          "file": "footer-social.spec.ts",
+          "line": 42,
+          "column": 3
+        },
+        {
+          "title": "footer social icons and exact development credit are usable at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3916,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:33.171Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e99320b25cd6d811c92-d690035a4c214f1087bc",
+          "file": "footer-social.spec.ts",
+          "line": 42,
+          "column": 3
+        },
+        {
+          "title": "footer social and attribution links remain usable without JavaScript",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2151,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:37.113Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e99320b25cd6d811c92-a93951170751ffd9670a",
+          "file": "footer-social.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "portfolio-motion.spec.ts",
+      "file": "portfolio-motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "homepage defers curated footage until 35% visibility and retains six compositions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14971,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:39.300Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-843d235479585dbf8513",
+          "file": "portfolio-motion.spec.ts",
+          "line": 106,
+          "column": 1
+        },
+        {
+          "title": "curated Home and Work motion alternates with posters and respects the decoder budget at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7808,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:19:54.293Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-1a28101b50b057d228c8",
+          "file": "portfolio-motion.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "curated Home and Work motion alternates with posters and respects the decoder budget at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11025,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:20:02.140Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-c425d10648d3c827041c",
+          "file": "portfolio-motion.spec.ts",
+          "line": 133,
+          "column": 3
+        },
+        {
+          "title": "keyboard pause control stays separate from project links and preserves a descriptive poster",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3187,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:20:13.189Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-d5ce0ed60ebf65b10a66",
+          "file": "portfolio-motion.spec.ts",
+          "line": 141,
+          "column": 1
+        },
+        {
+          "title": "document visibility changes release decoders and visible cards resume",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2573,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:20:16.404Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-819246016c4072c40744",
+          "file": "portfolio-motion.spec.ts",
+          "line": 165,
+          "column": 1
+        },
+        {
+          "title": "reduced-motion retains meaningful project posters without a broken player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6235,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:20:19.007Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-bd6051feb212ad3c9928",
+          "file": "portfolio-motion.spec.ts",
+          "line": 184,
+          "column": 3
+        },
+        {
+          "title": "save-data retains meaningful project posters without a broken player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6795,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:20:25.277Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-1d06b2c05dfc89546dec",
+          "file": "portfolio-motion.spec.ts",
+          "line": 184,
+          "column": 3
+        },
+        {
+          "title": "autoplay-blocked retains meaningful project posters without a broken player",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7196,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:20:32.084Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-6c4eb7968e3979bdd9ad",
+          "file": "portfolio-motion.spec.ts",
+          "line": 184,
+          "column": 3
+        },
+        {
+          "title": "no JavaScript leaves clickable descriptive cards and official contact links without video requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2915,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:20:39.306Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-6b496bc841d0566c92e9",
+          "file": "portfolio-motion.spec.ts",
+          "line": 222,
+          "column": 1
+        },
+        {
+          "title": "filters curate the visible sequence, release hidden footage and preserve project links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4446,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:20:42.251Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-c17c412e2d5f0a7238ff",
+          "file": "portfolio-motion.spec.ts",
+          "line": 266,
+          "column": 1
+        },
+        {
+          "title": "unchanged DOM and repeated filter events retain playing footage without source or play resets",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2006,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:20:46.716Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-0cf4c1c94447531cc714",
+          "file": "portfolio-motion.spec.ts",
+          "line": 309,
+          "column": 1
+        },
+        {
+          "title": "project copy reveals once, stays readable and completes immediately for keyboard focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3787,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:20:48.741Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d7f0f5815970bdc46ff-178e960d2052c91280e3",
+          "file": "portfolio-motion.spec.ts",
+          "line": 349,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "portfolio.spec.ts",
+      "file": "portfolio.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "editorial Work index loads responsive approved artwork at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7853,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:20:52.674Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-f355bceb36c0bf32e9a2",
+          "file": "portfolio.spec.ts",
+          "line": 86,
+          "column": 3
+        },
+        {
+          "title": "editorial Work index loads responsive approved artwork at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12985,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:21:00.552Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-2790aa2447c9f0cbcc9c",
+          "file": "portfolio.spec.ts",
+          "line": 86,
+          "column": 3
+        },
+        {
+          "title": "editorial Work index loads responsive approved artwork at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14200,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:21:13.576Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-0979cff2854770049f80",
+          "file": "portfolio.spec.ts",
+          "line": 86,
+          "column": 3
+        },
+        {
+          "title": "editorial Work index loads responsive approved artwork at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17758,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:21:27.806Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-71a78588c068f2fe6f0a",
+          "file": "portfolio.spec.ts",
+          "line": 86,
+          "column": 3
+        },
+        {
+          "title": "editorial Work index loads responsive approved artwork at 1920px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9583,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:21:45.587Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-24e5a0bf5f4fac11a83d",
+          "file": "portfolio.spec.ts",
+          "line": 86,
+          "column": 3
+        },
+        {
+          "title": "Work categories derive from records and support URL history and keyboard operation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3822,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:21:55.206Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-899693ef38da58d0df3d",
+          "file": "portfolio.spec.ts",
+          "line": 144,
+          "column": 1
+        },
+        {
+          "title": "bunzo case page preserves art direction and navigation at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5081,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:21:59.050Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-ccba35569ac66edf057c",
+          "file": "portfolio.spec.ts",
+          "line": 179,
+          "column": 5
+        },
+        {
+          "title": "bunzo case page preserves art direction and navigation at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3946,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:04.150Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-0b152cb02e76483fe30b",
+          "file": "portfolio.spec.ts",
+          "line": 179,
+          "column": 5
+        },
+        {
+          "title": "bunzo case page preserves art direction and navigation at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6234,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:08.109Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-33acc4f2e10d0bee8030",
+          "file": "portfolio.spec.ts",
+          "line": 179,
+          "column": 5
+        },
+        {
+          "title": "triarch case page preserves art direction and navigation at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3805,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:14.355Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-121a6a23f1f0b40f6c5e",
+          "file": "portfolio.spec.ts",
+          "line": 179,
+          "column": 5
+        },
+        {
+          "title": "triarch case page preserves art direction and navigation at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3600,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:18.182Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-22c11f32241556c358f5",
+          "file": "portfolio.spec.ts",
+          "line": 179,
+          "column": 5
+        },
+        {
+          "title": "triarch case page preserves art direction and navigation at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5577,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:21.801Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-d9a98d8e945568a13102",
+          "file": "portfolio.spec.ts",
+          "line": 179,
+          "column": 5
+        },
+        {
+          "title": "public project navigation stays in the public route namespace and unavailable URLs fail",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2360,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:27.389Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-72b66e12b0a6c1a1e4a6",
+          "file": "portfolio.spec.ts",
+          "line": 257,
+          "column": 1
+        },
+        {
+          "title": "Work and case pages remain usable without JavaScript and with reduced motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 998,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:29.780Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-b627af69f15060cee4cc",
+          "file": "portfolio.spec.ts",
+          "line": 277,
+          "column": 1
+        },
+        {
+          "title": "reduced-motion Work interactions stay visible with no running animations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1202,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:30.787Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-cce6af0cdd4fbcf522e8",
+          "file": "portfolio.spec.ts",
+          "line": 310,
+          "column": 1
+        },
+        {
+          "title": "every approved project opens a public case from Work with truthful visible fields and usable neighbors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7814,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:32.006Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34cb4603fa9a5b79d30c-e0c4cbcc0664e849f02b",
+          "file": "portfolio.spec.ts",
+          "line": 336,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "signature-footer.spec.ts",
+      "file": "signature-footer.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5857,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:39.842Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-0e7ddaead3ee8fbe51d2",
+          "file": "signature-footer.spec.ts",
+          "line": 97,
+          "column": 3
+        },
+        {
+          "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7463,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:45.708Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-9d7a5f54b6daefead07e",
+          "file": "signature-footer.spec.ts",
+          "line": 97,
+          "column": 3
+        },
+        {
+          "title": "signature footer hand rises, plaque descends, and both reverse without moving layout at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7049,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:22:53.190Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-3bc227a139aec0dc7ace",
+          "file": "signature-footer.spec.ts",
+          "line": 97,
+          "column": 3
+        },
+        {
+          "title": "footer reduced-motion preference restores composed static artwork and working navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4902,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:00.271Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-943a5b04170abd42fd1f",
+          "file": "signature-footer.spec.ts",
+          "line": 145,
+          "column": 1
+        },
+        {
+          "title": "footer remains composed with JavaScript disabled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1740,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:05.189Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-5e97f9abd413cbe2de5f",
+          "file": "signature-footer.spec.ts",
+          "line": 168,
+          "column": 1
+        },
+        {
+          "title": "footer stays available when the animation libraries fail to load",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2352,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:06.953Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31115baa837a18e6607b-39164565ef84fb6ad94d",
+          "file": "signature-footer.spec.ts",
+          "line": 185,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "work-immersive.spec.ts",
+      "file": "work-immersive.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Bunzo and SOL expand frame and caption together, then restore native backscroll at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2687,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:09.342Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "work-expansion-390",
+                      "contentType": "application/json",
+                      "body": "WwogIHsKICAgICJzbHVnIjogImJ1bnpvIiwKICAgICJpbml0aWFsIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDczNy4wNzgxMjUsCiAgICAgICAgImhlaWdodCI6IDM5MC4xMjUKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogMTkuMzEyNSwKICAgICAgICAieSI6IDI4Ny4wNzgxMjUsCiAgICAgICAgIndpZHRoIjogMzAwLjEwOTM3NSwKICAgICAgICAiaGVpZ2h0IjogMzUzLjAxNTYyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiAxOS4zMTI1LAogICAgICAgICJ5IjogNDE5LjA3ODEyNSwKICAgICAgICAid2lkdGgiOiAzMDAuMTA5Mzc1LAogICAgICAgICJoZWlnaHQiOiAxNjkuMDE1NjI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogMTkuMzEyNSwKICAgICAgICAieSI6IDI4Ny4wNzgxMjUsCiAgICAgICAgIndpZHRoIjogMzAwLjEwOTM3NSwKICAgICAgICAiaGVpZ2h0IjogMTMyCiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiNjJweCAyMnB4IDcycHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogODksCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAzOTAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfSwKICAgICJtaWRkbGUiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogNzM3LjA3ODEyNSwKICAgICAgICAiaGVpZ2h0IjogMzkwLjEyNQogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiAxNS42NDA2MjUsCiAgICAgICAgInkiOiAxOTguMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xNTYyNSwKICAgICAgICAiaGVpZ2h0IjogMzcxLjYyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiAxNS42NDA2MjUsCiAgICAgICAgInkiOiAzMzAuMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xNTYyNSwKICAgICAgICAiaGVpZ2h0IjogMTg3LjYyNQogICAgICB9LAogICAgICAiY2FwdGlvbiI6IHsKICAgICAgICAieCI6IDE1LjY0MDYyNSwKICAgICAgICAieSI6IDE5OC4wNzgxMjUsCiAgICAgICAgIndpZHRoIjogMzMzLjE1NjI1LAogICAgICAgICJoZWlnaHQiOiAxMzIKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICI0MS45NHB4IDIycHggNTEuOTRweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiA4OSwKICAgICAgInBvc2l0aW9uIjogInJlbGF0aXZlIiwKICAgICAgInBpbm5lZCI6IGZhbHNlLAogICAgICAiZG9jdW1lbnRXaWR0aCI6IDM5MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgImV4cGFuZGVkIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDczNy4wNzgxMjUsCiAgICAgICAgImhlaWdodCI6IDM5MC4xMjUKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogMTIsCiAgICAgICAgInkiOiAxMTAuMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDM2NS44NTkzNzUsCiAgICAgICAgImhlaWdodCI6IDM5MC4wNDY4NzUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogMTIsCiAgICAgICAgInkiOiAyNDIuMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDM2NS44NTkzNzUsCiAgICAgICAgImhlaWdodCI6IDIwNi4wNDY4NzUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiAxMiwKICAgICAgICAieSI6IDExMC4wNzgxMjUsCiAgICAgICAgIndpZHRoIjogMzY1Ljg1OTM3NSwKICAgICAgICAiaGVpZ2h0IjogMTMyCiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiMjIuMDhweCAyMnB4IDMyLjA4cHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogODksCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAzOTAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfSwKICAgICJyZXZlcnNlTWlkZGxlIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDczNy4wNzgxMjUsCiAgICAgICAgImhlaWdodCI6IDM5MC4xMjUKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogMTUuNjQwNjI1LAogICAgICAgICJ5IjogMTk4LjA3ODEyNSwKICAgICAgICAid2lkdGgiOiAzMzMuMTU2MjUsCiAgICAgICAgImhlaWdodCI6IDM3MS42MjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogMTUuNjQwNjI1LAogICAgICAgICJ5IjogMzMwLjA3ODEyNSwKICAgICAgICAid2lkdGgiOiAzMzMuMTU2MjUsCiAgICAgICAgImhlaWdodCI6IDE4Ny42MjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiAxNS42NDA2MjUsCiAgICAgICAgInkiOiAxOTguMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xNTYyNSwKICAgICAgICAiaGVpZ2h0IjogMTMyCiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiNDEuOTRweCAyMnB4IDUxLjk0cHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogODksCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAzOTAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfSwKICAgICJyZXZlcnNlZCI6IHsKICAgICAgInNjZW5lIjogewogICAgICAgICJ0b3AiOiA3MzcuMDc4MTI1LAogICAgICAgICJoZWlnaHQiOiAzOTAuMTI1CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDE5LjMxMjUsCiAgICAgICAgInkiOiAyODcuMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDMwMC4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDM1My4wMTU2MjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogMTkuMzEyNSwKICAgICAgICAieSI6IDQxOS4wNzgxMjUsCiAgICAgICAgIndpZHRoIjogMzAwLjEwOTM3NSwKICAgICAgICAiaGVpZ2h0IjogMTY5LjAxNTYyNQogICAgICB9LAogICAgICAiY2FwdGlvbiI6IHsKICAgICAgICAieCI6IDE5LjMxMjUsCiAgICAgICAgInkiOiAyODcuMDc4MTI1LAogICAgICAgICJ3aWR0aCI6IDMwMC4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDEzMgogICAgICB9LAogICAgICAicmFkaXVzIjogIjYycHggMjJweCA3MnB4IiwKICAgICAgImhlYWRlckJvdHRvbSI6IDg5LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMzkwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0KICB9LAogIHsKICAgICJzbHVnIjogInNvbC1jb21tdW5pdHktY2VudGVyIiwKICAgICJpbml0aWFsIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDExNzUuMjAzMTI1LAogICAgICAgICJoZWlnaHQiOiA2NDEuNQogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiA3Ny44NzUsCiAgICAgICAgInkiOiAyODcuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMwMC4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDU1OS4xNDA2MjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogNzcuODc1LAogICAgICAgICJ5IjogNDE5LjIwMzEyNSwKICAgICAgICAid2lkdGgiOiAzMDAuMTA5Mzc1LAogICAgICAgICJoZWlnaHQiOiAzNzUuMTQwNjI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogNzcuODc1LAogICAgICAgICJ5IjogMjg3LjIwMzEyNSwKICAgICAgICAid2lkdGgiOiAzMDAuMTA5Mzc1LAogICAgICAgICJoZWlnaHQiOiAxMzIKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIyMnB4IDc2cHggMjJweCA4NnB4IiwKICAgICAgImhlYWRlckJvdHRvbSI6IDg5LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMzkwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0sCiAgICAibWlkZGxlIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDExNzUuMjAzMTI1LAogICAgICAgICJoZWlnaHQiOiA2NDEuNQogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiA0NC44NzUsCiAgICAgICAgInkiOiAxOTguMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDYwMC4zOTA2MjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogNDQuODc1LAogICAgICAgICJ5IjogMzMwLjIwMzEyNSwKICAgICAgICAid2lkdGgiOiAzMzMuMTA5Mzc1LAogICAgICAgICJoZWlnaHQiOiA0MTYuMzkwNjI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogNDQuODc1LAogICAgICAgICJ5IjogMTk4LjIwMzEyNSwKICAgICAgICAid2lkdGgiOiAzMzMuMTA5Mzc1LAogICAgICAgICJoZWlnaHQiOiAxMzIKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIyMnB4IDQ4Ljk1NjhweCAyMnB4IDU4Ljk1NjhweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiA4OSwKICAgICAgInBvc2l0aW9uIjogInJlbGF0aXZlIiwKICAgICAgInBpbm5lZCI6IGZhbHNlLAogICAgICAiZG9jdW1lbnRXaWR0aCI6IDM5MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgImV4cGFuZGVkIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDExNzUuMjAzMTI1LAogICAgICAgICJoZWlnaHQiOiA2NDEuNQogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiAxMi4xNzE4NzUsCiAgICAgICAgInkiOiAxMTAuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDM2NS44MTI1LAogICAgICAgICJoZWlnaHQiOiA2NDEuMjY1NjI1CiAgICAgIH0sCiAgICAgICJmcmFtZSI6IHsKICAgICAgICAieCI6IDEyLjE3MTg3NSwKICAgICAgICAieSI6IDI0Mi4yMDMxMjUsCiAgICAgICAgIndpZHRoIjogMzY1LjgxMjUsCiAgICAgICAgImhlaWdodCI6IDQ1Ny4yNjU2MjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiAxMi4xNzE4NzUsCiAgICAgICAgInkiOiAxMTAuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDM2NS44MTI1LAogICAgICAgICJoZWlnaHQiOiAxMzIKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIyMnB4IDIyLjE0NThweCAyMnB4IDMyLjE0NThweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiA4OSwKICAgICAgInBvc2l0aW9uIjogInJlbGF0aXZlIiwKICAgICAgInBpbm5lZCI6IGZhbHNlLAogICAgICAiZG9jdW1lbnRXaWR0aCI6IDM5MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgInJldmVyc2VNaWRkbGUiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogMTE3NS4yMDMxMjUsCiAgICAgICAgImhlaWdodCI6IDY0MS41CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDQ0Ljg3NSwKICAgICAgICAieSI6IDE5OC4yMDMxMjUsCiAgICAgICAgIndpZHRoIjogMzMzLjEwOTM3NSwKICAgICAgICAiaGVpZ2h0IjogNjAwLjM5MDYyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiA0NC44NzUsCiAgICAgICAgInkiOiAzMzAuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDQxNi4zOTA2MjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiA0NC44NzUsCiAgICAgICAgInkiOiAxOTguMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMzMy4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDEzMgogICAgICB9LAogICAgICAicmFkaXVzIjogIjIycHggNDguOTU2OHB4IDIycHggNTguOTU2OHB4IiwKICAgICAgImhlYWRlckJvdHRvbSI6IDg5LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMzkwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0sCiAgICAicmV2ZXJzZWQiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogMTE3NS4yMDMxMjUsCiAgICAgICAgImhlaWdodCI6IDY0MS41CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDc3Ljg3NSwKICAgICAgICAieSI6IDI4Ny4yMDMxMjUsCiAgICAgICAgIndpZHRoIjogMzAwLjEwOTM3NSwKICAgICAgICAiaGVpZ2h0IjogNTU5LjE0MDYyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiA3Ny44NzUsCiAgICAgICAgInkiOiA0MTkuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMwMC4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDM3NS4xNDA2MjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiA3Ny44NzUsCiAgICAgICAgInkiOiAyODcuMjAzMTI1LAogICAgICAgICJ3aWR0aCI6IDMwMC4xMDkzNzUsCiAgICAgICAgImhlaWdodCI6IDEzMgogICAgICB9LAogICAgICAicmFkaXVzIjogIjIycHggNzZweCAyMnB4IDg2cHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogODksCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAzOTAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfQogIH0KXQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-39ce1b52408bdbbd125f",
+          "file": "work-immersive.spec.ts",
+          "line": 98,
+          "column": 3
+        },
+        {
+          "title": "the approved first-four rhythm and SOL decoder survive continuous expansion at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3430,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:12.055Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-085640ebefb33532ffca",
+          "file": "work-immersive.spec.ts",
+          "line": 158,
+          "column": 3
+        },
+        {
+          "title": "Bunzo and SOL expand frame and caption together, then restore native backscroll at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5407,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:15.501Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "work-expansion-1440",
+                      "contentType": "application/json",
+                      "body": "WwogIHsKICAgICJzbHVnIjogImJ1bnpvIiwKICAgICJpbml0aWFsIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDY2Ni43NSwKICAgICAgICAiaGVpZ2h0IjogNjExLjkyMTg3NQogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiAxNDguMzQzNzUsCiAgICAgICAgInkiOiAzNTkuNzUsCiAgICAgICAgIndpZHRoIjogMTAxNy45ODQzNzUsCiAgICAgICAgImhlaWdodCI6IDQ4OC45NTMxMjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogMTQ4LjM0Mzc1LAogICAgICAgICJ5IjogNDYzLjc1LAogICAgICAgICJ3aWR0aCI6IDEwMTcuOTg0Mzc1LAogICAgICAgICJoZWlnaHQiOiAzMzIuOTUzMTI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogMTQ4LjM0Mzc1LAogICAgICAgICJ5IjogMzU5Ljc1LAogICAgICAgICJ3aWR0aCI6IDEwMTcuOTg0Mzc1LAogICAgICAgICJoZWlnaHQiOiAxMDQKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIxMTUuODk3cHggMjJweCAxMjUuODk3cHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogMTA1LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMTQ0MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgIm1pZGRsZSI6IHsKICAgICAgInNjZW5lIjogewogICAgICAgICJ0b3AiOiA2NjYuNzUsCiAgICAgICAgImhlaWdodCI6IDYxMS45MjE4NzUKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogODUuNjA5Mzc1LAogICAgICAgICJ5IjogMjQyLjc1LAogICAgICAgICJ3aWR0aCI6IDEyMDYuMTU2MjUsCiAgICAgICAgImhlaWdodCI6IDU1MC41MTU2MjUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogODUuNjA5Mzc1LAogICAgICAgICJ5IjogMzQ2Ljc1LAogICAgICAgICJ3aWR0aCI6IDEyMDYuMTU2MjUsCiAgICAgICAgImhlaWdodCI6IDM5NC41MTU2MjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiA4NS42MDkzNzUsCiAgICAgICAgInkiOiAyNDIuNzUsCiAgICAgICAgIndpZHRoIjogMTIwNi4xNTYyNSwKICAgICAgICAiaGVpZ2h0IjogMTA0CiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiNjguODk2NnB4IDIycHggNzguODk2NnB4IiwKICAgICAgImhlYWRlckJvdHRvbSI6IDEwNSwKICAgICAgInBvc2l0aW9uIjogInJlbGF0aXZlIiwKICAgICAgInBpbm5lZCI6IGZhbHNlLAogICAgICAiZG9jdW1lbnRXaWR0aCI6IDE0NDAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfSwKICAgICJleHBhbmRlZCI6IHsKICAgICAgInNjZW5lIjogewogICAgICAgICJ0b3AiOiA2NjYuNzUsCiAgICAgICAgImhlaWdodCI6IDYxMS45MjE4NzUKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogMjMuMDMxMjUsCiAgICAgICAgInkiOiAxMjUuNzUsCiAgICAgICAgIndpZHRoIjogMTM5My45Mzc1LAogICAgICAgICJoZWlnaHQiOiA2MTEuOTIxODc1CiAgICAgIH0sCiAgICAgICJmcmFtZSI6IHsKICAgICAgICAieCI6IDIzLjAzMTI1LAogICAgICAgICJ5IjogMjI5Ljc1LAogICAgICAgICJ3aWR0aCI6IDEzOTMuOTM3NSwKICAgICAgICAiaGVpZ2h0IjogNDU1LjkyMTg3NQogICAgICB9LAogICAgICAiY2FwdGlvbiI6IHsKICAgICAgICAieCI6IDIzLjAzMTI1LAogICAgICAgICJ5IjogMTI1Ljc1LAogICAgICAgICJ3aWR0aCI6IDEzOTMuOTM3NSwKICAgICAgICAiaGVpZ2h0IjogMTA0CiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiMjJweCAyMnB4IDMycHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogMTA1LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMTQ0MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgInJldmVyc2VNaWRkbGUiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogNjY2Ljc1LAogICAgICAgICJoZWlnaHQiOiA2MTEuOTIxODc1CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDg1LjYwOTM3NSwKICAgICAgICAieSI6IDI0Mi43NSwKICAgICAgICAid2lkdGgiOiAxMjA2LjE1NjI1LAogICAgICAgICJoZWlnaHQiOiA1NTAuNTE1NjI1CiAgICAgIH0sCiAgICAgICJmcmFtZSI6IHsKICAgICAgICAieCI6IDg1LjYwOTM3NSwKICAgICAgICAieSI6IDM0Ni43NSwKICAgICAgICAid2lkdGgiOiAxMjA2LjE1NjI1LAogICAgICAgICJoZWlnaHQiOiAzOTQuNTE1NjI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogODUuNjA5Mzc1LAogICAgICAgICJ5IjogMjQyLjc1LAogICAgICAgICJ3aWR0aCI6IDEyMDYuMTU2MjUsCiAgICAgICAgImhlaWdodCI6IDEwNAogICAgICB9LAogICAgICAicmFkaXVzIjogIjY4Ljg5NjZweCAyMnB4IDc4Ljg5NjZweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiAxMDUsCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAxNDQwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0sCiAgICAicmV2ZXJzZWQiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogNjY2Ljc1LAogICAgICAgICJoZWlnaHQiOiA2MTEuOTIxODc1CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDE0OC4zNDM3NSwKICAgICAgICAieSI6IDM1OS43NSwKICAgICAgICAid2lkdGgiOiAxMDE3Ljk4NDM3NSwKICAgICAgICAiaGVpZ2h0IjogNDg4Ljk1MzEyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiAxNDguMzQzNzUsCiAgICAgICAgInkiOiA0NjMuNzUsCiAgICAgICAgIndpZHRoIjogMTAxNy45ODQzNzUsCiAgICAgICAgImhlaWdodCI6IDMzMi45NTMxMjUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiAxNDguMzQzNzUsCiAgICAgICAgInkiOiAzNTkuNzUsCiAgICAgICAgIndpZHRoIjogMTAxNy45ODQzNzUsCiAgICAgICAgImhlaWdodCI6IDEwNAogICAgICB9LAogICAgICAicmFkaXVzIjogIjExNS44OTdweCAyMnB4IDEyNS44OTdweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiAxMDUsCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAxNDQwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0KICB9LAogIHsKICAgICJzbHVnIjogInNvbC1jb21tdW5pdHktY2VudGVyIiwKICAgICJpbml0aWFsIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDEzNzkuNDY4NzUsCiAgICAgICAgImhlaWdodCI6IDg1OAogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiA0NzIuMzU5Mzc1LAogICAgICAgICJ5IjogMzYwLjQ2ODc1LAogICAgICAgICJ3aWR0aCI6IDkxMS4wMzEyNSwKICAgICAgICAiaGVpZ2h0IjogNjY4LjQ1MzEyNQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiA0NzIuMzU5Mzc1LAogICAgICAgICJ5IjogNDY0LjQ2ODc1LAogICAgICAgICJ3aWR0aCI6IDkxMS4wMzEyNSwKICAgICAgICAiaGVpZ2h0IjogNTEyLjQ1MzEyNQogICAgICB9LAogICAgICAiY2FwdGlvbiI6IHsKICAgICAgICAieCI6IDQ3Mi4zNTkzNzUsCiAgICAgICAgInkiOiAzNjAuNDY4NzUsCiAgICAgICAgIndpZHRoIjogOTExLjAzMTI1LAogICAgICAgICJoZWlnaHQiOiAxMDQKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIyMnB4IDE1MnB4IDIycHggMTYycHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogMTA1LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMTQ0MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgIm1pZGRsZSI6IHsKICAgICAgInNjZW5lIjogewogICAgICAgICJ0b3AiOiAxMzc5LjQ2ODc1LAogICAgICAgICJoZWlnaHQiOiA4NTgKICAgICAgfSwKICAgICAgImNvbXBvc2l0aW9uIjogewogICAgICAgICJ4IjogMjg0LjkyMTg3NSwKICAgICAgICAieSI6IDI0My40Njg3NSwKICAgICAgICAid2lkdGgiOiAxMDc4Ljg0Mzc1LAogICAgICAgICJoZWlnaHQiOiA3NjIuODQzNzUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogMjg0LjkyMTg3NSwKICAgICAgICAieSI6IDM0Ny40Njg3NSwKICAgICAgICAid2lkdGgiOiAxMDc4Ljg0Mzc1LAogICAgICAgICJoZWlnaHQiOiA2MDYuODQzNzUKICAgICAgfSwKICAgICAgImNhcHRpb24iOiB7CiAgICAgICAgIngiOiAyODQuOTIxODc1LAogICAgICAgICJ5IjogMjQzLjQ2ODc1LAogICAgICAgICJ3aWR0aCI6IDEwNzguODQzNzUsCiAgICAgICAgImhlaWdodCI6IDEwNAogICAgICB9LAogICAgICAicmFkaXVzIjogIjIycHggODcuMjZweCAyMnB4IDk3LjI2cHgiLAogICAgICAiaGVhZGVyQm90dG9tIjogMTA1LAogICAgICAicG9zaXRpb24iOiAicmVsYXRpdmUiLAogICAgICAicGlubmVkIjogZmFsc2UsCiAgICAgICJkb2N1bWVudFdpZHRoIjogMTQ0MCwKICAgICAgImltYWdlVHJhbnNmb3JtIjogIm5vbmUiCiAgICB9LAogICAgImV4cGFuZGVkIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDEzNzkuNDY4NzUsCiAgICAgICAgImhlaWdodCI6IDg1OAogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiA5Ni43NSwKICAgICAgICAieSI6IDEyNi40Njg3NSwKICAgICAgICAid2lkdGgiOiAxMjQ3LjMxMjUsCiAgICAgICAgImhlaWdodCI6IDg1Ny42MDkzNzUKICAgICAgfSwKICAgICAgImZyYW1lIjogewogICAgICAgICJ4IjogOTYuNzUsCiAgICAgICAgInkiOiAyMzAuNDY4NzUsCiAgICAgICAgIndpZHRoIjogMTI0Ny4zMTI1LAogICAgICAgICJoZWlnaHQiOiA3MDEuNjA5Mzc1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogOTYuNzUsCiAgICAgICAgInkiOiAxMjYuNDY4NzUsCiAgICAgICAgIndpZHRoIjogMTI0Ny4zMTI1LAogICAgICAgICJoZWlnaHQiOiAxMDQKICAgICAgfSwKICAgICAgInJhZGl1cyI6ICIyMnB4IDIyLjI2cHggMjJweCAzMi4yNnB4IiwKICAgICAgImhlYWRlckJvdHRvbSI6IDEwNSwKICAgICAgInBvc2l0aW9uIjogInJlbGF0aXZlIiwKICAgICAgInBpbm5lZCI6IGZhbHNlLAogICAgICAiZG9jdW1lbnRXaWR0aCI6IDE0NDAsCiAgICAgICJpbWFnZVRyYW5zZm9ybSI6ICJub25lIgogICAgfSwKICAgICJyZXZlcnNlTWlkZGxlIjogewogICAgICAic2NlbmUiOiB7CiAgICAgICAgInRvcCI6IDEzNzkuNDY4NzUsCiAgICAgICAgImhlaWdodCI6IDg1OAogICAgICB9LAogICAgICAiY29tcG9zaXRpb24iOiB7CiAgICAgICAgIngiOiAyODQuOTIxODc1LAogICAgICAgICJ5IjogMjQzLjQ2ODc1LAogICAgICAgICJ3aWR0aCI6IDEwNzguODQzNzUsCiAgICAgICAgImhlaWdodCI6IDc2Mi44NDM3NQogICAgICB9LAogICAgICAiZnJhbWUiOiB7CiAgICAgICAgIngiOiAyODQuOTIxODc1LAogICAgICAgICJ5IjogMzQ3LjQ2ODc1LAogICAgICAgICJ3aWR0aCI6IDEwNzguODQzNzUsCiAgICAgICAgImhlaWdodCI6IDYwNi44NDM3NQogICAgICB9LAogICAgICAiY2FwdGlvbiI6IHsKICAgICAgICAieCI6IDI4NC45MjE4NzUsCiAgICAgICAgInkiOiAyNDMuNDY4NzUsCiAgICAgICAgIndpZHRoIjogMTA3OC44NDM3NSwKICAgICAgICAiaGVpZ2h0IjogMTA0CiAgICAgIH0sCiAgICAgICJyYWRpdXMiOiAiMjJweCA4Ny4yNnB4IDIycHggOTcuMjZweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiAxMDUsCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAxNDQwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0sCiAgICAicmV2ZXJzZWQiOiB7CiAgICAgICJzY2VuZSI6IHsKICAgICAgICAidG9wIjogMTM3OS40Njg3NSwKICAgICAgICAiaGVpZ2h0IjogODU4CiAgICAgIH0sCiAgICAgICJjb21wb3NpdGlvbiI6IHsKICAgICAgICAieCI6IDQ3Mi4zNTkzNzUsCiAgICAgICAgInkiOiAzNjAuNDY4NzUsCiAgICAgICAgIndpZHRoIjogOTExLjAzMTI1LAogICAgICAgICJoZWlnaHQiOiA2NjguNDUzMTI1CiAgICAgIH0sCiAgICAgICJmcmFtZSI6IHsKICAgICAgICAieCI6IDQ3Mi4zNTkzNzUsCiAgICAgICAgInkiOiA0NjQuNDY4NzUsCiAgICAgICAgIndpZHRoIjogOTExLjAzMTI1LAogICAgICAgICJoZWlnaHQiOiA1MTIuNDUzMTI1CiAgICAgIH0sCiAgICAgICJjYXB0aW9uIjogewogICAgICAgICJ4IjogNDcyLjM1OTM3NSwKICAgICAgICAieSI6IDM2MC40Njg3NSwKICAgICAgICAid2lkdGgiOiA5MTEuMDMxMjUsCiAgICAgICAgImhlaWdodCI6IDEwNAogICAgICB9LAogICAgICAicmFkaXVzIjogIjIycHggMTUycHggMjJweCAxNjJweCIsCiAgICAgICJoZWFkZXJCb3R0b20iOiAxMDUsCiAgICAgICJwb3NpdGlvbiI6ICJyZWxhdGl2ZSIsCiAgICAgICJwaW5uZWQiOiBmYWxzZSwKICAgICAgImRvY3VtZW50V2lkdGgiOiAxNDQwLAogICAgICAiaW1hZ2VUcmFuc2Zvcm0iOiAibm9uZSIKICAgIH0KICB9Cl0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-1a346b9caa46f02ef2e9",
+          "file": "work-immersive.spec.ts",
+          "line": 98,
+          "column": 3
+        },
+        {
+          "title": "the approved first-four rhythm and SOL decoder survive continuous expansion at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6094,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:20.932Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-9390f448911045c93372",
+          "file": "work-immersive.spec.ts",
+          "line": 158,
+          "column": 3
+        },
+        {
+          "title": "all eleven ordered projects remain readable, linked and accessible at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2922,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:27.043Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-14c733cd9391914263e3",
+          "file": "work-immersive.spec.ts",
+          "line": 217,
+          "column": 3
+        },
+        {
+          "title": "all eleven ordered projects remain readable, linked and accessible at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2973,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:29.983Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-cc1aa76d55bfb7438667",
+          "file": "work-immersive.spec.ts",
+          "line": 217,
+          "column": 3
+        },
+        {
+          "title": "all eleven ordered projects remain readable, linked and accessible at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3190,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:32.985Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-4abfd1b6f0e9ea8a32d0",
+          "file": "work-immersive.spec.ts",
+          "line": 217,
+          "column": 3
+        },
+        {
+          "title": "all eleven ordered projects remain readable, linked and accessible at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3406,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:36.206Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-ced448efad962d8bb45c",
+          "file": "work-immersive.spec.ts",
+          "line": 217,
+          "column": 3
+        },
+        {
+          "title": "filters update the URL, preserve browser history and remeasure visible scenes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3677,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:39.624Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-8c3a8b158df40395c5c8",
+          "file": "work-immersive.spec.ts",
+          "line": 265,
+          "column": 1
+        },
+        {
+          "title": "mobile touch filtering and project navigation retain ordinary links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2292,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:43.318Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-924bf4fe3193528d63ef",
+          "file": "work-immersive.spec.ts",
+          "line": 310,
+          "column": 1
+        },
+        {
+          "title": "title reveals happen once and keyboard focus immediately restores semantic text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3187,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:45.624Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-49fbd9efaf719bc11f64",
+          "file": "work-immersive.spec.ts",
+          "line": 339,
+          "column": 1
+        },
+        {
+          "title": "reduced-motion leaves a complete static index and working case links without footage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2246,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:48.826Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-69b80a8a06ee8cddf52e",
+          "file": "work-immersive.spec.ts",
+          "line": 381,
+          "column": 3
+        },
+        {
+          "title": "save-data leaves a complete static index and working case links without footage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2099,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:51.085Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-ec0a96bdc358c1a13037",
+          "file": "work-immersive.spec.ts",
+          "line": 381,
+          "column": 3
+        },
+        {
+          "title": "no-javascript leaves a complete static index and working case links without footage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1962,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:53.204Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-022a962636b445c79f4c",
+          "file": "work-immersive.spec.ts",
+          "line": 381,
+          "column": 3
+        },
+        {
+          "title": "failed-bundles leaves a complete static index and working case links without footage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2033,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:55.183Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-3856744f7cf4adcc4261",
+          "file": "work-immersive.spec.ts",
+          "line": 381,
+          "column": 3
+        },
+        {
+          "title": "all eleven real case routes preserve display-only facts and circular neighbors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7427,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:23:57.228Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-1e15e18caf17ace5d314",
+          "file": "work-immersive.spec.ts",
+          "line": 458,
+          "column": 1
+        },
+        {
+          "title": "responsive resizing remeasures the scene without horizontal overflow or stale expansion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4227,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:24:04.670Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-67ca782b4f53e6c8969f",
+          "file": "work-immersive.spec.ts",
+          "line": 484,
+          "column": 1
+        },
+        {
+          "title": "changing reduced motion or Save Data restores static geometry and releases video immediately",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2354,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:24:08.905Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c66bbc7bfb3b4edd2702-06fe7dfc752346ec454a",
+          "file": "work-immersive.spec.ts",
+          "line": 504,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-12T09:18:40.035Z",
+    "duration": 331576.26300000004,
+    "expected": 74,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

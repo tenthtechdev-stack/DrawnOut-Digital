@@ -1,0 +1,1358 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-case-premium/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.case-premium.config.ts"
+    ],
+    "configFile": "/workspace/drawnout-case-premium/playwright.case-premium.config.ts",
+    "rootDir": "/workspace/drawnout-case-premium/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-case-premium/test-results/case-premium",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-case-premium/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["case-premium.spec.ts"],
+        "timeout": 75000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-case-premium/test-results/case-premium",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-case-premium/tests/browser",
+        "snapshotDir": "/workspace/drawnout-case-premium/tests/browser",
+        "testIgnore": [],
+        "testMatch": "case-premium.spec.ts",
+        "timeout": 75000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4431",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      ["list", null],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/case-premium/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4431",
+      "url": "http://127.0.0.1:4431",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "case-premium.spec.ts",
+      "file": "case-premium.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "five pilot presentations load unique readable artwork without overflow at 320px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2217,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m40.828125\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m40.828125\u001b[39m\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:115:7",
+                    "location": {
+                      "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                      "column": 29,
+                      "line": 82
+                    },
+                    "snippet": "  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                        "column": 29,
+                        "line": 82
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m40.828125\u001b[39m\n\n  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:115:7"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:13:59.721Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-five-pilot-pr-93540-k-without-overflow-at-320px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-five-pilot-pr-93540-k-without-overflow-at-320px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-five-pilot-pr-93540-k-without-overflow-at-320px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                    "column": 29,
+                    "line": 82
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-6deef0123e84ca7ef44c",
+          "file": "case-premium.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "five pilot presentations load unique readable artwork without overflow at 390px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2373,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:115:7",
+                    "location": {
+                      "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                      "column": 29,
+                      "line": 82
+                    },
+                    "snippet": "  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                        "column": 29,
+                        "line": 82
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n\n  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:115:7"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:14:03.882Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-five-pilot-pr-a8f35-k-without-overflow-at-390px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-five-pilot-pr-a8f35-k-without-overflow-at-390px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-five-pilot-pr-a8f35-k-without-overflow-at-390px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                    "column": 29,
+                    "line": 82
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-b5d97853ffa0fb80589d",
+          "file": "case-premium.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "five pilot presentations load unique readable artwork without overflow at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7263,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:14:07.594Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-0c8e22828c7f58d05ab7",
+          "file": "case-premium.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "five pilot presentations load unique readable artwork without overflow at 1024px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15048,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-case-premium]')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('[data-case-premium]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-case-premium]')\u001b[22m\n\u001b[2m    24 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-case-premium]')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('[data-case-premium]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-case-premium]')\u001b[22m\n\u001b[2m    24 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at ready (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:33:31)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:112:7",
+                    "location": {
+                      "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                      "column": 31,
+                      "line": 33
+                    },
+                    "snippet": "  31 | async function ready(page: Page, slug: string) {\n  32 |   await page.goto(`/work/${slug}#main`);\n> 33 |   await expect(rootFor(page)).toHaveCount(1);\n     |                               ^\n  34 |   await page.evaluate(() => document.fonts.ready);\n  35 | }\n  36 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                        "column": 31,
+                        "line": 33
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-case-premium]')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('[data-case-premium]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-case-premium]')\u001b[22m\n\u001b[2m    24 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n  31 | async function ready(page: Page, slug: string) {\n  32 |   await page.goto(`/work/${slug}#main`);\n> 33 |   await expect(rootFor(page)).toHaveCount(1);\n     |                               ^\n  34 |   await page.evaluate(() => document.fonts.ready);\n  35 | }\n  36 |\n    at ready (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:33:31)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:112:7"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:14:15.277Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-five-pilot-pr-c8ae6--without-overflow-at-1024px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-five-pilot-pr-c8ae6--without-overflow-at-1024px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-five-pilot-pr-c8ae6--without-overflow-at-1024px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                    "column": 31,
+                    "line": 33
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-095c23eba29fe8ac88d8",
+          "file": "case-premium.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "five pilot presentations load unique readable artwork without overflow at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6965,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:14:31.332Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-fd2453a84c986ee80b90",
+          "file": "case-premium.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "five pilot presentations load unique readable artwork without overflow at 1920px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5210,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:14:38.855Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-e9561ec67888698a4919",
+          "file": "case-premium.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "sol-community-center uses the intended distinct mosaic without duplicated or empty tiles",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1006,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:14:44.083Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-62708e8b4da1120539e2",
+          "file": "case-premium.spec.ts",
+          "line": 123,
+          "column": 3
+        },
+        {
+          "title": "sol-community-center preserves accessible artwork and navigation at mobile and desktop widths",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1097,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:170:7",
+                    "location": {
+                      "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                      "column": 29,
+                      "line": 82
+                    },
+                    "snippet": "  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                        "column": 29,
+                        "line": 82
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n\n  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:170:7"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:14:45.109Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-sol-community-420ee-t-mobile-and-desktop-widths/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-sol-community-420ee-t-mobile-and-desktop-widths/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-sol-community-420ee-t-mobile-and-desktop-widths/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                    "column": 29,
+                    "line": 82
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-477280d222cd9dd6b313",
+          "file": "case-premium.spec.ts",
+          "line": 163,
+          "column": 3
+        },
+        {
+          "title": "bunzo uses the intended distinct mosaic without duplicated or empty tiles",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1642,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:14:46.989Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-c90e803e78dcd1066b12",
+          "file": "case-premium.spec.ts",
+          "line": 123,
+          "column": 3
+        },
+        {
+          "title": "bunzo preserves accessible artwork and navigation at mobile and desktop widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5718,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:14:48.908Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-1adf899df9f2d30b3566",
+          "file": "case-premium.spec.ts",
+          "line": 163,
+          "column": 3
+        },
+        {
+          "title": "triarch uses the intended distinct mosaic without duplicated or empty tiles",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1080,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:14:54.649Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-d71038d8d6f1485774a4",
+          "file": "case-premium.spec.ts",
+          "line": 123,
+          "column": 3
+        },
+        {
+          "title": "triarch preserves accessible artwork and navigation at mobile and desktop widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4327,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:14:55.749Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-2a0cbe5f9f4750c488cd",
+          "file": "case-premium.spec.ts",
+          "line": 163,
+          "column": 3
+        },
+        {
+          "title": "capture uses the intended distinct mosaic without duplicated or empty tiles",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1230,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:00.095Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-fc56793ee3ee745e3f5d",
+          "file": "case-premium.spec.ts",
+          "line": 123,
+          "column": 3
+        },
+        {
+          "title": "capture preserves accessible artwork and navigation at mobile and desktop widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4284,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:01.344Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-f3586fbd33d8ff520a5b",
+          "file": "case-premium.spec.ts",
+          "line": 163,
+          "column": 3
+        },
+        {
+          "title": "by-tech-group uses the intended distinct mosaic without duplicated or empty tiles",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1019,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:05.650Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-43dff23606f313ca5b38",
+          "file": "case-premium.spec.ts",
+          "line": 123,
+          "column": 3
+        },
+        {
+          "title": "by-tech-group preserves accessible artwork and navigation at mobile and desktop widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4485,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:06.691Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-f1df6d218f668c9bd80d",
+          "file": "case-premium.spec.ts",
+          "line": 163,
+          "column": 3
+        },
+        {
+          "title": "exactly five approved routes receive the pilot design and metadata remains factual-gated",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4324,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:11.191Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-f3ddee1937ea615afaa0",
+          "file": "case-premium.spec.ts",
+          "line": 185,
+          "column": 1
+        },
+        {
+          "title": "existing case footage plays only when visible and pause controls work at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4081,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:15.545Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-1f1e3b673a4d310f4708",
+          "file": "case-premium.spec.ts",
+          "line": 247,
+          "column": 3
+        },
+        {
+          "title": "existing case footage plays only when visible and pause controls work at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6272,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:19.642Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-9d424f1893f79c31c945",
+          "file": "case-premium.spec.ts",
+          "line": 247,
+          "column": 3
+        },
+        {
+          "title": "native Work, case-to-case, service and enquiry links remain immediate and keyboard operable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3169,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:25.937Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-21d0aa76a9eb832c82f6",
+          "file": "case-premium.spec.ts",
+          "line": 273,
+          "column": 1
+        },
+        {
+          "title": "mobile touch navigation reaches the real project and returns to the Work index",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2145,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:29.152Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-3b14dd1a93dd2841eb00",
+          "file": "case-premium.spec.ts",
+          "line": 307,
+          "column": 1
+        },
+        {
+          "title": "reduced-motion leaves complete pilot artwork and ordinary links without downloading video",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 971,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:368:9",
+                    "location": {
+                      "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                      "column": 29,
+                      "line": 82
+                    },
+                    "snippet": "  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                        "column": 29,
+                        "line": 82
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n\n  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:368:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:31.314Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-reduced-motio-5c023-s-without-downloading-video/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-reduced-motio-5c023-s-without-downloading-video/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-reduced-motio-5c023-s-without-downloading-video/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                    "column": 29,
+                    "line": 82
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-b28f94ed3b0b8d81f5d4",
+          "file": "case-premium.spec.ts",
+          "line": 335,
+          "column": 3
+        },
+        {
+          "title": "save-data leaves complete pilot artwork and ordinary links without downloading video",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1790,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:368:9",
+                    "location": {
+                      "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                      "column": 29,
+                      "line": 82
+                    },
+                    "snippet": "  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                        "column": 29,
+                        "line": 82
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n\n  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:368:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:33.270Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-save-data-lea-e9d74-s-without-downloading-video/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-save-data-lea-e9d74-s-without-downloading-video/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-save-data-lea-e9d74-s-without-downloading-video/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                    "column": 29,
+                    "line": 82
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-1f74edc6f3a45d03b23a",
+          "file": "case-premium.spec.ts",
+          "line": 335,
+          "column": 3
+        },
+        {
+          "title": "no-javascript leaves complete pilot artwork and ordinary links without downloading video",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1656,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:368:9",
+                    "location": {
+                      "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                      "column": 29,
+                      "line": 82
+                    },
+                    "snippet": "  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                        "column": 29,
+                        "line": 82
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n\n  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:368:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:36.126Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-no-javascript-4b0be-s-without-downloading-video/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-no-javascript-4b0be-s-without-downloading-video/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-no-javascript-4b0be-s-without-downloading-video/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                    "column": 29,
+                    "line": 82
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-882a3e27e383edaba77a",
+          "file": "case-premium.spec.ts",
+          "line": 335,
+          "column": 3
+        },
+        {
+          "title": "blocked-scripts leaves complete pilot artwork and ordinary links without downloading video",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1940,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:368:9",
+                    "location": {
+                      "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                      "column": 29,
+                      "line": 82
+                    },
+                    "snippet": "  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                        "column": 29,
+                        "line": 82
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m70\u001b[39m\nReceived:   \u001b[31m51.1875\u001b[39m\n\n  80 |     });\n  81 |     expect(geometry.width).toBeGreaterThan(70);\n> 82 |     expect(geometry.height).toBeGreaterThan(70);\n     |                             ^\n  83 |     expect(geometry.left).toBeGreaterThanOrEqual(-1);\n  84 |     expect(geometry.right).toBeLessThanOrEqual(width + 1);\n  85 |     expect(geometry.natural).toBeGreaterThan(0);\n    at loadArtwork (/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:82:29)\n    at /workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts:368:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:38.804Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-blocked-scrip-6e7f6-s-without-downloading-video/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-blocked-scrip-6e7f6-s-without-downloading-video/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-case-premium/test-results/case-premium/case-premium-blocked-scrip-6e7f6-s-without-downloading-video/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-case-premium/tests/browser/case-premium.spec.ts",
+                    "column": 29,
+                    "line": 82
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-6a6af572dff08434fc60",
+          "file": "case-premium.spec.ts",
+          "line": 335,
+          "column": 3
+        },
+        {
+          "title": "case reveals settle once on reverse scrolling and keyboard focus restores complete text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3273,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:41.920Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-ebe98f537ed353b92b5e",
+          "file": "case-premium.spec.ts",
+          "line": 388,
+          "column": 1
+        },
+        {
+          "title": "changing motion preferences releases case footage and immediately restores static presentation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3324,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-12T09:15:45.463Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f083d54281b906aafae-73914d5eb5abeffbebec",
+          "file": "case-premium.spec.ts",
+          "line": 429,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-12T09:13:56.570Z",
+    "duration": 112344.917,
+    "expected": 19,
+    "skipped": 0,
+    "unexpected": 8,
+    "flaky": 0
+  }
+}

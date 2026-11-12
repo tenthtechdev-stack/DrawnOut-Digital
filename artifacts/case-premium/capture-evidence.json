@@ -1,0 +1,5931 @@
+{
+  "capturedAt": "2026-11-12T09:27:31.528Z",
+  "sourceCommit": "67e08543767c08df8993bc75997813e2fb6e32b2",
+  "sourceFiles": {
+    "src/pages/work/[slug].astro": "590e2f5094874bf6a0f0adfb7821cd48cd17263e10ba783644075dda582a8e56",
+    "src/components/case/PremiumCaseStudy.astro": "84d32582902d2b34fb137eeb94ddf0a58f06eba0379d4d56ce62de328e761721",
+    "src/components/case/PremiumCaseGallery.astro": "423029bc7ad1ce1f45b256341cdb0c30283759b7f3c2e124108e29d7d82f7b12",
+    "src/styles/case-premium.css": "de680e4dc8206eadbb230b68215d4fd2490e5644235099da22585f6d277f85e9",
+    "src/lib/case-presentation.ts": "68b5deb494759eb19fddfe42a9f43fa1f2ebfb9df91a1d7ef0fefd9c21967be0",
+    "src/scripts/case-premium-motion.ts": "6ece24b74b169196f4e1bfddbcb12363abbba534331753f77e17965f9fda9bbc",
+    "src/scripts/portfolio-motion.ts": "520796f1c5ed6493ef9011b63fb908a7618f2af5cd619ef5a6d56fa4c3718c50",
+    "src/components/MediaSlot.astro": "370a3345a20ca06e82ae4af8293d967904cf72b029a4c4f154b363a31a882701",
+    "src/components/PortfolioMotionToggle.astro": "6fce2181c8272966f8fe46488ca0e366adb32be784a13a69941056dc3293fcbc",
+    "src/lib/portfolio-motion-policy.ts": "112981ba2dffeef3c367d46595b64ff24859c3ffd8d343a843e94379fb4e198b"
+  },
+  "baseURL": "http://127.0.0.1:4430",
+  "method": "Real production Chromium viewport screenshots and native Playwright browser videos. Native wheel input drives forward/reverse browsing; real links provide previous-project and Work navigation. H.264 transcodes retain browser timing. The SOL and Bunzo loops visibly play for at least eight seconds each without seeking. Full-page stills use a separate software compositor to avoid cloud SwiftShader tall-image repetition. Mobile is Chromium touch/viewport emulation, not physical-device testing.",
+  "browser": "154.0.8037.57",
+  "screenshots": [
+    {
+      "file": "case-1440-sol-motion.png",
+      "description": "SOL approved loop after more than eight seconds of actual visible playback.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 494788,
+      "sha256": "3d9f162124bf260b3ae4db6ae1a9a54cb21528a3e35b327175488a45a9f15e76",
+      "before": {
+        "at": 12908.90000000596,
+        "url": "/work/sol-community-center",
+        "scrollY": 597,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 28.796875,
+          "y": 74.140625,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 74.140625,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_219TyT.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 74.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z24halM.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 74.140625,
+              "width": 691.203125,
+              "height": 204.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z20CDxP.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 507.5625,
+              "width": 329.765625,
+              "height": 260.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1Rxwug.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 507.5625,
+              "width": 329.765625,
+              "height": 201.40625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 5.550482,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 74.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-sol-journey-gallery.png",
+      "description": "SOL gallery during native forward browsing.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 523473,
+      "sha256": "1122c79d751740e51deea97e6c51f8fca48fae8e6edc04356c35437c6fe63926",
+      "before": {
+        "at": 14297.40000000596,
+        "url": "/work/sol-community-center",
+        "scrollY": 551,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 28.796875,
+          "y": 120.140625,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 120.140625,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_219TyT.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z24halM.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 120.140625,
+              "width": 691.203125,
+              "height": 204.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z20CDxP.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 553.5625,
+              "width": 329.765625,
+              "height": 260.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1Rxwug.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 553.5625,
+              "width": 329.765625,
+              "height": 201.40625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 1.172014,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-bunzo-motion.png",
+      "description": "Bunzo approved loop after more than eight seconds of actual visible playback.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 635881,
+      "sha256": "da3344a28b57dee5800987721143644f7f9f6e85a935a5d558e66b78f17ccf44",
+      "before": {
+        "at": 11590.30000000447,
+        "url": "/work/bunzo",
+        "scrollY": 505,
+        "overflow": false,
+        "slug": "bunzo",
+        "title": "Bunzo.",
+        "hero": {
+          "x": 28.796875,
+          "y": 74.4375,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 74.4375,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-cup-detail.CBuQNYF0_Q2pn6.webp",
+            "alt": "Red Bunzo takeaway drink cup with large black-and-white lettering and a white lid.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 74.4375,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-packaging-wide.BzEIOzUP_zLBCL.webp",
+            "alt": "Bunzo red takeaway bag, burger box, drink cup, fries carton and patterned wrapper arranged together.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 74.4375,
+              "width": 691.203125,
+              "height": 226.078125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-identity.B7wBiny0_Z1lgwAP.webp",
+            "alt": "Bunzo black-and-white logo, yellow accent, burger photography and alternate letterform marks on a red board.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 507.859375,
+              "width": 329.765625,
+              "height": 185.71875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-social-layouts.DurTkaS9_Z2k2jC0.webp",
+            "alt": "Bunzo promotional artwork with red-and-cream layouts, burger photographs and bold typographic headlines.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 507.859375,
+              "width": 329.765625,
+              "height": 185.71875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-bunzo",
+            "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+            "time": 5.699468,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 74.4375,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-sol-motion.png",
+      "description": "SOL approved loop after more than eight seconds of actual visible playback.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 152237,
+      "sha256": "878012b59e45e0f3923d252e347b927348a7778d1d1d009487683c377cfecf53",
+      "before": {
+        "at": 11019.39999999851,
+        "url": "/work/sol-community-center",
+        "scrollY": 309,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 14,
+          "y": 195.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 195.375,
+          "width": 362,
+          "height": 1331.28125
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 195.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 760.5625,
+              "width": 362,
+              "height": 107.109375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 928.359375,
+              "width": 362,
+              "height": 285.828125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1274.875,
+              "width": 362,
+              "height": 221.09375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 4.917657,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 195.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-sol-journey-gallery.png",
+      "description": "SOL gallery during native forward browsing.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 118867,
+      "sha256": "c362e77d53c1371c825aef4d420e4a32e4fd3d0288f7867f790d9b4567a8de56",
+      "before": {
+        "at": 12661.39999999851,
+        "url": "/work/sol-community-center",
+        "scrollY": 385,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 14,
+          "y": 119.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 119.375,
+          "width": 362,
+          "height": 1331.28125
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 119.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 684.5625,
+              "width": 362,
+              "height": 107.109375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 852.359375,
+              "width": 362,
+              "height": 285.828125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1198.875,
+              "width": 362,
+              "height": 221.09375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 1.007558,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 119.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-bunzo-motion.png",
+      "description": "Bunzo approved loop after more than eight seconds of actual visible playback.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 225412,
+      "sha256": "41463123ac2223df91cb9524973248f895a0e9634f6b427bab6ee31987921447",
+      "before": {
+        "at": 10792.89999999851,
+        "url": "/work/bunzo",
+        "scrollY": 260,
+        "overflow": false,
+        "slug": "bunzo",
+        "title": "Bunzo.",
+        "hero": {
+          "x": 14,
+          "y": 195.78125,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 195.78125,
+          "width": 362,
+          "height": 1243.390625
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-cup-detail.CBuQNYF0_Q2pn6.webp",
+            "alt": "Red Bunzo takeaway drink cup with large black-and-white lettering and a white lid.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 195.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-packaging-wide.BzEIOzUP_L8B3c.webp",
+            "alt": "Bunzo red takeaway bag, burger box, drink cup, fries carton and patterned wrapper arranged together.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 760.96875,
+              "width": 362,
+              "height": 118.390625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-identity.B7wBiny0_Zrxcia.webp",
+            "alt": "Bunzo black-and-white logo, yellow accent, burger photography and alternate letterform marks on a red board.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 940.046875,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-social-layouts.DurTkaS9_Z143blQ.webp",
+            "alt": "Bunzo promotional artwork with red-and-cream layouts, burger photographs and bold typographic headlines.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1204.609375,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-bunzo",
+            "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+            "time": 4.895989,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 195.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-sol-community-center-arrival.png",
+      "description": "SOL Community Center: complete editorial arrival at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 244359,
+      "sha256": "5324f14eb78689ba67480c9caca4f0089a31be4f633e531b13ff5dc3f38cb903",
+      "before": {
+        "at": 1274.6999999955297,
+        "url": "/work/sol-community-center",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 28.796875,
+          "y": 671.140625,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 671.140625,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_219TyT.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 671.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z24halM.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 671.140625,
+              "width": 691.203125,
+              "height": 204.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z20CDxP.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 1104.5625,
+              "width": 329.765625,
+              "height": 260.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1Rxwug.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 1104.5625,
+              "width": 329.765625,
+              "height": 201.40625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": 671.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-sol-community-center-mosaic.png",
+      "description": "SOL Community Center: curated responsive artwork composition at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 525255,
+      "sha256": "8bc437b1b5e5575fe5736cc4a8f6789ead7922eca12d71ec98e25701e0f81901",
+      "before": {
+        "at": 2769.5999999940395,
+        "url": "/work/sol-community-center",
+        "scrollY": 551,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 28.796875,
+          "y": 120.140625,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 120.140625,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_219TyT.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z24halM.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 120.140625,
+              "width": 691.203125,
+              "height": 204.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z20CDxP.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 553.5625,
+              "width": 329.765625,
+              "height": 260.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1Rxwug.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 553.5625,
+              "width": 329.765625,
+              "height": 201.40625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 1.279711,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-sol-community-center-editorial.png",
+      "description": "SOL Community Center: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 325748,
+      "sha256": "6b11785f77e81a13beb9c5cac81eec5bd51c4f6fc1e5f54d7d308e79e50f1452",
+      "before": {
+        "at": 4584.5,
+        "url": "/work/sol-community-center",
+        "scrollY": 1387,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 28.796875,
+          "y": -715.859375,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": -715.859375,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_219TyT.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": -715.859375,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z24halM.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": -715.859375,
+              "width": 691.203125,
+              "height": 204.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z20CDxP.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": -282.4375,
+              "width": 329.765625,
+              "height": 260.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1Rxwug.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 1081.4375,
+              "y": -282.4375,
+              "width": 329.765625,
+              "height": 201.40625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": -715.859375,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-bunzo-arrival.png",
+      "description": "Bunzo: complete editorial arrival at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 309323,
+      "sha256": "737e7b6a63165a2ba0c65332c3594c41bb9294a88aecceb5b32e234ac9a87005",
+      "before": {
+        "at": 1141.7000000029802,
+        "url": "/work/bunzo",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "bunzo",
+        "title": "Bunzo.",
+        "hero": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-cup-detail.CBuQNYF0_Q2pn6.webp",
+            "alt": "Red Bunzo takeaway drink cup with large black-and-white lettering and a white lid.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-packaging-wide.BzEIOzUP_zLBCL.webp",
+            "alt": "Bunzo red takeaway bag, burger box, drink cup, fries carton and patterned wrapper arranged together.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 579.4375,
+              "width": 691.203125,
+              "height": 226.078125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-identity.B7wBiny0_Z1lgwAP.webp",
+            "alt": "Bunzo black-and-white logo, yellow accent, burger photography and alternate letterform marks on a red board.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 1012.859375,
+              "width": 329.765625,
+              "height": 185.71875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-social-layouts.DurTkaS9_Z2k2jC0.webp",
+            "alt": "Bunzo promotional artwork with red-and-cream layouts, burger photographs and bold typographic headlines.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 1012.859375,
+              "width": 329.765625,
+              "height": 185.71875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-bunzo",
+            "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+            "time": 1.001065,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-bunzo-mosaic.png",
+      "description": "Bunzo: curated responsive artwork composition at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 907039,
+      "sha256": "3ebdd0535db09295118119744409167a65b74989b12b8b4243e0808b0ba495ac",
+      "before": {
+        "at": 2706.10000000149,
+        "url": "/work/bunzo",
+        "scrollY": 459,
+        "overflow": false,
+        "slug": "bunzo",
+        "title": "Bunzo.",
+        "hero": {
+          "x": 28.796875,
+          "y": 120.4375,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 120.4375,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-cup-detail.CBuQNYF0_Q2pn6.webp",
+            "alt": "Red Bunzo takeaway drink cup with large black-and-white lettering and a white lid.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.4375,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-packaging-wide.BzEIOzUP_zLBCL.webp",
+            "alt": "Bunzo red takeaway bag, burger box, drink cup, fries carton and patterned wrapper arranged together.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 120.4375,
+              "width": 691.203125,
+              "height": 226.078125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-identity.B7wBiny0_Z1lgwAP.webp",
+            "alt": "Bunzo black-and-white logo, yellow accent, burger photography and alternate letterform marks on a red board.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 553.859375,
+              "width": 329.765625,
+              "height": 185.71875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-social-layouts.DurTkaS9_Z2k2jC0.webp",
+            "alt": "Bunzo promotional artwork with red-and-cream layouts, burger photographs and bold typographic headlines.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 553.859375,
+              "width": 329.765625,
+              "height": 185.71875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-bunzo",
+            "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+            "time": 2.565628,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.4375,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-bunzo-editorial.png",
+      "description": "Bunzo: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 163896,
+      "sha256": "b3b7f445a2839eef4f94843e9176504404ae15a5e563929a421de90502c09927",
+      "before": {
+        "at": 4536.4000000059605,
+        "url": "/work/bunzo",
+        "scrollY": 1295,
+        "overflow": false,
+        "slug": "bunzo",
+        "title": "Bunzo.",
+        "hero": {
+          "x": 28.796875,
+          "y": -715.5625,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": -715.5625,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-cup-detail.CBuQNYF0_Q2pn6.webp",
+            "alt": "Red Bunzo takeaway drink cup with large black-and-white lettering and a white lid.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": -715.5625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-packaging-wide.BzEIOzUP_zLBCL.webp",
+            "alt": "Bunzo red takeaway bag, burger box, drink cup, fries carton and patterned wrapper arranged together.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": -715.5625,
+              "width": 691.203125,
+              "height": 226.078125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-identity.B7wBiny0_Z1lgwAP.webp",
+            "alt": "Bunzo black-and-white logo, yellow accent, burger photography and alternate letterform marks on a red board.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": -282.140625,
+              "width": 329.765625,
+              "height": 185.71875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-social-layouts.DurTkaS9_Z2k2jC0.webp",
+            "alt": "Bunzo promotional artwork with red-and-cream layouts, burger photographs and bold typographic headlines.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 1081.4375,
+              "y": -282.140625,
+              "width": 329.765625,
+              "height": 185.71875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-bunzo",
+            "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": -715.5625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-triarch-arrival.png",
+      "description": "Triarch: complete editorial arrival at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 167917,
+      "sha256": "613590085d1f7a372e134972d8a9e5010879d05339da960b2d7312bbbe3e5a45",
+      "before": {
+        "at": 1071.6000000014901,
+        "url": "/work/triarch",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "triarch",
+        "title": "Triarch.",
+        "hero": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-business-card.B2kBDRlH_ZxQoTE.webp",
+            "alt": "White Triarch business card with a dark wordmark and thin yellow line on overlapping textured gray surfaces.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-letterform-detail.Bcq5QPDG_11jOaj.webp",
+            "alt": "Dark Triarch wordmark and horizontal tagline over pale geometric architectural imagery.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 579.4375,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-device-detail.Bf9PTwAM_Z1luBsC.webp",
+            "alt": "White Triarch monogram sticker on a silver laptop beside a white mouse.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 1028.234375,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-triarch",
+            "source": "http://127.0.0.1:4430/media/portfolio/triarch-portrait.mp4",
+            "time": 0.951727,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-triarch-mosaic.png",
+      "description": "Triarch: curated responsive artwork composition at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 471776,
+      "sha256": "bfbe197cbc00c443c49acabd64860749841d3934bb6e2816e77760b28e478f23",
+      "before": {
+        "at": 2682.89999999851,
+        "url": "/work/triarch",
+        "scrollY": 460,
+        "overflow": false,
+        "slug": "triarch",
+        "title": "Triarch.",
+        "hero": {
+          "x": 28.796875,
+          "y": 119.4375,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 119.4375,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-business-card.B2kBDRlH_ZxQoTE.webp",
+            "alt": "White Triarch business card with a dark wordmark and thin yellow line on overlapping textured gray surfaces.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.4375,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-letterform-detail.Bcq5QPDG_11jOaj.webp",
+            "alt": "Dark Triarch wordmark and horizontal tagline over pale geometric architectural imagery.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 119.4375,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-device-detail.Bf9PTwAM_Z1luBsC.webp",
+            "alt": "White Triarch monogram sticker on a silver laptop beside a white mouse.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 568.234375,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-triarch",
+            "source": "http://127.0.0.1:4430/media/portfolio/triarch-portrait.mp4",
+            "time": 2.563049,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.4375,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-triarch-editorial.png",
+      "description": "Triarch: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 101493,
+      "sha256": "13ccf95457daa806066826437f93429f6fd3048bc0c7434862de7e5eccb9b969",
+      "before": {
+        "at": 4421.20000000298,
+        "url": "/work/triarch",
+        "scrollY": 1299,
+        "overflow": false,
+        "slug": "triarch",
+        "title": "Triarch.",
+        "hero": {
+          "x": 28.796875,
+          "y": -719.5625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": -719.5625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-business-card.B2kBDRlH_ZxQoTE.webp",
+            "alt": "White Triarch business card with a dark wordmark and thin yellow line on overlapping textured gray surfaces.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": -719.5625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-letterform-detail.Bcq5QPDG_11jOaj.webp",
+            "alt": "Dark Triarch wordmark and horizontal tagline over pale geometric architectural imagery.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": -719.5625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-device-detail.Bf9PTwAM_Z1luBsC.webp",
+            "alt": "White Triarch monogram sticker on a silver laptop beside a white mouse.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": -270.765625,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-triarch",
+            "source": "http://127.0.0.1:4430/media/portfolio/triarch-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": -719.5625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-capture-arrival.png",
+      "description": "Capture: complete editorial arrival at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 415459,
+      "sha256": "29676d54fb3e8e9c411c13c651055f871e53494973ed441f6319520be1210474",
+      "before": {
+        "at": 1063.3999999985099,
+        "url": "/work/capture",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "capture",
+        "title": "Capture.",
+        "hero": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 1407.890625
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-applications.lhBr_dKb_ZGX64y.webp",
+            "alt": "Capture red circular graphics on dark stationery, notebook, badge, signage and screen presentation mockups.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-identity.CdbNOS9r_Z8tVor.webp",
+            "alt": "Capture red-and-black target-like logo, alternate marks, palette swatches and circular graphic fragments.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": 1447.28125,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-stationery-detail.Cje0Alcr_Z1crSGQ.webp",
+            "alt": "Black Capture stationery folder beside a white printed sheet on a dark gray background.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 929.453125,
+              "y": 1512.28125,
+              "width": 481.75,
+              "height": 443.359375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-capture-mosaic.png",
+      "description": "Capture: curated responsive artwork composition at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 900139,
+      "sha256": "88045f60423d4118107acd1f296811a5a1ff51c3152bf9305f487cad0d18d9b2",
+      "before": {
+        "at": 2973.89999999851,
+        "url": "/work/capture",
+        "scrollY": 460,
+        "overflow": false,
+        "slug": "capture",
+        "title": "Capture.",
+        "hero": {
+          "x": 28.796875,
+          "y": 119.4375,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 119.4375,
+          "width": 1382.40625,
+          "height": 1407.890625
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-applications.lhBr_dKb_ZGX64y.webp",
+            "alt": "Capture red circular graphics on dark stationery, notebook, badge, signage and screen presentation mockups.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.4375,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-identity.CdbNOS9r_Z8tVor.webp",
+            "alt": "Capture red-and-black target-like logo, alternate marks, palette swatches and circular graphic fragments.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": 987.28125,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-stationery-detail.Cje0Alcr_Z1crSGQ.webp",
+            "alt": "Black Capture stationery folder beside a white printed sheet on a dark gray background.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 929.453125,
+              "y": 1052.28125,
+              "width": 481.75,
+              "height": 443.359375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-capture-editorial.png",
+      "description": "Capture: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 108165,
+      "sha256": "bd9c0871ca921938f7b2bdf0cf74351cdb62f079aef0b6fa181406e00d8cf4d2",
+      "before": {
+        "at": 5220.20000000298,
+        "url": "/work/capture",
+        "scrollY": 1866,
+        "overflow": false,
+        "slug": "capture",
+        "title": "Capture.",
+        "hero": {
+          "x": 28.796875,
+          "y": -1286.5625,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": -1286.5625,
+          "width": 1382.40625,
+          "height": 1407.890625
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-applications.lhBr_dKb_ZGX64y.webp",
+            "alt": "Capture red circular graphics on dark stationery, notebook, badge, signage and screen presentation mockups.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": -1286.5625,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-identity.CdbNOS9r_Z8tVor.webp",
+            "alt": "Capture red-and-black target-like logo, alternate marks, palette swatches and circular graphic fragments.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": -418.71875,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-stationery-detail.Cje0Alcr_Z1crSGQ.webp",
+            "alt": "Black Capture stationery folder beside a white printed sheet on a dark gray background.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 929.453125,
+              "y": -353.71875,
+              "width": 481.75,
+              "height": 443.359375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-by-tech-group-arrival.png",
+      "description": "By Tech Group: complete editorial arrival at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 157396,
+      "sha256": "0e50fbf4ea44aa9c348042950609d1d7fec2d68da53b448aded661b5686856ec",
+      "before": {
+        "at": 1052.1000000014901,
+        "url": "/work/by-tech-group",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "by-tech-group",
+        "title": "By Tech Group.",
+        "hero": {
+          "x": 28.796875,
+          "y": 589.4376831054688,
+          "width": 740.65625,
+          "height": 500.29693603515625
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 553.484375
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-applications.DAXrhYT4_ZS3Uep.webp",
+            "alt": "By Tech Group blue-and-green symbol on dark stationery, a black mug, tote, lanyard and phone presentation.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 589.4376831054688,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-identity.BGAf8P-l_andJb.webp",
+            "alt": "By Tech Group blue-to-green monogram on black, with monochrome logo treatments and icon mockups.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": 733.4376831054688,
+              "width": 569.75,
+              "height": 320.87506103515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-by-tech-group",
+            "source": "http://127.0.0.1:4430/media/portfolio/by-tech-group-landscape.mp4",
+            "time": 0.955475,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 589.4376831054688,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-by-tech-group-mosaic.png",
+      "description": "By Tech Group: curated responsive artwork composition at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 258862,
+      "sha256": "0308195931ae4891ee825e9986abde32c92e874379ddd805a6ca74055798aa7a",
+      "before": {
+        "at": 2422.7000000029802,
+        "url": "/work/by-tech-group",
+        "scrollY": 459,
+        "overflow": false,
+        "slug": "by-tech-group",
+        "title": "By Tech Group.",
+        "hero": {
+          "x": 28.796875,
+          "y": 130.4375,
+          "width": 740.65625,
+          "height": 500.296875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 120.4375,
+          "width": 1382.40625,
+          "height": 553.484375
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-applications.DAXrhYT4_ZS3Uep.webp",
+            "alt": "By Tech Group blue-and-green symbol on dark stationery, a black mug, tote, lanyard and phone presentation.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 130.4375,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-identity.BGAf8P-l_andJb.webp",
+            "alt": "By Tech Group blue-to-green monogram on black, with monochrome logo treatments and icon mockups.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": 274.4375,
+              "width": 569.75,
+              "height": 320.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-by-tech-group",
+            "source": "http://127.0.0.1:4430/media/portfolio/by-tech-group-landscape.mp4",
+            "time": 2.326253,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 130.4375,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-by-tech-group-editorial.png",
+      "description": "By Tech Group: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 102792,
+      "sha256": "ab13a8a54d171c2e595ced8e6ac5136a8a42e3ba9967a972ae2b65caa80171a8",
+      "before": {
+        "at": 3880.89999999851,
+        "url": "/work/by-tech-group",
+        "scrollY": 1013,
+        "overflow": false,
+        "slug": "by-tech-group",
+        "title": "By Tech Group.",
+        "hero": {
+          "x": 28.796875,
+          "y": -423.5625,
+          "width": 740.65625,
+          "height": 500.296875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": -433.5625,
+          "width": 1382.40625,
+          "height": 553.484375
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-applications.DAXrhYT4_ZS3Uep.webp",
+            "alt": "By Tech Group blue-and-green symbol on dark stationery, a black mug, tote, lanyard and phone presentation.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": -423.5625,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-identity.BGAf8P-l_andJb.webp",
+            "alt": "By Tech Group blue-to-green monogram on black, with monochrome logo treatments and icon mockups.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": -279.5625,
+              "width": 569.75,
+              "height": 320.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-by-tech-group",
+            "source": "http://127.0.0.1:4430/media/portfolio/by-tech-group-landscape.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": -423.5625,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-sol-community-center-arrival.png",
+      "description": "SOL Community Center: complete editorial arrival at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 79631,
+      "sha256": "3616e95adaafcfae2f7dfe091637cfea9ce030b069896fa6c0da989f6e2cbd59",
+      "before": {
+        "at": 1213,
+        "url": "/work/sol-community-center",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 1331.28125
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1069.5625,
+              "width": 362,
+              "height": 107.109375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1237.359375,
+              "width": 362,
+              "height": 285.828125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1583.875,
+              "width": 362,
+              "height": 221.09375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 0.957947,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-sol-community-center-mosaic.png",
+      "description": "SOL Community Center: curated responsive artwork composition at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 118864,
+      "sha256": "bcec8085a2663d851c11b609fcd013a9d66a2c07ba5f2bf5ebf1ef16d826bf4f",
+      "before": {
+        "at": 2861.60000000149,
+        "url": "/work/sol-community-center",
+        "scrollY": 384,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 1331.28125
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 685.5625,
+              "width": 362,
+              "height": 107.109375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 853.359375,
+              "width": 362,
+              "height": 285.828125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1199.875,
+              "width": 362,
+              "height": 221.09375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 1.006268,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-sol-community-center-editorial.png",
+      "description": "SOL Community Center: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 123978,
+      "sha256": "e5bf2df2a53bca17e8ec4dddd1702bc917a21078c3551e2f3aafb9e4b0e590b9",
+      "before": {
+        "at": 4724.5,
+        "url": "/work/sol-community-center",
+        "scrollY": 1716,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 14,
+          "y": -1211.625,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": -1211.625,
+          "width": 362,
+          "height": 1331.28125
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -1211.625,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -646.4375,
+              "width": 362,
+              "height": 107.109375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -478.640625,
+              "width": 362,
+              "height": 285.828125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -132.125,
+              "width": 362,
+              "height": 221.09375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 14,
+              "y": -1211.625,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-bunzo-arrival.png",
+      "description": "Bunzo: complete editorial arrival at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 106071,
+      "sha256": "c547db9635de8de7fd024705745b1975b0d5899412571bdbdcbfaba9f64479c6",
+      "before": {
+        "at": 1071.1000000014901,
+        "url": "/work/bunzo",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "bunzo",
+        "title": "Bunzo.",
+        "hero": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 1243.390625
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-cup-detail.CBuQNYF0_Q2pn6.webp",
+            "alt": "Red Bunzo takeaway drink cup with large black-and-white lettering and a white lid.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-packaging-wide.BzEIOzUP_L8B3c.webp",
+            "alt": "Bunzo red takeaway bag, burger box, drink cup, fries carton and patterned wrapper arranged together.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1020.96875,
+              "width": 362,
+              "height": 118.390625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-identity.B7wBiny0_Zrxcia.webp",
+            "alt": "Bunzo black-and-white logo, yellow accent, burger photography and alternate letterform marks on a red board.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1200.046875,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-social-layouts.DurTkaS9_Z143blQ.webp",
+            "alt": "Bunzo promotional artwork with red-and-cream layouts, burger photographs and bold typographic headlines.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1464.609375,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-bunzo",
+            "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+            "time": 0.913515,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-bunzo-mosaic.png",
+      "description": "Bunzo: curated responsive artwork composition at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 173935,
+      "sha256": "e977caf7dc90dedff03de805689d2a532515fd756d94c031aef99915c72a242a",
+      "before": {
+        "at": 2739.3000000044703,
+        "url": "/work/bunzo",
+        "scrollY": 336,
+        "overflow": false,
+        "slug": "bunzo",
+        "title": "Bunzo.",
+        "hero": {
+          "x": 14,
+          "y": 119.78125,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 119.78125,
+          "width": 362,
+          "height": 1243.390625
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-cup-detail.CBuQNYF0_Q2pn6.webp",
+            "alt": "Red Bunzo takeaway drink cup with large black-and-white lettering and a white lid.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 119.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-packaging-wide.BzEIOzUP_L8B3c.webp",
+            "alt": "Bunzo red takeaway bag, burger box, drink cup, fries carton and patterned wrapper arranged together.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 684.96875,
+              "width": 362,
+              "height": 118.390625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-identity.B7wBiny0_Zrxcia.webp",
+            "alt": "Bunzo black-and-white logo, yellow accent, burger photography and alternate letterform marks on a red board.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 864.046875,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-social-layouts.DurTkaS9_Z143blQ.webp",
+            "alt": "Bunzo promotional artwork with red-and-cream layouts, burger photographs and bold typographic headlines.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1128.609375,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-bunzo",
+            "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+            "time": 0.968335,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 119.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-bunzo-editorial.png",
+      "description": "Bunzo: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 97300,
+      "sha256": "06d277c44e32abdd61d64c0b9a6259fdba327d0730f1fb969c4f229b937fe06d",
+      "before": {
+        "at": 4575.9000000059605,
+        "url": "/work/bunzo",
+        "scrollY": 1579,
+        "overflow": false,
+        "slug": "bunzo",
+        "title": "Bunzo.",
+        "hero": {
+          "x": 14,
+          "y": -1123.21875,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": -1123.21875,
+          "width": 362,
+          "height": 1243.390625
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-cup-detail.CBuQNYF0_Q2pn6.webp",
+            "alt": "Red Bunzo takeaway drink cup with large black-and-white lettering and a white lid.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -1123.21875,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-packaging-wide.BzEIOzUP_L8B3c.webp",
+            "alt": "Bunzo red takeaway bag, burger box, drink cup, fries carton and patterned wrapper arranged together.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -558.03125,
+              "width": 362,
+              "height": 118.390625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-identity.B7wBiny0_Zrxcia.webp",
+            "alt": "Bunzo black-and-white logo, yellow accent, burger photography and alternate letterform marks on a red board.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -378.953125,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-social-layouts.DurTkaS9_Z143blQ.webp",
+            "alt": "Bunzo promotional artwork with red-and-cream layouts, burger photographs and bold typographic headlines.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -114.390625,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-bunzo",
+            "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 14,
+              "y": -1123.21875,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-triarch-arrival.png",
+      "description": "Triarch: complete editorial arrival at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 47053,
+      "sha256": "65c9b95d03a5637bad85db6738cae88a74b3f360080dba7be20ba23473408101",
+      "before": {
+        "at": 1014.6000000014901,
+        "url": "/work/triarch",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "triarch",
+        "title": "Triarch.",
+        "hero": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 1266.9375
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-business-card.B2kBDRlH_ZY9qYq.webp",
+            "alt": "White Triarch business card with a dark wordmark and thin yellow line on overlapping textured gray surfaces.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-letterform-detail.Bcq5QPDG_1sUmFt.webp",
+            "alt": "Dark Triarch wordmark and horizontal tagline over pale geometric architectural imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1020.96875,
+              "width": 362,
+              "height": 199.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-device-detail.Bf9PTwAM_ZgqcnL.webp",
+            "alt": "White Triarch monogram sticker on a silver laptop beside a white mouse.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1281.03125,
+              "width": 362,
+              "height": 411
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-triarch",
+            "source": "http://127.0.0.1:4430/media/portfolio/triarch-portrait.mp4",
+            "time": 0.926081,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-triarch-mosaic.png",
+      "description": "Triarch: curated responsive artwork composition at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 82474,
+      "sha256": "400b0077f2325e8140005db9c9d7cc5d145cad359d372934f45b37da7f17fa20",
+      "before": {
+        "at": 2682.8000000044703,
+        "url": "/work/triarch",
+        "scrollY": 336,
+        "overflow": false,
+        "slug": "triarch",
+        "title": "Triarch.",
+        "hero": {
+          "x": 14,
+          "y": 119.78125,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 119.78125,
+          "width": 362,
+          "height": 1266.9375
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-business-card.B2kBDRlH_ZY9qYq.webp",
+            "alt": "White Triarch business card with a dark wordmark and thin yellow line on overlapping textured gray surfaces.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 119.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-letterform-detail.Bcq5QPDG_1sUmFt.webp",
+            "alt": "Dark Triarch wordmark and horizontal tagline over pale geometric architectural imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 684.96875,
+              "width": 362,
+              "height": 199.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-device-detail.Bf9PTwAM_ZgqcnL.webp",
+            "alt": "White Triarch monogram sticker on a silver laptop beside a white mouse.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 945.03125,
+              "width": 362,
+              "height": 411
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-triarch",
+            "source": "http://127.0.0.1:4430/media/portfolio/triarch-portrait.mp4",
+            "time": 1.033517,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 119.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-triarch-editorial.png",
+      "description": "Triarch: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 63023,
+      "sha256": "de6226d97a1036208a627d9f76f3c9fb5930073c02df081a9813e3fc491fb9fa",
+      "before": {
+        "at": 4555.80000000447,
+        "url": "/work/triarch",
+        "scrollY": 1602,
+        "overflow": false,
+        "slug": "triarch",
+        "title": "Triarch.",
+        "hero": {
+          "x": 14,
+          "y": -1146.21875,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": -1146.21875,
+          "width": 362,
+          "height": 1266.9375
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-business-card.B2kBDRlH_ZY9qYq.webp",
+            "alt": "White Triarch business card with a dark wordmark and thin yellow line on overlapping textured gray surfaces.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -1146.21875,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-letterform-detail.Bcq5QPDG_1sUmFt.webp",
+            "alt": "Dark Triarch wordmark and horizontal tagline over pale geometric architectural imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -581.03125,
+              "width": 362,
+              "height": 199.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-device-detail.Bf9PTwAM_ZgqcnL.webp",
+            "alt": "White Triarch monogram sticker on a silver laptop beside a white mouse.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -320.96875,
+              "width": 362,
+              "height": 411
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-triarch",
+            "source": "http://127.0.0.1:4430/media/portfolio/triarch-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 14,
+              "y": -1146.21875,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-capture-arrival.png",
+      "description": "Capture: complete editorial arrival at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 168301,
+      "sha256": "560d1911315e40b97a8ea696b18073bcf641c317fbf6a1237c3d2989d9a161d7",
+      "before": {
+        "at": 1004.6999999955297,
+        "url": "/work/capture",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "capture",
+        "title": "Capture.",
+        "hero": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 892.921875
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-applications.lhBr_dKb_27xJQ4.webp",
+            "alt": "Capture red circular graphics on dark stationery, notebook, badge, signage and screen presentation mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-identity.CdbNOS9r_ZVHGBF.webp",
+            "alt": "Capture red-and-black target-like logo, alternate marks, palette swatches and circular graphic fragments.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 720.328125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-stationery-detail.Cje0Alcr_Z2pvczC.webp",
+            "alt": "Black Capture stationery folder beside a white printed sheet on a dark gray background.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 984.875,
+              "width": 361.984375,
+              "height": 333.140625
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-capture-mosaic.png",
+      "description": "Capture: curated responsive artwork composition at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 233752,
+      "sha256": "5fc9df2544badad01287b05097cc0db348718bbdc118a5085759309c6f2439e7",
+      "before": {
+        "at": 2389.1999999955297,
+        "url": "/work/capture",
+        "scrollY": 335,
+        "overflow": false,
+        "slug": "capture",
+        "title": "Capture.",
+        "hero": {
+          "x": 14,
+          "y": 120.78125,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.78125,
+          "width": 362,
+          "height": 892.921875
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-applications.lhBr_dKb_27xJQ4.webp",
+            "alt": "Capture red circular graphics on dark stationery, notebook, badge, signage and screen presentation mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 120.78125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-identity.CdbNOS9r_ZVHGBF.webp",
+            "alt": "Capture red-and-black target-like logo, alternate marks, palette swatches and circular graphic fragments.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 385.328125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-stationery-detail.Cje0Alcr_Z2pvczC.webp",
+            "alt": "Black Capture stationery folder beside a white printed sheet on a dark gray background.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 649.875,
+              "width": 361.984375,
+              "height": 333.140625
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-capture-editorial.png",
+      "description": "Capture: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 66325,
+      "sha256": "58981fe927e421bc31cd51744ccb526d7009fa709e65a87728abf6fae937afd5",
+      "before": {
+        "at": 4055.6999999955297,
+        "url": "/work/capture",
+        "scrollY": 1229,
+        "overflow": false,
+        "slug": "capture",
+        "title": "Capture.",
+        "hero": {
+          "x": 14,
+          "y": -773.21875,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": -773.21875,
+          "width": 362,
+          "height": 892.921875
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-applications.lhBr_dKb_27xJQ4.webp",
+            "alt": "Capture red circular graphics on dark stationery, notebook, badge, signage and screen presentation mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -773.21875,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-identity.CdbNOS9r_ZVHGBF.webp",
+            "alt": "Capture red-and-black target-like logo, alternate marks, palette swatches and circular graphic fragments.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -508.671875,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-stationery-detail.Cje0Alcr_Z2pvczC.webp",
+            "alt": "Black Capture stationery folder beside a white printed sheet on a dark gray background.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -244.125,
+              "width": 361.984375,
+              "height": 333.140625
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-by-tech-group-arrival.png",
+      "description": "By Tech Group: complete editorial arrival at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 71175,
+      "sha256": "bce77f79bc2ae7c9c36a138ec5bc3a17737ca8a2b5971c216a9f2a44a426dba5",
+      "before": {
+        "at": 1067.3999999985099,
+        "url": "/work/by-tech-group",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "by-tech-group",
+        "title": "By Tech Group.",
+        "hero": {
+          "x": 14,
+          "y": 465.78125,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 839.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-applications.DAXrhYT4_mUd1J.webp",
+            "alt": "By Tech Group blue-and-green symbol on dark stationery, a black mug, tote, lanyard and phone presentation.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 465.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-identity.BGAf8P-l_ZCPwt3.webp",
+            "alt": "By Tech Group blue-to-green monogram on black, with monochrome logo treatments and icon mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1030.96875,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-by-tech-group",
+            "source": "http://127.0.0.1:4430/media/portfolio/by-tech-group-portrait.mp4",
+            "time": 0.928044,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 465.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-by-tech-group-mosaic.png",
+      "description": "By Tech Group: curated responsive artwork composition at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 108980,
+      "sha256": "8450561c92e18f99d0c95892c62a8678db48de588cd25fe2449d6a29e2b92065",
+      "before": {
+        "at": 2360.39999999851,
+        "url": "/work/by-tech-group",
+        "scrollY": 335,
+        "overflow": false,
+        "slug": "by-tech-group",
+        "title": "By Tech Group.",
+        "hero": {
+          "x": 14,
+          "y": 130.78125,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.78125,
+          "width": 362,
+          "height": 839.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-applications.DAXrhYT4_mUd1J.webp",
+            "alt": "By Tech Group blue-and-green symbol on dark stationery, a black mug, tote, lanyard and phone presentation.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 130.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-identity.BGAf8P-l_ZCPwt3.webp",
+            "alt": "By Tech Group blue-to-green monogram on black, with monochrome logo treatments and icon mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 695.96875,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-by-tech-group",
+            "source": "http://127.0.0.1:4430/media/portfolio/by-tech-group-portrait.mp4",
+            "time": 2.221127,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 130.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-by-tech-group-editorial.png",
+      "description": "By Tech Group: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 61079,
+      "sha256": "aea0956e0bd05e832ee55dd584a80ab35043db56712d933fcf3c10cd6646486d",
+      "before": {
+        "at": 3929.60000000149,
+        "url": "/work/by-tech-group",
+        "scrollY": 1176,
+        "overflow": false,
+        "slug": "by-tech-group",
+        "title": "By Tech Group.",
+        "hero": {
+          "x": 14,
+          "y": -710.21875,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": -720.21875,
+          "width": 362,
+          "height": 839.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-applications.DAXrhYT4_mUd1J.webp",
+            "alt": "By Tech Group blue-and-green symbol on dark stationery, a black mug, tote, lanyard and phone presentation.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -710.21875,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-identity.BGAf8P-l_ZCPwt3.webp",
+            "alt": "By Tech Group blue-to-green monogram on black, with monochrome logo treatments and icon mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -145.03125,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-by-tech-group",
+            "source": "http://127.0.0.1:4430/media/portfolio/by-tech-group-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 14,
+              "y": -710.21875,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-320-sol-arrival.png",
+      "description": "SOL responsive arrival at 320px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 844,
+      "bytes": 64983,
+      "sha256": "debc596a2328a06d1370cce0ec7199e7e908cb5c6a1b3b3b292f8fe2ca33a25d",
+      "before": {
+        "at": 1269.5999999940395,
+        "url": "/work/sol-community-center",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 14,
+          "y": 552.96875,
+          "width": 292,
+          "height": 466.375
+        },
+        "gallery": {
+          "x": 14,
+          "y": 552.96875,
+          "width": 292,
+          "height": 1162.40625
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 552.96875,
+              "width": 292,
+              "height": 365
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 1049.34375,
+              "width": 292,
+              "height": 86.390625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 1215.109375,
+              "width": 292,
+              "height": 230.546875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 1506.34375,
+              "width": 292,
+              "height": 178.34375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 0.937319,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 552.96875,
+              "width": 292,
+              "height": 365
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-320-sol-mosaic.png",
+      "description": "SOL responsive mosaic at 320px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 844,
+      "bytes": 113207,
+      "sha256": "7f6ee4d6a40fc66ba6c8da354b073726eede29e8cc09a707ed6e3f883f1dabd6",
+      "before": {
+        "at": 2938.5999999940395,
+        "url": "/work/sol-community-center",
+        "scrollY": 433,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 14,
+          "y": 119.96875,
+          "width": 292,
+          "height": 466.375
+        },
+        "gallery": {
+          "x": 14,
+          "y": 119.96875,
+          "width": 292,
+          "height": 1162.40625
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 119.96875,
+              "width": 292,
+              "height": 365
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 616.34375,
+              "width": 292,
+              "height": 86.390625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 782.109375,
+              "width": 292,
+              "height": 230.546875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 1073.34375,
+              "width": 292,
+              "height": 178.34375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 0.970763,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 119.96875,
+              "width": 292,
+              "height": 365
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-768-sol-arrival.png",
+      "description": "SOL responsive arrival at 768px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "width": 768,
+      "height": 900,
+      "bytes": 194031,
+      "sha256": "2972140874488304ba03d56013a5e641d49f763b5407a041d89e40daff6f0b16",
+      "before": {
+        "at": 1284.5,
+        "url": "/work/sol-community-center",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 15.359375,
+          "y": 472.75,
+          "width": 350.640625,
+          "height": 660
+        },
+        "gallery": {
+          "x": 15.359375,
+          "y": 472.75,
+          "width": 737.28125,
+          "height": 660
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 376,
+            "bounds": {
+              "x": 15.359375,
+              "y": 472.75,
+              "width": 350.640625,
+              "height": 578
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 345,
+            "bounds": {
+              "x": 384,
+              "y": 472.75,
+              "width": 368.640625,
+              "height": 109.0625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 345,
+            "bounds": {
+              "x": 384,
+              "y": 811.75,
+              "width": 175.3125,
+              "height": 138.421875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 345,
+            "bounds": {
+              "x": 577.3125,
+              "y": 811.75,
+              "width": 175.328125,
+              "height": 107.078125
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 0.981139,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 15.359375,
+              "y": 472.75,
+              "width": 350.640625,
+              "height": 578
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-768-sol-mosaic.png",
+      "description": "SOL responsive mosaic at 768px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "width": 768,
+      "height": 900,
+      "bytes": 346563,
+      "sha256": "17c472631ce6c29330197171e9a5affc6f9744d5e6f58131c74490f51333f8b9",
+      "before": {
+        "at": 2491.1999999955297,
+        "url": "/work/sol-community-center",
+        "scrollY": 353,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 15.359375,
+          "y": 119.75,
+          "width": 350.640625,
+          "height": 660
+        },
+        "gallery": {
+          "x": 15.359375,
+          "y": 119.75,
+          "width": 737.28125,
+          "height": 660
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 376,
+            "bounds": {
+              "x": 15.359375,
+              "y": 119.75,
+              "width": 350.640625,
+              "height": 578
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 345,
+            "bounds": {
+              "x": 384,
+              "y": 119.75,
+              "width": 368.640625,
+              "height": 109.0625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 345,
+            "bounds": {
+              "x": 384,
+              "y": 458.75,
+              "width": 175.3125,
+              "height": 138.421875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 345,
+            "bounds": {
+              "x": 577.3125,
+              "y": 458.75,
+              "width": 175.328125,
+              "height": 107.078125
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 2.188095,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 15.359375,
+              "y": 119.75,
+              "width": 350.640625,
+              "height": 578
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1024-sol-arrival.png",
+      "description": "SOL responsive arrival at 1024px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "width": 1024,
+      "height": 900,
+      "bytes": 201396,
+      "sha256": "b890101ae56ec4cd1f4af030f33eff8706cc2c54a79480dbb5bd3b859edfcac8",
+      "before": {
+        "at": 1212.2000000029802,
+        "url": "/work/sol-community-center",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 20.46875,
+          "y": 557.96875,
+          "width": 469.015625,
+          "height": 630
+        },
+        "gallery": {
+          "x": 20.46875,
+          "y": 557.96875,
+          "width": 983.0625,
+          "height": 630
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_219TyT.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 501,
+            "bounds": {
+              "x": 20.46875,
+              "y": 557.96875,
+              "width": 469.015625,
+              "height": 546.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 460,
+            "bounds": {
+              "x": 512,
+              "y": 557.96875,
+              "width": 491.53125,
+              "height": 145.421875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 460,
+            "bounds": {
+              "x": 512,
+              "y": 884.21875,
+              "width": 234.5,
+              "height": 185.15625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 460,
+            "bounds": {
+              "x": 769.015625,
+              "y": 884.21875,
+              "width": 234.515625,
+              "height": 143.234375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 0.97633,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 20.46875,
+              "y": 557.96875,
+              "width": 469.015625,
+              "height": 546.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1024-sol-mosaic.png",
+      "description": "SOL responsive mosaic at 1024px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "width": 1024,
+      "height": 900,
+      "bytes": 526158,
+      "sha256": "a23e42bd79752452716aae4f5820e4158a340066e29086b5e0938e04dd912a4e",
+      "before": {
+        "at": 2580.60000000149,
+        "url": "/work/sol-community-center",
+        "scrollY": 438,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 20.46875,
+          "y": 119.96875,
+          "width": 469.015625,
+          "height": 630
+        },
+        "gallery": {
+          "x": 20.46875,
+          "y": 119.96875,
+          "width": 983.0625,
+          "height": 630
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_219TyT.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 501,
+            "bounds": {
+              "x": 20.46875,
+              "y": 119.96875,
+              "width": 469.015625,
+              "height": 546.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 460,
+            "bounds": {
+              "x": 512,
+              "y": 119.96875,
+              "width": 491.53125,
+              "height": 145.421875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 460,
+            "bounds": {
+              "x": 512,
+              "y": 446.21875,
+              "width": 234.5,
+              "height": 185.15625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 460,
+            "bounds": {
+              "x": 769.015625,
+              "y": 446.21875,
+              "width": 234.515625,
+              "height": 143.234375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 2.345131,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 20.46875,
+              "y": 119.96875,
+              "width": 469.015625,
+              "height": 546.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-reduced-motion.png",
+      "description": "SOL reduced-motion fallback with readable artwork, captions and no mounted video.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 808711,
+      "sha256": "f5af750548ced82a34f78f25afa4858877abdb1f03da4e9d318b9b56bdd6991b",
+      "before": {
+        "at": 2367.0999999940395,
+        "url": "/work/sol-community-center",
+        "scrollY": 551,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 28.796875,
+          "y": 120.140625,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 120.140625,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_219TyT.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z24halM.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 120.140625,
+              "width": 691.203125,
+              "height": 204.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z20CDxP.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 553.5625,
+              "width": 329.765625,
+              "height": 260.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1Rxwug.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 553.5625,
+              "width": 329.765625,
+              "height": 201.40625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-save-data.png",
+      "description": "SOL save-data fallback with readable artwork, captions and no mounted video.",
+      "mode": "save-data",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 808111,
+      "sha256": "684bb40f0a6f36278b318978a181379225a2d763ea2d1408e2ea9bf0db7aafe1",
+      "before": {
+        "at": 2390.2999999970198,
+        "url": "/work/sol-community-center",
+        "scrollY": 551,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 28.796875,
+          "y": 120.140625,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 120.140625,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_219TyT.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z24halM.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 120.140625,
+              "width": 691.203125,
+              "height": 204.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z20CDxP.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 553.5625,
+              "width": 329.765625,
+              "height": 260.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1Rxwug.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 553.5625,
+              "width": 329.765625,
+              "height": 201.40625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-no-js.png",
+      "description": "SOL no-js fallback with readable artwork, captions and no mounted video.",
+      "mode": "no-js",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 808361,
+      "sha256": "f6aec21674798446d3ac1b1cc04f59633828353ccfe40828a20227dd3ee00e40",
+      "before": {
+        "at": 2405.39999999851,
+        "url": "/work/sol-community-center",
+        "scrollY": 551,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 28.796875,
+          "y": 120.140625,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 120.140625,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_219TyT.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z24halM.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 120.140625,
+              "width": 691.203125,
+              "height": 204.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z20CDxP.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 553.5625,
+              "width": 329.765625,
+              "height": 260.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1Rxwug.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 553.5625,
+              "width": 329.765625,
+              "height": 201.40625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-reduced-motion.png",
+      "description": "SOL reduced-motion fallback with readable artwork, captions and no mounted video.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 208709,
+      "sha256": "113d7d8fa07beabc06d24691d47a1ce5debc7beb5c334f03540310ce446b43e2",
+      "before": {
+        "at": 2656.7000000029802,
+        "url": "/work/sol-community-center",
+        "scrollY": 384,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 1331.28125
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 685.5625,
+              "width": 362,
+              "height": 107.109375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 853.359375,
+              "width": 362,
+              "height": 285.828125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1199.875,
+              "width": 362,
+              "height": 221.09375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-save-data.png",
+      "description": "SOL save-data fallback with readable artwork, captions and no mounted video.",
+      "mode": "save-data",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 208709,
+      "sha256": "113d7d8fa07beabc06d24691d47a1ce5debc7beb5c334f03540310ce446b43e2",
+      "before": {
+        "at": 2613.2999999970198,
+        "url": "/work/sol-community-center",
+        "scrollY": 384,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 1331.28125
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 685.5625,
+              "width": 362,
+              "height": 107.109375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 853.359375,
+              "width": 362,
+              "height": 285.828125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1199.875,
+              "width": 362,
+              "height": 221.09375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-no-js.png",
+      "description": "SOL no-js fallback with readable artwork, captions and no mounted video.",
+      "mode": "no-js",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 208420,
+      "sha256": "c201b9ca0a8a044209a466c42a4a718b3e962a3aee79064d18bfb1b276d4342e",
+      "before": {
+        "at": 2602.0999999940395,
+        "url": "/work/sol-community-center",
+        "scrollY": 384,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 1331.28125
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 685.5625,
+              "width": 362,
+              "height": 107.109375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 853.359375,
+              "width": 362,
+              "height": 285.828125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1199.875,
+              "width": 362,
+              "height": 221.09375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-sol-community-center-full-page.png",
+      "description": "SOL Community Center: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 4615,
+      "bytes": 1871356,
+      "sha256": "a340a5e13a948ccb7271524cf6480550c7445d78ee1793fdbab974d9ae405622",
+      "before": {
+        "at": 3595.3000000044703,
+        "url": "/work/sol-community-center",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 28.796875,
+          "y": 671.140625,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 671.140625,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_219TyT.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 671.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z24halM.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 671.140625,
+              "width": 691.203125,
+              "height": 204.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z20CDxP.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 1104.5625,
+              "width": 329.765625,
+              "height": 260.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1Rxwug.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 1104.5625,
+              "width": 329.765625,
+              "height": 201.40625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": 671.140625,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-bunzo-full-page.png",
+      "description": "Bunzo: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 5138,
+      "bytes": 2103266,
+      "sha256": "074685f6fd54875fc8ff6efdc19e0e9a39e1ac4dfe75f88d2898e96f72d3d4db",
+      "before": {
+        "at": 3407.39999999851,
+        "url": "/work/bunzo",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "bunzo",
+        "title": "Bunzo.",
+        "hero": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 659.53125,
+          "height": 835.1875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 835.1875
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-cup-detail.CBuQNYF0_Q2pn6.webp",
+            "alt": "Red Bunzo takeaway drink cup with large black-and-white lettering and a white lid.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-packaging-wide.BzEIOzUP_zLBCL.webp",
+            "alt": "Bunzo red takeaway bag, burger box, drink cup, fries carton and patterned wrapper arranged together.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 579.4375,
+              "width": 691.203125,
+              "height": 226.078125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-identity.B7wBiny0_Z1lgwAP.webp",
+            "alt": "Bunzo black-and-white logo, yellow accent, burger photography and alternate letterform marks on a red board.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 720,
+              "y": 1012.859375,
+              "width": 329.765625,
+              "height": 185.71875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-social-layouts.DurTkaS9_Z2k2jC0.webp",
+            "alt": "Bunzo promotional artwork with red-and-cream layouts, burger photographs and bold typographic headlines.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 1081.4375,
+              "y": 1012.859375,
+              "width": 329.765625,
+              "height": 185.71875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-bunzo",
+            "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+            "time": 0.906933,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 659.53125,
+              "height": 751.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-triarch-full-page.png",
+      "description": "Triarch: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 4053,
+      "bytes": 1152657,
+      "sha256": "8f2c4715760f0fedb79374e735cb3c743c4a4061867a9ab393c14994fcc5fc86",
+      "before": {
+        "at": 3142.7999999970198,
+        "url": "/work/triarch",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "triarch",
+        "title": "Triarch.",
+        "hero": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-business-card.B2kBDRlH_ZxQoTE.webp",
+            "alt": "White Triarch business card with a dark wordmark and thin yellow line on overlapping textured gray surfaces.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-letterform-detail.Bcq5QPDG_11jOaj.webp",
+            "alt": "Dark Triarch wordmark and horizontal tagline over pale geometric architectural imagery.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 579.4375,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-device-detail.Bf9PTwAM_Z1luBsC.webp",
+            "alt": "White Triarch monogram sticker on a silver laptop beside a white mouse.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 1028.234375,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-triarch",
+            "source": "http://127.0.0.1:4430/media/portfolio/triarch-portrait.mp4",
+            "time": 1.017022,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-capture-full-page.png",
+      "description": "Capture: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 4664,
+      "bytes": 2218025,
+      "sha256": "122cac015cd22b214d8bfe7246a0089adea3ce1c17eca81e490b5c0f792f8ba1",
+      "before": {
+        "at": 3359.39999999851,
+        "url": "/work/capture",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "capture",
+        "title": "Capture.",
+        "hero": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 1407.890625
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-applications.lhBr_dKb_ZGX64y.webp",
+            "alt": "Capture red circular graphics on dark stationery, notebook, badge, signage and screen presentation mockups.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-identity.CdbNOS9r_Z8tVor.webp",
+            "alt": "Capture red-and-black target-like logo, alternate marks, palette swatches and circular graphic fragments.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": 1447.28125,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-stationery-detail.Cje0Alcr_Z1crSGQ.webp",
+            "alt": "Black Capture stationery folder beside a white printed sheet on a dark gray background.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 929.453125,
+              "y": 1512.28125,
+              "width": 481.75,
+              "height": 443.359375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-by-tech-group-full-page.png",
+      "description": "By Tech Group: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 3767,
+      "bytes": 1006976,
+      "sha256": "2d7720de77a308de7e079d59c01b8421de7dda72b4a0dd2598d7372fd00d3379",
+      "before": {
+        "at": 3013.8000000044703,
+        "url": "/work/by-tech-group",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "by-tech-group",
+        "title": "By Tech Group.",
+        "hero": {
+          "x": 28.796875,
+          "y": 589.4375,
+          "width": 740.65625,
+          "height": 500.296875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 553.484375
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-applications.DAXrhYT4_ZS3Uep.webp",
+            "alt": "By Tech Group blue-and-green symbol on dark stationery, a black mug, tote, lanyard and phone presentation.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 589.4375,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-identity.BGAf8P-l_andJb.webp",
+            "alt": "By Tech Group blue-to-green monogram on black, with monochrome logo treatments and icon mockups.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": 733.4375,
+              "width": 569.75,
+              "height": 320.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-by-tech-group",
+            "source": "http://127.0.0.1:4430/media/portfolio/by-tech-group-landscape.mp4",
+            "time": 0.98219,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 589.4375,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-sol-community-center-full-page.png",
+      "description": "SOL Community Center: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 4780,
+      "bytes": 921066,
+      "sha256": "6e8fe0627c17a7176eeb59a303c8c7534036fbe697a99a9721b1ad2931c16a6c",
+      "before": {
+        "at": 3514.39999999851,
+        "url": "/work/sol-community-center",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "sol-community-center",
+        "title": "SOL Community Center.",
+        "hero": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 1331.28125
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-applications.CHSjn_90_2rrBui.webp",
+            "alt": "SOL Community Center signage, shirts, tote, cap, stationery and banner mockups in green and gold.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-notice-layouts.DuB0r9JG_Z1IoFQt.webp",
+            "alt": "Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1069.5625,
+              "width": 362,
+              "height": 107.109375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-identity-system.jaH81r6G_Z1TNmLh.webp",
+            "alt": "SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1237.359375,
+              "width": 362,
+              "height": 285.828125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/sol-community-signage.BgtsZzfk_1vkQaT.webp",
+            "alt": "SOL Community Center gold-and-green emblem and lettering on an exterior-sign mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1583.875,
+              "width": 362,
+              "height": 221.09375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-sol-community-center",
+            "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+            "time": 0.93245,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-bunzo-full-page.png",
+      "description": "Bunzo: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 4706,
+      "bytes": 942868,
+      "sha256": "cc564ff8352ca2db3def2f5114661e82177faf6e4ba686dae6192fa186829cc8",
+      "before": {
+        "at": 3259.39999999851,
+        "url": "/work/bunzo",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "bunzo",
+        "title": "Bunzo.",
+        "hero": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 1243.390625
+        },
+        "variant": "mosaic-4",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-cup-detail.CBuQNYF0_Q2pn6.webp",
+            "alt": "Red Bunzo takeaway drink cup with large black-and-white lettering and a white lid.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-packaging-wide.BzEIOzUP_L8B3c.webp",
+            "alt": "Bunzo red takeaway bag, burger box, drink cup, fries carton and patterned wrapper arranged together.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1020.96875,
+              "width": 362,
+              "height": 118.390625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-identity.B7wBiny0_Zrxcia.webp",
+            "alt": "Bunzo black-and-white logo, yellow accent, burger photography and alternate letterform marks on a red board.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1200.046875,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/bunzo-social-layouts.DurTkaS9_Z143blQ.webp",
+            "alt": "Bunzo promotional artwork with red-and-cream layouts, burger photographs and bold typographic headlines.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1464.609375,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-bunzo",
+            "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+            "time": 0.872105,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-triarch-full-page.png",
+      "description": "Triarch: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 4250,
+      "bytes": 566581,
+      "sha256": "5263b7b49dda43fa69d6f1859ec1cdce23d3879e55591a25fe9fac4c55cc69ec",
+      "before": {
+        "at": 3243.39999999851,
+        "url": "/work/triarch",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "triarch",
+        "title": "Triarch.",
+        "hero": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 1266.9375
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-business-card.B2kBDRlH_ZY9qYq.webp",
+            "alt": "White Triarch business card with a dark wordmark and thin yellow line on overlapping textured gray surfaces.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-letterform-detail.Bcq5QPDG_1sUmFt.webp",
+            "alt": "Dark Triarch wordmark and horizontal tagline over pale geometric architectural imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1020.96875,
+              "width": 362,
+              "height": 199.375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/triarch-device-detail.Bf9PTwAM_ZgqcnL.webp",
+            "alt": "White Triarch monogram sticker on a silver laptop beside a white mouse.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1281.03125,
+              "width": 362,
+              "height": 411
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-triarch",
+            "source": "http://127.0.0.1:4430/media/portfolio/triarch-portrait.mp4",
+            "time": 0.866685,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-capture-full-page.png",
+      "description": "Capture: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 3876,
+      "bytes": 562152,
+      "sha256": "830a20b604756aa36c031a9a4e27f75673406b62d5e0cdcec06cd41f006b4103",
+      "before": {
+        "at": 3038.10000000149,
+        "url": "/work/capture",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "capture",
+        "title": "Capture.",
+        "hero": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 892.921875
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-applications.lhBr_dKb_27xJQ4.webp",
+            "alt": "Capture red circular graphics on dark stationery, notebook, badge, signage and screen presentation mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-identity.CdbNOS9r_ZVHGBF.webp",
+            "alt": "Capture red-and-black target-like logo, alternate marks, palette swatches and circular graphic fragments.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 720.328125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/capture-stationery-detail.Cje0Alcr_Z2pvczC.webp",
+            "alt": "Black Capture stationery folder beside a white printed sheet on a dark gray background.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 984.875,
+              "width": 361.984375,
+              "height": 333.140625
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-by-tech-group-full-page.png",
+      "description": "By Tech Group: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 3850,
+      "bytes": 425310,
+      "sha256": "50a355098a9b8fcb0f922039d327c20983a593e18931930d5d3798bce750bc74",
+      "before": {
+        "at": 2939.60000000149,
+        "url": "/work/by-tech-group",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "by-tech-group",
+        "title": "By Tech Group.",
+        "hero": {
+          "x": 14,
+          "y": 465.78125,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 839.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-applications.DAXrhYT4_mUd1J.webp",
+            "alt": "By Tech Group blue-and-green symbol on dark stationery, a black mug, tote, lanyard and phone presentation.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 465.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4430/_astro/by-tech-identity.BGAf8P-l_ZCPwt3.webp",
+            "alt": "By Tech Group blue-to-green monogram on black, with monochrome logo treatments and icon mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1030.96875,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-by-tech-group",
+            "source": "http://127.0.0.1:4430/media/portfolio/by-tech-group-portrait.mp4",
+            "time": 0.884613,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 465.78125,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "recordings": [
+    {
+      "file": "case-1440-sol-bunzo-journey.mp4",
+      "nativeFile": "/workspace/case-premium-review/native/page@5c867424e32552435a5b803a40b6114b.webm",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "durationSeconds": 40.36,
+      "bytes": 4650544,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 1440,
+          "height": 900,
+          "frameRate": "25/1"
+        }
+      ]
+    },
+    {
+      "file": "case-390-sol-bunzo-journey.mp4",
+      "nativeFile": "/workspace/case-premium-review/native/page@ad7647af4e1c8c59cfcb5f0d90cd4592.webm",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "durationSeconds": 37.44,
+      "bytes": 3218547,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 390,
+          "height": 844,
+          "frameRate": "25/1"
+        }
+      ]
+    }
+  ],
+  "measurements": [
+    {
+      "kind": "visible-approved-playback",
+      "slug": "sol-community-center",
+      "width": 1440,
+      "elapsedMs": 9759.19999999553,
+      "samples": [
+        {
+          "at": 3163.10000000149,
+          "time": 1.564801,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3706.5,
+          "time": 2.10805,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4243.20000000298,
+          "time": 2.644849,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4797.20000000298,
+          "time": 3.198806,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5328.9000000059605,
+          "time": 3.730608,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5885.30000000447,
+          "time": 4.287023,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6429.70000000298,
+          "time": 4.831408,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6961.30000000447,
+          "time": 5.362915,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7496.80000000447,
+          "time": 0.138033,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8081.80000000447,
+          "time": 0.723154,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8614.90000000596,
+          "time": 1.25615,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9134.90000000596,
+          "time": 1.776158,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9669.5,
+          "time": 2.310825,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10213,
+          "time": 2.854347,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10733,
+          "time": 3.374385,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 11278.40000000596,
+          "time": 3.91968,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 11819.70000000298,
+          "time": 4.460948,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 12368.40000000596,
+          "time": 5.009829,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        }
+      ]
+    },
+    {
+      "kind": "visible-approved-playback",
+      "slug": "bunzo",
+      "width": 1440,
+      "elapsedMs": 9558.5,
+      "samples": [
+        {
+          "at": 2054.4000000059605,
+          "time": 1.919093,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 2573.9000000059605,
+          "time": 2.438531,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3102.10000000149,
+          "time": 2.966837,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3615.8000000044703,
+          "time": 3.480532,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4124.60000000149,
+          "time": 3.989293,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4658.30000000447,
+          "time": 4.522934,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5207,
+          "time": 5.071703,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5766.60000000149,
+          "time": 5.631283,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6297.30000000447,
+          "time": 0.406071,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6860.20000000298,
+          "time": 0.968977,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7387.5,
+          "time": 1.496329,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7920.9000000059605,
+          "time": 2.029724,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8451.80000000447,
+          "time": 2.56058,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8999.90000000596,
+          "time": 3.108658,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9516.60000000149,
+          "time": 3.625365,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10043.40000000596,
+          "time": 4.152175,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10562.70000000298,
+          "time": 4.671502,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 11071.90000000596,
+          "time": 5.180744,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        }
+      ]
+    },
+    {
+      "kind": "native-navigation",
+      "width": 1440,
+      "sequence": ["/work/sol-community-center", "/work/bunzo", "/work"],
+      "finalURL": "http://127.0.0.1:4430/work",
+      "workScenes": 11
+    },
+    {
+      "kind": "visible-approved-playback",
+      "slug": "sol-community-center",
+      "width": 390,
+      "elapsedMs": 9261,
+      "samples": [
+        {
+          "at": 1780.3999999985099,
+          "time": 1.449209,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 2306.5,
+          "time": 1.975214,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 2819.89999999851,
+          "time": 2.488608,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3328.2999999970198,
+          "time": 2.996925,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3836.7999999970198,
+          "time": 3.505425,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4350.39999999851,
+          "time": 4.019142,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4861.60000000149,
+          "time": 4.530338,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5369.60000000149,
+          "time": 5.038235,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5878.60000000149,
+          "time": 5.547364,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6417.60000000149,
+          "time": 0.315503,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6935.19999999553,
+          "time": 0.833017,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7443.29999999702,
+          "time": 1.341189,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7951,
+          "time": 1.84889,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8459.60000000149,
+          "time": 2.3575,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8968,
+          "time": 2.865838,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9484.10000000149,
+          "time": 3.381985,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9993.10000000149,
+          "time": 3.890914,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10504.19999999553,
+          "time": 4.402041,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/sol-community-center-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        }
+      ]
+    },
+    {
+      "kind": "visible-approved-playback",
+      "slug": "bunzo",
+      "width": 390,
+      "elapsedMs": 9298.90000000596,
+      "samples": [
+        {
+          "at": 1497.8000000044703,
+          "time": 1.352883,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 2020.3999999985099,
+          "time": 1.875489,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 2533,
+          "time": 2.388028,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3055.7000000029802,
+          "time": 2.910727,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3570.7000000029802,
+          "time": 3.42572,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4083.5,
+          "time": 3.938556,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4602.5,
+          "time": 4.457566,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5134.70000000298,
+          "time": 4.989803,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5647.5,
+          "time": 5.502501,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6157.80000000447,
+          "time": 0.256608,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6666,
+          "time": 0.76484,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7179.30000000447,
+          "time": 1.278029,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7698.70000000298,
+          "time": 1.797445,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8216.89999999851,
+          "time": 2.315724,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8732.80000000447,
+          "time": 2.831629,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9252.5,
+          "time": 3.351326,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9762.39999999851,
+          "time": 3.861252,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10271.30000000447,
+          "time": 4.370092,
+          "paused": false,
+          "source": "http://127.0.0.1:4430/media/portfolio/bunzo-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        }
+      ]
+    },
+    {
+      "kind": "native-navigation",
+      "width": 390,
+      "sequence": ["/work/sol-community-center", "/work/bunzo", "/work"],
+      "finalURL": "http://127.0.0.1:4430/work",
+      "workScenes": 11
+    }
+  ],
+  "errors": [],
+  "failedRequests": []
+}

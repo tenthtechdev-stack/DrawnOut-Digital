@@ -482,7 +482,7 @@ const image = (file, label) =>
 const gallery = [
   '# Premium project cases — five-pilot review',
   '',
-  '[Validation](../../docs/case-premium/VALIDATION.md) · [Asset curation](../../docs/case-premium/ASSET_CURATION.md) · [Capture manifest](capture-evidence.json)',
+  '[Draft PR #19](https://github.com/tenthtech/drawnout-digital/pull/19) · [Validation](../../docs/case-premium/VALIDATION.md) · [Asset curation](../../docs/case-premium/ASSET_CURATION.md) · [Capture manifest](capture-evidence.json)',
   '',
   'Five review pilots built on the approved immersive Work index. Only SOL Community Center, Bunzo, Triarch, Capture and By Tech Group use the new case presentation. Project facts, attribution and custom SEO remain subject to the existing approval gates.',
   '',
@@ -554,6 +554,12 @@ for (const slug of ['sol', 'bunzo'])
 gallery.push(
   '',
   'These frames are taken after more than eight seconds of actual decoded playback. The complete motion appears in the journey recordings above.',
+  '',
+  '## Recorded gallery browsing',
+  '',
+  '| Desktop | Mobile |',
+  '| --- | --- |',
+  '| ![SOL desktop gallery during native browsing](case-1440-sol-journey-gallery.png) | ![SOL mobile gallery during native browsing](case-390-sol-journey-gallery.png) |',
   '',
   '## Responsive compositions',
   '',
