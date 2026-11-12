@@ -47,7 +47,13 @@ const variant = Math.min(images.length, 4);
           aspectRatio={`${image.src.width} / ${image.src.height}`}
           motion={index === 0 && !details ? motion : undefined}
           motionId={index === 0 && !details && motion ? motionId : undefined}
-          sizes={index === 0 ? '(max-width: 767px) 92vw, 49vw' : '(max-width: 767px) 92vw, 45vw'}
+          sizes={
+            slug === 'capture' && index === 0 && !details
+              ? '(max-width: 767px) 92vw, (max-width: 1600px) 96vw, 1536px'
+              : index === 0
+                ? '(max-width: 767px) 92vw, 49vw'
+                : '(max-width: 767px) 92vw, 45vw'
+          }
         />
       </div>
       <figcaption>

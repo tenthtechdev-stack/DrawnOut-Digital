@@ -447,3 +447,21 @@ test('changing motion preferences releases case footage and immediately restores
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await playVisible(video);
 });
+
+test('Capture lead requests enough source resolution for its full-width desktop composition', async ({
+  page,
+}) => {
+  await page.setViewportSize(viewportFor(1440));
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await ready(page, 'capture');
+  expect(await page.evaluate(() => devicePixelRatio)).toBe(1);
+  const image = rootFor(page).locator('[data-case-hero] picture img');
+  await image.scrollIntoViewIfNeeded();
+  await expect(image).toHaveJSProperty('complete', true);
+  const renderedWidth = await image.evaluate((node) => node.getBoundingClientRect().width);
+  // This artwork spans the composition rather than a half-width mosaic cell.
+  expect(renderedWidth).toBeGreaterThan(1200);
+  await expect
+    .poll(() => image.evaluate((node: HTMLImageElement) => node.naturalWidth))
+    .toBeGreaterThanOrEqual(renderedWidth * 0.9);
+});

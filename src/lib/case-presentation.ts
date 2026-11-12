@@ -63,14 +63,14 @@ const plans: Record<(typeof casePilotSlugs)[number], PresentationPlan> = {
         caption: 'The circular identity across physical application mockups.',
       },
       {
-        key: 'sol-identity-system',
-        alt: 'SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.',
-        caption: 'Symbol, palette, typography and repeating forms.',
-      },
-      {
         key: 'sol-notice-layouts',
         alt: 'Four SOL Community Center announcement layouts using cream, forest green, yellow and large serif lettering.',
         caption: 'A shared graphic vocabulary across four announcements.',
+      },
+      {
+        key: 'sol-identity-system',
+        alt: 'SOL circular logo variations, forest-green and gold palette, serif typography and repeating pattern samples.',
+        caption: 'Symbol, palette, typography and repeating forms.',
       },
       {
         key: 'sol-community-signage',
