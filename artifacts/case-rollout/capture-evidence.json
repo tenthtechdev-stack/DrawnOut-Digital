@@ -1,0 +1,5993 @@
+{
+  "capturedAt": "2026-11-12T16:14:23.167Z",
+  "sourceCommit": "e50d7269f9e91b89a786a30c2d164b7a38277cc2",
+  "sourceFiles": {
+    "src/pages/work/[slug].astro": "590e2f5094874bf6a0f0adfb7821cd48cd17263e10ba783644075dda582a8e56",
+    "src/components/case/PremiumCaseStudy.astro": "acb48f47f503f6354049c2b3006dda48fbe19aa491b170b6e0d779f5d5d84bd2",
+    "src/components/case/PremiumCaseGallery.astro": "a0ef2e0f6e100acd0b6c45fe979b3d256af1f728f0128775c62998f2722ae6d6",
+    "src/styles/case-premium.css": "0053b99471d5c199ca5d5830a7b96b07b7aa57afd00222533656a44c199018c9",
+    "src/lib/case-presentation.ts": "18b1ca12822f563f5ff21c558d3bdc7243457daf011ee3745042f230a231e8fe",
+    "src/scripts/case-premium-motion.ts": "6ece24b74b169196f4e1bfddbcb12363abbba534331753f77e17965f9fda9bbc",
+    "src/scripts/portfolio-motion.ts": "520796f1c5ed6493ef9011b63fb908a7618f2af5cd619ef5a6d56fa4c3718c50",
+    "src/components/MediaSlot.astro": "370a3345a20ca06e82ae4af8293d967904cf72b029a4c4f154b363a31a882701",
+    "src/components/PortfolioMotionToggle.astro": "6fce2181c8272966f8fe46488ca0e366adb32be784a13a69941056dc3293fcbc",
+    "src/lib/portfolio-motion-policy.ts": "112981ba2dffeef3c367d46595b64ff24859c3ffd8d343a843e94379fb4e198b"
+  },
+  "baseURL": "http://127.0.0.1:4440",
+  "method": "Real production Chromium viewport screenshots and native Playwright browser videos. Native wheel input drives forward/reverse browsing; real links provide previous/next-project and Work navigation. H.264 transcodes retain browser timing. The Churros and U Wanna Smoothie loops visibly play for at least eight seconds each without seeking. Full-page stills use a separate software compositor to avoid cloud SwiftShader tall-image repetition. Mobile is Chromium touch/viewport emulation, not physical-device testing.",
+  "browser": "154.0.8037.57",
+  "screenshots": [
+    {
+      "file": "case-1440-churros-motion.png",
+      "description": "Approved Churros footage after more than eight seconds of actual visible playback.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 987215,
+      "sha256": "23ec03d216e696f29a7bfedc50ee300aa5794ee993673b9d13e2003062627ae5",
+      "before": {
+        "at": 12781.5,
+        "url": "/work/churros",
+        "scrollY": 628,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 28.796875,
+          "y": 71.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 71.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_ok6m.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 71.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_2og4jV.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 71.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_2wKpBY.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 520.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 5.337763,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 71.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-churros-journey-gallery.png",
+      "description": "Churros gallery during native forward browsing.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 1009225,
+      "sha256": "8086d274ee7bdd423fcb5b7f8ff225ffbcb3b1d9a0f6a643e3864f0495ec11f1",
+      "before": {
+        "at": 14388.89999999106,
+        "url": "/work/churros",
+        "scrollY": 580,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_ok6m.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_2og4jV.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_2wKpBY.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 568.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 1.170131,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-next-capture.png",
+      "description": "Existing next-project link opens the previously approved Capture pilot.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 415653,
+      "sha256": "1d4ba49198982d5762d8bbb7f839c81d48cc39f7138b917ceb35cb070f16e513",
+      "before": {
+        "at": 1021.7999999970198,
+        "url": "/work/capture",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "capture",
+        "title": "Capture.",
+        "hero": {
+          "x": 28.796875,
+          "y": 579.4444580078125,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 1407.890625
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/capture-applications.lhBr_dKb_ZGX64y.webp",
+            "alt": "Capture red circular graphics on dark stationery, notebook, badge, signage and screen presentation mockups.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4444580078125,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/capture-identity.CdbNOS9r_Z8tVor.webp",
+            "alt": "Capture red-and-black target-like logo, alternate marks, palette swatches and circular graphic fragments.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": 1447.28125,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/capture-stationery-detail.Cje0Alcr_Z1crSGQ.webp",
+            "alt": "Black Capture stationery folder beside a white printed sheet on a dark gray background.",
+            "complete": true,
+            "naturalWidth": 647,
+            "bounds": {
+              "x": 929.453125,
+              "y": 1512.28125,
+              "width": 481.75,
+              "height": 443.359375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-u-wanna-smoothie-motion.png",
+      "description": "Approved U Wanna Smoothie footage after more than eight seconds of actual visible playback.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 621334,
+      "sha256": "774e3add1da9d3be6e417d120cb14f1210927af95b2e5b03d493f04f446f8213",
+      "before": {
+        "at": 11850.59999999404,
+        "url": "/work/u-wanna-smoothie",
+        "scrollY": 628,
+        "overflow": false,
+        "slug": "u-wanna-smoothie",
+        "title": "U Wanna Smoothie.",
+        "hero": {
+          "x": 28.796875,
+          "y": 71.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 71.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-identity.BILl84Aa_1FulaF.webp",
+            "alt": "U Wanna Smoothie pink-and-green presentation with a circular fruit-and-cup symbol beside a hand holding a green drink in a clear cup.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 71.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-color.yOxVXOpo_Zpdf4J.webp",
+            "alt": "U Wanna Smoothie color swatches, citrus and leaf graphics, pink fields and a purple berry-drink image.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 71.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-menu.L9Y1qIBG_1EH7wa.webp",
+            "alt": "U Wanna Smoothie folded-menu concepts in pink and green surrounded by kiwi and berry imagery.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 520.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-u-wanna-smoothie",
+            "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+            "time": 4.756022,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 71.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-return-work.png",
+      "description": "Native All Work navigation returns to the approved eleven-project index.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 288730,
+      "sha256": "a3ee099d5e5a092b4e9c050624389522ec1fcba3ad539db9d5f6d2909909a6ba",
+      "before": {
+        "at": 1079.7999999970198,
+        "url": "/work",
+        "scrollY": 0,
+        "overflow": false,
+        "hero": null,
+        "gallery": null,
+        "images": [],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-churros-motion.png",
+      "description": "Approved Churros footage after more than eight seconds of actual visible playback.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 277875,
+      "sha256": "4fbac791d81fa5588c8afccb8c84ff620380aae735377df9853a0d847804a251",
+      "before": {
+        "at": 11197.20000000298,
+        "url": "/work/churros",
+        "scrollY": 309,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 14,
+          "y": 195.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 195.375,
+          "width": 362,
+          "height": 1064.3125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 195.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 760.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1025.125,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 5.047639,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 195.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-churros-journey-gallery.png",
+      "description": "Churros gallery during native forward browsing.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 338104,
+      "sha256": "b67f0bd17a809d984931df2fade555858d28204a05e383c3e36a5f1f75047d9d",
+      "before": {
+        "at": 12765.90000000596,
+        "url": "/work/churros",
+        "scrollY": 385,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 14,
+          "y": 119.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 119.375,
+          "width": 362,
+          "height": 1064.3125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 119.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 684.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 949.125,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 0.956648,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 119.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-next-capture.png",
+      "description": "Existing next-project link opens the previously approved Capture pilot.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 168301,
+      "sha256": "560d1911315e40b97a8ea696b18073bcf641c317fbf6a1237c3d2989d9a161d7",
+      "before": {
+        "at": 1067.9000000059605,
+        "url": "/work/capture",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "capture",
+        "title": "Capture.",
+        "hero": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 892.921875
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/capture-applications.lhBr_dKb_27xJQ4.webp",
+            "alt": "Capture red circular graphics on dark stationery, notebook, badge, signage and screen presentation mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/capture-identity.CdbNOS9r_ZVHGBF.webp",
+            "alt": "Capture red-and-black target-like logo, alternate marks, palette swatches and circular graphic fragments.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 720.328125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/capture-stationery-detail.Cje0Alcr_Z2pvczC.webp",
+            "alt": "Black Capture stationery folder beside a white printed sheet on a dark gray background.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 984.875,
+              "width": 361.984375,
+              "height": 333.140625
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-u-wanna-smoothie-motion.png",
+      "description": "Approved U Wanna Smoothie footage after more than eight seconds of actual visible playback.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 150281,
+      "sha256": "67a0330f645a00753490382ca905f1b382e3f8d175d804ced88b09b8add8a747",
+      "before": {
+        "at": 10786.300000011921,
+        "url": "/work/u-wanna-smoothie",
+        "scrollY": 309,
+        "overflow": false,
+        "slug": "u-wanna-smoothie",
+        "title": "U Wanna Smoothie.",
+        "hero": {
+          "x": 14,
+          "y": 195.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 195.375,
+          "width": 362,
+          "height": 1049.21875
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-identity.BILl84Aa_Z1YDTEa.webp",
+            "alt": "U Wanna Smoothie pink-and-green presentation with a circular fruit-and-cup symbol beside a hand holding a green drink in a clear cup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 195.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-color.yOxVXOpo_tv5dV.webp",
+            "alt": "U Wanna Smoothie color swatches, citrus and leaf graphics, pink fields and a purple berry-drink image.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 760.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-menu.L9Y1qIBG_Z28xNzd.webp",
+            "alt": "U Wanna Smoothie folded-menu concepts in pink and green surrounded by kiwi and berry imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1025.125,
+              "width": 362,
+              "height": 188.78125
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-u-wanna-smoothie",
+            "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+            "time": 4.923073,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 195.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-return-work.png",
+      "description": "Native All Work navigation returns to the approved eleven-project index.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 76716,
+      "sha256": "f3b680a9075969e1e909a58451ef24df67fe79e04f8ca229dacc0728aebf0539",
+      "before": {
+        "at": 1019.2000000029802,
+        "url": "/work",
+        "scrollY": 0,
+        "overflow": false,
+        "hero": null,
+        "gallery": null,
+        "images": [],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-churros-arrival.png",
+      "description": "Churros Dessert Shop: complete editorial arrival at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 287210,
+      "sha256": "f62f57c4d96fadf94142fdd7e8c02cc92e4b592bf6df61b41709d95ddf63d8e8",
+      "before": {
+        "at": 1150.5,
+        "url": "/work/churros",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 28.796875,
+          "y": 699.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 699.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_ok6m.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_2og4jV.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_2wKpBY.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 1148.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-churros-mosaic.png",
+      "description": "Churros Dessert Shop: curated responsive artwork composition at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 1008730,
+      "sha256": "7a421229cb4d50c2aa7867f610978cc12370ad81a68a34148773f292935ab7ca",
+      "before": {
+        "at": 2572.9000000059605,
+        "url": "/work/churros",
+        "scrollY": 580,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_ok6m.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_2og4jV.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_2wKpBY.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 568.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 1.214416,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-churros-editorial.png",
+      "description": "Churros Dessert Shop: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 103062,
+      "sha256": "3f78e9e42ad1a42db78566da0a7f126e94f73029ec45010a658aa24e8e31b4d8",
+      "before": {
+        "at": 4355.9000000059605,
+        "url": "/work/churros",
+        "scrollY": 1419,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 28.796875,
+          "y": -719.609375,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": -719.609375,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_ok6m.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": -719.609375,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_2og4jV.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": -719.609375,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_2wKpBY.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": -270.8125,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": -719.609375,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-khalo-arrival.png",
+      "description": "Khalo: complete editorial arrival at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 459785,
+      "sha256": "c727e166f3a597f2fd1b126772737c35ef0c57175ad08497339524a4d47f1250",
+      "before": {
+        "at": 1028.7999999970198,
+        "url": "/work/khalo",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "khalo",
+        "title": "Khalo.",
+        "hero": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 1306.5
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-packaging.obGhBFNs_80N3f.webp",
+            "alt": "Khalo orange-and-cream takeaway packaging with an illustrated paper bag, drink cup and fries container below burger imagery.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-identity.DYtZWM5J_1Ws6ch.webp",
+            "alt": "Khalo orange illustrated wordmark and a cartoon character eating a burger against patterned cream artwork.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": 1447.28125,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-applications.Cnl5_lJd_jvWCM.webp",
+            "alt": "Khalo application board showing signage, apparel, wrapping paper and a phone mockup in orange and cream.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 929.453125,
+              "y": 1512.28125,
+              "width": 481.75,
+              "height": 271.3125
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-khalo-mosaic.png",
+      "description": "Khalo: curated responsive artwork composition at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 1147982,
+      "sha256": "ffff7e278c14dd8ae4cbc492d3f151c5fc9d4b444b9ecb4d875459400f8a1fd7",
+      "before": {
+        "at": 2805.5,
+        "url": "/work/khalo",
+        "scrollY": 459,
+        "overflow": false,
+        "slug": "khalo",
+        "title": "Khalo.",
+        "hero": {
+          "x": 28.796875,
+          "y": 120.4375,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 120.4375,
+          "width": 1382.40625,
+          "height": 1306.5
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-packaging.obGhBFNs_80N3f.webp",
+            "alt": "Khalo orange-and-cream takeaway packaging with an illustrated paper bag, drink cup and fries container below burger imagery.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.4375,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-identity.DYtZWM5J_1Ws6ch.webp",
+            "alt": "Khalo orange illustrated wordmark and a cartoon character eating a burger against patterned cream artwork.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": 988.28125,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-applications.Cnl5_lJd_jvWCM.webp",
+            "alt": "Khalo application board showing signage, apparel, wrapping paper and a phone mockup in orange and cream.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 929.453125,
+              "y": 1053.28125,
+              "width": 481.75,
+              "height": 271.3125
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-khalo-editorial.png",
+      "description": "Khalo: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 114628,
+      "sha256": "922f6520497f2e80ed754396f9a39696ef225022615cee0caad95d915d5b6a0e",
+      "before": {
+        "at": 4978.5999999940395,
+        "url": "/work/khalo",
+        "scrollY": 1766,
+        "overflow": false,
+        "slug": "khalo",
+        "title": "Khalo.",
+        "hero": {
+          "x": 28.796875,
+          "y": -1186.5625,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": -1186.5625,
+          "width": 1382.40625,
+          "height": 1306.5
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-packaging.obGhBFNs_80N3f.webp",
+            "alt": "Khalo orange-and-cream takeaway packaging with an illustrated paper bag, drink cup and fries container below burger imagery.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": -1186.5625,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-identity.DYtZWM5J_1Ws6ch.webp",
+            "alt": "Khalo orange illustrated wordmark and a cartoon character eating a burger against patterned cream artwork.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": -318.71875,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-applications.Cnl5_lJd_jvWCM.webp",
+            "alt": "Khalo application board showing signage, apparel, wrapping paper and a phone mockup in orange and cream.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 929.453125,
+              "y": -253.71875,
+              "width": 481.75,
+              "height": 271.3125
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-fk-technology-arrival.png",
+      "description": "FK Technology: complete editorial arrival at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 250961,
+      "sha256": "5dd7f618870a73bfc9dc2bc8acb82b39aacdf7b89152ba51b9826a5d98f8e7a8",
+      "before": {
+        "at": 1122.5,
+        "url": "/work/fk-technology",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "fk-technology",
+        "title": "FK Technology.",
+        "hero": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 1306.5
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-applications.Zgm8Jfre_1RGuh4.webp",
+            "alt": "FK Technology orange logo on dark phone and laptop screen mockups, a black card, packaging box and fabric.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-identity.DqUm2UKg_OrSYt.webp",
+            "alt": "FK Technology orange monogram with white lettering and orange, black, gray and white palette swatches.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": 1447.28125,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-card-detail.CuxFR9GL_1EqutH.webp",
+            "alt": "Orange FK Technology monogram on a black textured business-card mockup.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 929.453125,
+              "y": 1512.28125,
+              "width": 481.75,
+              "height": 305.984375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-fk-technology-mosaic.png",
+      "description": "FK Technology: curated responsive artwork composition at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 506138,
+      "sha256": "4be9db26c70b921a3462caf2c120530f789c3aea3c0f91e1716f35d524667308",
+      "before": {
+        "at": 2849,
+        "url": "/work/fk-technology",
+        "scrollY": 459,
+        "overflow": false,
+        "slug": "fk-technology",
+        "title": "FK Technology.",
+        "hero": {
+          "x": 28.796875,
+          "y": 120.4375,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 120.4375,
+          "width": 1382.40625,
+          "height": 1306.5
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-applications.Zgm8Jfre_1RGuh4.webp",
+            "alt": "FK Technology orange logo on dark phone and laptop screen mockups, a black card, packaging box and fabric.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": 120.4375,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-identity.DqUm2UKg_OrSYt.webp",
+            "alt": "FK Technology orange monogram with white lettering and orange, black, gray and white palette swatches.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": 988.28125,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-card-detail.CuxFR9GL_1EqutH.webp",
+            "alt": "Orange FK Technology monogram on a black textured business-card mockup.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 929.453125,
+              "y": 1053.28125,
+              "width": 481.75,
+              "height": 305.984375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-fk-technology-editorial.png",
+      "description": "FK Technology: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 107959,
+      "sha256": "f4643bec4eaa087648ab641d2a99d920106974b3f5b1b238dd34d45f9a85acfc",
+      "before": {
+        "at": 4888.5999999940395,
+        "url": "/work/fk-technology",
+        "scrollY": 1766,
+        "overflow": false,
+        "slug": "fk-technology",
+        "title": "FK Technology.",
+        "hero": {
+          "x": 28.796875,
+          "y": -1186.5625,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": -1186.5625,
+          "width": 1382.40625,
+          "height": 1306.5
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-applications.Zgm8Jfre_1RGuh4.webp",
+            "alt": "FK Technology orange logo on dark phone and laptop screen mockups, a black card, packaging box and fabric.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": -1186.5625,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-identity.DqUm2UKg_OrSYt.webp",
+            "alt": "FK Technology orange monogram with white lettering and orange, black, gray and white palette swatches.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": -318.71875,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-card-detail.CuxFR9GL_1EqutH.webp",
+            "alt": "Orange FK Technology monogram on a black textured business-card mockup.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 929.453125,
+              "y": -253.71875,
+              "width": 481.75,
+              "height": 305.984375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-feed-n-seed-arrival.png",
+      "description": "Feed N Seed: complete editorial arrival at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 466658,
+      "sha256": "706e3bdab57b01e141aaec7eeb6983d27f25a759dd4c17576ddaa935f02e0704",
+      "before": {
+        "at": 1038.0999999940395,
+        "url": "/work/feed-n-seed",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "feed-n-seed",
+        "title": "Feed N Seed.",
+        "hero": {
+          "x": 28.796875,
+          "y": 589.4375,
+          "width": 740.65625,
+          "height": 448.296875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 549.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-product.DNO_wrF0_Zizxh1.webp",
+            "alt": "Feed N Seed circular green-and-orange mark on white product-container lids and labels with a golden wheat-field backdrop.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 589.4375,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-stationery.Br9gCSKk_Fi1DF.webp",
+            "alt": "Feed N Seed letterhead and card mockups above five green, orange and white treatments of the circular emblem.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": 733.4375,
+              "width": 569.75,
+              "height": 320.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-feed-n-seed-mosaic.png",
+      "description": "Feed N Seed: curated responsive artwork composition at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 630061,
+      "sha256": "f2b378ec6ba71f31d63031120e6f0288c50c4db87774990d0df146805bfcd53f",
+      "before": {
+        "at": 2459,
+        "url": "/work/feed-n-seed",
+        "scrollY": 460,
+        "overflow": false,
+        "slug": "feed-n-seed",
+        "title": "Feed N Seed.",
+        "hero": {
+          "x": 28.796875,
+          "y": 129.4375,
+          "width": 740.65625,
+          "height": 448.296875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 119.4375,
+          "width": 1382.40625,
+          "height": 549.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-product.DNO_wrF0_Zizxh1.webp",
+            "alt": "Feed N Seed circular green-and-orange mark on white product-container lids and labels with a golden wheat-field backdrop.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 129.4375,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-stationery.Br9gCSKk_Fi1DF.webp",
+            "alt": "Feed N Seed letterhead and card mockups above five green, orange and white treatments of the circular emblem.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": 273.4375,
+              "width": 569.75,
+              "height": 320.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-feed-n-seed-editorial.png",
+      "description": "Feed N Seed: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 105111,
+      "sha256": "89e540c6008f1e93bc9ba383cb8ce8c1eb70bc903292af6166481dbac0d2e71b",
+      "before": {
+        "at": 3935.2999999970198,
+        "url": "/work/feed-n-seed",
+        "scrollY": 1009,
+        "overflow": false,
+        "slug": "feed-n-seed",
+        "title": "Feed N Seed.",
+        "hero": {
+          "x": 28.796875,
+          "y": -419.5625,
+          "width": 740.65625,
+          "height": 448.296875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": -429.5625,
+          "width": 1382.40625,
+          "height": 549.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-product.DNO_wrF0_Zizxh1.webp",
+            "alt": "Feed N Seed circular green-and-orange mark on white product-container lids and labels with a golden wheat-field backdrop.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": -419.5625,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-stationery.Br9gCSKk_Fi1DF.webp",
+            "alt": "Feed N Seed letterhead and card mockups above five green, orange and white treatments of the circular emblem.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": -275.5625,
+              "width": 569.75,
+              "height": 320.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-abacus-immigration-arrival.png",
+      "description": "Abacus Immigration: complete editorial arrival at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 272454,
+      "sha256": "e0558250f9c787033795278a1c76948e78a7413088c85248b09e399f6fa11803",
+      "before": {
+        "at": 1042.6000000089407,
+        "url": "/work/abacus-immigration",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "abacus-immigration",
+        "title": "Abacus Immigration.",
+        "hero": {
+          "x": 28.796875,
+          "y": 709.390625,
+          "width": 740.65625,
+          "height": 448.296875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 699.390625,
+          "width": 1382.40625,
+          "height": 549.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-applications.D_dNd7sT_Z83x8s.webp",
+            "alt": "Abacus Immigration blue-and-white collage with luggage tag, aircraft tail, sign, passport cover, cup and tote-bag mockups.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 709.390625,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-social-layouts.BYtbsmdS_noh8d.webp",
+            "alt": "Abacus Immigration blue-and-white social artwork with serif headings, travel icons and a social-post mockup.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": 853.390625,
+              "width": 569.75,
+              "height": 320.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-abacus-immigration-mosaic.png",
+      "description": "Abacus Immigration: curated responsive artwork composition at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 640175,
+      "sha256": "1dbfc068a320add1b1cfb685f34f42a04ada1ec5ab3c61c70f47802e4d0761b4",
+      "before": {
+        "at": 2617.4000000059605,
+        "url": "/work/abacus-immigration",
+        "scrollY": 580,
+        "overflow": false,
+        "slug": "abacus-immigration",
+        "title": "Abacus Immigration.",
+        "hero": {
+          "x": 28.796875,
+          "y": 129.390625,
+          "width": 740.65625,
+          "height": 448.296875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 1382.40625,
+          "height": 549.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-applications.D_dNd7sT_Z83x8s.webp",
+            "alt": "Abacus Immigration blue-and-white collage with luggage tag, aircraft tail, sign, passport cover, cup and tote-bag mockups.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 129.390625,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-social-layouts.BYtbsmdS_noh8d.webp",
+            "alt": "Abacus Immigration blue-and-white social artwork with serif headings, travel icons and a social-post mockup.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": 273.390625,
+              "width": 569.75,
+              "height": 320.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-abacus-immigration-editorial.png",
+      "description": "Abacus Immigration: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 105173,
+      "sha256": "c4dc9e778f54abf6b420457d6033eae911fa762a10a8ba0db6ceee0b7f36089c",
+      "before": {
+        "at": 4126.4000000059605,
+        "url": "/work/abacus-immigration",
+        "scrollY": 1129,
+        "overflow": false,
+        "slug": "abacus-immigration",
+        "title": "Abacus Immigration.",
+        "hero": {
+          "x": 28.796875,
+          "y": -419.609375,
+          "width": 740.65625,
+          "height": 448.296875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": -429.609375,
+          "width": 1382.40625,
+          "height": 549.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-applications.D_dNd7sT_Z83x8s.webp",
+            "alt": "Abacus Immigration blue-and-white collage with luggage tag, aircraft tail, sign, passport cover, cup and tote-bag mockups.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": -419.609375,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-social-layouts.BYtbsmdS_noh8d.webp",
+            "alt": "Abacus Immigration blue-and-white social artwork with serif headings, travel icons and a social-post mockup.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": -275.609375,
+              "width": 569.75,
+              "height": 320.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-u-wanna-smoothie-arrival.png",
+      "description": "U Wanna Smoothie: complete editorial arrival at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 179920,
+      "sha256": "0c0600a6feea8b2514571182e36d8dd8fdc442ffd8c53d8fc3ee00a0b5a34f06",
+      "before": {
+        "at": 1061.7999999970198,
+        "url": "/work/u-wanna-smoothie",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "u-wanna-smoothie",
+        "title": "U Wanna Smoothie.",
+        "hero": {
+          "x": 28.796875,
+          "y": 699.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 699.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-identity.BILl84Aa_1FulaF.webp",
+            "alt": "U Wanna Smoothie pink-and-green presentation with a circular fruit-and-cup symbol beside a hand holding a green drink in a clear cup.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-color.yOxVXOpo_Zpdf4J.webp",
+            "alt": "U Wanna Smoothie color swatches, citrus and leaf graphics, pink fields and a purple berry-drink image.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-menu.L9Y1qIBG_1EH7wa.webp",
+            "alt": "U Wanna Smoothie folded-menu concepts in pink and green surrounded by kiwi and berry imagery.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 1148.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-u-wanna-smoothie",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-u-wanna-smoothie-mosaic.png",
+      "description": "U Wanna Smoothie: curated responsive artwork composition at 1440px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 536003,
+      "sha256": "7084022cbd5f07438e12a90cd749cd7c2dd7dd04a80acfd90ed56ff331c1bf8d",
+      "before": {
+        "at": 2510.8999999910593,
+        "url": "/work/u-wanna-smoothie",
+        "scrollY": 580,
+        "overflow": false,
+        "slug": "u-wanna-smoothie",
+        "title": "U Wanna Smoothie.",
+        "hero": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-identity.BILl84Aa_1FulaF.webp",
+            "alt": "U Wanna Smoothie pink-and-green presentation with a circular fruit-and-cup symbol beside a hand holding a green drink in a clear cup.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-color.yOxVXOpo_Zpdf4J.webp",
+            "alt": "U Wanna Smoothie color swatches, citrus and leaf graphics, pink fields and a purple berry-drink image.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-menu.L9Y1qIBG_1EH7wa.webp",
+            "alt": "U Wanna Smoothie folded-menu concepts in pink and green surrounded by kiwi and berry imagery.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 568.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-u-wanna-smoothie",
+            "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+            "time": 1.240421,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-u-wanna-smoothie-editorial.png",
+      "description": "U Wanna Smoothie: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 109595,
+      "sha256": "84fcdd4676fabf97312b76760695949b5982461cadd476b0f038c7f23b78a311",
+      "before": {
+        "at": 4217.399999991059,
+        "url": "/work/u-wanna-smoothie",
+        "scrollY": 1419,
+        "overflow": false,
+        "slug": "u-wanna-smoothie",
+        "title": "U Wanna Smoothie.",
+        "hero": {
+          "x": 28.796875,
+          "y": -719.609375,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": -719.609375,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-identity.BILl84Aa_1FulaF.webp",
+            "alt": "U Wanna Smoothie pink-and-green presentation with a circular fruit-and-cup symbol beside a hand holding a green drink in a clear cup.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": -719.609375,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-color.yOxVXOpo_Zpdf4J.webp",
+            "alt": "U Wanna Smoothie color swatches, citrus and leaf graphics, pink fields and a purple berry-drink image.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": -719.609375,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-menu.L9Y1qIBG_1EH7wa.webp",
+            "alt": "U Wanna Smoothie folded-menu concepts in pink and green surrounded by kiwi and berry imagery.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": -270.8125,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-u-wanna-smoothie",
+            "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": -719.609375,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-churros-arrival.png",
+      "description": "Churros Dessert Shop: complete editorial arrival at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 212571,
+      "sha256": "c8a093d68cc254c1da462bf5cf38d352e9cdb6adb0c6fd1189b0aafa159f2a63",
+      "before": {
+        "at": 1200.7999999970198,
+        "url": "/work/churros",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 1064.3125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1069.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1334.125,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 0.946901,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-churros-mosaic.png",
+      "description": "Churros Dessert Shop: curated responsive artwork composition at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 337595,
+      "sha256": "853cf16271d681e5f48f68d1d2cef29ada1fc09c7cf3cc33378b92e334e04e4e",
+      "before": {
+        "at": 2770.5,
+        "url": "/work/churros",
+        "scrollY": 384,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 1064.3125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 685.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 950.125,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 0.958478,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-churros-editorial.png",
+      "description": "Churros Dessert Shop: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 64438,
+      "sha256": "def8a64f448060c41f1af697babb94c4c0be12ff109fb00b53a75e709b234a87",
+      "before": {
+        "at": 4528.5,
+        "url": "/work/churros",
+        "scrollY": 1449,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 14,
+          "y": -944.625,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": -944.625,
+          "width": 362,
+          "height": 1064.3125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -944.625,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -379.4375,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -114.875,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 14,
+              "y": -944.625,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-khalo-arrival.png",
+      "description": "Khalo: complete editorial arrival at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 216162,
+      "sha256": "f11cf91c1faed6bea181dbaf3ead6ffac58f3c7d3fe75a07d0cd1a33cac40d2e",
+      "before": {
+        "at": 1040.5,
+        "url": "/work/khalo",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "khalo",
+        "title": "Khalo.",
+        "hero": {
+          "x": 14,
+          "y": 429.1875,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 429.1875,
+          "width": 362,
+          "height": 763.640625
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-packaging.obGhBFNs_QEHwm.webp",
+            "alt": "Khalo orange-and-cream takeaway packaging with an illustrated paper bag, drink cup and fries container below burger imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 429.1875,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-identity.DYtZWM5J_Z2e0HiY.webp",
+            "alt": "Khalo orange illustrated wordmark and a cartoon character eating a burger against patterned cream artwork.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 693.734375,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-applications.Cnl5_lJd_ZHKfz2.webp",
+            "alt": "Khalo application board showing signage, apparel, wrapping paper and a phone mockup in orange and cream.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 958.28125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-khalo-mosaic.png",
+      "description": "Khalo: curated responsive artwork composition at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 362082,
+      "sha256": "d3a0e56d38f7c446425c2b1c617691c2479fc09e7bdb5381ec263c291fc13683",
+      "before": {
+        "at": 2408.9000000059605,
+        "url": "/work/khalo",
+        "scrollY": 309,
+        "overflow": false,
+        "slug": "khalo",
+        "title": "Khalo.",
+        "hero": {
+          "x": 14,
+          "y": 120.1875,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.1875,
+          "width": 362,
+          "height": 763.640625
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-packaging.obGhBFNs_QEHwm.webp",
+            "alt": "Khalo orange-and-cream takeaway packaging with an illustrated paper bag, drink cup and fries container below burger imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 120.1875,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-identity.DYtZWM5J_Z2e0HiY.webp",
+            "alt": "Khalo orange illustrated wordmark and a cartoon character eating a burger against patterned cream artwork.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 384.734375,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-applications.Cnl5_lJd_ZHKfz2.webp",
+            "alt": "Khalo application board showing signage, apparel, wrapping paper and a phone mockup in orange and cream.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 649.28125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-khalo-editorial.png",
+      "description": "Khalo: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 70495,
+      "sha256": "cd2afb1b3d601d3da63e29b175214c7fb7aa0fed0d13a7fd8b109e0ac6a9556f",
+      "before": {
+        "at": 3960.5,
+        "url": "/work/khalo",
+        "scrollY": 1073,
+        "overflow": false,
+        "slug": "khalo",
+        "title": "Khalo.",
+        "hero": {
+          "x": 14,
+          "y": -643.8125,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": -643.8125,
+          "width": 362,
+          "height": 763.640625
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-packaging.obGhBFNs_QEHwm.webp",
+            "alt": "Khalo orange-and-cream takeaway packaging with an illustrated paper bag, drink cup and fries container below burger imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -643.8125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-identity.DYtZWM5J_Z2e0HiY.webp",
+            "alt": "Khalo orange illustrated wordmark and a cartoon character eating a burger against patterned cream artwork.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -379.265625,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-applications.Cnl5_lJd_ZHKfz2.webp",
+            "alt": "Khalo application board showing signage, apparel, wrapping paper and a phone mockup in orange and cream.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -114.71875,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-fk-technology-arrival.png",
+      "description": "FK Technology: complete editorial arrival at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 108171,
+      "sha256": "1a9cc41e68d09f76892dcb0bad2ec3c40d7b4119c31f9eaac8d49cdf287df2cc",
+      "before": {
+        "at": 1017.9000000059605,
+        "url": "/work/fk-technology",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "fk-technology",
+        "title": "FK Technology.",
+        "hero": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 789.703125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-applications.Zgm8Jfre_64FuE.webp",
+            "alt": "FK Technology orange logo on dark phone and laptop screen mockups, a black card, packaging box and fabric.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-identity.DqUm2UKg_2iUFMO.webp",
+            "alt": "FK Technology orange monogram with white lettering and orange, black, gray and white palette swatches.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 720.328125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-card-detail.CuxFR9GL_Hf1AT.webp",
+            "alt": "Orange FK Technology monogram on a black textured business-card mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 984.875,
+              "width": 361.984375,
+              "height": 229.921875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-fk-technology-mosaic.png",
+      "description": "FK Technology: curated responsive artwork composition at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 142490,
+      "sha256": "6eebcec7b88c2c70e4cca1be688ad465f11d21681e6b25c8f9c2613d49b27269",
+      "before": {
+        "at": 2369.1000000089407,
+        "url": "/work/fk-technology",
+        "scrollY": 336,
+        "overflow": false,
+        "slug": "fk-technology",
+        "title": "FK Technology.",
+        "hero": {
+          "x": 14,
+          "y": 119.78125,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 119.78125,
+          "width": 362,
+          "height": 789.703125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-applications.Zgm8Jfre_64FuE.webp",
+            "alt": "FK Technology orange logo on dark phone and laptop screen mockups, a black card, packaging box and fabric.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 119.78125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-identity.DqUm2UKg_2iUFMO.webp",
+            "alt": "FK Technology orange monogram with white lettering and orange, black, gray and white palette swatches.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 384.328125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-card-detail.CuxFR9GL_Hf1AT.webp",
+            "alt": "Orange FK Technology monogram on a black textured business-card mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 648.875,
+              "width": 361.984375,
+              "height": 229.921875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-fk-technology-editorial.png",
+      "description": "FK Technology: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 65385,
+      "sha256": "fee4374dae830a7cf7fe95f750017bcec74718d0caa2f837985c8584fd4ddf43",
+      "before": {
+        "at": 3890.7000000029802,
+        "url": "/work/fk-technology",
+        "scrollY": 1126,
+        "overflow": false,
+        "slug": "fk-technology",
+        "title": "FK Technology.",
+        "hero": {
+          "x": 14,
+          "y": -670.21875,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": -670.21875,
+          "width": 362,
+          "height": 789.703125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-applications.Zgm8Jfre_64FuE.webp",
+            "alt": "FK Technology orange logo on dark phone and laptop screen mockups, a black card, packaging box and fabric.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -670.21875,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-identity.DqUm2UKg_2iUFMO.webp",
+            "alt": "FK Technology orange monogram with white lettering and orange, black, gray and white palette swatches.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -405.671875,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-card-detail.CuxFR9GL_Hf1AT.webp",
+            "alt": "Orange FK Technology monogram on a black textured business-card mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -141.125,
+              "width": 361.984375,
+              "height": 229.921875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-feed-n-seed-arrival.png",
+      "description": "Feed N Seed: complete editorial arrival at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 202349,
+      "sha256": "6d86fefaa97499460a89e11abce524bcba0c1a067887fc82e0b9d462fbf99c2f",
+      "before": {
+        "at": 985.3000000119209,
+        "url": "/work/feed-n-seed",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "feed-n-seed",
+        "title": "Feed N Seed.",
+        "hero": {
+          "x": 14,
+          "y": 439.1875,
+          "width": 362,
+          "height": 234.3125
+        },
+        "gallery": {
+          "x": 14,
+          "y": 429.1875,
+          "width": 362,
+          "height": 538.875
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-product.DNO_wrF0_ZW5Jgh.webp",
+            "alt": "Feed N Seed circular green-and-orange mark on white product-container lids and labels with a golden wheat-field backdrop.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 439.1875,
+              "width": 362,
+              "height": 203.625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-stationery.Br9gCSKk_ZkHoOa.webp",
+            "alt": "Feed N Seed letterhead and card mockups above five green, orange and white treatments of the circular emblem.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 703.5,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-feed-n-seed-mosaic.png",
+      "description": "Feed N Seed: curated responsive artwork composition at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 237600,
+      "sha256": "a0e958a9517ad3ba24776ab1e76d3f876e10b1994326b9c2b1e9e3a2e81d836f",
+      "before": {
+        "at": 2224,
+        "url": "/work/feed-n-seed",
+        "scrollY": 309,
+        "overflow": false,
+        "slug": "feed-n-seed",
+        "title": "Feed N Seed.",
+        "hero": {
+          "x": 14,
+          "y": 130.1875,
+          "width": 362,
+          "height": 234.3125
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.1875,
+          "width": 362,
+          "height": 538.875
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-product.DNO_wrF0_ZW5Jgh.webp",
+            "alt": "Feed N Seed circular green-and-orange mark on white product-container lids and labels with a golden wheat-field backdrop.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 130.1875,
+              "width": 362,
+              "height": 203.625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-stationery.Br9gCSKk_ZkHoOa.webp",
+            "alt": "Feed N Seed letterhead and card mockups above five green, orange and white treatments of the circular emblem.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 394.5,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-feed-n-seed-editorial.png",
+      "description": "Feed N Seed: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 63208,
+      "sha256": "4a225b4a764cbfb2209dabd8f882db1a5d9942ca5131680d0d585fff5a9abd03",
+      "before": {
+        "at": 3600.9000000059605,
+        "url": "/work/feed-n-seed",
+        "scrollY": 848,
+        "overflow": false,
+        "slug": "feed-n-seed",
+        "title": "Feed N Seed.",
+        "hero": {
+          "x": 14,
+          "y": -408.8125,
+          "width": 362,
+          "height": 234.3125
+        },
+        "gallery": {
+          "x": 14,
+          "y": -418.8125,
+          "width": 362,
+          "height": 538.875
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-product.DNO_wrF0_ZW5Jgh.webp",
+            "alt": "Feed N Seed circular green-and-orange mark on white product-container lids and labels with a golden wheat-field backdrop.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -408.8125,
+              "width": 362,
+              "height": 203.625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-stationery.Br9gCSKk_ZkHoOa.webp",
+            "alt": "Feed N Seed letterhead and card mockups above five green, orange and white treatments of the circular emblem.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -144.5,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-abacus-immigration-arrival.png",
+      "description": "Abacus Immigration: complete editorial arrival at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 179146,
+      "sha256": "6ef4a5598417130b18f4089756d9a71530d0e0efdf952b149a8fd4a11413a0df",
+      "before": {
+        "at": 1046.2000000029802,
+        "url": "/work/abacus-immigration",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "abacus-immigration",
+        "title": "Abacus Immigration.",
+        "hero": {
+          "x": 14,
+          "y": 514.375,
+          "width": 362,
+          "height": 234.3125
+        },
+        "gallery": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 538.875
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-applications.D_dNd7sT_ZLyJ7I.webp",
+            "alt": "Abacus Immigration blue-and-white collage with luggage tag, aircraft tail, sign, passport cover, cup and tote-bag mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 514.375,
+              "width": 362,
+              "height": 203.625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-social-layouts.BYtbsmdS_ZaA1A9.webp",
+            "alt": "Abacus Immigration blue-and-white social artwork with serif headings, travel icons and a social-post mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 778.6875,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-abacus-immigration-mosaic.png",
+      "description": "Abacus Immigration: curated responsive artwork composition at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 246290,
+      "sha256": "b07c0f636d7c86970d1f4ee1fa6d6431a8c42e212c4887af1ad15cd5508c0d09",
+      "before": {
+        "at": 2280.1000000089407,
+        "url": "/work/abacus-immigration",
+        "scrollY": 385,
+        "overflow": false,
+        "slug": "abacus-immigration",
+        "title": "Abacus Immigration.",
+        "hero": {
+          "x": 14,
+          "y": 129.375,
+          "width": 362,
+          "height": 234.3125
+        },
+        "gallery": {
+          "x": 14,
+          "y": 119.375,
+          "width": 362,
+          "height": 538.875
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-applications.D_dNd7sT_ZLyJ7I.webp",
+            "alt": "Abacus Immigration blue-and-white collage with luggage tag, aircraft tail, sign, passport cover, cup and tote-bag mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 129.375,
+              "width": 362,
+              "height": 203.625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-social-layouts.BYtbsmdS_ZaA1A9.webp",
+            "alt": "Abacus Immigration blue-and-white social artwork with serif headings, travel icons and a social-post mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 393.6875,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-abacus-immigration-editorial.png",
+      "description": "Abacus Immigration: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 61889,
+      "sha256": "1e8a084fec61c9c8be6b5dc2436a97ce4fa3e88509e31df07bdb21820005b5d5",
+      "before": {
+        "at": 3649.2999999970198,
+        "url": "/work/abacus-immigration",
+        "scrollY": 923,
+        "overflow": false,
+        "slug": "abacus-immigration",
+        "title": "Abacus Immigration.",
+        "hero": {
+          "x": 14,
+          "y": -408.625,
+          "width": 362,
+          "height": 234.3125
+        },
+        "gallery": {
+          "x": 14,
+          "y": -418.625,
+          "width": 362,
+          "height": 538.875
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-applications.D_dNd7sT_ZLyJ7I.webp",
+            "alt": "Abacus Immigration blue-and-white collage with luggage tag, aircraft tail, sign, passport cover, cup and tote-bag mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -408.625,
+              "width": 362,
+              "height": 203.625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-social-layouts.BYtbsmdS_ZaA1A9.webp",
+            "alt": "Abacus Immigration blue-and-white social artwork with serif headings, travel icons and a social-post mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -144.3125,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-u-wanna-smoothie-arrival.png",
+      "description": "U Wanna Smoothie: complete editorial arrival at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 92882,
+      "sha256": "baaa3c50cd63b6a5f40ecbfd3793240e2b2adf39427b158d16dc43265962eb1a",
+      "before": {
+        "at": 1024.199999988079,
+        "url": "/work/u-wanna-smoothie",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "u-wanna-smoothie",
+        "title": "U Wanna Smoothie.",
+        "hero": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 1049.21875
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-identity.BILl84Aa_Z1YDTEa.webp",
+            "alt": "U Wanna Smoothie pink-and-green presentation with a circular fruit-and-cup symbol beside a hand holding a green drink in a clear cup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-color.yOxVXOpo_tv5dV.webp",
+            "alt": "U Wanna Smoothie color swatches, citrus and leaf graphics, pink fields and a purple berry-drink image.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1069.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-menu.L9Y1qIBG_Z28xNzd.webp",
+            "alt": "U Wanna Smoothie folded-menu concepts in pink and green surrounded by kiwi and berry imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1334.125,
+              "width": 362,
+              "height": 188.78125
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-u-wanna-smoothie",
+            "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+            "time": 0.920247,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-u-wanna-smoothie-mosaic.png",
+      "description": "U Wanna Smoothie: curated responsive artwork composition at 390px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 151338,
+      "sha256": "5ba70c141104ccc91f803c8aac7fe3adf0354a2fe2ac90cd23382e18756dac22",
+      "before": {
+        "at": 2543,
+        "url": "/work/u-wanna-smoothie",
+        "scrollY": 384,
+        "overflow": false,
+        "slug": "u-wanna-smoothie",
+        "title": "U Wanna Smoothie.",
+        "hero": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 1049.21875
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-identity.BILl84Aa_Z1YDTEa.webp",
+            "alt": "U Wanna Smoothie pink-and-green presentation with a circular fruit-and-cup symbol beside a hand holding a green drink in a clear cup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-color.yOxVXOpo_tv5dV.webp",
+            "alt": "U Wanna Smoothie color swatches, citrus and leaf graphics, pink fields and a purple berry-drink image.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 685.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-menu.L9Y1qIBG_Z28xNzd.webp",
+            "alt": "U Wanna Smoothie folded-menu concepts in pink and green surrounded by kiwi and berry imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 950.125,
+              "width": 362,
+              "height": 188.78125
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-u-wanna-smoothie",
+            "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+            "time": 0.950844,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-u-wanna-smoothie-editorial.png",
+      "description": "U Wanna Smoothie: artwork-grounded editorial statement and navigation context.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 66849,
+      "sha256": "fc865c4319caab49fab81cb232bc929ef5c14ea566702d62f7524f5806e650f2",
+      "before": {
+        "at": 4282.0999999940395,
+        "url": "/work/u-wanna-smoothie",
+        "scrollY": 1434,
+        "overflow": false,
+        "slug": "u-wanna-smoothie",
+        "title": "U Wanna Smoothie.",
+        "hero": {
+          "x": 14,
+          "y": -929.625,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": -929.625,
+          "width": 362,
+          "height": 1049.21875
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-identity.BILl84Aa_Z1YDTEa.webp",
+            "alt": "U Wanna Smoothie pink-and-green presentation with a circular fruit-and-cup symbol beside a hand holding a green drink in a clear cup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -929.625,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-color.yOxVXOpo_tv5dV.webp",
+            "alt": "U Wanna Smoothie color swatches, citrus and leaf graphics, pink fields and a purple berry-drink image.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -364.4375,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-menu.L9Y1qIBG_Z28xNzd.webp",
+            "alt": "U Wanna Smoothie folded-menu concepts in pink and green surrounded by kiwi and berry imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": -99.875,
+              "width": 362,
+              "height": 188.78125
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-u-wanna-smoothie",
+            "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 14,
+              "y": -929.625,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-320-churros-arrival.png",
+      "description": "Churros responsive arrival at 320px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 844,
+      "bytes": 167054,
+      "sha256": "aad87df87e2919cd0e88887936f98ee25b6834db4477a5575f3cd7637aeed210",
+      "before": {
+        "at": 1250.2000000029802,
+        "url": "/work/churros",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 14,
+          "y": 552.96875,
+          "width": 292,
+          "height": 466.375
+        },
+        "gallery": {
+          "x": 14,
+          "y": 552.96875,
+          "width": 292,
+          "height": 935.3125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 552.96875,
+              "width": 292,
+              "height": 365
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 1049.34375,
+              "width": 292,
+              "height": 164.4375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 1293.15625,
+              "width": 292,
+              "height": 164.4375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 0.953095,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 552.96875,
+              "width": 292,
+              "height": 365
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-320-churros-mosaic.png",
+      "description": "Churros responsive mosaic at 320px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "width": 320,
+      "height": 844,
+      "bytes": 265726,
+      "sha256": "f0128e82ee4c848bbce7fbf22f3e2eaacdeaffa0245c8262408d043f7c6718b9",
+      "before": {
+        "at": 2636.5,
+        "url": "/work/churros",
+        "scrollY": 433,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 14,
+          "y": 119.96875,
+          "width": 292,
+          "height": 466.375
+        },
+        "gallery": {
+          "x": 14,
+          "y": 119.96875,
+          "width": 292,
+          "height": 935.3125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 119.96875,
+              "width": 292,
+              "height": 365
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 616.34375,
+              "width": 292,
+              "height": 164.4375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 294,
+            "bounds": {
+              "x": 14,
+              "y": 860.15625,
+              "width": 292,
+              "height": 164.4375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 2.339392,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 119.96875,
+              "width": 292,
+              "height": 365
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-768-churros-arrival.png",
+      "description": "Churros responsive arrival at 768px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "width": 768,
+      "height": 900,
+      "bytes": 361749,
+      "sha256": "dbd497f4863cb916bf508bbfa8f10c037a84b82a4589953946c7bf8c7d720e45",
+      "before": {
+        "at": 1218.4000000059605,
+        "url": "/work/churros",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 15.359375,
+          "y": 493.8125,
+          "width": 353.28125,
+          "height": 640
+        },
+        "gallery": {
+          "x": 15.359375,
+          "y": 493.8125,
+          "width": 737.28125,
+          "height": 640
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 376,
+            "bounds": {
+              "x": 15.359375,
+              "y": 493.8125,
+              "width": 353.28125,
+              "height": 558
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 345,
+            "bounds": {
+              "x": 399.359375,
+              "y": 493.8125,
+              "width": 353.28125,
+              "height": 274.640625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 345,
+            "bounds": {
+              "x": 498.28125,
+              "y": 829.171875,
+              "width": 254.359375,
+              "height": 274.640625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 0.963056,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 15.359375,
+              "y": 493.8125,
+              "width": 353.28125,
+              "height": 558
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-768-churros-mosaic.png",
+      "description": "Churros responsive mosaic at 768px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "width": 768,
+      "height": 900,
+      "bytes": 424853,
+      "sha256": "1f4eff2a665fbc266d47f76555867f82a4e75caff0a18e4f14a4a07bef67ccad",
+      "before": {
+        "at": 2496.4000000059605,
+        "url": "/work/churros",
+        "scrollY": 374,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 15.359375,
+          "y": 119.8125,
+          "width": 353.28125,
+          "height": 640
+        },
+        "gallery": {
+          "x": 15.359375,
+          "y": 119.8125,
+          "width": 737.28125,
+          "height": 640
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 376,
+            "bounds": {
+              "x": 15.359375,
+              "y": 119.8125,
+              "width": 353.28125,
+              "height": 558
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 345,
+            "bounds": {
+              "x": 399.359375,
+              "y": 119.8125,
+              "width": 353.28125,
+              "height": 274.640625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 345,
+            "bounds": {
+              "x": 498.28125,
+              "y": 455.171875,
+              "width": 254.359375,
+              "height": 274.640625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 2.241108,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 15.359375,
+              "y": 119.8125,
+              "width": 353.28125,
+              "height": 558
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1024-churros-arrival.png",
+      "description": "Churros responsive arrival at 1024px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "width": 1024,
+      "height": 900,
+      "bytes": 442886,
+      "sha256": "3b3be63415c2c42aa4461bb3da35356173ca0bdcaf39c166a4506590acb892c0",
+      "before": {
+        "at": 1184.2999999970198,
+        "url": "/work/churros",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 20.46875,
+          "y": 578.0625,
+          "width": 471.046875,
+          "height": 620
+        },
+        "gallery": {
+          "x": 20.46875,
+          "y": 578.0625,
+          "width": 983.0625,
+          "height": 620
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_ok6m.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 501,
+            "bounds": {
+              "x": 20.46875,
+              "y": 578.0625,
+              "width": 471.046875,
+              "height": 536.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 460,
+            "bounds": {
+              "x": 532.46875,
+              "y": 578.0625,
+              "width": 471.0625,
+              "height": 257.828125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 460,
+            "bounds": {
+              "x": 664.375,
+              "y": 908.53125,
+              "width": 339.15625,
+              "height": 257.84375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 0.935258,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 20.46875,
+              "y": 578.0625,
+              "width": 471.046875,
+              "height": 536.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1024-churros-mosaic.png",
+      "description": "Churros responsive mosaic at 1024px.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "width": 1024,
+      "height": 900,
+      "bytes": 608129,
+      "sha256": "81c2283b705cbfb0bb012ca541cfd18d56d15d953a24e675cf34ac8ec0149f6a",
+      "before": {
+        "at": 2549.5999999940395,
+        "url": "/work/churros",
+        "scrollY": 458,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 20.46875,
+          "y": 120.0625,
+          "width": 471.046875,
+          "height": 620
+        },
+        "gallery": {
+          "x": 20.46875,
+          "y": 120.0625,
+          "width": 983.0625,
+          "height": 620
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_ok6m.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 501,
+            "bounds": {
+              "x": 20.46875,
+              "y": 120.0625,
+              "width": 471.046875,
+              "height": 536.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 460,
+            "bounds": {
+              "x": 532.46875,
+              "y": 120.0625,
+              "width": 471.0625,
+              "height": 257.828125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 460,
+            "bounds": {
+              "x": 664.375,
+              "y": 450.53125,
+              "width": 339.15625,
+              "height": 257.84375
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 2.300686,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 20.46875,
+              "y": 120.0625,
+              "width": 471.046875,
+              "height": 536.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-reduced-motion.png",
+      "description": "Churros reduced-motion fallback with readable artwork, captions and no mounted video.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 943888,
+      "sha256": "f3756c3a618c7c43b03d0c0c6766eb0c9efd818789fec2937ba1aef4d5054f84",
+      "before": {
+        "at": 2367.0999999940395,
+        "url": "/work/churros",
+        "scrollY": 580,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_ok6m.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_2og4jV.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_2wKpBY.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 568.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-save-data.png",
+      "description": "Churros save-data fallback with readable artwork, captions and no mounted video.",
+      "mode": "save-data",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 939977,
+      "sha256": "452034e22d6c76bbc66a568112b2223c1110a925682d9d53b5ec3ec225ec5073",
+      "before": {
+        "at": 2386.7999999970198,
+        "url": "/work/churros",
+        "scrollY": 580,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_ok6m.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_2og4jV.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_2wKpBY.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 568.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-no-js.png",
+      "description": "Churros no-js fallback with readable artwork, captions and no mounted video.",
+      "mode": "no-js",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 900,
+      "bytes": 943469,
+      "sha256": "83679933177852962b774ab0109fedc32ad2d8c2d15e32b8c25fd3f33ee32701",
+      "before": {
+        "at": 2355,
+        "url": "/work/churros",
+        "scrollY": 580,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 119.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_ok6m.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_2og4jV.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_2wKpBY.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 568.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": 119.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-reduced-motion.png",
+      "description": "Churros reduced-motion fallback with readable artwork, captions and no mounted video.",
+      "mode": "reduced-motion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 273057,
+      "sha256": "d27eaf59861a76ce22a21a4bb25e395a489e2fb6f129c09905983773b7314ef2",
+      "before": {
+        "at": 2542,
+        "url": "/work/churros",
+        "scrollY": 384,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 1064.3125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 685.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 950.125,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-save-data.png",
+      "description": "Churros save-data fallback with readable artwork, captions and no mounted video.",
+      "mode": "save-data",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 274025,
+      "sha256": "5b3d79399c9de99efec193a2a6f77377c4ef386a5d80c9f02b67686bef7eb575",
+      "before": {
+        "at": 2465.2000000029802,
+        "url": "/work/churros",
+        "scrollY": 384,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 1064.3125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 685.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 950.125,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-no-js.png",
+      "description": "Churros no-js fallback with readable artwork, captions and no mounted video.",
+      "mode": "no-js",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 844,
+      "bytes": 273746,
+      "sha256": "cd036309c80b3d41a4ced7420908b0a828d89dbd8c67d131f67d6eeb85c5a953",
+      "before": {
+        "at": 2514.9000000059605,
+        "url": "/work/churros",
+        "scrollY": 384,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 120.375,
+          "width": 362,
+          "height": 1064.3125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 685.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 950.125,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 14,
+              "y": 120.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-churros-full-page.png",
+      "description": "Churros Dessert Shop: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 4188,
+      "bytes": 1751058,
+      "sha256": "d829e6571ce0a3f0e47f203041ee8d0e7cc14f228e29932080106f5bcce3d0aa",
+      "before": {
+        "at": 3486,
+        "url": "/work/churros",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 28.796875,
+          "y": 699.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 699.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_ok6m.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_2og4jV.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_2wKpBY.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 1148.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-1440-khalo-full-page.png",
+      "description": "Khalo: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 4563,
+      "bytes": 2355579,
+      "sha256": "6428189a7c1833013ec835cc20055dce9072a62386812a5ef034a9cedab2eacc",
+      "before": {
+        "at": 3393.6000000089407,
+        "url": "/work/khalo",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "khalo",
+        "title": "Khalo.",
+        "hero": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 1306.5
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-packaging.obGhBFNs_80N3f.webp",
+            "alt": "Khalo orange-and-cream takeaway packaging with an illustrated paper bag, drink cup and fries container below burger imagery.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-identity.DYtZWM5J_1Ws6ch.webp",
+            "alt": "Khalo orange illustrated wordmark and a cartoon character eating a burger against patterned cream artwork.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": 1447.28125,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-applications.Cnl5_lJd_jvWCM.webp",
+            "alt": "Khalo application board showing signage, apparel, wrapping paper and a phone mockup in orange and cream.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 929.453125,
+              "y": 1512.28125,
+              "width": 481.75,
+              "height": 271.3125
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-fk-technology-full-page.png",
+      "description": "FK Technology: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 4520,
+      "bytes": 1496959,
+      "sha256": "8a93f89a661ee11f6c4a63ac8552a0aed7c9857e680c9f09a69da3cf75f4bff4",
+      "before": {
+        "at": 3331.2000000029802,
+        "url": "/work/fk-technology",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "fk-technology",
+        "title": "FK Technology.",
+        "hero": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 810.25
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 1306.5
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-applications.Zgm8Jfre_1RGuh4.webp",
+            "alt": "FK Technology orange logo on dark phone and laptop screen mockups, a black card, packaging box and fabric.",
+            "complete": true,
+            "naturalWidth": 1382,
+            "bounds": {
+              "x": 28.796875,
+              "y": 579.4375,
+              "width": 1382.40625,
+              "height": 778.5625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-identity.DqUm2UKg_OrSYt.webp",
+            "alt": "FK Technology orange monogram with white lettering and orange, black, gray and white palette swatches.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 28.796875,
+              "y": 1447.28125,
+              "width": 722.625,
+              "height": 406.96875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-card-detail.CuxFR9GL_1EqutH.webp",
+            "alt": "Orange FK Technology monogram on a black textured business-card mockup.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 929.453125,
+              "y": 1512.28125,
+              "width": 481.75,
+              "height": 305.984375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-feed-n-seed-full-page.png",
+      "description": "Feed N Seed: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 3763,
+      "bytes": 1433417,
+      "sha256": "6e7b54e394cf17235e4499a0d6fa5833ec8025d7932041661f96008e1124c924",
+      "before": {
+        "at": 2941.7000000029802,
+        "url": "/work/feed-n-seed",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "feed-n-seed",
+        "title": "Feed N Seed.",
+        "hero": {
+          "x": 28.796875,
+          "y": 589.4375,
+          "width": 740.65625,
+          "height": 448.296875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 579.4375,
+          "width": 1382.40625,
+          "height": 549.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-product.DNO_wrF0_Zizxh1.webp",
+            "alt": "Feed N Seed circular green-and-orange mark on white product-container lids and labels with a golden wheat-field backdrop.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 589.4375,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-stationery.Br9gCSKk_Fi1DF.webp",
+            "alt": "Feed N Seed letterhead and card mockups above five green, orange and white treatments of the circular emblem.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": 733.4375,
+              "width": 569.75,
+              "height": 320.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-abacus-immigration-full-page.png",
+      "description": "Abacus Immigration: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 3926,
+      "bytes": 1337406,
+      "sha256": "2a1767ce6cd3440e4d4e50941c0f2260990e7ad86d0a20f864e16353b0d9b608",
+      "before": {
+        "at": 3144.1000000089407,
+        "url": "/work/abacus-immigration",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "abacus-immigration",
+        "title": "Abacus Immigration.",
+        "hero": {
+          "x": 28.796875,
+          "y": 709.390625,
+          "width": 740.65625,
+          "height": 448.296875
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 699.390625,
+          "width": 1382.40625,
+          "height": 549.75
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-applications.D_dNd7sT_Z83x8s.webp",
+            "alt": "Abacus Immigration blue-and-white collage with luggage tag, aircraft tail, sign, passport cover, cup and tote-bag mockups.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 709.390625,
+              "width": 740.65625,
+              "height": 416.609375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-social-layouts.BYtbsmdS_noh8d.webp",
+            "alt": "Abacus Immigration blue-and-white social artwork with serif headings, travel icons and a social-post mockup.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 841.453125,
+              "y": 853.390625,
+              "width": 569.75,
+              "height": 320.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-1440-u-wanna-smoothie-full-page.png",
+      "description": "U Wanna Smoothie: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "width": 1440,
+      "height": 4173,
+      "bytes": 1426136,
+      "sha256": "9beccb051ac31cd1a9c177b3f49a66e9812d315ae55351ebfe4c96fd9a580587",
+      "before": {
+        "at": 3117.2000000029802,
+        "url": "/work/u-wanna-smoothie",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "u-wanna-smoothie",
+        "title": "U Wanna Smoothie.",
+        "hero": {
+          "x": 28.796875,
+          "y": 699.390625,
+          "width": 662.40625,
+          "height": 840
+        },
+        "gallery": {
+          "x": 28.796875,
+          "y": 699.390625,
+          "width": 1382.40625,
+          "height": 840
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-identity.BILl84Aa_1FulaF.webp",
+            "alt": "U Wanna Smoothie pink-and-green presentation with a circular fruit-and-cup symbol beside a hand holding a green drink in a clear cup.",
+            "complete": true,
+            "naturalWidth": 705,
+            "bounds": {
+              "x": 28.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-color.yOxVXOpo_Zpdf4J.webp",
+            "alt": "U Wanna Smoothie color swatches, citrus and leaf graphics, pink fields and a purple berry-drink image.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 748.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 359.515625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-menu.L9Y1qIBG_1EH7wa.webp",
+            "alt": "U Wanna Smoothie folded-menu concepts in pink and green surrounded by kiwi and berry imagery.",
+            "complete": true,
+            "naturalWidth": 648,
+            "bounds": {
+              "x": 934.28125,
+              "y": 1148.1875,
+              "width": 476.921875,
+              "height": 359.515625
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-u-wanna-smoothie",
+            "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+            "time": 0,
+            "paused": true,
+            "state": "poster",
+            "bounds": {
+              "x": 28.796875,
+              "y": 699.390625,
+              "width": 662.40625,
+              "height": 756.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-churros-full-page.png",
+      "description": "Churros Dessert Shop: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 4096,
+      "bytes": 773224,
+      "sha256": "ea2822e05c6ca9a34b0b3a86b6cadc3b36176850547097841c25d3d5bfa0b6f6",
+      "before": {
+        "at": 3198.2999999970198,
+        "url": "/work/churros",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "churros",
+        "title": "Churros Dessert Shop.",
+        "hero": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 1064.3125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-applications.JIrYecxx_1gnsmv.webp",
+            "alt": "Churros Dessert Shop collage featuring takeaway packaging, retail posters, signage, apparel and illustrated brand graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-identity.CPd1pOD4_1A2j6H.webp",
+            "alt": "Churros Dessert Shop ornate illustrated badge beside churros in a cup against cream and red graphics.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1069.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/churros-patterns.CVu5OpxJ_1IwEoK.webp",
+            "alt": "Churros Dessert Shop badge variations, striped patterns, decorative motifs and warm color references.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1334.125,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-churros",
+            "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+            "time": 0.947283,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "file": "case-390-khalo-full-page.png",
+      "description": "Khalo: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 3792,
+      "bytes": 717792,
+      "sha256": "cbb90c5328804f7970e454dd4adf900d10b3509a2444d0337c551b8842ed7297",
+      "before": {
+        "at": 2981.9000000059605,
+        "url": "/work/khalo",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "khalo",
+        "title": "Khalo.",
+        "hero": {
+          "x": 14,
+          "y": 429.1875,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 429.1875,
+          "width": 362,
+          "height": 763.640625
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-packaging.obGhBFNs_QEHwm.webp",
+            "alt": "Khalo orange-and-cream takeaway packaging with an illustrated paper bag, drink cup and fries container below burger imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 429.1875,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-identity.DYtZWM5J_Z2e0HiY.webp",
+            "alt": "Khalo orange illustrated wordmark and a cartoon character eating a burger against patterned cream artwork.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 693.734375,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/khalo-applications.Cnl5_lJd_ZHKfz2.webp",
+            "alt": "Khalo application board showing signage, apparel, wrapping paper and a phone mockup in orange and cream.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 958.28125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-fk-technology-full-page.png",
+      "description": "FK Technology: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 3773,
+      "bytes": 492697,
+      "sha256": "a5d5ddd762972f28793477b03b0c2a367495c9d15bf3c48f7136520eebc2a4b1",
+      "before": {
+        "at": 2945.7999999970198,
+        "url": "/work/fk-technology",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "fk-technology",
+        "title": "FK Technology.",
+        "hero": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 361.984375,
+          "height": 234.546875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 455.78125,
+          "width": 362,
+          "height": 789.703125
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-applications.Zgm8Jfre_64FuE.webp",
+            "alt": "FK Technology orange logo on dark phone and laptop screen mockups, a black card, packaging box and fabric.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 455.78125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-identity.DqUm2UKg_2iUFMO.webp",
+            "alt": "FK Technology orange monogram with white lettering and orange, black, gray and white palette swatches.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 720.328125,
+              "width": 361.984375,
+              "height": 203.859375
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/fk-card-detail.CuxFR9GL_Hf1AT.webp",
+            "alt": "Orange FK Technology monogram on a black textured business-card mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 984.875,
+              "width": 361.984375,
+              "height": 229.921875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-feed-n-seed-full-page.png",
+      "description": "Feed N Seed: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 3553,
+      "bytes": 561792,
+      "sha256": "334d85133677011c7ac843f7e8e658b8711623444401bf7af6e780247cb598c1",
+      "before": {
+        "at": 2945.5999999940395,
+        "url": "/work/feed-n-seed",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "feed-n-seed",
+        "title": "Feed N Seed.",
+        "hero": {
+          "x": 14,
+          "y": 439.1875,
+          "width": 362,
+          "height": 234.3125
+        },
+        "gallery": {
+          "x": 14,
+          "y": 429.1875,
+          "width": 362,
+          "height": 538.875
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-product.DNO_wrF0_ZW5Jgh.webp",
+            "alt": "Feed N Seed circular green-and-orange mark on white product-container lids and labels with a golden wheat-field backdrop.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 439.1875,
+              "width": 362,
+              "height": 203.625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/feed-n-seed-stationery.Br9gCSKk_ZkHoOa.webp",
+            "alt": "Feed N Seed letterhead and card mockups above five green, orange and white treatments of the circular emblem.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 703.5,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-abacus-immigration-full-page.png",
+      "description": "Abacus Immigration: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 3597,
+      "bytes": 580391,
+      "sha256": "fc178ce0debd90c8ba4dd53fd5abcd4751ddda852e048bc007585054adec8b42",
+      "before": {
+        "at": 2904.2999999970198,
+        "url": "/work/abacus-immigration",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "abacus-immigration",
+        "title": "Abacus Immigration.",
+        "hero": {
+          "x": 14,
+          "y": 514.375,
+          "width": 362,
+          "height": 234.3125
+        },
+        "gallery": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 538.875
+        },
+        "variant": "mosaic-2",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-applications.D_dNd7sT_ZLyJ7I.webp",
+            "alt": "Abacus Immigration blue-and-white collage with luggage tag, aircraft tail, sign, passport cover, cup and tote-bag mockups.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 514.375,
+              "width": 362,
+              "height": 203.625
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/abacus-social-layouts.BYtbsmdS_ZaA1A9.webp",
+            "alt": "Abacus Immigration blue-and-white social artwork with serif headings, travel icons and a social-post mockup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 778.6875,
+              "width": 362,
+              "height": 203.875
+            }
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "file": "case-390-u-wanna-smoothie-full-page.png",
+      "description": "U Wanna Smoothie: actual complete page after visiting lazy artwork; software compositor avoids tall-image repetition.",
+      "mode": "normal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 4081,
+      "bytes": 604623,
+      "sha256": "96ce6bc0f759bfe1ef6b744f56ec07a8c37cc390c20b07434b6428f665a667e4",
+      "before": {
+        "at": 3006.2999999970198,
+        "url": "/work/u-wanna-smoothie",
+        "scrollY": 0,
+        "overflow": false,
+        "slug": "u-wanna-smoothie",
+        "title": "U Wanna Smoothie.",
+        "hero": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 535.1875
+        },
+        "gallery": {
+          "x": 14,
+          "y": 504.375,
+          "width": 362,
+          "height": 1049.21875
+        },
+        "variant": "mosaic-3",
+        "images": [
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-identity.BILl84Aa_Z1YDTEa.webp",
+            "alt": "U Wanna Smoothie pink-and-green presentation with a circular fruit-and-cup symbol beside a hand holding a green drink in a clear cup.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-color.yOxVXOpo_tv5dV.webp",
+            "alt": "U Wanna Smoothie color swatches, citrus and leaf graphics, pink fields and a purple berry-drink image.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1069.5625,
+              "width": 362,
+              "height": 203.875
+            }
+          },
+          {
+            "source": "http://127.0.0.1:4440/_astro/smoothie-menu.L9Y1qIBG_Z28xNzd.webp",
+            "alt": "U Wanna Smoothie folded-menu concepts in pink and green surrounded by kiwi and berry imagery.",
+            "complete": true,
+            "naturalWidth": 358,
+            "bounds": {
+              "x": 14,
+              "y": 1334.125,
+              "width": 362,
+              "height": 188.78125
+            }
+          }
+        ],
+        "videos": [
+          {
+            "id": "case-motion-u-wanna-smoothie",
+            "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+            "time": 0.931984,
+            "paused": false,
+            "state": "playing",
+            "bounds": {
+              "x": 14,
+              "y": 504.375,
+              "width": 362,
+              "height": 452.5
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "recordings": [
+    {
+      "file": "case-1440-churros-smoothie-journey.mp4",
+      "nativeFile": "/workspace/case-rollout-review/native/page@6ab5fce2e9e3b14d9f0c0bda5e62bd50.webm",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "durationSeconds": 55.12,
+      "bytes": 7006954,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 1440,
+          "height": 900,
+          "frameRate": "25/1"
+        }
+      ]
+    },
+    {
+      "file": "case-390-churros-smoothie-journey.mp4",
+      "nativeFile": "/workspace/case-rollout-review/native/page@7be4d3c777a839b64ffff81f9cefd533.webm",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "durationSeconds": 41.6,
+      "bytes": 3651727,
+      "streams": [
+        {
+          "codec": "h264",
+          "width": 390,
+          "height": 844,
+          "frameRate": "25/1"
+        }
+      ]
+    }
+  ],
+  "measurements": [
+    {
+      "kind": "visible-approved-playback",
+      "slug": "churros",
+      "width": 1440,
+      "elapsedMs": 9685.39999999106,
+      "samples": [
+        {
+          "at": 3127.199999988079,
+          "time": 1.44839,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3713.2999999970198,
+          "time": 2.034414,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4240.699999988079,
+          "time": 2.561874,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4771.199999988079,
+          "time": 3.092303,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5295,
+          "time": 3.616223,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5839,
+          "time": 4.160176,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6386.79999999702,
+          "time": 4.708069,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6907.79999999702,
+          "time": 5.228993,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7426.199999988079,
+          "time": 5.747301,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7978.29999999702,
+          "time": 0.534363,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8515.09999999404,
+          "time": 1.071156,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9062.09999999404,
+          "time": 1.618211,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9588.89999999106,
+          "time": 2.144951,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10140.29999999702,
+          "time": 2.696372,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10661.29999999702,
+          "time": 3.217301,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 11206.699999988079,
+          "time": 3.762751,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 11725.09999999404,
+          "time": 4.281079,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 12264.29999999702,
+          "time": 4.8203,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        }
+      ]
+    },
+    {
+      "kind": "visible-approved-playback",
+      "slug": "u-wanna-smoothie",
+      "width": 1440,
+      "elapsedMs": 9633.09999999404,
+      "samples": [
+        {
+          "at": 2222.8999999910593,
+          "time": 0.886659,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 2738.699999988079,
+          "time": 1.40237,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3278.7999999970198,
+          "time": 1.942526,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3827.0999999940395,
+          "time": 2.490796,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4352.899999991059,
+          "time": 3.016556,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4885.5,
+          "time": 3.549192,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5404.899999991059,
+          "time": 4.068677,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5936.199999988079,
+          "time": 4.599938,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6494.199999988079,
+          "time": 5.157873,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7028.699999988079,
+          "time": 5.692474,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7581,
+          "time": 0.486121,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8142.199999988079,
+          "time": 1.04741,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8661.09999999404,
+          "time": 1.566184,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9184,
+          "time": 2.089154,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9730.199999988079,
+          "time": 2.635347,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10267.89999999106,
+          "time": 3.173009,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10789.5,
+          "time": 3.694603,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 11335.09999999404,
+          "time": 4.240258,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        }
+      ]
+    },
+    {
+      "kind": "native-navigation",
+      "width": 1440,
+      "sequence": [
+        "/work/churros",
+        "/work/capture",
+        "/work/churros",
+        "/work",
+        "/work/u-wanna-smoothie",
+        "/work"
+      ],
+      "finalURL": "http://127.0.0.1:4440/work",
+      "workScenes": 11
+    },
+    {
+      "kind": "visible-approved-playback",
+      "slug": "churros",
+      "width": 390,
+      "elapsedMs": 9309.60000000894,
+      "samples": [
+        {
+          "at": 1915.5,
+          "time": 1.526421,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 2436,
+          "time": 2.046874,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 2968.7999999970198,
+          "time": 2.579653,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3480.4000000059605,
+          "time": 3.091391,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3988.5,
+          "time": 3.599416,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4515.600000008941,
+          "time": 4.126451,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5024.29999999702,
+          "time": 4.635217,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5537.9000000059605,
+          "time": 5.148797,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6050.79999999702,
+          "time": 5.661613,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6563.4000000059605,
+          "time": 0.413545,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7073.600000008941,
+          "time": 0.923754,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7584.600000008941,
+          "time": 1.434714,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8091.70000000298,
+          "time": 1.941783,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8620.70000000298,
+          "time": 2.470846,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9127.20000000298,
+          "time": 2.977271,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9649.79999999702,
+          "time": 3.49993,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10183.60000000894,
+          "time": 4.033784,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10691.70000000298,
+          "time": 4.541847,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/churros-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        }
+      ]
+    },
+    {
+      "kind": "visible-approved-playback",
+      "slug": "u-wanna-smoothie",
+      "width": 390,
+      "elapsedMs": 9236,
+      "samples": [
+        {
+          "at": 1554.5,
+          "time": 1.446966,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 2099.9000000059605,
+          "time": 1.992336,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 2611.800000011921,
+          "time": 2.504199,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3119.7000000029802,
+          "time": 3.012042,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 3628.7000000029802,
+          "time": 3.521101,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4135.9000000059605,
+          "time": 4.028367,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 4646.800000011921,
+          "time": 4.53919,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5162.9000000059605,
+          "time": 5.055345,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 5671,
+          "time": 5.563431,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6195.600000008941,
+          "time": 0.332015,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 6705.20000000298,
+          "time": 0.841727,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7214.600000008941,
+          "time": 1.351038,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 7723.4000000059605,
+          "time": 1.859847,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8229.800000011921,
+          "time": 2.366328,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 8736.70000000298,
+          "time": 2.873212,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9256.60000000894,
+          "time": 3.39309,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 9766.20000000298,
+          "time": 3.902692,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        },
+        {
+          "at": 10274.300000011921,
+          "time": 4.410721,
+          "paused": false,
+          "source": "http://127.0.0.1:4440/media/portfolio/u-wanna-smoothie-portrait.mp4",
+          "state": "playing",
+          "visibleRatio": 1
+        }
+      ]
+    },
+    {
+      "kind": "native-navigation",
+      "width": 390,
+      "sequence": [
+        "/work/churros",
+        "/work/capture",
+        "/work/churros",
+        "/work",
+        "/work/u-wanna-smoothie",
+        "/work"
+      ],
+      "finalURL": "http://127.0.0.1:4440/work",
+      "workScenes": 11
+    }
+  ],
+  "errors": [],
+  "failedRequests": []
+}
