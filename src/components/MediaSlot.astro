@@ -26,7 +26,7 @@ const {
   motionId,
 } = Astro.props;
 const hasMotion = availability === 'approved' && Boolean(motion && motionId);
-const widths = [...new Set([480, 800, 1200, 1440, poster.width])]
+const widths = [...new Set([320, 480, 640, 800, 1024, 1200, 1440, poster.width])]
   .filter((width) => width <= poster.width)
   .sort((a, b) => a - b);
 const hasApprovedVideo = availability === 'approved' && Boolean(video?.mp4 || video?.webm);
@@ -35,7 +35,7 @@ const mobileSources = mobilePoster
       [480, 800]
         .filter((width) => width <= mobilePoster.width)
         .map(async (width) => {
-          const image = await getImage({ src: mobilePoster, width, format: 'webp' });
+          const image = await getImage({ src: mobilePoster, width, format: 'webp', quality: 90 });
           return `${image.src} ${width}w`;
         }),
     )
@@ -46,7 +46,8 @@ const mobileSources = mobilePoster
   class="media-slot"
   data-media-slot
   data-portfolio-motion={hasMotion || undefined}
-  style={`--media-ratio: ${aspectRatio}; --mobile-media-ratio: ${mobilePoster ? `${mobilePoster.width} / ${mobilePoster.height}` : aspectRatio}`}
+  data-native-detail={poster.width < 840 || undefined}
+  style={`--media-ratio: ${aspectRatio}; --mobile-media-ratio: ${mobilePoster ? `${mobilePoster.width} / ${mobilePoster.height}` : aspectRatio}; --source-width: ${poster.width}px; --source-height: ${poster.height}px`}
 >
   <picture>
     {mobilePoster && (
@@ -67,6 +68,7 @@ const mobileSources = mobilePoster
       loading={priority ? 'eager' : 'lazy'}
       fetchpriority={priority ? 'high' : 'auto'}
       format="webp"
+      quality={90}
     />
   </picture>
   {hasMotion && motion && (
@@ -125,6 +127,15 @@ const mobileSources = mobilePoster
   }
   .media-slot picture {
     display: contents;
+  }
+  /* Flattened detail crops cannot gain resolution by filling a larger panel. */
+  .media-slot[data-native-detail] {
+    display: grid;
+    place-items: center;
+  }
+  .media-slot[data-native-detail] img {
+    max-width: var(--source-width);
+    max-height: var(--source-height);
   }
   @media (max-width: 639px) {
     .media-slot {
