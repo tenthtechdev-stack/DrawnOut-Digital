@@ -52,6 +52,12 @@ test('visual approval publishes a record without verifying facts or credits; wit
     for (const [stem, color] of [
       ['publication-fixture-only', '#7854aa'],
       ['future-draft-only', '#319a84'],
+      ['publication-fixture-only-landscape-poster', '#8b2f40'],
+      ['publication-fixture-only-portrait-poster', '#2f4b8b'],
+      ['future-draft-only-landscape-poster', '#918131'],
+      ['future-draft-only-portrait-poster', '#318191'],
+      ['private-draft-only-landscape-poster', '#b06635'],
+      ['private-draft-only-portrait-poster', '#66b035'],
     ]) {
       await sharp({ create: { width: 43, height: 31, channels: 3, background: color } })
         .webp()
@@ -84,6 +90,8 @@ test('visual approval publishes a record without verifying facts or credits; wit
         landscape: 'publication-workflow-fixture-landscape.mp4',
         portrait: 'publication-workflow-fixture-portrait.mp4',
         source: 'Synthetic binary publication fixture, not actual video artwork.',
+        poster: '../../assets/portfolio/publication-fixture-only-landscape-poster.webp',
+        portraitPoster: '../../assets/portfolio/publication-fixture-only-portrait-poster.webp',
       },
       gallery: cover.gallery.slice(0, 1).map((media) => ({
         ...media,
@@ -119,9 +127,32 @@ test('visual approval publishes a record without verifying facts or credits; wit
         landscape: 'future-private-artwork-sentinel-landscape.mp4',
         portrait: 'future-private-artwork-sentinel-portrait.mp4',
         source: 'Synthetic unpublished video fixture.',
+        poster: '../../assets/portfolio/future-draft-only-landscape-poster.webp',
+        portraitPoster: '../../assets/portfolio/future-draft-only-portrait-poster.webp',
       },
     };
-    for (const record of [fixture, futureDraft]) {
+    const privateDraft = {
+      ...futureDraft,
+      title: 'PRIVATE_DRAFT_ARTWORK_SENTINEL',
+      slug: 'private-draft-artwork-sentinel',
+      status: 'draft',
+      visibility: 'private',
+      displayApproval: fixture.displayApproval,
+      motion: {
+        landscape: 'private-draft-artwork-sentinel-landscape.mp4',
+        portrait: 'private-draft-artwork-sentinel-portrait.mp4',
+        source: 'Synthetic private draft video fixture.',
+        poster: '../../assets/portfolio/private-draft-only-landscape-poster.webp',
+        portraitPoster: '../../assets/portfolio/private-draft-only-portrait-poster.webp',
+      },
+    };
+    const forbiddenStems = [
+      'future-draft-only',
+      futureDraft.slug,
+      'private-draft-only',
+      privateDraft.slug,
+    ];
+    for (const record of [fixture, futureDraft, privateDraft]) {
       for (const file of [record.motion.landscape, record.motion.portrait]) {
         await writeFile(
           path.join(temporary, 'design-assets/portfolio-motion', file),
@@ -130,6 +161,7 @@ test('visual approval publishes a record without verifying facts or credits; wit
       }
     }
     await writeFile(path.join(content, `${futureDraft.slug}.json`), JSON.stringify(futureDraft));
+    await writeFile(path.join(content, `${privateDraft.slug}.json`), JSON.stringify(privateDraft));
     const recordFile = path.join(content, `${fixture.slug}.json`);
     const build = async () => {
       await writeFile(recordFile, JSON.stringify(fixture, null, 2));
@@ -147,17 +179,15 @@ test('visual approval publishes a record without verifying facts or credits; wit
       assert.ok(
         files.every(
           (name) =>
-            !name.includes('_preview') &&
-            !name.includes('future-draft-only') &&
-            !name.includes(futureDraft.slug),
+            !name.includes('_preview') && forbiddenStems.every((stem) => !name.includes(stem)),
         ),
       );
       for (const file of files.filter((name) => /\.(html|json|js)$/.test(name))) {
         const text = await readFile(file, 'utf8');
         assert.ok(
           !text.includes(futureDraft.title) &&
-            !text.includes(futureDraft.slug) &&
-            !text.includes('future-draft-only'),
+            !text.includes(privateDraft.title) &&
+            forbiddenStems.every((stem) => !text.includes(stem)),
           `${file} leaked a future draft.`,
         );
       }
@@ -182,6 +212,17 @@ test('visual approval publishes a record without verifying facts or credits; wit
       7 + Object.keys(serviceIndex).length + publicRecords.length,
     );
     assert.ok(first.files.some((name) => /publication-fixture-only.*\.webp$/.test(name)));
+    for (const [field, stem] of [
+      ['landscape', 'publication-fixture-only-landscape-poster'],
+      ['portrait', 'publication-fixture-only-portrait-poster'],
+    ]) {
+      assert.ok(
+        first.files.some((name) => name.includes(stem) && name.endsWith('.webp')),
+        `${field}: approved unique motion poster is emitted`,
+      );
+      for (const page of [home, work])
+        assert.match(page, new RegExp(`data-${field}-poster="/_astro/${stem}`));
+    }
     for (const file of [fixture.motion.landscape, fixture.motion.portrait]) {
       assert.equal(
         await readFile(path.join(temporary, 'dist/media/portfolio', file), 'utf8'),

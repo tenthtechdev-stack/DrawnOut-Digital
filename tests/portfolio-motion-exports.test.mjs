@@ -79,6 +79,12 @@ for (const slug of names) {
       assert.equal(video.codec_type, 'video');
       assert.equal(video.codec_name, 'h264');
       assert.equal(video.pix_fmt, 'yuv420p');
+      if (isPilot) {
+        assert.equal(video.color_space, 'bt709');
+        assert.equal(video.color_primaries, 'bt709');
+        assert.equal(video.color_transfer, 'bt709');
+        assert.equal(video.color_range, 'tv');
+      }
       const frameCount = isPilot ? 180 : 138;
       assert.equal(Number(video.nb_frames), frameCount);
       assert.equal(video.avg_frame_rate, '24/1');

@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-11-18T01:28:38.672Z",
+  "recordedAt": "2026-11-18T09:10:58.055Z",
   "command": "node --test --test-reporter=spec tests/motion-quality-exports.test.mjs tests/portfolio-motion-exports.test.mjs",
   "exitCode": 0,
   "tests": 13,
@@ -18,51 +18,71 @@
     "legacyReference": "734e1e835ca7a447e7ed5b845cf748e7f83e2fdc"
   },
   "sourceFiles": {
-    "tests/motion-quality-exports.test.mjs": "404e8e77295dba2ed8e907c7177b5a7be11aa51571f5dd9716258cc59dbb1345",
-    "tests/portfolio-motion-exports.test.mjs": "af1375a09e1760c39e46a3aa1e9a781ee3cb086e79871dc42f4fa84c8e0fb55b"
+    "tests/motion-quality-exports.test.mjs": "b7a9890fd583199923231815bca5c0df4fecb5469460ec401f2415bfb7faac22",
+    "tests/portfolio-motion-exports.test.mjs": "91b99fa5120a6aa2bac3a86ab5ab0705134a685dd7700fb6ce50e11b9218dba7",
+    "tests/publication-workflow.test.mjs": "e686509fcb09dc5df1dc819f6ecc18cd522d179c11bf4652f38972152bbbe3c1",
+    "scripts/portfolio/quality/render.mjs": "ff22a908f3e745a8072020e3138bc693f766532e5d1c9cfb3726b72480484909"
+  },
+  "measurementMethod": "Quality pilot frames are decoded at native dimensions into RGB24, then both native video frames and WebP posters receive the same Sharp RGB Lanczos resize to96×96. This avoids comparing FFmpeg YUV-before-RGB scaling against a different RGB reconstruction kernel. Seam and motion thresholds remain unchanged. The historical production suite compares frames within the same FFmpeg path; it does not compare posters.",
+  "measurementCorrection": {
+    "mixedKernelChurrosPortraitPosterMAE255": 4.0258608217592595,
+    "consistentNativeRGBChurrosPortraitPosterMAE255": 2.654079861111111,
+    "thresholdUnchanged": 4,
+    "explanation": "The initial mixed-kernel comparison measured resampling differences as well as codec loss. Correcting the measurement did not change the poster, relax the threshold or change CRF19."
+  },
+  "colorEncoding": {
+    "newPilotsOnly": true,
+    "matrix": "bt709",
+    "primaries": "bt709",
+    "transfer": "bt709",
+    "range": "tv",
+    "conversion": "RGB24 full range to explicitly limited-range BT709 YUV420p",
+    "verifiedInActualFFprobe": true,
+    "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off",
+    "legacyExportsUnchanged": true
   },
   "measurements": [
     {
       "slug": "bunzo",
       "format": "landscape",
-      "decodedSeamMeanAbsoluteError255": 0.0899,
-      "largestSampledProgressionMeanAbsoluteDifference255": 20.66,
-      "posterFirstFrameMeanAbsoluteDifference255": 3.685
+      "decodedSeamMeanAbsoluteError255": 0.1131,
+      "largestSampledProgressionMeanAbsoluteDifference255": 20.42,
+      "posterFirstFrameMeanAbsoluteDifference255": 1.864
     },
     {
       "slug": "bunzo",
       "format": "portrait",
-      "decodedSeamMeanAbsoluteError255": 0.118,
-      "largestSampledProgressionMeanAbsoluteDifference255": 22.38,
-      "posterFirstFrameMeanAbsoluteDifference255": 3.472
+      "decodedSeamMeanAbsoluteError255": 0.1489,
+      "largestSampledProgressionMeanAbsoluteDifference255": 22.31,
+      "posterFirstFrameMeanAbsoluteDifference255": 2.366
     },
     {
       "slug": "sol-community-center",
       "format": "landscape",
-      "decodedSeamMeanAbsoluteError255": 0.0333,
-      "largestSampledProgressionMeanAbsoluteDifference255": 36.68,
-      "posterFirstFrameMeanAbsoluteDifference255": 1.821
+      "decodedSeamMeanAbsoluteError255": 0.0387,
+      "largestSampledProgressionMeanAbsoluteDifference255": 36.83,
+      "posterFirstFrameMeanAbsoluteDifference255": 1.485
     },
     {
       "slug": "sol-community-center",
       "format": "portrait",
-      "decodedSeamMeanAbsoluteError255": 0.0485,
-      "largestSampledProgressionMeanAbsoluteDifference255": 40.57,
-      "posterFirstFrameMeanAbsoluteDifference255": 1.768
+      "decodedSeamMeanAbsoluteError255": 0.053,
+      "largestSampledProgressionMeanAbsoluteDifference255": 40.89,
+      "posterFirstFrameMeanAbsoluteDifference255": 1.622
     },
     {
       "slug": "churros",
       "format": "landscape",
-      "decodedSeamMeanAbsoluteError255": 0.0999,
-      "largestSampledProgressionMeanAbsoluteDifference255": 20.3,
-      "posterFirstFrameMeanAbsoluteDifference255": 3.297
+      "decodedSeamMeanAbsoluteError255": 0.1154,
+      "largestSampledProgressionMeanAbsoluteDifference255": 20.65,
+      "posterFirstFrameMeanAbsoluteDifference255": 1.866
     },
     {
       "slug": "churros",
       "format": "portrait",
-      "decodedSeamMeanAbsoluteError255": 0.1409,
-      "largestSampledProgressionMeanAbsoluteDifference255": 27.82,
-      "posterFirstFrameMeanAbsoluteDifference255": 3.789
+      "decodedSeamMeanAbsoluteError255": 0.1717,
+      "largestSampledProgressionMeanAbsoluteDifference255": 28.32,
+      "posterFirstFrameMeanAbsoluteDifference255": 2.654
     }
   ],
   "exports": [
@@ -73,14 +93,23 @@
           "file": "bunzo-landscape.mp4",
           "width": 1440,
           "height": 810,
-          "bytes": 697760,
-          "sha256": "37f787a3f64d8f864b67ce29c166fcb4c797fd607eeba41e596b412e17df4e02",
+          "bytes": 700510,
+          "sha256": "e91c98e3c66e4286c04a0d4c6d71e7a342a788db460d0eb79b25c63c2262b494",
           "codec": "h264",
           "pixelFormat": "yuv420p",
           "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
           "durationSeconds": 7.5,
           "frames": 180,
-          "averageBitrate": 744277,
+          "averageBitrate": 747210,
           "crf": 19,
           "audioStreams": 0,
           "firstFrameSHA256": "6e9caefcc64e3f0512a63d6b73dbb768160df957b1696771278aa095bfa809f8",
@@ -101,14 +130,23 @@
           "file": "bunzo-portrait.mp4",
           "width": 810,
           "height": 1080,
-          "bytes": 652627,
-          "sha256": "5bae18b15ac01bccc9dd500ce55aa7aaedfa8e6f0b22f63e1dd4a824aed58f58",
+          "bytes": 656480,
+          "sha256": "71a97c0a4f28d581b80f8ddeda3c8dbac7b43b1ec72dfd58b31208c2a6e6ec40",
           "codec": "h264",
           "pixelFormat": "yuv420p",
           "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
           "durationSeconds": 7.5,
           "frames": 180,
-          "averageBitrate": 696135,
+          "averageBitrate": 700245,
           "crf": 19,
           "audioStreams": 0,
           "firstFrameSHA256": "b8d1b923d840f4fce557e1653eee59a18e81f81f268439cbf650db3bfef0a25a",
@@ -137,14 +175,23 @@
           "file": "sol-community-center-landscape.mp4",
           "width": 1440,
           "height": 810,
-          "bytes": 927278,
-          "sha256": "3d844fca4d0b360e790844ac4fa5eadb73c651eb96e1510bccc7607f48f48183",
+          "bytes": 943778,
+          "sha256": "f54d9f2434a3919fe0e5136ea2e09867f200d0825254df7475b9a56e2214be2d",
           "codec": "h264",
           "pixelFormat": "yuv420p",
           "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
           "durationSeconds": 7.5,
           "frames": 180,
-          "averageBitrate": 989096,
+          "averageBitrate": 1006696,
           "crf": 19,
           "audioStreams": 0,
           "firstFrameSHA256": "deb075c20c6bc731da16cb7ff57fbb11d863d40e2f9bc47590431c5bbe0779a8",
@@ -165,14 +212,23 @@
           "file": "sol-community-center-portrait.mp4",
           "width": 810,
           "height": 1080,
-          "bytes": 764100,
-          "sha256": "0ba5a875777eaa1b5447a33049a029270cc1c173653ff4ad290612da0759fa8e",
+          "bytes": 792030,
+          "sha256": "4e6702c7856979970935fcbd93ddf242f26ad548728333653d0faf1439bca887",
           "codec": "h264",
           "pixelFormat": "yuv420p",
           "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
           "durationSeconds": 7.5,
           "frames": 180,
-          "averageBitrate": 815040,
+          "averageBitrate": 844832,
           "crf": 19,
           "audioStreams": 0,
           "firstFrameSHA256": "2f4ecc96cb17a795d5b4c2a1c9793182e5185f9074ecaf763a8e806a3a7b232c",
@@ -201,14 +257,23 @@
           "file": "churros-landscape.mp4",
           "width": 1440,
           "height": 810,
-          "bytes": 673030,
-          "sha256": "b90db30d3544297315aa1a1932b03d2a41f94c9a7cc0f6f303d340b797c56f35",
+          "bytes": 668984,
+          "sha256": "32f22d505040d9cae977df287ad473f09832d16d8237fb181ae99ed428e91b16",
           "codec": "h264",
           "pixelFormat": "yuv420p",
           "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
           "durationSeconds": 7.5,
           "frames": 180,
-          "averageBitrate": 717898,
+          "averageBitrate": 713582,
           "crf": 19,
           "audioStreams": 0,
           "firstFrameSHA256": "03557a0c92a7acde089176fd94f721d8ea796c5573612bf040d84621f11bd6a7",
@@ -229,14 +294,23 @@
           "file": "churros-portrait.mp4",
           "width": 810,
           "height": 1080,
-          "bytes": 671111,
-          "sha256": "15fa9cadbc5a0cfa775dbffe402d39f2054f475d0e890f2cbf5e91632bf1f3a1",
+          "bytes": 667759,
+          "sha256": "33ad0c2fe7a9159b0d66462a0ac114d4c9b971bfa28d98e5f9a439512d70bab8",
           "codec": "h264",
           "pixelFormat": "yuv420p",
           "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
           "durationSeconds": 7.5,
           "frames": 180,
-          "averageBitrate": 715851,
+          "averageBitrate": 712276,
           "crf": 19,
           "audioStreams": 0,
           "firstFrameSHA256": "52facf9663d62215c882f776d45c84ac2f5e1f876f3c0def52377cfea1dd4cf7",
@@ -259,7 +333,26 @@
       "compositionSHA256": "3ec884a29f916dfa27a607850cce529eaa37ead1c4a8c5891030ca8b945ea4b9"
     }
   ],
-  "rawReportSHA256": "816c074839df85928fd79334d5cc334627e765046bfdd7699ca630dd195128a6",
-  "rawReport": "✔ bunzo: transparent layers retain original visible pixels and recorded source provenance (493.37337ms)\nℹ 12 isolated layers; 707133 opaque source pixels checked\n✔ bunzo: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (2932.713946ms)\nℹ landscape: decoded seam0.0899, progression20.66, poster error3.685 /255\nℹ portrait: decoded seam0.1180, progression22.38, poster error3.472 /255\n✔ sol-community-center: transparent layers retain original visible pixels and recorded source provenance (233.772234ms)\nℹ 6 isolated layers; 704375 opaque source pixels checked\n✔ sol-community-center: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (2820.221712ms)\nℹ landscape: decoded seam0.0333, progression36.68, poster error1.821 /255\nℹ portrait: decoded seam0.0485, progression40.57, poster error1.768 /255\n✔ churros: transparent layers retain original visible pixels and recorded source provenance (389.2769ms)\nℹ 11 isolated layers; 772382 opaque source pixels checked\n✔ churros: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (3006.337643ms)\nℹ landscape: decoded seam0.0999, progression20.30, poster error3.297 /255\nℹ portrait: decoded seam0.1409, progression27.82, poster error3.789 /255\n✔ the remaining three motion directions retain all six original MP4s pending creative approval (31.17203ms)\n✔ sol-community-center: silent, responsive, seamless encoded exports and actual visual progression (2237.833263ms)\nℹ landscape: decoded seam mean absolute difference 0.0333 / 255; identity-to-application difference 36.68 / 255\nℹ portrait: decoded seam mean absolute difference 0.0485 / 255; identity-to-application difference 40.57 / 255\n✔ bunzo: silent, responsive, seamless encoded exports and actual visual progression (2173.15452ms)\nℹ landscape: decoded seam mean absolute difference 0.0899 / 255; identity-to-application difference 20.66 / 255\nℹ portrait: decoded seam mean absolute difference 0.1180 / 255; identity-to-application difference 22.38 / 255\n✔ triarch: silent, responsive, seamless encoded exports and actual visual progression (949.749017ms)\nℹ landscape: decoded seam mean absolute difference 0.1467 / 255; identity-to-application difference 60.28 / 255\nℹ portrait: decoded seam mean absolute difference 0.1080 / 255; identity-to-application difference 54.48 / 255\n✔ churros: silent, responsive, seamless encoded exports and actual visual progression (2315.440791ms)\nℹ landscape: decoded seam mean absolute difference 0.0999 / 255; identity-to-application difference 20.30 / 255\nℹ portrait: decoded seam mean absolute difference 0.1409 / 255; identity-to-application difference 27.82 / 255\n✔ by-tech-group: silent, responsive, seamless encoded exports and actual visual progression (855.55056ms)\nℹ landscape: decoded seam mean absolute difference 0.1806 / 255; identity-to-application difference 70.41 / 255\nℹ portrait: decoded seam mean absolute difference 0.1449 / 255; identity-to-application difference 76.07 / 255\n✔ u-wanna-smoothie: silent, responsive, seamless encoded exports and actual visual progression (913.486516ms)\nℹ landscape: decoded seam mean absolute difference 0.1424 / 255; identity-to-application difference 46.75 / 255\nℹ portrait: decoded seam mean absolute difference 0.2070 / 255; identity-to-application difference 50.12 / 255\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10030.26642\n",
-  "note": "Final Bunzo opacity correction included. Actual rendered files, every decoded MP4 frame and real alpha-source pixels tested. This establishes technical behavior and fidelity; creative approval and physical Safari/Android testing remain outstanding."
+  "publicationWorkflow": {
+    "command": "node --test tests/publication-workflow.test.mjs",
+    "exitCode": 0,
+    "tests": 1,
+    "passed": 1,
+    "failed": 0,
+    "isolatedProductionBuilds": 4,
+    "uniqueMotionPosters": 6,
+    "states": [
+      "approved visible-only record",
+      "pending display approval",
+      "private draft despite display approval",
+      "withdrawn display approval"
+    ],
+    "assertions": "Approved landscape/portrait posters emit actual files and markup references. Independent pending/private-draft poster files and references never ship. Withdrawal removes the approved route, cover, both unique posters and both MP4 endpoints. Factual/credit verification assertions remain in place.",
+    "sourceSHA256": "e686509fcb09dc5df1dc819f6ecc18cd522d179c11bf4652f38972152bbbe3c1",
+    "rawReportSHA256": "b1134ac6da46d80c9fff4f6824043c01d9266e3dcbe2d3ec6424d511487738a5",
+    "rawReport": "✔ visual approval publishes a record without verifying facts or credits; withdrawal removes its route and unique media (10594.876373ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10868.508645\n"
+  },
+  "rawReportSHA256": "7400b7f854ff4c84e3d2bac34935f0076c2893eeadaddc58494bac79b81cc4bf",
+  "rawReport": "✔ bunzo: transparent layers retain original visible pixels and recorded source provenance (584.257629ms)\nℹ 12 isolated layers; 707133 opaque source pixels checked\n✔ bunzo: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (5477.025521ms)\nℹ landscape: decoded seam0.1131, progression20.42, poster error1.864 /255\nℹ portrait: decoded seam0.1489, progression22.31, poster error2.366 /255\n✔ sol-community-center: transparent layers retain original visible pixels and recorded source provenance (404.85218ms)\nℹ 6 isolated layers; 704375 opaque source pixels checked\n✔ sol-community-center: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (5481.167975ms)\nℹ landscape: decoded seam0.0387, progression36.83, poster error1.485 /255\nℹ portrait: decoded seam0.0530, progression40.89, poster error1.622 /255\n✔ churros: transparent layers retain original visible pixels and recorded source provenance (792.585593ms)\nℹ 11 isolated layers; 772382 opaque source pixels checked\n✔ churros: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (4039.049674ms)\nℹ landscape: decoded seam0.1154, progression20.65, poster error1.866 /255\nℹ portrait: decoded seam0.1717, progression28.32, poster error2.654 /255\n✔ the remaining three motion directions retain all six original MP4s pending creative approval (89.132744ms)\n✔ sol-community-center: silent, responsive, seamless encoded exports and actual visual progression (3632.92052ms)\nℹ landscape: decoded seam mean absolute difference 0.0386 / 255; identity-to-application difference 36.61 / 255\nℹ portrait: decoded seam mean absolute difference 0.0485 / 255; identity-to-application difference 40.48 / 255\n✔ bunzo: silent, responsive, seamless encoded exports and actual visual progression (3975.76583ms)\nℹ landscape: decoded seam mean absolute difference 0.0905 / 255; identity-to-application difference 20.78 / 255\nℹ portrait: decoded seam mean absolute difference 0.1150 / 255; identity-to-application difference 22.45 / 255\n✔ triarch: silent, responsive, seamless encoded exports and actual visual progression (1644.642718ms)\nℹ landscape: decoded seam mean absolute difference 0.1467 / 255; identity-to-application difference 60.28 / 255\nℹ portrait: decoded seam mean absolute difference 0.1080 / 255; identity-to-application difference 54.48 / 255\n✔ churros: silent, responsive, seamless encoded exports and actual visual progression (3769.258271ms)\nℹ landscape: decoded seam mean absolute difference 0.0932 / 255; identity-to-application difference 20.38 / 255\nℹ portrait: decoded seam mean absolute difference 0.1418 / 255; identity-to-application difference 27.91 / 255\n✔ by-tech-group: silent, responsive, seamless encoded exports and actual visual progression (1257.717573ms)\nℹ landscape: decoded seam mean absolute difference 0.1806 / 255; identity-to-application difference 70.41 / 255\nℹ portrait: decoded seam mean absolute difference 0.1449 / 255; identity-to-application difference 76.07 / 255\n✔ u-wanna-smoothie: silent, responsive, seamless encoded exports and actual visual progression (1113.207977ms)\nℹ landscape: decoded seam mean absolute difference 0.1424 / 255; identity-to-application difference 46.75 / 255\nℹ portrait: decoded seam mean absolute difference 0.2070 / 255; identity-to-application difference 50.12 / 255\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 17042.52614\n",
+  "note": "Final Bunzo compositing correction and explicit BT709 encoding are included. Actual rendered files, every decoded MP4 frame and real alpha-source pixels were tested. This establishes technical behavior and fidelity; creative approval and physical Safari/Android testing remain outstanding."
 }

@@ -6,9 +6,9 @@ Reproduce with `node scripts/portfolio/refresh-images.mjs`. Machine provenance, 
 
 ## Encoding and framing
 
-Source WebPs use quality92, effort6 and smart chroma subsampling, replacing the historical quality86 + pre-downsample. Astro's final responsive resources explicitly use quality90 instead of its implicit default; widths320/480/640/800/1024/1200/1440/native are bounded by the genuine source width. These are responsive alternatives, never all downloaded for one image. Total source-master bytes increase from3,520,584 to6,452,732; browser-selected transfer is measured separately.
+Source WebPs use quality 92, effort 6 and smart chroma subsampling, replacing the historical quality 86 + pre-downsample. Astro's final responsive resources explicitly use quality 90 instead of its implicit default; widths 320/480/640/800/1024/1200/1440/native are bounded by the genuine source width. These are responsive alternatives, never all downloaded for one image. Total source-master bytes increase from 3,520,584 to 6,452,732; browser-selected transfer is measured separately.
 
-Small sources below840px receive explicit maximum width/height equal to native source pixels within their existing reserved panel. Bunzo's413px cup,433px bag, SOL's650px sign, Triarch's554px device and FK's614px card remain faithful details with breathing room, rather than being stretched to fill ever-larger panels. Native CSS size is still not equivalent to full sharpness at2×/3×DPR; those assets need larger source masters for that standard. Browser tests inspect selected candidate width, CSS artwork bounds, DPR and filter/transform behavior.
+Small sources below 840px receive explicit maximum width/height equal to native source pixels within their existing reserved panel. Bunzo's 413px cup, 433px bag, SOL's 650px sign, Triarch's 554px device and FK's 614px card remain faithful details with breathing room, rather than being stretched to fill ever-larger panels. Native CSS size is still not equivalent to full sharpness at 2×/3× DPR; those assets need larger source masters for that standard. Browser tests inspect selected candidate width, CSS artwork bounds, DPR and filter/transform behavior.
 
 ## Asset inventory
 
@@ -54,8 +54,16 @@ Small sources below840px receive explicit maximum width/height equal to native s
 
 ## Review and limits
 
-[Before/after same-scale crops](../../artifacts/motion-quality/README.md) cover Bunzo, SOL, Triarch and FK's smaller card. The comparison enlarges the old1440px derivative only to the same native reference scale, then extracts the identical600×360(or bounded) source rectangle. No artificial sharpening is used. A small unchanged-size crop improves compression fidelity, not geometric detail.
+[Before/after same-scale crops](../../artifacts/motion-quality/README.md) cover Bunzo, SOL, Triarch and FK's smaller card. The comparison enlarges the old 1440px derivative only to the same native reference scale, then extracts the identical 600 × 360 (or bounded) source rectangle. No artificial sharpening is used. A small unchanged-size crop improves compression fidelity, not geometric detail.
 
 The source PNGs themselves contain flattened mockups, baked texture and pre-existing raster softness. Highest-resolution originals here remain around1654px wide; full-width1920px and high-density immersive views cannot acquire additional real detail from them. For genuinely sharper large/high-DPR output, supply native high-resolution isolated exports or editable project masters.
 
 Existing case curation, artwork proportions, project order and all visual-only factual/credit safeguards are preserved. New video-poster compositions are audited separately in the motion export manifest. Physical iOS Safari/Android verification is not performed here.
+
+## Measured source comparison and served assets
+
+`node scripts/portfolio/measure-images.mjs` compares every one of the 37 derivatives with its exact native source crop. RGB PSNR improves for all 37 assets, by 0.475–16.482 dB. This measures less deviation from the existing source; it does not measure creative quality or imply recovery of missing detail. [Raw per-image results](../../artifacts/motion-quality/image-comparison-metrics.json).
+
+The browser audit records 68 actual case-artwork selections across 390px and 1440px at DPR 2, including candidate pixel width, rendered bounds, CSS filter and object-fit. The existing Work/home browser regressions additionally exercise the ordered cards and their responsive artwork. [Browser audit](../../artifacts/motion-quality/browser-image-audit.json).
+
+A read-only check retrieved all eleven current Netlify case pages and decoded their 35 distinct portfolio image `src` resources (2,581,048 bytes in aggregate). Their larger boards still cap at the older 1440px variants. Declared `srcset`/`sizes` are recorded separately from the measured local browser selections. This observation neither deploys this branch nor claims that all those resources load in one visit. [Served-asset audit](../../artifacts/motion-quality/netlify-observation.json).

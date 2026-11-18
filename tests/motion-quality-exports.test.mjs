@@ -16,7 +16,7 @@ const difference = (a, b) => {
   assert.equal(a.length, b.length, 'Compared decoded images must have equal dimensions');
   return a.reduce((sum, value, index) => sum + Math.abs(value - b[index]), 0) / a.length;
 };
-async function decodedFrame(file, index) {
+async function decodedFrame(file, index, size) {
   const { stdout } = await run(
     'ffmpeg',
     [
@@ -27,7 +27,7 @@ async function decodedFrame(file, index) {
       '-i',
       file,
       '-vf',
-      `select=eq(n\\,${index}),scale=96:96`,
+      `select=eq(n\\,${index})`,
       '-filter_threads',
       '1',
       '-frames:v',
@@ -38,10 +38,20 @@ async function decodedFrame(file, index) {
       'rgb24',
       'pipe:1',
     ],
-    { maxBuffer: 100000, encoding: 'buffer' },
+    { maxBuffer: size.width * size.height * 4, encoding: 'buffer' },
   );
-  assert.equal(stdout.length, 96 * 96 * 3, `Frame ${index} must actually decode`);
-  return stdout;
+  assert.equal(
+    stdout.length,
+    size.width * size.height * 3,
+    `Frame ${index} must actually decode at native dimensions`,
+  );
+  // Compare like with like: decode the native RGB frame first, then use the
+  // same RGB Lanczos resize as the poster. Scaling YUV in FFmpeg while scaling
+  // the poster in Sharp would measure different reconstruction kernels too.
+  return sharp(stdout, { raw: { ...size, channels: 3 } })
+    .resize(96, 96, { fit: 'fill' })
+    .raw()
+    .toBuffer();
 }
 
 for (const slug of pilots) {
@@ -127,6 +137,10 @@ for (const slug of pilots) {
       assert.equal(video.codec_name, 'h264');
       assert.equal(video.codec_type, 'video');
       assert.equal(video.pix_fmt, 'yuv420p');
+      assert.equal(video.color_space, 'bt709');
+      assert.equal(video.color_primaries, 'bt709');
+      assert.equal(video.color_transfer, 'bt709');
+      assert.equal(video.color_range, 'tv');
       assert.equal(video.avg_frame_rate, '24/1');
       assert.equal(Number(video.nb_frames), 180);
       assert.equal(Number(video.duration), 7.5);
@@ -148,10 +162,11 @@ for (const slug of pilots) {
         '-',
       ]);
       assert.equal(decoded.stderr, '');
-      const first = await decodedFrame(file, 0);
-      const middle = await decodedFrame(file, 52);
-      const application = await decodedFrame(file, 114);
-      const last = await decodedFrame(file, 179);
+      const size = { width: video.width, height: video.height };
+      const first = await decodedFrame(file, 0, size);
+      const middle = await decodedFrame(file, 52, size);
+      const application = await decodedFrame(file, 114, size);
+      const last = await decodedFrame(file, 179, size);
       const seam = difference(first, last);
       const progression = Math.max(difference(first, middle), difference(first, application));
       assert(seam < 3, 'Encoded endpoints are visually matched after compression');

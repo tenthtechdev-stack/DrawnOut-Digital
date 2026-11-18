@@ -57,6 +57,36 @@ async function clickTarget(link: Locator) {
   });
 }
 
+function meanRGB(pixels: Uint8Array, channels: number) {
+  const result = [0, 0, 0];
+  for (let index = 0; index < pixels.length; index += channels)
+    for (let channel = 0; channel < 3; channel++) result[channel]! += pixels[index + channel]!;
+  return result.map((value) => Number((value / (pixels.length / channels)).toFixed(2)));
+}
+
+async function recordVideoColor(sample: Record<string, unknown>) {
+  const file = 'artifacts/motion-quality/browser-video-color-audit.json';
+  let previous: Record<string, unknown>[] = [];
+  try {
+    previous = JSON.parse(await readFile(file, 'utf8')) as Record<string, unknown>[];
+  } catch {
+    // The first real decoded video sample creates this review artifact.
+  }
+  await writeFile(
+    file,
+    JSON.stringify(
+      [
+        ...previous.filter(
+          (row) => row.viewportWidth !== sample.viewportWidth || row.slug !== sample.slug,
+        ),
+        sample,
+      ],
+      null,
+      2,
+    ) + '\n',
+  );
+}
+
 test('all shared page heads declare retrievable faithful icons, with no default framework favicon', async ({
   page,
   request,
@@ -334,6 +364,96 @@ for (const width of [390, 1440]) {
       await expect
         .poll(() => video.evaluate((node: HTMLVideoElement) => node.currentTime))
         .not.toBe(decoded.time);
+      // Decode success alone misses wrong RGB↔YUV matrices. Wait for the real
+      // visual arrival to finish, then compare an unobscured, uniform source
+      // background sample through both browser decoding and GPU presentation.
+      await expect(page.locator('[data-case-hero]')).toHaveAttribute(
+        'data-case-reveal-state',
+        'complete',
+      );
+      const color = await video.evaluate((node: HTMLVideoElement) => {
+        const source = { x: 40, y: Math.floor(node.videoHeight * 0.45), width: 3, height: 3 };
+        const canvas = document.createElement('canvas');
+        canvas.width = node.videoWidth;
+        canvas.height = node.videoHeight;
+        const context = canvas.getContext('2d', { willReadFrequently: true, colorSpace: 'srgb' })!;
+        context.drawImage(node, 0, 0);
+        const pixels = [...context.getImageData(source.x, source.y, 3, 3).data];
+        const box = node.getBoundingClientRect();
+        // object-fit:contain reserves a different rectangle from the actual
+        // frame. Include its centered letterboxing when locating screen pixels.
+        const scale = Math.min(box.width / node.videoWidth, box.height / node.videoHeight);
+        const screen = {
+          x: box.x + (box.width - node.videoWidth * scale) / 2 + (source.x + 1) * scale,
+          y: box.y + (box.height - node.videoHeight * scale) / 2 + (source.y + 1) * scale,
+        };
+        return {
+          source,
+          pixels,
+          screen,
+          time: node.currentTime,
+          viewport: { width: innerWidth, height: innerHeight },
+          onScreen:
+            screen.x >= 2 &&
+            screen.x <= innerWidth - 2 &&
+            screen.y >= 2 &&
+            screen.y <= innerHeight - 2,
+          unobscured: node.parentElement!.contains(document.elementFromPoint(screen.x, screen.y)),
+        };
+      });
+      expect(color.onScreen && color.unobscured).toBe(true);
+      const posterPixelData = await sharp(await posterResponse.body())
+        .extract({ left: color.source.x, top: color.source.y, width: 3, height: 3 })
+        .removeAlpha()
+        .raw()
+        .toBuffer({ resolveWithObject: true });
+      const expectedRGB = meanRGB(posterPixelData.data, posterPixelData.info.channels);
+      const canvasRGB = meanRGB(Uint8Array.from(color.pixels), 4);
+      const screenshot = await page.screenshot();
+      const screenMetadata = await sharp(screenshot).metadata();
+      const screenPixels = await sharp(screenshot)
+        .extract({
+          left: Math.floor((color.screen.x * screenMetadata.width!) / color.viewport.width) - 1,
+          top: Math.floor((color.screen.y * screenMetadata.height!) / color.viewport.height) - 1,
+          width: 3,
+          height: 3,
+        })
+        .removeAlpha()
+        .raw()
+        .toBuffer({ resolveWithObject: true });
+      const screenshotRGB = meanRGB(screenPixels.data, screenPixels.info.channels);
+      const canvasDelta = canvasRGB.map((value, channel) =>
+        Math.abs(value - expectedRGB[channel]!),
+      );
+      const screenshotDelta = screenshotRGB.map((value, channel) =>
+        Math.abs(value - expectedRGB[channel]!),
+      );
+      await recordVideoColor({
+        slug,
+        viewportWidth: width,
+        variant: decoded.variant,
+        video: decoded.source,
+        poster: decoded.expectedPoster,
+        sourceRegion: color.source,
+        screenPoint: color.screen,
+        videoTime: color.time,
+        expectedRGB,
+        canvasRGB,
+        screenshotRGB,
+        canvasDelta,
+        screenshotDelta,
+        maximumAllowedChannelDifference: 5,
+        method:
+          'Real playing-video canvas and actual browser screenshot, with contain letterboxing and screenshot density accounted for; same uniform native-source region in matching WebP poster. No seeking or visual overrides.',
+      });
+      expect(
+        Math.max(...canvasDelta),
+        `${slug}: browser-decoded video color matches its poster`,
+      ).toBeLessThanOrEqual(5);
+      expect(
+        Math.max(...screenshotDelta),
+        `${slug}: visible video color matches its poster`,
+      ).toBeLessThanOrEqual(5);
       expect(await page.locator('[data-portfolio-video][src]').count()).toBeLessThanOrEqual(
         width < 768 ? 1 : 2,
       );
