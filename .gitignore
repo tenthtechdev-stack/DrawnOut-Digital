@@ -163,6 +163,14 @@ artifacts/motion-quality/*
 !artifacts/motion-quality/*.gif
 !artifacts/motion-quality/*.json
 
+!artifacts/motion-completion/
+artifacts/motion-completion/*
+!artifacts/motion-completion/*.md
+!artifacts/motion-completion/*.png
+!artifacts/motion-completion/*.mp4
+!artifacts/motion-completion/*.gif
+!artifacts/motion-completion/*.json
+
 # Large generated still SVGs duplicate embedded layer PNGs; sources/mattes are tracked.
 design-assets/portfolio-motion/quality/*-composition.svg
 
