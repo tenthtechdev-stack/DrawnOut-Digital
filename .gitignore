@@ -162,3 +162,6 @@ artifacts/motion-quality/*
 !artifacts/motion-quality/*.mp4
 !artifacts/motion-quality/*.gif
 !artifacts/motion-quality/*.json
+
+# Large generated still SVGs duplicate embedded layer PNGs; sources/mattes are tracked.
+design-assets/portfolio-motion/quality/*-composition.svg

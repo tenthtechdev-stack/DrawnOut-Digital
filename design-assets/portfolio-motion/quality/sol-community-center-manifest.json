@@ -1,0 +1,306 @@
+{
+  "slug": "sol-community-center",
+  "title": "SOL Community Center",
+  "direction": "The gold annulus and green core separate, counter-turn and reunite; original SOL lettering resolves before its circular geometry opens real signage, notices and stationery.",
+  "composition": "scripts/portfolio/quality/sol.mjs",
+  "durationSeconds": 7.5,
+  "fps": 24,
+  "frameCount": 180,
+  "layers": [
+    "Gold annulus isolated by an annular alpha mask over the 186px supplied emblem.",
+    "Green/cream emblem core isolated by a complementary circular mask; independent counter-turn and translation.",
+    "Four actual graphic elements from the source system (gold crescent, lime leaf, cream circle, forest leaf), accurately color-isolated and independently translating / turning.",
+    "Three independently masked actual S/O/L letters; actual COMMUNITY / CENTER subline remains separate.",
+    "Circular reveal aperture derived from the emblem, linking the identity to its real application artwork.",
+    "Native-resolution wall signage, original event notice, original business card and notebook; individually timed, shallow translations, no board zoom."
+  ],
+  "limitations": [
+    "The only clean, front-facing, complete emblem in the supplied flat boards is 186×186px. It is never presented larger than 186px in either export.",
+    "A native vector emblem / lettering master is required for a larger independently animated identity. No logo has been traced or rebuilt.",
+    "The application images are flattened approved mockups, not photographs of verified completed client work; no historical or engagement claims are added."
+  ],
+  "assets": {
+    "emblem": {
+      "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_01.png",
+      "bounds": [
+        607,
+        27,
+        186,
+        186
+      ],
+      "note": "Native 186px emblem; circular presentation mask excludes the banner photograph. No large-logo upscaling.",
+      "sourceSHA256": "fb81af8a1afeb3ecb777b6b630cc412c886777a2da3be06bd8b4adbd4fc68f67",
+      "layerSHA256": "7f73a38a577259fdfd23886d18f20f919393938cc934d379505c55b6336ee190",
+      "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/emblem.png",
+      "nativeWidth": 186,
+      "nativeHeight": 186
+    },
+    "lettering": {
+      "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_01.png",
+      "bounds": [
+        1307,
+        344,
+        171,
+        110
+      ],
+      "note": "Actual white SOL / COMMUNITY / CENTER lettering; solid forest background keyed out.",
+      "mask": {
+        "type": "color",
+        "background": [
+          40,
+          99,
+          50
+        ],
+        "threshold": 70
+      },
+      "sourceSHA256": "fb81af8a1afeb3ecb777b6b630cc412c886777a2da3be06bd8b4adbd4fc68f67",
+      "layerSHA256": "ee82ee1ae266596109efdee5f475e3650489596df953ed5e94a8f75f72c906fe",
+      "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/lettering.png",
+      "nativeWidth": 171,
+      "nativeHeight": 110
+    },
+    "crescent": {
+      "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_01.png",
+      "bounds": [
+        691,
+        932,
+        130,
+        168
+      ],
+      "note": "Actual gold crescent in the supplied graphic-elements row; exact source colors isolated, adjacent green artwork excluded.",
+      "mask": {
+        "type": "ranges",
+        "ranges": [
+          {
+            "min": [
+              220,
+              90,
+              0
+            ],
+            "max": [
+              255,
+              225,
+              110
+            ]
+          }
+        ]
+      },
+      "sourceSHA256": "fb81af8a1afeb3ecb777b6b630cc412c886777a2da3be06bd8b4adbd4fc68f67",
+      "layerSHA256": "08d76def7decc728ebda74f9488353646dc45f4331681868c0d714a1d4440a82",
+      "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/crescent.png",
+      "nativeWidth": 130,
+      "nativeHeight": 168
+    },
+    "leaf": {
+      "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_01.png",
+      "bounds": [
+        805,
+        931,
+        164,
+        172
+      ],
+      "note": "Actual lime leaf from the supplied graphic-elements row; neighboring gold and cream shapes excluded.",
+      "mask": {
+        "type": "ranges",
+        "ranges": [
+          {
+            "min": [
+              45,
+              100,
+              0
+            ],
+            "max": [
+              205,
+              235,
+              155
+            ]
+          }
+        ]
+      },
+      "sourceSHA256": "fb81af8a1afeb3ecb777b6b630cc412c886777a2da3be06bd8b4adbd4fc68f67",
+      "layerSHA256": "7e3ceb4915b2a7f53f0b7b87b5c8101717765a9d88f5645f239916b2feb73d2c",
+      "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/leaf.png",
+      "nativeWidth": 164,
+      "nativeHeight": 172
+    },
+    "seed": {
+      "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_01.png",
+      "bounds": [
+        896,
+        1021,
+        75,
+        76
+      ],
+      "note": "Actual warm-cream circle in the supplied graphic-elements row.",
+      "mask": {
+        "type": "color",
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "threshold": 25,
+        "feather": 12
+      },
+      "sourceSHA256": "fb81af8a1afeb3ecb777b6b630cc412c886777a2da3be06bd8b4adbd4fc68f67",
+      "layerSHA256": "308255d92a009150cbfd528697311d216eb45df5a888d30a88ae6437fe70cd3e",
+      "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/seed.png",
+      "nativeWidth": 75,
+      "nativeHeight": 76
+    },
+    "forestLeaf": {
+      "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_01.png",
+      "bounds": [
+        983,
+        987,
+        105,
+        117
+      ],
+      "note": "Actual forest leaf in the supplied graphic-elements row; white matte fringe rejected by exact foreground color range.",
+      "mask": {
+        "type": "ranges",
+        "ranges": [
+          {
+            "min": [
+              0,
+              35,
+              0
+            ],
+            "max": [
+              110,
+              165,
+              120
+            ]
+          }
+        ]
+      },
+      "sourceSHA256": "fb81af8a1afeb3ecb777b6b630cc412c886777a2da3be06bd8b4adbd4fc68f67",
+      "layerSHA256": "29158277f9d88110ae0682c8e6c96a4896f87bb36743d6109a96dcdb20ed4330",
+      "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/forestLeaf.png",
+      "nativeWidth": 105,
+      "nativeHeight": 117
+    },
+    "signage": {
+      "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_04.png",
+      "bounds": [
+        0,
+        0,
+        650,
+        397
+      ],
+      "note": "Authentic supplied wall-signage application; entire panel at or below native size.",
+      "sourceSHA256": "d86723fa035280759de1a79e76f52421060e1497be6c47606007dc40de6caed9",
+      "layerSHA256": "1b93ee184ae905fa83215bf66ed4678ef5ff7fcb1fa05b7d22a98b9a4970e350",
+      "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/signage.png",
+      "nativeWidth": 650,
+      "nativeHeight": 397
+    },
+    "notice": {
+      "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_02.png",
+      "bounds": [
+        379,
+        0,
+        379,
+        417
+      ],
+      "note": "Authentic supplied event-announcement artwork. Printed copy is part of the artwork, not a claim about a real event.",
+      "mask": {
+        "type": "path",
+        "d": "M20 1H359Q378 1 378 20V397Q378 416 359 416H20Q1 416 1 397V20Q1 1 20 1Z"
+      },
+      "sourceSHA256": "15d96e764410b952bcea64f51318b5779f6bf9d846d0c6666c1045ebc535150e",
+      "layerSHA256": "0a13fc7a940824252306eaeae3aa845869b5b02ca3cff1d0497a3789dfbc3535",
+      "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/notice.png",
+      "nativeWidth": 379,
+      "nativeHeight": 417
+    },
+    "card": {
+      "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_04.png",
+      "bounds": [
+        0,
+        670,
+        475,
+        262
+      ],
+      "note": "Actual supplied business-card application.",
+      "sourceSHA256": "d86723fa035280759de1a79e76f52421060e1497be6c47606007dc40de6caed9",
+      "layerSHA256": "8cede04ce4c56129df2f49085dc710788b56d5e08b02749518095ab2c99fd496",
+      "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/card.png",
+      "nativeWidth": 475,
+      "nativeHeight": 262
+    },
+    "notebook": {
+      "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_04.png",
+      "bounds": [
+        486,
+        670,
+        387,
+        262
+      ],
+      "note": "Actual supplied notebook application.",
+      "sourceSHA256": "d86723fa035280759de1a79e76f52421060e1497be6c47606007dc40de6caed9",
+      "layerSHA256": "3902572cde13894c651491f76021ed5e2a2acd4e24c7561fb0f6383dd6f768c4",
+      "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/notebook.png",
+      "nativeWidth": 387,
+      "nativeHeight": 262
+    }
+  },
+  "exports": {
+    "landscape": {
+      "file": "sol-community-center-landscape.mp4",
+      "width": 1440,
+      "height": 810,
+      "bytes": 927278,
+      "sha256": "3d844fca4d0b360e790844ac4fa5eadb73c651eb96e1510bccc7607f48f48183",
+      "codec": "h264",
+      "pixelFormat": "yuv420p",
+      "profile": "High",
+      "durationSeconds": 7.5,
+      "frames": 180,
+      "averageBitrate": 989096,
+      "crf": 19,
+      "audioStreams": 0,
+      "firstFrameSHA256": "deb075c20c6bc731da16cb7ff57fbb11d863d40e2f9bc47590431c5bbe0779a8",
+      "lastFrameSHA256": "deb075c20c6bc731da16cb7ff57fbb11d863d40e2f9bc47590431c5bbe0779a8",
+      "sourceBoundaryPixelIdentical": true,
+      "sourceSeamPixelIdentical": true,
+      "decodedAllFrames": true,
+      "poster": {
+        "file": "sol-community-center-landscape-poster.webp",
+        "bytes": 27834,
+        "sha256": "b7e96eada4d21f36f97fa8a61ce9b8bd918e53435e5ee598f18eaf6483143a5f",
+        "width": 1440,
+        "height": 810,
+        "quality": 96
+      }
+    },
+    "portrait": {
+      "file": "sol-community-center-portrait.mp4",
+      "width": 810,
+      "height": 1080,
+      "bytes": 764100,
+      "sha256": "0ba5a875777eaa1b5447a33049a029270cc1c173653ff4ad290612da0759fa8e",
+      "codec": "h264",
+      "pixelFormat": "yuv420p",
+      "profile": "High",
+      "durationSeconds": 7.5,
+      "frames": 180,
+      "averageBitrate": 815040,
+      "crf": 19,
+      "audioStreams": 0,
+      "firstFrameSHA256": "2f4ecc96cb17a795d5b4c2a1c9793182e5185f9074ecaf763a8e806a3a7b232c",
+      "lastFrameSHA256": "2f4ecc96cb17a795d5b4c2a1c9793182e5185f9074ecaf763a8e806a3a7b232c",
+      "sourceBoundaryPixelIdentical": true,
+      "sourceSeamPixelIdentical": true,
+      "decodedAllFrames": true,
+      "poster": {
+        "file": "sol-community-center-portrait-poster.webp",
+        "bytes": 26688,
+        "sha256": "0a4e70446c2a94c1a5cb25d4bd6f88967fea5cf8ca8170c964c45d562a7b870b",
+        "width": 810,
+        "height": 1080,
+        "quality": 96
+      }
+    }
+  }
+}

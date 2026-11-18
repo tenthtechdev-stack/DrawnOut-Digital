@@ -167,14 +167,16 @@ function initialize() {
     for (const entry of entries) {
       if (!selected.has(entry.video.id)) continue;
       const bounds = entry.video.parentElement!.getBoundingClientRect();
-      const source =
-        bounds.width / bounds.height < 1.1
-          ? entry.video.dataset.portrait
-          : entry.video.dataset.landscape;
+      const portrait = bounds.width / bounds.height < 1.1;
+      const source = portrait ? entry.video.dataset.portrait : entry.video.dataset.landscape;
       if (!source || (entry.source === source && !entry.video.paused)) continue;
       if (entry.source !== source) {
         release(entry);
         entry.source = source;
+        const poster = portrait
+          ? entry.video.dataset.portraitPoster
+          : entry.video.dataset.landscapePoster;
+        if (poster) entry.video.poster = poster;
         entry.video.src = source;
       }
       entry.video.muted = true;

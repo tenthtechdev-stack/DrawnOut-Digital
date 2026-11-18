@@ -10,7 +10,13 @@ interface Props {
   sizes?: string;
   video?: { mp4?: string; webm?: string; captions?: string };
   mobilePoster?: ImageMetadata;
-  motion?: { landscape: string; portrait: string; source: string };
+  motion?: {
+    landscape: string;
+    portrait: string;
+    source: string;
+    poster?: ImageMetadata;
+    portraitPoster?: ImageMetadata;
+  };
   motionId?: string;
 }
 const {
@@ -78,6 +84,8 @@ const mobileSources = mobilePoster
       data-portfolio-video
       data-landscape={`/media/portfolio/${motion.landscape}`}
       data-portrait={`/media/portfolio/${motion.portrait}`}
+      data-landscape-poster={motion.poster?.src}
+      data-portrait-poster={motion.portraitPoster?.src}
       data-motion-state="poster"
       muted
       autoplay
@@ -86,8 +94,8 @@ const mobileSources = mobilePoster
       preload="none"
       aria-hidden="true"
       tabindex="-1"
-      width="960"
-      height="540"
+      width={motion.poster?.width ?? 960}
+      height={motion.poster?.height ?? 540}
     />
   )}
   {hasApprovedVideo && (

@@ -17,6 +17,8 @@ const names = [
   'u-wanna-smoothie',
 ];
 const run = promisify(execFile);
+// Only these owner-authorized pilots change at the first creative checkpoint.
+const upgraded = new Set(['bunzo', 'sol-community-center', 'churros']);
 const extract = async (file, index) =>
   (
     await run(
@@ -48,6 +50,11 @@ for (const slug of names) {
   test(`${slug}: silent, responsive, seamless encoded exports and actual visual progression`, async (context) => {
     const project = manifest.projects[slug];
     assert(project);
+    const isPilot = upgraded.has(slug);
+    if (isPilot) {
+      assert.match(project.composition, /^scripts\/portfolio\/quality\/[a-z]+\.mjs$/);
+      assert.equal(project.durationSeconds, 7.5);
+    }
     for (const asset of Object.values(project.assets)) {
       const source = readFileSync(asset.source);
       assert.equal(createHash('sha256').update(source).digest('hex'), asset.sourceSHA256);
@@ -72,24 +79,36 @@ for (const slug of names) {
       assert.equal(video.codec_type, 'video');
       assert.equal(video.codec_name, 'h264');
       assert.equal(video.pix_fmt, 'yuv420p');
-      assert.equal(Number(video.nb_frames), 138);
+      const frameCount = isPilot ? 180 : 138;
+      assert.equal(Number(video.nb_frames), frameCount);
       assert.equal(video.avg_frame_rate, '24/1');
-      assert.equal(Number(video.duration), 5.75);
+      assert.equal(Number(video.duration), isPilot ? 7.5 : 5.75);
       assert.deepEqual(
         [video.width, video.height],
-        format === 'landscape' ? [960, 540] : [600, 750],
+        isPilot
+          ? format === 'landscape'
+            ? [1440, 810]
+            : [810, 1080]
+          : format === 'landscape'
+            ? [960, 540]
+            : [600, 750],
       );
+      assert.match(entry.firstFrameSHA256, /^[a-f0-9]{64}$/);
       assert.equal(entry.firstFrameSHA256, entry.lastFrameSHA256);
       assert.equal(entry.sourceSeamPixelIdentical, true);
       const first = await extract(file, 0);
-      const middle = await extract(file, 68);
-      const last = await extract(file, 137);
+      const middle = await extract(file, isPilot ? 52 : 68);
+      const last = await extract(file, frameCount - 1);
       const seamDifference = difference(first, last);
-      const progressionDifference = difference(first, middle);
+      const progressionDifference = isPilot
+        ? Math.max(difference(first, middle), difference(first, await extract(file, 114)))
+        : difference(first, middle);
       assert(seamDifference < 3, 'Encoded loop endpoints remain visually matched');
       assert(
         progressionDifference > 12,
-        'The application scene visibly differs from the identity scene',
+        isPilot
+          ? 'Independent source elements visibly move within the composition'
+          : 'The application scene visibly differs from the identity scene',
       );
       context.diagnostic(
         `${format}: decoded seam mean absolute difference ${seamDifference.toFixed(4)} / 255; identity-to-application difference ${progressionDifference.toFixed(2)} / 255`,

@@ -61,6 +61,8 @@ export function projectSchema<T extends z.ZodType>(imageSchema: T) {
         landscape: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*-landscape\.mp4$/),
         portrait: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*-portrait\.mp4$/),
         source: z.string().trim().min(1),
+        poster: imageSchema.optional(),
+        portraitPoster: imageSchema.optional(),
       })
       .optional(),
     video: z

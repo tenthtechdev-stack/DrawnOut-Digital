@@ -1,0 +1,328 @@
+{
+  "slug": "bunzo",
+  "title": "Bunzo",
+  "direction": "The five white wordmark letterfaces lift independently from their original black silhouette; actual cup and carton peel out, overlap, and settle back into a branded packaging still life.",
+  "composition": "scripts/portfolio/quality/bunzo.mjs",
+  "durationSeconds": 7.5,
+  "fps": 24,
+  "frameCount": 180,
+  "layers": [
+    "Five exact white wordmark letterfaces",
+    "Original black shadow, yellow phrase and heart suffix base",
+    "Lidded printed cup foreground",
+    "Printed carton foreground",
+    "Original yellow splash, red heart and lightning accent layers"
+  ],
+  "limitations": [
+    "Flattened raster originals provide no editable type, independent burger ingredients or packaging dielines. No reconstructed lettering, new food, 3D product simulation or newly attributed deliverables are used.",
+    "The five actual white letterfaces are alpha-isolated from the flattened mark. Its shared black silhouette and yellow phrase remain anchored; editable original typography would be required to rig independently complete outlined glyphs.",
+    "The 1440×810 canvas is an editorial assembly of native-size/reduced layers, not a 1440px-wide rerendered source logo. Cup remains at or below its approximately300px native visible width; source carton is approximately550px wide.",
+    "Product silhouettes use manually reviewed alpha paths. Transparent or motion-blurred editable masters would permit finer physical separation."
+  ],
+  "assets": {
+    "letterB": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
+      "bounds": [
+        75,
+        95,
+        760,
+        400
+      ],
+      "mask": {
+        "type": "wordmark-partition",
+        "part": "letterB-face"
+      },
+      "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
+      "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
+      "layerSHA256": "cea6745f51656f941cdd54aae4cd83b3345a38e0ccbd32565e352bf44536d82b",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/letterB.png",
+      "nativeWidth": 760,
+      "nativeHeight": 400
+    },
+    "letterU": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
+      "bounds": [
+        75,
+        95,
+        760,
+        400
+      ],
+      "mask": {
+        "type": "wordmark-partition",
+        "part": "letterU-face"
+      },
+      "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
+      "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
+      "layerSHA256": "9e164340615d390c55564fc9ed979500056b9e77a820f827f611aaddbe9667da",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/letterU.png",
+      "nativeWidth": 760,
+      "nativeHeight": 400
+    },
+    "letterN": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
+      "bounds": [
+        75,
+        95,
+        760,
+        400
+      ],
+      "mask": {
+        "type": "wordmark-partition",
+        "part": "letterN-face"
+      },
+      "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
+      "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
+      "layerSHA256": "21487f925fd99f9ccf31104ed19b0738bd0c18622c2160ca97747c86c59cad4c",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/letterN.png",
+      "nativeWidth": 760,
+      "nativeHeight": 400
+    },
+    "letterZ": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
+      "bounds": [
+        75,
+        95,
+        760,
+        400
+      ],
+      "mask": {
+        "type": "wordmark-partition",
+        "part": "letterZ-face"
+      },
+      "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
+      "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
+      "layerSHA256": "66a90e0bbd0c80e1cc072f6e6c7cd2567b6030559f77901cadd415e7e3369045",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/letterZ.png",
+      "nativeWidth": 760,
+      "nativeHeight": 400
+    },
+    "letterO": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
+      "bounds": [
+        75,
+        95,
+        760,
+        400
+      ],
+      "mask": {
+        "type": "wordmark-partition",
+        "part": "letterO-face"
+      },
+      "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
+      "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
+      "layerSHA256": "eaabbd66693d50567831dc9af3ecb23dab19f337fd1e34113b70d1dc966fedd4",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/letterO.png",
+      "nativeWidth": 760,
+      "nativeHeight": 400
+    },
+    "base": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
+      "bounds": [
+        75,
+        95,
+        760,
+        400
+      ],
+      "mask": {
+        "type": "wordmark-partition",
+        "part": "base"
+      },
+      "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
+      "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
+      "layerSHA256": "f96764a4e3936daaa0168ff43c1d4764011ad8ac351e4dcfa5cce7ce5c79a8fd",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/base.png",
+      "nativeWidth": 760,
+      "nativeHeight": 400
+    },
+    "whole": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
+      "bounds": [
+        75,
+        95,
+        760,
+        400
+      ],
+      "mask": {
+        "type": "wordmark-partition",
+        "part": "whole"
+      },
+      "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
+      "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
+      "layerSHA256": "ac835ff67fccab2f47fe6e70b9aaeb3b1d0c2d021991d5c9b3339b7080f79fe1",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/whole.png",
+      "nativeWidth": 760,
+      "nativeHeight": 400
+    },
+    "cup": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_04.png",
+      "bounds": [
+        390,
+        8,
+        411,
+        505
+      ],
+      "mask": {
+        "type": "path",
+        "d": "M31 113Q32 99 51 93L52 79Q59 63 170 63Q291 62 300 80L302 95Q320 100 322 118Q322 125 307 130L269 464Q265 478 231 482Q150 494 104 478Q88 473 82 462L45 132Q31 128 31 113Z"
+      },
+      "note": "Actual lidded cup isolated from the original photographed mockup. No simulated product or invented ingredients.",
+      "sourceSHA256": "16eba7984d75b4742b0c5e92b8c2fffe3bfd72cb3ae9aeb9a5733586292a9b1d",
+      "layerSHA256": "a171baf985c69cf4a485136929fb941f98a1c6e1a14300c9b5b79fe9ab9a41a9",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/cup.png",
+      "nativeWidth": 411,
+      "nativeHeight": 505
+    },
+    "carton": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_03.png",
+      "bounds": [
+        488,
+        112,
+        560,
+        390
+      ],
+      "mask": {
+        "type": "path",
+        "d": "M44 45L409 0L550 151L557 248L539 258L524 335L165 389L79 331L18 277L0 153Z"
+      },
+      "note": "Actual closed carton, including printed design; outer silhouette traced from source pixels.",
+      "sourceSHA256": "b9ece46ac27a97f5445c88bf493555c21a602de58026cdf1979f85ba2b4fa419",
+      "layerSHA256": "cfb13be4980b715a999ab875e5e9c5a4f44fbf0bb4320d3043135c86583dd639",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/carton.png",
+      "nativeWidth": 560,
+      "nativeHeight": 390
+    },
+    "splash": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_02.png",
+      "bounds": [
+        790,
+        124,
+        108,
+        113
+      ],
+      "mask": {
+        "type": "color",
+        "background": [
+          239,
+          237,
+          232
+        ],
+        "threshold": 80,
+        "feather": 25
+      },
+      "note": "The original yellow splash graphic from the approved graphic-elements board.",
+      "sourceSHA256": "558a7abc8feae7020b04e531549f7703da62fd637ed6960427c9a628125801a2",
+      "layerSHA256": "e0d5ed7b99dcbe6701537e632f557237038e0a268cf787b65cf6e6e6b455d38d",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/splash.png",
+      "nativeWidth": 108,
+      "nativeHeight": 113
+    },
+    "heart": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_02.png",
+      "bounds": [
+        944,
+        124,
+        104,
+        112
+      ],
+      "mask": {
+        "type": "color",
+        "background": [
+          239,
+          237,
+          232
+        ],
+        "threshold": 85,
+        "feather": 25
+      },
+      "note": "The original red outlined heart, not a newly drawn decoration.",
+      "sourceSHA256": "558a7abc8feae7020b04e531549f7703da62fd637ed6960427c9a628125801a2",
+      "layerSHA256": "52a768cadc427a0a897cb9fb4f970e90d19de61213a1bc235c11889114bbb829",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/heart.png",
+      "nativeWidth": 104,
+      "nativeHeight": 112
+    },
+    "bolt": {
+      "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_02.png",
+      "bounds": [
+        1101,
+        127,
+        75,
+        109
+      ],
+      "mask": {
+        "type": "color",
+        "background": [
+          239,
+          237,
+          232
+        ],
+        "threshold": 85,
+        "feather": 25
+      },
+      "note": "The original black lightning graphic.",
+      "sourceSHA256": "558a7abc8feae7020b04e531549f7703da62fd637ed6960427c9a628125801a2",
+      "layerSHA256": "0602ca827011d40fcf4bf5e0ba6ea466b65a909df85ab315f31d772da81e7420",
+      "file": "design-assets/portfolio-motion/quality/layers/bunzo/bolt.png",
+      "nativeWidth": 75,
+      "nativeHeight": 109
+    }
+  },
+  "exports": {
+    "landscape": {
+      "file": "bunzo-landscape.mp4",
+      "width": 1440,
+      "height": 810,
+      "bytes": 726819,
+      "sha256": "1bcfec3cf371673be574953feeccf2ea9f230ddb784e260660c02270eceb24d4",
+      "codec": "h264",
+      "pixelFormat": "yuv420p",
+      "profile": "High",
+      "durationSeconds": 7.5,
+      "frames": 180,
+      "averageBitrate": 775273,
+      "crf": 19,
+      "audioStreams": 0,
+      "firstFrameSHA256": "6e9caefcc64e3f0512a63d6b73dbb768160df957b1696771278aa095bfa809f8",
+      "lastFrameSHA256": "6e9caefcc64e3f0512a63d6b73dbb768160df957b1696771278aa095bfa809f8",
+      "sourceBoundaryPixelIdentical": true,
+      "sourceSeamPixelIdentical": true,
+      "decodedAllFrames": true,
+      "poster": {
+        "file": "bunzo-landscape-poster.webp",
+        "bytes": 105082,
+        "sha256": "49d703b3b21ce1cdfe2dc13ccc563ce35c3d880c249cd3eead033c59c32c5c14",
+        "width": 1440,
+        "height": 810,
+        "quality": 96
+      }
+    },
+    "portrait": {
+      "file": "bunzo-portrait.mp4",
+      "width": 810,
+      "height": 1080,
+      "bytes": 676074,
+      "sha256": "1f9cbdc1ee0e9693f50891f116f3081a41669427a2e3b0e0b7a1e80bbeacc05b",
+      "codec": "h264",
+      "pixelFormat": "yuv420p",
+      "profile": "High",
+      "durationSeconds": 7.5,
+      "frames": 180,
+      "averageBitrate": 721145,
+      "crf": 19,
+      "audioStreams": 0,
+      "firstFrameSHA256": "b8d1b923d840f4fce557e1653eee59a18e81f81f268439cbf650db3bfef0a25a",
+      "lastFrameSHA256": "b8d1b923d840f4fce557e1653eee59a18e81f81f268439cbf650db3bfef0a25a",
+      "sourceBoundaryPixelIdentical": true,
+      "sourceSeamPixelIdentical": true,
+      "decodedAllFrames": true,
+      "poster": {
+        "file": "bunzo-portrait-poster.webp",
+        "bytes": 93018,
+        "sha256": "b378f424003df21189dd10e94b5d1a7c69fc96febff3472ef98862e8bf69e2ce",
+        "width": 810,
+        "height": 1080,
+        "quality": 96
+      }
+    }
+  }
+}
