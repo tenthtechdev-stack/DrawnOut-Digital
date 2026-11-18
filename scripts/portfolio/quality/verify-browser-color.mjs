@@ -142,15 +142,13 @@ try {
       await page.goto('http://motion-quality.invalid/review');
       await page.waitForFunction(() => document.querySelector('video')?.readyState >= 2);
       await page.waitForTimeout(150);
-      const videoState = await page
-        .locator('video')
-        .evaluate((video) => ({
-          currentTime: video.currentTime,
-          paused: video.paused,
-          readyState: video.readyState,
-          width: video.videoWidth,
-          height: video.videoHeight,
-        }));
+      const videoState = await page.locator('video').evaluate((video) => ({
+        currentTime: video.currentTime,
+        paused: video.paused,
+        readyState: video.readyState,
+        width: video.videoWidth,
+        height: video.videoHeight,
+      }));
       assert.equal(
         videoState.currentTime,
         0,

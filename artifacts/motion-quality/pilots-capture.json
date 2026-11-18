@@ -69,21 +69,12 @@
   "recordings": [
     {
       "file": "pilots-1440-browser.mp4",
-      "viewport": {
-        "width": 1440,
-        "height": 900
-      },
+      "viewport": { "width": 1440, "height": 900 },
       "durationSeconds": 35.36,
       "bytes": 4686176,
       "sha256": "f1ab2fa4323be5caceefd8460939c40d73c1ac0f5187d7af3db7bcd4b7f43d74",
       "decodedAllFrames": true,
-      "nativeStreams": [
-        {
-          "codec": "vp9",
-          "colorSpace": "bt470bg",
-          "colorRange": "pc"
-        }
-      ],
+      "nativeStreams": [{ "codec": "vp9", "colorSpace": "bt470bg", "colorRange": "pc" }],
       "streams": [
         {
           "codec": "h264",
@@ -96,21 +87,12 @@
     },
     {
       "file": "pilots-390-browser.mp4",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
+      "viewport": { "width": 390, "height": 844 },
       "durationSeconds": 31.32,
       "bytes": 1965609,
       "sha256": "bc611741081b2b3a38d318613f7ee0b85a6c7076f16479817896bceb1b99653d",
       "decodedAllFrames": true,
-      "nativeStreams": [
-        {
-          "codec": "vp9",
-          "colorSpace": "bt470bg",
-          "colorRange": "pc"
-        }
-      ],
+      "nativeStreams": [{ "codec": "vp9", "colorSpace": "bt470bg", "colorRange": "pc" }],
       "streams": [
         {
           "codec": "h264",
@@ -125,10 +107,7 @@
   "screenshots": [
     {
       "file": "pilots-1440-bunzo-construction.png",
-      "viewport": {
-        "width": 1440,
-        "height": 900
-      },
+      "viewport": { "width": 1440, "height": 900 },
       "slug": "bunzo",
       "sampledVideoTime": 2.07932,
       "bytes": 746096,
@@ -136,10 +115,7 @@
     },
     {
       "file": "pilots-1440-sol-community-center-construction.png",
-      "viewport": {
-        "width": 1440,
-        "height": 900
-      },
+      "viewport": { "width": 1440, "height": 900 },
       "slug": "sol-community-center",
       "sampledVideoTime": 1.92329,
       "bytes": 481945,
@@ -147,10 +123,7 @@
     },
     {
       "file": "pilots-1440-churros-construction.png",
-      "viewport": {
-        "width": 1440,
-        "height": 900
-      },
+      "viewport": { "width": 1440, "height": 900 },
       "slug": "churros",
       "sampledVideoTime": 2.15751,
       "bytes": 875770,
@@ -158,10 +131,7 @@
     },
     {
       "file": "pilots-390-bunzo-construction.png",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
+      "viewport": { "width": 390, "height": 844 },
       "slug": "bunzo",
       "sampledVideoTime": 2.028404,
       "bytes": 195384,
@@ -169,10 +139,7 @@
     },
     {
       "file": "pilots-390-sol-community-center-construction.png",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
+      "viewport": { "width": 390, "height": 844 },
       "slug": "sol-community-center",
       "sampledVideoTime": 1.996958,
       "bytes": 95058,
@@ -180,10 +147,7 @@
     },
     {
       "file": "pilots-390-churros-construction.png",
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
+      "viewport": { "width": 390, "height": 844 },
       "slug": "churros",
       "sampledVideoTime": 2.022743,
       "bytes": 226112,
@@ -2760,5 +2724,31 @@
     }
   ],
   "errors": [],
-  "failedRequests": []
+  "failedRequests": [],
+  "deliveryInputFormatting": {
+    "note": "Capture-time hashes above are retained. The three project records were subsequently formatted without changing any data. All other captured application/media source hashes still match.",
+    "records": [
+      {
+        "file": "src/content/projects/bunzo.json",
+        "capturedSHA256": "d5c310066a6a558dba92135a4dd7634ca38356b4ccfcd81c5d445fa691a98cb8",
+        "deliveredSHA256": "b27ba0266e8cdf006a3ffaf541a6790123071adc93894183eb5ad073ffd60629",
+        "canonicalJSONSHA256": "43008429fdd07fb9c35bdd8172a12ea360c1d7431f32a1f723e921b10bd145c6",
+        "difference": "Whitespace only; parsed JSON is identical. Captured serialization can be reproduced with JSON.stringify(record, null, 2) plus a trailing newline."
+      },
+      {
+        "file": "src/content/projects/sol-community-center.json",
+        "capturedSHA256": "ec9aeac2117d4ed75550163533e754f7ce9b481bf32a972fc706c489585ebd66",
+        "deliveredSHA256": "b2b6007cf9ec5fd84862221f2c4c9e289346acabb509c509a98b29ed7ac34dcc",
+        "canonicalJSONSHA256": "7427469d084d44e50bfe34686fd7564caf231b547c6f7d25f3a73b7057daa197",
+        "difference": "Whitespace only; parsed JSON is identical. Captured serialization can be reproduced with JSON.stringify(record, null, 2) plus a trailing newline."
+      },
+      {
+        "file": "src/content/projects/churros.json",
+        "capturedSHA256": "e3264eeb37b2709c3c1f5b9fcc451b7dc81d19c03e05165663de7b1189354532",
+        "deliveredSHA256": "bead8d75664bf3fe8764d11d32d0617aedfd3dc347e17aaee7d1a258a24e7025",
+        "canonicalJSONSHA256": "ee2b0c66d3ca09a45751588fb1361ca23194e852c813250c3bde51942b5c05d8",
+        "difference": "Whitespace only; parsed JSON is identical. Captured serialization can be reproduced with JSON.stringify(record, null, 2) plus a trailing newline."
+      }
+    ]
+  }
 }

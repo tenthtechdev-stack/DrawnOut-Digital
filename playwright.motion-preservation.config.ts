@@ -8,7 +8,6 @@ export default defineConfig({
     '**/browser/services.spec.ts',
     '**/browser/services-hero.spec.ts',
     '**/browser/services-overview.spec.ts',
-    '**/browser/signature-gradient.spec.ts',
     '**/browser/signature-accessibility.spec.ts',
     '**/production-browser/loader.spec.ts',
     '**/production-browser/signature-squares.spec.ts',

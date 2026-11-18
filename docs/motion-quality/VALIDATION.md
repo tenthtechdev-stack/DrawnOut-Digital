@@ -14,9 +14,9 @@ Draft [PR #20](https://github.com/tenthtech/drawnout-digital/pull/20) targets
 | Command                                                                                     | Actual result                                        |
 | ------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
 | `npm run build`                                                                             | Pass; 22 static pages and 12 guarded video endpoints |
-| `npm run check`                                                                             | Pass; zero errors, warnings or hints                 |
+| `npm run check`                                                                             | Pass; 202 files, zero errors, warnings or hints      |
 | `npm run lint`                                                                              | Pass                                                 |
-| `npm run format:check`                                                                      | Final generated-report formatting check pending      |
+| `npm run format:check`                                                                      | Pass                                                 |
 | `npm test`                                                                                  | 49 passed                                            |
 | `npm run test:build`                                                                        | 6 passed                                             |
 | `node --import tsx --test tests/about-build.test.mjs`                                       | Passed                                               |
@@ -58,13 +58,14 @@ measured final difference is 2.655/255. No threshold was loosened.
 
 ## Browser checks
 
-| Suite                                      | Actual result                                    |
-| ------------------------------------------ | ------------------------------------------------ |
-| `playwright.motion-quality.config.ts`      | 23 passed                                        |
-| `playwright.case-rollout.config.ts`        | 42 passed; final interaction-patch rerun pending |
-| `playwright.case-regression.config.ts`     | 74 passed; final interaction-patch rerun pending |
-| `playwright.about-premium.config.ts`       | 29 passed in an isolated run                     |
-| `playwright.motion-preservation.config.ts` | Current production preservation run pending      |
+| Suite                                      | Actual result                           |
+| ------------------------------------------ | --------------------------------------- |
+| `playwright.motion-quality.config.ts`      | 23 passed                               |
+| `playwright.case-rollout.config.ts`        | 42 passed on the final frozen build     |
+| `playwright.case-regression.config.ts`     | 74 passed on the final frozen build     |
+| `playwright.about-premium.config.ts`       | 29 passed in an isolated run            |
+| `playwright.motion-preservation.config.ts` | 59 passed in the clean full run         |
+| `playwright.motion-gradient.config.ts`     | 9 passed against the development server |
 
 The focused suite tests real mobile and desktop decoding of all three new
 loops, their matching posters, pause/release controls and decoder limits.
@@ -91,6 +92,25 @@ starting a late entrance. The unchanged About implementation then passed all
 [initial concurrent attempt](../../artifacts/motion-quality/about-services-parallel-attempt.json)
 and [final isolated run](../../artifacts/motion-quality/about-services-tests.json).
 
+The first combined preservation harness selected nine gradient diagnostics
+against production output. Seven use an intentionally development-only snapshot
+and failed because that snapshot is absent in production. Those nine unchanged
+assertions now run in development, where all pass; no production debug hooks were
+added. [Initial mode attempt](../../artifacts/motion-quality/preservation-mode-attempt.json).
+
+An earlier corrected production run had 58 passes and one Services check that
+encountered temporary asset 404s because a local rebuild overlapped that run.
+The trace identified missing font/module/icon responses during output replacement.
+The build was frozen and that exact check then passed. Both results are retained:
+[interrupted run](../../artifacts/motion-quality/preservation-rebuild-attempt.json) and
+[successful isolated rerun](../../artifacts/motion-quality/preservation-rerun.json).
+A subsequent clean full run passed all 59 checks: [final production results](../../artifacts/motion-quality/preservation-tests.json). The 59 production checks cover Services, accessibility, complete recurring
+loader journeys and all six project squares. [Development gradient results](../../artifacts/motion-quality/gradient-dev-tests.json)
+cover actual shader evolution, cursor response, visibility, CSS and preference
+fallbacks.
+
+The six final browser groups validate **236 checks**, with no failures in their final full runs. Earlier harness attempts and isolated retries are retained above.
+
 Raw current reports: [focused](../../artifacts/motion-quality/browser-tests.json),
 [case studies](../../artifacts/motion-quality/case-tests.json),
 [Work/portfolio/Contact/footer](../../artifacts/motion-quality/regression-tests.json).
@@ -115,6 +135,12 @@ complete 7.5-second cycle, with actual keyboard pause/play and native backscroll
 Their source/media hashes, colour metadata, decoder measurements and clean
 browser error logs are in
 [pilots-capture.json](../../artifacts/motion-quality/pilots-capture.json).
+
+The capture manifest retains its input hashes and records whitespace-only
+formatting equivalence for three project JSON files. No data changed. Rebuilding
+the formatted source produced all 384 production files byte-for-byte identical
+to the captured build; [the comparison](../../artifacts/motion-quality/capture-build-equivalence.json)
+confirms that these recordings represent the delivered website.
 
 The [37-image audit](IMAGE_QUALITY.md) documents exact original crops, native
 dimensions, compression, responsive candidates, small-image display caps,

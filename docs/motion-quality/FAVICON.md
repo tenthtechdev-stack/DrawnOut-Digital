@@ -23,4 +23,4 @@ The supplied proportions, orange gradient, charcoal face and edge alpha are reta
 
 ## Verification
 
-`tests/favicon.test.ts` verifies the exact extracted pixels, native dimensions, output dimensions, ICO entries, cache-safe shared-head declarations and supplied-source provenance. Browser route retrieval and tab screenshot evidence are recorded in the milestone's final validation report when the production preview is available. A successful image request verifies availability; the browser evidence verifies the actual tab icon separately.
+`tests/favicon.test.ts` verifies the exact extracted pixels, native dimensions, output dimensions, ICO entries, cache-safe shared-head declarations and supplied-source provenance. Browser checks verify shared icon declarations on all 22 routes, retrieve their assets, and record Chromium's actual automatic ICO request returning 200. The icon artwork was visually inspected. A screenshot of browser-tab chrome was not captured; the automated selection evidence is in `artifacts/motion-quality/browser-favicon-audit.json`.

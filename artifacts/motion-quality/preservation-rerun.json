@@ -1,0 +1,163 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-motion-quality/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.motion-preservation.config.ts",
+      "--grep",
+      "Services hero preserves.*768px",
+      "--reporter=list,json"
+    ],
+    "configFile": "/workspace/drawnout-motion-quality/playwright.motion-preservation.config.ts",
+    "rootDir": "/workspace/drawnout-motion-quality/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-motion-quality/test-results/motion-preservation",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-motion-quality/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/browser/services.spec.ts",
+          "**/browser/services-hero.spec.ts",
+          "**/browser/services-overview.spec.ts",
+          "**/browser/signature-accessibility.spec.ts",
+          "**/production-browser/loader.spec.ts",
+          "**/production-browser/signature-squares.spec.ts"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-motion-quality/test-results/motion-preservation",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-motion-quality/tests",
+        "snapshotDir": "/workspace/drawnout-motion-quality/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/browser/services.spec.ts",
+          "**/browser/services-hero.spec.ts",
+          "**/browser/services-overview.spec.ts",
+          "**/browser/signature-accessibility.spec.ts",
+          "**/production-browser/loader.spec.ts",
+          "**/production-browser/signature-squares.spec.ts"
+        ],
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4453",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [["list"], ["json"]],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4453",
+      "url": "http://127.0.0.1:4453",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "browser/services-hero.spec.ts",
+      "file": "browser/services-hero.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Services hero preserves readable layout, authentic emblem, five links and overview at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3321,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T09:29:45.981Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e608f6feeae18ed99bbb-ed526b86dbfd02192260",
+          "file": "browser/services-hero.spec.ts",
+          "line": 51,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-18T09:29:43.224Z",
+    "duration": 6563.872,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
