@@ -1,0 +1,314 @@
+{
+  "slug": "triarch",
+  "title": "Triarch",
+  "direction": "Seven authentic letter fragments move on measured vertical axes, align around their original tagline, then establish an architectural framework for an actual paper card and device presentation.",
+  "composition": "scripts/portfolio/quality/triarch.mjs",
+  "durationSeconds": 7.5,
+  "fps": 24,
+  "frameCount": 180,
+  "layers": [
+    "Seven independent visible letter-fragment layers from the authentic wordmark.",
+    "Original printed tagline band, kept whole to preserve its letterspacing and copy.",
+    "Actual monogram, architectural photograph and material swatch.",
+    "Contour-masked printed card and separate original device presentation.",
+    "Authored fine presentation rules and a source-palette yellow construction datum; these are not replacement logo geometry."
+  ],
+  "limitations": [
+    "The originals are two flattened1654×931 presentation PNGs. The tagline occludes the middle of the large logo. Only visible letter fragments are animated; an approved AI/SVG or layered PSD is needed for independent complete glyphs.",
+    "Dark letter/monogram pixels are isolated by source-colour mattes; the pale architectural photograph is kept as its own crop rather than inventing a clean background under the original logo.",
+    "The main wordmark is720px wide and the monogram crop151×169; both remain at or below native size. The1440×810 canvas does not create new logo detail.",
+    "The printed card is a500×372 raster cutout and the device panel554×629. Editable identity geometry, a high-resolution card export and a clean device master would support larger presentation.",
+    "No pricing, package descriptions, verified services, client outcomes or new typography are added."
+  ],
+  "assets": {
+    "t": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+      "bounds": [54, 182, 103, 121],
+      "mask": {
+        "type": "ranges",
+        "ranges": [
+          {
+            "min": [0, 0, 0],
+            "max": [100, 100, 100]
+          }
+        ],
+        "clip": "M0 0H103V49H0Z M0 83H103V121H0Z"
+      },
+      "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+      "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+      "layerSHA256": "162eefe2eaafa6fe3df4929cbf246c575017491fa34e2933c20a0bc3b729b52a",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/t.png",
+      "nativeWidth": 103,
+      "nativeHeight": 121
+    },
+    "r1": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+      "bounds": [161, 182, 109, 121],
+      "mask": {
+        "type": "ranges",
+        "ranges": [
+          {
+            "min": [0, 0, 0],
+            "max": [100, 100, 100]
+          }
+        ],
+        "clip": "M0 0H109V49H0Z M0 83H109V121H0Z"
+      },
+      "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+      "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+      "layerSHA256": "f35fef4c1e13f09fa2821be6a70ac7ceadc1c496a6673e2830c32e0017b62288",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/r1.png",
+      "nativeWidth": 109,
+      "nativeHeight": 121
+    },
+    "i": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+      "bounds": [276, 182, 53, 121],
+      "mask": {
+        "type": "ranges",
+        "ranges": [
+          {
+            "min": [0, 0, 0],
+            "max": [100, 100, 100]
+          }
+        ],
+        "clip": "M0 0H53V49H0Z M0 83H53V121H0Z"
+      },
+      "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+      "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+      "layerSHA256": "1ac42ffbb5b7f1bceb8ef2f244943f1537c766b8f80d5e0d5f12ccb7e1160f87",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/i.png",
+      "nativeWidth": 53,
+      "nativeHeight": 121
+    },
+    "a": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+      "bounds": [333, 182, 100, 121],
+      "mask": {
+        "type": "ranges",
+        "ranges": [
+          {
+            "min": [0, 0, 0],
+            "max": [100, 100, 100]
+          }
+        ],
+        "clip": "M0 0H100V49H0Z M0 83H100V121H0Z"
+      },
+      "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+      "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+      "layerSHA256": "f200c0226950f83cc7007cd57e8a0e061b923cedc69f0f13f44227ec477d3ce7",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/a.png",
+      "nativeWidth": 100,
+      "nativeHeight": 121
+    },
+    "r2": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+      "bounds": [443, 182, 109, 121],
+      "mask": {
+        "type": "ranges",
+        "ranges": [
+          {
+            "min": [0, 0, 0],
+            "max": [100, 100, 100]
+          }
+        ],
+        "clip": "M0 0H109V49H0Z M0 83H109V121H0Z"
+      },
+      "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+      "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+      "layerSHA256": "59970a2aa6de13ba7037f7aa6611ec42a80635e2e1f26e03f43102f59787eab6",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/r2.png",
+      "nativeWidth": 109,
+      "nativeHeight": 121
+    },
+    "c": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+      "bounds": [558, 182, 99, 121],
+      "mask": {
+        "type": "ranges",
+        "ranges": [
+          {
+            "min": [0, 0, 0],
+            "max": [100, 100, 100]
+          }
+        ],
+        "clip": "M0 0H99V49H0Z M0 83H99V121H0Z"
+      },
+      "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+      "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+      "layerSHA256": "e758718124dd2b4e1d22e2cd043787ec22c44cfb2ec0ccb95bea3b6a5b273d4b",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/c.png",
+      "nativeWidth": 99,
+      "nativeHeight": 121
+    },
+    "h": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+      "bounds": [660, 182, 114, 121],
+      "mask": {
+        "type": "ranges",
+        "ranges": [
+          {
+            "min": [0, 0, 0],
+            "max": [100, 100, 100]
+          }
+        ],
+        "clip": "M0 0H114V49H0Z M0 83H114V121H0Z"
+      },
+      "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+      "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+      "layerSHA256": "fa77190bf968a26d2cc37fd78f9453b82dd8e8e401bbb070a22bec1448d84a61",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/h.png",
+      "nativeWidth": 114,
+      "nativeHeight": 121
+    },
+    "tagline": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+      "bounds": [88, 231, 677, 34],
+      "note": "The intact original printed white tagline band, including its original lettering.",
+      "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+      "layerSHA256": "4165a663fa756873dc8848574b5d828dbf9884b90b1d1c28d90f8ec983cfe0bb",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/tagline.png",
+      "nativeWidth": 677,
+      "nativeHeight": 34
+    },
+    "architecture": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+      "bounds": [382, 0, 437, 176],
+      "note": "Unlettered architectural photograph from the top of the original identity board; never enlarged.",
+      "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+      "layerSHA256": "acbd3bacb4ffb90bc02ed450d3ac1e777476ab7b5c9c75933aba7e3b1978d525",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/architecture.png",
+      "nativeWidth": 437,
+      "nativeHeight": 176
+    },
+    "monogram": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_02.png",
+      "bounds": [136, 590, 151, 169],
+      "mask": {
+        "type": "ranges",
+        "ranges": [
+          {
+            "min": [0, 0, 0],
+            "max": [110, 110, 110]
+          }
+        ]
+      },
+      "note": "Actual dark T/A sticker-monogram pixels. No inference about a commissioned architectural engagement.",
+      "sourceSHA256": "1aee15e956efdac35e5d3bbee530fa66a013d1124038bb6883e708d337ced05b",
+      "layerSHA256": "0d7393ec173c013ae912c8d5f71910b4bcd7512e9b1a6f08fb338d297710e151",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/monogram.png",
+      "nativeWidth": 151,
+      "nativeHeight": 169
+    },
+    "card": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+      "bounds": [1005, 325, 500, 372],
+      "mask": {
+        "type": "path",
+        "d": "M72 9L493 76L443 365L7 290Z"
+      },
+      "note": "The actual printed card silhouette. This is a flat photographic cutout, not a simulated 3D card.",
+      "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+      "layerSHA256": "d9696c8e6f80ce8632fc19dd4ef4ba71b9d7c878000ed481f71b4289d1014747",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/card.png",
+      "nativeWidth": 500,
+      "nativeHeight": 372
+    },
+    "device": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_02.png",
+      "bounds": [1100, 302, 554, 629],
+      "note": "The approved laptop/monogram panel, excluding the typeface label and all pricing/scope artwork.",
+      "sourceSHA256": "1aee15e956efdac35e5d3bbee530fa66a013d1124038bb6883e708d337ced05b",
+      "layerSHA256": "a82bd18f4bf0a23d91359355e5e10f786c1089ac8d26a1d4a08697e5ecb78433",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/device.png",
+      "nativeWidth": 554,
+      "nativeHeight": 629
+    },
+    "material": {
+      "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+      "bounds": [835, 0, 400, 176],
+      "note": "An actual unprinted material detail above the source card, displayed as its own native-size surface crop.",
+      "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+      "layerSHA256": "b6d62fa293a41b488ed706fe149bad18b71a8b4b2cd38ced842b5f51cf370002",
+      "file": "design-assets/portfolio-motion/quality/layers/triarch/material.png",
+      "nativeWidth": 400,
+      "nativeHeight": 176
+    }
+  },
+  "exports": {
+    "landscape": {
+      "file": "triarch-landscape.mp4",
+      "width": 1440,
+      "height": 810,
+      "bytes": 356574,
+      "sha256": "6ef1b7780bd2ff65b113f83d5df3eb86ecb4829b296b04195ae9f7d7c78dae52",
+      "codec": "h264",
+      "pixelFormat": "yuv420p",
+      "profile": "High",
+      "colorEncoding": {
+        "source": "RGB24 full range",
+        "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+        "matrix": "bt709",
+        "primaries": "bt709",
+        "transfer": "bt709",
+        "range": "tv",
+        "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+      },
+      "durationSeconds": 7.5,
+      "frames": 180,
+      "averageBitrate": 380345,
+      "crf": 19,
+      "audioStreams": 0,
+      "firstFrameSHA256": "c8672c01be17591b73171072097d9119fa438e20b929285497c03ba59cc76836",
+      "lastFrameSHA256": "c8672c01be17591b73171072097d9119fa438e20b929285497c03ba59cc76836",
+      "sourceBoundaryPixelIdentical": true,
+      "sourceSeamPixelIdentical": true,
+      "decodedAllFrames": true,
+      "poster": {
+        "file": "triarch-landscape-poster.webp",
+        "bytes": 35434,
+        "sha256": "0302865ef4bea7ff0cf6c85700bee22702b13b4e64213f3c7f77785fcc585300",
+        "width": 1440,
+        "height": 810,
+        "quality": 96
+      }
+    },
+    "portrait": {
+      "file": "triarch-portrait.mp4",
+      "width": 810,
+      "height": 1080,
+      "bytes": 279075,
+      "sha256": "2d0473221c6390d9282e93691b7646c0d45f767d028b6995bb1007f36b3f8507",
+      "codec": "h264",
+      "pixelFormat": "yuv420p",
+      "profile": "High",
+      "colorEncoding": {
+        "source": "RGB24 full range",
+        "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+        "matrix": "bt709",
+        "primaries": "bt709",
+        "transfer": "bt709",
+        "range": "tv",
+        "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+      },
+      "durationSeconds": 7.5,
+      "frames": 180,
+      "averageBitrate": 297680,
+      "crf": 19,
+      "audioStreams": 0,
+      "firstFrameSHA256": "3f7284f469dae5e8f272774af5b4fe79c4a63208d878d0a912dc7f87a59ea053",
+      "lastFrameSHA256": "3f7284f469dae5e8f272774af5b4fe79c4a63208d878d0a912dc7f87a59ea053",
+      "sourceBoundaryPixelIdentical": true,
+      "sourceSeamPixelIdentical": true,
+      "decodedAllFrames": true,
+      "poster": {
+        "file": "triarch-portrait-poster.webp",
+        "bytes": 35302,
+        "sha256": "53da94757e3c8d090514cf813ca73ed1223e19f35da3d098be428fa20996a166",
+        "width": 810,
+        "height": 1080,
+        "quality": 96
+      }
+    }
+  }
+}

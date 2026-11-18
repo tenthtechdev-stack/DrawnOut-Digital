@@ -49,6 +49,8 @@ references.forEach((slug, index) =>
   assert.equal(JSON.stringify(manifest.projects[slug]), referenceRecords[index]),
 );
 manifest.formatVersion = 3;
+manifest.generator = 'scripts/portfolio/quality/render.mjs';
+manifest.compositionSource = 'scripts/portfolio/quality/';
 manifest.durationSeconds = 7.5;
 manifest.frameCount = 180;
 manifest.timingNote =

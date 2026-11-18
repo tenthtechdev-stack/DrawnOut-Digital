@@ -1,0 +1,372 @@
+{
+  "baseline": "e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b",
+  "method": "Actual encoded MP4s decoded without frame retiming, colour correction or sharpening. GIFs are reduced review copies; source MP4s retain their native export dimensions and timing.",
+  "projects": {
+    "triarch": {
+      "title": "Triarch",
+      "before": {
+        "landscape": {
+          "file": "triarch-landscape.mp4",
+          "width": 960,
+          "height": 540,
+          "bytes": 205913,
+          "sha256": "d3013715f89ed87d5ce86d4688eb4c7004750989e633fa55f1a1394123b8f1c9",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "11532cfe9e59c0906a55a585b989852a54026d57e7326a217062efe02772fdfa",
+          "lastFrameSHA256": "11532cfe9e59c0906a55a585b989852a54026d57e7326a217062efe02772fdfa",
+          "immutableGitHubURL": "https://github.com/tenthtech/drawnout-digital/blob/e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b/design-assets/portfolio-motion/triarch-landscape.mp4"
+        },
+        "portrait": {
+          "file": "triarch-portrait.mp4",
+          "width": 600,
+          "height": 750,
+          "bytes": 162786,
+          "sha256": "b4bfe55f3ec217d17a304b198072551f64aadbd5ccc35a04614db5aab3e89e72",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "bd61b46628bd73b67c877e49186cae25f4a99ba4ba9764cbb9bf6abc31828482",
+          "lastFrameSHA256": "bd61b46628bd73b67c877e49186cae25f4a99ba4ba9764cbb9bf6abc31828482",
+          "immutableGitHubURL": "https://github.com/tenthtech/drawnout-digital/blob/e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b/design-assets/portfolio-motion/triarch-portrait.mp4"
+        }
+      },
+      "after": {
+        "landscape": {
+          "file": "triarch-landscape.mp4",
+          "width": 1440,
+          "height": 810,
+          "bytes": 356574,
+          "sha256": "6ef1b7780bd2ff65b113f83d5df3eb86ecb4829b296b04195ae9f7d7c78dae52",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 380345,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "c8672c01be17591b73171072097d9119fa438e20b929285497c03ba59cc76836",
+          "lastFrameSHA256": "c8672c01be17591b73171072097d9119fa438e20b929285497c03ba59cc76836",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "triarch-landscape-poster.webp",
+            "bytes": 35434,
+            "sha256": "0302865ef4bea7ff0cf6c85700bee22702b13b4e64213f3c7f77785fcc585300",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
+        },
+        "portrait": {
+          "file": "triarch-portrait.mp4",
+          "width": 810,
+          "height": 1080,
+          "bytes": 279075,
+          "sha256": "2d0473221c6390d9282e93691b7646c0d45f767d028b6995bb1007f36b3f8507",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 297680,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "3f7284f469dae5e8f272774af5b4fe79c4a63208d878d0a912dc7f87a59ea053",
+          "lastFrameSHA256": "3f7284f469dae5e8f272774af5b4fe79c4a63208d878d0a912dc7f87a59ea053",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "triarch-portrait-poster.webp",
+            "bytes": 35302,
+            "sha256": "53da94757e3c8d090514cf813ca73ed1223e19f35da3d098be428fa20996a166",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
+        }
+      },
+      "direction": "Seven authentic letter fragments move on measured vertical axes, align around their original tagline, then establish an architectural framework for an actual paper card and device presentation.",
+      "composition": "scripts/portfolio/quality/triarch.mjs",
+      "limitations": [
+        "The originals are two flattened1654×931 presentation PNGs. The tagline occludes the middle of the large logo. Only visible letter fragments are animated; an approved AI/SVG or layered PSD is needed for independent complete glyphs.",
+        "Dark letter/monogram pixels are isolated by source-colour mattes; the pale architectural photograph is kept as its own crop rather than inventing a clean background under the original logo.",
+        "The main wordmark is720px wide and the monogram crop151×169; both remain at or below native size. The1440×810 canvas does not create new logo detail.",
+        "The printed card is a500×372 raster cutout and the device panel554×629. Editable identity geometry, a high-resolution card export and a clean device master would support larger presentation.",
+        "No pricing, package descriptions, verified services, client outcomes or new typography are added."
+      ]
+    },
+    "by-tech-group": {
+      "title": "By Tech Group",
+      "before": {
+        "landscape": {
+          "file": "by-tech-group-landscape.mp4",
+          "width": 960,
+          "height": 540,
+          "bytes": 150392,
+          "sha256": "5ad6d677f09fe8e4ff6e7da3fc8cd923d92c16a3bc6830fbff9657d8e1711347",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "36a8b161116993cfe1917ab1ab9686605fbcb09b195b9111dcec9c02d57d0daa",
+          "lastFrameSHA256": "36a8b161116993cfe1917ab1ab9686605fbcb09b195b9111dcec9c02d57d0daa",
+          "immutableGitHubURL": "https://github.com/tenthtech/drawnout-digital/blob/e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b/design-assets/portfolio-motion/by-tech-group-landscape.mp4"
+        },
+        "portrait": {
+          "file": "by-tech-group-portrait.mp4",
+          "width": 600,
+          "height": 750,
+          "bytes": 122412,
+          "sha256": "dad4c04e8487f8083fa6022ef2dd3f283f08d252833ab9a392f7fa72920404bc",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "845cb7856ce0e7ed5673c7e43ec26374a767fedfa1842070ac53b16d7369d1eb",
+          "lastFrameSHA256": "845cb7856ce0e7ed5673c7e43ec26374a767fedfa1842070ac53b16d7369d1eb",
+          "immutableGitHubURL": "https://github.com/tenthtech/drawnout-digital/blob/e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b/design-assets/portfolio-motion/by-tech-group-portrait.mp4"
+        }
+      },
+      "after": {
+        "landscape": {
+          "file": "by-tech-group-landscape.mp4",
+          "width": 1440,
+          "height": 810,
+          "bytes": 437004,
+          "sha256": "0d92a6384d4f278751824cf608311d0c0dce6cd524fb846c56d8bc2b2a7d313c",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 466137,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "eee8a9769250ca445a99438c696b3ab1a8c64501504b18fd28b47699f7acc0ca",
+          "lastFrameSHA256": "eee8a9769250ca445a99438c696b3ab1a8c64501504b18fd28b47699f7acc0ca",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "by-tech-group-landscape-poster.webp",
+            "bytes": 22562,
+            "sha256": "ef7eb1830b3cdce3729b9878efb870740e5569a5cf8eb62976ea85238e917784",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
+        },
+        "portrait": {
+          "file": "by-tech-group-portrait.mp4",
+          "width": 810,
+          "height": 1080,
+          "bytes": 407144,
+          "sha256": "7deb39b9aca3d0e6c4b4fe76d9641975c1ef3035ef7caa8dd69efd595104a7a4",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 434286,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "bde2747192c46703f8e443cdf2626c6a12e550879587a8cf9a743abd9c9becd6",
+          "lastFrameSHA256": "bde2747192c46703f8e443cdf2626c6a12e550879587a8cf9a743abd9c9becd6",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "by-tech-group-portrait-poster.webp",
+            "bytes": 19560,
+            "sha256": "104995d6da39e04764df0379b4bbcbee6ef912b3fde0993b030535b5e151e390",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
+        }
+      },
+      "direction": "Five original gradient-mark surfaces travel on separate vectors and connect; the two source wordmark phrases align before the same directional rhythm carries real printed cards and a mug into an application composition.",
+      "composition": "scripts/portfolio/quality/by-tech.mjs",
+      "limitations": [
+        "Three flattened1654×931 PNG presentation boards are supplied. The principal visible mark is approximately486×239px; it is never enlarged above native size in either composition.",
+        "Visible overlapping parts can separate, but independently complete hidden underlaps cannot be recovered. An approved layeredAI/SVG with the gradient surfaces and lettering paths is needed for deeper articulation and large identity-only renders.",
+        "Printed applications remain flat source cutouts, not new3D product renders, verified launched products or evidence of a functioning software platform.",
+        "The original mug handle is clipped at the right presentation-board edge. The new composition preserves that source boundary at the output edge instead of inventing missing material.",
+        "High-resolution isolated application exports would improve small printed lettering and physical product edge detail. Existing source copy is never promoted to verified client/team facts."
+      ]
+    },
+    "u-wanna-smoothie": {
+      "title": "U Wanna Smoothie",
+      "before": {
+        "landscape": {
+          "file": "u-wanna-smoothie-landscape.mp4",
+          "width": 960,
+          "height": 540,
+          "bytes": 147409,
+          "sha256": "535d344a97aa3f034fee2416da0bf11aa6fa18ea39246608d070644dc5729e1e",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "3db4937596d919b9d0d1278a1110e7b3463e09d139aba4115198e3e3c6a9aeab",
+          "lastFrameSHA256": "3db4937596d919b9d0d1278a1110e7b3463e09d139aba4115198e3e3c6a9aeab",
+          "immutableGitHubURL": "https://github.com/tenthtech/drawnout-digital/blob/e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b/design-assets/portfolio-motion/u-wanna-smoothie-landscape.mp4"
+        },
+        "portrait": {
+          "file": "u-wanna-smoothie-portrait.mp4",
+          "width": 600,
+          "height": 750,
+          "bytes": 145555,
+          "sha256": "31d6dcb811f73dd129afa46cd69dddc6ceb3c3896178cb93a30d5e3a3aec0d19",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "durationSeconds": 5.75,
+          "frameCount": 138,
+          "silent": true,
+          "sourceSeamPixelIdentical": true,
+          "firstFrameSHA256": "0721abaa4e0666ad955779d36021ea4e7b320baf6c9497be834781b983467ee0",
+          "lastFrameSHA256": "0721abaa4e0666ad955779d36021ea4e7b320baf6c9497be834781b983467ee0",
+          "immutableGitHubURL": "https://github.com/tenthtech/drawnout-digital/blob/e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b/design-assets/portfolio-motion/u-wanna-smoothie-portrait.mp4"
+        }
+      },
+      "after": {
+        "landscape": {
+          "file": "u-wanna-smoothie-landscape.mp4",
+          "width": 1440,
+          "height": 810,
+          "bytes": 563715,
+          "sha256": "5861bdb75080b4ed5049e974a08bdb001677367d2a213906a2caf9c7442d3dc7",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 601296,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "826e6338423d96ed39b94c7b15396a16cbe54bbf1adf5cd6dc849aa5b5e336cd",
+          "lastFrameSHA256": "826e6338423d96ed39b94c7b15396a16cbe54bbf1adf5cd6dc849aa5b5e336cd",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "u-wanna-smoothie-landscape-poster.webp",
+            "bytes": 37472,
+            "sha256": "c609de9b40fce5141fef3f87bf0d2c59c63cf4f2e02d4d49ead35d184dcdcd86",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
+        },
+        "portrait": {
+          "file": "u-wanna-smoothie-portrait.mp4",
+          "width": 810,
+          "height": 1080,
+          "bytes": 489148,
+          "sha256": "48ba245aa59c52959347997b5fe03ffe1b492fbd5035f4b6959246232633dab7",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 521757,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "4a6ec9a1993b66f87cbef2a03eb52679c862d3c1b46946673f4cc63c397ec4dc",
+          "lastFrameSHA256": "4a6ec9a1993b66f87cbef2a03eb52679c862d3c1b46946673f4cc63c397ec4dc",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "u-wanna-smoothie-portrait-poster.webp",
+            "bytes": 37878,
+            "sha256": "c964c6ff23655ca56bae1b20e0f6aac6e05d3d649404e54639c07a49964527e9",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
+        }
+      },
+      "direction": "The real cup lid/body, citrus quarters and leaves spring apart with overlapping timing, then align inside the original gold ring. Actual lettering, fruit photographs, menu artwork and a top-view drink extend the identity into a cohesive application composition.",
+      "composition": "scripts/portfolio/quality/smoothie.mjs",
+      "limitations": [
+        "All originals are flattened PNGs. The complete badge is522×518, with each central component only about80–160px wide. The identity stays at or below native size.",
+        "The gold ring, curved title and paired leaves remain source raster groups. Editable AI/SVG/PSD masters would enable finer path/letter and individual-leaf control.",
+        "The top-view drink and straw are one source photographic layer; toppings and hidden cup surfaces cannot be faithfully separated without layered or alpha photographic masters.",
+        "The illustrated menu is a real supplied printed-layout panel, not a functioning interface. Its About/Find Us claims are not used in this motion composition.",
+        "The810×1080 and1440×810 canvases arrange native-scale artwork; they do not create additional source detail."
+      ]
+    }
+  }
+}

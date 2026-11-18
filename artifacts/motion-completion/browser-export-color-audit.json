@@ -1,0 +1,603 @@
+{
+  "browser": "154.0.8037.57",
+  "observedAt": "2026-11-18T15:53:18.985Z",
+  "method": "Actual Chromium native-size DPR1 video element at its first decoded paused frame, served only by intercepted local HTTP routes. Canvas RGB and page-screenshot RGB are compared against the uncompressed settled source PNG. No color filter, frame seeking, screenshot color correction or external network request is used.",
+  "maximumChannelError": 3,
+  "artworkMaximumChannelError": 5,
+  "exports": [
+    {
+      "slug": "triarch",
+      "format": "landscape",
+      "file": "triarch-landscape.mp4",
+      "sha256": "6ef1b7780bd2ff65b113f83d5df3eb86ecb4829b296b04195ae9f7d7c78dae52",
+      "sourcePNG": "triarch-landscape-settled.png",
+      "sourcePNGSHA256": "33f4490b8b7234b34db7c73c5373d2bd52bd9afedcc4fd81a5e52fa6eef09fa7",
+      "browserScreenshot": "triarch-landscape-browser-color.png",
+      "screenshotSHA256": "b565b6bdc18aa36368c1b415eb8aefc36746bf0b1e863e561d652b133e561e0b",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1440,
+            "height": 810,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 1440,
+        "height": 810
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "maximumChannelError": 3,
+          "sourceRGB": [
+            233,
+            233,
+            233
+          ],
+          "canvasRGB": [
+            233,
+            233,
+            233
+          ],
+          "screenshotRGB": [
+            233,
+            233,
+            233
+          ],
+          "canvasDifference": [
+            0,
+            0,
+            0
+          ],
+          "screenshotDifference": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    },
+    {
+      "slug": "triarch",
+      "format": "portrait",
+      "file": "triarch-portrait.mp4",
+      "sha256": "2d0473221c6390d9282e93691b7646c0d45f767d028b6995bb1007f36b3f8507",
+      "sourcePNG": "triarch-portrait-settled.png",
+      "sourcePNGSHA256": "3327f8f19f608a2fe3f0c7fb4f2961b1f5a46465034c281aeb984e4622c39a5d",
+      "browserScreenshot": "triarch-portrait-browser-color.png",
+      "screenshotSHA256": "ba87a4da1acdb07b9069edad2a1a6a11d534b9a31008f1c6d9d9fe0b6cdd61ce",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 810,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 810,
+        "height": 1080
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "maximumChannelError": 3,
+          "sourceRGB": [
+            233,
+            233,
+            233
+          ],
+          "canvasRGB": [
+            233,
+            233,
+            233
+          ],
+          "screenshotRGB": [
+            233,
+            233,
+            233
+          ],
+          "canvasDifference": [
+            0,
+            0,
+            0
+          ],
+          "screenshotDifference": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    },
+    {
+      "slug": "by-tech-group",
+      "format": "landscape",
+      "file": "by-tech-group-landscape.mp4",
+      "sha256": "0d92a6384d4f278751824cf608311d0c0dce6cd524fb846c56d8bc2b2a7d313c",
+      "sourcePNG": "by-tech-group-landscape-settled.png",
+      "sourcePNGSHA256": "cd12f68fb3e303d0f4560c7a9be9added099e7f42dcbb1114e8d05ed16d427d2",
+      "browserScreenshot": "by-tech-group-landscape-browser-color.png",
+      "screenshotSHA256": "fc83ccb6ef509cfc385da8b3d6f239c4fea37fe7f8c2312352db25bdabf9e0bf",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1440,
+            "height": 810,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 1440,
+        "height": 810
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "maximumChannelError": 3,
+          "sourceRGB": [
+            14,
+            15,
+            18
+          ],
+          "canvasRGB": [
+            13,
+            15,
+            17
+          ],
+          "screenshotRGB": [
+            13,
+            15,
+            17
+          ],
+          "canvasDifference": [
+            1,
+            0,
+            1
+          ],
+          "screenshotDifference": [
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "x": 745,
+          "y": 220,
+          "maximumChannelError": 5,
+          "sourceRGB": [
+            163,
+            202,
+            111
+          ],
+          "canvasRGB": [
+            163,
+            201,
+            114
+          ],
+          "screenshotRGB": [
+            163,
+            201,
+            114
+          ],
+          "canvasDifference": [
+            0,
+            1,
+            3
+          ],
+          "screenshotDifference": [
+            0,
+            1,
+            3
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    },
+    {
+      "slug": "by-tech-group",
+      "format": "portrait",
+      "file": "by-tech-group-portrait.mp4",
+      "sha256": "7deb39b9aca3d0e6c4b4fe76d9641975c1ef3035ef7caa8dd69efd595104a7a4",
+      "sourcePNG": "by-tech-group-portrait-settled.png",
+      "sourcePNGSHA256": "1fbd0d4c876dba6e435428f30f84bf95cf257ec9ffd3b4fcd4773f597f069bfb",
+      "browserScreenshot": "by-tech-group-portrait-browser-color.png",
+      "screenshotSHA256": "40a253500b3a5f46a2f6c43a11a97fe989e1a86d80a3e410a187decbeb9553a7",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 810,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 810,
+        "height": 1080
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "maximumChannelError": 3,
+          "sourceRGB": [
+            14,
+            15,
+            18
+          ],
+          "canvasRGB": [
+            13,
+            15,
+            17
+          ],
+          "screenshotRGB": [
+            13,
+            15,
+            17
+          ],
+          "canvasDifference": [
+            1,
+            0,
+            1
+          ],
+          "screenshotDifference": [
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "x": 430,
+          "y": 300,
+          "maximumChannelError": 5,
+          "sourceRGB": [
+            163,
+            202,
+            111
+          ],
+          "canvasRGB": [
+            162,
+            203,
+            115
+          ],
+          "screenshotRGB": [
+            162,
+            203,
+            115
+          ],
+          "canvasDifference": [
+            1,
+            1,
+            4
+          ],
+          "screenshotDifference": [
+            1,
+            1,
+            4
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    },
+    {
+      "slug": "u-wanna-smoothie",
+      "format": "landscape",
+      "file": "u-wanna-smoothie-landscape.mp4",
+      "sha256": "5861bdb75080b4ed5049e974a08bdb001677367d2a213906a2caf9c7442d3dc7",
+      "sourcePNG": "u-wanna-smoothie-landscape-settled.png",
+      "sourcePNGSHA256": "69f433797cff18d8d9876c5a23f5e7d07788745e269815710ff2605371d5e9d4",
+      "browserScreenshot": "u-wanna-smoothie-landscape-browser-color.png",
+      "screenshotSHA256": "07ecd7890dd972adad9f87ed234370b13f20e7e2c7c2c47aaa20c8d0d81d012b",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1440,
+            "height": 810,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 1440,
+        "height": 810
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "maximumChannelError": 3,
+          "sourceRGB": [
+            255,
+            253,
+            246
+          ],
+          "canvasRGB": [
+            254,
+            253,
+            247
+          ],
+          "screenshotRGB": [
+            254,
+            253,
+            247
+          ],
+          "canvasDifference": [
+            1,
+            0,
+            1
+          ],
+          "screenshotDifference": [
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "x": 322,
+          "y": 356,
+          "maximumChannelError": 5,
+          "sourceRGB": [
+            181,
+            32,
+            38
+          ],
+          "canvasRGB": [
+            181,
+            32,
+            40
+          ],
+          "screenshotRGB": [
+            181,
+            32,
+            40
+          ],
+          "canvasDifference": [
+            0,
+            0,
+            2
+          ],
+          "screenshotDifference": [
+            0,
+            0,
+            2
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    },
+    {
+      "slug": "u-wanna-smoothie",
+      "format": "portrait",
+      "file": "u-wanna-smoothie-portrait.mp4",
+      "sha256": "48ba245aa59c52959347997b5fe03ffe1b492fbd5035f4b6959246232633dab7",
+      "sourcePNG": "u-wanna-smoothie-portrait-settled.png",
+      "sourcePNGSHA256": "442f5851fb3f6225cb521f571b798f9967ffdce79626a9dca047be3f3f5e641e",
+      "browserScreenshot": "u-wanna-smoothie-portrait-browser-color.png",
+      "screenshotSHA256": "ea78723c6a4cded4f42875b1ac1927a5bea235dbf4e6c05dcaee19fd5248fefd",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 810,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 810,
+        "height": 1080
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "maximumChannelError": 3,
+          "sourceRGB": [
+            255,
+            253,
+            246
+          ],
+          "canvasRGB": [
+            254,
+            253,
+            247
+          ],
+          "screenshotRGB": [
+            254,
+            253,
+            247
+          ],
+          "canvasDifference": [
+            1,
+            0,
+            1
+          ],
+          "screenshotDifference": [
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "x": 339,
+          "y": 331,
+          "maximumChannelError": 5,
+          "sourceRGB": [
+            181,
+            32,
+            38
+          ],
+          "canvasRGB": [
+            181,
+            32,
+            40
+          ],
+          "screenshotRGB": [
+            181,
+            32,
+            40
+          ],
+          "canvasDifference": [
+            0,
+            0,
+            2
+          ],
+          "screenshotDifference": [
+            0,
+            0,
+            2
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    }
+  ]
+}

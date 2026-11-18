@@ -1,9 +1,9 @@
 {
-  "generator": "scripts/portfolio/render-loops.mjs",
-  "compositionSource": "scripts/portfolio/compositions.mjs",
-  "durationSeconds": 5.75,
+  "generator": "scripts/portfolio/quality/render.mjs",
+  "compositionSource": "scripts/portfolio/quality/",
+  "durationSeconds": 7.5,
   "fps": 24,
-  "frameCount": 138,
+  "frameCount": 180,
   "limitations": [
     "Source artwork consists of flattened presentation PNGs, not independently rigged vectors or 3D products.",
     "Marks and illustrations are cropped original pixels. Paths are presentation masks and decorative construction guides, not replacement official marks.",
@@ -47,11 +47,7 @@
           "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_01.png",
           "bounds": [1307, 344, 171, 110],
           "note": "Actual white SOL / COMMUNITY / CENTER lettering; solid forest background keyed out.",
-          "mask": {
-            "type": "color",
-            "background": [40, 99, 50],
-            "threshold": 70
-          },
+          "mask": { "type": "color", "background": [40, 99, 50], "threshold": 70 },
           "sourceSHA256": "fb81af8a1afeb3ecb777b6b630cc412c886777a2da3be06bd8b4adbd4fc68f67",
           "layerSHA256": "ee82ee1ae266596109efdee5f475e3650489596df953ed5e94a8f75f72c906fe",
           "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/lettering.png",
@@ -62,15 +58,7 @@
           "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_01.png",
           "bounds": [691, 932, 130, 168],
           "note": "Actual gold crescent in the supplied graphic-elements row; exact source colors isolated, adjacent green artwork excluded.",
-          "mask": {
-            "type": "ranges",
-            "ranges": [
-              {
-                "min": [220, 90, 0],
-                "max": [255, 225, 110]
-              }
-            ]
-          },
+          "mask": { "type": "ranges", "ranges": [{ "min": [220, 90, 0], "max": [255, 225, 110] }] },
           "sourceSHA256": "fb81af8a1afeb3ecb777b6b630cc412c886777a2da3be06bd8b4adbd4fc68f67",
           "layerSHA256": "08d76def7decc728ebda74f9488353646dc45f4331681868c0d714a1d4440a82",
           "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/crescent.png",
@@ -81,15 +69,7 @@
           "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_01.png",
           "bounds": [805, 931, 164, 172],
           "note": "Actual lime leaf from the supplied graphic-elements row; neighboring gold and cream shapes excluded.",
-          "mask": {
-            "type": "ranges",
-            "ranges": [
-              {
-                "min": [45, 100, 0],
-                "max": [205, 235, 155]
-              }
-            ]
-          },
+          "mask": { "type": "ranges", "ranges": [{ "min": [45, 100, 0], "max": [205, 235, 155] }] },
           "sourceSHA256": "fb81af8a1afeb3ecb777b6b630cc412c886777a2da3be06bd8b4adbd4fc68f67",
           "layerSHA256": "7e3ceb4915b2a7f53f0b7b87b5c8101717765a9d88f5645f239916b2feb73d2c",
           "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/leaf.png",
@@ -116,15 +96,7 @@
           "source": "design-assets/portfolio-originals/02_SOL_Community_Center/02_SOL_Community_Center_01.png",
           "bounds": [983, 987, 105, 117],
           "note": "Actual forest leaf in the supplied graphic-elements row; white matte fringe rejected by exact foreground color range.",
-          "mask": {
-            "type": "ranges",
-            "ranges": [
-              {
-                "min": [0, 35, 0],
-                "max": [110, 165, 120]
-              }
-            ]
-          },
+          "mask": { "type": "ranges", "ranges": [{ "min": [0, 35, 0], "max": [110, 165, 120] }] },
           "sourceSHA256": "fb81af8a1afeb3ecb777b6b630cc412c886777a2da3be06bd8b4adbd4fc68f67",
           "layerSHA256": "29158277f9d88110ae0682c8e6c96a4896f87bb36743d6109a96dcdb20ed4330",
           "file": "design-assets/portfolio-motion/quality/layers/sol-community-center/forestLeaf.png",
@@ -280,10 +252,7 @@
         "letterB": {
           "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
           "bounds": [75, 95, 760, 400],
-          "mask": {
-            "type": "wordmark-partition",
-            "part": "letterB-face"
-          },
+          "mask": { "type": "wordmark-partition", "part": "letterB-face" },
           "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
           "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
           "layerSHA256": "cea6745f51656f941cdd54aae4cd83b3345a38e0ccbd32565e352bf44536d82b",
@@ -294,10 +263,7 @@
         "letterU": {
           "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
           "bounds": [75, 95, 760, 400],
-          "mask": {
-            "type": "wordmark-partition",
-            "part": "letterU-face"
-          },
+          "mask": { "type": "wordmark-partition", "part": "letterU-face" },
           "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
           "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
           "layerSHA256": "9e164340615d390c55564fc9ed979500056b9e77a820f827f611aaddbe9667da",
@@ -308,10 +274,7 @@
         "letterN": {
           "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
           "bounds": [75, 95, 760, 400],
-          "mask": {
-            "type": "wordmark-partition",
-            "part": "letterN-face"
-          },
+          "mask": { "type": "wordmark-partition", "part": "letterN-face" },
           "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
           "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
           "layerSHA256": "21487f925fd99f9ccf31104ed19b0738bd0c18622c2160ca97747c86c59cad4c",
@@ -322,10 +285,7 @@
         "letterZ": {
           "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
           "bounds": [75, 95, 760, 400],
-          "mask": {
-            "type": "wordmark-partition",
-            "part": "letterZ-face"
-          },
+          "mask": { "type": "wordmark-partition", "part": "letterZ-face" },
           "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
           "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
           "layerSHA256": "66a90e0bbd0c80e1cc072f6e6c7cd2567b6030559f77901cadd415e7e3369045",
@@ -336,10 +296,7 @@
         "letterO": {
           "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
           "bounds": [75, 95, 760, 400],
-          "mask": {
-            "type": "wordmark-partition",
-            "part": "letterO-face"
-          },
+          "mask": { "type": "wordmark-partition", "part": "letterO-face" },
           "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
           "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
           "layerSHA256": "eaabbd66693d50567831dc9af3ecb23dab19f337fd1e34113b70d1dc966fedd4",
@@ -350,10 +307,7 @@
         "base": {
           "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
           "bounds": [75, 95, 760, 400],
-          "mask": {
-            "type": "wordmark-partition",
-            "part": "base"
-          },
+          "mask": { "type": "wordmark-partition", "part": "base" },
           "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
           "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
           "layerSHA256": "f96764a4e3936daaa0168ff43c1d4764011ad8ac351e4dcfa5cce7ce5c79a8fd",
@@ -364,10 +318,7 @@
         "whole": {
           "source": "design-assets/portfolio-originals/04_Bunzo/04_Bunzo_01.png",
           "bounds": [75, 95, 760, 400],
-          "mask": {
-            "type": "wordmark-partition",
-            "part": "whole"
-          },
+          "mask": { "type": "wordmark-partition", "part": "whole" },
           "note": "Exact original raster partition using white-letter / yellow-phrase seeds and exterior red-background flood matte. No replacement lettering.",
           "sourceSHA256": "39441c794394b270989f08ac02ed617dbcde2abdd8009a426777291d900bf3ed",
           "layerSHA256": "ac835ff67fccab2f47fe6e70b9aaeb3b1d0c2d021991d5c9b3339b7080f79fe1",
@@ -532,62 +483,274 @@
       "qualityManifest": "quality/bunzo-manifest.json"
     },
     "triarch": {
+      "slug": "triarch",
       "title": "Triarch",
-      "direction": "Architectural lines: measured construction guides, monogram and stationery.",
+      "direction": "Seven authentic letter fragments move on measured vertical axes, align around their original tagline, then establish an architectural framework for an actual paper card and device presentation.",
+      "composition": "scripts/portfolio/quality/triarch.mjs",
+      "durationSeconds": 7.5,
+      "fps": 24,
+      "frameCount": 180,
+      "layers": [
+        "Seven independent visible letter-fragment layers from the authentic wordmark.",
+        "Original printed tagline band, kept whole to preserve its letterspacing and copy.",
+        "Actual monogram, architectural photograph and material swatch.",
+        "Contour-masked printed card and separate original device presentation.",
+        "Authored fine presentation rules and a source-palette yellow construction datum; these are not replacement logo geometry."
+      ],
+      "limitations": [
+        "The originals are two flattened1654×931 presentation PNGs. The tagline occludes the middle of the large logo. Only visible letter fragments are animated; an approved AI/SVG or layered PSD is needed for independent complete glyphs.",
+        "Dark letter/monogram pixels are isolated by source-colour mattes; the pale architectural photograph is kept as its own crop rather than inventing a clean background under the original logo.",
+        "The main wordmark is720px wide and the monogram crop151×169; both remain at or below native size. The1440×810 canvas does not create new logo detail.",
+        "The printed card is a500×372 raster cutout and the device panel554×629. Editable identity geometry, a high-resolution card export and a clean device master would support larger presentation.",
+        "No pricing, package descriptions, verified services, client outcomes or new typography are added."
+      ],
       "assets": {
-        "identity": {
+        "t": {
           "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
-          "bounds": [44, 161, 744, 162],
-          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec"
+          "bounds": [54, 182, 103, 121],
+          "mask": {
+            "type": "ranges",
+            "ranges": [{ "min": [0, 0, 0], "max": [100, 100, 100] }],
+            "clip": "M0 0H103V49H0Z M0 83H103V121H0Z"
+          },
+          "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+          "layerSHA256": "162eefe2eaafa6fe3df4929cbf246c575017491fa34e2933c20a0bc3b729b52a",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/t.png",
+          "nativeWidth": 103,
+          "nativeHeight": 121
+        },
+        "r1": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+          "bounds": [161, 182, 109, 121],
+          "mask": {
+            "type": "ranges",
+            "ranges": [{ "min": [0, 0, 0], "max": [100, 100, 100] }],
+            "clip": "M0 0H109V49H0Z M0 83H109V121H0Z"
+          },
+          "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+          "layerSHA256": "f35fef4c1e13f09fa2821be6a70ac7ceadc1c496a6673e2830c32e0017b62288",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/r1.png",
+          "nativeWidth": 109,
+          "nativeHeight": 121
+        },
+        "i": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+          "bounds": [276, 182, 53, 121],
+          "mask": {
+            "type": "ranges",
+            "ranges": [{ "min": [0, 0, 0], "max": [100, 100, 100] }],
+            "clip": "M0 0H53V49H0Z M0 83H53V121H0Z"
+          },
+          "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+          "layerSHA256": "1ac42ffbb5b7f1bceb8ef2f244943f1537c766b8f80d5e0d5f12ccb7e1160f87",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/i.png",
+          "nativeWidth": 53,
+          "nativeHeight": 121
+        },
+        "a": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+          "bounds": [333, 182, 100, 121],
+          "mask": {
+            "type": "ranges",
+            "ranges": [{ "min": [0, 0, 0], "max": [100, 100, 100] }],
+            "clip": "M0 0H100V49H0Z M0 83H100V121H0Z"
+          },
+          "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+          "layerSHA256": "f200c0226950f83cc7007cd57e8a0e061b923cedc69f0f13f44227ec477d3ce7",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/a.png",
+          "nativeWidth": 100,
+          "nativeHeight": 121
+        },
+        "r2": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+          "bounds": [443, 182, 109, 121],
+          "mask": {
+            "type": "ranges",
+            "ranges": [{ "min": [0, 0, 0], "max": [100, 100, 100] }],
+            "clip": "M0 0H109V49H0Z M0 83H109V121H0Z"
+          },
+          "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+          "layerSHA256": "59970a2aa6de13ba7037f7aa6611ec42a80635e2e1f26e03f43102f59787eab6",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/r2.png",
+          "nativeWidth": 109,
+          "nativeHeight": 121
+        },
+        "c": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+          "bounds": [558, 182, 99, 121],
+          "mask": {
+            "type": "ranges",
+            "ranges": [{ "min": [0, 0, 0], "max": [100, 100, 100] }],
+            "clip": "M0 0H99V49H0Z M0 83H99V121H0Z"
+          },
+          "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+          "layerSHA256": "e758718124dd2b4e1d22e2cd043787ec22c44cfb2ec0ccb95bea3b6a5b273d4b",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/c.png",
+          "nativeWidth": 99,
+          "nativeHeight": 121
+        },
+        "h": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+          "bounds": [660, 182, 114, 121],
+          "mask": {
+            "type": "ranges",
+            "ranges": [{ "min": [0, 0, 0], "max": [100, 100, 100] }],
+            "clip": "M0 0H114V49H0Z M0 83H114V121H0Z"
+          },
+          "note": "Actual dark letter pixels visible above/below the supplied tagline. Hidden middles are not reconstructed.",
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+          "layerSHA256": "fa77190bf968a26d2cc37fd78f9453b82dd8e8e401bbb070a22bec1448d84a61",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/h.png",
+          "nativeWidth": 114,
+          "nativeHeight": 121
+        },
+        "tagline": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+          "bounds": [88, 231, 677, 34],
+          "note": "The intact original printed white tagline band, including its original lettering.",
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+          "layerSHA256": "4165a663fa756873dc8848574b5d828dbf9884b90b1d1c28d90f8ec983cfe0bb",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/tagline.png",
+          "nativeWidth": 677,
+          "nativeHeight": 34
+        },
+        "architecture": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+          "bounds": [382, 0, 437, 176],
+          "note": "Unlettered architectural photograph from the top of the original identity board; never enlarged.",
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+          "layerSHA256": "acbd3bacb4ffb90bc02ed450d3ac1e777476ab7b5c9c75933aba7e3b1978d525",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/architecture.png",
+          "nativeWidth": 437,
+          "nativeHeight": 176
         },
         "monogram": {
           "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_02.png",
-          "bounds": [132, 586, 161, 180],
-          "sourceSHA256": "1aee15e956efdac35e5d3bbee530fa66a013d1124038bb6883e708d337ced05b"
+          "bounds": [136, 590, 151, 169],
+          "mask": { "type": "ranges", "ranges": [{ "min": [0, 0, 0], "max": [110, 110, 110] }] },
+          "note": "Actual dark T/A sticker-monogram pixels. No inference about a commissioned architectural engagement.",
+          "sourceSHA256": "1aee15e956efdac35e5d3bbee530fa66a013d1124038bb6883e708d337ced05b",
+          "layerSHA256": "0d7393ec173c013ae912c8d5f71910b4bcd7512e9b1a6f08fb338d297710e151",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/monogram.png",
+          "nativeWidth": 151,
+          "nativeHeight": 169
         },
         "card": {
           "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
-          "bounds": [838, 0, 816, 931],
-          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec"
+          "bounds": [1005, 325, 500, 372],
+          "mask": { "type": "path", "d": "M72 9L493 76L443 365L7 290Z" },
+          "note": "The actual printed card silhouette. This is a flat photographic cutout, not a simulated 3D card.",
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+          "layerSHA256": "d9696c8e6f80ce8632fc19dd4ef4ba71b9d7c878000ed481f71b4289d1014747",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/card.png",
+          "nativeWidth": 500,
+          "nativeHeight": 372
         },
         "device": {
           "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_02.png",
-          "bounds": [1102, 301, 552, 630],
-          "sourceSHA256": "1aee15e956efdac35e5d3bbee530fa66a013d1124038bb6883e708d337ced05b"
+          "bounds": [1100, 302, 554, 629],
+          "note": "The approved laptop/monogram panel, excluding the typeface label and all pricing/scope artwork.",
+          "sourceSHA256": "1aee15e956efdac35e5d3bbee530fa66a013d1124038bb6883e708d337ced05b",
+          "layerSHA256": "a82bd18f4bf0a23d91359355e5e10f786c1089ac8d26a1d4a08697e5ecb78433",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/device.png",
+          "nativeWidth": 554,
+          "nativeHeight": 629
+        },
+        "material": {
+          "source": "design-assets/portfolio-originals/14_Triarch/14_Triarch_01.png",
+          "bounds": [835, 0, 400, 176],
+          "note": "An actual unprinted material detail above the source card, displayed as its own native-size surface crop.",
+          "sourceSHA256": "ead9d6e3f3ee65a61d30e7a39e83169fbf02ba3366356034bebc710d8fb74cec",
+          "layerSHA256": "b6d62fa293a41b488ed706fe149bad18b71a8b4b2cd38ced842b5f51cf370002",
+          "file": "design-assets/portfolio-motion/quality/layers/triarch/material.png",
+          "nativeWidth": 400,
+          "nativeHeight": 176
         }
       },
       "exports": {
         "landscape": {
           "file": "triarch-landscape.mp4",
-          "width": 960,
-          "height": 540,
-          "bytes": 205913,
-          "sha256": "d3013715f89ed87d5ce86d4688eb4c7004750989e633fa55f1a1394123b8f1c9",
+          "width": 1440,
+          "height": 810,
+          "bytes": 356574,
+          "sha256": "6ef1b7780bd2ff65b113f83d5df3eb86ecb4829b296b04195ae9f7d7c78dae52",
           "codec": "h264",
           "pixelFormat": "yuv420p",
-          "durationSeconds": 5.75,
-          "frameCount": 138,
-          "silent": true,
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 380345,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "c8672c01be17591b73171072097d9119fa438e20b929285497c03ba59cc76836",
+          "lastFrameSHA256": "c8672c01be17591b73171072097d9119fa438e20b929285497c03ba59cc76836",
+          "sourceBoundaryPixelIdentical": true,
           "sourceSeamPixelIdentical": true,
-          "firstFrameSHA256": "11532cfe9e59c0906a55a585b989852a54026d57e7326a217062efe02772fdfa",
-          "lastFrameSHA256": "11532cfe9e59c0906a55a585b989852a54026d57e7326a217062efe02772fdfa"
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "triarch-landscape-poster.webp",
+            "bytes": 35434,
+            "sha256": "0302865ef4bea7ff0cf6c85700bee22702b13b4e64213f3c7f77785fcc585300",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
         },
         "portrait": {
           "file": "triarch-portrait.mp4",
-          "width": 600,
-          "height": 750,
-          "bytes": 162786,
-          "sha256": "b4bfe55f3ec217d17a304b198072551f64aadbd5ccc35a04614db5aab3e89e72",
+          "width": 810,
+          "height": 1080,
+          "bytes": 279075,
+          "sha256": "2d0473221c6390d9282e93691b7646c0d45f767d028b6995bb1007f36b3f8507",
           "codec": "h264",
           "pixelFormat": "yuv420p",
-          "durationSeconds": 5.75,
-          "frameCount": 138,
-          "silent": true,
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 297680,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "3f7284f469dae5e8f272774af5b4fe79c4a63208d878d0a912dc7f87a59ea053",
+          "lastFrameSHA256": "3f7284f469dae5e8f272774af5b4fe79c4a63208d878d0a912dc7f87a59ea053",
+          "sourceBoundaryPixelIdentical": true,
           "sourceSeamPixelIdentical": true,
-          "firstFrameSHA256": "bd61b46628bd73b67c877e49186cae25f4a99ba4ba9764cbb9bf6abc31828482",
-          "lastFrameSHA256": "bd61b46628bd73b67c877e49186cae25f4a99ba4ba9764cbb9bf6abc31828482"
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "triarch-portrait-poster.webp",
+            "bytes": 35302,
+            "sha256": "53da94757e3c8d090514cf813ca73ed1223e19f35da3d098be428fa20996a166",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
         }
-      }
+      },
+      "reviewStatus": "Completion creative review; technical validation is not owner approval",
+      "qualityManifest": "quality/triarch-manifest.json"
     },
     "churros": {
       "slug": "churros",
@@ -713,11 +876,7 @@
         "flourish": {
           "source": "design-assets/portfolio-originals/07_Churros_Dessert_Shop/07_Churros_Dessert_Shop_02.png",
           "bounds": [76, 592, 242, 59],
-          "mask": {
-            "type": "color",
-            "background": [249, 241, 226],
-            "threshold": 34
-          },
+          "mask": { "type": "color", "background": [249, 241, 226], "threshold": 34 },
           "note": "Actual red ornamental curl, background keyed with edge alpha; never a generated flourish.",
           "sourceSHA256": "16d3e263d5a0855fa519c28f999cacf11661d24bbc1961e3b2d925b91190d95f",
           "layerSHA256": "690c694a76049c4be85c6c173a19cb6185c1a3facb2dd3ad48286e5c10ac1c8a",
@@ -728,11 +887,7 @@
         "flourishGold": {
           "source": "design-assets/portfolio-originals/07_Churros_Dessert_Shop/07_Churros_Dessert_Shop_02.png",
           "bounds": [61, 698, 276, 80],
-          "mask": {
-            "type": "color",
-            "background": [249, 241, 226],
-            "threshold": 32
-          },
+          "mask": { "type": "color", "background": [249, 241, 226], "threshold": 32 },
           "note": "Actual orange ornamental divider; independent restrained translation.",
           "sourceSHA256": "16d3e263d5a0855fa519c28f999cacf11661d24bbc1961e3b2d925b91190d95f",
           "layerSHA256": "14b71676a8f327967961e9443adb255e4a65c9e62bbb851e8025edd27319fbed",
@@ -849,128 +1004,659 @@
       "qualityManifest": "quality/churros-manifest.json"
     },
     "by-tech-group": {
+      "slug": "by-tech-group",
       "title": "By Tech Group",
-      "direction": "Identity in modules: progressive grid apertures and assembled applications.",
+      "direction": "Five original gradient-mark surfaces travel on separate vectors and connect; the two source wordmark phrases align before the same directional rhythm carries real printed cards and a mug into an application composition.",
+      "composition": "scripts/portfolio/quality/by-tech.mjs",
+      "durationSeconds": 7.5,
+      "fps": 24,
+      "frameCount": 180,
+      "layers": [
+        "Five actual visible monogram surfaces: purple tail, blue bridge, blue bowl, green crossbar and green descending stroke; independent translations, shallow rotations and overlapping connection timing.",
+        "The original green BY TECH and white GROUP wordmark phrases, with independent alignment offsets.",
+        "Separate real black-card background and white-card foreground layers, moving on the same directional logic as the identity before returning to their supplied relative pose.",
+        "Actual mug silhouette as a stationary application anchor after entry; source-cropped handle edge stays at the output edge.",
+        "Authentic gradient connector and dot matrix from the supplied graphic-elements board.",
+        "Fine construction connectors are temporary presentation guides, not a replacement brand mark or a software interface."
+      ],
+      "limitations": [
+        "Three flattened1654×931 PNG presentation boards are supplied. The principal visible mark is approximately486×239px; it is never enlarged above native size in either composition.",
+        "Visible overlapping parts can separate, but independently complete hidden underlaps cannot be recovered. An approved layeredAI/SVG with the gradient surfaces and lettering paths is needed for deeper articulation and large identity-only renders.",
+        "Printed applications remain flat source cutouts, not new3D product renders, verified launched products or evidence of a functioning software platform.",
+        "The original mug handle is clipped at the right presentation-board edge. The new composition preserves that source boundary at the output edge instead of inventing missing material.",
+        "High-resolution isolated application exports would improve small printed lettering and physical product edge detail. Existing source copy is never promoted to verified client/team facts."
+      ],
       "assets": {
-        "identity": {
+        "mark": {
           "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_01.png",
-          "bounds": [468, 123, 725, 485],
-          "sourceSHA256": "260eeedb90d8a7c730e6eb08432af979dac3b2d051a1ba972f3c2eb5123db95b"
+          "bounds": [565, 125, 550, 300],
+          "mask": { "type": "color", "background": [0, 0, 0], "threshold": 22, "feather": 12 },
+          "note": "Complete authentic 486×239px visible monogram inside its native550×300 crop. Black backdrop is keyed; the brand geometry and original gradient pixels are unchanged.",
+          "sourceSHA256": "260eeedb90d8a7c730e6eb08432af979dac3b2d051a1ba972f3c2eb5123db95b",
+          "layerSHA256": "27871d2fd034030c98907eac4d14b58d0972a603cfe1fffc91683af3efa1107c",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/mark.png",
+          "nativeWidth": 550,
+          "nativeHeight": 300
         },
-        "building": {
-          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_02.png",
-          "bounds": [0, 551, 551, 380],
-          "sourceSHA256": "618e3c165ffa4d3cd536704ef73d8b8ab2c46b7a0e069c9685a13ea290cb2232"
+        "tail": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_01.png",
+          "bounds": [565, 125, 550, 300],
+          "mask": {
+            "type": "color",
+            "background": [0, 0, 0],
+            "threshold": 22,
+            "feather": 12,
+            "clip": "M0 0H215V25H193C173 38 154 56 140 79H0Z"
+          },
+          "note": "Only the purple horizontal tail visible in the source; hidden overlap pixels are not invented.",
+          "sourceSHA256": "260eeedb90d8a7c730e6eb08432af979dac3b2d051a1ba972f3c2eb5123db95b",
+          "layerSHA256": "dfe45faf6c54a65655061c6e96282cbafa7b7f5f41dd42386c5c167d6690e487",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/tail.png",
+          "nativeWidth": 550,
+          "nativeHeight": 300
         },
-        "flag": {
-          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_02.png",
-          "bounds": [559, 551, 476, 380],
-          "sourceSHA256": "618e3c165ffa4d3cd536704ef73d8b8ab2c46b7a0e069c9685a13ea290cb2232"
+        "bridge": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_01.png",
+          "bounds": [565, 125, 550, 300],
+          "mask": {
+            "type": "color",
+            "background": [0, 0, 0],
+            "threshold": 22,
+            "feather": 12,
+            "clip": "M109 117C112 75 143 37 193 25H215C187 47 175 82 167 117Z"
+          },
+          "note": "Actual dark-blue connecting curve, separated along its original color/overlap boundary.",
+          "sourceSHA256": "260eeedb90d8a7c730e6eb08432af979dac3b2d051a1ba972f3c2eb5123db95b",
+          "layerSHA256": "ba663528b5ff845e5d4c44937d3ade58a5fb1f4d089f453891dd286d12137cbe",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/bridge.png",
+          "nativeWidth": 550,
+          "nativeHeight": 300
+        },
+        "bowl": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_01.png",
+          "bounds": [565, 125, 550, 300],
+          "mask": {
+            "type": "color",
+            "background": [0, 0, 0],
+            "threshold": 22,
+            "feather": 12,
+            "clip": "M0 117H315V300H0Z"
+          },
+          "note": "Actual blue bowl and its original transparent counter, retained from the source pixels.",
+          "sourceSHA256": "260eeedb90d8a7c730e6eb08432af979dac3b2d051a1ba972f3c2eb5123db95b",
+          "layerSHA256": "2645c5dd31c94cc92fc2e643bb49a2257cda0bf46330d6f01e3b9cd97b1d434e",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/bowl.png",
+          "nativeWidth": 550,
+          "nativeHeight": 300
+        },
+        "crossbar": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_01.png",
+          "bounds": [565, 125, 550, 300],
+          "mask": {
+            "type": "color",
+            "background": [0, 0, 0],
+            "threshold": 22,
+            "feather": 12,
+            "clip": "M215 0H550V79H175C184 55 196 36 215 25Z"
+          },
+          "note": "The original green crossbar, including its rounded terminal and gradient.",
+          "sourceSHA256": "260eeedb90d8a7c730e6eb08432af979dac3b2d051a1ba972f3c2eb5123db95b",
+          "layerSHA256": "9d5eb6fd79b1d7964291da60f371b8a3aa0908d201fd00aa986801216397b3fb",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/crossbar.png",
+          "nativeWidth": 550,
+          "nativeHeight": 300
+        },
+        "stroke": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_01.png",
+          "bounds": [565, 125, 550, 300],
+          "mask": {
+            "type": "color",
+            "background": [0, 0, 0],
+            "threshold": 22,
+            "feather": 12,
+            "clip": "M315 79H550V300H315Z"
+          },
+          "note": "The original descending green stroke; no new glyph or functioning-product symbol is created.",
+          "sourceSHA256": "260eeedb90d8a7c730e6eb08432af979dac3b2d051a1ba972f3c2eb5123db95b",
+          "layerSHA256": "27de80226f5e53fa9e48ad975f4d441bf3eebe185fd2e9c8418076c4f7ddbbba",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/stroke.png",
+          "nativeWidth": 550,
+          "nativeHeight": 300
+        },
+        "wordmark": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_01.png",
+          "bounds": [465, 425, 720, 90],
+          "mask": { "type": "color", "background": [0, 0, 0], "threshold": 28, "feather": 12 },
+          "note": "Actual BY TECH GROUP lettering. The green phrase and white phrase move independently through source-coordinate presentation clips; no replacement font is used.",
+          "sourceSHA256": "260eeedb90d8a7c730e6eb08432af979dac3b2d051a1ba972f3c2eb5123db95b",
+          "layerSHA256": "e0ee696f1fbeb33ea5dd64e7b5f65e0d7eebaef467f8c7fc13a6995be10de4c7",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/wordmark.png",
+          "nativeWidth": 720,
+          "nativeHeight": 90
+        },
+        "backCard": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_03.png",
+          "bounds": [452, 0, 665, 438],
+          "mask": { "type": "path", "d": "M73 58L434 8L482 183L220 231L232 291L96 299Z" },
+          "note": "The visible black printed card from the supplied card application. Its occluded edge remains occluded; no hidden card artwork is reconstructed.",
+          "sourceSHA256": "f8325f3a8b01c0ce719914e8a6d12be13e96ecd026c9cb691fced12180cba30c",
+          "layerSHA256": "a8f90cf42d83545bcf01af57dae7313313006d4dce595fa7ac39d1694dc6e63d",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/backCard.png",
+          "nativeWidth": 665,
+          "nativeHeight": 438
+        },
+        "frontCard": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_03.png",
+          "bounds": [452, 0, 665, 438],
+          "mask": { "type": "path", "d": "M220 231L574 168L640 376L272 434Z" },
+          "note": "The actual white printed-card foreground. Names/contact copy are existing source artwork, not independently verified relationships or agency claims.",
+          "sourceSHA256": "f8325f3a8b01c0ce719914e8a6d12be13e96ecd026c9cb691fced12180cba30c",
+          "layerSHA256": "fe5b3531cf4fbdeca6825cf7a74126c83d57c94fc79cb332db0cba160737d70a",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/frontCard.png",
+          "nativeWidth": 665,
+          "nativeHeight": 438
         },
         "mug": {
           "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_03.png",
-          "bounds": [1121, 0, 533, 437],
-          "sourceSHA256": "f8325f3a8b01c0ce719914e8a6d12be13e96ecd026c9cb691fced12180cba30c"
+          "bounds": [1120, 0, 534, 438],
+          "mask": {
+            "type": "path",
+            "d": "M191 64C193 38 472 29 475 63L477 97C497 93 520 93 534 100V338C514 346 491 338 475 327V391C461 426 202 430 193 395ZM480 129C500 117 523 120 534 133V300C515 320 494 310 480 294Z"
+          },
+          "note": "Actual printed mug silhouette. Its handle is already cropped by the original board edge, so that source edge is deliberately aligned with the output right edge; no missing handle is invented.",
+          "sourceSHA256": "f8325f3a8b01c0ce719914e8a6d12be13e96ecd026c9cb691fced12180cba30c",
+          "layerSHA256": "adb4132d4d64f531dc5fc25a933c4d47841a5d8830b19c75330cd6d546564236",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/mug.png",
+          "nativeWidth": 534,
+          "nativeHeight": 438
         },
-        "folio": {
-          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_03.png",
-          "bounds": [386, 445, 802, 486],
-          "sourceSHA256": "f8325f3a8b01c0ce719914e8a6d12be13e96ecd026c9cb691fced12180cba30c"
+        "gradientBar": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_02.png",
+          "bounds": [902, 78, 240, 38],
+          "mask": {
+            "type": "color",
+            "background": [240, 240, 240],
+            "threshold": 65,
+            "feather": 15
+          },
+          "note": "The actual gradient connector from the source Graphic Elements row, shown below native size.",
+          "sourceSHA256": "618e3c165ffa4d3cd536704ef73d8b8ab2c46b7a0e069c9685a13ea290cb2232",
+          "layerSHA256": "c10f5bb254be644c0b1e0998695c84fbdd08997c32ca29c05a4006ceb47ab6e1",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/gradientBar.png",
+          "nativeWidth": 240,
+          "nativeHeight": 38
+        },
+        "dotMatrix": {
+          "source": "design-assets/portfolio-originals/03_By_Tech_Group/03_By_Tech_Group_02.png",
+          "bounds": [1395, 50, 175, 112],
+          "mask": {
+            "type": "color",
+            "background": [240, 240, 240],
+            "threshold": 65,
+            "feather": 15
+          },
+          "note": "The original purple dot matrix, retained as one measured graphic-system element rather than newly generated particles.",
+          "sourceSHA256": "618e3c165ffa4d3cd536704ef73d8b8ab2c46b7a0e069c9685a13ea290cb2232",
+          "layerSHA256": "242cdea538a9f175cd55e28bba431d553fe83b5fead9f4ce52f00040339932cc",
+          "file": "design-assets/portfolio-motion/quality/layers/by-tech-group/dotMatrix.png",
+          "nativeWidth": 175,
+          "nativeHeight": 112
         }
       },
       "exports": {
         "landscape": {
           "file": "by-tech-group-landscape.mp4",
-          "width": 960,
-          "height": 540,
-          "bytes": 150392,
-          "sha256": "5ad6d677f09fe8e4ff6e7da3fc8cd923d92c16a3bc6830fbff9657d8e1711347",
+          "width": 1440,
+          "height": 810,
+          "bytes": 437004,
+          "sha256": "0d92a6384d4f278751824cf608311d0c0dce6cd524fb846c56d8bc2b2a7d313c",
           "codec": "h264",
           "pixelFormat": "yuv420p",
-          "durationSeconds": 5.75,
-          "frameCount": 138,
-          "silent": true,
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 466137,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "eee8a9769250ca445a99438c696b3ab1a8c64501504b18fd28b47699f7acc0ca",
+          "lastFrameSHA256": "eee8a9769250ca445a99438c696b3ab1a8c64501504b18fd28b47699f7acc0ca",
+          "sourceBoundaryPixelIdentical": true,
           "sourceSeamPixelIdentical": true,
-          "firstFrameSHA256": "36a8b161116993cfe1917ab1ab9686605fbcb09b195b9111dcec9c02d57d0daa",
-          "lastFrameSHA256": "36a8b161116993cfe1917ab1ab9686605fbcb09b195b9111dcec9c02d57d0daa"
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "by-tech-group-landscape-poster.webp",
+            "bytes": 22562,
+            "sha256": "ef7eb1830b3cdce3729b9878efb870740e5569a5cf8eb62976ea85238e917784",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
         },
         "portrait": {
           "file": "by-tech-group-portrait.mp4",
-          "width": 600,
-          "height": 750,
-          "bytes": 122412,
-          "sha256": "dad4c04e8487f8083fa6022ef2dd3f283f08d252833ab9a392f7fa72920404bc",
+          "width": 810,
+          "height": 1080,
+          "bytes": 407144,
+          "sha256": "7deb39b9aca3d0e6c4b4fe76d9641975c1ef3035ef7caa8dd69efd595104a7a4",
           "codec": "h264",
           "pixelFormat": "yuv420p",
-          "durationSeconds": 5.75,
-          "frameCount": 138,
-          "silent": true,
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 434286,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "bde2747192c46703f8e443cdf2626c6a12e550879587a8cf9a743abd9c9becd6",
+          "lastFrameSHA256": "bde2747192c46703f8e443cdf2626c6a12e550879587a8cf9a743abd9c9becd6",
+          "sourceBoundaryPixelIdentical": true,
           "sourceSeamPixelIdentical": true,
-          "firstFrameSHA256": "845cb7856ce0e7ed5673c7e43ec26374a767fedfa1842070ac53b16d7369d1eb",
-          "lastFrameSHA256": "845cb7856ce0e7ed5673c7e43ec26374a767fedfa1842070ac53b16d7369d1eb"
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "by-tech-group-portrait-poster.webp",
+            "bytes": 19560,
+            "sha256": "104995d6da39e04764df0379b4bbcbee6ef912b3fde0993b030535b5e151e390",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
         }
-      }
+      },
+      "reviewStatus": "Completion creative review; technical validation is not owner approval",
+      "qualityManifest": "quality/by-tech-group-manifest.json"
     },
     "u-wanna-smoothie": {
+      "slug": "u-wanna-smoothie",
       "title": "U Wanna Smoothie",
-      "direction": "Liquid and flavor: elastic wave masks, illustrated menu and product imagery.",
+      "direction": "The real cup lid/body, citrus quarters and leaves spring apart with overlapping timing, then align inside the original gold ring. Actual lettering, fruit photographs, menu artwork and a top-view drink extend the identity into a cohesive application composition.",
+      "composition": "scripts/portfolio/quality/smoothie.mjs",
+      "durationSeconds": 7.5,
+      "fps": 24,
+      "frameCount": 180,
+      "layers": [
+        "Original red lid, pink cup body, green and orange citrus quarters, and paired leaves independently translate and rotate with gentle overlapping spring timing.",
+        "Original gold ring and complete curved lettering move independently around the central emblem; the same exact source-coordinate component alignment holds both loop boundaries.",
+        "Three source title fragments separate through existing blank columns and align without retyping or changing their spacing.",
+        "Actual fruit photographs enter at native or smaller sizes; the real drink/straw and illustrated menu resolve into the application composition.",
+        "Overlapping spring timing and the real illustrated menu supply the fluid graphic bridge. No artificial liquid, added ingredient or 3D product is used."
+      ],
+      "limitations": [
+        "All originals are flattened PNGs. The complete badge is522×518, with each central component only about80–160px wide. The identity stays at or below native size.",
+        "The gold ring, curved title and paired leaves remain source raster groups. Editable AI/SVG/PSD masters would enable finer path/letter and individual-leaf control.",
+        "The top-view drink and straw are one source photographic layer; toppings and hidden cup surfaces cannot be faithfully separated without layered or alpha photographic masters.",
+        "The illustrated menu is a real supplied printed-layout panel, not a functioning interface. Its About/Find Us claims are not used in this motion composition.",
+        "The810×1080 and1440×810 canvases arrange native-scale artwork; they do not create additional source detail."
+      ],
       "assets": {
-        "identity": {
+        "ring": {
           "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_01.png",
           "bounds": [565, 207, 522, 518],
-          "sourceSHA256": "14d7dbf0150dd22afa7a94a66709a2ac6843a4af618569a8cfc5477f53ff515b"
+          "mask": {
+            "type": "ranges",
+            "ranges": [
+              { "min": [145, 80, 0], "max": [255, 84, 74] },
+              { "min": [145, 85, 0], "max": [255, 89, 79] },
+              { "min": [145, 90, 0], "max": [255, 94, 84] },
+              { "min": [145, 95, 0], "max": [255, 99, 89] },
+              { "min": [145, 100, 0], "max": [255, 104, 94] },
+              { "min": [145, 105, 0], "max": [255, 109, 99] },
+              { "min": [145, 110, 0], "max": [255, 114, 104] },
+              { "min": [145, 115, 0], "max": [255, 119, 109] },
+              { "min": [145, 120, 0], "max": [255, 124, 114] },
+              { "min": [145, 125, 0], "max": [255, 129, 119] },
+              { "min": [145, 130, 0], "max": [255, 134, 124] },
+              { "min": [145, 135, 0], "max": [255, 139, 129] },
+              { "min": [145, 140, 0], "max": [255, 144, 134] },
+              { "min": [145, 145, 0], "max": [255, 149, 139] },
+              { "min": [145, 150, 0], "max": [255, 154, 144] },
+              { "min": [145, 155, 0], "max": [255, 159, 149] },
+              { "min": [145, 160, 0], "max": [255, 164, 154] },
+              { "min": [145, 165, 0], "max": [255, 169, 159] },
+              { "min": [145, 170, 0], "max": [255, 174, 164] },
+              { "min": [145, 175, 0], "max": [255, 179, 169] },
+              { "min": [145, 180, 0], "max": [255, 184, 174] },
+              { "min": [145, 185, 0], "max": [255, 189, 179] },
+              { "min": [145, 190, 0], "max": [255, 194, 184] },
+              { "min": [145, 195, 0], "max": [255, 199, 189] },
+              { "min": [145, 200, 0], "max": [255, 204, 194] },
+              { "min": [145, 205, 0], "max": [255, 209, 199] },
+              { "min": [145, 210, 0], "max": [255, 214, 204] },
+              { "min": [145, 215, 0], "max": [255, 219, 209] },
+              { "min": [145, 220, 0], "max": [255, 224, 214] },
+              { "min": [145, 225, 0], "max": [255, 229, 219] },
+              { "min": [145, 230, 0], "max": [255, 234, 224] },
+              { "min": [145, 235, 0], "max": [255, 239, 229] },
+              { "min": [145, 240, 0], "max": [255, 244, 234] },
+              { "min": [145, 245, 0], "max": [255, 249, 239] },
+              { "min": [145, 250, 0], "max": [255, 254, 244] },
+              { "min": [145, 255, 0], "max": [255, 255, 249] }
+            ],
+            "clip": "M262 1A258 258 0 1 1 262 517A258 258 0 1 1 262 1Z M262 18A241 241 0 1 0 262 500A241 241 0 1 0 262 18Z"
+          },
+          "note": "Actual textured gold ring, isolated within its annular source region. Fine measured color bands remove the source pink presentation field without repainting the gold.",
+          "sourceSHA256": "14d7dbf0150dd22afa7a94a66709a2ac6843a4af618569a8cfc5477f53ff515b",
+          "layerSHA256": "1eeee93b21d9bbe3da32d0cbe0dfdd815cfbc5fc9d75a5264059a4461ab4f78b",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/ring.png",
+          "nativeWidth": 522,
+          "nativeHeight": 518
         },
-        "cup": {
+        "arc": {
           "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_01.png",
-          "bounds": [0, 0, 555, 931],
-          "sourceSHA256": "14d7dbf0150dd22afa7a94a66709a2ac6843a4af618569a8cfc5477f53ff515b"
+          "bounds": [565, 207, 522, 518],
+          "mask": {
+            "type": "ranges",
+            "ranges": [
+              { "min": [0, 0, 0], "max": [140, 140, 140] },
+              { "min": [130, 130, 130], "max": [185, 185, 185] },
+              { "min": [175, 175, 175], "max": [225, 225, 225] }
+            ],
+            "clip": "M18 260A244 244 0 0 1 506 260L440 260A178 178 0 0 0 84 260Z"
+          },
+          "note": "The complete original near-black curved lettering and gray edge pixels, retained as one connected wordmark layer; the source pink presentation background is excluded.",
+          "sourceSHA256": "14d7dbf0150dd22afa7a94a66709a2ac6843a4af618569a8cfc5477f53ff515b",
+          "layerSHA256": "e40ba8e7d39165a1a1160fc2398f8782bd35492571aaec80f69d998fde949bc1",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/arc.png",
+          "nativeWidth": 522,
+          "nativeHeight": 518
+        },
+        "lid": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_01.png",
+          "bounds": [565, 207, 522, 518],
+          "mask": {
+            "type": "color",
+            "background": [255, 255, 255],
+            "threshold": 16,
+            "feather": 10,
+            "clip": "M100 166H275V253H100Z"
+          },
+          "note": "Actual red cup-lid pixels, separated from the cup body.",
+          "sourceSHA256": "14d7dbf0150dd22afa7a94a66709a2ac6843a4af618569a8cfc5477f53ff515b",
+          "layerSHA256": "703cb43802d810ba20117a3c969518cbb34588e5194c2f2f1fb9d5ffcfc409f7",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/lid.png",
+          "nativeWidth": 522,
+          "nativeHeight": 518
+        },
+        "body": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_01.png",
+          "bounds": [565, 207, 522, 518],
+          "mask": {
+            "type": "color",
+            "background": [255, 255, 255],
+            "threshold": 16,
+            "feather": 10,
+            "clip": "M148 253H275V386H148Z"
+          },
+          "note": "Actual pink cup-body pixels; hidden surfaces are not reconstructed.",
+          "sourceSHA256": "14d7dbf0150dd22afa7a94a66709a2ac6843a4af618569a8cfc5477f53ff515b",
+          "layerSHA256": "9c70b9711bc21954c985be3610c799fe86e076d29cd98810afc4964497a7c72b",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/body.png",
+          "nativeWidth": 522,
+          "nativeHeight": 518
+        },
+        "lime": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_01.png",
+          "bounds": [565, 207, 522, 518],
+          "mask": {
+            "type": "color",
+            "background": [255, 255, 255],
+            "threshold": 16,
+            "feather": 10,
+            "clip": "M276 164H391V276H276Z"
+          },
+          "note": "Actual green citrus quarter and its pale rim; original white separators become alpha.",
+          "sourceSHA256": "14d7dbf0150dd22afa7a94a66709a2ac6843a4af618569a8cfc5477f53ff515b",
+          "layerSHA256": "330667f357635d8e353cd0fea1242537e50fd640681b584a6620468bfce5c3a0",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/lime.png",
+          "nativeWidth": 522,
+          "nativeHeight": 518
+        },
+        "orange": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_01.png",
+          "bounds": [565, 207, 522, 518],
+          "mask": {
+            "type": "color",
+            "background": [255, 255, 255],
+            "threshold": 16,
+            "feather": 10,
+            "clip": "M276 278H391V389H276Z"
+          },
+          "note": "Actual orange citrus quarter and pale rim.",
+          "sourceSHA256": "14d7dbf0150dd22afa7a94a66709a2ac6843a4af618569a8cfc5477f53ff515b",
+          "layerSHA256": "e1d0d209012d0a0308f0e7592292beeab1c219e14cb159c7c54a21847cc2c311",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/orange.png",
+          "nativeWidth": 522,
+          "nativeHeight": 518
+        },
+        "leaves": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_01.png",
+          "bounds": [565, 207, 522, 518],
+          "mask": {
+            "type": "color",
+            "background": [255, 255, 255],
+            "threshold": 16,
+            "feather": 10,
+            "clip": "M236 100H333V166H236Z"
+          },
+          "note": "The two original green leaves move as one source element.",
+          "sourceSHA256": "14d7dbf0150dd22afa7a94a66709a2ac6843a4af618569a8cfc5477f53ff515b",
+          "layerSHA256": "a2abc41d93606ecc991e4388cc2ef9d845b6b3e5d0ba84bc89d4b955c0fd8567",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/leaves.png",
+          "nativeWidth": 522,
+          "nativeHeight": 518
+        },
+        "title": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_03.png",
+          "bounds": [451, 178, 710, 64],
+          "mask": {
+            "type": "color",
+            "background": [255, 255, 255],
+            "threshold": 18,
+            "feather": 12,
+            "clip": "M0 0H710V64H0Z"
+          },
+          "note": "Actual pink supplied title, never retyped.",
+          "sourceSHA256": "7c88793349c0a2a242410213f659b17a7b296eb1ae17108fe80d6a733b3f8638",
+          "layerSHA256": "b04f9a5351e2917e88a4d8c21f5bb4012630c72197aff5297e03f9ea97f083df",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/title.png",
+          "nativeWidth": 710,
+          "nativeHeight": 64
+        },
+        "titleStart": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_03.png",
+          "bounds": [451, 178, 710, 64],
+          "mask": {
+            "type": "color",
+            "background": [255, 255, 255],
+            "threshold": 18,
+            "feather": 12,
+            "clip": "M0 0H73V64H0Z"
+          },
+          "note": "First source title fragment, cut only through a blank inter-letter column.",
+          "sourceSHA256": "7c88793349c0a2a242410213f659b17a7b296eb1ae17108fe80d6a733b3f8638",
+          "layerSHA256": "7e01f6e68fa249153dbf3cd18948b096ab4c74bc5e166ac62973932c84f436ba",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/titleStart.png",
+          "nativeWidth": 710,
+          "nativeHeight": 64
+        },
+        "titleMiddle": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_03.png",
+          "bounds": [451, 178, 710, 64],
+          "mask": {
+            "type": "color",
+            "background": [255, 255, 255],
+            "threshold": 18,
+            "feather": 12,
+            "clip": "M73 0H392V64H73Z"
+          },
+          "note": "Middle source title fragment, with source spacing retained.",
+          "sourceSHA256": "7c88793349c0a2a242410213f659b17a7b296eb1ae17108fe80d6a733b3f8638",
+          "layerSHA256": "508a315c9de57f7859dcd5af7c04f03749f215dc1733dd653f0832df9e227bac",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/titleMiddle.png",
+          "nativeWidth": 710,
+          "nativeHeight": 64
+        },
+        "titleEnd": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_03.png",
+          "bounds": [451, 178, 710, 64],
+          "mask": {
+            "type": "color",
+            "background": [255, 255, 255],
+            "threshold": 18,
+            "feather": 12,
+            "clip": "M392 0H710V64H392Z"
+          },
+          "note": "Final source title fragment, with source spacing retained.",
+          "sourceSHA256": "7c88793349c0a2a242410213f659b17a7b296eb1ae17108fe80d6a733b3f8638",
+          "layerSHA256": "ffb4cc6b9f3789c6ae23e58dfb7057f3e0bd637a988650e2e1cea2bdb5dddb37",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/titleEnd.png",
+          "nativeWidth": 710,
+          "nativeHeight": 64
+        },
+        "berryBlue": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_03.png",
+          "bounds": [1114, 0, 180, 156],
+          "mask": { "type": "color", "background": [255, 255, 255], "threshold": 8, "feather": 24 },
+          "note": "Actual supplied blue fruit photograph and soft source shadow. Small native detail, never enlarged.",
+          "sourceSHA256": "7c88793349c0a2a242410213f659b17a7b296eb1ae17108fe80d6a733b3f8638",
+          "layerSHA256": "5feca9fa3fc05dbc04eabae60e7d8ad9954e2868bbc154f4b2edb2fca6b68655",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/berryBlue.png",
+          "nativeWidth": 180,
+          "nativeHeight": 156
+        },
+        "berryDark": {
+          "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_03.png",
+          "bounds": [1210, 150, 232, 199],
+          "mask": { "type": "color", "background": [255, 255, 255], "threshold": 8, "feather": 24 },
+          "note": "Actual second fruit photograph; no invented ingredient or extra fruit.",
+          "sourceSHA256": "7c88793349c0a2a242410213f659b17a7b296eb1ae17108fe80d6a733b3f8638",
+          "layerSHA256": "33b11ec261e61f40d368cc299706faaf42cc07b44270566557e3ac31316e01d7",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/berryDark.png",
+          "nativeWidth": 232,
+          "nativeHeight": 199
         },
         "drink": {
           "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_02.png",
-          "bounds": [882, 389, 522, 492],
-          "sourceSHA256": "209c98817e5cf2f540973fa5a8514f47af76d7ac0cbc957d28317b41d9277c92"
+          "bounds": [866, 350, 565, 530],
+          "mask": {
+            "type": "path",
+            "d": "M241 57C288 57 336 74 374 103L514 44Q531 31 546 48Q559 63 541 82L430 181C455 214 468 247 468 283C468 408 366 510 241 510C116 510 15 408 15 283C15 158 116 57 241 57Z"
+          },
+          "note": "Real top-view drink and attached straw isolated from the supplied photo. Berries/mint remain attached; no food or liquid simulation.",
+          "sourceSHA256": "209c98817e5cf2f540973fa5a8514f47af76d7ac0cbc957d28317b41d9277c92",
+          "layerSHA256": "ac90103bba133e2df255d1ccd9f1aabb535657da685a083065d113653a29553c",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/drink.png",
+          "nativeWidth": 565,
+          "nativeHeight": 530
         },
         "menu": {
           "source": "design-assets/portfolio-originals/12_U_Wanna_Smoothie/12_U_Wanna_Smoothie_03.png",
-          "bounds": [0, 404, 821, 459],
-          "sourceSHA256": "7c88793349c0a2a242410213f659b17a7b296eb1ae17108fe80d6a733b3f8638"
+          "bounds": [0, 403, 821, 460],
+          "note": "Actual illustrated menu panel. The separate unverified About/Find Us copy is excluded.",
+          "sourceSHA256": "7c88793349c0a2a242410213f659b17a7b296eb1ae17108fe80d6a733b3f8638",
+          "layerSHA256": "2f7dbb5c0517448c38a54a56848607f8316abe766758eedc76d4808cd520dcef",
+          "file": "design-assets/portfolio-motion/quality/layers/u-wanna-smoothie/menu.png",
+          "nativeWidth": 821,
+          "nativeHeight": 460
         }
       },
       "exports": {
         "landscape": {
           "file": "u-wanna-smoothie-landscape.mp4",
-          "width": 960,
-          "height": 540,
-          "bytes": 147409,
-          "sha256": "535d344a97aa3f034fee2416da0bf11aa6fa18ea39246608d070644dc5729e1e",
+          "width": 1440,
+          "height": 810,
+          "bytes": 563715,
+          "sha256": "5861bdb75080b4ed5049e974a08bdb001677367d2a213906a2caf9c7442d3dc7",
           "codec": "h264",
           "pixelFormat": "yuv420p",
-          "durationSeconds": 5.75,
-          "frameCount": 138,
-          "silent": true,
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 601296,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "826e6338423d96ed39b94c7b15396a16cbe54bbf1adf5cd6dc849aa5b5e336cd",
+          "lastFrameSHA256": "826e6338423d96ed39b94c7b15396a16cbe54bbf1adf5cd6dc849aa5b5e336cd",
+          "sourceBoundaryPixelIdentical": true,
           "sourceSeamPixelIdentical": true,
-          "firstFrameSHA256": "3db4937596d919b9d0d1278a1110e7b3463e09d139aba4115198e3e3c6a9aeab",
-          "lastFrameSHA256": "3db4937596d919b9d0d1278a1110e7b3463e09d139aba4115198e3e3c6a9aeab"
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "u-wanna-smoothie-landscape-poster.webp",
+            "bytes": 37472,
+            "sha256": "c609de9b40fce5141fef3f87bf0d2c59c63cf4f2e02d4d49ead35d184dcdcd86",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
         },
         "portrait": {
           "file": "u-wanna-smoothie-portrait.mp4",
-          "width": 600,
-          "height": 750,
-          "bytes": 145555,
-          "sha256": "31d6dcb811f73dd129afa46cd69dddc6ceb3c3896178cb93a30d5e3a3aec0d19",
+          "width": 810,
+          "height": 1080,
+          "bytes": 489148,
+          "sha256": "48ba245aa59c52959347997b5fe03ffe1b492fbd5035f4b6959246232633dab7",
           "codec": "h264",
           "pixelFormat": "yuv420p",
-          "durationSeconds": 5.75,
-          "frameCount": 138,
-          "silent": true,
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 521757,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "4a6ec9a1993b66f87cbef2a03eb52679c862d3c1b46946673f4cc63c397ec4dc",
+          "lastFrameSHA256": "4a6ec9a1993b66f87cbef2a03eb52679c862d3c1b46946673f4cc63c397ec4dc",
+          "sourceBoundaryPixelIdentical": true,
           "sourceSeamPixelIdentical": true,
-          "firstFrameSHA256": "0721abaa4e0666ad955779d36021ea4e7b320baf6c9497be834781b983467ee0",
-          "lastFrameSHA256": "0721abaa4e0666ad955779d36021ea4e7b320baf6c9497be834781b983467ee0"
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "u-wanna-smoothie-portrait-poster.webp",
+            "bytes": 37878,
+            "sha256": "c964c6ff23655ca56bae1b20e0f6aac6e05d3d649404e54639c07a49964527e9",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
         }
-      }
+      },
+      "reviewStatus": "Completion creative review; technical validation is not owner approval",
+      "qualityManifest": "quality/u-wanna-smoothie-manifest.json"
     }
   },
-  "formatVersion": 2,
-  "timingNote": "Historical top-level timing applies to the three unchanged legacy loops. Upgraded Bunzo, SOL and Churros have explicit per-project and per-export timing.",
+  "formatVersion": 3,
+  "timingNote": "All six current loops use explicit per-project and per-export timing. The original three reference compositions remain unchanged.",
   "qualityRenderer": "scripts/portfolio/quality/render.mjs"
 }

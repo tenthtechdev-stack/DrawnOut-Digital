@@ -1,0 +1,783 @@
+{
+  "recordedAt": "2026-11-18T15:52:44.454Z",
+  "sourceCommitAtRun": "6fb2052a4d124eac35c9c614186f88098344746e",
+  "command": "node --test --test-reporter=spec tests/motion-quality-exports.test.mjs tests/portfolio-motion-exports.test.mjs tests/motion-completion-preservation.test.mjs",
+  "exitCode": 0,
+  "tests": 21,
+  "passed": 21,
+  "failed": 0,
+  "durationMilliseconds": 44109.707395,
+  "environment": {
+    "node": "v24.19.0",
+    "ffmpeg": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers"
+  },
+  "preservation": {
+    "baseline": "e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b",
+    "frozenReferenceFiles": 125,
+    "frozenRootManifestEntries": 3,
+    "unchangedWebsiteAssetAndConfigFiles": 230,
+    "onlyPermittedRecordDifferences": "Triarch, By Tech Group and U Wanna Smoothie motion fields; public MP4 filenames unchanged",
+    "matchingCanonicalPosterReferences": 6
+  },
+  "assertions": {
+    "sourceOpaqueRGB": "Exact original PNG crop pixels; no repainting",
+    "allFrameDecoding": true,
+    "video": "Silent single-stream H.264/yuv420p, 7.5 seconds, 180 frames at 24 fps, 1440 × 810 and 810 × 1080",
+    "colour": "BT709 matrix, primaries and transfer; limited TV range",
+    "maximumBytesPerExport": 3145728,
+    "seamMeanAbsoluteDifference255LessThan": 3,
+    "posterMeanAbsoluteDifference255LessThan": 4,
+    "frozenReferenceGlobalProgressionMeanDifference255GreaterThan": 12,
+    "completionMotion": {
+      "normalizedDecodedDimensions": [96, 96],
+      "fixedGrid": [4, 4],
+      "fixedTileCanvasFraction": 0.0625,
+      "tileMeanAbsoluteDifference255GreaterThan": 12,
+      "changedPixelMeanDifference255GreaterThan": 12,
+      "changedNormalizedSampleFractionGreaterThan": 0.04,
+      "sameSampleMustMeetBothCriteria": true
+    }
+  },
+  "measurementRationale": "An initial Triarch test failed the older whole-canvas progression >12 proxy despite faithful restrained motion. Its stationary neutral negative space yields global differences of 9.44/10.32, while fixed 1/16-canvas regions change by 32.20/32.81 and 16.15%/17.40% of normalized samples change by >12. Completion projects therefore use fixed-grid regional amplitude plus changed-area coverage. Frozen references keep the original global threshold. Source fidelity, colour, decoding, seam and poster thresholds are unchanged. Automated temporal variation is not creative approval.",
+  "sourceFiles": {
+    "tests/motion-quality-exports.test.mjs": "a49eb11017ec411a50b11c531a735512640f5f0a95e5c4a75edf934801944f4f",
+    "tests/portfolio-motion-exports.test.mjs": "e271694dd272bd4b88cc48208e55c1753387ca7048120c56fa01d98c0f225e20",
+    "tests/motion-completion-preservation.test.mjs": "d71b72bd779494ffc5f618c4b4bfa378c8f13795514a65b4b6aa144d2d418e1d",
+    "scripts/portfolio/quality/render.mjs": "afcd22652050e87c1c5121514d8ebde5f94bb978e6fd78cd7107e1cb31bdaeb7",
+    "scripts/portfolio/quality/shared.mjs": "7df019c01f8473755ccb54096729788ab3b092920851a144232921a0ef5bceb5",
+    "scripts/portfolio/quality/mattes.mjs": "7d73e040b6c0225065d0cb4d0ed95b864f664b2c48e0325a178c72118f33fbf6",
+    "scripts/portfolio/quality/triarch.mjs": "1099dbf1b7e424a687834199ba6c41beeca61a9b1647ec7e427cbbd4fca23521",
+    "scripts/portfolio/quality/by-tech.mjs": "5e26c7b37cd3eb1413d91ab27dda06a840d5e53f2f50f07882f932f78fa47935",
+    "scripts/portfolio/quality/smoothie.mjs": "bb514622a86aa9539b515dca690e283950b74b04503ac1acc997d9427c3a9bb6"
+  },
+  "sourceFidelity": [
+    { "slug": "bunzo", "isolatedLayers": 12, "opaquePixelsComparedExactly": 707133 },
+    { "slug": "sol-community-center", "isolatedLayers": 6, "opaquePixelsComparedExactly": 704375 },
+    { "slug": "churros", "isolatedLayers": 11, "opaquePixelsComparedExactly": 772382 },
+    { "slug": "triarch", "isolatedLayers": 9, "opaquePixelsComparedExactly": 692331 },
+    { "slug": "by-tech-group", "isolatedLayers": 12, "opaquePixelsComparedExactly": 415849 },
+    { "slug": "u-wanna-smoothie", "isolatedLayers": 14, "opaquePixelsComparedExactly": 680552 }
+  ],
+  "measurements": [
+    {
+      "slug": "bunzo",
+      "format": "landscape",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.1131,
+      "globalProgressionMeanAbsoluteDifference255": 20.42,
+      "posterMeanAbsoluteDifference255": 1.864
+    },
+    {
+      "slug": "bunzo",
+      "format": "portrait",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.1489,
+      "globalProgressionMeanAbsoluteDifference255": 22.31,
+      "posterMeanAbsoluteDifference255": 2.366
+    },
+    {
+      "slug": "sol-community-center",
+      "format": "landscape",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.0387,
+      "globalProgressionMeanAbsoluteDifference255": 36.83,
+      "posterMeanAbsoluteDifference255": 1.485
+    },
+    {
+      "slug": "sol-community-center",
+      "format": "portrait",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.053,
+      "globalProgressionMeanAbsoluteDifference255": 40.89,
+      "posterMeanAbsoluteDifference255": 1.622
+    },
+    {
+      "slug": "churros",
+      "format": "landscape",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.1154,
+      "globalProgressionMeanAbsoluteDifference255": 20.65,
+      "posterMeanAbsoluteDifference255": 1.866
+    },
+    {
+      "slug": "churros",
+      "format": "portrait",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.1717,
+      "globalProgressionMeanAbsoluteDifference255": 28.32,
+      "posterMeanAbsoluteDifference255": 2.654
+    },
+    {
+      "slug": "triarch",
+      "format": "landscape",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.0319,
+      "globalProgressionMeanAbsoluteDifference255": 9.44,
+      "posterMeanAbsoluteDifference255": 1.308,
+      "regionalSamples": [
+        {
+          "frame": 52,
+          "maxFixedTileMeanAbsoluteDifference255": 23.71,
+          "changedNormalizedSamplePercent": 5.83
+        },
+        {
+          "frame": 114,
+          "maxFixedTileMeanAbsoluteDifference255": 32.2,
+          "changedNormalizedSamplePercent": 16.15
+        }
+      ]
+    },
+    {
+      "slug": "triarch",
+      "format": "portrait",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.0353,
+      "globalProgressionMeanAbsoluteDifference255": 10.32,
+      "posterMeanAbsoluteDifference255": 1.657,
+      "regionalSamples": [
+        {
+          "frame": 52,
+          "maxFixedTileMeanAbsoluteDifference255": 26.45,
+          "changedNormalizedSamplePercent": 7.52
+        },
+        {
+          "frame": 114,
+          "maxFixedTileMeanAbsoluteDifference255": 32.81,
+          "changedNormalizedSamplePercent": 17.4
+        }
+      ]
+    },
+    {
+      "slug": "by-tech-group",
+      "format": "landscape",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.0622,
+      "globalProgressionMeanAbsoluteDifference255": 21.59,
+      "posterMeanAbsoluteDifference255": 1.602,
+      "regionalSamples": [
+        {
+          "frame": 52,
+          "maxFixedTileMeanAbsoluteDifference255": 7.04,
+          "changedNormalizedSamplePercent": 1.84
+        },
+        {
+          "frame": 114,
+          "maxFixedTileMeanAbsoluteDifference255": 88.23,
+          "changedNormalizedSamplePercent": 24.22
+        }
+      ]
+    },
+    {
+      "slug": "by-tech-group",
+      "format": "portrait",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.0839,
+      "globalProgressionMeanAbsoluteDifference255": 26.27,
+      "posterMeanAbsoluteDifference255": 1.639,
+      "regionalSamples": [
+        {
+          "frame": 52,
+          "maxFixedTileMeanAbsoluteDifference255": 10.05,
+          "changedNormalizedSamplePercent": 2.8
+        },
+        {
+          "frame": 114,
+          "maxFixedTileMeanAbsoluteDifference255": 113.49,
+          "changedNormalizedSamplePercent": 27.58
+        }
+      ]
+    },
+    {
+      "slug": "u-wanna-smoothie",
+      "format": "landscape",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.04,
+      "globalProgressionMeanAbsoluteDifference255": 19.42,
+      "posterMeanAbsoluteDifference255": 1.698,
+      "regionalSamples": [
+        {
+          "frame": 52,
+          "maxFixedTileMeanAbsoluteDifference255": 25.34,
+          "changedNormalizedSamplePercent": 8.4
+        },
+        {
+          "frame": 114,
+          "maxFixedTileMeanAbsoluteDifference255": 98.07,
+          "changedNormalizedSamplePercent": 19.9
+        }
+      ]
+    },
+    {
+      "slug": "u-wanna-smoothie",
+      "format": "portrait",
+      "decodeMethod": "Native RGB decoded first, then Sharp Lanczos3 to 96×96 for both video and poster",
+      "seamMeanAbsoluteDifference255": 0.0572,
+      "globalProgressionMeanAbsoluteDifference255": 18.65,
+      "posterMeanAbsoluteDifference255": 1.793,
+      "regionalSamples": [
+        {
+          "frame": 52,
+          "maxFixedTileMeanAbsoluteDifference255": 36.31,
+          "changedNormalizedSamplePercent": 10.95
+        },
+        {
+          "frame": 114,
+          "maxFixedTileMeanAbsoluteDifference255": 91.97,
+          "changedNormalizedSamplePercent": 19.74
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "bunzo",
+      "status": "Frozen PR #20 reference",
+      "manifest": "design-assets/portfolio-motion/quality/bunzo-manifest.json",
+      "manifestSHA256": "9d4df5d629aa06535e24e20c8ba721b9e4cd33be6f7e20da4b2adba655459cce",
+      "composition": "scripts/portfolio/quality/bunzo.mjs",
+      "compositionSHA256": "74dd43c3dc0dd2528260049155bc5231e2d889a07250a954c126780f745193b9",
+      "direction": "The five white wordmark letterfaces lift independently from their original black silhouette; actual cup and carton peel out, overlap, and settle back into a branded packaging still life.",
+      "limitations": [
+        "Flattened raster originals provide no editable type, independent burger ingredients or packaging dielines. No reconstructed lettering, new food, 3D product simulation or newly attributed deliverables are used.",
+        "The five actual white letterfaces are alpha-isolated from the flattened mark. Its shared black silhouette and yellow phrase remain anchored; editable original typography would be required to rig independently complete outlined glyphs.",
+        "The 1440×810 canvas is an editorial assembly of native-size/reduced layers, not a 1440px-wide rerendered source logo. Cup remains at or below its approximately300px native visible width; source carton is approximately550px wide.",
+        "Product silhouettes use manually reviewed alpha paths. Transparent or motion-blurred editable masters would permit finer physical separation."
+      ],
+      "exports": {
+        "landscape": {
+          "file": "bunzo-landscape.mp4",
+          "width": 1440,
+          "height": 810,
+          "bytes": 700510,
+          "sha256": "e91c98e3c66e4286c04a0d4c6d71e7a342a788db460d0eb79b25c63c2262b494",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 747210,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "6e9caefcc64e3f0512a63d6b73dbb768160df957b1696771278aa095bfa809f8",
+          "lastFrameSHA256": "6e9caefcc64e3f0512a63d6b73dbb768160df957b1696771278aa095bfa809f8",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "bunzo-landscape-poster.webp",
+            "bytes": 105082,
+            "sha256": "49d703b3b21ce1cdfe2dc13ccc563ce35c3d880c249cd3eead033c59c32c5c14",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
+        },
+        "portrait": {
+          "file": "bunzo-portrait.mp4",
+          "width": 810,
+          "height": 1080,
+          "bytes": 656480,
+          "sha256": "71a97c0a4f28d581b80f8ddeda3c8dbac7b43b1ec72dfd58b31208c2a6e6ec40",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 700245,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "b8d1b923d840f4fce557e1653eee59a18e81f81f268439cbf650db3bfef0a25a",
+          "lastFrameSHA256": "b8d1b923d840f4fce557e1653eee59a18e81f81f268439cbf650db3bfef0a25a",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "bunzo-portrait-poster.webp",
+            "bytes": 93018,
+            "sha256": "b378f424003df21189dd10e94b5d1a7c69fc96febff3472ef98862e8bf69e2ce",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
+        }
+      }
+    },
+    {
+      "slug": "sol-community-center",
+      "status": "Frozen PR #20 reference",
+      "manifest": "design-assets/portfolio-motion/quality/sol-community-center-manifest.json",
+      "manifestSHA256": "9cbe2d1ffa4cea01a1b80baf9b00e4ffb83c7f875f9653c4899eef502b59ad6a",
+      "composition": "scripts/portfolio/quality/sol.mjs",
+      "compositionSHA256": "ced058799740e78bb805d34f70f0a445e47a07efabe429d01c6ed097c246dfa6",
+      "direction": "The gold annulus and green core separate, counter-turn and reunite; original SOL lettering resolves before its circular geometry opens real signage, notices and stationery.",
+      "limitations": [
+        "The only clean, front-facing, complete emblem in the supplied flat boards is 186×186px. It is never presented larger than 186px in either export.",
+        "A native vector emblem / lettering master is required for a larger independently animated identity. No logo has been traced or rebuilt.",
+        "The application images are flattened approved mockups, not photographs of verified completed client work; no historical or engagement claims are added."
+      ],
+      "exports": {
+        "landscape": {
+          "file": "sol-community-center-landscape.mp4",
+          "width": 1440,
+          "height": 810,
+          "bytes": 943778,
+          "sha256": "f54d9f2434a3919fe0e5136ea2e09867f200d0825254df7475b9a56e2214be2d",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 1006696,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "deb075c20c6bc731da16cb7ff57fbb11d863d40e2f9bc47590431c5bbe0779a8",
+          "lastFrameSHA256": "deb075c20c6bc731da16cb7ff57fbb11d863d40e2f9bc47590431c5bbe0779a8",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "sol-community-center-landscape-poster.webp",
+            "bytes": 27834,
+            "sha256": "b7e96eada4d21f36f97fa8a61ce9b8bd918e53435e5ee598f18eaf6483143a5f",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
+        },
+        "portrait": {
+          "file": "sol-community-center-portrait.mp4",
+          "width": 810,
+          "height": 1080,
+          "bytes": 792030,
+          "sha256": "4e6702c7856979970935fcbd93ddf242f26ad548728333653d0faf1439bca887",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 844832,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "2f4ecc96cb17a795d5b4c2a1c9793182e5185f9074ecaf763a8e806a3a7b232c",
+          "lastFrameSHA256": "2f4ecc96cb17a795d5b4c2a1c9793182e5185f9074ecaf763a8e806a3a7b232c",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "sol-community-center-portrait-poster.webp",
+            "bytes": 26688,
+            "sha256": "0a4e70446c2a94c1a5cb25d4bd6f88967fea5cf8ca8170c964c45d562a7b870b",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
+        }
+      }
+    },
+    {
+      "slug": "churros",
+      "status": "Frozen PR #20 reference",
+      "manifest": "design-assets/portfolio-motion/quality/churros-manifest.json",
+      "manifestSHA256": "d6f131339b1cbacf93bdf0ffafef2884b28f904216644deb49d4339f403eaddc",
+      "composition": "scripts/portfolio/quality/churros.mjs",
+      "compositionSHA256": "3ec884a29f916dfa27a607850cce529eaa37ead1c4a8c5891030ca8b945ea4b9",
+      "direction": "An illustrated badge opens into actual wordmark, pastry, crest and ribbon layers; source flourishes lead the pieces back into a complete identity beside real packaging.",
+      "limitations": [
+        "Only flattened1654×931 PNG boards are supplied; this is a 2D source-pixel assembly, not editable vector or product3D.",
+        "The large source badge is668×718; its on-screen width is at most618px. Packaging crops are255×400 and148×205, not high-resolution product renders.",
+        "Chocolate and the pastry are one genuinely connected supplied illustration; they move together to avoid inventing pixels under occlusion.",
+        "The original lower ribbon, descriptor and its ornament overlap, so they remain one source layer.",
+        "The original AI/SVG/PSD with independent letters, pastry, chocolate, frame and decorative paths is required for letter-by-letter animation without cutting overlapping cream outlines and for resolution-independent export."
+      ],
+      "exports": {
+        "landscape": {
+          "file": "churros-landscape.mp4",
+          "width": 1440,
+          "height": 810,
+          "bytes": 668984,
+          "sha256": "32f22d505040d9cae977df287ad473f09832d16d8237fb181ae99ed428e91b16",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 713582,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "03557a0c92a7acde089176fd94f721d8ea796c5573612bf040d84621f11bd6a7",
+          "lastFrameSHA256": "03557a0c92a7acde089176fd94f721d8ea796c5573612bf040d84621f11bd6a7",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "churros-landscape-poster.webp",
+            "bytes": 142604,
+            "sha256": "58083686fc32c8f040fe1b572683cd971927d7d775df436efd7d2e9a84e26f40",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
+        },
+        "portrait": {
+          "file": "churros-portrait.mp4",
+          "width": 810,
+          "height": 1080,
+          "bytes": 667759,
+          "sha256": "33ad0c2fe7a9159b0d66462a0ac114d4c9b971bfa28d98e5f9a439512d70bab8",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 712276,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "52facf9663d62215c882f776d45c84ac2f5e1f876f3c0def52377cfea1dd4cf7",
+          "lastFrameSHA256": "52facf9663d62215c882f776d45c84ac2f5e1f876f3c0def52377cfea1dd4cf7",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "churros-portrait-poster.webp",
+            "bytes": 133142,
+            "sha256": "096ccf8f0dccfd7c43c39cb3d01d6fd0bfbce392ad7054c5131611b141df0553",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
+        }
+      }
+    },
+    {
+      "slug": "triarch",
+      "status": "New completion creative review",
+      "manifest": "design-assets/portfolio-motion/quality/triarch-manifest.json",
+      "manifestSHA256": "4f87637723e8b2c914d086ecd93d20d38b6f3c36b6bffbc6b948261351e93efa",
+      "composition": "scripts/portfolio/quality/triarch.mjs",
+      "compositionSHA256": "1099dbf1b7e424a687834199ba6c41beeca61a9b1647ec7e427cbbd4fca23521",
+      "direction": "Seven authentic letter fragments move on measured vertical axes, align around their original tagline, then establish an architectural framework for an actual paper card and device presentation.",
+      "limitations": [
+        "The originals are two flattened1654×931 presentation PNGs. The tagline occludes the middle of the large logo. Only visible letter fragments are animated; an approved AI/SVG or layered PSD is needed for independent complete glyphs.",
+        "Dark letter/monogram pixels are isolated by source-colour mattes; the pale architectural photograph is kept as its own crop rather than inventing a clean background under the original logo.",
+        "The main wordmark is720px wide and the monogram crop151×169; both remain at or below native size. The1440×810 canvas does not create new logo detail.",
+        "The printed card is a500×372 raster cutout and the device panel554×629. Editable identity geometry, a high-resolution card export and a clean device master would support larger presentation.",
+        "No pricing, package descriptions, verified services, client outcomes or new typography are added."
+      ],
+      "exports": {
+        "landscape": {
+          "file": "triarch-landscape.mp4",
+          "width": 1440,
+          "height": 810,
+          "bytes": 356574,
+          "sha256": "6ef1b7780bd2ff65b113f83d5df3eb86ecb4829b296b04195ae9f7d7c78dae52",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 380345,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "c8672c01be17591b73171072097d9119fa438e20b929285497c03ba59cc76836",
+          "lastFrameSHA256": "c8672c01be17591b73171072097d9119fa438e20b929285497c03ba59cc76836",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "triarch-landscape-poster.webp",
+            "bytes": 35434,
+            "sha256": "0302865ef4bea7ff0cf6c85700bee22702b13b4e64213f3c7f77785fcc585300",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
+        },
+        "portrait": {
+          "file": "triarch-portrait.mp4",
+          "width": 810,
+          "height": 1080,
+          "bytes": 279075,
+          "sha256": "2d0473221c6390d9282e93691b7646c0d45f767d028b6995bb1007f36b3f8507",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 297680,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "3f7284f469dae5e8f272774af5b4fe79c4a63208d878d0a912dc7f87a59ea053",
+          "lastFrameSHA256": "3f7284f469dae5e8f272774af5b4fe79c4a63208d878d0a912dc7f87a59ea053",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "triarch-portrait-poster.webp",
+            "bytes": 35302,
+            "sha256": "53da94757e3c8d090514cf813ca73ed1223e19f35da3d098be428fa20996a166",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
+        }
+      }
+    },
+    {
+      "slug": "by-tech-group",
+      "status": "New completion creative review",
+      "manifest": "design-assets/portfolio-motion/quality/by-tech-group-manifest.json",
+      "manifestSHA256": "eb9c011e7dd273bf944dfa1870ba1a6ef10838451f1d7d2218faf6590eacfc9c",
+      "composition": "scripts/portfolio/quality/by-tech.mjs",
+      "compositionSHA256": "5e26c7b37cd3eb1413d91ab27dda06a840d5e53f2f50f07882f932f78fa47935",
+      "direction": "Five original gradient-mark surfaces travel on separate vectors and connect; the two source wordmark phrases align before the same directional rhythm carries real printed cards and a mug into an application composition.",
+      "limitations": [
+        "Three flattened1654×931 PNG presentation boards are supplied. The principal visible mark is approximately486×239px; it is never enlarged above native size in either composition.",
+        "Visible overlapping parts can separate, but independently complete hidden underlaps cannot be recovered. An approved layeredAI/SVG with the gradient surfaces and lettering paths is needed for deeper articulation and large identity-only renders.",
+        "Printed applications remain flat source cutouts, not new3D product renders, verified launched products or evidence of a functioning software platform.",
+        "The original mug handle is clipped at the right presentation-board edge. The new composition preserves that source boundary at the output edge instead of inventing missing material.",
+        "High-resolution isolated application exports would improve small printed lettering and physical product edge detail. Existing source copy is never promoted to verified client/team facts."
+      ],
+      "exports": {
+        "landscape": {
+          "file": "by-tech-group-landscape.mp4",
+          "width": 1440,
+          "height": 810,
+          "bytes": 437004,
+          "sha256": "0d92a6384d4f278751824cf608311d0c0dce6cd524fb846c56d8bc2b2a7d313c",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 466137,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "eee8a9769250ca445a99438c696b3ab1a8c64501504b18fd28b47699f7acc0ca",
+          "lastFrameSHA256": "eee8a9769250ca445a99438c696b3ab1a8c64501504b18fd28b47699f7acc0ca",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "by-tech-group-landscape-poster.webp",
+            "bytes": 22562,
+            "sha256": "ef7eb1830b3cdce3729b9878efb870740e5569a5cf8eb62976ea85238e917784",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
+        },
+        "portrait": {
+          "file": "by-tech-group-portrait.mp4",
+          "width": 810,
+          "height": 1080,
+          "bytes": 407144,
+          "sha256": "7deb39b9aca3d0e6c4b4fe76d9641975c1ef3035ef7caa8dd69efd595104a7a4",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 434286,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "bde2747192c46703f8e443cdf2626c6a12e550879587a8cf9a743abd9c9becd6",
+          "lastFrameSHA256": "bde2747192c46703f8e443cdf2626c6a12e550879587a8cf9a743abd9c9becd6",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "by-tech-group-portrait-poster.webp",
+            "bytes": 19560,
+            "sha256": "104995d6da39e04764df0379b4bbcbee6ef912b3fde0993b030535b5e151e390",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
+        }
+      }
+    },
+    {
+      "slug": "u-wanna-smoothie",
+      "status": "New completion creative review",
+      "manifest": "design-assets/portfolio-motion/quality/u-wanna-smoothie-manifest.json",
+      "manifestSHA256": "6b2b77c148d7a24fd8d59e5ddf38a25a9f62736a32647a6db85206fb9ee737d2",
+      "composition": "scripts/portfolio/quality/smoothie.mjs",
+      "compositionSHA256": "bb514622a86aa9539b515dca690e283950b74b04503ac1acc997d9427c3a9bb6",
+      "direction": "The real cup lid/body, citrus quarters and leaves spring apart with overlapping timing, then align inside the original gold ring. Actual lettering, fruit photographs, menu artwork and a top-view drink extend the identity into a cohesive application composition.",
+      "limitations": [
+        "All originals are flattened PNGs. The complete badge is522×518, with each central component only about80–160px wide. The identity stays at or below native size.",
+        "The gold ring, curved title and paired leaves remain source raster groups. Editable AI/SVG/PSD masters would enable finer path/letter and individual-leaf control.",
+        "The top-view drink and straw are one source photographic layer; toppings and hidden cup surfaces cannot be faithfully separated without layered or alpha photographic masters.",
+        "The illustrated menu is a real supplied printed-layout panel, not a functioning interface. Its About/Find Us claims are not used in this motion composition.",
+        "The810×1080 and1440×810 canvases arrange native-scale artwork; they do not create additional source detail."
+      ],
+      "exports": {
+        "landscape": {
+          "file": "u-wanna-smoothie-landscape.mp4",
+          "width": 1440,
+          "height": 810,
+          "bytes": 563715,
+          "sha256": "5861bdb75080b4ed5049e974a08bdb001677367d2a213906a2caf9c7442d3dc7",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 601296,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "826e6338423d96ed39b94c7b15396a16cbe54bbf1adf5cd6dc849aa5b5e336cd",
+          "lastFrameSHA256": "826e6338423d96ed39b94c7b15396a16cbe54bbf1adf5cd6dc849aa5b5e336cd",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "u-wanna-smoothie-landscape-poster.webp",
+            "bytes": 37472,
+            "sha256": "c609de9b40fce5141fef3f87bf0d2c59c63cf4f2e02d4d49ead35d184dcdcd86",
+            "width": 1440,
+            "height": 810,
+            "quality": 96
+          }
+        },
+        "portrait": {
+          "file": "u-wanna-smoothie-portrait.mp4",
+          "width": 810,
+          "height": 1080,
+          "bytes": 489148,
+          "sha256": "48ba245aa59c52959347997b5fe03ffe1b492fbd5035f4b6959246232633dab7",
+          "codec": "h264",
+          "pixelFormat": "yuv420p",
+          "profile": "High",
+          "colorEncoding": {
+            "source": "RGB24 full range",
+            "conversion": "scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p",
+            "matrix": "bt709",
+            "primaries": "bt709",
+            "transfer": "bt709",
+            "range": "tv",
+            "h264VUI": "colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off"
+          },
+          "durationSeconds": 7.5,
+          "frames": 180,
+          "averageBitrate": 521757,
+          "crf": 19,
+          "audioStreams": 0,
+          "firstFrameSHA256": "4a6ec9a1993b66f87cbef2a03eb52679c862d3c1b46946673f4cc63c397ec4dc",
+          "lastFrameSHA256": "4a6ec9a1993b66f87cbef2a03eb52679c862d3c1b46946673f4cc63c397ec4dc",
+          "sourceBoundaryPixelIdentical": true,
+          "sourceSeamPixelIdentical": true,
+          "decodedAllFrames": true,
+          "poster": {
+            "file": "u-wanna-smoothie-portrait-poster.webp",
+            "bytes": 37878,
+            "sha256": "c964c6ff23655ca56bae1b20e0f6aac6e05d3d649404e54639c07a49964527e9",
+            "width": 810,
+            "height": 1080,
+            "quality": 96
+          }
+        }
+      }
+    }
+  ],
+  "rawLog": "✔ Bunzo, SOL and Churros compositions, exports, posters, layers and records remain byte-identical to PR #20 (424.386686ms)\nℹ 125 frozen source/media files and three manifest entries match e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b\n✔ approved website, enquiry, favicon and image sources stay unchanged outside the three authorized motion records (949.979849ms)\nℹ 230 original website/assets files match; only three records' motion fields may change\n✔ new canonical motion poster references resolve to the matching quality exports (21.980019ms)\n✔ bunzo: transparent layers retain original visible pixels and recorded source provenance (1012.758748ms)\nℹ 12 isolated layers; 707133 opaque source pixels checked\n✔ bunzo: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (9201.483163ms)\nℹ landscape: decoded seam0.1131, progression20.42, poster error1.864 /255\nℹ portrait: decoded seam0.1489, progression22.31, poster error2.366 /255\n✔ sol-community-center: transparent layers retain original visible pixels and recorded source provenance (515.441054ms)\nℹ 6 isolated layers; 704375 opaque source pixels checked\n✔ sol-community-center: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (6664.978891ms)\nℹ landscape: decoded seam0.0387, progression36.83, poster error1.485 /255\nℹ portrait: decoded seam0.0530, progression40.89, poster error1.622 /255\n✔ churros: transparent layers retain original visible pixels and recorded source provenance (1014.214089ms)\nℹ 11 isolated layers; 772382 opaque source pixels checked\n✔ churros: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (8963.550382ms)\nℹ landscape: decoded seam0.1154, progression20.65, poster error1.866 /255\nℹ portrait: decoded seam0.1717, progression28.32, poster error2.654 /255\n✔ triarch: transparent layers retain original visible pixels and recorded source provenance (561.798579ms)\nℹ 9 isolated layers; 692331 opaque source pixels checked\n✔ triarch: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (5625.377226ms)\nℹ landscape: decoded seam0.0319, progression9.44, poster error1.308 /255; frame52 tile23.71, changed5.83%; frame114 tile32.20, changed16.15%\nℹ portrait: decoded seam0.0353, progression10.32, poster error1.657 /255; frame52 tile26.45, changed7.52%; frame114 tile32.81, changed17.40%\n✔ by-tech-group: transparent layers retain original visible pixels and recorded source provenance (254.030697ms)\nℹ 12 isolated layers; 415849 opaque source pixels checked\n✔ by-tech-group: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (4778.381957ms)\nℹ landscape: decoded seam0.0622, progression21.59, poster error1.602 /255; frame52 tile7.04, changed1.84%; frame114 tile88.23, changed24.22%\nℹ portrait: decoded seam0.0839, progression26.27, poster error1.639 /255; frame52 tile10.05, changed2.80%; frame114 tile113.49, changed27.58%\n✔ u-wanna-smoothie: transparent layers retain original visible pixels and recorded source provenance (571.419714ms)\nℹ 14 isolated layers; 680552 opaque source pixels checked\n✔ u-wanna-smoothie: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (4729.69059ms)\nℹ landscape: decoded seam0.0400, progression19.42, poster error1.698 /255; frame52 tile25.34, changed8.40%; frame114 tile98.07, changed19.90%\nℹ portrait: decoded seam0.0572, progression18.65, poster error1.793 /255; frame52 tile36.31, changed10.95%; frame114 tile91.97, changed19.74%\n✔ sol-community-center: silent, responsive, seamless encoded exports and actual visual progression (5577.785294ms)\nℹ landscape: decoded seam mean absolute difference 0.0386 / 255; identity-to-application difference 36.61 / 255\nℹ portrait: decoded seam mean absolute difference 0.0485 / 255; identity-to-application difference 40.48 / 255\n✔ bunzo: silent, responsive, seamless encoded exports and actual visual progression (7168.80989ms)\nℹ landscape: decoded seam mean absolute difference 0.0905 / 255; identity-to-application difference 20.78 / 255\nℹ portrait: decoded seam mean absolute difference 0.1150 / 255; identity-to-application difference 22.45 / 255\n✔ triarch: silent, responsive, seamless encoded exports and actual visual progression (4601.008944ms)\nℹ landscape: decoded seam mean absolute difference 0.0284 / 255; identity-to-application difference 9.36 / 255; frame52 tile23.58, changed5.45%; frame114 tile32.07, changed17.19%\nℹ portrait: decoded seam mean absolute difference 0.0299 / 255; identity-to-application difference 10.21 / 255; frame52 tile25.64, changed7.02%; frame114 tile32.67, changed17.45%\n✔ churros: silent, responsive, seamless encoded exports and actual visual progression (5236.480476ms)\nℹ landscape: decoded seam mean absolute difference 0.0932 / 255; identity-to-application difference 20.38 / 255\nℹ portrait: decoded seam mean absolute difference 0.1418 / 255; identity-to-application difference 27.91 / 255\n✔ by-tech-group: silent, responsive, seamless encoded exports and actual visual progression (4428.210106ms)\nℹ landscape: decoded seam mean absolute difference 0.0519 / 255; identity-to-application difference 21.80 / 255; frame52 tile7.42, changed1.90%; frame114 tile88.39, changed24.58%\nℹ portrait: decoded seam mean absolute difference 0.0686 / 255; identity-to-application difference 26.38 / 255; frame52 tile10.47, changed2.67%; frame114 tile113.74, changed27.58%\n✔ u-wanna-smoothie: silent, responsive, seamless encoded exports and actual visual progression (4828.864736ms)\nℹ landscape: decoded seam mean absolute difference 0.0318 / 255; identity-to-application difference 19.49 / 255; frame52 tile25.21, changed8.71%; frame114 tile98.09, changed19.84%\nℹ portrait: decoded seam mean absolute difference 0.0459 / 255; identity-to-application difference 18.71 / 255; frame52 tile36.56, changed11.18%; frame114 tile91.93, changed19.76%\nℹ tests 21\nℹ suites 0\nℹ pass 21\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 44109.707395\n"
+}

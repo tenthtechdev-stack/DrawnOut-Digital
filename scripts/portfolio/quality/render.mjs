@@ -22,10 +22,25 @@ const arg = (flag, fallback) => {
 const selected = arg('--project', 'all');
 const formatArg = arg('--format', 'all');
 const output = path.resolve(root, arg('--out', 'design-assets/portfolio-motion/quality'));
-const evidence = path.resolve(root, arg('--evidence', 'artifacts/motion-quality'));
+const evidence = path.resolve(root, arg('--evidence', 'artifacts/motion-completion'));
 const stills = process.argv.includes('--stills');
-const modules = { bunzo: 'bunzo', 'sol-community-center': 'sol', churros: 'churros' };
-const names = selected === 'all' ? Object.keys(modules) : [selected];
+const modules = {
+  bunzo: 'bunzo',
+  'sol-community-center': 'sol',
+  churros: 'churros',
+  triarch: 'triarch',
+  'by-tech-group': 'by-tech',
+  'u-wanna-smoothie': 'smoothie',
+};
+const completionProjects = ['triarch', 'by-tech-group', 'u-wanna-smoothie'];
+const names = selected === 'all' ? completionProjects : [selected];
+// PR #20's reference compositions are frozen. Historical experiments can only
+// target a separate directory, so normal production commands cannot replace them.
+assert(
+  output !== path.join(root, 'design-assets/portfolio-motion/quality') ||
+    names.every((name) => completionProjects.includes(name)),
+  'Bunzo, SOL and Churros are frozen references; use a separate --out for studies.',
+);
 const formatNames = formatArg === 'all' ? Object.keys(formats) : [formatArg];
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
 sharp.concurrency(1);
@@ -100,6 +115,17 @@ async function prepareAssets(project) {
         data[p + 3] = Math.round((data[p + 3] * alpha) / 255);
       }
       bytes = await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } })
+        .png()
+        .toBuffer();
+    }
+    // A color/range matte can also be restricted to an authentic source region,
+    // such as the parts of Triarch's letters visible around its printed tagline.
+    if (mask?.clip && !['path', 'polygon'].includes(mask.type)) {
+      const clipMatte = Buffer.from(
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><path d="${mask.clip}" fill="white"/></svg>`,
+      );
+      bytes = await sharp(bytes)
+        .composite([{ input: clipMatte, blend: 'dest-in' }])
         .png()
         .toBuffer();
     }
@@ -313,7 +339,10 @@ for (const slug of names) {
     );
   }
   await writeFile(
-    path.join(output, `${slug}-manifest.json`),
+    path.join(
+      stills ? evidence : output,
+      `${slug}${stills ? '-source-preview' : ''}-manifest.json`,
+    ),
     `${JSON.stringify(record, null, 2)}\n`,
   );
 }
