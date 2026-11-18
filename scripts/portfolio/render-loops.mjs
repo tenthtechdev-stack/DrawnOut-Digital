@@ -69,6 +69,15 @@ try {
   // The first production run creates the manifest.
 }
 
+if (output === path.join(root, 'design-assets/portfolio-motion')) {
+  const upgraded = names.filter((slug) => manifest.projects[slug]?.qualityManifest);
+  assert.equal(
+    upgraded.length,
+    0,
+    `Preserve upgraded pilots (${upgraded.join(', ')}): use scripts/portfolio/quality/render.mjs and promote-quality.mjs. Render historical studies with a separate --out directory.`,
+  );
+}
+
 for (const slug of names) {
   const project = projects[slug];
   assert(project, `Unknown project ${slug}`);

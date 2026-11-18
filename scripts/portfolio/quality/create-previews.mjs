@@ -7,6 +7,7 @@ import { readFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
+import sharp from 'sharp';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 const run = promisify(execFile);
@@ -43,4 +44,35 @@ for (const slug of ['bunzo', 'sol-community-center', 'churros']) {
     ]);
     console.log(`Created ${slug}/${format}: 7.5s, 10fps, ${width}px review GIF.`);
   }
+  // These are decoded MP4 frames, so the contact sheet exposes encoded details.
+  const tiles = [];
+  const indices = [0, 24, 48, 72, 96, 120, 144, 179];
+  for (const [position, frame] of indices.entries()) {
+    const { stdout } = await run(
+      'ffmpeg',
+      [
+        '-v',
+        'error',
+        '-threads',
+        '1',
+        '-i',
+        path.join(directory, manifest.exports.landscape.file),
+        '-vf',
+        `select=eq(n\\,${frame}),scale=360:202`,
+        '-frames:v',
+        '1',
+        '-f',
+        'image2pipe',
+        '-vcodec',
+        'png',
+        'pipe:1',
+      ],
+      { encoding: 'buffer', maxBuffer: 1024 * 1024 },
+    );
+    tiles.push({ input: stdout, left: (position % 4) * 360, top: Math.floor(position / 4) * 202 });
+  }
+  await sharp({ create: { width: 1440, height: 404, channels: 3, background: '#f7f5f1' } })
+    .composite(tiles)
+    .png()
+    .toFile(path.join(evidence, `${slug}-encoded-storyboard.png`));
 }

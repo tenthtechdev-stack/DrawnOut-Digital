@@ -198,6 +198,11 @@ for (const slug of names) {
         '-i',
         'pipe:0',
         '-an',
+        // HD browser decoders use BT.709. Explicitly convert full-range RGB
+        // through that matrix before encoding; tags alone cannot repair a
+        // BT.601-converted signal that would otherwise shift brand colors.
+        '-vf',
+        'scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p',
         '-c:v',
         'libx264',
         '-threads',
@@ -214,6 +219,16 @@ for (const slug of names) {
         '4.1',
         '-pix_fmt',
         'yuv420p',
+        '-colorspace',
+        'bt709',
+        '-color_primaries',
+        'bt709',
+        '-color_trc',
+        'bt709',
+        '-color_range',
+        'tv',
+        '-x264-params',
+        'colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off',
         '-movflags',
         '+faststart',
         '-g',
@@ -251,6 +266,10 @@ for (const slug of names) {
     const stream = probe.streams.find((s) => s.codec_type === 'video');
     assert.equal(probe.streams.filter((s) => s.codec_type === 'audio').length, 0);
     assert.equal(Number(stream.nb_frames), frames);
+    assert.equal(stream.color_space, 'bt709');
+    assert.equal(stream.color_primaries, 'bt709');
+    assert.equal(stream.color_transfer, 'bt709');
+    assert.equal(stream.color_range, 'tv');
     await run('ffmpeg', ['-v', 'error', '-i', target, '-f', 'null', '-']);
     const poster = await readFile(path.join(output, posterFilename));
     record.exports[format] = {
@@ -261,6 +280,15 @@ for (const slug of names) {
       codec: stream.codec_name,
       pixelFormat: stream.pix_fmt,
       profile: stream.profile,
+      colorEncoding: {
+        source: 'RGB24 full range',
+        conversion: 'scale=in_range=full:out_range=limited:out_color_matrix=bt709,format=yuv420p',
+        matrix: stream.color_space,
+        primaries: stream.color_primaries,
+        transfer: stream.color_transfer,
+        range: stream.color_range,
+        h264VUI: 'colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off',
+      },
       durationSeconds: Number(probe.format.duration),
       frames: Number(stream.nb_frames),
       averageBitrate: Number(probe.format.bit_rate),

@@ -1,0 +1,505 @@
+{
+  "browser": "154.0.8037.57",
+  "observedAt": "2026-11-18T09:07:22.449Z",
+  "method": "Actual Chromium native-size DPR1 video element at its first decoded paused frame, served only by intercepted local HTTP routes. Canvas RGB and page-screenshot RGB are compared against the uncompressed settled source PNG. No color filter, frame seeking, screenshot color correction or external network request is used.",
+  "maximumChannelError": 3,
+  "exports": [
+    {
+      "slug": "bunzo",
+      "format": "landscape",
+      "file": "bunzo-landscape.mp4",
+      "sha256": "e91c98e3c66e4286c04a0d4c6d71e7a342a788db460d0eb79b25c63c2262b494",
+      "sourcePNG": "bunzo-landscape-settled.png",
+      "sourcePNGSHA256": "5f10880b3f729116ca08710c4b70dbf667462a6670f947714f6b545f95b8d17c",
+      "browserScreenshot": "bunzo-landscape-browser-color.png",
+      "screenshotSHA256": "85739765a5692b38e5e5e7a79509c1014bca7fa848dbe35c6c2090bc8fa37d7d",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1440,
+            "height": 810,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 1440,
+        "height": 810
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "sourceRGB": [
+            227,
+            28,
+            35
+          ],
+          "canvasRGB": [
+            227,
+            29,
+            37
+          ],
+          "screenshotRGB": [
+            227,
+            29,
+            37
+          ],
+          "canvasDifference": [
+            0,
+            1,
+            2
+          ],
+          "screenshotDifference": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "x": 100,
+          "y": 450,
+          "sourceRGB": [
+            227,
+            28,
+            35
+          ],
+          "canvasRGB": [
+            227,
+            29,
+            37
+          ],
+          "screenshotRGB": [
+            227,
+            29,
+            37
+          ],
+          "canvasDifference": [
+            0,
+            1,
+            2
+          ],
+          "screenshotDifference": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    },
+    {
+      "slug": "bunzo",
+      "format": "portrait",
+      "file": "bunzo-portrait.mp4",
+      "sha256": "71a97c0a4f28d581b80f8ddeda3c8dbac7b43b1ec72dfd58b31208c2a6e6ec40",
+      "sourcePNG": "bunzo-portrait-settled.png",
+      "sourcePNGSHA256": "9a2af5eaffc9120dda5d19192612eb60f08aae49a245b4851fd2862a61b5f9d9",
+      "browserScreenshot": "bunzo-portrait-browser-color.png",
+      "screenshotSHA256": "2de2c369af8e794bb8df23c6220bc95726281224ba3d3bb7a4f98b6153b04852",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 810,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 810,
+        "height": 1080
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "sourceRGB": [
+            227,
+            28,
+            35
+          ],
+          "canvasRGB": [
+            227,
+            29,
+            37
+          ],
+          "screenshotRGB": [
+            227,
+            29,
+            37
+          ],
+          "canvasDifference": [
+            0,
+            1,
+            2
+          ],
+          "screenshotDifference": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    },
+    {
+      "slug": "sol-community-center",
+      "format": "landscape",
+      "file": "sol-community-center-landscape.mp4",
+      "sha256": "f54d9f2434a3919fe0e5136ea2e09867f200d0825254df7475b9a56e2214be2d",
+      "sourcePNG": "sol-community-center-landscape-settled.png",
+      "sourcePNGSHA256": "b30a0490e88b78db71ab3c31f32a328d590af0d1ac9957706d6622e804bfa45e",
+      "browserScreenshot": "sol-community-center-landscape-browser-color.png",
+      "screenshotSHA256": "2d29b7327e9a54096271fc5a56d8cba5019985072c6bf3d79a72328107e9cbfb",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1440,
+            "height": 810,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 1440,
+        "height": 810
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "sourceRGB": [
+            40,
+            99,
+            50
+          ],
+          "canvasRGB": [
+            40,
+            99,
+            53
+          ],
+          "screenshotRGB": [
+            40,
+            99,
+            53
+          ],
+          "canvasDifference": [
+            0,
+            0,
+            3
+          ],
+          "screenshotDifference": [
+            0,
+            0,
+            3
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    },
+    {
+      "slug": "sol-community-center",
+      "format": "portrait",
+      "file": "sol-community-center-portrait.mp4",
+      "sha256": "4e6702c7856979970935fcbd93ddf242f26ad548728333653d0faf1439bca887",
+      "sourcePNG": "sol-community-center-portrait-settled.png",
+      "sourcePNGSHA256": "8d7c47e99a87607986c0f8c5c7459a5a1d228be2a8f29410916cbc40b97d8d37",
+      "browserScreenshot": "sol-community-center-portrait-browser-color.png",
+      "screenshotSHA256": "0da46bb7824bf6bae54daabe589ecd45320ddd435e8c650cfdc6603634841676",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 810,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 810,
+        "height": 1080
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "sourceRGB": [
+            40,
+            99,
+            50
+          ],
+          "canvasRGB": [
+            40,
+            99,
+            53
+          ],
+          "screenshotRGB": [
+            40,
+            99,
+            53
+          ],
+          "canvasDifference": [
+            0,
+            0,
+            3
+          ],
+          "screenshotDifference": [
+            0,
+            0,
+            3
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    },
+    {
+      "slug": "churros",
+      "format": "landscape",
+      "file": "churros-landscape.mp4",
+      "sha256": "32f22d505040d9cae977df287ad473f09832d16d8237fb181ae99ed428e91b16",
+      "sourcePNG": "churros-landscape-settled.png",
+      "sourcePNGSHA256": "bb9293baadad19c52875fe49f4fd4752c7d87561f9808e8c9576f08218b21e32",
+      "browserScreenshot": "churros-landscape-browser-color.png",
+      "screenshotSHA256": "2c5b659d70e894c5c687ee8592ea85f881c6756cbd51fd0f861e9f460e500764",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1440,
+            "height": 810,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 1440,
+        "height": 810
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "sourceRGB": [
+            247,
+            233,
+            204
+          ],
+          "canvasRGB": [
+            247,
+            233,
+            206
+          ],
+          "screenshotRGB": [
+            247,
+            233,
+            206
+          ],
+          "canvasDifference": [
+            0,
+            0,
+            2
+          ],
+          "screenshotDifference": [
+            0,
+            0,
+            2
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    },
+    {
+      "slug": "churros",
+      "format": "portrait",
+      "file": "churros-portrait.mp4",
+      "sha256": "33ad0c2fe7a9159b0d66462a0ac114d4c9b971bfa28d98e5f9a439512d70bab8",
+      "sourcePNG": "churros-portrait-settled.png",
+      "sourcePNGSHA256": "bd06b1bcee4dbc24c484a960777a6323b76c780b6f66716fc7fbc2a08226f39e",
+      "browserScreenshot": "churros-portrait-browser-color.png",
+      "screenshotSHA256": "f2341cb4af25870b39d3f772a90bef257215518cc807432182f415d42b0210c3",
+      "devicePixelRatio": 1,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 810,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "avg_frame_rate": "24/1",
+            "nb_frames": "180"
+          }
+        ],
+        "format": {
+          "duration": "7.500000"
+        }
+      },
+      "videoState": {
+        "currentTime": 0,
+        "paused": true,
+        "readyState": 4,
+        "width": 810,
+        "height": 1080
+      },
+      "samples": [
+        {
+          "x": 10,
+          "y": 10,
+          "sourceRGB": [
+            247,
+            233,
+            204
+          ],
+          "canvasRGB": [
+            247,
+            233,
+            206
+          ],
+          "screenshotRGB": [
+            247,
+            233,
+            206
+          ],
+          "canvasDifference": [
+            0,
+            0,
+            2
+          ],
+          "screenshotDifference": [
+            0,
+            0,
+            2
+          ]
+        }
+      ],
+      "interceptedRequests": [
+        "/review",
+        "/export.mp4"
+      ],
+      "externalRequests": 0,
+      "decodedAllFrames": true,
+      "passed": true
+    }
+  ]
+}
