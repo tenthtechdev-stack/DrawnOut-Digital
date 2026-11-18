@@ -1,0 +1,198 @@
+.enquiry-puzzle {
+  color: var(--ink);
+  background: #eee9df;
+  padding-block: clamp(60px, 8vw, 140px);
+  overflow: clip;
+}
+.enquiry-puzzle__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(30px, 5vw, 85px);
+}
+.enquiry-puzzle__copy > .eyebrow {
+  color: var(--accent-strong);
+  margin: 0 0 clamp(30px, 4vw, 58px);
+}
+.enquiry-puzzle__copy h2 {
+  font-size: clamp(2.5rem, 4.45vw, 5.5rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: var(--tracking-display);
+  margin: 0;
+  max-width: 11ch;
+  text-wrap: balance;
+}
+.enquiry-puzzle__invitation {
+  max-width: 29ch;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.7;
+  margin: clamp(25px, 3vw, 42px) 0 0;
+}
+.enquiry-puzzle__contact {
+  display: inline-flex;
+  gap: clamp(20px, 2.5vw, 48px);
+  align-items: center;
+  min-height: 50px;
+  margin-top: 25px;
+  padding-block: 13px;
+  border-bottom: 1px solid currentColor;
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+}
+.enquiry-puzzle__contact:hover {
+  color: var(--accent-strong);
+}
+.enquiry-puzzle__contact svg {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+}
+.enquiry-puzzle__figure {
+  margin: 0;
+  min-width: 0;
+}
+.enquiry-puzzle__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 6 / 5;
+}
+.enquiry-puzzle__stage > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.enquiry-puzzle__stage text {
+  fill: currentColor;
+  font-family: var(--font-sans);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+.enquiry-puzzle__stage .enquiry-puzzle__notation {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  fill: var(--muted);
+}
+.enquiry-puzzle__stage .enquiry-puzzle__design-label {
+  font-size: 24px;
+}
+.enquiry-puzzle__stage .enquiry-puzzle__brand-name {
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+}
+.enquiry-puzzle__stage .enquiry-puzzle__folio {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  fill: var(--muted);
+}
+.enquiry-puzzle__guides {
+  opacity: 0.2;
+}
+.enquiry-puzzle__thread {
+  opacity: 0.55;
+}
+.enquiry-puzzle__playback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  border-top: 1px solid #cec7bb;
+  padding-top: 15px;
+  min-height: 61px;
+}
+.enquiry-puzzle__steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px clamp(15px, 2vw, 32px);
+}
+.enquiry-puzzle__steps li {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.enquiry-puzzle__steps span {
+  margin-right: 5px;
+}
+[data-enquiry-phase='idea'] [data-enquiry-caption='idea'],
+[data-enquiry-phase='connect'] [data-enquiry-caption='connect'],
+[data-enquiry-phase='direction'] [data-enquiry-caption='direction'] {
+  color: var(--accent-strong);
+}
+.enquiry-puzzle__playback button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 4px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 10px;
+  line-height: 1.6;
+  text-underline-offset: 4px;
+}
+.enquiry-puzzle__playback button[hidden] {
+  display: none;
+}
+.enquiry-puzzle__playback button:hover span {
+  text-decoration: underline;
+}
+@media (min-width: 1800px) {
+  .enquiry-puzzle__copy h2 {
+    font-size: 5.1rem;
+  }
+}
+@media (max-width: 1023px) {
+  .enquiry-puzzle__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .enquiry-puzzle__copy h2 {
+    max-width: 17ch;
+    font-size: clamp(2.5rem, 6.3vw, 4.6rem);
+  }
+  .enquiry-puzzle__invitation {
+    max-width: 40ch;
+  }
+  .enquiry-puzzle__figure {
+    width: min(100%, 720px);
+    margin-inline: auto;
+  }
+}
+@media (max-width: 639px) {
+  .enquiry-puzzle {
+    padding-block: 65px 42px;
+  }
+  .enquiry-puzzle__copy h2 {
+    max-width: 14ch;
+    font-size: clamp(2.35rem, 9.6vw, 3.6rem);
+  }
+  .enquiry-puzzle__copy > .eyebrow {
+    margin-bottom: 28px;
+  }
+  .enquiry-puzzle__stage {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+  }
+  .enquiry-puzzle__playback {
+    padding-top: 12px;
+    gap: 5px 16px;
+  }
+  .enquiry-puzzle__steps {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .enquiry-puzzle__steps li {
+    font-size: 10px;
+  }
+}

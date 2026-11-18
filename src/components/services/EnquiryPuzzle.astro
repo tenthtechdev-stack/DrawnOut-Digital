@@ -1,0 +1,186 @@
+---
+import Arrow from '../Arrow.astro';
+import emblem from '../../assets/brand/drawnout-emblem-isolated.png';
+import '../../styles/enquiry-puzzle.css';
+---
+
+<section class="enquiry-puzzle" aria-labelledby="enquiry-puzzle-title" data-enquiry-puzzle>
+  <div class="enquiry-puzzle__layout page-frame">
+    <div class="enquiry-puzzle__copy">
+      <p class="eyebrow">Bring us the pieces</p>
+      <h2 id="enquiry-puzzle-title">A good identity starts with a better question.</h2>
+      <p class="enquiry-puzzle__invitation">Bring us the pieces. We'll help find the picture.</p>
+      <a class="enquiry-puzzle__contact" href="/contact" data-service-enquiry>
+        <span>Tell us what you're thinking</span>
+        <Arrow />
+      </a>
+    </div>
+
+    <figure class="enquiry-puzzle__figure">
+      <div class="enquiry-puzzle__stage" data-enquiry-stage>
+        <svg
+          viewBox="0 0 720 600"
+          width="720"
+          height="600"
+          fill="none"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <defs>
+            <linearGradient
+              id="enquiry-thread"
+              x1="110"
+              y1="140"
+              x2="555"
+              y2="445"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#db5225" />
+              <stop offset="1" stop-color="#b73c1c" />
+            </linearGradient>
+          </defs>
+
+          <!-- A working layout, not a pretend customer brief or completed project. -->
+          <g
+            class="enquiry-puzzle__guides"
+            data-enquiry-guides
+            stroke="currentColor"
+            stroke-width="1"
+          >
+            <path data-enquiry-draw d="M76 99H644M76 475H644M253 77V501M467 77V501" />
+            <path
+              data-enquiry-draw
+              d="M75 91V107M67 99H83M637 99H653M645 91V107M67 475H83M75 467V483M637 475H653M645 467V483"
+            />
+            <path data-enquiry-draw d="M325 212H395M325 372H395M307 230V354M413 230V354" />
+          </g>
+
+          <path
+            class="enquiry-puzzle__thread"
+            data-enquiry-thread
+            d="M143 174C165 70 503 49 537 172C579 327 133 230 158 379C180 500 571 514 554 374C541 266 379 223 360 293"
+            stroke="url(#enquiry-thread)"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+
+          <g
+            data-enquiry-piece="identity"
+            data-enquiry-shift="-30,-33,-11"
+            class="enquiry-puzzle__piece"
+          >
+            <path d="M105 145V113H137M105 145H137V113" stroke="currentColor" stroke-width="3" />
+            <path d="M114 122H128V136H114Z" fill="#e76435" />
+            <text x="105" y="182">
+              Identity
+            </text>
+            <path d="M105 197H217" stroke="currentColor" />
+            <text x="105" y="216" class="enquiry-puzzle__notation">
+              01 / WHAT IT IS
+            </text>
+          </g>
+
+          <g
+            data-enquiry-piece="audience"
+            data-enquiry-shift="29,-17,9"
+            class="enquiry-puzzle__piece"
+          >
+            <circle cx="512" cy="133" r="21" stroke="currentColor" stroke-width="2" />
+            <circle cx="531" cy="133" r="21" stroke="#cc4b23" stroke-width="2" />
+            <text x="475" y="182">
+              Audience
+            </text>
+            <text x="475" y="207" class="enquiry-puzzle__notation">
+              WHO IT SPEAKS TO
+            </text>
+          </g>
+
+          <g
+            data-enquiry-piece="message"
+            data-enquiry-shift="-21,27,8"
+            class="enquiry-puzzle__piece"
+          >
+            <path d="M105 333H170M105 344H151M105 355H160" stroke="currentColor" stroke-width="2" />
+            <path d="M178 333L189 344L178 355" stroke="#cc4b23" stroke-width="2" />
+            <text x="105" y="394">
+              Message
+            </text>
+            <text x="105" y="419" class="enquiry-puzzle__notation">
+              A POINT OF VIEW
+            </text>
+          </g>
+
+          <g
+            data-enquiry-piece="direction"
+            data-enquiry-shift="26,26,-8"
+            class="enquiry-puzzle__piece"
+          >
+            <path d="M477 351L517 311M486 311H517V342" stroke="#cc4b23" stroke-width="3" />
+            <text x="475" y="394">
+              Direction
+            </text>
+            <text x="475" y="419" class="enquiry-puzzle__notation">
+              WHERE IT CAN GO
+            </text>
+          </g>
+
+          <g
+            data-enquiry-piece="design"
+            data-enquiry-shift="-7,36,-5"
+            class="enquiry-puzzle__piece"
+          >
+            <path d="M322 481L337 466L352 481L337 496Z" fill="#df5b2b" />
+            <path d="M337 466H367V496H337" stroke="currentColor" stroke-width="1.5" />
+            <text x="382" y="490" class="enquiry-puzzle__design-label">
+              Design
+            </text>
+          </g>
+
+          <g data-enquiry-emblem>
+            <path
+              d="M294 225H310M294 225V242M410 225H426M426 225V242M294 359V376H310M410 376H426V359"
+              stroke="#cc4b23"
+              stroke-width="1.5"
+            />
+            <image href={emblem.src} x="320" y="242" width="80" height="105.17" />
+            <text x="360" y="405" text-anchor="middle" class="enquiry-puzzle__brand-name">
+              DRAWNOUT
+            </text>
+          </g>
+
+          <text x="78" y="550" class="enquiry-puzzle__folio">
+            FIG. 01 — ONE COHERENT DIRECTION
+          </text>
+          <path d="M562 543H644M631 536L644 543L631 550" stroke="currentColor" stroke-width="1.5" />
+        </svg>
+      </div>
+      <figcaption class="sr-only">
+        Identity, audience, message, direction and design connect around the DrawnOut emblem. An
+        illustration of exploring an idea together.
+      </figcaption>
+      <div class="enquiry-puzzle__playback">
+        <ol class="enquiry-puzzle__steps" aria-label="From an idea to a direction">
+          <li data-enquiry-caption="idea">
+            <span>01</span> Your idea
+          </li>
+          <li data-enquiry-caption="connect">
+            <span>02</span> DrawnOut
+          </li>
+          <li data-enquiry-caption="direction">
+            <span>03</span> A direction
+          </li>
+        </ol>
+        <button type="button" data-enquiry-pause aria-pressed="false" hidden>
+          <span data-enquiry-pause-label>Pause motion</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+            <path d="M3 2V10M9 2V10" fill="none" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </button>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/enquiry-puzzle';
+</script>

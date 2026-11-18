@@ -1,5 +1,6 @@
 ---
 import Arrow from '../Arrow.astro';
+import EnquiryPuzzle from './EnquiryPuzzle.astro';
 import { servicePages, servicePath, type ServicePage } from '../../data/services';
 interface Props {
   service: ServicePage;
@@ -93,16 +94,20 @@ const structuredData = {
     </div>
   </section>
 
-  <section class="service-enquiry page-frame" aria-labelledby="service-enquiry-title">
-    <p class="eyebrow">Have something in mind?</p>
-    <h2 id="service-enquiry-title" class="section-heading" data-motion-text="heading">
-      {service.cta.lead}
-    </h2>
-    <a href="/contact" class="text-link" data-service-enquiry>
-      {service.cta.label}
-      <Arrow />
-    </a>
-  </section>
+  {service.slug === 'brand-identity' ? (
+    <EnquiryPuzzle />
+  ) : (
+    <section class="service-enquiry page-frame" aria-labelledby="service-enquiry-title">
+      <p class="eyebrow">Have something in mind?</p>
+      <h2 id="service-enquiry-title" class="section-heading" data-motion-text="heading">
+        {service.cta.lead}
+      </h2>
+      <a href="/contact" class="text-link" data-service-enquiry>
+        {service.cta.label}
+        <Arrow />
+      </a>
+    </section>
+  )}
 
   <nav class="related-services page-frame" aria-label="Explore other services">
     <p class="eyebrow">Connected thinking</p>

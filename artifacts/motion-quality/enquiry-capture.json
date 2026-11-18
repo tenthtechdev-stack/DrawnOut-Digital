@@ -1,0 +1,533 @@
+{
+  "sourceCommit": "1da6c688358d15d84a9e19ec3d469d4422baac56",
+  "sourceFiles": {
+    "src/components/services/EnquiryPuzzle.astro": "bf39c5ab5b801fa93e18597657c063af6fc7b04fc5a9134ff51f4e317934402f",
+    "src/components/services/ServicePage.astro": "16363bf13c9f8aa412c6e5253e799f7032f28a1c1f9cd953d09d4a7a283100c1",
+    "src/scripts/enquiry-puzzle.ts": "13b4216c2f9590f6a7392a3249a3ed57ac1d1127c261bf18734a7b39f3b008fd",
+    "src/styles/enquiry-puzzle.css": "cceedb2a301d6576b14daa5d95059fbb98f9900102a5a56eeff65274a1839c57",
+    "src/lib/enquiry-puzzle-policy.ts": "28c4271e44a153427ba04e59f102e82497e3443dfdbbcd9a6537a5af520bb4c2",
+    "src/assets/brand/drawnout-emblem-isolated.png": "a8d6f694a58739c5b0c696aec2e23a304af05b13fe1feb8c6890a2a6b47b6f6e"
+  },
+  "baseURL": "http://127.0.0.1:4450",
+  "method": "Actual Chromium viewport recordings and screenshots of the production build. Native wheel input enters the enquiry illustration, two complete active-time cycles play without seeking, then the browser leaves and reverses back before the user pauses. H.264 transcodes preserve native timing. Reduced-motion and no-JavaScript screenshots show the real server-rendered final composition. Mobile is Chromium touch/viewport emulation, not a physical device.",
+  "browser": "154.0.8037.57",
+  "recordings": [
+    {
+      "file": "enquiry-1440-browser.mp4",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "durationSeconds": 24.04,
+      "bytes": 1439878,
+      "codec": "h264"
+    },
+    {
+      "file": "enquiry-390-browser.mp4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "durationSeconds": 23.92,
+      "bytes": 845014,
+      "codec": "h264"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "enquiry-1440-idea.png",
+      "label": "1440px: actual idea phase in the live browser.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "enquiry-1440-connecting.png",
+      "label": "1440px: actual connecting phase in the live browser.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "enquiry-1440-direction.png",
+      "label": "1440px: actual direction phase in the live browser.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "enquiry-1440-paused.png",
+      "label": "1440px: user pause remains available without blocking the enquiry.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "enquiry-1440-reduced-motion-settled.png",
+      "label": "1440px: complete final composition with reduced-motion.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "enquiry-1440-no-javascript-settled.png",
+      "label": "1440px: complete final composition with no-javascript.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "enquiry-390-idea.png",
+      "label": "390px: actual idea phase in the live browser.",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "file": "enquiry-390-connecting.png",
+      "label": "390px: actual connecting phase in the live browser.",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "file": "enquiry-390-direction.png",
+      "label": "390px: actual direction phase in the live browser.",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "file": "enquiry-390-paused.png",
+      "label": "390px: user pause remains available without blocking the enquiry.",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "file": "enquiry-390-reduced-motion-settled.png",
+      "label": "390px: complete final composition with reduced-motion.",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "file": "enquiry-390-no-javascript-settled.png",
+      "label": "390px: complete final composition with no-javascript.",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "measurements": [
+    {
+      "width": 1440,
+      "phase": "idea",
+      "enquiryPuzzle": "",
+      "enquiryState": "playing",
+      "enquiryPhase": "idea",
+      "enquiryPauseReasons": "",
+      "enquiryCycle": "1",
+      "enquiryTime": "0.359",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(0.98163,-0.19081,0.19081,0.98163,-58.73113,0.7712)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(0.98769,0.15643,-0.15643,0.98769,60.73885,-98.14928)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(0.99027,0.13917,-0.13917,0.99027,33.10263,8.42414)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(0.99027,-0.13917,0.13917,0.99027,-19.86781,103.20503)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(0.99619,-0.08716,0.08716,0.99619,-47.4538,71.61885)"
+        }
+      ],
+      "thread": "opacity: 0.85; stroke-dashoffset: 1690px; stroke-dasharray: 1690.29;"
+    },
+    {
+      "width": 1440,
+      "phase": "connecting",
+      "enquiryPuzzle": "",
+      "enquiryState": "playing",
+      "enquiryPhase": "connect",
+      "enquiryPauseReasons": "",
+      "enquiryCycle": "1",
+      "enquiryTime": "2.561",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(0.99874,-0.05019,0.05019,0.99874,-15.97853,-0.34086)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(0.98916,0.14683,-0.14683,0.98916,56.61773,-92.2329)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(0.99027,0.13917,-0.13917,0.99027,33.10263,8.42414)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(0.99027,-0.13917,0.13917,0.99027,-19.86781,103.20503)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(0.99619,-0.08716,0.08716,0.99619,-47.4538,71.61885)"
+        }
+      ],
+      "thread": "opacity: 0.85; stroke-dashoffset: 584px; stroke-dasharray: 1690.29;"
+    },
+    {
+      "width": 1440,
+      "phase": "direction",
+      "enquiryPuzzle": "",
+      "enquiryState": "playing",
+      "enquiryPhase": "direction",
+      "enquiryPauseReasons": "",
+      "enquiryCycle": "1",
+      "enquiryTime": "5.204",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(1,0,0,1,0,0)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(1,0,0,1,0,0)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(1,0,0,1,0,0)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(1,0,0,1,0,0)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(1,0,0,1,0,0)"
+        }
+      ],
+      "thread": "opacity: 0.55; stroke-dashoffset: 0px; stroke-dasharray: 1690.29;"
+    },
+    {
+      "width": 1440,
+      "phase": "two-complete-cycles",
+      "enquiryPuzzle": "",
+      "enquiryState": "playing",
+      "enquiryPhase": "idea",
+      "enquiryPauseReasons": "",
+      "enquiryCycle": "2",
+      "enquiryTime": "0.061",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(0.98163,-0.19081,0.19081,0.98163,-58.73113,0.7712)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(0.98769,0.15643,-0.15643,0.98769,60.73885,-98.14928)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(0.99027,0.13917,-0.13917,0.99027,33.10263,8.42414)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(0.99027,-0.13917,0.13917,0.99027,-19.86781,103.20503)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(0.99619,-0.08716,0.08716,0.99619,-47.4538,71.61885)"
+        }
+      ],
+      "thread": "opacity: 0.85; stroke-dashoffset: 1690px; stroke-dasharray: 1690.29;"
+    },
+    {
+      "width": 1440,
+      "phase": "native-backscroll-away",
+      "enquiryPuzzle": "",
+      "enquiryState": "paused",
+      "enquiryPhase": "idea",
+      "enquiryPauseReasons": "offscreen",
+      "enquiryCycle": "2",
+      "enquiryTime": "0.328",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(0.98163,-0.19081,0.19081,0.98163,-58.73113,0.7712)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(0.98769,0.15643,-0.15643,0.98769,60.73885,-98.14928)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(0.99027,0.13917,-0.13917,0.99027,33.10263,8.42414)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(0.99027,-0.13917,0.13917,0.99027,-19.86781,103.20503)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(0.99619,-0.08716,0.08716,0.99619,-47.4538,71.61885)"
+        }
+      ],
+      "thread": "opacity: 0.85; stroke-dashoffset: 1690px; stroke-dasharray: 1690.29;"
+    },
+    {
+      "width": 1440,
+      "phase": "user-pause",
+      "enquiryPuzzle": "",
+      "enquiryState": "paused",
+      "enquiryPhase": "idea",
+      "enquiryPauseReasons": "user,focus",
+      "enquiryCycle": "2",
+      "enquiryTime": "1.083",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(0.98163,-0.19081,0.19081,0.98163,-58.73113,0.7712)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(0.98769,0.15643,-0.15643,0.98769,60.73885,-98.14928)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(0.99027,0.13917,-0.13917,0.99027,33.10263,8.42414)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(0.99027,-0.13917,0.13917,0.99027,-19.86781,103.20503)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(0.99619,-0.08716,0.08716,0.99619,-47.4538,71.61885)"
+        }
+      ],
+      "thread": "opacity: 0.85; stroke-dashoffset: 1690px; stroke-dasharray: 1690.29;"
+    },
+    {
+      "width": 390,
+      "phase": "idea",
+      "enquiryPuzzle": "",
+      "enquiryState": "playing",
+      "enquiryPhase": "idea",
+      "enquiryPauseReasons": "",
+      "enquiryCycle": "0",
+      "enquiryTime": "0.304",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(0.98163,-0.19081,0.19081,0.98163,-58.79606,0.77745)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(0.98769,0.15643,-0.15643,0.98769,60.80108,-98.25949)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(0.99027,0.13917,-0.13917,0.99027,33.15712,8.32559)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(0.99027,-0.13917,0.13917,0.99027,-19.91631,103.19197)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(0.99619,-0.08716,0.08716,0.99619,-47.48107,71.60592)"
+        }
+      ],
+      "thread": "opacity: 0.85; stroke-dashoffset: 1690px; stroke-dasharray: 1690.29;"
+    },
+    {
+      "width": 390,
+      "phase": "connecting",
+      "enquiryPuzzle": "",
+      "enquiryState": "playing",
+      "enquiryPhase": "connect",
+      "enquiryPauseReasons": "",
+      "enquiryCycle": "0",
+      "enquiryTime": "2.621",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(0.99956,-0.02974,0.02974,0.99956,-9.52614,-0.25124)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(0.99042,0.13806,-0.13806,0.99042,52.95328,-86.91369)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(0.99027,0.13915,-0.13915,0.99027,33.15366,8.3235)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(0.99027,-0.13917,0.13917,0.99027,-19.91631,103.19197)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(0.99619,-0.08716,0.08716,0.99619,-47.48107,71.60592)"
+        }
+      ],
+      "thread": "opacity: 0.85; stroke-dashoffset: 518px; stroke-dasharray: 1690.29;"
+    },
+    {
+      "width": 390,
+      "phase": "direction",
+      "enquiryPuzzle": "",
+      "enquiryState": "playing",
+      "enquiryPhase": "direction",
+      "enquiryPauseReasons": "",
+      "enquiryCycle": "0",
+      "enquiryTime": "5.180",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(1,0,0,1,0,0)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(1,0,0,1,0,0)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(1,0,0,1,0,0)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(1,0,0,1,0,0)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(1,0,0,1,0,0)"
+        }
+      ],
+      "thread": "opacity: 0.55; stroke-dashoffset: 0px; stroke-dasharray: 1690.29;"
+    },
+    {
+      "width": 390,
+      "phase": "two-complete-cycles",
+      "enquiryPuzzle": "",
+      "enquiryState": "playing",
+      "enquiryPhase": "idea",
+      "enquiryPauseReasons": "",
+      "enquiryCycle": "2",
+      "enquiryTime": "0.030",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(0.98163,-0.19081,0.19081,0.98163,-58.79606,0.77745)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(0.98769,0.15643,-0.15643,0.98769,60.80108,-98.25949)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(0.99027,0.13917,-0.13917,0.99027,33.15712,8.32559)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(0.99027,-0.13917,0.13917,0.99027,-19.91631,103.19197)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(0.99619,-0.08716,0.08716,0.99619,-47.48107,71.60592)"
+        }
+      ],
+      "thread": "opacity: 0.85; stroke-dashoffset: 1690px; stroke-dasharray: 1690.29;"
+    },
+    {
+      "width": 390,
+      "phase": "native-backscroll-away",
+      "enquiryPuzzle": "",
+      "enquiryState": "paused",
+      "enquiryPhase": "idea",
+      "enquiryPauseReasons": "offscreen",
+      "enquiryCycle": "2",
+      "enquiryTime": "0.081",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(0.98163,-0.19081,0.19081,0.98163,-58.79606,0.77745)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(0.98769,0.15643,-0.15643,0.98769,60.80108,-98.25949)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(0.99027,0.13917,-0.13917,0.99027,33.15712,8.32559)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(0.99027,-0.13917,0.13917,0.99027,-19.91631,103.19197)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(0.99619,-0.08716,0.08716,0.99619,-47.48107,71.60592)"
+        }
+      ],
+      "thread": "opacity: 0.85; stroke-dashoffset: 1690px; stroke-dasharray: 1690.29;"
+    },
+    {
+      "width": 390,
+      "phase": "user-pause",
+      "enquiryPuzzle": "",
+      "enquiryState": "paused",
+      "enquiryPhase": "idea",
+      "enquiryPauseReasons": "user,focus",
+      "enquiryCycle": "2",
+      "enquiryTime": "0.731",
+      "fragments": [
+        {
+          "name": "identity",
+          "transform": "matrix(0.98163,-0.19081,0.19081,0.98163,-58.79606,0.77745)"
+        },
+        {
+          "name": "audience",
+          "transform": "matrix(0.98769,0.15643,-0.15643,0.98769,60.80108,-98.25949)"
+        },
+        {
+          "name": "message",
+          "transform": "matrix(0.99027,0.13917,-0.13917,0.99027,33.15712,8.32559)"
+        },
+        {
+          "name": "direction",
+          "transform": "matrix(0.99027,-0.13917,0.13917,0.99027,-19.91631,103.19197)"
+        },
+        {
+          "name": "design",
+          "transform": "matrix(0.99619,-0.08716,0.08716,0.99619,-47.48107,71.60592)"
+        }
+      ],
+      "thread": "opacity: 0.85; stroke-dashoffset: 1690px; stroke-dasharray: 1690.29;"
+    }
+  ],
+  "errors": []
+}
