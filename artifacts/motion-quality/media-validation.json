@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-11-18T01:11:20.103Z",
+  "recordedAt": "2026-11-18T01:28:38.672Z",
   "command": "node --test --test-reporter=spec tests/motion-quality-exports.test.mjs tests/portfolio-motion-exports.test.mjs",
   "exitCode": 0,
   "tests": 13,
@@ -25,16 +25,16 @@
     {
       "slug": "bunzo",
       "format": "landscape",
-      "decodedSeamMeanAbsoluteError255": 0.0981,
-      "largestSampledProgressionMeanAbsoluteDifference255": 20.67,
-      "posterFirstFrameMeanAbsoluteDifference255": 3.682
+      "decodedSeamMeanAbsoluteError255": 0.0899,
+      "largestSampledProgressionMeanAbsoluteDifference255": 20.66,
+      "posterFirstFrameMeanAbsoluteDifference255": 3.685
     },
     {
       "slug": "bunzo",
       "format": "portrait",
-      "decodedSeamMeanAbsoluteError255": 0.1166,
-      "largestSampledProgressionMeanAbsoluteDifference255": 22.37,
-      "posterFirstFrameMeanAbsoluteDifference255": 3.471
+      "decodedSeamMeanAbsoluteError255": 0.118,
+      "largestSampledProgressionMeanAbsoluteDifference255": 22.38,
+      "posterFirstFrameMeanAbsoluteDifference255": 3.472
     },
     {
       "slug": "sol-community-center",
@@ -73,14 +73,14 @@
           "file": "bunzo-landscape.mp4",
           "width": 1440,
           "height": 810,
-          "bytes": 726819,
-          "sha256": "1bcfec3cf371673be574953feeccf2ea9f230ddb784e260660c02270eceb24d4",
+          "bytes": 697760,
+          "sha256": "37f787a3f64d8f864b67ce29c166fcb4c797fd607eeba41e596b412e17df4e02",
           "codec": "h264",
           "pixelFormat": "yuv420p",
           "profile": "High",
           "durationSeconds": 7.5,
           "frames": 180,
-          "averageBitrate": 775273,
+          "averageBitrate": 744277,
           "crf": 19,
           "audioStreams": 0,
           "firstFrameSHA256": "6e9caefcc64e3f0512a63d6b73dbb768160df957b1696771278aa095bfa809f8",
@@ -101,14 +101,14 @@
           "file": "bunzo-portrait.mp4",
           "width": 810,
           "height": 1080,
-          "bytes": 676074,
-          "sha256": "1f9cbdc1ee0e9693f50891f116f3081a41669427a2e3b0e0b7a1e80bbeacc05b",
+          "bytes": 652627,
+          "sha256": "5bae18b15ac01bccc9dd500ce55aa7aaedfa8e6f0b22f63e1dd4a824aed58f58",
           "codec": "h264",
           "pixelFormat": "yuv420p",
           "profile": "High",
           "durationSeconds": 7.5,
           "frames": 180,
-          "averageBitrate": 721145,
+          "averageBitrate": 696135,
           "crf": 19,
           "audioStreams": 0,
           "firstFrameSHA256": "b8d1b923d840f4fce557e1653eee59a18e81f81f268439cbf650db3bfef0a25a",
@@ -126,7 +126,9 @@
           }
         }
       },
-      "sourceAssets": 12
+      "sourceAssets": 12,
+      "composition": "scripts/portfolio/quality/bunzo.mjs",
+      "compositionSHA256": "74dd43c3dc0dd2528260049155bc5231e2d889a07250a954c126780f745193b9"
     },
     {
       "slug": "sol-community-center",
@@ -188,7 +190,9 @@
           }
         }
       },
-      "sourceAssets": 10
+      "sourceAssets": 10,
+      "composition": "scripts/portfolio/quality/sol.mjs",
+      "compositionSHA256": "ced058799740e78bb805d34f70f0a445e47a07efabe429d01c6ed097c246dfa6"
     },
     {
       "slug": "churros",
@@ -250,10 +254,12 @@
           }
         }
       },
-      "sourceAssets": 11
+      "sourceAssets": 11,
+      "composition": "scripts/portfolio/quality/churros.mjs",
+      "compositionSHA256": "3ec884a29f916dfa27a607850cce529eaa37ead1c4a8c5891030ca8b945ea4b9"
     }
   ],
-  "rawReportSHA256": "c31eb8bcc597faf75890e42786cdb11bd08b1603cf7a04f04bfc6e19d5a77f78",
-  "rawReport": "✔ bunzo: transparent layers retain original visible pixels and recorded source provenance (523.052479ms)\nℹ 12 isolated layers; 707133 opaque source pixels checked\n✔ bunzo: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (4656.024023ms)\nℹ landscape: decoded seam0.0981, progression20.67, poster error3.682 /255\nℹ portrait: decoded seam0.1166, progression22.37, poster error3.471 /255\n✔ sol-community-center: transparent layers retain original visible pixels and recorded source provenance (362.527015ms)\nℹ 6 isolated layers; 704375 opaque source pixels checked\n✔ sol-community-center: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (3305.923177ms)\nℹ landscape: decoded seam0.0333, progression36.68, poster error1.821 /255\nℹ portrait: decoded seam0.0485, progression40.57, poster error1.768 /255\n✔ churros: transparent layers retain original visible pixels and recorded source provenance (409.695754ms)\nℹ 11 isolated layers; 772382 opaque source pixels checked\n✔ churros: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (4181.985009ms)\nℹ landscape: decoded seam0.0999, progression20.30, poster error3.297 /255\nℹ portrait: decoded seam0.1409, progression27.82, poster error3.789 /255\n✔ the remaining three motion directions retain all six original MP4s pending creative approval (53.33851ms)\n✔ sol-community-center: silent, responsive, seamless encoded exports and actual visual progression (3154.458517ms)\nℹ landscape: decoded seam mean absolute difference 0.0333 / 255; identity-to-application difference 36.68 / 255\nℹ portrait: decoded seam mean absolute difference 0.0485 / 255; identity-to-application difference 40.57 / 255\n✔ bunzo: silent, responsive, seamless encoded exports and actual visual progression (3284.759521ms)\nℹ landscape: decoded seam mean absolute difference 0.0981 / 255; identity-to-application difference 20.67 / 255\nℹ portrait: decoded seam mean absolute difference 0.1166 / 255; identity-to-application difference 22.37 / 255\n✔ triarch: silent, responsive, seamless encoded exports and actual visual progression (1058.629553ms)\nℹ landscape: decoded seam mean absolute difference 0.1467 / 255; identity-to-application difference 60.28 / 255\nℹ portrait: decoded seam mean absolute difference 0.1080 / 255; identity-to-application difference 54.48 / 255\n✔ churros: silent, responsive, seamless encoded exports and actual visual progression (2703.765508ms)\nℹ landscape: decoded seam mean absolute difference 0.0999 / 255; identity-to-application difference 20.30 / 255\nℹ portrait: decoded seam mean absolute difference 0.1409 / 255; identity-to-application difference 27.82 / 255\n✔ by-tech-group: silent, responsive, seamless encoded exports and actual visual progression (1302.045287ms)\nℹ landscape: decoded seam mean absolute difference 0.1806 / 255; identity-to-application difference 70.41 / 255\nℹ portrait: decoded seam mean absolute difference 0.1449 / 255; identity-to-application difference 76.07 / 255\n✔ u-wanna-smoothie: silent, responsive, seamless encoded exports and actual visual progression (1436.018176ms)\nℹ landscape: decoded seam mean absolute difference 0.1424 / 255; identity-to-application difference 46.75 / 255\nℹ portrait: decoded seam mean absolute difference 0.2070 / 255; identity-to-application difference 50.12 / 255\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 13671.984202\n",
-  "note": "Actual rendered files, every decoded MP4 frame and real alpha-source pixels tested. This establishes technical behavior and fidelity; creative approval and physical Safari/Android testing remain outstanding."
+  "rawReportSHA256": "816c074839df85928fd79334d5cc334627e765046bfdd7699ca630dd195128a6",
+  "rawReport": "✔ bunzo: transparent layers retain original visible pixels and recorded source provenance (493.37337ms)\nℹ 12 isolated layers; 707133 opaque source pixels checked\n✔ bunzo: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (2932.713946ms)\nℹ landscape: decoded seam0.0899, progression20.66, poster error3.685 /255\nℹ portrait: decoded seam0.1180, progression22.38, poster error3.472 /255\n✔ sol-community-center: transparent layers retain original visible pixels and recorded source provenance (233.772234ms)\nℹ 6 isolated layers; 704375 opaque source pixels checked\n✔ sol-community-center: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (2820.221712ms)\nℹ landscape: decoded seam0.0333, progression36.68, poster error1.821 /255\nℹ portrait: decoded seam0.0485, progression40.57, poster error1.768 /255\n✔ churros: transparent layers retain original visible pixels and recorded source provenance (389.2769ms)\nℹ 11 isolated layers; 772382 opaque source pixels checked\n✔ churros: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (3006.337643ms)\nℹ landscape: decoded seam0.0999, progression20.30, poster error3.297 /255\nℹ portrait: decoded seam0.1409, progression27.82, poster error3.789 /255\n✔ the remaining three motion directions retain all six original MP4s pending creative approval (31.17203ms)\n✔ sol-community-center: silent, responsive, seamless encoded exports and actual visual progression (2237.833263ms)\nℹ landscape: decoded seam mean absolute difference 0.0333 / 255; identity-to-application difference 36.68 / 255\nℹ portrait: decoded seam mean absolute difference 0.0485 / 255; identity-to-application difference 40.57 / 255\n✔ bunzo: silent, responsive, seamless encoded exports and actual visual progression (2173.15452ms)\nℹ landscape: decoded seam mean absolute difference 0.0899 / 255; identity-to-application difference 20.66 / 255\nℹ portrait: decoded seam mean absolute difference 0.1180 / 255; identity-to-application difference 22.38 / 255\n✔ triarch: silent, responsive, seamless encoded exports and actual visual progression (949.749017ms)\nℹ landscape: decoded seam mean absolute difference 0.1467 / 255; identity-to-application difference 60.28 / 255\nℹ portrait: decoded seam mean absolute difference 0.1080 / 255; identity-to-application difference 54.48 / 255\n✔ churros: silent, responsive, seamless encoded exports and actual visual progression (2315.440791ms)\nℹ landscape: decoded seam mean absolute difference 0.0999 / 255; identity-to-application difference 20.30 / 255\nℹ portrait: decoded seam mean absolute difference 0.1409 / 255; identity-to-application difference 27.82 / 255\n✔ by-tech-group: silent, responsive, seamless encoded exports and actual visual progression (855.55056ms)\nℹ landscape: decoded seam mean absolute difference 0.1806 / 255; identity-to-application difference 70.41 / 255\nℹ portrait: decoded seam mean absolute difference 0.1449 / 255; identity-to-application difference 76.07 / 255\n✔ u-wanna-smoothie: silent, responsive, seamless encoded exports and actual visual progression (913.486516ms)\nℹ landscape: decoded seam mean absolute difference 0.1424 / 255; identity-to-application difference 46.75 / 255\nℹ portrait: decoded seam mean absolute difference 0.2070 / 255; identity-to-application difference 50.12 / 255\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10030.26642\n",
+  "note": "Final Bunzo opacity correction included. Actual rendered files, every decoded MP4 frame and real alpha-source pixels tested. This establishes technical behavior and fidelity; creative approval and physical Safari/Android testing remain outstanding."
 }

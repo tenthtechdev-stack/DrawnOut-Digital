@@ -3,7 +3,7 @@ type Connection = EventTarget & { saveData?: boolean };
 type Cue = {
   element: HTMLElement;
   arrival: boolean;
-  animation?: Animation;
+  animations?: Animation[];
   deadline?: ReturnType<typeof setTimeout>;
 };
 
@@ -45,9 +45,9 @@ function initialize() {
     cue.deadline = undefined;
     // Cancel removes the temporary WAAPI effect. No hidden class or inline
     // transform is needed in either the normal or failed-animation state.
-    const animation = cue.animation;
-    cue.animation = undefined;
-    animation?.cancel();
+    const animations = cue.animations;
+    cue.animations = undefined;
+    animations?.forEach((animation) => animation.cancel());
     revealed.add(cue.element);
     cue.element.dataset.caseRevealState = 'complete';
     observer?.unobserve(cue.element);
@@ -83,29 +83,56 @@ function initialize() {
     cue.element.dataset.caseRevealState = 'running';
     try {
       const artwork = cue.element.tagName === 'FIGURE';
-      const animation = cue.element.animate(
-        cue.arrival
-          ? [
-              { transform: 'translateY(20px)', opacity: 0.65, clipPath: 'inset(0 0 14% 0)' },
-              { transform: 'translateY(0)', opacity: 1, clipPath: 'inset(0)' },
-            ]
-          : [
-              { transform: `translateY(${artwork ? 22 : 14}px)`, opacity: 0.6 },
-              { transform: 'translateY(0)', opacity: 1 },
-            ],
-        {
-          duration: cue.arrival ? 740 : artwork ? 780 : 640,
-          delay: cue.arrival ? Math.min(order, 2) * 90 : 0,
-          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
-          fill: 'backwards',
-        },
-      );
-      cue.animation = animation;
+      const interactive =
+        'a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"]), [contenteditable="true"]';
+      const noninteractive = (element: HTMLElement) =>
+        !element.closest(interactive) && !element.querySelector(interactive);
+      // Reserved containers around controls or links must never move. Finishing
+      // an ancestor transform on pointer-induced focus otherwise shifts its hit
+      // target between pointerdown and pointerup, losing the visitor's click.
+      const targets = artwork
+        ? [
+            ...cue.element.querySelectorAll<HTMLElement>(
+              ':scope > .cp-artwork-frame, :scope > figcaption',
+            ),
+          ].filter(noninteractive)
+        : cue.element.querySelector(interactive)
+          ? [...cue.element.querySelectorAll<HTMLElement>('p, h1, h2, h3, h4, h5, h6')].filter(
+              noninteractive,
+            )
+          : noninteractive(cue.element)
+            ? [cue.element]
+            : [];
+      if (!targets.length) {
+        finish(cue);
+        return;
+      }
+      const completion: Promise<Animation>[] = [];
+      cue.animations = [];
+      for (const target of targets) {
+        const animation = target.animate(
+          cue.arrival
+            ? [
+                { transform: 'translateY(20px)', opacity: 0.65, clipPath: 'inset(0 0 14% 0)' },
+                { transform: 'translateY(0)', opacity: 1, clipPath: 'inset(0)' },
+              ]
+            : [
+                { transform: `translateY(${artwork ? 22 : 14}px)`, opacity: 0.6 },
+                { transform: 'translateY(0)', opacity: 1 },
+              ],
+          {
+            duration: cue.arrival ? 740 : artwork ? 780 : 640,
+            delay: cue.arrival ? Math.min(order, 2) * 90 : 0,
+            easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+            fill: 'backwards',
+          },
+        );
+        cue.animations.push(animation);
+        // Cancellation is an expected focus/preference/lifecycle completion.
+        completion.push(animation.finished.catch(() => animation));
+      }
       cue.deadline = setTimeout(() => finish(cue), 1100);
-      void animation.finished.then(
-        () => finish(cue),
-        () => finish(cue),
-      );
+      void Promise.all(completion).then(() => finish(cue));
     } catch {
       finish(cue);
     }
@@ -141,7 +168,7 @@ function initialize() {
       () => {
         // Resizing cannot leave a title or caption partway through a mask.
         // Unseen artwork remains observed using its new native geometry.
-        for (const cue of cues) if (cue.animation) finish(cue);
+        for (const cue of cues) if (cue.animations) finish(cue);
       },
       { passive: true, signal },
     );

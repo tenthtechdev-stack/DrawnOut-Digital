@@ -131,13 +131,14 @@ export function render({ width, height, portrait, t, assets }) {
     { rotation: split * -7 - anticipation },
   );
   // Overlapping timings: no copied preset or synchronous whole-board pan.
-  const layerPresence = Math.min(1, split * 12);
-  if (layerPresence < 1)
-    out += image(assets.whole, x, y + anticipation * 7, logoW, logoH, {
-      opacity: 1 - layerPresence,
-    });
-  if (layerPresence > 0)
-    out += image(assets.base, x, y + anticipation * 7, logoW, logoH, { opacity: layerPresence });
+  // The base and five faces are complementary source-pixel mattes. Draw their
+  // exact full-opacity union during separation; overlapping alpha crossfades
+  // would reveal the red backdrop and turn the authentic white faces pink.
+  if (split === 0) {
+    out += image(assets.whole, x, y + anticipation * 7, logoW, logoH);
+    return out;
+  }
+  out += image(assets.base, x, y + anticipation * 7, logoW, logoH);
   for (const [key, dx, dy, angle, delay] of movements) {
     const independent =
       ramp(t, 0.9 + delay, 1.8 + delay) * (1 - ramp(t, 2.65 + delay * 0.45, 3.7 + delay * 0.45));
@@ -155,7 +156,7 @@ export function render({ width, height, portrait, t, assets }) {
     const [cx, cy] = centres[key];
     const rx = tx + cx * s;
     const ry = ty + cy * s;
-    out += `<g transform="rotate(${n(angle * independent)} ${n(rx)} ${n(ry)})">${image(assets[key], tx, ty, logoW, logoH, { opacity: layerPresence })}</g>`;
+    out += `<g transform="rotate(${n(angle * independent)} ${n(rx)} ${n(ry)})">${image(assets[key], tx, ty, logoW, logoH)}</g>`;
   }
   return out;
 }
