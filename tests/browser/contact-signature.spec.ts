@@ -126,7 +126,16 @@ for (const width of sizes) {
       }),
       contentType: 'application/json',
     });
-    if ([320, 390, 1440].includes(width))
+    if (width >= 1024) {
+      const lines = await page
+        .locator('main h1')
+        .evaluate(
+          (node) =>
+            node.getBoundingClientRect().height / parseFloat(getComputedStyle(node).lineHeight),
+        );
+      expect(lines).toBeLessThanOrEqual(2.1);
+    }
+    if ([320, 390, 1440, 1920].includes(width))
       await page.screenshot({ path: `artifacts/contact-signature/contact-review-${width}.png` });
     for (const href of [
       'mailto:official@drawnoutdigital.com',
