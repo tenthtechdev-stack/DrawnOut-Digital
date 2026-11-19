@@ -2,7 +2,7 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import EnquiryForm from '../components/contact/EnquiryForm.astro';
 import Arrow from '../components/Arrow.astro';
-import Star from '../components/Star.astro';
+import FirstThought from '../components/contact/FirstThought.astro';
 import { contact } from '../data/contact';
 ---
 
@@ -13,21 +13,26 @@ import { contact } from '../data/contact';
   <section class="contact-intro page-frame" aria-labelledby="contact-title">
     <div class="contact-kicker">
       <p class="eyebrow">Contact / Start a conversation</p>
-      <span aria-hidden="true">
-        <Star />
+      <span class="contact-edition" aria-hidden="true">
+        A first thought. A new possibility.
       </span>
     </div>
-    <h1 id="contact-title" data-motion-text="heading" data-motion-split="lines">
-      Have something
-      <br />
-      <span>in mind?</span>
-    </h1>
-    <div class="contact-intro-bottom">
-      <a class="enquiry-jump" href="#enquiry">
-        <span>Tell us what you're thinking</span>
-        <span aria-hidden="true">↓</span>
-      </a>
-      <p data-motion-support>You don't need a perfect brief. You just need somewhere to start.</p>
+    <div class="contact-intro-grid">
+      <h1 id="contact-title">
+        Have something
+        <br />
+        <span>in mind?</span>
+      </h1>
+      <div class="contact-intro-note">
+        <p>You don't need a perfect brief. You just need somewhere to start.</p>
+        <a class="enquiry-jump" href="#enquiry">
+          <span>Tell us what you're thinking</span>
+          <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+      <div class="contact-thought">
+        <FirstThought />
+      </div>
     </div>
   </section>
   <div class="contact-body page-frame">
@@ -91,66 +96,81 @@ import { contact } from '../data/contact';
 </SiteLayout>
 <style>
   .contact-intro {
-    padding-block: var(--space-6) var(--space-5);
+    padding-block: clamp(36px, 4.5vw, 64px) clamp(32px, 4vw, 56px);
   }
   .contact-kicker {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    margin-bottom: 34px;
+    margin-bottom: 28px;
     color: var(--accent-strong);
   }
   .contact-kicker p {
     margin: 0;
   }
-  .contact-kicker :global(svg) {
-    width: clamp(28px, 3vw, 42px);
-    height: auto;
+  .contact-edition {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: -0.01em;
+  }
+  .contact-intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
+    column-gap: clamp(32px, 5vw, 80px);
+    row-gap: 24px;
+    padding-bottom: clamp(32px, 4vw, 56px);
+    border-bottom: 1px solid var(--line);
   }
   h1 {
+    grid-column: 1;
+    grid-row: 1;
     margin: 0;
-    font-size: clamp(4rem, 9.1vw, 9.1rem);
+    font-size: clamp(3.6rem, 7.6vw, 7.9rem);
     font-weight: 500;
-    line-height: 1.02;
+    line-height: 1.03;
     letter-spacing: var(--tracking-display);
   }
   h1 > span {
     color: var(--accent-strong);
   }
-  .contact-intro-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 36px;
-    margin-top: 40px;
-    padding-bottom: var(--space-5);
-    border-bottom: 1px solid var(--line);
+  .contact-intro-note {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: 390px;
   }
-  .contact-intro-bottom p {
-    max-width: 380px;
+  .contact-intro-note p {
     margin: 0;
-    font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+    font-size: clamp(1.0625rem, 1.55vw, 1.3rem);
     line-height: 1.6;
     letter-spacing: -0.025em;
+  }
+  .contact-thought {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    min-width: 0;
+    align-self: center;
   }
   .enquiry-jump {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    gap: 32px;
+    gap: 24px;
     min-height: 44px;
+    margin-top: 20px;
     font-size: var(--type-small);
+    line-height: 1.6;
     text-decoration: none;
     border-bottom: 1px solid currentColor;
   }
   .enquiry-jump > span:last-child {
     font-size: 24px;
+    flex-shrink: 0;
   }
   .contact-body {
     display: grid;
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.45fr);
-    gap: clamp(50px, 9vw, 150px);
+    gap: clamp(48px, 8vw, 128px);
     padding-bottom: var(--space-7);
   }
   .contact-enquiry {
@@ -162,6 +182,9 @@ import { contact } from '../data/contact';
     grid-column: 1;
     grid-row: 1;
     min-width: 0;
+  }
+  .contact-direct {
+    padding-top: 4px;
   }
   .contact-direct > .eyebrow {
     margin: 0 0 22px;
@@ -242,9 +265,27 @@ import { contact } from '../data/contact';
     transform: translate(2px, -2px);
   }
   @media (max-width: 899px) {
+    .contact-intro-grid {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      column-gap: 28px;
+      row-gap: 26px;
+    }
+    h1 {
+      grid-column: 1 / -1;
+      font-size: clamp(2.65rem, 8.8vw, 5rem);
+    }
+    .contact-intro-note {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .contact-thought {
+      grid-column: 2;
+      grid-row: 2;
+      --thought-height: 184px;
+    }
     .contact-body {
       grid-template-columns: minmax(0, 1fr);
-      gap: 64px;
+      gap: 56px;
     }
     .contact-enquiry,
     .contact-direct {
@@ -252,7 +293,7 @@ import { contact } from '../data/contact';
       grid-row: auto;
     }
     .contact-direct {
-      padding-top: 36px;
+      padding-top: 32px;
       border-top: 1px solid var(--line);
     }
     .contact-methods a {
@@ -261,27 +302,35 @@ import { contact } from '../data/contact';
   }
   @media (max-width: 639px) {
     .contact-intro {
-      padding-top: 46px;
+      padding-top: 30px;
+      padding-bottom: 28px;
     }
     .contact-kicker {
-      margin-bottom: 32px;
+      margin-bottom: 22px;
+    }
+    .contact-edition {
+      display: none;
+    }
+    .contact-intro-grid {
+      gap: 24px 20px;
+      padding-bottom: 30px;
     }
     h1 {
-      font-size: clamp(2.5rem, 10.8vw, 4.3rem);
-      line-height: 1.08;
+      font-size: clamp(2.65rem, 11.4vw, 4.3rem);
+      line-height: 1.07;
     }
-    .contact-intro-bottom {
-      flex-direction: column-reverse;
-      align-items: start;
-      gap: 28px;
-      margin-top: 26px;
+    .contact-intro-note p {
+      font-size: 1rem;
+      line-height: 1.6;
     }
-    .contact-intro-bottom p {
-      max-width: 310px;
-      font-size: 1.0625rem;
+    .contact-thought {
+      --thought-height: 164px;
     }
     .enquiry-jump {
       width: 100%;
+      gap: 10px;
+      margin-top: 14px;
+      font-size: 12px;
     }
   }
   @media (prefers-reduced-motion: reduce) {
