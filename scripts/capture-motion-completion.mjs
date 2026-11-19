@@ -93,7 +93,13 @@ async function wheelTo(page, requested) {
   );
   for (let attempt = 0; attempt < 100; attempt++) {
     const current = await page.evaluate(() => scrollY);
-    if (Math.abs(current - target) <= 4) return;
+    if (Math.abs(current - target) <= 4) {
+      // Wheel input may still have queued native scrolling. Confirm its settled
+      // position instead of accepting a transient crossing of the target.
+      await page.waitForTimeout(250);
+      if (Math.abs((await page.evaluate(() => scrollY)) - target) <= 4) return;
+      continue;
+    }
     await page.mouse.wheel(
       0,
       Math.sign(target - current) * Math.min(420, Math.abs(target - current)),
@@ -109,6 +115,25 @@ async function align(page, locator, inset = 120) {
   );
   await wheelTo(page, target);
   await page.waitForTimeout(180);
+}
+async function alignVideo(page, video) {
+  for (let attempt = 0; attempt < 6; attempt++) {
+    const framing = await video.evaluate((node) => {
+      const box = node.getBoundingClientRect();
+      const header = document.querySelector('[data-site-header]')?.getBoundingClientRect();
+      const clearTop = Math.max(0, header?.bottom ?? 0) + 16;
+      return {
+        target: scrollY + box.top - Math.max(clearTop, (innerHeight - box.height) / 2),
+        fits: box.top >= clearTop - 4 && box.bottom <= innerHeight - 8,
+      };
+    });
+    if (framing.fits) return;
+    await wheelTo(page, framing.target);
+    // Existing case arrivals and native wheel completion can change the first
+    // measured box. Recheck actual geometry; never move the animation timeline.
+    await page.waitForTimeout(850);
+  }
+  assert.fail('The complete case video must fit below the header before recording its loop.');
 }
 async function state(video) {
   return video.evaluate((node) => {
@@ -178,6 +203,7 @@ try {
         (id) => document.getElementById(id)?.dataset.motionState === 'playing',
         `case-motion-${slug}`,
       );
+      await alignVideo(page, video);
       const samples = [];
       let screenshot = false;
       const began = Date.now();
@@ -205,7 +231,7 @@ try {
       assert(screenshot, `A naturally occurring ${slug} construction phase must be captured.`);
       assert(
         samples.every(
-          (sample) => sample.state === 'playing' && !sample.paused && sample.visibleRatio >= 0.35,
+          (sample) => sample.state === 'playing' && !sample.paused && sample.visibleRatio >= 0.95,
         ),
       );
       assert(
