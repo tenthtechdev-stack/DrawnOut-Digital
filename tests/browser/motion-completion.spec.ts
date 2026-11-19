@@ -150,7 +150,7 @@ test('every case artwork selects a real native-bounded responsive resource at mo
   baseURL,
 }, testInfo) => {
   const audit = JSON.parse(
-    await readFile('artifacts/motion-completion/image-source-audit.json', 'utf8'),
+    await readFile('artifacts/motion-quality/image-source-audit.json', 'utf8'),
   ) as { assets: { file: string; after: { width: number; height: number } }[] };
   const samples: unknown[] = [];
   for (const width of [390, 1440]) {

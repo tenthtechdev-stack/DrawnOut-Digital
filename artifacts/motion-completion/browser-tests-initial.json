@@ -1,0 +1,1209 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-motion-completion/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.motion-completion.config.ts"
+    ],
+    "configFile": "/workspace/drawnout-motion-completion/playwright.motion-completion.config.ts",
+    "rootDir": "/workspace/drawnout-motion-completion/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-motion-completion/test-results/motion-completion",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-motion-completion/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["motion-completion.spec.ts"],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-motion-completion/test-results/motion-completion",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-motion-completion/tests/browser",
+        "snapshotDir": "/workspace/drawnout-motion-completion/tests/browser",
+        "testIgnore": [],
+        "testMatch": "motion-completion.spec.ts",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4462",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      ["list", null],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/motion-completion/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4462",
+      "url": "http://127.0.0.1:4462",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "motion-completion.spec.ts",
+      "file": "motion-completion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "all shared page heads declare retrievable faithful icons, with no default framework favicon",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15047,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:57:41.278Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-4c20a82da0d672eab3e9",
+          "file": "motion-completion.spec.ts",
+          "line": 90,
+          "column": 1
+        },
+        {
+          "title": "every case artwork selects a real native-bounded responsive resource at mobile and desktop DPR 2",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7,
+                  "error": {
+                    "message": "Error: ENOENT: no such file or directory, open 'artifacts/motion-completion/image-source-audit.json'",
+                    "stack": "Error: ENOENT: no such file or directory, open 'artifacts/motion-completion/image-source-audit.json'\n    at /workspace/drawnout-motion-completion/tests/browser/motion-completion.spec.ts:153:5",
+                    "location": {
+                      "file": "/workspace/drawnout-motion-completion/tests/browser/motion-completion.spec.ts",
+                      "column": 5,
+                      "line": 153
+                    },
+                    "snippet": "  151 | }, testInfo) => {\n  152 |   const audit = JSON.parse(\n> 153 |     await readFile('artifacts/motion-completion/image-source-audit.json', 'utf8'),\n      |     ^\n  154 |   ) as { assets: { file: string; after: { width: number; height: number } }[] };\n  155 |   const samples: unknown[] = [];\n  156 |   for (const width of [390, 1440]) {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-motion-completion/tests/browser/motion-completion.spec.ts",
+                        "column": 5,
+                        "line": 153
+                      },
+                      "message": "Error: ENOENT: no such file or directory, open 'artifacts/motion-completion/image-source-audit.json'\n\n  151 | }, testInfo) => {\n  152 |   const audit = JSON.parse(\n> 153 |     await readFile('artifacts/motion-completion/image-source-audit.json', 'utf8'),\n      |     ^\n  154 |   ) as { assets: { file: string; after: { width: number; height: number } }[] };\n  155 |   const samples: unknown[] = [];\n  156 |   for (const width of [390, 1440]) {\n    at /workspace/drawnout-motion-completion/tests/browser/motion-completion.spec.ts:153:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:57:57.149Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion/motion-completion-every-ca-870e6-at-mobile-and-desktop-DPR-2/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion/motion-completion-every-ca-870e6-at-mobile-and-desktop-DPR-2/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-motion-completion/tests/browser/motion-completion.spec.ts",
+                    "column": 5,
+                    "line": 153
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-80799e3c5d6aa709ede4",
+          "file": "motion-completion.spec.ts",
+          "line": 148,
+          "column": 1
+        },
+        {
+          "title": "an early native pointer gesture can pause SOL while its visual arrival is still active",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3065,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:57:58.450Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-bbd3763408cf7f4a4960",
+          "file": "motion-completion.spec.ts",
+          "line": 251,
+          "column": 1
+        },
+        {
+          "title": "early pointer gestures keep both case-closing links stable and navigate during the text reveal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3968,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:58:01.972Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-3302499de875bddb2e88",
+          "file": "motion-completion.spec.ts",
+          "line": 281,
+          "column": 1
+        },
+        {
+          "title": "the completion case-study loops decode with their matching responsive posters at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8535,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:58:05.963Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-29f1092c7b1e830ecedd",
+          "file": "motion-completion.spec.ts",
+          "line": 313,
+          "column": 3
+        },
+        {
+          "title": "the completion case-study loops decode with their matching responsive posters at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16603,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:58:14.526Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-3107658a1942e1f5b444",
+          "file": "motion-completion.spec.ts",
+          "line": 313,
+          "column": 3
+        },
+        {
+          "title": "actual completion footage releases on document visibility and resumes when visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4768,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:58:31.171Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-81acf87e041ab3bf5ad6",
+          "file": "motion-completion.spec.ts",
+          "line": 489,
+          "column": 1
+        },
+        {
+          "title": "both actual export orientations decode in an isolated native-video document",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5492,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:58:36.038Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-c6c06b001b98b7e8c9ea",
+          "file": "motion-completion.spec.ts",
+          "line": 521,
+          "column": 1
+        },
+        {
+          "title": "completion case artwork remains readable and contained at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2601,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:58:41.565Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-bf9d7340cce01979479c",
+          "file": "motion-completion.spec.ts",
+          "line": 566,
+          "column": 3
+        },
+        {
+          "title": "completion case artwork remains readable and contained at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2387,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:58:44.204Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-2c4b5b0fbfccef1c4969",
+          "file": "motion-completion.spec.ts",
+          "line": 566,
+          "column": 3
+        },
+        {
+          "title": "completion case artwork remains readable and contained at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2910,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:58:46.610Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-01d75d7315161640a471",
+          "file": "motion-completion.spec.ts",
+          "line": 566,
+          "column": 3
+        },
+        {
+          "title": "completion case artwork remains readable and contained at 1024px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3366,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:58:49.553Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-3217bbc40862d1b803de",
+          "file": "motion-completion.spec.ts",
+          "line": 566,
+          "column": 3
+        },
+        {
+          "title": "completion case artwork remains readable and contained at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4952,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:58:52.970Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-285846226100264ea7eb",
+          "file": "motion-completion.spec.ts",
+          "line": 566,
+          "column": 3
+        },
+        {
+          "title": "completion case artwork remains readable and contained at 1920px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3963,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:58:57.959Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-073add01b7e4adf394ca",
+          "file": "motion-completion.spec.ts",
+          "line": 566,
+          "column": 3
+        },
+        {
+          "title": "completion matching-poster assets and videos remain unfetched under Save Data, reduced motion and no JavaScript",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8307,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:59:01.951Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-c0c482a235bedb096d1c",
+          "file": "motion-completion.spec.ts",
+          "line": 594,
+          "column": 1
+        },
+        {
+          "title": "Brand Identity enquiry is readable, reachable and contained at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2374,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:59:10.288Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-655b260d504b8a4f4bab",
+          "file": "motion-completion.spec.ts",
+          "line": 637,
+          "column": 3
+        },
+        {
+          "title": "Brand Identity enquiry is readable, reachable and contained at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1794,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:59:12.692Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-baa45f9d6b733fb1c611",
+          "file": "motion-completion.spec.ts",
+          "line": 637,
+          "column": 3
+        },
+        {
+          "title": "Brand Identity enquiry is readable, reachable and contained at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2242,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:59:14.518Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-136aa89a2f8debe7dfe5",
+          "file": "motion-completion.spec.ts",
+          "line": 637,
+          "column": 3
+        },
+        {
+          "title": "Brand Identity enquiry is readable, reachable and contained at 1024px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2543,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:59:16.793Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-42066fc30b9d8a70e0fa",
+          "file": "motion-completion.spec.ts",
+          "line": 637,
+          "column": 3
+        },
+        {
+          "title": "Brand Identity enquiry is readable, reachable and contained at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2145,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:59:19.376Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-c0d7a79431bcde0ebbe2",
+          "file": "motion-completion.spec.ts",
+          "line": 637,
+          "column": 3
+        },
+        {
+          "title": "Brand Identity enquiry is readable, reachable and contained at 1920px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2929,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:59:21.544Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-47c572bd1181dd28e455",
+          "file": "motion-completion.spec.ts",
+          "line": 637,
+          "column": 3
+        },
+        {
+          "title": "enquiry has independent motion, a complete hold, smooth repeating return and native visibility pause at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12308,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:59:24.493Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-26f19204b040633ed8f7",
+          "file": "motion-completion.spec.ts",
+          "line": 667,
+          "column": 3
+        },
+        {
+          "title": "enquiry has independent motion, a complete hold, smooth repeating return and native visibility pause at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13631,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:59:36.841Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-a7bd30a05db9c83dd3ab",
+          "file": "motion-completion.spec.ts",
+          "line": 667,
+          "column": 3
+        },
+        {
+          "title": "the enquiry link remains clickable at each real-time animation phase",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7428,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:59:50.491Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-550f59a51e4a9ec38b7b",
+          "file": "motion-completion.spec.ts",
+          "line": 714,
+          "column": 1
+        },
+        {
+          "title": "reduced-motion changes restore the complete static enquiry without hiding the CTA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3190,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T15:59:57.957Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-1906ab6aa4bc638f40a6",
+          "file": "motion-completion.spec.ts",
+          "line": 724,
+          "column": 1
+        },
+        {
+          "title": "the document visibility handler suspends the enquiry clock and preserves explicit pause intent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3202,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T16:00:01.195Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-c878772b9a8b45250aa8",
+          "file": "motion-completion.spec.ts",
+          "line": 739,
+          "column": 1
+        },
+        {
+          "title": "failed animation-module loading leaves the complete illustration and Contact link usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3272,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T16:00:04.426Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-6e2c4660d079a1c7cd23",
+          "file": "motion-completion.spec.ts",
+          "line": 773,
+          "column": 1
+        },
+        {
+          "title": "Save Data preserves complete static enquiry and unloaded portfolio decoders",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8871,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T16:00:07.735Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-cd08bbf2188afc7b6d77",
+          "file": "motion-completion.spec.ts",
+          "line": 793,
+          "column": 1
+        },
+        {
+          "title": "without JavaScript the enquiry resolves visibly, contact navigation works and eleven cases remain accessible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5195,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T16:00:16.672Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-37311da3673577a389a8",
+          "file": "motion-completion.spec.ts",
+          "line": 813,
+          "column": 1
+        },
+        {
+          "title": "only Brand Identity receives the first puzzle and its static composition passes accessibility checks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9294,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T16:00:22.060Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-6f4c879fc4bc74f5e149",
+          "file": "motion-completion.spec.ts",
+          "line": 838,
+          "column": 1
+        },
+        {
+          "title": "Work filtering, browser back and real case navigation retain the approved index",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2973,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T16:00:31.469Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-26a3f1559919922be1d6",
+          "file": "motion-completion.spec.ts",
+          "line": 856,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-18T15:57:36.982Z",
+    "duration": 177916.876,
+    "expected": 30,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
