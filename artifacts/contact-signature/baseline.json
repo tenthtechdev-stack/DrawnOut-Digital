@@ -1,0 +1,63 @@
+{
+  "recordedBeforeImplementation": "2026-11-19T11:11:29.047044+00:00",
+  "parentCommit": "106d63ca5d50f4f84a715c407073f6d7c8fc7424",
+  "parentPR": 21,
+  "parentBranch": "feature/portfolio-motion-completion",
+  "fetchedAndVerified": true,
+  "requiredFileSHA256": {
+    "src/pages/contact.astro": "18162f2dbb26e9f460e0122287e65bbe1f361991508d71cd112196489b80567a",
+    "src/components/contact/EnquiryForm.astro": "e9e7d10ae0b42fd3d6e626d75c28de3cfd92d8520b9b43aacf45fc3a7384d61f",
+    "src/scripts/contact-form.ts": "2f2cb4c905b7e3008ab7e40ccb7ef2ea8c7eddf8766b788241a1300db682e703",
+    "src/lib/contact-form.ts": "10d37d6fd75986c26d78f968120ec5de1b80e8c31ffa1409e8b3c9c500db2ba4",
+    "src/data/contact.ts": "0fcef3281a2ce132126593994b6527652b486ff678813a46beb070b1bc0939f9",
+    "src/layouts/SiteLayout.astro": "e34907171d4f70a9386801ecfc97f38ee89cde1ef2187bf6eaf414155154956c",
+    "docs/CONTACT_HANDOFF.md": "1d1f2ce3e42af9e8946d4650e051ecebcbfd98edc704c87ec7f4ddf1f7e60b04",
+    "docs/CONTACT_VALIDATION.md": "f5ce3e30621cc6fbdbb97b630830360829729162554d199f9ac8c421a7018ed1",
+    "AGENTS.md": "72c6b22000eeb58b04bc120b7540e3d5ffd0eb458e2a325d1456cf2622564754"
+  },
+  "initialBrowserTotals": {
+    "passed": 225,
+    "failed": 19,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "currentRetryUnresolvedChecks": [
+    "changing motion preferences during arrival releases the full composition immediately",
+    "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+    "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+    "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+    "portrait arrival leaves navigation pointer targets immediately usable at 390px",
+    "portrait, approved plaque, atmosphere and copy arrive in order within four seconds at 1440px",
+    "real rendered 1440px loop features all five scenes, wordmark and return in fourteen seconds",
+    "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+    "right-side fluid shader evolves at 0/2/5/8s after the loader at 320px and pauses offscreen",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 320px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 390px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 768px"
+  ],
+  "alsoFailedOnOriginalBaseline": [
+    "changing motion preferences during arrival releases the full composition immediately",
+    "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+    "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+    "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+    "real rendered 1440px loop features all five scenes, wordmark and return in fourteen seconds",
+    "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 320px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 390px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 768px"
+  ],
+  "reproduction": {
+    "environment": "Headless Chromium154, SwiftShader; CPU quota4; one worker; production preview except dev-only gradient snapshot",
+    "configs": [
+      "playwright.motion-preservation.config.ts",
+      "playwright.motion-gradient.config.ts",
+      "playwright.about-premium.config.ts"
+    ],
+    "originalBaselineCommit": "e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b",
+    "commandsAndExactErrors": "../motion-completion/baseline-comparison.json",
+    "conditions": "Initial full244:225pass19fail. One failed-only retry:6pass13fail. Same19 on originalPR20:6pass13fail;10 current failures overlap. Late-start550ms guards selected existing brief/static fallbacks; strict rAF/phase sampling missed windows. Cause is not established solely by source equality."
+  },
+  "formProvider": "No owner endpoint or verified recipient supplied; no live delivery claimed."
+}
