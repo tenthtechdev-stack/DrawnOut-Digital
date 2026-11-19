@@ -95,19 +95,30 @@ function observe(page, description) {
   );
 }
 async function capture(page, filename, details, target) {
-  if (target) await target.scrollIntoViewIfNeeded();
-  const bytes = target
-    ? await target.screenshot({ path: path.join(output, filename), animations: 'allow' })
-    : await page.screenshot({
-        path: path.join(output, filename),
-        fullPage: Boolean(details.fullPage),
-        animations: 'allow',
-      });
+  if (target) {
+    const focus = target.locator(
+      details.state === 'validation' ? '[data-error-summary]' : '.form-feedback',
+    );
+    const documentTop = await focus.evaluate((node) => scrollY + node.getBoundingClientRect().top);
+    await wheelTo(
+      page,
+      documentTop -
+        (details.state === 'validation' ? 130 : Math.min(450, details.viewport.height * 0.58)),
+    );
+  }
+  // A true viewport preserves sticky navigation at its real screen edge. A tall locator
+  // screenshot can composite that header into the middle of the captured form.
+  const bytes = await page.screenshot({
+    path: path.join(output, filename),
+    fullPage: Boolean(details.fullPage),
+    animations: 'allow',
+  });
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
   assert.equal(overflow, false, `${filename}: horizontal overflow`);
   evidence.screenshots.push({
     file: filename,
     ...details,
+    captureScope: details.fullPage ? 'full-page' : 'actual-viewport',
     width: bytes.readUInt32BE(16),
     height: bytes.readUInt32BE(20),
     bytes: bytes.length,
