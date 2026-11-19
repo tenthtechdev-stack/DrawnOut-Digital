@@ -190,14 +190,29 @@ const endpoint = formspreeEndpoint(import.meta.env.PUBLIC_FORMSPREE_ENDPOINT);
         <Arrow />
       </button>
     </fieldset>
-    <div
-      class="form-status"
-      data-form-status
-      role="status"
-      aria-live="polite"
-      aria-atomic="true"
-      tabindex="-1"
-    ></div>
+    <div class="form-feedback">
+      <svg
+        class="form-confirmation"
+        data-form-confirmation
+        aria-hidden="true"
+        focusable="false"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path class="confirmation-check" d="M4 11.5 9 16.5 20 5.5" pathLength="1" />
+        <path class="confirmation-rule" d="M4 22H20" pathLength="1" />
+      </svg>
+      <div
+        class="form-status"
+        data-form-status
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        tabindex="-1"
+      ></div>
+    </div>
     <p class="form-failure-help" data-failure-help hidden>
       Prefer another way? <a href={`mailto:${email}`}>Email {email}</a>.
     </p>
@@ -389,6 +404,54 @@ const endpoint = formspreeEndpoint(import.meta.env.PUBLIC_FORMSPREE_ENDPOINT);
     padding-block: 6px;
     color: var(--accent-strong);
   }
+  .form-feedback {
+    display: flow-root;
+    position: relative;
+  }
+  .form-confirmation {
+    position: absolute;
+    inset: 42px auto auto 18px;
+    width: 24px;
+    height: 24px;
+    color: var(--accent-strong);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .form-confirmation path {
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+  .enquiry[data-form-state='success'] .form-confirmation {
+    opacity: 1;
+    visibility: visible;
+  }
+  .enquiry[data-form-state='success'] .form-status {
+    padding-inline-start: 56px;
+  }
+  .enquiry[data-form-state='success'][data-confirmation-motion='draw'] .confirmation-check {
+    animation: acknowledge-stroke 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .enquiry[data-form-state='success'][data-confirmation-motion='draw'] .confirmation-rule {
+    animation: acknowledge-stroke 340ms 140ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes acknowledge-stroke {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .enquiry[data-form-state='success'][data-confirmation-motion='draw'] .form-confirmation path {
+      animation: none;
+    }
+  }
   .form-status {
     font-size: var(--type-small);
     line-height: 1.8;
@@ -417,6 +480,22 @@ const endpoint = formspreeEndpoint(import.meta.env.PUBLIC_FORMSPREE_ENDPOINT);
   }
   [hidden] {
     display: none;
+  }
+  @media (max-width: 639px) {
+    .enquiry-heading > .eyebrow {
+      margin-bottom: 16px;
+    }
+    .enquiry-heading > p:last-child {
+      margin-top: 12px;
+    }
+    .form-note {
+      margin: 20px 0 14px;
+    }
+    .form-availability {
+      margin-bottom: 22px;
+      padding: 12px 14px;
+      line-height: 1.6;
+    }
   }
   @media (min-width: 640px) {
     .fields {

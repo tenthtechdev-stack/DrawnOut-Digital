@@ -55,6 +55,30 @@ function enhanceEnquiry(form: HTMLFormElement) {
   let request: AbortController | undefined;
   let timeout: ReturnType<typeof setTimeout> | undefined;
   let disposed = false;
+  const confirmationPreference =
+    typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : undefined;
+  const connection = (
+    navigator as Navigator & {
+      connection?: Partial<EventTarget> & { saveData?: boolean };
+    }
+  ).connection;
+  // Decoration only: never use motion state as evidence of provider acceptance.
+  const settleConfirmation = () => {
+    if (document.hidden || confirmationPreference?.matches || connection?.saveData)
+      section.dataset.confirmationMotion = 'static';
+  };
+  const watchConfirmation = () => {
+    if (!form.isConnected) return;
+    confirmationPreference?.addEventListener?.('change', settleConfirmation);
+    connection?.addEventListener?.('change', settleConfirmation);
+    document.addEventListener('visibilitychange', settleConfirmation);
+  };
+  const stopWatchingConfirmation = () => {
+    confirmationPreference?.removeEventListener?.('change', settleConfirmation);
+    connection?.removeEventListener?.('change', settleConfirmation);
+    document.removeEventListener('visibilitychange', settleConfirmation);
+  };
+  watchConfirmation();
   // Native constraint validation remains available when JavaScript does not load.
   form.noValidate = true;
   form.dataset.enhanced = 'true';
@@ -175,6 +199,13 @@ function enhanceEnquiry(form: HTMLFormElement) {
       }
       accepted = true;
       section.dataset.formState = 'success';
+      section.dataset.confirmationMotion =
+        confirmationPreference &&
+        !document.hidden &&
+        !confirmationPreference.matches &&
+        !connection?.saveData
+          ? 'draw'
+          : 'static';
       status.textContent =
         'Enquiry received. Our form service has accepted your message. Thank you — we’ll be in touch using the details you provided.';
       again.hidden = false;
@@ -202,12 +233,15 @@ function enhanceEnquiry(form: HTMLFormElement) {
     failureHelp.hidden = true;
     again.hidden = true;
     section.dataset.formState = 'ready';
+    delete section.dataset.confirmationMotion;
     setPending(false);
     controls.get('name')!.focus();
   });
 
   const cleanup = () => {
     disposed = true;
+    stopWatchingConfirmation();
+    section.dataset.confirmationMotion = 'static';
     request?.abort();
     clearTimeout(timeout);
   };
@@ -216,6 +250,7 @@ function enhanceEnquiry(form: HTMLFormElement) {
   window.addEventListener('pageshow', (event) => {
     if (!event.persisted) return;
     disposed = false;
+    watchConfirmation();
     if (pending) {
       setPending(false);
       fail(
