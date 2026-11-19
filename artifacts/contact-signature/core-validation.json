@@ -1,0 +1,143 @@
+{
+  "startedAt": "2026-11-19T17:35:10.166215+00:00",
+  "sourceCommit": "bf5c65b8746cb370f89856cb6f8fafcae4ea2563",
+  "parentCommit": "106d63ca5d50f4f84a715c407073f6d7c8fc7424",
+  "scope": "Non-browser final checks against current Contact source and already-built production output. No worktree build, browser, renderer or deployment. Publication test builds isolated temporary fixtures without changing the worktree dist.",
+  "historicalAuditScope": "The old PR20/21 audit freezes all existing src files except three portfolio-motion records. The new owner-authorized Contact milestone changes precisely Contact page, form component and form controller. The old audit remains unmodified and its raw failure is retained. New Contact audit freezes all other existing source/assets/config against106d63c. Parent historical audit is selected and rerun unchanged against immutable106d63c. Passing media cases are not decoded twice.",
+  "formatting": "Final repository formatting is intentionally performed by the coordinating agent after all raw report writers stop.",
+  "commands": [
+    {
+      "command": "npm run check",
+      "workingDirectory": "/workspace/drawnout-contact-signature",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "runnerError": null,
+      "durationSeconds": 26.37,
+      "counts": {
+        "errors": 0,
+        "warnings": 0,
+        "hints": 0,
+        "files": 220
+      },
+      "fullOutput": "\n> drawnout-digital@0.1.0 check\n> cross-env ASTRO_TELEMETRY_DISABLED=1 astro check\n\n17:35:14 [content] Syncing content\n17:35:14 [content] Synced content\n17:35:14 [types] Generated 1.38s\n17:35:14 [check] Getting diagnostics for Astro files in /workspace/drawnout-contact-signature...\nResult (220 files): \n- 0 errors\n- 0 warnings\n- 0 hints\n\n",
+      "runtimeLog": "/workspace/contact-signature-review/core-check.log"
+    },
+    {
+      "command": "npm run lint",
+      "workingDirectory": "/workspace/drawnout-contact-signature",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "runnerError": null,
+      "durationSeconds": 15.708,
+      "counts": {},
+      "fullOutput": "\n> drawnout-digital@0.1.0 lint\n> eslint .\n\n",
+      "runtimeLog": "/workspace/contact-signature-review/core-lint.log"
+    },
+    {
+      "command": "npm test",
+      "workingDirectory": "/workspace/drawnout-contact-signature",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "runnerError": null,
+      "durationSeconds": 6.45,
+      "counts": {
+        "tests": 52,
+        "suites": 0,
+        "pass": 52,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "fullOutput": "\n> drawnout-digital@0.1.0 test\n> node --import tsx --test tests/*.test.ts\n\n\u2714 the About redesign preserves the approved exact founder story and supplied impact statement (6.595369ms)\n\u2714 founder names, roles and supplied experience remain distinct from portrait positions (0.316237ms)\n\u2714 approved philosophy, process meaning and new invitation remain truthful and consistent (1.274432ms)\n\u2714 all 46 original PNG files in 15 project folders match the authorized asset commit byte for byte (908.820628ms)\n\u2714 portfolio media keep original-source provenance and valid optimized local derivatives (100.157295ms)\n\u2714 contact configuration only accepts a public HTTPS Formspree form endpoint (8.156326ms)\n\u2714 enquiry validation accepts optional omissions and trimmed required values (1.850776ms)\n\u2714 enquiry validation rejects whitespace-only required fields and invalid email/service (2.146509ms)\n\u2714 every enquiry text field enforces its input limit independently (3.694105ms)\n\u2714 success requires explicit Formspree acceptance, never an empty or error response (0.854852ms)\n\u2714 The First Thought has three ordered scenes and ends within five active seconds (1.443179ms)\n\u2714 unknown and negative scene clocks do not jump to a completed narrative (0.229445ms)\n\u2714 hidden and offscreen pause reasons remain independent until both clear (5.896127ms)\n\u2714 missing approval metadata defaults to private, unpublished content (7.254158ms)\n\u2714 visual permission is independent of commissioning and credit, but release gates fail closed (0.630822ms)\n\u2714 URL slugs reject traversal, separators, unsafe text and ambiguous casing (1.543425ms)\n\u2714 missing, malformed, withdrawn or undocumented visual permission fails closed (1.080629ms)\n\u2714 cover alternatives and result evidence cannot be empty (0.984072ms)\n\u2714 the public selector excludes drafts and applies deterministic featured ordering (14.10857ms)\n\u2714 project records retain the supplied collection, safe local media and publication safeguards (133.163024ms)\n\u2714 ink text on paper meets AA body-text contrast (14.99:1) (2.198324ms)\n\u2714 muted text on paper meets AA body-text contrast (5.93:1) (0.24129ms)\n\u2714 accent-strong text on paper meets AA body-text contrast (5.91:1) (0.094632ms)\n\u2714 cream text on ink meets AA body-text contrast (15.48:1) (0.080246ms)\n\u2714 amber text on footer meets AA body-text contrast (8.59:1) (0.082359ms)\n\u2714 inverse-muted text on footer meets AA body-text contrast (9.80:1) (0.091403ms)\n\u2714 enquiry narrative has a useful final hold within the eight-second brief (2.131601ms)\n\u2714 user pause survives viewport, document visibility and keyboard focus changes (2.429218ms)\n\u2714 favicon is a faithful isolated source emblem with native-size outputs and cache-safe head links (111.425414ms)\n\u2714 reduced motion and data saving independently opt out of motion (0.844483ms)\n\u2714 small screens reduce expansion amplitude without changing the aspect ratio or document geometry (0.839226ms)\n\u2714 unknown viewport measurements choose the restrained mobile profile (3.096214ms)\n\u2714 visible project rhythm preserves SOL and approved ordering with genuine static spacers (6.380784ms)\n\u2714 filters curate the visible subset, counting poster-only cards rather than motion parity (0.472401ms)\n\u2714 curation is deterministic and priority never invents motion for a poster-only project (0.199546ms)\n\u2714 mobile selects one visible motion decoder, desktop two, without mutating candidates (0.257112ms)\n\u2714 equal visibility selection is deterministic and paused/offscreen loops do not consume capacity (11.227127ms)\n\u2714 motion records require provenance and confined local MP4 filenames (21.110516ms)\n\u2714 equally visible cards prefer the viewport center instead of starving a later project (0.205138ms)\n\u2714 new editorial fields default safely without verifying narratives or publication (14.018537ms)\n\u2714 editorial metadata rejects unsupported categories, duplicate tags and invalid ordering (3.560806ms)\n\u2714 Work order is deterministic, falls back to featured order and does not mutate input (16.230765ms)\n\u2714 filters are derived only from actual tags, with exact overlapping counts (1.440548ms)\n\u2714 public filtering and neighboring case links never regain excluded draft records (0.436685ms)\n\u2714 the five service windows each have 2.1 seconds in the 14-second loop (5.626107ms)\n\u2714 manual previews always land in their own completed-artwork interval (0.725029ms)\n\u2714 independent pause reasons retain user intent when focus and visibility change (4.410156ms)\n\u2714 invalid and repeated-cycle times remain bounded and deterministic (0.408908ms)\n\u2714 separated assets retain the documented approved source and output provenance (57.387038ms)\n\u2714 the empty hand omits the plaque face and the descending plaque omits the fingers (134.656496ms)\n\u2714 registered layers reconstruct the supplied pose without repainting or duplicate overlap (162.296137ms)\n\u2714 the documented separation command reproduces both committed assets and manifest (2428.52204ms)\n\u2139 tests 52\n\u2139 suites 0\n\u2139 pass 52\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 5984.943928\n",
+      "runtimeLog": "/workspace/contact-signature-review/core-unit.log"
+    },
+    {
+      "command": "npm run test:build",
+      "workingDirectory": "/workspace/drawnout-contact-signature",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "runnerError": null,
+      "durationSeconds": 1.227,
+      "counts": {
+        "tests": 6,
+        "suites": 0,
+        "pass": 6,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "fullOutput": "\n> drawnout-digital@0.1.0 test:build\n> node --test tests/build-output.test.mjs\n\n\u2714 production emits foundation routes and approved cases without private preview or draft routes (85.477867ms)\n\u2714 production asset output excludes every draft project image (34.036328ms)\n\u2714 production text and generated assets do not expose original portfolio files or draft metadata (117.713701ms)\n\u2714 approved artwork has real public cards and cases without invented facts or review labels (32.768103ms)\n\u2714 service previews have distinct metadata, complete copy, FAQs and truthful structured data (11.427134ms)\n\u2714 only approved motion exports ship, and cards defer video sources until visible (115.109304ms)\n\u2139 tests 6\n\u2139 suites 0\n\u2139 pass 6\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 812.786128\n",
+      "runtimeLog": "/workspace/contact-signature-review/core-build-output.log"
+    },
+    {
+      "command": "npm run test:publication",
+      "workingDirectory": "/workspace/drawnout-contact-signature",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "runnerError": null,
+      "durationSeconds": 20.448,
+      "counts": {
+        "tests": 1,
+        "suites": 0,
+        "pass": 1,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "fullOutput": "\n> drawnout-digital@0.1.0 test:publication\n> node --test tests/publication-workflow.test.mjs\n\n\u2714 visual approval publishes a record without verifying facts or credits; withdrawal removes its route and unique media (19504.126537ms)\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 1\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 20091.443982\n",
+      "runtimeLog": "/workspace/contact-signature-review/core-publication.log"
+    },
+    {
+      "command": "node --test tests/portfolio-motion-exports.test.mjs tests/motion-quality-exports.test.mjs tests/motion-completion-preservation.test.mjs tests/contact-signature-preservation.test.mjs",
+      "workingDirectory": "/workspace/drawnout-contact-signature",
+      "status": "historical-scope-mismatch",
+      "exitCode": 1,
+      "signal": null,
+      "runnerError": null,
+      "durationSeconds": 43.839,
+      "counts": {
+        "tests": 24,
+        "suites": 0,
+        "pass": 23,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "fullOutput": "\u2714 all existing portfolio, shared website, contact data and configuration bytes remain unchanged (5229.329347ms)\n\u2139 426 tracked source, asset and configuration files match immutable 106d63ca5d50f4f84a715c407073f6d7c8fc7424.\n\u2714 new application source stays inside the dedicated Contact motion boundary (16.806614ms)\n\u2714 production server markup is settled and the owner-unconfigured form cannot pretend to submit (8.261156ms)\n\u2714 Bunzo, SOL and Churros compositions, exports, posters, layers and records remain byte-identical to PR #20 (585.448402ms)\n\u2139 125 frozen source/media files and three manifest entries match e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b\n\u2716 approved website, enquiry, favicon and image sources stay unchanged outside the three authorized motion records (380.40964ms)\n\u2714 new canonical motion poster references resolve to the matching quality exports (21.593469ms)\n\u2714 bunzo: transparent layers retain original visible pixels and recorded source provenance (800.564441ms)\n\u2139 12 isolated layers; 707133 opaque source pixels checked\n\u2714 bunzo: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (5685.057875ms)\n\u2139 landscape: decoded seam0.1131, progression20.42, poster error1.864 /255\n\u2139 portrait: decoded seam0.1489, progression22.31, poster error2.366 /255\n\u2714 sol-community-center: transparent layers retain original visible pixels and recorded source provenance (480.412968ms)\n\u2139 6 isolated layers; 704375 opaque source pixels checked\n\u2714 sol-community-center: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (6992.788112ms)\n\u2139 landscape: decoded seam0.0387, progression36.83, poster error1.485 /255\n\u2139 portrait: decoded seam0.0530, progression40.89, poster error1.622 /255\n\u2714 churros: transparent layers retain original visible pixels and recorded source provenance (1021.127711ms)\n\u2139 11 isolated layers; 772382 opaque source pixels checked\n\u2714 churros: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (7246.671576ms)\n\u2139 landscape: decoded seam0.1154, progression20.65, poster error1.866 /255\n\u2139 portrait: decoded seam0.1717, progression28.32, poster error2.654 /255\n\u2714 triarch: transparent layers retain original visible pixels and recorded source provenance (539.176827ms)\n\u2139 9 isolated layers; 692331 opaque source pixels checked\n\u2714 triarch: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (7513.691886ms)\n\u2139 landscape: decoded seam0.0319, progression9.44, poster error1.308 /255; frame52 tile23.71, changed5.83%; frame114 tile32.20, changed16.15%\n\u2139 portrait: decoded seam0.0353, progression10.32, poster error1.657 /255; frame52 tile26.45, changed7.52%; frame114 tile32.81, changed17.40%\n\u2714 by-tech-group: transparent layers retain original visible pixels and recorded source provenance (410.969683ms)\n\u2139 12 isolated layers; 415849 opaque source pixels checked\n\u2714 by-tech-group: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (7363.696445ms)\n\u2139 landscape: decoded seam0.0622, progression21.59, poster error1.602 /255; frame52 tile7.04, changed1.84%; frame114 tile88.23, changed24.22%\n\u2139 portrait: decoded seam0.0839, progression26.27, poster error1.639 /255; frame52 tile10.05, changed2.80%; frame114 tile113.49, changed27.58%\n\u2714 u-wanna-smoothie: transparent layers retain original visible pixels and recorded source provenance (490.44761ms)\n\u2139 14 isolated layers; 680552 opaque source pixels checked\n\u2714 u-wanna-smoothie: actual landscape/portrait MP4s decode, loop, move and match their sharp posters (4998.915429ms)\n\u2139 landscape: decoded seam0.0400, progression19.42, poster error1.698 /255; frame52 tile25.34, changed8.40%; frame114 tile98.07, changed19.90%\n\u2139 portrait: decoded seam0.0572, progression18.65, poster error1.793 /255; frame52 tile36.31, changed10.95%; frame114 tile91.97, changed19.74%\n\u2714 sol-community-center: silent, responsive, seamless encoded exports and actual visual progression (3678.824069ms)\n\u2139 landscape: decoded seam mean absolute difference 0.0386 / 255; identity-to-application difference 36.61 / 255\n\u2139 portrait: decoded seam mean absolute difference 0.0485 / 255; identity-to-application difference 40.48 / 255\n\u2714 bunzo: silent, responsive, seamless encoded exports and actual visual progression (3543.178397ms)\n\u2139 landscape: decoded seam mean absolute difference 0.0905 / 255; identity-to-application difference 20.78 / 255\n\u2139 portrait: decoded seam mean absolute difference 0.1150 / 255; identity-to-application difference 22.45 / 255\n\u2714 triarch: silent, responsive, seamless encoded exports and actual visual progression (6674.969592ms)\n\u2139 landscape: decoded seam mean absolute difference 0.0284 / 255; identity-to-application difference 9.36 / 255; frame52 tile23.58, changed5.45%; frame114 tile32.07, changed17.19%\n\u2139 portrait: decoded seam mean absolute difference 0.0299 / 255; identity-to-application difference 10.21 / 255; frame52 tile25.64, changed7.02%; frame114 tile32.67, changed17.45%\n\u2714 churros: silent, responsive, seamless encoded exports and actual visual progression (6977.17204ms)\n\u2139 landscape: decoded seam mean absolute difference 0.0932 / 255; identity-to-application difference 20.38 / 255\n\u2139 portrait: decoded seam mean absolute difference 0.1418 / 255; identity-to-application difference 27.91 / 255\n\u2714 by-tech-group: silent, responsive, seamless encoded exports and actual visual progression (6349.659791ms)\n\u2139 landscape: decoded seam mean absolute difference 0.0519 / 255; identity-to-application difference 21.80 / 255; frame52 tile7.42, changed1.90%; frame114 tile88.39, changed24.58%\n\u2139 portrait: decoded seam mean absolute difference 0.0686 / 255; identity-to-application difference 26.38 / 255; frame52 tile10.47, changed2.67%; frame114 tile113.74, changed27.58%\n\u2714 u-wanna-smoothie: silent, responsive, seamless encoded exports and actual visual progression (6156.208719ms)\n\u2139 landscape: decoded seam mean absolute difference 0.0318 / 255; identity-to-application difference 19.49 / 255; frame52 tile25.21, changed8.71%; frame114 tile98.09, changed19.84%\n\u2139 portrait: decoded seam mean absolute difference 0.0459 / 255; identity-to-application difference 18.71 / 255; frame52 tile36.56, changed11.18%; frame114 tile91.93, changed19.76%\n\u2139 tests 24\n\u2139 suites 0\n\u2139 pass 23\n\u2139 fail 1\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 43776.996582\n\n\u2716 failing tests:\n\ntest at tests/motion-completion-preservation.test.mjs:100:1\n\u2716 approved website, enquiry, favicon and image sources stay unchanged outside the three authorized motion records (380.40964ms)\n  AssertionError [ERR_ASSERTION]: src/components/contact/EnquiryForm.astro: preserve the approved bytes\n  + actual - expected\n  \n  + '1d90148b56ef1cf06247a703a72ee03546996c23'\n  - '41a9f960c98b3024fd1688f6f0ca3e634be5142e'\n  \n      at unchanged (file:///workspace/drawnout-contact-signature/tests/motion-completion-preservation.test.mjs:50:12)\n      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n      at async TestContext.<anonymous> (file:///workspace/drawnout-contact-signature/tests/motion-completion-preservation.test.mjs:114:3)\n      at async Test.run (node:internal/test_runner/test:1389:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: '1d90148b56ef1cf06247a703a72ee03546996c23',\n    expected: '41a9f960c98b3024fd1688f6f0ca3e634be5142e',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n",
+      "runtimeLog": "/workspace/contact-signature-review/core-media-preservation.log",
+      "scopeExplanation": "Raw combined command failed only its old whole-site freeze because three Contact files are newly authorized to change. All23 other cases passed, including3 new Contact preservation checks. Historical assertion is unchanged, not concealed or weakened; selected parent comparison follows."
+    },
+    {
+      "command": "node --test --test-name-pattern=approved website, enquiry, favicon tests/motion-completion-preservation.test.mjs",
+      "workingDirectory": "/workspace/drawnout-motion-completion",
+      "status": "passed",
+      "exitCode": 0,
+      "signal": null,
+      "runnerError": null,
+      "durationSeconds": 0.886,
+      "counts": {
+        "tests": 1,
+        "suites": 0,
+        "pass": 1,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "fullOutput": "\u2714 approved website, enquiry, favicon and image sources stay unchanged outside the three authorized motion records (732.560218ms)\n\u2139 230 original website/assets files match; only three records' motion fields may change\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 1\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 828.293564\n",
+      "runtimeLog": "/workspace/contact-signature-review/core-parent-historical-audit.log"
+    }
+  ],
+  "allCommandsPassed": false,
+  "allApplicableChecksPassed": true,
+  "completedAt": "2026-11-19T17:37:05.264693+00:00"
+}

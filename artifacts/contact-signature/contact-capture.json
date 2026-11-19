@@ -1,0 +1,3141 @@
+{
+  "capturedAt": "2026-11-19T17:32:40.671Z",
+  "sourceCommit": "bf5c65b8746cb370f89856cb6f8fafcae4ea2563",
+  "sourceFiles": {
+    "scripts/capture-contact-signature.mjs": "28628b12555017ca0c849088341ee8f62eeedad69acdfb59dbc119415837a2bf",
+    "src/pages/contact.astro": "a0f71304f0d6ffac6b53865de4319575d476bf81c72b3120d07a239d08e64597",
+    "src/data/contact.ts": "0fcef3281a2ce132126593994b6527652b486ff678813a46beb070b1bc0939f9",
+    "src/layouts/SiteLayout.astro": "e34907171d4f70a9386801ecfc97f38ee89cde1ef2187bf6eaf414155154956c",
+    "src/styles/global.css": "0b15bce06418ec147b19306ea49de924a27172105cfb6344a2cf7db8fef34367",
+    "src/components/contact/EnquiryForm.astro": "0a3818763f51c7625ba25f803352a69b9f6cc57890159f33d16aa992e804094c",
+    "src/components/contact/FirstThought.astro": "8e6b83e392ba67b9392450425409bf9c917ad1f297855c70aad6b2d628288df5",
+    "src/lib/contact-form.ts": "10d37d6fd75986c26d78f968120ec5de1b80e8c31ffa1409e8b3c9c500db2ba4",
+    "src/lib/contact-thought-policy.ts": "1826a3704371ba76a2f882ab5d4b96c99fbb81d17056ff4ed37b9844ab2dedde",
+    "src/scripts/contact-first-thought.ts": "3bbf0bc4923357bc461387b220e7031e9712d7ac9e97d70019a5ae1f780f4a89",
+    "src/scripts/contact-form.ts": "4789601c345da7500c94bcdd208f34aaf963a644649c60555a6d381385d31b0a"
+  },
+  "baseURL": "http://127.0.0.1:4471",
+  "baselineCommit": "106d63ca5d50f4f84a715c407073f6d7c8fc7424",
+  "method": "Actual production Chromium recordings and unretouched screenshots. Main recordings use native wheel input and normal unconfigured form controls; scene screenshots observe real lifecycle phases without seeks. Static full-page evidence uses the real reduced-motion/no-JavaScript fallbacks and GPU-disabled Chromium to avoid tall software-renderer screenshot artifacts. Provider-state images are separate, clearly labelled intercepted fixtures; no real submission, provider account or inbox delivery is tested.",
+  "browsers": {
+    "animation": "154.0.8037.57",
+    "staticEvidence": "154.0.8037.57"
+  },
+  "screenshots": [
+    {
+      "file": "contact-1440-opening.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "kind": "actual-animation-phase",
+      "phase": "thought",
+      "lifecycleState": "playing",
+      "sampledAnimationTime": 0.786,
+      "hitTests": [
+        {
+          "x": 989.14375,
+          "y": 387.7265625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 1135.5390625,
+          "y": 387.7265625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 1281.934375,
+          "y": 387.7265625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        }
+      ],
+      "globalArrivalOverlayCount": 0,
+      "captureScope": "actual-viewport",
+      "width": 1440,
+      "height": 900,
+      "bytes": 85754,
+      "sha256": "0cc9d00b17573ccce58d449c15a604c4e6f9e47d36d854b3e12b611954ef8dae",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-1440-intermediate.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "kind": "actual-animation-phase",
+      "phase": "connection",
+      "lifecycleState": "playing",
+      "sampledAnimationTime": 1.89,
+      "hitTests": [
+        {
+          "x": 989.14375,
+          "y": 387.7265625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 1135.5390625,
+          "y": 387.7265625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 1281.934375,
+          "y": 387.7265625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        }
+      ],
+      "globalArrivalOverlayCount": 0,
+      "captureScope": "actual-viewport",
+      "width": 1440,
+      "height": 900,
+      "bytes": 86427,
+      "sha256": "09d7886650cb8be991524bac8cf30c07f1e65690cce682226f4abdb4924c64d1",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-1440-settled.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "kind": "actual-animation-phase",
+      "phase": "conversation",
+      "lifecycleState": "settled",
+      "sampledAnimationTime": 4.8,
+      "hitTests": [
+        {
+          "x": 989.14375,
+          "y": 387.7265625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 1135.5390625,
+          "y": 387.7265625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 1281.934375,
+          "y": 387.7265625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        }
+      ],
+      "globalArrivalOverlayCount": 0,
+      "captureScope": "actual-viewport",
+      "width": 1440,
+      "height": 900,
+      "bytes": 92617,
+      "sha256": "e9add601196c56e0192c0e16fd2060727a5af7ccebdb2c51d8e23aa8abaf949e",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-390-opening.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "kind": "actual-animation-phase",
+      "phase": "thought",
+      "lifecycleState": "playing",
+      "sampledAnimationTime": 0.067,
+      "hitTests": [
+        {
+          "x": 250.6375,
+          "y": 321.15625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 294.6484375,
+          "y": 321.15625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 338.659375,
+          "y": 321.15625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        }
+      ],
+      "globalArrivalOverlayCount": 0,
+      "captureScope": "actual-viewport",
+      "width": 390,
+      "height": 844,
+      "bytes": 48102,
+      "sha256": "61d7cb3ca1c6bc6ec9a593d8dde7edd095f607d2ed65dd2195dfc6b0fd37acd8",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-390-intermediate.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "kind": "actual-animation-phase",
+      "phase": "connection",
+      "lifecycleState": "playing",
+      "sampledAnimationTime": 1.673,
+      "hitTests": [
+        {
+          "x": 250.6375,
+          "y": 321.15625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 294.6484375,
+          "y": 321.15625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 338.659375,
+          "y": 321.15625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        }
+      ],
+      "globalArrivalOverlayCount": 0,
+      "captureScope": "actual-viewport",
+      "width": 390,
+      "height": 844,
+      "bytes": 48335,
+      "sha256": "dae7db73a8e5b937245125749f25712e07d38ca9c9404e751eafbd29d1172dac",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-390-settled.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "kind": "actual-animation-phase",
+      "phase": "conversation",
+      "lifecycleState": "settled",
+      "sampledAnimationTime": 4.8,
+      "hitTests": [
+        {
+          "x": 250.6375,
+          "y": 321.15625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 294.6484375,
+          "y": 321.15625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        },
+        {
+          "x": 338.659375,
+          "y": 321.15625,
+          "inViewport": true,
+          "unobstructed": true,
+          "hitTag": "FIGURE",
+          "hitClass": "first-thought"
+        }
+      ],
+      "globalArrivalOverlayCount": 0,
+      "captureScope": "actual-viewport",
+      "width": 390,
+      "height": 844,
+      "bytes": 49175,
+      "sha256": "132ebb80124afc132d94e3494b2027c5fccbaf6a5161ca79f5030717254b63dc",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-320.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": true,
+      "kind": "actual-static-layout",
+      "captureScope": "full-page",
+      "width": 320,
+      "height": 3550,
+      "bytes": 321120,
+      "sha256": "4a261490a97e498883dffb9676063e2aba85d2283a1f47d9a9af88613062b677",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-320-intro.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": false,
+      "kind": "actual-static-layout",
+      "captureScope": "actual-viewport",
+      "width": 320,
+      "height": 844,
+      "bytes": 50016,
+      "sha256": "9e00c0bc7add45fd526f1570b22ff930d27f3317c752987342a33c0928cb7e89",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": true,
+      "kind": "actual-static-layout",
+      "captureScope": "full-page",
+      "width": 390,
+      "height": 3425,
+      "bytes": 317239,
+      "sha256": "ec35a666dc78e594d919760be027f80dc8babbdd32fa468998dde500a7e35cad",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-390-intro.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": false,
+      "kind": "actual-static-layout",
+      "captureScope": "actual-viewport",
+      "width": 390,
+      "height": 844,
+      "bytes": 51196,
+      "sha256": "db9f2e8e99ddd6f1817adc7c11cc26be2594025e10cca7def84c2d499c7f295f",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-768.png",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": true,
+      "kind": "actual-static-layout",
+      "captureScope": "full-page",
+      "width": 768,
+      "height": 3113,
+      "bytes": 527553,
+      "sha256": "103f646590913356b1e88fc4fbe0e45e2ebff2c00bc094a8c7b3a0969a34fd62",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-768-intro.png",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": false,
+      "kind": "actual-static-layout",
+      "captureScope": "actual-viewport",
+      "width": 768,
+      "height": 900,
+      "bytes": 61926,
+      "sha256": "72fcebe7c8f934704c65c5c316fb2bd22706da6911e2bef8c383757a4b807e61",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-1024.png",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": true,
+      "kind": "actual-static-layout",
+      "captureScope": "full-page",
+      "width": 1024,
+      "height": 2514,
+      "bytes": 697548,
+      "sha256": "53be30d8dc0f306cfd25ae2fb8ac1c851779a6a558a9050e766b6f51f69b0a4e",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-1024-intro.png",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": false,
+      "kind": "actual-static-layout",
+      "captureScope": "actual-viewport",
+      "width": 1024,
+      "height": 900,
+      "bytes": 82950,
+      "sha256": "cdd01024eddb774a4018950ce5ecd4513d37d71dbcefa8ccc7d8170253ea09b6",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-1440.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": true,
+      "kind": "actual-static-layout",
+      "captureScope": "full-page",
+      "width": 1440,
+      "height": 2855,
+      "bytes": 1002688,
+      "sha256": "98af12399bc5f3e08834ecfd39baa317cee4eb7c37ca3661331bfa67899df1cf",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-1440-intro.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": false,
+      "kind": "actual-static-layout",
+      "captureScope": "actual-viewport",
+      "width": 1440,
+      "height": 900,
+      "bytes": 94425,
+      "sha256": "87cc9227cec57aa28c0c392d932de61d92be5a04b3eb11306e788b7ad8a84179",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 900
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": true,
+      "kind": "actual-static-layout",
+      "captureScope": "full-page",
+      "width": 1920,
+      "height": 2933,
+      "bytes": 1160409,
+      "sha256": "ffd8976518b4c1376437c3dd3eb9badc956176e41f959819739682c1312c9d8c",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-after-1920-intro.png",
+      "viewport": {
+        "width": 1920,
+        "height": 900
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": true,
+      "fullPage": false,
+      "kind": "actual-static-layout",
+      "captureScope": "actual-viewport",
+      "width": 1920,
+      "height": 900,
+      "bytes": 100240,
+      "sha256": "0f9109bf8e0306b0ae1b556c55fa3e8ab75a5f543424e3d86ffa7343bd28463a",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-390-no-javascript.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": false,
+      "fullPage": true,
+      "kind": "actual-no-javascript-fallback",
+      "captureScope": "full-page",
+      "width": 390,
+      "height": 3512,
+      "bytes": 322578,
+      "sha256": "a9459204ee9fd911375e6273a70bc341335a3fbaf5ec356b62f365caaa98e474",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-390-form-mocked-validation.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "kind": "intercepted-test-only",
+      "state": "validation",
+      "liveDeliveryVerified": false,
+      "captureScope": "actual-viewport",
+      "width": 390,
+      "height": 844,
+      "bytes": 37063,
+      "sha256": "98216b5768ff7125e5057a25afe119d6f10ae2a804eac5d28643ac60c58bf739",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-390-form-mocked-pending.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "kind": "intercepted-test-only",
+      "state": "submitting",
+      "liveDeliveryVerified": false,
+      "captureScope": "actual-viewport",
+      "width": 390,
+      "height": 844,
+      "bytes": 41365,
+      "sha256": "9b5fe7a69ccf7bd51d645c362226c73379239ee517a3074d5462c22bb5b6f061",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-390-form-mocked-success.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "kind": "intercepted-test-only",
+      "state": "provider-accepted-fixture",
+      "liveDeliveryVerified": false,
+      "captureScope": "actual-viewport",
+      "width": 390,
+      "height": 844,
+      "bytes": 45002,
+      "sha256": "0d373c99442637ed3c86994fa9d9569568fc9e863be7c0e2f01262ff54d320ba",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-390-form-mocked-failure.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "kind": "intercepted-test-only",
+      "state": "provider-rejected-fixture",
+      "liveDeliveryVerified": false,
+      "captureScope": "actual-viewport",
+      "width": 390,
+      "height": 844,
+      "bytes": 46188,
+      "sha256": "3a893447499b7ea5d58509b3fbcae32b5947466aeb1fa3565e4c66c533cd7189",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-1440-no-javascript.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reducedMotion": "reduce",
+      "javaScriptEnabled": false,
+      "fullPage": true,
+      "kind": "actual-no-javascript-fallback",
+      "captureScope": "full-page",
+      "width": 1440,
+      "height": 2940,
+      "bytes": 1006225,
+      "sha256": "0cd85ff2e1bbefa0a6870a1d2370b7d48a8874b1dc47033df01ceba1a1f46d5e",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-1440-form-mocked-validation.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "kind": "intercepted-test-only",
+      "state": "validation",
+      "liveDeliveryVerified": false,
+      "captureScope": "actual-viewport",
+      "width": 1440,
+      "height": 900,
+      "bytes": 80138,
+      "sha256": "a58f884760818bfa5461f52f472cf408d296dae4a5983d54929fa763e9986e37",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-1440-form-mocked-pending.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "kind": "intercepted-test-only",
+      "state": "submitting",
+      "liveDeliveryVerified": false,
+      "captureScope": "actual-viewport",
+      "width": 1440,
+      "height": 900,
+      "bytes": 200887,
+      "sha256": "5a5b81bdb80bcb9ded13f5e8f6b2f8f54c3fa76d479607eea9a0ef0919151f36",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-1440-form-mocked-success.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "kind": "intercepted-test-only",
+      "state": "provider-accepted-fixture",
+      "liveDeliveryVerified": false,
+      "captureScope": "actual-viewport",
+      "width": 1440,
+      "height": 900,
+      "bytes": 157360,
+      "sha256": "34337ee8aacb01839e6cc3aa060be2c022cc5fe98e6a38583a3f5d07156c5add",
+      "horizontalOverflow": false
+    },
+    {
+      "file": "contact-1440-form-mocked-failure.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "kind": "intercepted-test-only",
+      "state": "provider-rejected-fixture",
+      "liveDeliveryVerified": false,
+      "captureScope": "actual-viewport",
+      "width": 1440,
+      "height": 900,
+      "bytes": 171787,
+      "sha256": "296eb92296f4744120c5a325341e2c6d4cd98aa2a4ba4c09fbaff167fc1629ed",
+      "horizontalOverflow": false
+    }
+  ],
+  "recordings": [
+    {
+      "file": "contact-1440-animation.mp4",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "bytes": 228510,
+      "sha256": "3440513622c7a233fe0ffe60636f7a7507bd32efdae5729b53c9822d70ce2186",
+      "durationSeconds": 8.84,
+      "decodedAllFrames": true,
+      "nativeStreams": [
+        {
+          "index": 0,
+          "codec_name": "vp9",
+          "codec_long_name": "Google VP9",
+          "profile": "Profile 0",
+          "codec_type": "video",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "width": 1440,
+          "height": 900,
+          "coded_width": 1440,
+          "coded_height": 900,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 0,
+          "sample_aspect_ratio": "1:1",
+          "display_aspect_ratio": "8:5",
+          "pix_fmt": "yuv420p",
+          "level": -99,
+          "color_range": "pc",
+          "color_space": "bt470bg",
+          "chroma_location": "center",
+          "field_order": "progressive",
+          "refs": 1,
+          "r_frame_rate": "25/1",
+          "avg_frame_rate": "25/1",
+          "time_base": "1/1000",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "eng",
+            "ENCODER": "Lavc61.19.101 libvpx-vp9",
+            "DURATION": "00:00:08.840000000"
+          }
+        }
+      ],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 1440,
+          "height": 900,
+          "coded_width": 1440,
+          "coded_height": 900,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "sample_aspect_ratio": "1:1",
+          "display_aspect_ratio": "8:5",
+          "pix_fmt": "yuvj420p",
+          "level": 40,
+          "color_range": "pc",
+          "color_space": "bt470bg",
+          "chroma_location": "center",
+          "field_order": "progressive",
+          "refs": 1,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "25/1",
+          "avg_frame_rate": "25/1",
+          "time_base": "1/12800",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 113152,
+          "duration": "8.840000",
+          "bit_rate": "203625",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "221",
+          "extradata_size": 52,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "eng",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        }
+      ],
+      "note": "Native browser timing retained; no speed changes, colour grading or animation seeks."
+    },
+    {
+      "file": "contact-390-animation.mp4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "bytes": 140908,
+      "sha256": "725239e1c8884f8097470700d6f428f13fd6b6c52bdd7012580325aa87d62523",
+      "durationSeconds": 8.36,
+      "decodedAllFrames": true,
+      "nativeStreams": [
+        {
+          "index": 0,
+          "codec_name": "vp9",
+          "codec_long_name": "Google VP9",
+          "profile": "Profile 0",
+          "codec_type": "video",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "width": 390,
+          "height": 844,
+          "coded_width": 390,
+          "coded_height": 844,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 0,
+          "sample_aspect_ratio": "1:1",
+          "display_aspect_ratio": "195:422",
+          "pix_fmt": "yuv420p",
+          "level": -99,
+          "color_range": "pc",
+          "color_space": "bt470bg",
+          "chroma_location": "center",
+          "field_order": "progressive",
+          "refs": 1,
+          "r_frame_rate": "25/1",
+          "avg_frame_rate": "25/1",
+          "time_base": "1/1000",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "eng",
+            "ENCODER": "Lavc61.19.101 libvpx-vp9",
+            "DURATION": "00:00:08.360000000"
+          }
+        }
+      ],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 390,
+          "height": 844,
+          "coded_width": 390,
+          "coded_height": 844,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "sample_aspect_ratio": "1:1",
+          "display_aspect_ratio": "195:422",
+          "pix_fmt": "yuvj420p",
+          "level": 30,
+          "color_range": "pc",
+          "color_space": "bt470bg",
+          "chroma_location": "center",
+          "field_order": "progressive",
+          "refs": 1,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "25/1",
+          "avg_frame_rate": "25/1",
+          "time_base": "1/12800",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 107008,
+          "duration": "8.360000",
+          "bit_rate": "131670",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "209",
+          "extradata_size": 52,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "eng",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        }
+      ],
+      "note": "Native browser timing retained; no speed changes, colour grading or animation seeks."
+    }
+  ],
+  "animationSamples": [
+    {
+      "width": 1440,
+      "samples": [
+        {
+          "at": 3515.8000000000466,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "thought",
+          "time": 0.786,
+          "reason": "visible",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        {
+          "at": 4397.599999999977,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 1.89,
+          "reason": "visible",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        {
+          "at": 5213.699999999953,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 2.728,
+          "reason": "visible",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        {
+          "at": 5452.699999999953,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 2.993,
+          "reason": "visible",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        {
+          "at": 5883.400000000023,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 3.203,
+          "reason": "visible",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        {
+          "at": 6170.900000000023,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 3.637,
+          "reason": "visible",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        {
+          "at": 6274,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 3.637,
+          "reason": "visible",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        {
+          "at": 6357.699999999953,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 3.637,
+          "reason": "visible",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        {
+          "at": 6533.400000000023,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 4.01,
+          "reason": "visible",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        {
+          "at": 6720.5,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 4.224,
+          "reason": "visible",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        {
+          "at": 6956,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 4.473,
+          "reason": "visible",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        },
+        {
+          "at": 7288.400000000023,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 989.14375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1135.5390625,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 1281.934375,
+              "y": 387.7265625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "settled",
+          "phase": "conversation",
+          "time": 4.8,
+          "reason": "complete",
+          "box": {
+            "top": 239.59375,
+            "bottom": 567.359375,
+            "width": 487.984375,
+            "height": 327.765625
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          }
+        }
+      ],
+      "elapsedMs": 4323
+    },
+    {
+      "width": 390,
+      "samples": [
+        {
+          "at": 804,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "thought",
+          "time": 0.067,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 1228.0999999999767,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "thought",
+          "time": 0.666,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 1328.5,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "thought",
+          "time": 0.763,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 1441.7999999999302,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "thought",
+          "time": 0.88,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 1524.7999999999302,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "thought",
+          "time": 0.963,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 1614.6999999999534,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "thought",
+          "time": 1.047,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 1695.0999999999767,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "thought",
+          "time": 1.13,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 1782.3999999999069,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 1.214,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 1924.3999999999069,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 1.363,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 2079.5999999999767,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 1.503,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 2229.5999999999767,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 1.673,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 2465.899999999907,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 1.905,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 2557.5999999999767,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 1.997,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 2694.899999999907,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 2.1,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 2827.29999999993,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 2.27,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 3057.5999999999767,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 2.48,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 3187.5999999999767,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 2.614,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 3291.899999999907,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 2.722,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 3428.79999999993,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 2.861,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 3533.5,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 2.975,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 3627.29999999993,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 3.072,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 3729.399999999907,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 3.156,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 3847.399999999907,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 3.276,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 4019.5,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 3.45,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 4142.099999999977,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 3.568,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 4258.899999999907,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "connection",
+          "time": 3.697,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 4380.699999999953,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 3.797,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 4497.5,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 3.932,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 4585.29999999993,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 4.03,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 4681.099999999977,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 4.114,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 4781.29999999993,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 4.223,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 4879.599999999977,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 4.316,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 4987.79999999993,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 4.399,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 5096.79999999993,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 4.519,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 5225.79999999993,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 4.649,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 5347.099999999977,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "playing",
+          "phase": "conversation",
+          "time": 4.792,
+          "reason": "visible",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "at": 5458.199999999953,
+          "globalArrivalOverlayCount": 0,
+          "hitTests": [
+            {
+              "x": 250.6375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 294.6484375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            },
+            {
+              "x": 338.659375,
+              "y": 321.15625,
+              "inViewport": true,
+              "unobstructed": true,
+              "hitTag": "FIGURE",
+              "hitClass": "first-thought"
+            }
+          ],
+          "state": "settled",
+          "phase": "conversation",
+          "time": 4.8,
+          "reason": "complete",
+          "box": {
+            "top": 276.625,
+            "bottom": 417.6875,
+            "width": 146.703125,
+            "height": 141.0625
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        }
+      ],
+      "elapsedMs": 4780
+    }
+  ],
+  "mockedSubmissions": [
+    {
+      "width": 390,
+      "submissions": [
+        {
+          "method": "POST",
+          "url": "https://formspree.io/f/contactsignaturefixture",
+          "intercepted": true
+        },
+        {
+          "method": "POST",
+          "url": "https://formspree.io/f/contactsignaturefixture",
+          "intercepted": true
+        }
+      ],
+      "realProviderOrInboxVerified": false
+    },
+    {
+      "width": 1440,
+      "submissions": [
+        {
+          "method": "POST",
+          "url": "https://formspree.io/f/contactsignaturefixture",
+          "intercepted": true
+        },
+        {
+          "method": "POST",
+          "url": "https://formspree.io/f/contactsignaturefixture",
+          "intercepted": true
+        }
+      ],
+      "realProviderOrInboxVerified": false
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "productionHTMLSHA256": "c56b20406010af52ab78dc712ee9a77767ece98c990b6787d40ec0d80d60fc4c"
+}
