@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-11-19T18:22:32.505182+00:00",
+  "validatedApplicationSourceCommit": "bf5c65b8746cb370f89856cb6f8fafcae4ea2563",
+  "commands": [
+    {
+      "command": "npm run format:check",
+      "exitCode": 0,
+      "stdout": "\n> drawnout-digital@0.1.0 format:check\n> prettier --check .\n\nChecking formatting...\nAll matched files use Prettier code style!\n",
+      "method": "Observed completed process62173 after all browser/report writers stopped. No application source changed."
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "newReportCoverage": "This report is added after the complete repository format check; it is formatted and checked separately before commit. No source or tests changed."
+}

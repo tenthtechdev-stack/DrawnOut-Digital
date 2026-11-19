@@ -1,0 +1,191 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-motion-completion/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.motion-completion.config.ts",
+      "--grep",
+      "(?:an\\ early\\ native\\ pointer\\ gesture\\ can\\ pause\\ SOL\\ while\\ its\\ visual\\ arrival\\ is\\ still\\ active)",
+      "--reporter=list,json",
+      "--output",
+      "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-motion-completion"
+    ],
+    "configFile": "/workspace/drawnout-motion-completion/playwright.motion-completion.config.ts",
+    "rootDir": "/workspace/drawnout-motion-completion/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-motion-completion",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-motion-completion/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["motion-completion.spec.ts"],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-motion-completion",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-motion-completion/tests/browser",
+        "snapshotDir": "/workspace/drawnout-motion-completion/tests/browser",
+        "testIgnore": [],
+        "testMatch": "motion-completion.spec.ts",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4462",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [["list"], ["json"]],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4462",
+      "url": "http://127.0.0.1:4462",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "motion-completion.spec.ts",
+      "file": "motion-completion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "an early native pointer gesture can pause SOL while its visual arrival is still active",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 16881,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-case-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"complete\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-case-hero]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-case-hero]')\u001b[22m\n\u001b[2m    27 × locator resolved to <figure data-case-figure=\"\" data-case-reveal=\"\" data-case-hero=\"true\" data-portfolio-card=\"true\" data-case-reveal-state=\"complete\" data-project-presentation=\"animated\" data-project-slug=\"sol-community-center\" data-case-image-key=\"sol-community-applications\" class=\"cp-figure cp-figure--lead cp-figure--motion\">…</figure>\u001b[22m\n\u001b[2m       - unexpected value \"complete\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-case-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"complete\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-case-hero]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-case-hero]')\u001b[22m\n\u001b[2m    27 × locator resolved to <figure data-case-figure=\"\" data-case-reveal=\"\" data-case-hero=\"true\" data-portfolio-card=\"true\" data-case-reveal-state=\"complete\" data-project-presentation=\"animated\" data-project-slug=\"sol-community-center\" data-case-image-key=\"sol-community-applications\" class=\"cp-figure cp-figure--lead cp-figure--motion\">…</figure>\u001b[22m\n\u001b[2m       - unexpected value \"complete\"\u001b[22m\n\n    at /workspace/drawnout-motion-completion/tests/browser/motion-completion.spec.ts:259:24",
+                    "location": {
+                      "file": "/workspace/drawnout-motion-completion/tests/browser/motion-completion.spec.ts",
+                      "column": 24,
+                      "line": 259
+                    },
+                    "snippet": "  257 |   const control = page.locator('[data-motion-toggle=\"case-motion-sol-community-center\"]');\n  258 |   await control.scrollIntoViewIfNeeded();\n> 259 |   await expect(figure).toHaveAttribute('data-case-reveal-state', 'running');\n      |                        ^\n  260 |   await control.evaluate((node: HTMLElement) => {\n  261 |     node.dataset.testClickCount = '0';\n  262 |     node.addEventListener('click', () => {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-motion-completion/tests/browser/motion-completion.spec.ts",
+                        "column": 24,
+                        "line": 259
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-case-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"complete\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-case-hero]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-case-hero]')\u001b[22m\n\u001b[2m    27 × locator resolved to <figure data-case-figure=\"\" data-case-reveal=\"\" data-case-hero=\"true\" data-portfolio-card=\"true\" data-case-reveal-state=\"complete\" data-project-presentation=\"animated\" data-project-slug=\"sol-community-center\" data-case-image-key=\"sol-community-applications\" class=\"cp-figure cp-figure--lead cp-figure--motion\">…</figure>\u001b[22m\n\u001b[2m       - unexpected value \"complete\"\u001b[22m\n\n\n  257 |   const control = page.locator('[data-motion-toggle=\"case-motion-sol-community-center\"]');\n  258 |   await control.scrollIntoViewIfNeeded();\n> 259 |   await expect(figure).toHaveAttribute('data-case-reveal-state', 'running');\n      |                        ^\n  260 |   await control.evaluate((node: HTMLElement) => {\n  261 |     node.dataset.testClickCount = '0';\n  262 |     node.addEventListener('click', () => {\n    at /workspace/drawnout-motion-completion/tests/browser/motion-completion.spec.ts:259:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:15:52.164Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-motion-completion/motion-completion-an-early-c7fa5-ual-arrival-is-still-active/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-motion-completion/motion-completion-an-early-c7fa5-ual-arrival-is-still-active/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-motion-completion/motion-completion-an-early-c7fa5-ual-arrival-is-still-active/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-motion-completion/tests/browser/motion-completion.spec.ts",
+                    "column": 24,
+                    "line": 259
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "b47a4a7b67362c6c85c4-bbd3763408cf7f4a4960",
+          "file": "motion-completion.spec.ts",
+          "line": 251,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-19T18:15:46.941Z",
+    "duration": 24311.173,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

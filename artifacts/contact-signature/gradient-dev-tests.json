@@ -37,9 +37,7 @@
         "name": "",
         "testDir": "/workspace/drawnout-contact-signature/tests/browser",
         "testIgnore": [],
-        "testMatch": [
-          "signature-gradient.spec.ts"
-        ],
+        "testMatch": ["signature-gradient.spec.ts"],
         "timeout": 120000
       }
     ],
@@ -67,11 +65,7 @@
           },
           "launchOptions": {
             "executablePath": "/usr/bin/chromium",
-            "args": [
-              "--use-gl=angle",
-              "--use-angle=swiftshader",
-              "--enable-unsafe-swiftshader"
-            ]
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
           },
           "screenshot": "only-on-failure",
           "trace": "retain-on-failure"
@@ -82,14 +76,7 @@
       }
     ],
     "quiet": false,
-    "reporter": [
-      [
-        "list"
-      ],
-      [
-        "json"
-      ]
-    ],
+    "reporter": [["list"], ["json"]],
     "reportSlowTests": {
       "max": 5,
       "threshold": 300000

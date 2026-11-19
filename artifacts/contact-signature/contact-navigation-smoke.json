@@ -1,0 +1,485 @@
+{
+  "startedAt": "2026-11-19T18:18:40.013Z",
+  "sourceCommit": "bf5c65b8746cb370f89856cb6f8fafcae4ea2563",
+  "reviewHEAD": "4a31db3c12939e225e25f59feea765142f195ee5",
+  "method": "Current static production build; real footer/internal Home links, Chromium SwiftShader, one desktop/mobile context at a time; no mocked network, state attributes, timeline seeking, or strict storyboard resampling. Missing Contact loader metadata is recorded without alteration.",
+  "builtContactHTMLSHA256": "c56b20406010af52ab78dc712ee9a77767ece98c990b6787d40ec0d80d60fc4c",
+  "widths": [
+    {
+      "width": 390,
+      "pageErrors": [],
+      "failedRequests": [],
+      "journeys": [
+        {
+          "destination": "/contact",
+          "arrival": {
+            "url": "/contact",
+            "heading": "Have somethingin mind?",
+            "intro": {},
+            "overlayPresent": false,
+            "overlayHidden": true,
+            "thought": {
+              "data-thought-state": "ready",
+              "data-thought-phase": "conversation",
+              "data-thought-time": "4.8",
+              "data-thought-reason": "waiting-for-view",
+              "data-thought-enhanced": "true"
+            },
+            "nameField": {
+              "disabled": false,
+              "top": 771.140625,
+              "width": 346
+            },
+            "scrollX": 0,
+            "scrollY": 0
+          },
+          "after250ms": {
+            "url": "/contact",
+            "heading": "Have somethingin mind?",
+            "intro": {},
+            "overlayPresent": false,
+            "overlayHidden": true,
+            "thought": {
+              "data-thought-state": "playing",
+              "data-thought-phase": "thought",
+              "data-thought-time": "0.135",
+              "data-thought-reason": "visible",
+              "data-thought-enhanced": "true",
+              "data-thought-pause-reasons": "",
+              "data-thought-played": "true"
+            },
+            "nameField": {
+              "disabled": false,
+              "top": 771.140625,
+              "width": 346
+            },
+            "scrollX": 0,
+            "scrollY": 0
+          },
+          "returnHome": {
+            "initial": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "playing",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "143.80"
+              },
+              "overlayPresent": true,
+              "overlayHidden": false,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            },
+            "after250ms": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "playing",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "143.80"
+              },
+              "overlayPresent": true,
+              "overlayHidden": false,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            },
+            "settled": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "completed",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "143.80",
+                "data-signature-intro-reason": "complete",
+                "data-signature-intro-ended": "4346.60"
+              },
+              "overlayPresent": true,
+              "overlayHidden": true,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          },
+          "passed": true
+        },
+        {
+          "destination": "/work",
+          "arrival": {
+            "url": "/work",
+            "heading": "The work speaks. We'll let it.",
+            "intro": {
+              "data-signature-intro": "skipped",
+              "data-signature-intro-reason": "internal-navigation"
+            },
+            "overlayPresent": true,
+            "overlayHidden": true,
+            "thought": null,
+            "nameField": null,
+            "scrollX": 0,
+            "scrollY": 0
+          },
+          "after250ms": {
+            "url": "/work",
+            "heading": "The work speaks. We'll let it.",
+            "intro": {
+              "data-signature-intro": "skipped",
+              "data-signature-intro-reason": "internal-navigation"
+            },
+            "overlayPresent": true,
+            "overlayHidden": true,
+            "thought": null,
+            "nameField": null,
+            "scrollX": 0,
+            "scrollY": 0
+          },
+          "returnHome": {
+            "initial": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "playing",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "168.50"
+              },
+              "overlayPresent": true,
+              "overlayHidden": false,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            },
+            "after250ms": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "playing",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "168.50"
+              },
+              "overlayPresent": true,
+              "overlayHidden": false,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            },
+            "settled": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "completed",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "168.50",
+                "data-signature-intro-reason": "complete",
+                "data-signature-intro-ended": "4369.80"
+              },
+              "overlayPresent": true,
+              "overlayHidden": true,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          },
+          "passed": true
+        }
+      ],
+      "coldHome": {
+        "initial": {
+          "url": "/",
+          "heading": "We make ideas impossible to ignore.",
+          "intro": {
+            "data-signature-intro": "playing",
+            "data-signature-intro-fallback": "late-start",
+            "data-signature-intro-mode": "brief",
+            "data-signature-intro-started": "891.30"
+          },
+          "overlayPresent": true,
+          "overlayHidden": false,
+          "thought": null,
+          "nameField": null,
+          "scrollX": 0,
+          "scrollY": 0
+        },
+        "after250ms": {
+          "url": "/",
+          "heading": "We make ideas impossible to ignore.",
+          "intro": {
+            "data-signature-intro": "playing",
+            "data-signature-intro-fallback": "late-start",
+            "data-signature-intro-mode": "brief",
+            "data-signature-intro-started": "891.30"
+          },
+          "overlayPresent": true,
+          "overlayHidden": false,
+          "thought": null,
+          "nameField": null,
+          "scrollX": 0,
+          "scrollY": 0
+        },
+        "settled": {
+          "url": "/",
+          "heading": "We make ideas impossible to ignore.",
+          "intro": {
+            "data-signature-intro": "completed",
+            "data-signature-intro-fallback": "late-start",
+            "data-signature-intro-mode": "brief",
+            "data-signature-intro-started": "891.30",
+            "data-signature-intro-reason": "brief-complete",
+            "data-signature-intro-ended": "2117.40"
+          },
+          "overlayPresent": true,
+          "overlayHidden": true,
+          "thought": null,
+          "nameField": null,
+          "scrollX": 0,
+          "scrollY": 0
+        }
+      },
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "pageErrors": [],
+      "failedRequests": [],
+      "journeys": [
+        {
+          "destination": "/contact",
+          "arrival": {
+            "url": "/contact",
+            "heading": "Have somethingin mind?",
+            "intro": {},
+            "overlayPresent": false,
+            "overlayHidden": true,
+            "thought": {
+              "data-thought-state": "ready",
+              "data-thought-phase": "conversation",
+              "data-thought-time": "4.8",
+              "data-thought-reason": "waiting-for-view",
+              "data-thought-enhanced": "true"
+            },
+            "nameField": {
+              "disabled": false,
+              "top": 1020.53125,
+              "width": 375.921875
+            },
+            "scrollX": 0,
+            "scrollY": 0
+          },
+          "after250ms": {
+            "url": "/contact",
+            "heading": "Have somethingin mind?",
+            "intro": {},
+            "overlayPresent": false,
+            "overlayHidden": true,
+            "thought": {
+              "data-thought-state": "playing",
+              "data-thought-phase": "thought",
+              "data-thought-time": "0.010",
+              "data-thought-reason": "visible",
+              "data-thought-enhanced": "true",
+              "data-thought-pause-reasons": "",
+              "data-thought-played": "true"
+            },
+            "nameField": {
+              "disabled": false,
+              "top": 1020.53125,
+              "width": 375.921875
+            },
+            "scrollX": 0,
+            "scrollY": 0
+          },
+          "returnHome": {
+            "initial": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "playing",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "144.90"
+              },
+              "overlayPresent": true,
+              "overlayHidden": false,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            },
+            "after250ms": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "playing",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "144.90"
+              },
+              "overlayPresent": true,
+              "overlayHidden": false,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            },
+            "settled": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "completed",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "144.90",
+                "data-signature-intro-reason": "complete",
+                "data-signature-intro-ended": "4356.80"
+              },
+              "overlayPresent": true,
+              "overlayHidden": true,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          },
+          "passed": true
+        },
+        {
+          "destination": "/work",
+          "arrival": {
+            "url": "/work",
+            "heading": "The work speaks. We'll let it.",
+            "intro": {
+              "data-signature-intro": "skipped",
+              "data-signature-intro-reason": "internal-navigation"
+            },
+            "overlayPresent": true,
+            "overlayHidden": true,
+            "thought": null,
+            "nameField": null,
+            "scrollX": 0,
+            "scrollY": 0
+          },
+          "after250ms": {
+            "url": "/work",
+            "heading": "The work speaks. We'll let it.",
+            "intro": {
+              "data-signature-intro": "skipped",
+              "data-signature-intro-reason": "internal-navigation"
+            },
+            "overlayPresent": true,
+            "overlayHidden": true,
+            "thought": null,
+            "nameField": null,
+            "scrollX": 0,
+            "scrollY": 0
+          },
+          "returnHome": {
+            "initial": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "playing",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "553.70"
+              },
+              "overlayPresent": true,
+              "overlayHidden": false,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            },
+            "after250ms": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "playing",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "553.70"
+              },
+              "overlayPresent": true,
+              "overlayHidden": false,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            },
+            "settled": {
+              "url": "/",
+              "heading": "We make ideas impossible to ignore.",
+              "intro": {
+                "data-signature-intro": "completed",
+                "data-signature-intro-mode": "full",
+                "data-signature-intro-started": "553.70",
+                "data-signature-intro-reason": "complete",
+                "data-signature-intro-ended": "4806.60"
+              },
+              "overlayPresent": true,
+              "overlayHidden": true,
+              "thought": null,
+              "nameField": null,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          },
+          "passed": true
+        }
+      ],
+      "coldHome": {
+        "initial": {
+          "url": "/",
+          "heading": "We make ideas impossible to ignore.",
+          "intro": {
+            "data-signature-intro": "playing",
+            "data-signature-intro-mode": "full",
+            "data-signature-intro-started": "340.60"
+          },
+          "overlayPresent": true,
+          "overlayHidden": false,
+          "thought": null,
+          "nameField": null,
+          "scrollX": 0,
+          "scrollY": 0
+        },
+        "after250ms": {
+          "url": "/",
+          "heading": "We make ideas impossible to ignore.",
+          "intro": {
+            "data-signature-intro": "playing",
+            "data-signature-intro-mode": "full",
+            "data-signature-intro-started": "340.60"
+          },
+          "overlayPresent": true,
+          "overlayHidden": false,
+          "thought": null,
+          "nameField": null,
+          "scrollX": 0,
+          "scrollY": 0
+        },
+        "settled": {
+          "url": "/",
+          "heading": "We make ideas impossible to ignore.",
+          "intro": {
+            "data-signature-intro": "completed",
+            "data-signature-intro-mode": "full",
+            "data-signature-intro-started": "340.60",
+            "data-signature-intro-reason": "complete",
+            "data-signature-intro-ended": "4547.70"
+          },
+          "overlayPresent": true,
+          "overlayHidden": true,
+          "thought": null,
+          "nameField": null,
+          "scrollX": 0,
+          "scrollY": 0
+        }
+      },
+      "passed": true
+    }
+  ],
+  "completedAt": "2026-11-19T18:19:13.191Z",
+  "noSourceOrTestChanges": true,
+  "passed": true
+}

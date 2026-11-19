@@ -1,0 +1,828 @@
+{
+  "assessedAt": "2026-11-19T18:20:24.310283+00:00",
+  "sourceCommit": "bf5c65b8746cb370f89856cb6f8fafcae4ea2563",
+  "parentCommit": "106d63ca5d50f4f84a715c407073f6d7c8fc7424",
+  "completeBrowserRun": {
+    "stats": {
+      "expected": 233,
+      "unexpected": 11,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "report": "regression-summary.json",
+    "suites": [
+      {
+        "name": "motion-completion",
+        "stats": {
+          "startTime": "2026-11-19T17:37:57.358Z",
+          "duration": 241938.68,
+          "expected": 30,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "expectedChecks": 31,
+        "complete": true
+      },
+      {
+        "name": "case-rollout",
+        "stats": {
+          "startTime": "2026-11-19T17:42:01.679Z",
+          "duration": 358443.942,
+          "expected": 42,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "expectedChecks": 42,
+        "complete": true
+      },
+      {
+        "name": "case-regression",
+        "stats": {
+          "startTime": "2026-11-19T17:48:03.256Z",
+          "duration": 511141.297,
+          "expected": 74,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "expectedChecks": 74,
+        "complete": true
+      },
+      {
+        "name": "preservation",
+        "stats": {
+          "startTime": "2026-11-19T18:03:55.588Z",
+          "duration": 319603.004,
+          "expected": 57,
+          "skipped": 0,
+          "unexpected": 2,
+          "flaky": 0
+        },
+        "expectedChecks": 59,
+        "complete": true
+      },
+      {
+        "name": "gradient-dev",
+        "stats": {
+          "startTime": "2026-11-19T18:09:17.123Z",
+          "duration": 90057.504,
+          "expected": 9,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "expectedChecks": 9,
+        "complete": true
+      },
+      {
+        "name": "about-premium",
+        "stats": {
+          "startTime": "2026-11-19T18:10:48.757Z",
+          "duration": 261481.954,
+          "expected": 21,
+          "skipped": 0,
+          "unexpected": 8,
+          "flaky": 0
+        },
+        "expectedChecks": 29,
+        "complete": true
+      }
+    ]
+  },
+  "focusedContactTests": {
+    "expected": 42,
+    "unexpected": 0,
+    "skipped": 0,
+    "report": "browser-tests.json",
+    "includesUnchangedLegacyFormTests": 17,
+    "newContactSpecificTests": 25
+  },
+  "baseline": {
+    "initial": {
+      "passed": 225,
+      "failed": 19,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "recordedRetryRemainingFailures": 13,
+    "report": "baseline.json",
+    "warning": "Initial parent19 and retry13 describe their exact historical runs. The final11 are not all the same13 and include the intentional metadata difference plus one unresolved early-keyboard differential."
+  },
+  "boundedNewFailureComparison": {
+    "report": "new-failure-comparison.json",
+    "numberNewTitles": 4,
+    "parentChecks": 4,
+    "currentChecks": 4,
+    "method": "One bounded exact-test comparison for checks newly failing outside the recorded parent19, first preserved immutable parent106 build, then unchanged current build. No assertion/source changes, no repeated full suite, no known19 retry. Original full244 results remain authoritative.",
+    "noSourceOrTestChanges": true
+  },
+  "categoryCounts": {
+    "newly-observed-failure-reproduced-on-unchanged-parent": 3,
+    "intentional-contact-loader-metadata-contract-difference": 1,
+    "known-parent-test-with-different-strict-timing-assertion": 1,
+    "recorded-parent-failure-same-assertion": 5,
+    "unresolved-parent-current-differential": 1
+  },
+  "failedChecks": [
+    {
+      "title": "an early native pointer gesture can pause SOL while its visual arrival is still active",
+      "suite": "motion-completion",
+      "fullRunFailure": {
+        "title": "an early native pointer gesture can pause SOL while its visual arrival is still active",
+        "file": "motion-completion.spec.ts",
+        "line": 251,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-case-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"complete\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-case-hero]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-case-hero]')\u001b[22m\n\u001b[2m    27 \u00d7 locator resolved to <figure data-case-figure=\"\" data-case-reveal=\"\" data-case-hero=\"true\" data-portfolio-card=\"true\" data-case-reveal-state=\"complete\" data-project-presentation=\"animated\" data-project-slug=\"sol-community-center\" data-case-image-key=\"sol-community-applications\" class=\"cp-figure cp-figure--lead cp-figure--motion\">\u2026</figure>\u001b[22m\n\u001b[2m       - unexpected value \"complete\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/browser/motion-completion.spec.ts",
+          "column": 24,
+          "line": 259
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-motion-completion/motion-completion-an-early-c7fa5-ual-arrival-is-still-active/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-motion-completion/motion-completion-an-early-c7fa5-ual-arrival-is-still-active/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-motion-completion/motion-completion-an-early-c7fa5-ual-arrival-is-still-active/trace.zip"
+          }
+        ],
+        "suite": "motion-completion",
+        "parentInitialFailure": false,
+        "parentRetryUnresolved": false,
+        "alsoFailedOriginalPR20": false,
+        "parentInitialError": null,
+        "parentInitialErrorLocation": null,
+        "sameAssertionLocation": false,
+        "sameNormalizedError": false,
+        "assessment": "not-recorded-in-parent-failures-investigate"
+      },
+      "fullRunResultRemainsFailed": true,
+      "category": "newly-observed-failure-reproduced-on-unchanged-parent",
+      "assessment": "This title was absent from the recorded parent19. One bounded exact-test comparison reproduces the same assertion location on immutable parent106. The original full-run failure remains recorded. The single current comparison passed; this does not replace the failed full-run result.",
+      "boundedParentFailure": {
+        "title": "an early native pointer gesture can pause SOL while its visual arrival is still active",
+        "file": "motion-completion.spec.ts",
+        "line": 251,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-case-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"complete\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-case-hero]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-case-hero]')\u001b[22m\n\u001b[2m    27 \u00d7 locator resolved to <figure data-case-figure=\"\" data-case-reveal=\"\" data-case-hero=\"true\" data-portfolio-card=\"true\" data-case-reveal-state=\"complete\" data-project-presentation=\"animated\" data-project-slug=\"sol-community-center\" data-case-image-key=\"sol-community-applications\" class=\"cp-figure cp-figure--lead cp-figure--motion\">\u2026</figure>\u001b[22m\n\u001b[2m       - unexpected value \"complete\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-motion-completion/tests/browser/motion-completion.spec.ts",
+          "column": 24,
+          "line": 259
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-motion-completion/motion-completion-an-early-c7fa5-ual-arrival-is-still-active/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-motion-completion/motion-completion-an-early-c7fa5-ual-arrival-is-still-active/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-motion-completion/motion-completion-an-early-c7fa5-ual-arrival-is-still-active/trace.zip"
+          }
+        ]
+      },
+      "boundedCurrentFailure": null,
+      "boundedParentSameAssertionLocation": true
+    },
+    {
+      "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+      "suite": "preservation",
+      "fullRunFailure": {
+        "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+        "file": "production-browser/loader.spec.ts",
+        "line": 120,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"internal-navigation\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    27 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts",
+          "column": 44,
+          "line": 150
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-preservation/production-browser-loader--5171b-resh-Home-journeys-at-390px/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-preservation/production-browser-loader--5171b-resh-Home-journeys-at-390px/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-preservation/production-browser-loader--5171b-resh-Home-journeys-at-390px/trace.zip"
+          }
+        ],
+        "suite": "preservation",
+        "parentInitialFailure": true,
+        "parentRetryUnresolved": true,
+        "alsoFailedOriginalPR20": true,
+        "parentInitialError": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('html')\nExpected: \"full\"\nReceived: \"brief\"\nTimeout:  12000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\n  - waiting for locator('html')\n    3 \u00d7 locator resolved to <html lang=\"en\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"playing\" data-signature-intro-mode=\"brief\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\">\u2026</html>\n      - unexpected value \"brief\"\n    2 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"playing\" data-signature-intro-mode=\"brief\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\">\u2026</html>\n      - unexpected value \"brief\"\n    19 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1834.80\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\n       - unexpected value \"brief\"\n",
+        "parentInitialErrorLocation": {
+          "file": "/workspace/drawnout-motion-completion/tests/production-browser/loader.spec.ts",
+          "column": 38,
+          "line": 6
+        },
+        "sameAssertionLocation": false,
+        "sameNormalizedError": false,
+        "assessment": "parent-test-failed-but-current-assertion-needs-review"
+      },
+      "fullRunResultRemainsFailed": true,
+      "category": "intentional-contact-loader-metadata-contract-difference",
+      "assessment": "The current unchanged legacy test passes cold/refresh storyboard sequences, arrives at /contact, and passes its hidden-overlay check before expecting html[data-signature-intro-reason=\"internal-navigation\"]. Contact intentionally opts out via the existing SiteLayout enableLoader=false prop to keep the form and First Thought unoccluded. This emits no intro metadata. Parent had failed this same test earlier on full-versus-brief startup, so this is explicitly a changed assertion, not the same reproduced baseline failure. The separate real native-link smoke passes Home\u2192Contact\u2192Home and Home\u2192Work\u2192Home at both390/1440 without modifying metadata.",
+      "functionalNavigationVerified": true,
+      "requiredDecision": "Keep Contact loader opt-out; legacy metadata expectation needs an explicit future scope decision. Test remains unchanged and failed in this report."
+    },
+    {
+      "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+      "suite": "preservation",
+      "fullRunFailure": {
+        "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+        "file": "production-browser/loader.spec.ts",
+        "line": 120,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m20\u001b[39m\nReceived:   \u001b[31m20\u001b[39m",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts",
+          "column": 38,
+          "line": 102
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-preservation/production-browser-loader--2d64a-esh-Home-journeys-at-1440px/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-preservation/production-browser-loader--2d64a-esh-Home-journeys-at-1440px/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-preservation/production-browser-loader--2d64a-esh-Home-journeys-at-1440px/trace.zip"
+          }
+        ],
+        "suite": "preservation",
+        "parentInitialFailure": true,
+        "parentRetryUnresolved": true,
+        "alsoFailedOriginalPR20": true,
+        "parentInitialError": "Error: expect(received).toBeGreaterThan(expected)\n\nExpected: > 3000\nReceived:   2543.5",
+        "parentInitialErrorLocation": {
+          "file": "/workspace/drawnout-motion-completion/tests/production-browser/loader.spec.ts",
+          "column": 34,
+          "line": 103
+        },
+        "sameAssertionLocation": false,
+        "sameNormalizedError": false,
+        "assessment": "parent-test-failed-but-current-assertion-needs-review"
+      },
+      "fullRunResultRemainsFailed": true,
+      "category": "known-parent-test-with-different-strict-timing-assertion",
+      "assessment": "Current running-frame count equals20 while the unchanged assertion requires >20 (loader.spec.ts102). Parent initial failure was a different strict sampling duration assertion at103 requiring >3000ms and receiving2543.5ms. Do not claim the assertion was reproduced identically. No homepage/shared loader source changed; separate real native Home journeys pass.",
+      "requiredDecision": "Unresolved strict sampling sensitivity on this managed Chromium/SwiftShader environment; preserved without weakening thresholds."
+    },
+    {
+      "title": "portrait, approved plaque, atmosphere and copy arrive in order within four seconds at 1440px",
+      "suite": "about-premium",
+      "fullRunFailure": {
+        "title": "portrait, approved plaque, atmosphere and copy arrive in order within four seconds at 1440px",
+        "file": "about.spec.ts",
+        "line": 274,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    20 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-entrance=\"static\" data-about-ambient=\"running\" data-about-ended-at=\"984.80\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-released\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+          "column": 38,
+          "line": 280
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-portrait-approved-pl-259db-thin-four-seconds-at-1440px/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-portrait-approved-pl-259db-thin-four-seconds-at-1440px/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-portrait-approved-pl-259db-thin-four-seconds-at-1440px/trace.zip"
+          }
+        ],
+        "suite": "about-premium",
+        "parentInitialFailure": true,
+        "parentRetryUnresolved": true,
+        "alsoFailedOriginalPR20": false,
+        "parentInitialError": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \"running\"\nReceived: \"static\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\n  - waiting for locator('[data-about-hero]')\n    22 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"644.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n       - unexpected value \"static\"\n",
+        "parentInitialErrorLocation": {
+          "file": "/workspace/drawnout-motion-completion/tests/browser/about.spec.ts",
+          "column": 38,
+          "line": 280
+        },
+        "sameAssertionLocation": true,
+        "sameNormalizedError": false,
+        "assessment": "same-parent-failure-assertion"
+      },
+      "fullRunResultRemainsFailed": true,
+      "category": "recorded-parent-failure-same-assertion",
+      "assessment": "This title appears in the original parent failure set and the current failure matches its assertion location or normalized error. Raw parent/current errors and locations remain attached. No retry was run for this known parent-failing title."
+    },
+    {
+      "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 390px",
+      "suite": "about-premium",
+      "fullRunFailure": {
+        "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 390px",
+        "file": "about.spec.ts",
+        "line": 367,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    23 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-entrance=\"static\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-ended-at=\"1115.90\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-released\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+          "column": 38,
+          "line": 372
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-a8326-d-pauses-offscreen-at-390px/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-a8326-d-pauses-offscreen-at-390px/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-a8326-d-pauses-offscreen-at-390px/trace.zip"
+          }
+        ],
+        "suite": "about-premium",
+        "parentInitialFailure": false,
+        "parentRetryUnresolved": false,
+        "alsoFailedOriginalPR20": false,
+        "parentInitialError": null,
+        "parentInitialErrorLocation": null,
+        "sameAssertionLocation": false,
+        "sameNormalizedError": false,
+        "assessment": "not-recorded-in-parent-failures-investigate"
+      },
+      "fullRunResultRemainsFailed": true,
+      "category": "newly-observed-failure-reproduced-on-unchanged-parent",
+      "assessment": "This title was absent from the recorded parent19. One bounded exact-test comparison reproduces the same assertion location on immutable parent106. The original full-run failure remains recorded. The single current comparison passed; this does not replace the failed full-run result.",
+      "boundedParentFailure": {
+        "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 390px",
+        "file": "about.spec.ts",
+        "line": 367,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    23 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-ended-at=\"1005.30\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-motion-completion/tests/browser/about.spec.ts",
+          "column": 38,
+          "line": 372
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-about-premium/about-localized-atmosphere-a8326-d-pauses-offscreen-at-390px/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-about-premium/about-localized-atmosphere-a8326-d-pauses-offscreen-at-390px/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-about-premium/about-localized-atmosphere-a8326-d-pauses-offscreen-at-390px/trace.zip"
+          }
+        ]
+      },
+      "boundedCurrentFailure": null,
+      "boundedParentSameAssertionLocation": true
+    },
+    {
+      "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+      "suite": "about-premium",
+      "fullRunFailure": {
+        "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+        "file": "about.spec.ts",
+        "line": 367,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-deadline\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    19 \u00d7 unexpected value \"static\"\u001b[22m\n\u001b[2m       - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"874.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+          "column": 38,
+          "line": 372
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-04d3e--pauses-offscreen-at-1440px/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-04d3e--pauses-offscreen-at-1440px/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-04d3e--pauses-offscreen-at-1440px/trace.zip"
+          }
+        ],
+        "suite": "about-premium",
+        "parentInitialFailure": true,
+        "parentRetryUnresolved": true,
+        "alsoFailedOriginalPR20": true,
+        "parentInitialError": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \"settled\"\nReceived: \"static\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\n  - waiting for locator('[data-about-hero]')\n    22 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"818.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n       - unexpected value \"static\"\n",
+        "parentInitialErrorLocation": {
+          "file": "/workspace/drawnout-motion-completion/tests/browser/about.spec.ts",
+          "column": 38,
+          "line": 372
+        },
+        "sameAssertionLocation": true,
+        "sameNormalizedError": false,
+        "assessment": "same-parent-failure-assertion"
+      },
+      "fullRunResultRemainsFailed": true,
+      "category": "recorded-parent-failure-same-assertion",
+      "assessment": "This title appears in the original parent failure set and the current failure matches its assertion location or normalized error. Raw parent/current errors and locations remain attached. No retry was run for this known parent-failing title."
+    },
+    {
+      "title": "early keyboard settles the entrance without blocking content",
+      "suite": "about-premium",
+      "fullRunFailure": {
+        "title": "early keyboard settles the entrance without blocking content",
+        "file": "about.spec.ts",
+        "line": 454,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"730.80\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+          "column": 38,
+          "line": 456
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-keyboard-settl-18eee-ce-without-blocking-content/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-keyboard-settl-18eee-ce-without-blocking-content/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-keyboard-settl-18eee-ce-without-blocking-content/trace.zip"
+          }
+        ],
+        "suite": "about-premium",
+        "parentInitialFailure": false,
+        "parentRetryUnresolved": false,
+        "alsoFailedOriginalPR20": false,
+        "parentInitialError": null,
+        "parentInitialErrorLocation": null,
+        "sameAssertionLocation": false,
+        "sameNormalizedError": false,
+        "assessment": "not-recorded-in-parent-failures-investigate"
+      },
+      "fullRunResultRemainsFailed": true,
+      "category": "unresolved-parent-current-differential",
+      "assessment": "Parent106 passed its one bounded exact-test comparison; current failed the same early-arrival precondition (expected running, actual static) before the keyboard input was sent. This must remain an unresolved observed differential. About full HTML and all resolved emitted JS/CSS are byte-identical; source identity is evidence of preserved scope, not permission to call this test passing or definitively pre-existing.",
+      "boundedParentFailure": null,
+      "boundedCurrentFailure": {
+        "title": "early keyboard settles the entrance without blocking content",
+        "file": "about.spec.ts",
+        "line": 454,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"728.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+          "column": 38,
+          "line": 456
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-current-about-premium/about-early-keyboard-settl-18eee-ce-without-blocking-content/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-current-about-premium/about-early-keyboard-settl-18eee-ce-without-blocking-content/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-current-about-premium/about-early-keyboard-settl-18eee-ce-without-blocking-content/trace.zip"
+          }
+        ]
+      },
+      "boundedParentSameAssertionLocation": false
+    },
+    {
+      "title": "early scroll settles the entrance without blocking content",
+      "suite": "about-premium",
+      "fullRunFailure": {
+        "title": "early scroll settles the entrance without blocking content",
+        "file": "about.spec.ts",
+        "line": 454,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"null\"\u001b[22m\n\u001b[2m    19 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"658.90\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+          "column": 38,
+          "line": 456
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-scroll-settles-bdccb-ce-without-blocking-content/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-scroll-settles-bdccb-ce-without-blocking-content/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-scroll-settles-bdccb-ce-without-blocking-content/trace.zip"
+          }
+        ],
+        "suite": "about-premium",
+        "parentInitialFailure": true,
+        "parentRetryUnresolved": false,
+        "alsoFailedOriginalPR20": false,
+        "parentInitialError": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \"running\"\nReceived: \"static\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\n  - waiting for locator('[data-about-hero]')\n    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n    - unexpected value \"null\"\n    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n      - unexpected value \"pending\"\n    18 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-ended-at=\"1514.10\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-asset\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n       - unexpected value \"static\"\n",
+        "parentInitialErrorLocation": {
+          "file": "/workspace/drawnout-motion-completion/tests/browser/about.spec.ts",
+          "column": 38,
+          "line": 456
+        },
+        "sameAssertionLocation": true,
+        "sameNormalizedError": false,
+        "assessment": "same-parent-failure-assertion"
+      },
+      "fullRunResultRemainsFailed": true,
+      "category": "recorded-parent-failure-same-assertion",
+      "assessment": "This title appears in the original parent failure set and the current failure matches its assertion location or normalized error. Raw parent/current errors and locations remain attached. No retry was run for this known parent-failing title."
+    },
+    {
+      "title": "changing motion preferences during arrival releases the full composition immediately",
+      "suite": "about-premium",
+      "fullRunFailure": {
+        "title": "changing motion preferences during arrival releases the full composition immediately",
+        "file": "about.spec.ts",
+        "line": 511,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"null\"\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    18 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"819.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-asset\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+          "column": 36,
+          "line": 515
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-changing-motion-pref-b8f95-ull-composition-immediately/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-changing-motion-pref-b8f95-ull-composition-immediately/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-changing-motion-pref-b8f95-ull-composition-immediately/trace.zip"
+          }
+        ],
+        "suite": "about-premium",
+        "parentInitialFailure": true,
+        "parentRetryUnresolved": true,
+        "alsoFailedOriginalPR20": true,
+        "parentInitialError": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \"running\"\nReceived: \"static\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\n  - waiting for locator('[data-about-hero]')\n    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n      - unexpected value \"pending\"\n    20 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"815.00\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n       - unexpected value \"static\"\n",
+        "parentInitialErrorLocation": {
+          "file": "/workspace/drawnout-motion-completion/tests/browser/about.spec.ts",
+          "column": 36,
+          "line": 515
+        },
+        "sameAssertionLocation": true,
+        "sameNormalizedError": false,
+        "assessment": "same-parent-failure-assertion"
+      },
+      "fullRunResultRemainsFailed": true,
+      "category": "recorded-parent-failure-same-assertion",
+      "assessment": "This title appears in the original parent failure set and the current failure matches its assertion location or normalized error. Raw parent/current errors and locations remain attached. No retry was run for this known parent-failing title."
+    },
+    {
+      "title": "portrait arrival leaves navigation pointer targets immediately usable at 1440px",
+      "suite": "about-premium",
+      "fullRunFailure": {
+        "title": "portrait arrival leaves navigation pointer targets immediately usable at 1440px",
+        "file": "services-hero-about.spec.ts",
+        "line": 125,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    3 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    19 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"790.10\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts",
+          "column": 53,
+          "line": 130
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/trace.zip"
+          }
+        ],
+        "suite": "about-premium",
+        "parentInitialFailure": false,
+        "parentRetryUnresolved": false,
+        "alsoFailedOriginalPR20": false,
+        "parentInitialError": null,
+        "parentInitialErrorLocation": null,
+        "sameAssertionLocation": false,
+        "sameNormalizedError": false,
+        "assessment": "not-recorded-in-parent-failures-investigate"
+      },
+      "fullRunResultRemainsFailed": true,
+      "category": "newly-observed-failure-reproduced-on-unchanged-parent",
+      "assessment": "This title was absent from the recorded parent19. One bounded exact-test comparison reproduces the same assertion location on immutable parent106. The original full-run failure remains recorded. The single current comparison also failed; no additional retries were run.",
+      "boundedParentFailure": {
+        "title": "portrait arrival leaves navigation pointer targets immediately usable at 1440px",
+        "file": "services-hero-about.spec.ts",
+        "line": 125,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    21 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"748.80\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-motion-completion/tests/browser/services-hero-about.spec.ts",
+          "column": 53,
+          "line": 130
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-parent-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/trace.zip"
+          }
+        ]
+      },
+      "boundedCurrentFailure": {
+        "title": "portrait arrival leaves navigation pointer targets immediately usable at 1440px",
+        "file": "services-hero-about.spec.ts",
+        "line": 125,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"648.50\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts",
+          "column": 53,
+          "line": 130
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-current-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-current-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-new-failure-current-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/trace.zip"
+          }
+        ]
+      },
+      "boundedParentSameAssertionLocation": true
+    },
+    {
+      "title": "early resize and rapid internal navigation cannot leave stale arrival transforms",
+      "suite": "about-premium",
+      "fullRunFailure": {
+        "title": "early resize and rapid internal navigation cannot leave stale arrival transforms",
+        "file": "services-hero-about.spec.ts",
+        "line": 201,
+        "status": "failed",
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"774.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+        "errorLocation": {
+          "file": "/workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts",
+          "column": 51,
+          "line": 206
+        },
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-early--a0f49-ve-stale-arrival-transforms/test-failed-1.png"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-early--a0f49-ve-stale-arrival-transforms/error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-early--a0f49-ve-stale-arrival-transforms/trace.zip"
+          }
+        ],
+        "suite": "about-premium",
+        "parentInitialFailure": true,
+        "parentRetryUnresolved": false,
+        "alsoFailedOriginalPR20": false,
+        "parentInitialError": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \"running\"\nReceived: \"static\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\n  - waiting for locator('[data-about-hero]')\n    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n    - unexpected value \"pending\"\n    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-deadline\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n    19 \u00d7 unexpected value \"static\"\n       - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"806.90\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n    - unexpected value \"static\"\n",
+        "parentInitialErrorLocation": {
+          "file": "/workspace/drawnout-motion-completion/tests/browser/services-hero-about.spec.ts",
+          "column": 51,
+          "line": 206
+        },
+        "sameAssertionLocation": true,
+        "sameNormalizedError": false,
+        "assessment": "same-parent-failure-assertion"
+      },
+      "fullRunResultRemainsFailed": true,
+      "category": "recorded-parent-failure-same-assertion",
+      "assessment": "This title appears in the original parent failure set and the current failure matches its assertion location or normalized error. Raw parent/current errors and locations remain attached. No retry was run for this known parent-failing title."
+    }
+  ],
+  "nativeNavigationSmoke": {
+    "report": "contact-navigation-smoke.json",
+    "passed": true,
+    "widths": [390, 1440],
+    "pageErrorCount": 0,
+    "journeys": ["Home \u2192 Contact \u2192 Home", "Home \u2192 Work \u2192 Home"]
+  },
+  "runtimePreservation": {
+    "sol": "sol-runtime-comparison.json",
+    "about": "about-runtime-comparison.json",
+    "allFrozenSourceHashesUnchanged": true,
+    "testsAndConfigsUnchanged": true
+  },
+  "interruption": {
+    "evidence": "interrupted-run.json",
+    "completed147NeverRepeated": true,
+    "incompletePreservationPartialNotCounted": true,
+    "resumedOnlyRemaining97": true
+  },
+  "conclusion": "All42 focused Contact tests pass. Full legacy244 remains233passed/11failed, including one intentionally changed Contact loader metadata contract and one unresolved About early-keyboard differential. Three newly observed failures reproduce on unchanged parent. Do not report a clean full suite or a blanket absence of newly observed regressions. No source/assertion changes or broad reruns were used to improve the result."
+}

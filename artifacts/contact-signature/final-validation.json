@@ -1,0 +1,106 @@
+{
+  "preparedAt": "2026-11-19T18:21:05.477242+00:00",
+  "reviewStatus": "Contact implemented and visually reviewable; full browser suite has unresolved failures. Owner review required.",
+  "implementationBranch": "feature/contact-signature-experience",
+  "draftPR": "https://github.com/tenthtech/drawnout-digital/pull/22",
+  "baseBranch": "feature/portfolio-motion-completion",
+  "parentCommit": "106d63ca5d50f4f84a715c407073f6d7c8fc7424",
+  "validatedSourceCommit": "bf5c65b8746cb370f89856cb6f8fafcae4ea2563",
+  "productionContactHTMLSHA256": "c56b20406010af52ab78dc712ee9a77767ece98c990b6787d40ec0d80d60fc4c",
+  "applicationSourceUnchangedDuringFinalValidation": true,
+  "build": {
+    "exitCode": 0,
+    "pages": 22,
+    "report": "build-validation.json"
+  },
+  "typecheck": {
+    "files": 220,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "lint": "passed",
+  "unit": {
+    "passed": 52,
+    "failed": 0
+  },
+  "buildOutput": {
+    "passed": 6,
+    "failed": 0
+  },
+  "publication": {
+    "passed": 1,
+    "failed": 0
+  },
+  "mediaAndPreservation": {
+    "passed": 23,
+    "failed": 1,
+    "qualification": "Historical whole-site audit excludes the new owner-authorized Contact edits. Original assertion retained; parent-selected audit passes1/1. New Contact audit passes3/3 and freezes426 protected files.",
+    "report": "core-validation.json"
+  },
+  "focusedContactBrowser": {
+    "passed": 42,
+    "failed": 0,
+    "newContactCases": 25,
+    "unchangedContactCases": 17,
+    "report": "browser-tests.json"
+  },
+  "widerBrowser": {
+    "passed": 233,
+    "failed": 11,
+    "skipped": 0,
+    "flaky": 0,
+    "report": "regression-summary.json",
+    "assessment": "browser-regression-assessment.json",
+    "allPassed": false
+  },
+  "boundedNewFailureComparison": {
+    "runs": 8,
+    "parentPassed": 1,
+    "parentFailed": 3,
+    "currentPassed": 2,
+    "currentFailed": 2,
+    "report": "new-failure-comparison.json",
+    "replacesFullRun": false
+  },
+  "unresolvedDifferential": "About early keyboard startup precondition at about.spec.ts:456 passes bounded parent, fails current full and bounded. About HTML and all referenced JS/CSS bytes identical; differential unresolved, not marked baseline or green.",
+  "nativeJourneys": {
+    "passed": true,
+    "count": 4,
+    "widths": [390, 1440],
+    "report": "contact-navigation-smoke.json"
+  },
+  "visualEvidence": {
+    "pngs": 44,
+    "mp4s": 2,
+    "desktopRecording": "contact-1440-animation.mp4",
+    "mobileRecording": "contact-390-animation.mp4",
+    "normalMotionActiveSeconds": 4.8,
+    "realBrowser": true,
+    "mobilePhysicalDevice": false,
+    "report": "contact-capture.json"
+  },
+  "formattingReport": "format-validation.json",
+  "provider": {
+    "configured": false,
+    "liveAcceptanceTested": false,
+    "inboxDeliveryVerified": false,
+    "replyToVerified": false,
+    "recipient": "official@drawnoutdigital.com",
+    "mockedInterfaceEvidenceOnly": true
+  },
+  "missingOwnerActions": [
+    "Visual approval",
+    "Real Formspree public endpoint",
+    "Recipient/account verification",
+    "Spam/domain/server-validation/plan configuration",
+    "Complete approved privacy policy/link",
+    "Real provider acceptance, inbox/spam and Reply-To checks",
+    "Deployment/live activation approval"
+  ],
+  "existing3DFooter": "Unchanged prototype; production-quality3D separate",
+  "merged": false,
+  "deployed": false,
+  "netlifyMirrorPushed": false,
+  "allChecksGreen": false
+}

@@ -4,7 +4,7 @@ This milestone preserves the existing Contact form and refines its presentation 
 
 ## Creative composition
 
-The approved headline and supporting copy remain verbatim. Desktop places the large headline on the left and the line study on the right; the gesture resolves above the enquiry column. The form and direct-contact columns retain their existing architecture. On mobile, the compact artwork sits beside the introductory copy, rather than adding a large panel before the form. A native anchor gives immediate access to enquiry fields. Tighter form-introduction spacing keeps the first field reachable. Full before/after screenshots will accompany the final gallery.
+The approved headline and supporting copy remain verbatim. Desktop places the large headline on the left and the line study on the right; the gesture resolves above the enquiry column. The form and direct-contact columns retain their existing architecture. On mobile, the compact artwork sits beside the introductory copy, rather than adding a large panel before the form. A native anchor gives immediate access to enquiry fields. Tighter form-introduction spacing keeps the first field reachable. Full before/after screenshots accompany the final gallery.
 
 Actual initial viewport review found an accidental third headline line at 1920px; the desktop font cap was reduced to 116px so the largest frame retains the intended two-line composition. Other breakpoints retain their type scale. The final browser tests explicitly check this desktop line count.
 

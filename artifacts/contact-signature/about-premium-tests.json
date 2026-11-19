@@ -1,0 +1,1453 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-contact-signature/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.about-premium.config.ts",
+      "--reporter=list,json",
+      "--output",
+      "test-results/contact-signature-about-premium"
+    ],
+    "configFile": "/workspace/drawnout-contact-signature/playwright.about-premium.config.ts",
+    "rootDir": "/workspace/drawnout-contact-signature/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-contact-signature/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["about.spec.ts", "services-hero-about.spec.ts"],
+        "timeout": 70000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-contact-signature/tests/browser",
+        "snapshotDir": "/workspace/drawnout-contact-signature/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["about.spec.ts", "services-hero-about.spec.ts"],
+        "timeout": 70000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4410",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [["list"], ["json"]],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4410",
+      "url": "http://127.0.0.1:4410",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "about.spec.ts",
+      "file": "about.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "premium hero and seven editorial chapters preserve copy, links, layout and accessibility at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5632,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:10:51.972Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-740ec6d260a382795fce",
+          "file": "about.spec.ts",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "premium hero and seven editorial chapters preserve copy, links, layout and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5724,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:10:58.039Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-7d4fba8b512f91def958",
+          "file": "about.spec.ts",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "premium hero and seven editorial chapters preserve copy, links, layout and accessibility at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5274,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:11:03.803Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-6193ffb5ada659df4e7d",
+          "file": "about.spec.ts",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "premium hero and seven editorial chapters preserve copy, links, layout and accessibility at 1024px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5962,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:11:09.103Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-84d3a3c67fd743ccca8a",
+          "file": "about.spec.ts",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "premium hero and seven editorial chapters preserve copy, links, layout and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5647,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:11:15.091Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-8893e8d00ec5b9d8b21e",
+          "file": "about.spec.ts",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "portrait, approved plaque, atmosphere and copy arrive in order within four seconds at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5190,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:11:20.765Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "real-arrival-opacity-and-timing",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzkwLCJmaXJzdFBvcnRyYWl0Ijp7InRpbWUiOjc2OSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwb3J0cmFpdCIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjowLjgxMjMzNCwicGxhcXVlIjowLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0sImZpcnN0UGxhcXVlIjp7InRpbWUiOjEyMzQuNzAwMDAwMDAwMTg2Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwbGFxdWUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45OTU4MzEsInBsYXF1ZSI6MC4yNDM0NzcsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSwiZmlyc3RBdG1vc3BoZXJlIjp7InRpbWUiOjE3NzguNSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC45NzM4MTQsImdyYWRpZW50IjowLjI5OTE4MywicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0sImZpcnN0SGVhZGxpbmUiOnsidGltZSI6MjUxOC44OTk5OTk5OTk5MDcsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiY29weSIsImhlYWRsaW5lIjowLjIyMTEyNiwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45ODkyOTUsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LCJmaXJzdENvcHkiOnsidGltZSI6MzAyMy4zOTk5OTk5OTk5MDcsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiY29weSIsImhlYWRsaW5lIjowLjk4NTg2OSwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MSwicGFyYWdyYXBocyI6WzAuMjUyNjk0LDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LCJmaW5hbCI6eyJ0aW1lIjo0MDI1LjIwMDAwMDAwMDE4NjMsInN0YXRlIjoic2V0dGxlZCIsInNjZW5lIjoic2V0dGxlZCIsImhlYWRsaW5lIjoxLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSwiZnJhbWVzIjpbeyJ0aW1lIjoxOTIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MCwicGxhcXVlIjowLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyMzcuMzAwMDAwMDAwMjc5NCwic2NlbmUiOiJwb3J0cmFpdCIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjowLCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjMyNSwic2NlbmUiOiJwb3J0cmFpdCIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjowLCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjM1Ni4zMDAwMDAwMDAyNzk0LCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MzU2Ljg5OTk5OTk5OTkwNjg3LCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MzcxLjIwMDAwMDAwMDE4NjI2LCJzdGF0ZSI6InBlbmRpbmciLCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MzkxLjMwMDAwMDAwMDI3OTQsInN0YXRlIjoicGVuZGluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MCwicGxhcXVlIjowLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjo0MzUuODk5OTk5OTk5OTA2ODcsInN0YXRlIjoicGVuZGluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MCwicGxhcXVlIjowLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjo0NjcuNjAwMDAwMDAwMDkzMTMsInN0YXRlIjoicGVuZGluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MCwicGxhcXVlIjowLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjo0ODIuODk5OTk5OTk5OTA2ODcsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC4wNTkzNTY5LCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjUxMS4zOTk5OTk5OTk5MDY4Nywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwb3J0cmFpdCIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjowLjEyMDI0NiwicGxhcXVlIjowLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjo1MTguMTAwMDAwMDAwMDkzMSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwb3J0cmFpdCIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjowLjE4MTkzLCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjYyMy44MDAwMDAwMDAyNzk0LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuNTI3NTA0LCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjY0Ni43MDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuNTczNzQ5LCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjY2Mi43MDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuNjE1OTksInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6NjkzLjIwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC42ODgwMTYsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6NzA0Ljg5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC43MTg2MjMsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6NzE2LjcwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC43NDYwMjYsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6NzU2LjgwMDAwMDAwMDI3OTQsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC43OTI0OTgsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6NzY5LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuODEyMzM0LCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjc4NC43MDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuODMwMTEsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6Nzk5LjM5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC44NDYyNjksInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6ODE2LjIwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC44NjA4MTQsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6ODMyLjg5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC44NzQwOTEsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6ODUwLjMwMDAwMDAwMDI3OTQsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC44ODYxNTUsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6ODY2LjIwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC44OTcwNzMsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6ODgyLjg5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45MDcwODgsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6ODk5LjUsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45MTYyMjcsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6OTE2LjYwMDAwMDAwMDA5MzEsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45MjQ1NzUsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6OTMzLjIwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45MzIxNjMsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6OTQ5LjUsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45MzkxNDcsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6OTY2LjIwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45NDU1LCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjk4Mi43MDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTUxMzQ5LCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjk5OS42MDAwMDAwMDAwOTMxLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTU2Njk5LCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjEwMTYuMjAwMDAwMDAwMTg2Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwb3J0cmFpdCIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjowLjk2MTU2MywicGxhcXVlIjowLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxMDMyLjg5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45NjYwMzQsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTA0OS41LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTcwMDkyLCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjEwNjYuMzk5OTk5OTk5OTA2OSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwb3J0cmFpdCIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjowLjk3MzgxNCwicGxhcXVlIjowLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxMDgyLjg5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45NzcyMiwicGxhcXVlIjowLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxMDk5LjUsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45ODAyNzUsInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTExNy43MDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTgzMDU5LCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjExMzMuMTAwMDAwMDAwMDkzMSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwb3J0cmFpdCIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjowLjk4NTU1NywicGxhcXVlIjowLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxMTQ5LjM5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicG9ydHJhaXQiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45ODc4MTksInBsYXF1ZSI6MCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTE2Ni4zMDAwMDAwMDAyNzk0LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBvcnRyYWl0IiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTg5ODQyLCJwbGFxdWUiOjAsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjExODMuMzAwMDAwMDAwMjc5NCwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwbGFxdWUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45OTE2MzQsInBsYXF1ZSI6MC4wNTkzNTY5LCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxMTk5LjUsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTkzMjI4LCJwbGFxdWUiOjAuMTIwMjQ2LCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxMjM0LjcwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTk1ODMxLCJwbGFxdWUiOjAuMjQzNDc3LCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxMjQ5LjM5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTk2ODcsInBsYXF1ZSI6MC4zMDQ4ODgsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjEyNjYuMzAwMDAwMDAwMjc5NCwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwbGFxdWUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MC45OTc3NCwicGxhcXVlIjowLjM2NDU1MywiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTI4Mi44MDAwMDAwMDAyNzk0LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBsYXF1ZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjowLjk5ODQ2LCJwbGFxdWUiOjAuNDIyMjYxLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxMjk5LjM5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTk5MDMyLCJwbGFxdWUiOjAuNDc2Nzk1LCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxMzE2LjMwMDAwMDAwMDI3OTQsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTk5NDY0LCJwbGFxdWUiOjAuNTI3MjEyLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxMzMyLjcwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTk5NzY2LCJwbGFxdWUiOjAuNTczNzQ5LCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxMzQ5LjM5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjAuOTk5OTQyLCJwbGFxdWUiOjAuNjE1OTksImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjEzNjcuMTAwMDAwMDAwMDkzMSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwbGFxdWUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjowLjY1NDA1NSwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTM4Ny4xMDAwMDAwMDAwOTMxLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBsYXF1ZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjAuNjg4MDE2LCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxNDYxLjEwMDAwMDAwMDA5MzEsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC43OTIzNzMsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjE0NzguMzk5OTk5OTk5OTA2OSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwbGFxdWUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjowLjgxMjMzNCwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTQ4OS44OTk5OTk5OTk5MDY5LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBsYXF1ZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjAuODMwMTEsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjE0OTkuNjAwMDAwMDAwMDkzMSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwbGFxdWUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjowLjg0NjE3NywiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTUxNi4xMDAwMDAwMDAwOTMxLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBsYXF1ZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjAuODYwODk4LCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxNTY2LjMwMDAwMDAwMDI3OTQsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC44OTcxMzYsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjE1ODIuNzAwMDAwMDAwMTg2Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwbGFxdWUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjowLjkwNzAzLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxNTk5LjM5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC45MTYxNzUsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjE2MTYuMTAwMDAwMDAwMDkzMSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJwbGFxdWUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjowLjkyNDU3NSwiZ3JhZGllbnQiOjAsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTYzMi43MDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6InBsYXF1ZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjAuOTMyMTYzLCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxNjQ5LjMwMDAwMDAwMDI3OTQsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC45MzkxMDcsImdyYWRpZW50IjowLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjE2NjYsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoicGxhcXVlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC45NDU1LCJncmFkaWVudCI6MCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxNjgyLjg5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjAuOTUxMzQ5LCJncmFkaWVudCI6MC4wNDg0Njk2LCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjE2OTkuMzk5OTk5OTk5OTA2OSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC45NTY2NjgsImdyYWRpZW50IjowLjA5Nzc1NjMsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTc3OC41LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjowLjk3MzgxNCwiZ3JhZGllbnQiOjAuMjk5MTgzLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjE3OTUuNjAwMDAwMDAwMDkzMSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC45NzcyMDEsImdyYWRpZW50IjowLjM0ODU2NywicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxODEwLjgwMDAwMDAwMDI3OTQsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjAuOTgwMjc1LCJncmFkaWVudCI6MC4zOTY1NjQsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTgyNy44OTk5OTk5OTk5MDY5LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjowLjk4MzA0MywiZ3JhZGllbnQiOjAuNDQyNDA5LCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjE4NDMuMzk5OTk5OTk5OTA2OSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC45ODU1NTcsImdyYWRpZW50IjowLjQ4NjIyOSwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxODU3LjYwMDAwMDAwMDA5MzEsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjAuOTg3ODA2LCJncmFkaWVudCI6MC41MjcxODYsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTg3MC4zOTk5OTk5OTk5MDY5LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjowLjk4OTgzMSwiZ3JhZGllbnQiOjAuNTY1NTgzLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjE4ODUuODAwMDAwMDAwMjc5NCwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC45OTE2MzQsImdyYWRpZW50IjowLjYwMTEsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MTkwMSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC45OTMyMTksImdyYWRpZW50IjowLjYzMzU4OCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxOTE3LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjowLjk5NDYxNywiZ3JhZGllbnQiOjAuNjYzNTUzLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjE5MzIuODk5OTk5OTk5OTA2OSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC45OTU4MzEsImdyYWRpZW50IjowLjY5MDk1OCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxOTYyLjM5OTk5OTk5OTkwNjksInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjAuOTk2ODcsImdyYWRpZW50IjowLjcxNTk5NSwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxOTc0LjMwMDAwMDAwMDI3OTQsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjAuOTk3NzQsImdyYWRpZW50IjowLjczODczNCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoxOTkwLjEwMDAwMDAwMDA5MzEsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjAuOTk4NDU2LCJncmFkaWVudCI6MC43NTk1MjYsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjAwNi4yMDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjowLjk5OTAzLCJncmFkaWVudCI6MC43Nzg2NjUsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjAyMC44MDAwMDAwMDAyNzk0LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjowLjk5OTQ2NCwiZ3JhZGllbnQiOjAuNzk2MTk1LCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjIwMzMuMzk5OTk5OTk5OTA2OSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MC45OTk3NjYsImdyYWRpZW50IjowLjgxMjI3MiwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyMDY3LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC44NDA1NDYsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjA4NC4zMDAwMDAwMDAyNzk0LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC44NTMwNjUsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjA5OS42MDAwMDAwMDAwOTMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjg2NDU0OSwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyMTE2LjEwMDAwMDAwMDA5Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjAuODc1MjgzLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjIxMzMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjg4NTAzNSwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyMTU5LjcwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjg5NDIzLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjIxNzEsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjkwMjY1LCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjIxODguMzk5OTk5OTk5OTA3LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45MTA1MDgsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjIwMy4zMDAwMDAwMDAyNzk0LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45MTc3NTksInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjIxOSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjAuOTI0NTM2LCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjIyMzMuNSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjAuOTMwODMzLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjIyNjMuMzk5OTk5OTk5OTA3LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45MzY2ODYsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjI3Ny4xMDAwMDAwMDAwOTMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjk0MjA5NywicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyMjk0LjIwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjk0NzE2LCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjIzMDcuMzk5OTk5OTk5OTA3LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45NTE4NCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyMzE5LjcwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjk1NjIxOCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyMzMzLjEwMDAwMDAwMDA5Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJhdG1vc3BoZXJlIiwiaGVhZGxpbmUiOjAsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjAuOTYwMjYzLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjIzNjMuNjAwMDAwMDAwMDkzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45NjQwNjcsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjM4Ni4xMDAwMDAwMDAwOTMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjk3MDc5MywicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyNDA3LjUsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiYXRtb3NwaGVyZSIsImhlYWRsaW5lIjowLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjk3MzgzLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjI0MjYuNjAwMDAwMDAwMDkzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45NzY2MDcsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjQ0MC41LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45NzkxNzUsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjQ2OS43MDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImF0bW9zcGhlcmUiLCJoZWFkbGluZSI6MCwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45ODM3NTYsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjQ4Ny4yMDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MC4wNzE5MTMyLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjk4NTc2MywicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyNTA0LjEwMDAwMDAwMDA5Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjAuMTQ2MzIzLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjk4NzYxNCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyNTE4Ljg5OTk5OTk5OTkwNywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjAuMjIxMTI2LCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjk4OTI5NSwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyNTMzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MC4yOTYwNDcsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjAuOTkwODM1LCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjI1NjQuNjAwMDAwMDAwMDkzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MC4zNjk1MzEsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjAuOTkyMjM5LCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjI1NzguMjAwMDAwMDAwMTg2Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjAuNDM4MjIyLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjk5MzQ4NCwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyNTkzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MC41MDMxNDUsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjAuOTk0NjIxLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjI2MDcuODk5OTk5OTk5OTA3LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MC41NjEzNiwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45OTU2MjEsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjYyMS4zMDAwMDAwMDAyNzk0LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MC42MTM2MDYsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjAuOTk2NTA5LCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjI2MzQuNSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjAuNjU5NDA5LCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjk5NzI4MSwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyNjY2LjEwMDAwMDAwMDA5Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjAuNzM1MTA0LCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjowLjk5ODUxNywicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyNjgyLjcwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiY29weSIsImhlYWRsaW5lIjowLjc2NTgxMywiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45OTg5ODMsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MjcwMS41LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MC43OTI5MDEsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjAuOTk5MzU5LCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjI3MjUsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiY29weSIsImhlYWRsaW5lIjowLjgxNjcxMSwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MC45OTk2NDQsInBhcmFncmFwaHMiOlswLDAsMF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6Mjc2OS4xMDAwMDAwMDAwOTMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiY29weSIsImhlYWRsaW5lIjowLjg3MjY3NywiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MSwicGFyYWdyYXBocyI6WzAsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjoyODE1LjM5OTk5OTk5OTkwNywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjAuOTAwMzc4LCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjoxLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjI4NTAuNzAwMDAwMDAwMTg2Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjAuOTMxOTI0LCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjoxLCJwYXJhZ3JhcGhzIjpbMCwwLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjI5OTEuMTAwMDAwMDAwMDkzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MC45NzkzNjMsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjEsInBhcmFncmFwaHMiOlswLjA4MjAwOTgsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjozMDIzLjM5OTk5OTk5OTkwNywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjAuOTg1ODY5LCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjoxLCJwYXJhZ3JhcGhzIjpbMC4yNTI2OTQsMCwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjozMTM2LjUsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiY29weSIsImhlYWRsaW5lIjowLjk5ODIyNCwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MSwicGFyYWdyYXBocyI6WzAuNzE0MDM3LDAuMzM3MTYyLDBdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjMxNjIuMjAwMDAwMDAwMTg2Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjAuOTk4OTYsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjEsInBhcmFncmFwaHMiOlswLjc1MTY0MiwwLjQxNzUzNSwwXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjozMTk1LjgwMDAwMDAwMDI3OTQsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiY29weSIsImhlYWRsaW5lIjowLjk5OTgzMSwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MSwicGFyYWdyYXBocyI6WzAuODEyMjMsMC41NTk4NDYsMC4wODI1MTM3XSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjozMjMzLjYwMDAwMDAwMDA5Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjEsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjEsInBhcmFncmFwaHMiOlswLjg3NTg5NiwwLjcxMzc5MywwLjMzNjY2NF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MzI2OC4yMDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MSwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MSwicGFyYWdyYXBocyI6WzAuOTA2MjMsMC43ODM5OTMsMC40OTIwNDRdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjMzMDAuMzk5OTk5OTk5OTA3LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MSwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MSwicGFyYWdyYXBocyI6WzAuOTI5ODM3LDAuODM2MzksMC42MTg2OTddLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjMzMjkuMjAwMDAwMDAwMTg2Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjEsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjEsInBhcmFncmFwaHMiOlswLjkzOTU2MSwwLjg1NzQxOSwwLjY2OTY4NF0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MzM4My43MDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MSwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MSwicGFyYWdyYXBocyI6WzAuOTY4NTQ2LDAuOTE4NzcsMC44MTIwNzRdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjM0MzguNSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjEsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjEsInBhcmFncmFwaHMiOlswLjk4MjQwNSwwLjk0ODIxMywwLjg3NTg5Nl0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MzQ4Ny41LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MSwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MSwicGFyYWdyYXBocyI6WzAuOTkxNDg2LDAuOTY4NTQ2LDAuOTE4NzddLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjM1NjcuMjAwMDAwMDAwMTg2Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjEsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjEsInBhcmFncmFwaHMiOlswLjk5ODk0NiwwLjk4ODkwNSwwLjk2MjU4XSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjozNjc0LjMwMDAwMDAwMDI3OTQsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiY29weSIsImhlYWRsaW5lIjoxLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjoxLCJwYXJhZ3JhcGhzIjpbMSwwLjk5ODk0NiwwLjk4ODkwNV0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6MzcxMywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjEsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjEsInBhcmFncmFwaHMiOlsxLDAuOTk5ODg4LDAuOTkzNjY0XSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjozNzUzLjMwMDAwMDAwMDI3OTQsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiY29weSIsImhlYWRsaW5lIjoxLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDAuOTk4MDhdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjM4MDUuNSwic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjEsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjEsInBhcmFncmFwaHMiOlsxLDEsMC45OTk4ODhdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjM4NTYuMjAwMDAwMDAwMTg2Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjEsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjEsInBhcmFncmFwaHMiOlsxLDEsMV0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6Mzg3OS4yMDAwMDAwMDAxODYzLCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MSwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MSwicGFyYWdyYXBocyI6WzEsMSwxXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjozOTIxLjYwMDAwMDAwMDA5Mywic3RhdGUiOiJydW5uaW5nIiwic2NlbmUiOiJjb3B5IiwiaGVhZGxpbmUiOjEsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjEsInBhcmFncmFwaHMiOlsxLDEsMV0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9LHsidGltZSI6Mzk1My4zMDAwMDAwMDAyNzk0LCJzdGF0ZSI6InJ1bm5pbmciLCJzY2VuZSI6ImNvcHkiLCJoZWFkbGluZSI6MSwiYXJ0d29yayI6MSwicGxhcXVlIjoxLCJncmFkaWVudCI6MSwicGFyYWdyYXBocyI6WzEsMSwxXSwib3ZlcmxheSI6ZmFsc2UsImhlcm9IZWlnaHQiOjEyODEuNjg3NX0seyJ0aW1lIjozOTc1LjIwMDAwMDAwMDE4NjMsInN0YXRlIjoicnVubmluZyIsInNjZW5lIjoiY29weSIsImhlYWRsaW5lIjoxLCJhcnR3b3JrIjoxLCJwbGFxdWUiOjEsImdyYWRpZW50IjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdLCJvdmVybGF5IjpmYWxzZSwiaGVyb0hlaWdodCI6MTI4MS42ODc1fSx7InRpbWUiOjQwMjUuMjAwMDAwMDAwMTg2Mywic3RhdGUiOiJzZXR0bGVkIiwic2NlbmUiOiJzZXR0bGVkIiwiaGVhZGxpbmUiOjEsImFydHdvcmsiOjEsInBsYXF1ZSI6MSwiZ3JhZGllbnQiOjEsInBhcmFncmFwaHMiOlsxLDEsMV0sIm92ZXJsYXkiOmZhbHNlLCJoZXJvSGVpZ2h0IjoxMjgxLjY4NzV9XX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-fa56aa3f560c78fd4a87",
+          "file": "about.spec.ts",
+          "line": 274,
+          "column": 3
+        },
+        {
+          "title": "portrait, approved plaque, atmosphere and copy arrive in order within four seconds at 1440px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12032,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-entrance=\"static\" data-about-ambient=\"running\" data-about-ended-at=\"984.80\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-released\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-entrance=\"static\" data-about-ambient=\"running\" data-about-ended-at=\"984.80\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-released\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:280:38",
+                    "location": {
+                      "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                      "column": 38,
+                      "line": 280
+                    },
+                    "snippet": "  278 |     await sampleArrival(page);\n  279 |     await page.goto('/about', { waitUntil: 'commit' });\n> 280 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');\n      |                                      ^\n  281 |     await expectReleased(page);\n  282 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');\n  283 |     await expect(page.locator(hero)).toHaveAttribute('data-about-settle-reason', 'complete');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                        "column": 38,
+                        "line": 280
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-entrance=\"static\" data-about-ambient=\"running\" data-about-ended-at=\"984.80\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-released\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n\n  278 |     await sampleArrival(page);\n  279 |     await page.goto('/about', { waitUntil: 'commit' });\n> 280 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');\n      |                                      ^\n  281 |     await expectReleased(page);\n  282 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');\n  283 |     await expect(page.locator(hero)).toHaveAttribute('data-about-settle-reason', 'complete');\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:280:38"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:11:25.978Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-portrait-approved-pl-259db-thin-four-seconds-at-1440px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-portrait-approved-pl-259db-thin-four-seconds-at-1440px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-portrait-approved-pl-259db-thin-four-seconds-at-1440px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                    "column": 38,
+                    "line": 280
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-34908d7fd76f1ce833f0",
+          "file": "about.spec.ts",
+          "line": 274,
+          "column": 3
+        },
+        {
+          "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 390px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12658,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    23 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-entrance=\"static\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-ended-at=\"1115.90\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-released\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    23 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-entrance=\"static\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-ended-at=\"1115.90\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-released\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:372:38",
+                    "location": {
+                      "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                      "column": 38,
+                      "line": 372
+                    },
+                    "snippet": "  370 |     await page.setViewportSize(viewportFor(width));\n  371 |     await page.goto('/about');\n> 372 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');\n      |                                      ^\n  373 |     await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'running');\n  374 |     const before = await heroPixels(page);\n  375 |     const gradientTransforms = () =>"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                        "column": 38,
+                        "line": 372
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    23 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-entrance=\"static\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-ended-at=\"1115.90\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-released\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n\n  370 |     await page.setViewportSize(viewportFor(width));\n  371 |     await page.goto('/about');\n> 372 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');\n      |                                      ^\n  373 |     await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'running');\n  374 |     const before = await heroPixels(page);\n  375 |     const gradientTransforms = () =>\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:372:38"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:11:39.437Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-a8326-d-pauses-offscreen-at-390px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-a8326-d-pauses-offscreen-at-390px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-a8326-d-pauses-offscreen-at-390px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                    "column": 38,
+                    "line": 372
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-885cad57998b9e38d531",
+          "file": "about.spec.ts",
+          "line": 367,
+          "column": 3
+        },
+        {
+          "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 13518,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-deadline\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    19 × unexpected value \"static\"\u001b[22m\n\u001b[2m       - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"874.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"static\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-deadline\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    19 × unexpected value \"static\"\u001b[22m\n\u001b[2m       - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"874.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"static\"\u001b[22m\n\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:372:38",
+                    "location": {
+                      "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                      "column": 38,
+                      "line": 372
+                    },
+                    "snippet": "  370 |     await page.setViewportSize(viewportFor(width));\n  371 |     await page.goto('/about');\n> 372 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');\n      |                                      ^\n  373 |     await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'running');\n  374 |     const before = await heroPixels(page);\n  375 |     const gradientTransforms = () =>"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                        "column": 38,
+                        "line": 372
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-deadline\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    19 × unexpected value \"static\"\u001b[22m\n\u001b[2m       - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"874.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"static\"\u001b[22m\n\n\n  370 |     await page.setViewportSize(viewportFor(width));\n  371 |     await page.goto('/about');\n> 372 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'settled');\n      |                                      ^\n  373 |     await expect(page.locator(hero)).toHaveAttribute('data-about-ambient', 'running');\n  374 |     const before = await heroPixels(page);\n  375 |     const gradientTransforms = () =>\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:372:38"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:11:54.080Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-04d3e--pauses-offscreen-at-1440px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-04d3e--pauses-offscreen-at-1440px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-localized-atmosphere-04d3e--pauses-offscreen-at-1440px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                    "column": 38,
+                    "line": 372
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-018bcec7f52f2179f36d",
+          "file": "about.spec.ts",
+          "line": 367,
+          "column": 3
+        },
+        {
+          "title": "direct, internal and refresh About arrivals stay nonblocking; Home retains its full loop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14284,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:12:09.966Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-5111c0471bbc5b46266b",
+          "file": "about.spec.ts",
+          "line": 420,
+          "column": 1
+        },
+        {
+          "title": "early keyboard settles the entrance without blocking content",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 11667,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"730.80\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"730.80\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:456:38",
+                    "location": {
+                      "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                      "column": 38,
+                      "line": 456
+                    },
+                    "snippet": "  454 |   test(`early ${input} settles the entrance without blocking content`, async ({ page }) => {\n  455 |     await page.goto('/about', { waitUntil: 'commit' });\n> 456 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');\n      |                                      ^\n  457 |     if (input === 'keyboard') await page.keyboard.press('Tab');\n  458 |     else await page.mouse.wheel(0, 180);\n  459 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', /static|settled/);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                        "column": 38,
+                        "line": 456
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"730.80\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n\n  454 |   test(`early ${input} settles the entrance without blocking content`, async ({ page }) => {\n  455 |     await page.goto('/about', { waitUntil: 'commit' });\n> 456 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');\n      |                                      ^\n  457 |     if (input === 'keyboard') await page.keyboard.press('Tab');\n  458 |     else await page.mouse.wheel(0, 180);\n  459 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', /static|settled/);\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:456:38"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:12:24.759Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-keyboard-settl-18eee-ce-without-blocking-content/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-keyboard-settl-18eee-ce-without-blocking-content/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-keyboard-settl-18eee-ce-without-blocking-content/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                    "column": 38,
+                    "line": 456
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-bd7e7324d462badad228",
+          "file": "about.spec.ts",
+          "line": 454,
+          "column": 3
+        },
+        {
+          "title": "early scroll settles the entrance without blocking content",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12839,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"null\"\u001b[22m\n\u001b[2m    19 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"658.90\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"null\"\u001b[22m\n\u001b[2m    19 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"658.90\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:456:38",
+                    "location": {
+                      "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                      "column": 38,
+                      "line": 456
+                    },
+                    "snippet": "  454 |   test(`early ${input} settles the entrance without blocking content`, async ({ page }) => {\n  455 |     await page.goto('/about', { waitUntil: 'commit' });\n> 456 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');\n      |                                      ^\n  457 |     if (input === 'keyboard') await page.keyboard.press('Tab');\n  458 |     else await page.mouse.wheel(0, 180);\n  459 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', /static|settled/);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                        "column": 38,
+                        "line": 456
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"null\"\u001b[22m\n\u001b[2m    19 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"658.90\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n\n  454 |   test(`early ${input} settles the entrance without blocking content`, async ({ page }) => {\n  455 |     await page.goto('/about', { waitUntil: 'commit' });\n> 456 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');\n      |                                      ^\n  457 |     if (input === 'keyboard') await page.keyboard.press('Tab');\n  458 |     else await page.mouse.wheel(0, 180);\n  459 |     await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', /static|settled/);\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:456:38"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:12:38.370Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-scroll-settles-bdccb-ce-without-blocking-content/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-scroll-settles-bdccb-ce-without-blocking-content/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-early-scroll-settles-bdccb-ce-without-blocking-content/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                    "column": 38,
+                    "line": 456
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-abb0a7680374c8e8c14e",
+          "file": "about.spec.ts",
+          "line": 454,
+          "column": 3
+        },
+        {
+          "title": "reduced provides the complete static story",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5392,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:12:55.430Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-50694660d911a8207bf6",
+          "file": "about.spec.ts",
+          "line": 473,
+          "column": 3
+        },
+        {
+          "title": "save-data provides the complete static story",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5650,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:13:01.699Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-c4f72bd288c15c248d58",
+          "file": "about.spec.ts",
+          "line": 473,
+          "column": 3
+        },
+        {
+          "title": "hidden provides the complete static story",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4817,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:13:07.407Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-b413c959876b0d2f9337",
+          "file": "about.spec.ts",
+          "line": 473,
+          "column": 3
+        },
+        {
+          "title": "init-failure provides the complete static story",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5107,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:13:12.307Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-d3b0de9b5874d6c167de",
+          "file": "about.spec.ts",
+          "line": 473,
+          "column": 3
+        },
+        {
+          "title": "changing motion preferences during arrival releases the full composition immediately",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12081,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"null\"\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    18 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"819.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-asset\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"null\"\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    18 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"819.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-asset\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:515:36",
+                    "location": {
+                      "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                      "column": 36,
+                      "line": 515
+                    },
+                    "snippet": "  513 | }) => {\n  514 |   await page.goto('/about', { waitUntil: 'commit' });\n> 515 |   await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');\n      |                                    ^\n  516 |   await page.emulateMedia({ reducedMotion: 'reduce' });\n  517 |   await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', /static|settled/);\n  518 |   await expectFullPortrait(page);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                        "column": 36,
+                        "line": 515
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"null\"\u001b[22m\n\u001b[2m    2 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    18 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"819.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-asset\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n\n  513 | }) => {\n  514 |   await page.goto('/about', { waitUntil: 'commit' });\n> 515 |   await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', 'running');\n      |                                    ^\n  516 |   await page.emulateMedia({ reducedMotion: 'reduce' });\n  517 |   await expect(page.locator(hero)).toHaveAttribute('data-about-entrance', /static|settled/);\n  518 |   await expectFullPortrait(page);\n    at /workspace/drawnout-contact-signature/tests/browser/about.spec.ts:515:36"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:13:17.450Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-changing-motion-pref-b8f95-ull-composition-immediately/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-changing-motion-pref-b8f95-ull-composition-immediately/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/about-changing-motion-pref-b8f95-ull-composition-immediately/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-contact-signature/tests/browser/about.spec.ts",
+                    "column": 36,
+                    "line": 515
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-37420c340e46e8a3218b",
+          "file": "about.spec.ts",
+          "line": 511,
+          "column": 1
+        },
+        {
+          "title": "no-JavaScript mobile story, native menu, portrait and invitation remain usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4660,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:13:32.513Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-df0770709bab063ed6ff",
+          "file": "about.spec.ts",
+          "line": 522,
+          "column": 1
+        },
+        {
+          "title": "story panels, names and principles reveal once without trapping native backscroll at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10239,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:13:37.820Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-46317c1c396d86d37a85",
+          "file": "about.spec.ts",
+          "line": 553,
+          "column": 3
+        },
+        {
+          "title": "story panels, names and principles reveal once without trapping native backscroll at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9923,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:13:48.088Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8dd3884c296459da0910-d50c678ae443b062dcbb",
+          "file": "about.spec.ts",
+          "line": 553,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "services-hero-about.spec.ts",
+      "file": "services-hero-about.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "inline About prepaint fails open when all JavaScript bundles are blocked",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3235,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:13:58.095Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-3aab269abaa55ac6e136",
+          "file": "services-hero-about.spec.ts",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "title": "inline About prepaint fails open when all JavaScript bundles are delayed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3892,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:14:01.371Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "expired-boot-never-rehides",
+                      "contentType": "application/json",
+                      "body": "eyJyZWxlYXNlZCI6eyJlbGFwc2VkIjo3MzYuMjAwMDAwMDAwMTg2MywicmVhc29uIjoiYm9vdC1kZWFkbGluZSJ9LCJmcmFtZXMiOlt7InRpbWUiOjE3NiwiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjozMzMuODk5OTk5OTk5OTA2ODcsImJvb3QiOiJwZW5kaW5nIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MCwiaW50cm8iOjEsInBhcmFncmFwaHMiOlswLDAsMF19LHsidGltZSI6MzgwLjU5OTk5OTk5OTYyNzQ3LCJib290IjoicGVuZGluZyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjAsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMCwwLDBdfSx7InRpbWUiOjM4My4wOTk5OTk5OTk2Mjc0NywiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjo0MjcuMTk5OTk5OTk5NzIwNiwiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjo0MjguMzk5OTk5OTk5OTA2ODcsImJvb3QiOiJwZW5kaW5nIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MCwiaW50cm8iOjEsInBhcmFncmFwaHMiOlswLDAsMF19LHsidGltZSI6NDMyLCJib290IjoicGVuZGluZyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjAsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMCwwLDBdfSx7InRpbWUiOjQ0MywiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjo0NTkuMzk5OTk5OTk5OTA2ODcsImJvb3QiOiJwZW5kaW5nIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MCwiaW50cm8iOjEsInBhcmFncmFwaHMiOlswLDAsMF19LHsidGltZSI6NDc4LjI5OTk5OTk5OTgxMzc0LCJib290IjoicGVuZGluZyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjAsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMCwwLDBdfSx7InRpbWUiOjQ5Ny42OTk5OTk5OTk3MjA2LCJib290IjoicGVuZGluZyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjAsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMCwwLDBdfSx7InRpbWUiOjUxMC4zOTk5OTk5OTk5MDY4NywiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjo1MjYuMTk5OTk5OTk5NzIwNiwiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjo1NDMuMDk5OTk5OTk5NjI3NSwiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjo1NTkuNSwiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjo1NzYuNTk5OTk5OTk5NjI3NSwiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjo1OTIuNjk5OTk5OTk5NzIwNiwiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjo2MDkuMjk5OTk5OTk5ODEzNywiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjo2MjYuODk5OTk5OTk5OTA2OSwiYm9vdCI6InBlbmRpbmciLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjowLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzAsMCwwXX0seyJ0aW1lIjo2NDMsImJvb3QiOiJwZW5kaW5nIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MCwiaW50cm8iOjEsInBhcmFncmFwaHMiOlswLDAsMF19LHsidGltZSI6NjU5LjM5OTk5OTk5OTkwNjksImJvb3QiOiJwZW5kaW5nIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MCwiaW50cm8iOjEsInBhcmFncmFwaHMiOlswLDAsMF19LHsidGltZSI6Njc3LjA5OTk5OTk5OTYyNzUsImJvb3QiOiJwZW5kaW5nIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MCwiaW50cm8iOjEsInBhcmFncmFwaHMiOlswLDAsMF19LHsidGltZSI6NjkzLjM5OTk5OTk5OTkwNjksImJvb3QiOiJwZW5kaW5nIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MCwiaW50cm8iOjEsInBhcmFncmFwaHMiOlswLDAsMF19LHsidGltZSI6NzA5LjM5OTk5OTk5OTkwNjksImJvb3QiOiJwZW5kaW5nIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MCwiaW50cm8iOjEsInBhcmFncmFwaHMiOlswLDAsMF19LHsidGltZSI6NzYxLjc5OTk5OTk5OTgxMzcsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6Nzc3LjU5OTk5OTk5OTYyNzUsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6Nzc5LjM5OTk5OTk5OTkwNjksImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6ODEzLjE5OTk5OTk5OTcyMDYsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6ODE0LjM5OTk5OTk5OTkwNjksImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6ODI2LjM5OTk5OTk5OTkwNjksImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6ODU0Ljg5OTk5OTk5OTkwNjksImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6ODYwLjU5OTk5OTk5OTYyNzUsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6ODc2LjU5OTk5OTk5OTYyNzUsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6OTExLjU5OTk5OTk5OTYyNzUsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6OTM3LjA5OTk5OTk5OTYyNzUsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTE5Ni4wOTk5OTk5OTk2Mjc1LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjEyMDkuMjk5OTk5OTk5ODEzNywiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxMjI3LjM5OTk5OTk5OTkwNjksImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTI0My4wOTk5OTk5OTk2Mjc1LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjEyNjUuMDk5OTk5OTk5NjI3NSwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxMzIyLjA5OTk5OTk5OTYyNzUsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTM0MS4wOTk5OTk5OTk2Mjc1LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjEzNTAuMDk5OTk5OTk5NjI3NSwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxMzYzLjg5OTk5OTk5OTkwNjksImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTM4MSwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxMzk3LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjE0MTYuNzk5OTk5OTk5ODEzNywiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxNDI4Ljg5OTk5OTk5OTkwNjksImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTQ0NC4yOTk5OTk5OTk4MTM3LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjE0NTkuMzk5OTk5OTk5OTA2OSwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxNDg5LjM5OTk5OTk5OTkwNjksImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTQ5NC44OTk5OTk5OTk5MDY5LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjE1MTEuNSwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxNTM0LjE5OTk5OTk5OTcyMDYsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTU0MywiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxNTYyLjUsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTU4MC41OTk5OTk5OTk2Mjc1LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjE1OTMuMzk5OTk5OTk5OTA2OSwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxNjEzLjA5OTk5OTk5OTYyNzUsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTYyOC4xOTk5OTk5OTk3MjA2LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjE2NDIuNjk5OTk5OTk5NzIwNiwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxNjcwLjY5OTk5OTk5OTcyMDYsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTY3NywiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxNjk3LjM5OTk5OTk5OTkwNjksImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTcxMSwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxNzI2LjE5OTk5OTk5OTcyMDYsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTc0Mi42OTk5OTk5OTk3MjA2LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjE3NTkuMjk5OTk5OTk5ODEzNywiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxNzc2LjA5OTk5OTk5OTYyNzUsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTc5Mi42OTk5OTk5OTk3MjA2LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjE4MDkuMjk5OTk5OTk5ODEzNywiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxODI2LjE5OTk5OTk5OTcyMDYsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTg0Mi41OTk5OTk5OTk2Mjc1LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjE4NjQuNSwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxODc2LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjE4OTIuNzk5OTk5OTk5ODEzNywiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxOTEyLjE5OTk5OTk5OTcyMDYsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTkyNi4xOTk5OTk5OTk3MjA2LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjE5NDIuNjk5OTk5OTk5NzIwNiwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoxOTU5LjI5OTk5OTk5OTgxMzcsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MTk3Ni4xOTk5OTk5OTk3MjA2LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjE5OTIuNjk5OTk5OTk5NzIwNiwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoyMDEwLjg5OTk5OTk5OTkwNjksImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MjAyNi4xOTk5OTk5OTk3MjA2LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjIwNDIuNjk5OTk5OTk5NzIwNiwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoyMDYwLjE5OTk5OTk5OTcyMDYsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MjA3Ni43OTk5OTk5OTk4MTM3LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjIwOTMuODk5OTk5OTk5OTA3LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjIxMTEuMTk5OTk5OTk5NzIwNiwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoyMTI1Ljg5OTk5OTk5OTkwNywiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoyMTQyLjU5OTk5OTk5OTYyNzUsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MjE2NS4yOTk5OTk5OTk4MTM3LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjIxNzYsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MjIwMS4xOTk5OTk5OTk3MjA2LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjIyMDkuMjk5OTk5OTk5ODEzNywiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoyMjQ0LjI5OTk5OTk5OTgxMzcsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MjI1OS41OTk5OTk5OTk2Mjc1LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjIyNzguMjk5OTk5OTk5ODEzNywiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoyMzY2LjI5OTk5OTk5OTgxMzcsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MjM5NC41OTk5OTk5OTk2Mjc1LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjI0MjYuMTk5OTk5OTk5NzIwNiwiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoyNDYyLjE5OTk5OTk5OTcyMDYsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MjUxMC4wOTk5OTk5OTk2Mjc1LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjI1NDcuNzk5OTk5OTk5ODEzNywiYm9vdCI6InJlbGVhc2VkIiwiZW50cmFuY2UiOiJzdGF0aWMiLCJjZW50ZXIiOjE5NSwidHJhbnNmb3JtIjoibm9uZSIsImhlYWRsaW5lIjoxLCJpbnRybyI6MSwicGFyYWdyYXBocyI6WzEsMSwxXX0seyJ0aW1lIjoyNTc5LjE5OTk5OTk5OTcyMDYsImJvb3QiOiJyZWxlYXNlZCIsImVudHJhbmNlIjoic3RhdGljIiwiY2VudGVyIjoxOTUsInRyYW5zZm9ybSI6Im5vbmUiLCJoZWFkbGluZSI6MSwiaW50cm8iOjEsInBhcmFncmFwaHMiOlsxLDEsMV19LHsidGltZSI6MjYxMi4xOTk5OTk5OTk3MjA2LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjI2MzMuODk5OTk5OTk5OTA3LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjI2NjEuMzk5OTk5OTk5OTA3LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfSx7InRpbWUiOjI3MDkuMzk5OTk5OTk5OTA3LCJib290IjoicmVsZWFzZWQiLCJlbnRyYW5jZSI6InN0YXRpYyIsImNlbnRlciI6MTk1LCJ0cmFuc2Zvcm0iOiJub25lIiwiaGVhZGxpbmUiOjEsImludHJvIjoxLCJwYXJhZ3JhcGhzIjpbMSwxLDFdfV19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-6bc7eabf9c0e05bfd3d8",
+          "file": "services-hero-about.spec.ts",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "title": "portrait arrival leaves navigation pointer targets immediately usable at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3515,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:14:05.279Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-a0140d949dfeb9afd13d",
+          "file": "services-hero-about.spec.ts",
+          "line": 125,
+          "column": 3
+        },
+        {
+          "title": "portrait arrival leaves navigation pointer targets immediately usable at 1440px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 11872,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    3 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    19 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"790.10\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    3 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    19 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"790.10\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n    at /workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts:130:53",
+                    "location": {
+                      "file": "/workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts",
+                      "column": 53,
+                      "line": 130
+                    },
+                    "snippet": "  128 |     await page.setViewportSize(viewportFor(width));\n  129 |     await page.goto('/about', { waitUntil: 'commit' });\n> 130 |     await expect(page.locator('[data-about-hero]')).toHaveAttribute(\n      |                                                     ^\n  131 |       'data-about-entrance',\n  132 |       'running',\n  133 |     );"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts",
+                        "column": 53,
+                        "line": 130
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    3 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    19 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"790.10\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n\n  128 |     await page.setViewportSize(viewportFor(width));\n  129 |     await page.goto('/about', { waitUntil: 'commit' });\n> 130 |     await expect(page.locator('[data-about-hero]')).toHaveAttribute(\n      |                                                     ^\n  131 |       'data-about-entrance',\n  132 |       'running',\n  133 |     );\n    at /workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts:130:53"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:14:08.856Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-portra-c0b48-mmediately-usable-at-1440px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts",
+                    "column": 53,
+                    "line": 130
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-02caf65e45d3dd28fd2f",
+          "file": "services-hero-about.spec.ts",
+          "line": 125,
+          "column": 3
+        },
+        {
+          "title": "portrait asset blocked leaves all three paragraphs and navigation readable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4054,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:14:22.375Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-05c3e97e981192c2f5da",
+          "file": "services-hero-about.spec.ts",
+          "line": 169,
+          "column": 3
+        },
+        {
+          "title": "portrait asset delayed leaves all three paragraphs and navigation readable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4011,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:14:26.880Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-d113c0a84d6c7767218e",
+          "file": "services-hero-about.spec.ts",
+          "line": 169,
+          "column": 3
+        },
+        {
+          "title": "early resize and rapid internal navigation cannot leave stale arrival transforms",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 13418,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"774.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"774.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n    at /workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts:206:51",
+                    "location": {
+                      "file": "/workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts",
+                      "column": 51,
+                      "line": 206
+                    },
+                    "snippet": "  204 |   await page.setViewportSize(viewportFor(1440));\n  205 |   await page.goto('/about', { waitUntil: 'commit' });\n> 206 |   await expect(page.locator('[data-about-hero]')).toHaveAttribute('data-about-entrance', 'running');\n      |                                                   ^\n  207 |   await page.setViewportSize(viewportFor(390));\n  208 |   await expect(page.locator('[data-about-hero]')).toHaveAttribute(\n  209 |     'data-about-entrance',"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts",
+                        "column": 51,
+                        "line": 206
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m    - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 × locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"774.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n\n\n  204 |   await page.setViewportSize(viewportFor(1440));\n  205 |   await page.goto('/about', { waitUntil: 'commit' });\n> 206 |   await expect(page.locator('[data-about-hero]')).toHaveAttribute('data-about-entrance', 'running');\n      |                                                   ^\n  207 |   await page.setViewportSize(viewportFor(390));\n  208 |   await expect(page.locator('[data-about-hero]')).toHaveAttribute(\n  209 |     'data-about-entrance',\n    at /workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts:206:51"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:14:30.961Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-early--a0f49-ve-stale-arrival-transforms/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-early--a0f49-ve-stale-arrival-transforms/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-contact-signature/test-results/contact-signature-about-premium/services-hero-about-early--a0f49-ve-stale-arrival-transforms/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-contact-signature/tests/browser/services-hero-about.spec.ts",
+                    "column": 51,
+                    "line": 206
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-36c198afe153c1c0a5f2",
+          "file": "services-hero-about.spec.ts",
+          "line": 201,
+          "column": 1
+        },
+        {
+          "title": "all four process artworks stay directly synchronized through rapid scroll, reversal and resize at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8370,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:14:46.536Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "same-frame-process-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzkwLCJzYW1wbGVzIjpbeyJpbmRleCI6MCwiZXhwZWN0ZWQiOjAuMTIwODM3NDE1Njk0NDk0OTEsInByb2dyZXNzIjowLjEyMDcsInNjcm9sbFByb2dyZXNzIjowLjEyMDcsIm9mZnNldHMiOlswLjg3OTNdLCJzY3JvbGxZIjo1OTM3fSx7ImluZGV4IjowLCJleHBlY3RlZCI6MC41ODEwOTk5MDIwMjMzMzIsInByb2dyZXNzIjowLjU4MDksInNjcm9sbFByb2dyZXNzIjowLjU4MDksIm9mZnNldHMiOlswLjQxOTFdLCJzY3JvbGxZIjo2MTM5fSx7ImluZGV4IjowLCJleHBlY3RlZCI6MC44NTkwODAyMTU1NDg2NjkyLCJwcm9ncmVzcyI6MC44NTg4LCJzY3JvbGxQcm9ncmVzcyI6MC44NTg4LCJvZmZzZXRzIjpbMC4xNDEyXSwic2Nyb2xsWSI6NjI2MX0seyJpbmRleCI6MCwiZXhwZWN0ZWQiOjAuMjM5MzIwODI4MDE2NzY5OCwicHJvZ3Jlc3MiOjAuMjM5Miwic2Nyb2xsUHJvZ3Jlc3MiOjAuMjM5Miwib2Zmc2V0cyI6WzAuNzYwOF0sInNjcm9sbFkiOjU5ODl9LHsiaW5kZXgiOjAsImV4cGVjdGVkIjowLjc2MTEwMzU0NzY2Njc4OCwicHJvZ3Jlc3MiOjAuNzYwOCwic2Nyb2xsUHJvZ3Jlc3MiOjAuNzYwOCwib2Zmc2V0cyI6WzAuMjM5Ml0sInNjcm9sbFkiOjYyMTh9LHsiaW5kZXgiOjAsImV4cGVjdGVkIjowLjA0MTA4ODk2NTA5Mjk2Mzc0NiwicHJvZ3Jlc3MiOjAuMDQxLCJzY3JvbGxQcm9ncmVzcyI6MC4wNDEsIm9mZnNldHMiOlswLjk1OV0sInNjcm9sbFkiOjU5MDJ9LHsiaW5kZXgiOjAsImV4cGVjdGVkIjowLjQ5OTA3MjkyNDI2MTc1NzAzLCJwcm9ncmVzcyI6MC40OTg5LCJzY3JvbGxQcm9ncmVzcyI6MC40OTg5LCJvZmZzZXRzIjpbMC41MDExXSwic2Nyb2xsWSI6NjEwM30seyJpbmRleCI6MSwiZXhwZWN0ZWQiOjAuMTE5MjM1MzI2Mjg1MDg5MTUsInByb2dyZXNzIjowLjExODUsInNjcm9sbFByb2dyZXNzIjowLjExODUsIm9mZnNldHMiOlswLjg4MTVdLCJzY3JvbGxZIjo2NTI1fSx7ImluZGV4IjoxLCJleHBlY3RlZCI6MC41Nzk0OTc4MTI2MTM5MjYyLCJwcm9ncmVzcyI6MC41Nzg2LCJzY3JvbGxQcm9ncmVzcyI6MC41Nzg2LCJvZmZzZXRzIjpbMC40MjE0XSwic2Nyb2xsWSI6NjcyN30seyJpbmRleCI6MSwiZXhwZWN0ZWQiOjAuODU5NzU2NjUzMjk5MzA3MiwicHJvZ3Jlc3MiOjAuODU4OCwic2Nyb2xsUHJvZ3Jlc3MiOjAuODU4OCwib2Zmc2V0cyI6WzAuMTQxMl0sInNjcm9sbFkiOjY4NTB9LHsiaW5kZXgiOjEsImV4cGVjdGVkIjowLjIzOTk5NzI2NTc2NzQwNzgsInByb2dyZXNzIjowLjIzOTIsInNjcm9sbFByb2dyZXNzIjowLjIzOTIsIm9mZnNldHMiOlswLjc2MDhdLCJzY3JvbGxZIjo2NTc4fSx7ImluZGV4IjoxLCJleHBlY3RlZCI6MC43NTk1MDE0NTgyNTczODIyLCJwcm9ncmVzcyI6MC43NTg1LCJzY3JvbGxQcm9ncmVzcyI6MC43NTg1LCJvZmZzZXRzIjpbMC4yNDE1XSwic2Nyb2xsWSI6NjgwNn0seyJpbmRleCI6MSwiZXhwZWN0ZWQiOjAuMDM5NDg2ODc1NjgzNTU3OTg2LCJwcm9ncmVzcyI6MC4wMzg3LCJzY3JvbGxQcm9ncmVzcyI6MC4wMzg3LCJvZmZzZXRzIjpbMC45NjEzXSwic2Nyb2xsWSI6NjQ5MH0seyJpbmRleCI6MSwiZXhwZWN0ZWQiOjAuNDk5NzQ5MzYyMDEyMzk1LCJwcm9ncmVzcyI6MC40OTg5LCJzY3JvbGxQcm9ncmVzcyI6MC40OTg5LCJvZmZzZXRzIjpbMC41MDExXSwic2Nyb2xsWSI6NjY5Mn0seyJpbmRleCI6MiwiZXhwZWN0ZWQiOjAuMTIxMDUxMDI3NjE1NzQ5MDEsInByb2dyZXNzIjowLjEyMDcsInNjcm9sbFByb2dyZXNzIjowLjEyMDcsIm9mZnNldHMiOlswLjg3OTNdLCJzY3JvbGxZIjo3MDg5fSx7ImluZGV4IjoyLCJleHBlY3RlZCI6MC41NzkwMzQ5ODY3ODQ1NDIzLCJwcm9ncmVzcyI6MC41Nzg2LCJzY3JvbGxQcm9ncmVzcyI6MC41Nzg2LCJvZmZzZXRzIjpbMC40MjE0XSwic2Nyb2xsWSI6NzI5MH0seyJpbmRleCI6MiwiZXhwZWN0ZWQiOjAuODU5MjkzODI3NDY5OTIzMywicHJvZ3Jlc3MiOjAuODU4OCwic2Nyb2xsUHJvZ3Jlc3MiOjAuODU4OCwib2Zmc2V0cyI6WzAuMTQxMl0sInNjcm9sbFkiOjc0MTN9LHsiaW5kZXgiOjIsImV4cGVjdGVkIjowLjIzOTUzNDQzOTkzODAyMzksInByb2dyZXNzIjowLjIzOTIsInNjcm9sbFByb2dyZXNzIjowLjIzOTIsIm9mZnNldHMiOlswLjc2MDhdLCJzY3JvbGxZIjo3MTQxfSx7ImluZGV4IjoyLCJleHBlY3RlZCI6MC43NTkwMzg2MzI0Mjc5OTg0LCJwcm9ncmVzcyI6MC43NTg1LCJzY3JvbGxQcm9ncmVzcyI6MC43NTg1LCJvZmZzZXRzIjpbMC4yNDE1XSwic2Nyb2xsWSI6NzM2OX0seyJpbmRleCI6MiwiZXhwZWN0ZWQiOjAuMDM5MDI0MDQ5ODU0MTc0MSwicHJvZ3Jlc3MiOjAuMDM4Nywic2Nyb2xsUHJvZ3Jlc3MiOjAuMDM4Nywib2Zmc2V0cyI6WzAuOTYxM10sInNjcm9sbFkiOjcwNTN9LHsiaW5kZXgiOjIsImV4cGVjdGVkIjowLjQ5OTI4NjUzNjE4MzAxMTE2LCJwcm9ncmVzcyI6MC40OTg5LCJzY3JvbGxQcm9ncmVzcyI6MC40OTg5LCJvZmZzZXRzIjpbMC41MDExXSwic2Nyb2xsWSI6NzI1NX0seyJpbmRleCI6MywiZXhwZWN0ZWQiOjAuMTE5NDQ4OTM4MjA2MzQzMjUsInByb2dyZXNzIjowLjExODcsInNjcm9sbFByb2dyZXNzIjowLjExODcsIm9mZnNldHMiOlswLjg4MTNdLCJzY3JvbGxZIjo3Njc3fSx7ImluZGV4IjozLCJleHBlY3RlZCI6MC41Nzk3MTE0MjQ1MzUxODAzLCJwcm9ncmVzcyI6MC41Nzk5LCJzY3JvbGxQcm9ncmVzcyI6MC41Nzk5LCJvZmZzZXRzIjpbMC40MjAxXSwic2Nyb2xsWSI6Nzg3OX0seyJpbmRleCI6MywiZXhwZWN0ZWQiOjAuODU5OTcwMjY1MjIwNTYxMywicHJvZ3Jlc3MiOjAuODYwNywic2Nyb2xsUHJvZ3Jlc3MiOjAuODYwNywib2Zmc2V0cyI6WzAuMTM5M10sInNjcm9sbFkiOjgwMDJ9LHsiaW5kZXgiOjMsImV4cGVjdGVkIjowLjI0MDIxMDg3NzY4ODY2MTksInByb2dyZXNzIjowLjIzOTcsInNjcm9sbFByb2dyZXNzIjowLjIzOTcsIm9mZnNldHMiOlswLjc2MDNdLCJzY3JvbGxZIjo3NzMwfSx7ImluZGV4IjozLCJleHBlY3RlZCI6MC43NTk3MTUwNzAxNzg2MzY0LCJwcm9ncmVzcyI6MC43NjAzLCJzY3JvbGxQcm9ncmVzcyI6MC43NjAzLCJvZmZzZXRzIjpbMC4yMzk3XSwic2Nyb2xsWSI6Nzk1OH0seyJpbmRleCI6MywiZXhwZWN0ZWQiOjAuMDM5NzAwNDg3NjA0ODEyMDgsInByb2dyZXNzIjowLjAzODgsInNjcm9sbFByb2dyZXNzIjowLjAzODgsIm9mZnNldHMiOlswLjk2MTJdLCJzY3JvbGxZIjo3NjQyfSx7ImluZGV4IjozLCJleHBlY3RlZCI6MC40OTk5NjI5NzM5MzM2NDkxNCwicHJvZ3Jlc3MiOjAuNSwic2Nyb2xsUHJvZ3Jlc3MiOjAuNSwib2Zmc2V0cyI6WzAuNV0sInNjcm9sbFkiOjc4NDR9XSwicmVzaXplZFdpZHRoIjozMjAsInJlc2l6ZWQiOnsiZXhwZWN0ZWQiOjAuNDMxMDczMTI5MzI5MjAxNDQsInByb2dyZXNzIjowLjQzMDUsInNjcm9sbFByb2dyZXNzIjowLjQzMDUsIm9mZnNldHMiOlswLjU2OTVdLCJzY3JvbGxZIjo3NDgwfX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-ef092e8336fb1107d585",
+          "file": "services-hero-about.spec.ts",
+          "line": 264,
+          "column": 3
+        },
+        {
+          "title": "all four process artworks stay directly synchronized through rapid scroll, reversal and resize at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 70000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13896,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:14:55.453Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "same-frame-process-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwic2FtcGxlcyI6W3siaW5kZXgiOjAsImV4cGVjdGVkIjowLjExOTA5MDU0NDg3MTc5NDg3LCJwcm9ncmVzcyI6MC4xMTk3LCJzY3JvbGxQcm9ncmVzcyI6MC4xMTk3LCJvZmZzZXRzIjpbMC44ODAzXSwic2Nyb2xsWSI6NTI0OH0seyJpbmRleCI6MCwiZXhwZWN0ZWQiOjAuNTgwNjI5MDA2NDEwMjU2NCwicHJvZ3Jlc3MiOjAuNTgxMiwic2Nyb2xsUHJvZ3Jlc3MiOjAuNTgxMiwib2Zmc2V0cyI6WzAuNDE4OF0sInNjcm9sbFkiOjU0NjR9LHsiaW5kZXgiOjAsImV4cGVjdGVkIjowLjg2MDU0MzUzNjMyNDc4NjMsInByb2dyZXNzIjowLjg2MTEsInNjcm9sbFByb2dyZXNzIjowLjg2MTEsIm9mZnNldHMiOlswLjEzODldLCJzY3JvbGxZIjo1NTk1fSx7ImluZGV4IjowLCJleHBlY3RlZCI6MC4yNDA4ODU0MTY2NjY2NjY2NiwicHJvZ3Jlc3MiOjAuMjQxNSwic2Nyb2xsUHJvZ3Jlc3MiOjAuMjQxNSwib2Zmc2V0cyI6WzAuNzU4NV0sInNjcm9sbFkiOjUzMDV9LHsiaW5kZXgiOjAsImV4cGVjdGVkIjowLjc2MDExNjE4NTg5NzQzNTksInByb2dyZXNzIjowLjc2MDcsInNjcm9sbFByb2dyZXNzIjowLjc2MDcsIm9mZnNldHMiOlswLjIzOTNdLCJzY3JvbGxZIjo1NTQ4fSx7ImluZGV4IjowLCJleHBlY3RlZCI6MC4wNDAwMzA3MTU4MTE5NjU4MSwicHJvZ3Jlc3MiOjAuMDQwNiwic2Nyb2xsUHJvZ3Jlc3MiOjAuMDQwNiwib2Zmc2V0cyI6WzAuOTU5NF0sInNjcm9sbFkiOjUyMTF9LHsiaW5kZXgiOjAsImV4cGVjdGVkIjowLjQ5OTQzMjQyNTIxMzY3NTIsInByb2dyZXNzIjowLjUsInNjcm9sbFByb2dyZXNzIjowLjUsIm9mZnNldHMiOlswLjVdLCJzY3JvbGxZIjo1NDI2fSx7ImluZGV4IjoxLCJleHBlY3RlZCI6MC4xMTkyMjQwOTE4ODAzNDE4OSwicHJvZ3Jlc3MiOjAuMTE5Nywic2Nyb2xsUHJvZ3Jlc3MiOjAuMTE5Nywib2Zmc2V0cyI6WzAuODgwM10sInNjcm9sbFkiOjU4Njl9LHsiaW5kZXgiOjEsImV4cGVjdGVkIjowLjU4MDc2MjU1MzQxODgwMzUsInByb2dyZXNzIjowLjU4MTIsInNjcm9sbFByb2dyZXNzIjowLjU4MTIsIm9mZnNldHMiOlswLjQxODhdLCJzY3JvbGxZIjo2MDg1fSx7ImluZGV4IjoxLCJleHBlY3RlZCI6MC44NjA2NzcwODMzMzMzMzM0LCJwcm9ncmVzcyI6MC44NjExLCJzY3JvbGxQcm9ncmVzcyI6MC44NjExLCJvZmZzZXRzIjpbMC4xMzg5XSwic2Nyb2xsWSI6NjIxNn0seyJpbmRleCI6MSwiZXhwZWN0ZWQiOjAuMjQxMDE4OTYzNjc1MjEzNjcsInByb2dyZXNzIjowLjI0MTUsInNjcm9sbFByb2dyZXNzIjowLjI0MTUsIm9mZnNldHMiOlswLjc1ODVdLCJzY3JvbGxZIjo1OTI2fSx7ImluZGV4IjoxLCJleHBlY3RlZCI6MC43NjAyNDk3MzI5MDU5ODI5LCJwcm9ncmVzcyI6MC43NjA3LCJzY3JvbGxQcm9ncmVzcyI6MC43NjA3LCJvZmZzZXRzIjpbMC4yMzkzXSwic2Nyb2xsWSI6NjE2OX0seyJpbmRleCI6MSwiZXhwZWN0ZWQiOjAuMDQwMTY0MjYyODIwNTEyODI0LCJwcm9ncmVzcyI6MC4wNDA2LCJzY3JvbGxQcm9ncmVzcyI6MC4wNDA2LCJvZmZzZXRzIjpbMC45NTk0XSwic2Nyb2xsWSI6NTgzMn0seyJpbmRleCI6MSwiZXhwZWN0ZWQiOjAuNDk5NTY1OTcyMjIyMjIyMiwicHJvZ3Jlc3MiOjAuNSwic2Nyb2xsUHJvZ3Jlc3MiOjAuNSwib2Zmc2V0cyI6WzAuNV0sInNjcm9sbFkiOjYwNDd9LHsiaW5kZXgiOjIsImV4cGVjdGVkIjowLjExOTM1NzYzODg4ODg4ODksInByb2dyZXNzIjowLjExOTcsInNjcm9sbFByb2dyZXNzIjowLjExOTcsIm9mZnNldHMiOlswLjg4MDNdLCJzY3JvbGxZIjo2NDkwfSx7ImluZGV4IjoyLCJleHBlY3RlZCI6MC41ODA4OTYxMDA0MjczNTA0LCJwcm9ncmVzcyI6MC41ODEyLCJzY3JvbGxQcm9ncmVzcyI6MC41ODEyLCJvZmZzZXRzIjpbMC40MTg4XSwic2Nyb2xsWSI6NjcwNn0seyJpbmRleCI6MiwiZXhwZWN0ZWQiOjAuODYwODEwNjMwMzQxODgwMywicHJvZ3Jlc3MiOjAuODYxMSwic2Nyb2xsUHJvZ3Jlc3MiOjAuODYxMSwib2Zmc2V0cyI6WzAuMTM4OV0sInNjcm9sbFkiOjY4Mzd9LHsiaW5kZXgiOjIsImV4cGVjdGVkIjowLjIzOTAxNTc1ODU0NzAwODU0LCJwcm9ncmVzcyI6MC4yMzkzLCJzY3JvbGxQcm9ncmVzcyI6MC4yMzkzLCJvZmZzZXRzIjpbMC43NjA3XSwic2Nyb2xsWSI6NjU0Nn0seyJpbmRleCI6MiwiZXhwZWN0ZWQiOjAuNzYwMzgzMjc5OTE0NTI5OSwicHJvZ3Jlc3MiOjAuNzYwNywic2Nyb2xsUHJvZ3Jlc3MiOjAuNzYwNywib2Zmc2V0cyI6WzAuMjM5M10sInNjcm9sbFkiOjY3OTB9LHsiaW5kZXgiOjIsImV4cGVjdGVkIjowLjA0MDI5NzgwOTgyOTA1OTgzLCJwcm9ncmVzcyI6MC4wNDA2LCJzY3JvbGxQcm9ncmVzcyI6MC4wNDA2LCJvZmZzZXRzIjpbMC45NTk0XSwic2Nyb2xsWSI6NjQ1M30seyJpbmRleCI6MiwiZXhwZWN0ZWQiOjAuNDk5Njk5NTE5MjMwNzY5MiwicHJvZ3Jlc3MiOjAuNSwic2Nyb2xsUHJvZ3Jlc3MiOjAuNSwib2Zmc2V0cyI6WzAuNV0sInNjcm9sbFkiOjY2Njh9LHsiaW5kZXgiOjMsImV4cGVjdGVkIjowLjExOTQ5MTE4NTg5NzQzNTksInByb2dyZXNzIjowLjExOTcsInNjcm9sbFByb2dyZXNzIjowLjExOTcsIm9mZnNldHMiOlswLjg4MDNdLCJzY3JvbGxZIjo3MTExfSx7ImluZGV4IjozLCJleHBlY3RlZCI6MC41ODEwMjk2NDc0MzU4OTc1LCJwcm9ncmVzcyI6MC41ODEyLCJzY3JvbGxQcm9ncmVzcyI6MC41ODEyLCJvZmZzZXRzIjpbMC40MTg4XSwic2Nyb2xsWSI6NzMyN30seyJpbmRleCI6MywiZXhwZWN0ZWQiOjAuODYwOTQ0MTc3MzUwNDI3NCwicHJvZ3Jlc3MiOjAuODYxMSwic2Nyb2xsUHJvZ3Jlc3MiOjAuODYxMSwib2Zmc2V0cyI6WzAuMTM4OV0sInNjcm9sbFkiOjc0NTh9LHsiaW5kZXgiOjMsImV4cGVjdGVkIjowLjIzOTE0OTMwNTU1NTU1NTU1LCJwcm9ncmVzcyI6MC4yMzkzLCJzY3JvbGxQcm9ncmVzcyI6MC4yMzkzLCJvZmZzZXRzIjpbMC43NjA3XSwic2Nyb2xsWSI6NzE2N30seyJpbmRleCI6MywiZXhwZWN0ZWQiOjAuNzYwNTE2ODI2OTIzMDc2OSwicHJvZ3Jlc3MiOjAuNzYwNywic2Nyb2xsUHJvZ3Jlc3MiOjAuNzYwNywib2Zmc2V0cyI6WzAuMjM5M10sInNjcm9sbFkiOjc0MTF9LHsiaW5kZXgiOjMsImV4cGVjdGVkIjowLjA0MDQzMTM1NjgzNzYwNjg0LCJwcm9ncmVzcyI6MC4wNDA2LCJzY3JvbGxQcm9ncmVzcyI6MC4wNDA2LCJvZmZzZXRzIjpbMC45NTk0XSwic2Nyb2xsWSI6NzA3NH0seyJpbmRleCI6MywiZXhwZWN0ZWQiOjAuNDk5ODMzMDY2MjM5MzE2MiwicHJvZ3Jlc3MiOjAuNSwic2Nyb2xsUHJvZ3Jlc3MiOjAuNSwib2Zmc2V0cyI6WzAuNV0sInNjcm9sbFkiOjcyODl9XSwicmVzaXplZFdpZHRoIjo3NjgsInJlc2l6ZWQiOnsiZXhwZWN0ZWQiOjAuNDMwMzU1MjM1MDQyNzM1MDQsInByb2dyZXNzIjowLjQyOTUsInNjcm9sbFByb2dyZXNzIjowLjQyOTUsIm9mZnNldHMiOlswLjU3MDVdLCJzY3JvbGxZIjo0ODYxfX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3fc917cacf7dc5332d28-341e1f9f2a49d307a576",
+          "file": "services-hero-about.spec.ts",
+          "line": 264,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-19T18:10:48.757Z",
+    "duration": 261481.954,
+    "expected": 21,
+    "skipped": 0,
+    "unexpected": 8,
+    "flaky": 0
+  }
+}
