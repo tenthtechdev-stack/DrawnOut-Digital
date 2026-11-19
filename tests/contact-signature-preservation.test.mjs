@@ -22,7 +22,15 @@ const parentFiles = execFileSync('git', ['ls-tree', '-r', '--name-only', '-z', p
   .filter(Boolean);
 const guarded = parentFiles.filter(
   (file) =>
-    ['src/', 'public/', 'design-assets/'].some((prefix) => file.startsWith(prefix)) ||
+    [
+      'src/',
+      'public/',
+      'design-assets/',
+      'scripts/portfolio/',
+      'tests/browser/',
+      'tests/production-browser/',
+    ].some((prefix) => file.startsWith(prefix)) ||
+    (file.startsWith('playwright.') && file.endsWith('.config.ts')) ||
     [
       'package.json',
       'package-lock.json',
