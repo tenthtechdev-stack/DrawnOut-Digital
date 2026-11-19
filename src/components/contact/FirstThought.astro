@@ -1,0 +1,103 @@
+<figure
+  class="first-thought"
+  data-first-thought
+  data-thought-state="settled"
+  data-thought-phase="conversation"
+  data-thought-time="4.8"
+  data-thought-reason="server"
+>
+  <svg
+    class="first-thought__drawing"
+    viewBox="0 0 560 340"
+    width="560"
+    height="340"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <g class="first-thought__registration" data-thought-mark="origin">
+      <path d="M29 123V69H79" />
+    </g>
+    <path
+      class="first-thought__line"
+      data-thought-stroke
+      d="M58 112C42 99 48 80 64 85C83 91 72 117 57 112C37 104 58 62 90 78C114 90 117 122 153 120C196 117 173 49 225 48C275 46 306 98 272 130C238 162 222 129 254 120C288 110 310 157 327 190C347 229 376 254 417 253L499 253"
+    />
+    <circle class="first-thought__origin" data-thought-seed cx="58" cy="112" r="2.6" />
+    <circle class="first-thought__tip" data-thought-tip cx="499" cy="253" r="4.5" />
+    <g class="first-thought__registration" data-thought-mark="destination">
+      <path d="M469 281H514V234" />
+    </g>
+    <path class="first-thought__invitation" data-thought-invitation d="M484 239L499 253L484 267" />
+  </svg>
+  <figcaption class="first-thought__caption">
+    <span>01 / The first thought</span>
+    <span data-thought-note>A conversation starts here.</span>
+  </figcaption>
+</figure>
+
+<script>
+  import '../../scripts/contact-first-thought';
+</script>
+
+<style>
+  .first-thought {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+  .first-thought__drawing {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: var(--thought-height, 340px);
+    aspect-ratio: 560 / 340;
+    overflow: visible;
+    pointer-events: none;
+  }
+  .first-thought__line,
+  .first-thought__invitation {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 4.25;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .first-thought__invitation {
+    stroke-width: 2.5;
+  }
+  .first-thought__registration {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 1.25;
+    opacity: 0.42;
+  }
+  .first-thought__origin {
+    fill: var(--ink);
+  }
+  .first-thought__tip {
+    fill: var(--accent);
+  }
+  .first-thought__caption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+  .first-thought__caption > span:first-child {
+    color: var(--ink);
+  }
+  @media (max-width: 767px) {
+    .first-thought__drawing {
+      max-height: var(--thought-height, 176px);
+    }
+    .first-thought__caption {
+      padding-top: 10px;
+    }
+  }
+</style>
