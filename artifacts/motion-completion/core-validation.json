@@ -58,7 +58,7 @@
         "todo": 0
       },
       "fullLog": "/tmp/motion-completion-unit.log",
-      "logExcerpt": "✔ editorial metadata rejects unsupported categories, duplicate tags and invalid ordering (2.265772ms)\n✔ Work order is deterministic, falls back to featured order and does not mutate input (14.400611ms)\n✔ filters are derived only from actual tags, with exact overlapping counts (0.782339ms)\n✔ public filtering and neighboring case links never regain excluded draft records (2.26035ms)\n✔ the five service windows each have 2.1 seconds in the 14-second loop (7.4769ms)\n✔ manual previews always land in their own completed-artwork interval (0.459846ms)\n✔ independent pause reasons retain user intent when focus and visibility change (0.529678ms)\n✔ invalid and repeated-cycle times remain bounded and deterministic (0.274065ms)\n✔ separated assets retain the documented approved source and output provenance (62.646158ms)\n✔ the empty hand omits the plaque face and the descending plaque omits the fingers (59.534191ms)\n✔ registered layers reconstruct the supplied pose without repainting or duplicate overlap (146.97763ms)\n✔ the documented separation command reproduces both committed assets and manifest (2145.776819ms)\nℹ tests 49\nℹ suites 0\nℹ pass 49\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 7329.331978"
+      "logExcerpt": "\u2714 editorial metadata rejects unsupported categories, duplicate tags and invalid ordering (2.265772ms)\n\u2714 Work order is deterministic, falls back to featured order and does not mutate input (14.400611ms)\n\u2714 filters are derived only from actual tags, with exact overlapping counts (0.782339ms)\n\u2714 public filtering and neighboring case links never regain excluded draft records (2.26035ms)\n\u2714 the five service windows each have 2.1 seconds in the 14-second loop (7.4769ms)\n\u2714 manual previews always land in their own completed-artwork interval (0.459846ms)\n\u2714 independent pause reasons retain user intent when focus and visibility change (0.529678ms)\n\u2714 invalid and repeated-cycle times remain bounded and deterministic (0.274065ms)\n\u2714 separated assets retain the documented approved source and output provenance (62.646158ms)\n\u2714 the empty hand omits the plaque face and the descending plaque omits the fingers (59.534191ms)\n\u2714 registered layers reconstruct the supplied pose without repainting or duplicate overlap (146.97763ms)\n\u2714 the documented separation command reproduces both committed assets and manifest (2145.776819ms)\n\u2139 tests 49\n\u2139 suites 0\n\u2139 pass 49\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 7329.331978"
     },
     {
       "command": "npm run test:build",
@@ -77,7 +77,7 @@
         "todo": 0
       },
       "fullLog": "/tmp/motion-completion-build-output.log",
-      "logExcerpt": "> drawnout-digital@0.1.0 test:build\n> node --test tests/build-output.test.mjs\n\n✔ production emits foundation routes and approved cases without private preview or draft routes (54.942385ms)\n✔ production asset output excludes every draft project image (18.495809ms)\n✔ production text and generated assets do not expose original portfolio files or draft metadata (31.788867ms)\n✔ approved artwork has real public cards and cases without invented facts or review labels (19.929457ms)\n✔ service previews have distinct metadata, complete copy, FAQs and truthful structured data (6.067223ms)\n✔ only approved motion exports ship, and cards defer video sources until visible (40.324813ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 542.343426"
+      "logExcerpt": "> drawnout-digital@0.1.0 test:build\n> node --test tests/build-output.test.mjs\n\n\u2714 production emits foundation routes and approved cases without private preview or draft routes (54.942385ms)\n\u2714 production asset output excludes every draft project image (18.495809ms)\n\u2714 production text and generated assets do not expose original portfolio files or draft metadata (31.788867ms)\n\u2714 approved artwork has real public cards and cases without invented facts or review labels (19.929457ms)\n\u2714 service previews have distinct metadata, complete copy, FAQs and truthful structured data (6.067223ms)\n\u2714 only approved motion exports ship, and cards defer video sources until visible (40.324813ms)\n\u2139 tests 6\n\u2139 suites 0\n\u2139 pass 6\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 542.343426"
     },
     {
       "command": "npm run test:publication",
@@ -96,10 +96,10 @@
         "todo": 0
       },
       "fullLog": "/tmp/motion-completion-publication.log",
-      "logExcerpt": "> drawnout-digital@0.1.0 test:publication\n> node --test tests/publication-workflow.test.mjs\n\n✔ visual approval publishes a record without verifying facts or credits; withdrawal removes its route and unique media (46942.18031ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 47536.939362"
+      "logExcerpt": "> drawnout-digital@0.1.0 test:publication\n> node --test tests/publication-workflow.test.mjs\n\n\u2714 visual approval publishes a record without verifying facts or credits; withdrawal removes its route and unique media (46942.18031ms)\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 1\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 47536.939362"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "existingMediaValidation": {
     "report": "media-validation.json",
     "command": "node --test --test-reporter=spec tests/motion-quality-exports.test.mjs tests/portfolio-motion-exports.test.mjs tests/motion-completion-preservation.test.mjs",
@@ -112,5 +112,11 @@
     "Browser checks and production build execution are recorded separately by the coordinating agent."
   ],
   "runnerNote": "An initial sandboxed spawn attempt could not capture child output and was discarded. This recorded run rejects any subprocess error and requires actual command output.",
-  "pendingFinalFormatting": "The initial repository formatting check failed only on three generated browser evidence JSON files. The coordinating agent will format those after writes finish and append the final repository-wide formatting result; this report retains the original failure."
+  "finalFormatting": {
+    "command": "npm run format:check",
+    "status": "passed",
+    "exitCode": 0,
+    "report": "format-validation.json",
+    "note": "Initial failed formatting result is retained. Generated evidence was formatted after all writers stopped; report-only final changes are separately checked with Prettier."
+  }
 }

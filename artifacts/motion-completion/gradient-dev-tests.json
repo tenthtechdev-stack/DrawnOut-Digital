@@ -1,0 +1,621 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-motion-completion/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.motion-gradient.config.ts",
+      "--output=test-results/motion-completion-gradient-dev",
+      "--reporter=list,json"
+    ],
+    "configFile": "/workspace/drawnout-motion-completion/playwright.motion-gradient.config.ts",
+    "rootDir": "/workspace/drawnout-motion-completion/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-motion-completion/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["signature-gradient.spec.ts"],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-motion-completion/tests/browser",
+        "snapshotDir": "/workspace/drawnout-motion-completion/tests/browser",
+        "testIgnore": [],
+        "testMatch": "signature-gradient.spec.ts",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4461",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [["list"], ["json"]],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --port 4461",
+      "url": "http://127.0.0.1:4461",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "signature-gradient.spec.ts",
+      "file": "signature-gradient.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 320px and pauses offscreen",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 17372,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-living-gradient]')\nExpected: \u001b[32m\"\u001b[7mfals\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mtru\u001b[27me\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-living-gradient]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-living-gradient]')\u001b[22m\n\u001b[2m    26 × locator resolved to <div aria-hidden=\"true\" class=\"living-gradient\" data-living-gradient=\"\" data-astro-cid-ljhi7hne=\"\" data-gradient-active=\"true\" data-gradient-renderer=\"webgl\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"true\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-living-gradient]')\nExpected: \u001b[32m\"\u001b[7mfals\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mtru\u001b[27me\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-living-gradient]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-living-gradient]')\u001b[22m\n\u001b[2m    26 × locator resolved to <div aria-hidden=\"true\" class=\"living-gradient\" data-living-gradient=\"\" data-astro-cid-ljhi7hne=\"\" data-gradient-active=\"true\" data-gradient-renderer=\"webgl\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"true\"\u001b[22m\n\n    at /workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts:157:28",
+                    "location": {
+                      "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                      "column": 28,
+                      "line": 157
+                    },
+                    "snippet": "  155 |     const gradient = page.locator('[data-living-gradient]');\n  156 |     await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');\n> 157 |     await expect(gradient).toHaveAttribute('data-gradient-active', 'false');\n      |                            ^\n  158 |     expect(\n  159 |       await page\n  160 |         .locator('.gradient-coral')"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                        "column": 28,
+                        "line": 157
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-living-gradient]')\nExpected: \u001b[32m\"\u001b[7mfals\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mtru\u001b[27me\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-living-gradient]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-living-gradient]')\u001b[22m\n\u001b[2m    26 × locator resolved to <div aria-hidden=\"true\" class=\"living-gradient\" data-living-gradient=\"\" data-astro-cid-ljhi7hne=\"\" data-gradient-active=\"true\" data-gradient-renderer=\"webgl\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"true\"\u001b[22m\n\n\n  155 |     const gradient = page.locator('[data-living-gradient]');\n  156 |     await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');\n> 157 |     await expect(gradient).toHaveAttribute('data-gradient-active', 'false');\n      |                            ^\n  158 |     expect(\n  159 |       await page\n  160 |         .locator('.gradient-coral')\n    at /workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts:157:28"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T01:55:07.446Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-9e7bd--320px-and-pauses-offscreen/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-9e7bd--320px-and-pauses-offscreen/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-9e7bd--320px-and-pauses-offscreen/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                    "column": 28,
+                    "line": 157
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-0c19f3288edffaa1c579",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "column": 3
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 390px and pauses offscreen",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 14684,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    25 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1933.60\" data-signature-intro-started=\"769.40\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    25 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1933.60\" data-signature-intro-started=\"769.40\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n\n    at /workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts:156:40",
+                    "location": {
+                      "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                      "column": 40,
+                      "line": 156
+                    },
+                    "snippet": "  154 |     await page.goto('/');\n  155 |     const gradient = page.locator('[data-living-gradient]');\n> 156 |     await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');\n      |                                        ^\n  157 |     await expect(gradient).toHaveAttribute('data-gradient-active', 'false');\n  158 |     expect(\n  159 |       await page"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                        "column": 40,
+                        "line": 156
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    25 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1933.60\" data-signature-intro-started=\"769.40\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n\n\n  154 |     await page.goto('/');\n  155 |     const gradient = page.locator('[data-living-gradient]');\n> 156 |     await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');\n      |                                        ^\n  157 |     await expect(gradient).toHaveAttribute('data-gradient-active', 'false');\n  158 |     expect(\n  159 |       await page\n    at /workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts:156:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T01:55:27.006Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-38d03--390px-and-pauses-offscreen/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-38d03--390px-and-pauses-offscreen/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-38d03--390px-and-pauses-offscreen/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                    "column": 40,
+                    "line": 156
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-ae0bf098dfb405a85ef8",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "column": 3
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 768px and pauses offscreen",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 16009,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1973.50\" data-signature-intro-started=\"873.10\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1973.50\" data-signature-intro-started=\"873.10\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n\n    at /workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts:156:40",
+                    "location": {
+                      "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                      "column": 40,
+                      "line": 156
+                    },
+                    "snippet": "  154 |     await page.goto('/');\n  155 |     const gradient = page.locator('[data-living-gradient]');\n> 156 |     await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');\n      |                                        ^\n  157 |     await expect(gradient).toHaveAttribute('data-gradient-active', 'false');\n  158 |     expect(\n  159 |       await page"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                        "column": 40,
+                        "line": 156
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1973.50\" data-signature-intro-started=\"873.10\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n\n\n  154 |     await page.goto('/');\n  155 |     const gradient = page.locator('[data-living-gradient]');\n> 156 |     await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');\n      |                                        ^\n  157 |     await expect(gradient).toHaveAttribute('data-gradient-active', 'false');\n  158 |     expect(\n  159 |       await page\n    at /workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts:156:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T01:55:43.522Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-bf76f--768px-and-pauses-offscreen/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-bf76f--768px-and-pauses-offscreen/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-bf76f--768px-and-pauses-offscreen/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                    "column": 40,
+                    "line": 156
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-cdcca5797f6f62872516",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "column": 3
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 17046,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"3047.30\" data-signature-intro-started=\"1109.20\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"3047.30\" data-signature-intro-started=\"1109.20\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n\n    at /workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts:156:40",
+                    "location": {
+                      "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                      "column": 40,
+                      "line": 156
+                    },
+                    "snippet": "  154 |     await page.goto('/');\n  155 |     const gradient = page.locator('[data-living-gradient]');\n> 156 |     await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');\n      |                                        ^\n  157 |     await expect(gradient).toHaveAttribute('data-gradient-active', 'false');\n  158 |     expect(\n  159 |       await page"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                        "column": 40,
+                        "line": 156
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    23 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"3047.30\" data-signature-intro-started=\"1109.20\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n\n\n  154 |     await page.goto('/');\n  155 |     const gradient = page.locator('[data-living-gradient]');\n> 156 |     await expect(page.locator('html')).toHaveAttribute('data-signature-intro', 'playing');\n      |                                        ^\n  157 |     await expect(gradient).toHaveAttribute('data-gradient-active', 'false');\n  158 |     expect(\n  159 |       await page\n    at /workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts:156:40"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T01:56:01.494Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-09c68-1440px-and-pauses-offscreen/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-09c68-1440px-and-pauses-offscreen/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-09c68-1440px-and-pauses-offscreen/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                    "column": 40,
+                    "line": 156
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-9d8c9795561ccd28d49b",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "column": 3
+        },
+        {
+          "title": "desktop pointer response eases towards the cursor while mobile touch preserves autonomous motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7224,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T01:56:21.679Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-c7a7f8fa7b07679340df",
+          "file": "signature-gradient.spec.ts",
+          "line": 220,
+          "column": 1
+        },
+        {
+          "title": "visibility suspension pauses the shader clock and resumes without a time jump",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4312,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T01:56:29.242Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-bef52fd6a6fd4240bb66",
+          "file": "signature-gradient.spec.ts",
+          "line": 250,
+          "column": 1
+        },
+        {
+          "title": "WebGL context failure selects animated CSS and a live preference change restores static artwork",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7508,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"matrix(0.990271, -0.31373, 0.13915, 0.96574, 28.9374, 138.122)\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"matrix(0.990271, -0.31373, 0.13915, 0.96574, 28.9374, 138.122)\"\u001b[39m\n    at /workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts:294:86",
+                    "location": {
+                      "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                      "column": 86,
+                      "line": 294
+                    },
+                    "snippet": "  292 |   const before = await layer.evaluate((element) => getComputedStyle(element).transform);\n  293 |   await page.waitForTimeout(250);\n> 294 |   expect(await layer.evaluate((element) => getComputedStyle(element).transform)).not.toBe(before);\n      |                                                                                      ^\n  295 |   await page.emulateMedia({ reducedMotion: 'reduce' });\n  296 |   await expect(gradient).toHaveAttribute('data-gradient-renderer', 'static');\n  297 |   expect(await layer.evaluate((element) => getComputedStyle(element).animationName)).toBe('none');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                        "column": 86,
+                        "line": 294
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"matrix(0.990271, -0.31373, 0.13915, 0.96574, 28.9374, 138.122)\"\u001b[39m\n\n  292 |   const before = await layer.evaluate((element) => getComputedStyle(element).transform);\n  293 |   await page.waitForTimeout(250);\n> 294 |   expect(await layer.evaluate((element) => getComputedStyle(element).transform)).not.toBe(before);\n      |                                                                                      ^\n  295 |   await page.emulateMedia({ reducedMotion: 'reduce' });\n  296 |   await expect(gradient).toHaveAttribute('data-gradient-renderer', 'static');\n  297 |   expect(await layer.evaluate((element) => getComputedStyle(element).animationName)).toBe('none');\n    at /workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts:294:86"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T01:56:33.588Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-WebGL-c-5d600-nge-restores-static-artwork/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-WebGL-c-5d600-nge-restores-static-artwork/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-WebGL-c-5d600-nge-restores-static-artwork/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+                    "column": 86,
+                    "line": 294
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-5c90dbc5293138c57955",
+          "file": "signature-gradient.spec.ts",
+          "line": 278,
+          "column": 1
+        },
+        {
+          "title": "unavailable GPU uses visibly flowing CSS without adding a rendering loop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7672,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T01:56:43.000Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-eba760341c85349797bb",
+          "file": "signature-gradient.spec.ts",
+          "line": 301,
+          "column": 1
+        },
+        {
+          "title": "initial reduced motion and data saving never initialize GPU rendering",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7650,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T01:56:51.437Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-10e5c15c9762ac6ef64f",
+          "file": "signature-gradient.spec.ts",
+          "line": 325,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-19T01:54:55.730Z",
+    "duration": 123606.916,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

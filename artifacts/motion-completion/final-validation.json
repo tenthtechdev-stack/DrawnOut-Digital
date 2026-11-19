@@ -1,0 +1,165 @@
+{
+  "recordedAt": "2026-11-19T02:13:47.293385+00:00",
+  "status": "creative-review-ready-with-validation-limitations",
+  "applicationAndExportSourceCommit": "9c8d5283c88377ff684c21eaff00a889e0c2f11a",
+  "captureSourceCommit": "d2c040eb8d0b9d426d0f5d05849ada429173e7f3",
+  "build": {
+    "report": "build-validation.json",
+    "exitCode": 0,
+    "pages": 22,
+    "portfolioVideoEndpoints": 12
+  },
+  "core": {
+    "report": "core-validation.json",
+    "typeErrors": 0,
+    "lintPassed": true,
+    "unitPassed": 49,
+    "buildOutputPassed": 6,
+    "publicationPassed": 1
+  },
+  "media": {
+    "report": "media-validation.json",
+    "passed": 21,
+    "failed": 0
+  },
+  "browsers": [
+    {
+      "suite": "Focused completion playback",
+      "report": "browser-tests.json",
+      "config": "playwright.motion-completion.config.ts",
+      "passed": 31,
+      "failed": 0,
+      "flaky": 0,
+      "skipped": 0,
+      "durationMilliseconds": 232108.791
+    },
+    {
+      "suite": "All eleven premium case studies",
+      "report": "case-rollout-tests.json",
+      "config": "playwright.case-rollout.config.ts",
+      "passed": 42,
+      "failed": 0,
+      "flaky": 0,
+      "skipped": 0,
+      "durationMilliseconds": 365421.35
+    },
+    {
+      "suite": "Work, portfolio, Contact and footer",
+      "report": "case-regression-tests.json",
+      "config": "playwright.case-regression.config.ts",
+      "passed": 74,
+      "failed": 0,
+      "flaky": 0,
+      "skipped": 0,
+      "durationMilliseconds": 469133.39499999996
+    },
+    {
+      "suite": "Services, accessibility and loader",
+      "report": "preservation-tests.json",
+      "config": "playwright.motion-preservation.config.ts",
+      "passed": 51,
+      "failed": 8,
+      "flaky": 0,
+      "skipped": 0,
+      "durationMilliseconds": 357018.91799999995
+    },
+    {
+      "suite": "Development-only living gradient",
+      "report": "gradient-dev-tests.json",
+      "config": "playwright.motion-gradient.config.ts",
+      "passed": 4,
+      "failed": 5,
+      "flaky": 0,
+      "skipped": 0,
+      "durationMilliseconds": 123606.916
+    },
+    {
+      "suite": "About and Services/About preservation",
+      "report": "about-premium-tests.json",
+      "config": "playwright.about-premium.config.ts",
+      "passed": 23,
+      "failed": 6,
+      "flaky": 0,
+      "skipped": 0,
+      "durationMilliseconds": 227106.545
+    }
+  ],
+  "initialBrowserTotals": {
+    "passed": 225,
+    "failed": 19,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "focusedRetryTotals": {
+    "passed": 6,
+    "failed": 13
+  },
+  "baselineTotals": {
+    "passed": 6,
+    "failed": 13
+  },
+  "currentRetryUnresolvedChecks": [
+    "changing motion preferences during arrival releases the full composition immediately",
+    "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+    "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+    "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+    "portrait arrival leaves navigation pointer targets immediately usable at 390px",
+    "portrait, approved plaque, atmosphere and copy arrive in order within four seconds at 1440px",
+    "real rendered 1440px loop features all five scenes, wordmark and return in fourteen seconds",
+    "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+    "right-side fluid shader evolves at 0/2/5/8s after the loader at 320px and pauses offscreen",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 320px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 390px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 768px"
+  ],
+  "alsoFailedOnUnmodifiedBaseline": [
+    "changing motion preferences during arrival releases the full composition immediately",
+    "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+    "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+    "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+    "real rendered 1440px loop features all five scenes, wordmark and return in fourteen seconds",
+    "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 320px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 390px",
+    "six enlarged borderless project posters reveal progressively and keep SOL prominent at 768px"
+  ],
+  "comparisonReport": "baseline-comparison.json",
+  "formatting": {
+    "report": "format-validation.json",
+    "status": "passed"
+  },
+  "recordings": [
+    {
+      "file": "completion-1440-browser.mp4",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "durationSeconds": 87.48,
+      "bytes": 6979557,
+      "sha256": "f413fcd7600516e8c1710306e799ccec7501f5f8a5d389ba2084bc988f36f0e4",
+      "decodedAllFrames": true
+    },
+    {
+      "file": "completion-390-browser.mp4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "durationSeconds": 43.16,
+      "bytes": 2130405,
+      "sha256": "2fc7a5de5d0dcf681a0570baf403463831ce9e78429857fb7aea550a7028d75b",
+      "decodedAllFrames": true
+    }
+  ],
+  "limitations": [
+    "Wider browser suite is not a clean pass; exact startup/animation-sampling failures, retry and baseline comparisons are preserved. No unrelated source or assertions were changed.",
+    "Creative approval remains pending for the three new animations.",
+    "Chromium viewport/touch emulation; physical Safari/iOS/Android validation remains outstanding.",
+    "Flattened source artwork limits hidden letter contours, underlaps and photographic layer articulation; exact editable-master requirements in ART_DIRECTION_AND_SOURCES.md.",
+    "Signature 3D hand/footer and live enquiry delivery are separate milestones."
+  ],
+  "delivery": "Draft PR21 stacked on open PR20; no merge, rebase, force-push, deployment or Netlify mirror push."
+}

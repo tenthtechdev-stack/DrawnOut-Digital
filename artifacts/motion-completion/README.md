@@ -2,6 +2,8 @@
 
 Triarch, By Tech Group and U Wanna Smoothie replace their original loops. Bunzo, SOL Community Center and Churros stay byte-identical to PR #20. No website layouts, enquiry puzzle or publication controls change. These exports are ready for **creative review**, not a claim of owner approval.
 
+**Validation note:** core, media and focused portfolio checks pass. Wider startup/animation checks have unresolved failures; see the [actual validation results](../../docs/motion-completion/VALIDATION.md) and the original-baseline comparison. This remains a creative-review draft.
+
 ## Actual desktop and mobile browser playback
 
 These are production-build Chromium recordings using native scrolling, real Work/case links, naturally playing videos and keyboard pause controls. Each project remains visible for more than one full 7.5-second cycle. Mobile is touch/viewport emulation, not a physical phone.

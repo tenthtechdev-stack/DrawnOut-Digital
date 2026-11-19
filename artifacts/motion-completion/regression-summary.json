@@ -1,0 +1,682 @@
+{
+  "startedAt": "2026-11-19T01:34:55.275740+00:00",
+  "sourceCommit": "9e05e5f9b48636380bed07628b5a652f553492f8",
+  "steps": [
+    {
+      "name": "case-rollout",
+      "command": "npx playwright test --config playwright.case-rollout.config.ts --output=test-results/motion-completion-case-rollout",
+      "report": "artifacts/motion-completion/case-rollout-tests.json",
+      "log": "/workspace/motion-completion-review/case-rollout-tests.log",
+      "exitCode": 0,
+      "durationSeconds": 367.522,
+      "stats": {
+        "startTime": "2026-11-19T01:34:57.275Z",
+        "duration": 365421.35,
+        "expected": 42,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "case-regression",
+      "command": "npx playwright test --config playwright.case-regression.config.ts --output=test-results/motion-completion-case-regression",
+      "report": "artifacts/motion-completion/case-regression-tests.json",
+      "log": "/workspace/motion-completion-review/case-regression-tests.log",
+      "exitCode": 0,
+      "durationSeconds": 470.928,
+      "stats": {
+        "startTime": "2026-11-19T01:41:04.502Z",
+        "duration": 469133.39499999996,
+        "expected": 74,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "preservation",
+      "command": "npx playwright test --config playwright.motion-preservation.config.ts --output=test-results/motion-completion-preservation --reporter=list,json",
+      "report": "artifacts/motion-completion/preservation-tests.json",
+      "log": "/workspace/motion-completion-review/preservation-tests.log",
+      "exitCode": 1,
+      "durationSeconds": 359.943,
+      "stats": {
+        "startTime": "2026-11-19T01:48:56.519Z",
+        "duration": 357018.91799999995,
+        "expected": 51,
+        "skipped": 0,
+        "unexpected": 8,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "gradient-dev",
+      "command": "npx playwright test --config playwright.motion-gradient.config.ts --output=test-results/motion-completion-gradient-dev --reporter=list,json",
+      "report": "artifacts/motion-completion/gradient-dev-tests.json",
+      "log": "/workspace/motion-completion-review/gradient-dev-tests.log",
+      "exitCode": 1,
+      "durationSeconds": 125.709,
+      "stats": {
+        "startTime": "2026-11-19T01:54:55.730Z",
+        "duration": 123606.916,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 5,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "about-premium",
+      "command": "npx playwright test --config playwright.about-premium.config.ts --output=test-results/motion-completion-about-premium",
+      "report": "artifacts/motion-completion/about-premium-tests.json",
+      "log": "/workspace/motion-completion-review/about-premium-tests.log",
+      "exitCode": 1,
+      "durationSeconds": 229.747,
+      "stats": {
+        "startTime": "2026-11-19T01:57:01.928Z",
+        "duration": 227106.545,
+        "expected": 23,
+        "skipped": 0,
+        "unexpected": 6,
+        "flaky": 0
+      }
+    }
+  ],
+  "completedAt": "2026-11-19T02:00:49.154705+00:00",
+  "failedChecks": [
+    {
+      "suite": "preservation",
+      "title": "real rendered 1440px loop features all five scenes, wordmark and return in fourteen seconds",
+      "file": "browser/services-hero.spec.ts",
+      "line": 95,
+      "status": "failed",
+      "error": "Error: expect(received).toBeGreaterThan(expected)\n\nExpected: > 15\nReceived:   15",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/services-hero.spec.ts",
+        "column": 31,
+        "line": 181
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/browser-services-hero-real-0c0b1--return-in-fourteen-seconds/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/browser-services-hero-real-0c0b1--return-in-fourteen-seconds/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/browser-services-hero-real-0c0b1--return-in-fourteen-seconds/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "preservation",
+      "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+      "file": "production-browser/loader.spec.ts",
+      "line": 120,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('html')\nExpected: \"full\"\nReceived: \"brief\"\nTimeout:  12000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\n  - waiting for locator('html')\n    3 \u00d7 locator resolved to <html lang=\"en\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"playing\" data-signature-intro-mode=\"brief\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\">\u2026</html>\n      - unexpected value \"brief\"\n    2 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"playing\" data-signature-intro-mode=\"brief\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\">\u2026</html>\n      - unexpected value \"brief\"\n    19 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1834.80\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\n       - unexpected value \"brief\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/production-browser/loader.spec.ts",
+        "column": 38,
+        "line": 6
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-loader--5171b-resh-Home-journeys-at-390px/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-loader--5171b-resh-Home-journeys-at-390px/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-loader--5171b-resh-Home-journeys-at-390px/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "preservation",
+      "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+      "file": "production-browser/loader.spec.ts",
+      "line": 120,
+      "status": "failed",
+      "error": "Error: expect(received).toBeGreaterThan(expected)\n\nExpected: > 3000\nReceived:   2543.5",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/production-browser/loader.spec.ts",
+        "column": 34,
+        "line": 103
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-loader--2d64a-esh-Home-journeys-at-1440px/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-loader--2d64a-esh-Home-journeys-at-1440px/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-loader--2d64a-esh-Home-journeys-at-1440px/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "preservation",
+      "title": "failed storyboard clock initialization reveals a working homepage",
+      "file": "production-browser/loader.spec.ts",
+      "line": 168,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('html')\nExpected: \"skipped\"\nReceived: \"completed\"\nTimeout:  12000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\n  - waiting for locator('html')\n    2 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"pending\">\u2026</html>\n      - unexpected value \"pending\"\n    3 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"playing\" data-signature-intro-mode=\"brief\" data-signature-intro-started=\"829.20\" data-signature-intro-fallback=\"late-start\">\u2026</html>\n      - unexpected value \"playing\"\n    16 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"2522.20\" data-signature-intro-started=\"829.20\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\n       - unexpected value \"completed\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/production-browser/loader.spec.ts",
+        "column": 38,
+        "line": 175
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-loader--08325--reveals-a-working-homepage/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-loader--08325--reveals-a-working-homepage/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-loader--08325--reveals-a-working-homepage/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "preservation",
+      "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 320px",
+      "file": "production-browser/signature-squares.spec.ts",
+      "line": 33,
+      "status": "failed",
+      "error": "Error: page.evaluate: Error: Missing live intro clock\n    at eval (eval at evaluate (:370:30), <anonymous>:30:51)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "errorLocation": {
+        "file": "eval at evaluate (:370:30), <anonymous>",
+        "column": 51,
+        "line": 30
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-f47a3-keep-SOL-prominent-at-320px/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-f47a3-keep-SOL-prominent-at-320px/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-f47a3-keep-SOL-prominent-at-320px/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "preservation",
+      "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 390px",
+      "file": "production-browser/signature-squares.spec.ts",
+      "line": 33,
+      "status": "failed",
+      "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 2\n+ Received  + 2\n\n  Array [\n    true,\n    true,\n-   true,\n-   true,\n+   false,\n+   false,\n    true,\n    true,\n  ]",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/production-browser/signature-squares.spec.ts",
+        "column": 35,
+        "line": 207
+      },
+      "attachments": [
+        {
+          "name": "project-squares-390",
+          "contentType": "application/json",
+          "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQ1My9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkM3aGR5d2ZCXzU3MnFtLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxMDEsImhlaWdodCI6MTAxLCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0NDUzL19hc3Ryby90cmlhcmNoLWJ1c2luZXNzLWNhcmQuQTZnb2xsb2JfWjJrVVd4VC53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MTAxLCJoZWlnaHQiOjEwMSwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQ1My9fYXN0cm8vc29sLWNvbW11bml0eS1zaWduYWdlLkJCdTlxQTFHX1oxUENUTzUud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjEwMSwiaGVpZ2h0Ijo2MiwiZml0IjoiY29udGFpbiJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0NDUzL19hc3Ryby9jaHVycm9zLWFwcGxpY2F0aW9ucy5CNU15bE1lWV9aMmJ3ZjZPLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxMDEsImhlaWdodCI6MTAxLCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0NDUzL19hc3Ryby9ieS10ZWNoLWFwcGxpY2F0aW9ucy5CRnRpdzlNTl8xcEM0TnYud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjEwMSwiaGVpZ2h0IjoxMDEsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0NTMvX2FzdHJvL2NhcHR1cmUtYXBwbGljYXRpb25zLkRPM3V5Y211XzFDWGVMLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxMDEsImhlaWdodCI6MTAxLCJmaXQiOiJjb3ZlciJ9XSwiY29ubmVjdGluZ1dhdmVDb3VudCI6MCwiYXJ0d29ya0FmdGVySGFuZEVudHJhbmNlIjpmYWxzZSwic3R5bGVzIjpbeyJib3JkZXIiOjAsInJhZGl1cyI6OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OH1dLCJhcnR3b3JrVGltaW5ncyI6W3siY2xvY2tPZmZzZXQiOjAsInN0YXJ0Ijo2MDAsImVuZCI6ODgwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjg0MCwiZW5kIjoxMTIwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjEwODAsImVuZCI6MTM2MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxMzIwLCJlbmQiOjE2MDAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTU2MCwiZW5kIjoxODQwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjE4MDAsImVuZCI6MjA4MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9XSwic2F3RW1wdHlUaWxlIjpbdHJ1ZSx0cnVlLGZhbHNlLGZhbHNlLHRydWUsdHJ1ZV0sInJldmVhbFN0YXJ0cyI6WzE1MDIuNjAwMDAwMDAwMDAwMSwxNTAyLjYwMDAwMDAwMDAwMDEsMTUwMi42MDAwMDAwMDAwMDAxLDE1MDIuNjAwMDAwMDAwMDAwMSwxOTY5LjMsMTk2OS4zXSwibGFzdFVucmV2ZWFsZWQiOlsyMzYuMDAwMDAwMDAwMDAwMDYsMjM2LjAwMDAwMDAwMDAwMDA2LDIzNi4wMDAwMDAwMDAwMDAwNiwyMzYuMDAwMDAwMDAwMDAwMDYsMTUwMi42MDAwMDAwMDAwMDAxLDE1MDIuNjAwMDAwMDAwMDAwMV0sImxhc3RJbmNvbXBsZXRlIjoxOTY5LjMsIm1heGltdW1TYW1wbGVHYXAiOjEyNjYuNjAwMDAwMDAwMDAwMSwic2F3TWl4ZWRSZXZlYWwiOnRydWUsImZ1bGx5VmlzaWJsZUF0IjoyMTUyLjYsImdlb21ldHJ5Ijp7ImZyYW1lcyI6W3sibGVmdCI6MTkuMTc5Njg3NSwicmlnaHQiOjExMi40NjA5Mzc1LCJ0b3AiOjM2Mi40NzY1NjI1LCJib3R0b20iOjQ1NS43NTc4MTI1LCJ3aWR0aCI6OTMuMjgxMjUsImhlaWdodCI6OTMuMjgxMjV9LHsibGVmdCI6MTkuMTc5Njg3NSwicmlnaHQiOjExMi40NjA5Mzc1LCJ0b3AiOjI2NC4wMjM0Mzc1LCJib3R0b20iOjM1Ny4zMDQ2ODc1LCJ3aWR0aCI6OTMuMjgxMjUsImhlaWdodCI6OTMuMjgxMjV9LHsibGVmdCI6MTQzLjg2NzE4NzUsInJpZ2h0IjoyNDYuMTE3MTg3NSwidG9wIjoyNTkuNTM5MDYyNSwiYm90dG9tIjozNjEuNzg5MDYyNSwid2lkdGgiOjEwMi4yNSwiaGVpZ2h0IjoxMDIuMjV9LHsibGVmdCI6MTQ4LjM1MTU2MjUsInJpZ2h0IjoyNDEuNjMyODEyNSwidG9wIjozNzAuNTA3ODEyNSwiYm90dG9tIjo0NjMuNzg5MDYyNSwid2lkdGgiOjkzLjI4MTI1LCJoZWlnaHQiOjkzLjI4MTI1fSx7ImxlZnQiOjI3Ny41MjM0Mzc1LCJyaWdodCI6MzcwLjgwNDY4NzUsInRvcCI6MzYyLjQ3NjU2MjUsImJvdHRvbSI6NDU1Ljc1NzgxMjUsIndpZHRoIjo5My4yODEyNSwiaGVpZ2h0Ijo5My4yODEyNX0seyJsZWZ0IjoyNzcuNTEzNDI3NzM0Mzc1LCJyaWdodCI6MzcwLjgxNDY5NzI2NTYyNSwidG9wIjoyNjQuMDEzNDI3NzM0Mzc1LCJib3R0b20iOjM1Ny4zMTQ2OTcyNjU2MjUsIndpZHRoIjo5My4zMDEyNjk1MzEyNSwiaGVpZ2h0Ijo5My4zMDEyNjk1MzEyNX1dLCJzbG90V2lkdGhzIjpbOTMuMjgxMjUsOTMuMjgxMjUsMTAyLjI1LDkzLjI4MTI1LDkzLjI4MTI1LDkzLjI4MTI1XSwiZ3JvdXBXaWR0aCI6MzU4Ljc5Njg3NSwid29yZG1hcmsiOnsibGVmdCI6MjIsInJpZ2h0IjozMDAuMTI1LCJ0b3AiOjY3Ni40Mzc1LCJib3R0b20iOjc0Mi43MzQzNzUsIndpZHRoIjoyNzguMTI1LCJoZWlnaHQiOjY2LjI5Njg3NX0sInNraXAiOnsibGVmdCI6MjU1LjUsInJpZ2h0IjozNjgsInRvcCI6Nzc1LCJib3R0b20iOjgxOSwid2lkdGgiOjExMi41LCJoZWlnaHQiOjQ0fX0sImVuZGVkIjo0NjM0LjUsInJlYXNvbiI6ImNvbXBsZXRlIiwib3ZlcmZsb3ciOmZhbHNlfQ=="
+        },
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-9c03e-keep-SOL-prominent-at-390px/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-9c03e-keep-SOL-prominent-at-390px/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-9c03e-keep-SOL-prominent-at-390px/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "preservation",
+      "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 768px",
+      "file": "production-browser/signature-squares.spec.ts",
+      "line": 33,
+      "status": "failed",
+      "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 2\n+ Received  + 2\n\n  Array [\n    true,\n    true,\n    true,\n-   true,\n-   true,\n+   false,\n+   false,\n    true,\n  ]",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/production-browser/signature-squares.spec.ts",
+        "column": 35,
+        "line": 207
+      },
+      "attachments": [
+        {
+          "name": "project-squares-768",
+          "contentType": "application/json",
+          "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQ1My9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkM3aGR5d2ZCXzJIS2wyLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoxOTEsImhlaWdodCI6MTkxLCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0NDUzL19hc3Ryby90cmlhcmNoLWJ1c2luZXNzLWNhcmQuQTZnb2xsb2JfT0QwbU4ud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjE5MSwiaGVpZ2h0IjoxOTEsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0NTMvX2FzdHJvL3NvbC1jb21tdW5pdHktc2lnbmFnZS5CQnU5cUExR19aUndHbnQud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjE5MSwiaGVpZ2h0IjoxMTcsImZpdCI6ImNvbnRhaW4ifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQ1My9fYXN0cm8vY2h1cnJvcy1hcHBsaWNhdGlvbnMuQjVNeWxNZVlfWTJITlMud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjE5MSwiaGVpZ2h0IjoxOTEsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0NTMvX2FzdHJvL2J5LXRlY2gtYXBwbGljYXRpb25zLkJGdGl3OU1OX1p1MDY0SS53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MTkxLCJoZWlnaHQiOjE5MSwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQ1My9fYXN0cm8vY2FwdHVyZS1hcHBsaWNhdGlvbnMuRE8zdXljbXVfWjFSWWNEcy53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MTkxLCJoZWlnaHQiOjE5MSwiZml0IjoiY292ZXIifV0sImNvbm5lY3RpbmdXYXZlQ291bnQiOjAsImFydHdvcmtBZnRlckhhbmRFbnRyYW5jZSI6ZmFsc2UsInN0eWxlcyI6W3siYm9yZGVyIjowLCJyYWRpdXMiOjguNDQ4fSx7ImJvcmRlciI6MCwicmFkaXVzIjo4LjQ0OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OC40NDh9LHsiYm9yZGVyIjowLCJyYWRpdXMiOjguNDQ4fSx7ImJvcmRlciI6MCwicmFkaXVzIjo4LjQ0OH0seyJib3JkZXIiOjAsInJhZGl1cyI6OC40NDh9XSwiYXJ0d29ya1RpbWluZ3MiOlt7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6NjAwLCJlbmQiOjg4MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0Ijo4NDAsImVuZCI6MTEyMCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxMDgwLCJlbmQiOjEzNjAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTMyMCwiZW5kIjoxNjAwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjE1NjAsImVuZCI6MTg0MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxODAwLCJlbmQiOjIwODAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifV0sInNhd0VtcHR5VGlsZSI6W3RydWUsdHJ1ZSx0cnVlLGZhbHNlLGZhbHNlLHRydWVdLCJyZXZlYWxTdGFydHMiOlsxNjI2LjA5OTk5OTk5OTk5OTcsMTYyNi4wOTk5OTk5OTk5OTk3LDE2MjYuMDk5OTk5OTk5OTk5NywxNjI2LjA5OTk5OTk5OTk5OTcsMTYyNi4wOTk5OTk5OTk5OTk3LDIwNTkuMzk5OTk5OTk5OTk5Nl0sImxhc3RVbnJldmVhbGVkIjpbMzU5LjQ5NDAwMDAwMDAwMDEsMzU5LjQ5NDAwMDAwMDAwMDEsMzU5LjQ5NDAwMDAwMDAwMDEsMzU5LjQ5NDAwMDAwMDAwMDEsMzU5LjQ5NDAwMDAwMDAwMDEsMTYyNi4wOTk5OTk5OTk5OTk3XSwibGFzdEluY29tcGxldGUiOjAsIm1heGltdW1TYW1wbGVHYXAiOjE2MzMuMTk5OTk5OTk5OTk5OCwic2F3TWl4ZWRSZXZlYWwiOnRydWUsImZ1bGx5VmlzaWJsZUF0IjpudWxsLCJnZW9tZXRyeSI6bnVsbCwiZW5kZWQiOjQ4NjEuMiwicmVhc29uIjoiY29tcGxldGUiLCJvdmVyZmxvdyI6ZmFsc2V9"
+        },
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-7b7c8-keep-SOL-prominent-at-768px/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-7b7c8-keep-SOL-prominent-at-768px/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-7b7c8-keep-SOL-prominent-at-768px/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "preservation",
+      "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+      "file": "production-browser/signature-squares.spec.ts",
+      "line": 33,
+      "status": "failed",
+      "error": "Error: expect(received).toBeGreaterThan(expected)\n\nExpected: > 2840.2\nReceived:   2840.2",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/production-browser/signature-squares.spec.ts",
+        "column": 44,
+        "line": 230
+      },
+      "attachments": [
+        {
+          "name": "project-squares-1440",
+          "contentType": "application/json",
+          "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQ1My9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkM3aGR5d2ZCXzJIS2wyLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoyODAsImhlaWdodCI6MjgwLCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0NDUzL19hc3Ryby90cmlhcmNoLWJ1c2luZXNzLWNhcmQuQTZnb2xsb2JfT0QwbU4ud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjI4MCwiaGVpZ2h0IjoyODAsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0NTMvX2FzdHJvL3NvbC1jb21tdW5pdHktc2lnbmFnZS5CQnU5cUExR19aUndHbnQud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjI4MCwiaGVpZ2h0IjoxNzEsImZpdCI6ImNvbnRhaW4ifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQ1My9fYXN0cm8vY2h1cnJvcy1hcHBsaWNhdGlvbnMuQjVNeWxNZVlfWTJITlMud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjI4MCwiaGVpZ2h0IjoyODAsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0NTMvX2FzdHJvL2J5LXRlY2gtYXBwbGljYXRpb25zLkJGdGl3OU1OX1p1MDY0SS53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MjgwLCJoZWlnaHQiOjI4MCwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQ1My9fYXN0cm8vY2FwdHVyZS1hcHBsaWNhdGlvbnMuRE8zdXljbXVfWjFSWWNEcy53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MjgwLCJoZWlnaHQiOjI4MCwiZml0IjoiY292ZXIifV0sImNvbm5lY3RpbmdXYXZlQ291bnQiOjAsImFydHdvcmtBZnRlckhhbmRFbnRyYW5jZSI6ZmFsc2UsInN0eWxlcyI6W3siYm9yZGVyIjowLCJyYWRpdXMiOjE0fSx7ImJvcmRlciI6MCwicmFkaXVzIjoxNH0seyJib3JkZXIiOjAsInJhZGl1cyI6MTR9LHsiYm9yZGVyIjowLCJyYWRpdXMiOjE0fSx7ImJvcmRlciI6MCwicmFkaXVzIjoxNH0seyJib3JkZXIiOjAsInJhZGl1cyI6MTR9XSwiYXJ0d29ya1RpbWluZ3MiOlt7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6NjAwLCJlbmQiOjg4MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0Ijo4NDAsImVuZCI6MTEyMCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxMDgwLCJlbmQiOjEzNjAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTMyMCwiZW5kIjoxNjAwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjE1NjAsImVuZCI6MTg0MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxODAwLCJlbmQiOjIwODAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifV0sInNhd0VtcHR5VGlsZSI6W3RydWUsdHJ1ZSx0cnVlLHRydWUsdHJ1ZSx0cnVlXSwicmV2ZWFsU3RhcnRzIjpbNjczLjYsMjg0MC4yLDI4NDAuMiwyODQwLjIsMjg0MC4yLDI4NDAuMl0sImxhc3RVbnJldmVhbGVkIjpbNTczLjYwMDAwMDAwMDAwMDEsNjczLjYsNjczLjYsNjczLjYsNjczLjYsNjczLjZdLCJsYXN0SW5jb21wbGV0ZSI6MCwibWF4aW11bVNhbXBsZUdhcCI6MjE2Ni42LCJzYXdNaXhlZFJldmVhbCI6dHJ1ZSwiZnVsbHlWaXNpYmxlQXQiOm51bGwsImdlb21ldHJ5IjpudWxsLCJlbmRlZCI6NDU4MS43LCJyZWFzb24iOiJjb21wbGV0ZSIsIm92ZXJmbG93IjpmYWxzZX0="
+        },
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-fe3a8-eep-SOL-prominent-at-1440px/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-fe3a8-eep-SOL-prominent-at-1440px/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-preservation/production-browser-signatu-fe3a8-eep-SOL-prominent-at-1440px/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "gradient-dev",
+      "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 320px and pauses offscreen",
+      "file": "signature-gradient.spec.ts",
+      "line": 149,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-living-gradient]')\nExpected: \"false\"\nReceived: \"true\"\nTimeout:  12000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-living-gradient]') with timeout 12000ms\n  - waiting for locator('[data-living-gradient]')\n    26 \u00d7 locator resolved to <div aria-hidden=\"true\" class=\"living-gradient\" data-living-gradient=\"\" data-astro-cid-ljhi7hne=\"\" data-gradient-active=\"true\" data-gradient-renderer=\"webgl\">\u2026</div>\n       - unexpected value \"true\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+        "column": 28,
+        "line": 157
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-9e7bd--320px-and-pauses-offscreen/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-9e7bd--320px-and-pauses-offscreen/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-9e7bd--320px-and-pauses-offscreen/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "gradient-dev",
+      "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 390px and pauses offscreen",
+      "file": "signature-gradient.spec.ts",
+      "line": 149,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('html')\nExpected: \"playing\"\nReceived: \"completed\"\nTimeout:  12000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\n  - waiting for locator('html')\n    25 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1933.60\" data-signature-intro-started=\"769.40\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\n       - unexpected value \"completed\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+        "column": 40,
+        "line": 156
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-38d03--390px-and-pauses-offscreen/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-38d03--390px-and-pauses-offscreen/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-38d03--390px-and-pauses-offscreen/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "gradient-dev",
+      "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 768px and pauses offscreen",
+      "file": "signature-gradient.spec.ts",
+      "line": 149,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('html')\nExpected: \"playing\"\nReceived: \"completed\"\nTimeout:  12000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\n  - waiting for locator('html')\n    23 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1973.50\" data-signature-intro-started=\"873.10\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\n       - unexpected value \"completed\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+        "column": 40,
+        "line": 156
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-bf76f--768px-and-pauses-offscreen/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-bf76f--768px-and-pauses-offscreen/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-bf76f--768px-and-pauses-offscreen/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "gradient-dev",
+      "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+      "file": "signature-gradient.spec.ts",
+      "line": 149,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('html')\nExpected: \"playing\"\nReceived: \"completed\"\nTimeout:  12000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\n  - waiting for locator('html')\n    23 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"3047.30\" data-signature-intro-started=\"1109.20\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\n       - unexpected value \"completed\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+        "column": 40,
+        "line": 156
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-09c68-1440px-and-pauses-offscreen/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-09c68-1440px-and-pauses-offscreen/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-right-s-09c68-1440px-and-pauses-offscreen/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "gradient-dev",
+      "title": "WebGL context failure selects animated CSS and a live preference change restores static artwork",
+      "file": "signature-gradient.spec.ts",
+      "line": 278,
+      "status": "failed",
+      "error": "Error: expect(received).not.toBe(expected) // Object.is equality\n\nExpected: not \"matrix(0.990271, -0.31373, 0.13915, 0.96574, 28.9374, 138.122)\"",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/signature-gradient.spec.ts",
+        "column": 86,
+        "line": 294
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-WebGL-c-5d600-nge-restores-static-artwork/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-WebGL-c-5d600-nge-restores-static-artwork/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-gradient-dev/signature-gradient-WebGL-c-5d600-nge-restores-static-artwork/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "about-premium",
+      "title": "portrait, approved plaque, atmosphere and copy arrive in order within four seconds at 1440px",
+      "file": "about.spec.ts",
+      "line": 274,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \"running\"\nReceived: \"static\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\n  - waiting for locator('[data-about-hero]')\n    22 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"644.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n       - unexpected value \"static\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/about.spec.ts",
+        "column": 38,
+        "line": 280
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-portrait-approved-pl-259db-thin-four-seconds-at-1440px/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-portrait-approved-pl-259db-thin-four-seconds-at-1440px/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-portrait-approved-pl-259db-thin-four-seconds-at-1440px/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "about-premium",
+      "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+      "file": "about.spec.ts",
+      "line": 367,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \"settled\"\nReceived: \"static\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\n  - waiting for locator('[data-about-hero]')\n    22 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"818.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n       - unexpected value \"static\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/about.spec.ts",
+        "column": 38,
+        "line": 372
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-localized-atmosphere-04d3e--pauses-offscreen-at-1440px/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-localized-atmosphere-04d3e--pauses-offscreen-at-1440px/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-localized-atmosphere-04d3e--pauses-offscreen-at-1440px/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "about-premium",
+      "title": "early scroll settles the entrance without blocking content",
+      "file": "about.spec.ts",
+      "line": 454,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \"running\"\nReceived: \"static\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\n  - waiting for locator('[data-about-hero]')\n    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n    - unexpected value \"null\"\n    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n      - unexpected value \"pending\"\n    18 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-ended-at=\"1514.10\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-asset\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n       - unexpected value \"static\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/about.spec.ts",
+        "column": 38,
+        "line": 456
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-early-scroll-settles-bdccb-ce-without-blocking-content/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-early-scroll-settles-bdccb-ce-without-blocking-content/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-early-scroll-settles-bdccb-ce-without-blocking-content/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "about-premium",
+      "title": "changing motion preferences during arrival releases the full composition immediately",
+      "file": "about.spec.ts",
+      "line": 511,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \"running\"\nReceived: \"static\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\n  - waiting for locator('[data-about-hero]')\n    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n      - unexpected value \"pending\"\n    20 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"815.00\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n       - unexpected value \"static\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/about.spec.ts",
+        "column": 36,
+        "line": 515
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-changing-motion-pref-b8f95-ull-composition-immediately/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-changing-motion-pref-b8f95-ull-composition-immediately/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/about-changing-motion-pref-b8f95-ull-composition-immediately/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "about-premium",
+      "title": "portrait arrival leaves navigation pointer targets immediately usable at 390px",
+      "file": "services-hero-about.spec.ts",
+      "line": 125,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \"running\"\nReceived: \"static\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\n  - waiting for locator('[data-about-hero]')\n    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n    - unexpected value \"null\"\n    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n      - unexpected value \"pending\"\n    19 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"678.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n       - unexpected value \"static\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/services-hero-about.spec.ts",
+        "column": 53,
+        "line": 130
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/services-hero-about-portra-8ad21-immediately-usable-at-390px/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/services-hero-about-portra-8ad21-immediately-usable-at-390px/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/services-hero-about-portra-8ad21-immediately-usable-at-390px/trace.zip"
+        }
+      ]
+    },
+    {
+      "suite": "about-premium",
+      "title": "early resize and rapid internal navigation cannot leave stale arrival transforms",
+      "file": "services-hero-about.spec.ts",
+      "line": 201,
+      "status": "failed",
+      "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \"running\"\nReceived: \"static\"\nTimeout:  10000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\n  - waiting for locator('[data-about-hero]')\n    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n    - unexpected value \"pending\"\n    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-deadline\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n    19 \u00d7 unexpected value \"static\"\n       - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"806.90\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\n    - unexpected value \"static\"\n",
+      "errorLocation": {
+        "file": "/workspace/drawnout-motion-completion/tests/browser/services-hero-about.spec.ts",
+        "column": 51,
+        "line": 206
+      },
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/services-hero-about-early--a0f49-ve-stale-arrival-transforms/test-failed-1.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/services-hero-about-early--a0f49-ve-stale-arrival-transforms/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/workspace/drawnout-motion-completion/test-results/motion-completion-about-premium/services-hero-about-early--a0f49-ve-stale-arrival-transforms/trace.zip"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "passed": 194,
+    "failed": 19,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "environmentReporterOverrides": "REVIEW_REPORT for case-rollout, case-regression and about-premium; PLAYWRIGHT_JSON_OUTPUT_NAME and --reporter=list,json for preservation and gradient-dev. No original reports overwritten.",
+  "sourceOrTestChanges": "None. Tests and configurations were run unchanged; all output directories were isolated."
+}

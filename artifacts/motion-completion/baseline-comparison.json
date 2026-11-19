@@ -1,0 +1,713 @@
+{
+  "startedAt": "2026-11-19T02:02:32.709482+00:00",
+  "method": "One bounded unmodified-test retry of the initially failing checks, then the same checks against original PR20 e9a4 source/build in the same environment. Sequential single-worker browsers; no source changes or relaxed assertions. Current full-run reports remain authoritative and preserved.",
+  "baselineCommit": "e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b",
+  "currentCommit": "9e05e5f9b48636380bed07628b5a652f553492f8",
+  "steps": [
+    {
+      "mode": "current-retry",
+      "suite": "preservation",
+      "workingDirectory": "/workspace/drawnout-motion-completion",
+      "command": [
+        "npx",
+        "playwright",
+        "test",
+        "--config",
+        "playwright.motion-preservation.config.ts",
+        "--grep",
+        "real\\ rendered\\ 1440px\\ loop\\ features\\ all\\ five\\ scenes,\\ wordmark\\ and\\ return\\ in\\ fourteen\\ seconds|optimized\\ production\\ visibly\\ plays\\ full\\ cold/refresh/Home\\ journeys\\ at\\ 390px|optimized\\ production\\ visibly\\ plays\\ full\\ cold/refresh/Home\\ journeys\\ at\\ 1440px|failed\\ storyboard\\ clock\\ initialization\\ reveals\\ a\\ working\\ homepage|six\\ enlarged\\ borderless\\ project\\ posters\\ reveal\\ progressively\\ and\\ keep\\ SOL\\ prominent\\ at\\ 320px|six\\ enlarged\\ borderless\\ project\\ posters\\ reveal\\ progressively\\ and\\ keep\\ SOL\\ prominent\\ at\\ 390px|six\\ enlarged\\ borderless\\ project\\ posters\\ reveal\\ progressively\\ and\\ keep\\ SOL\\ prominent\\ at\\ 768px|six\\ enlarged\\ borderless\\ project\\ posters\\ reveal\\ progressively\\ and\\ keep\\ SOL\\ prominent\\ at\\ 1440px",
+        "--reporter=list,json",
+        "--output",
+        "/workspace/motion-completion-review/current-retry-preservation-results"
+      ],
+      "report": "current-retry-preservation-tests.json",
+      "exitCode": 1,
+      "durationSeconds": 89.06,
+      "initialFailedChecks": [
+        {
+          "title": "real rendered 1440px loop features all five scenes, wordmark and return in fourteen seconds",
+          "file": "browser/services-hero.spec.ts",
+          "line": 95,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m15\u001b[39m\nReceived:   \u001b[31m15\u001b[39m"
+          ]
+        },
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"full\"\u001b[39m\nReceived: \u001b[31m\"brief\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    3 \u00d7 locator resolved to <html lang=\"en\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"playing\" data-signature-intro-mode=\"brief\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\">\u2026</html>\u001b[22m\n\u001b[2m      - unexpected value \"brief\"\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"playing\" data-signature-intro-mode=\"brief\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\">\u2026</html>\u001b[22m\n\u001b[2m      - unexpected value \"brief\"\u001b[22m\n\u001b[2m    19 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1834.80\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"brief\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m3000\u001b[39m\nReceived:   \u001b[31m2543.5\u001b[39m"
+          ]
+        },
+        {
+          "title": "failed storyboard clock initialization reveals a working homepage",
+          "file": "production-browser/loader.spec.ts",
+          "line": 168,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"\u001b[7mskipp\u001b[27med\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mcomplet\u001b[27med\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"pending\">\u2026</html>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    3 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"playing\" data-signature-intro-mode=\"brief\" data-signature-intro-started=\"829.20\" data-signature-intro-fallback=\"late-start\">\u2026</html>\u001b[22m\n\u001b[2m      - unexpected value \"playing\"\u001b[22m\n\u001b[2m    16 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"2522.20\" data-signature-intro-started=\"829.20\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 320px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: page.evaluate: Error: Missing live intro clock\n    at eval (eval at evaluate (:370:30), <anonymous>:30:51)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 390px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 2\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[32m-   true,\u001b[39m\n\u001b[32m-   true,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m  ]\u001b[22m"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 768px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 2\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[32m-   true,\u001b[39m\n\u001b[32m-   true,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[2m    true,\u001b[22m\n\u001b[2m  ]\u001b[22m"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m2840.2\u001b[39m\nReceived:   \u001b[31m2840.2\u001b[39m"
+          ]
+        }
+      ],
+      "stats": {
+        "startTime": "2026-11-19T02:02:35.764Z",
+        "duration": 86002.095,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 7,
+        "flaky": 0
+      },
+      "failedChecks": [
+        {
+          "title": "real rendered 1440px loop features all five scenes, wordmark and return in fourteen seconds",
+          "file": "browser/services-hero.spec.ts",
+          "line": 95,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m15\u001b[39m\nReceived:   \u001b[31m15\u001b[39m"
+          ]
+        },
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m3000\u001b[39m\nReceived:   \u001b[31m2706.399999999907\u001b[39m"
+          ]
+        },
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m20\u001b[39m\nReceived:   \u001b[31m4\u001b[39m"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 320px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 2\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   true,\u001b[39m\n\u001b[32m-   true,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m  ]\u001b[22m"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 390px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m1323.8000000000002\u001b[39m\nReceived:   \u001b[31m1323.8000000000002\u001b[39m"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 768px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[32m-   true,\u001b[39m\n\u001b[32m-   true,\u001b[39m\n\u001b[32m-   true,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[2m    true,\u001b[22m\n\u001b[2m  ]\u001b[22m"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 2\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[32m-   true,\u001b[39m\n\u001b[32m-   true,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[2m  ]\u001b[22m"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "current-retry",
+      "suite": "gradient-dev",
+      "workingDirectory": "/workspace/drawnout-motion-completion",
+      "command": [
+        "npx",
+        "playwright",
+        "test",
+        "--config",
+        "playwright.motion-gradient.config.ts",
+        "--grep",
+        "right\\-side\\ fluid\\ shader\\ evolves\\ at\\ 0/2/5/8s\\ after\\ the\\ loader\\ at\\ 320px\\ and\\ pauses\\ offscreen|right\\-side\\ fluid\\ shader\\ evolves\\ at\\ 0/2/5/8s\\ after\\ the\\ loader\\ at\\ 390px\\ and\\ pauses\\ offscreen|right\\-side\\ fluid\\ shader\\ evolves\\ at\\ 0/2/5/8s\\ after\\ the\\ loader\\ at\\ 768px\\ and\\ pauses\\ offscreen|right\\-side\\ fluid\\ shader\\ evolves\\ at\\ 0/2/5/8s\\ after\\ the\\ loader\\ at\\ 1440px\\ and\\ pauses\\ offscreen|WebGL\\ context\\ failure\\ selects\\ animated\\ CSS\\ and\\ a\\ live\\ preference\\ change\\ restores\\ static\\ artwork",
+        "--reporter=list,json",
+        "--output",
+        "/workspace/motion-completion-review/current-retry-gradient-dev-results"
+      ],
+      "report": "current-retry-gradient-dev-tests.json",
+      "exitCode": 1,
+      "durationSeconds": 86.12,
+      "initialFailedChecks": [
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 320px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-living-gradient]')\nExpected: \u001b[32m\"\u001b[7mfals\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mtru\u001b[27me\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-living-gradient]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-living-gradient]')\u001b[22m\n\u001b[2m    26 \u00d7 locator resolved to <div aria-hidden=\"true\" class=\"living-gradient\" data-living-gradient=\"\" data-astro-cid-ljhi7hne=\"\" data-gradient-active=\"true\" data-gradient-renderer=\"webgl\">\u2026</div>\u001b[22m\n\u001b[2m       - unexpected value \"true\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 390px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    25 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1933.60\" data-signature-intro-started=\"769.40\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 768px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    23 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1973.50\" data-signature-intro-started=\"873.10\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    23 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"3047.30\" data-signature-intro-started=\"1109.20\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "WebGL context failure selects animated CSS and a live preference change restores static artwork",
+          "file": "signature-gradient.spec.ts",
+          "line": 278,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"matrix(0.990271, -0.31373, 0.13915, 0.96574, 28.9374, 138.122)\"\u001b[39m"
+          ]
+        }
+      ],
+      "stats": {
+        "startTime": "2026-11-19T02:04:02.892Z",
+        "duration": 84970.53600000001,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "failedChecks": [
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 320px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    23 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"3915.50\" data-signature-intro-started=\"896.40\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    24 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"2769.00\" data-signature-intro-started=\"1664.40\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "current-retry",
+      "suite": "about-premium",
+      "workingDirectory": "/workspace/drawnout-motion-completion",
+      "command": [
+        "npx",
+        "playwright",
+        "test",
+        "--config",
+        "playwright.about-premium.config.ts",
+        "--grep",
+        "portrait,\\ approved\\ plaque,\\ atmosphere\\ and\\ copy\\ arrive\\ in\\ order\\ within\\ four\\ seconds\\ at\\ 1440px|localized\\ atmosphere\\ visibly\\ moves\\ after\\ arrival\\ and\\ pauses\\ offscreen\\ at\\ 1440px|early\\ scroll\\ settles\\ the\\ entrance\\ without\\ blocking\\ content|changing\\ motion\\ preferences\\ during\\ arrival\\ releases\\ the\\ full\\ composition\\ immediately|portrait\\ arrival\\ leaves\\ navigation\\ pointer\\ targets\\ immediately\\ usable\\ at\\ 390px|early\\ resize\\ and\\ rapid\\ internal\\ navigation\\ cannot\\ leave\\ stale\\ arrival\\ transforms",
+        "--reporter=list,json",
+        "--output",
+        "/workspace/motion-completion-review/current-retry-about-premium-results"
+      ],
+      "report": "current-retry-about-premium-tests.json",
+      "exitCode": 1,
+      "durationSeconds": 74.816,
+      "initialFailedChecks": [
+        {
+          "title": "portrait, approved plaque, atmosphere and copy arrive in order within four seconds at 1440px",
+          "file": "about.spec.ts",
+          "line": 274,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    22 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"644.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+          "file": "about.spec.ts",
+          "line": 367,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    22 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"818.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "early scroll settles the entrance without blocking content",
+          "file": "about.spec.ts",
+          "line": 454,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"null\"\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    18 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-ended-at=\"1514.10\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-asset\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "changing motion preferences during arrival releases the full composition immediately",
+          "file": "about.spec.ts",
+          "line": 511,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"815.00\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "portrait arrival leaves navigation pointer targets immediately usable at 390px",
+          "file": "services-hero-about.spec.ts",
+          "line": 125,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"null\"\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    19 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"678.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "early resize and rapid internal navigation cannot leave stale arrival transforms",
+          "file": "services-hero-about.spec.ts",
+          "line": 201,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"pending\"\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-deadline\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    19 \u00d7 unexpected value \"static\"\u001b[22m\n\u001b[2m       - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"806.90\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"static\"\u001b[22m\n"
+          ]
+        }
+      ],
+      "stats": {
+        "startTime": "2026-11-19T02:05:29.721Z",
+        "duration": 72939.659,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 4,
+        "flaky": 0
+      },
+      "failedChecks": [
+        {
+          "title": "portrait, approved plaque, atmosphere and copy arrive in order within four seconds at 1440px",
+          "file": "about.spec.ts",
+          "line": 274,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    20 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"919.00\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+          "file": "about.spec.ts",
+          "line": 367,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    23 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"822.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "changing motion preferences during arrival releases the full composition immediately",
+          "file": "about.spec.ts",
+          "line": 511,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    21 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"761.70\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "portrait arrival leaves navigation pointer targets immediately usable at 390px",
+          "file": "services-hero-about.spec.ts",
+          "line": 125,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    21 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"678.70\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "baseline",
+      "suite": "preservation",
+      "workingDirectory": "/workspace/drawnout-motion-quality",
+      "command": [
+        "npx",
+        "playwright",
+        "test",
+        "--config",
+        "playwright.motion-preservation.config.ts",
+        "--grep",
+        "real\\ rendered\\ 1440px\\ loop\\ features\\ all\\ five\\ scenes,\\ wordmark\\ and\\ return\\ in\\ fourteen\\ seconds|optimized\\ production\\ visibly\\ plays\\ full\\ cold/refresh/Home\\ journeys\\ at\\ 390px|optimized\\ production\\ visibly\\ plays\\ full\\ cold/refresh/Home\\ journeys\\ at\\ 1440px|failed\\ storyboard\\ clock\\ initialization\\ reveals\\ a\\ working\\ homepage|six\\ enlarged\\ borderless\\ project\\ posters\\ reveal\\ progressively\\ and\\ keep\\ SOL\\ prominent\\ at\\ 320px|six\\ enlarged\\ borderless\\ project\\ posters\\ reveal\\ progressively\\ and\\ keep\\ SOL\\ prominent\\ at\\ 390px|six\\ enlarged\\ borderless\\ project\\ posters\\ reveal\\ progressively\\ and\\ keep\\ SOL\\ prominent\\ at\\ 768px|six\\ enlarged\\ borderless\\ project\\ posters\\ reveal\\ progressively\\ and\\ keep\\ SOL\\ prominent\\ at\\ 1440px",
+        "--reporter=list,json",
+        "--output",
+        "/workspace/motion-completion-review/baseline-preservation-results"
+      ],
+      "report": "baseline-preservation-tests.json",
+      "exitCode": 1,
+      "durationSeconds": 82.629,
+      "initialFailedChecks": [
+        {
+          "title": "real rendered 1440px loop features all five scenes, wordmark and return in fourteen seconds",
+          "file": "browser/services-hero.spec.ts",
+          "line": 95,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m15\u001b[39m\nReceived:   \u001b[31m15\u001b[39m"
+          ]
+        },
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"full\"\u001b[39m\nReceived: \u001b[31m\"brief\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    3 \u00d7 locator resolved to <html lang=\"en\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"playing\" data-signature-intro-mode=\"brief\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\">\u2026</html>\u001b[22m\n\u001b[2m      - unexpected value \"brief\"\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"playing\" data-signature-intro-mode=\"brief\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\">\u2026</html>\u001b[22m\n\u001b[2m      - unexpected value \"brief\"\u001b[22m\n\u001b[2m    19 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1834.80\" data-signature-intro-started=\"733.50\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"brief\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m3000\u001b[39m\nReceived:   \u001b[31m2543.5\u001b[39m"
+          ]
+        },
+        {
+          "title": "failed storyboard clock initialization reveals a working homepage",
+          "file": "production-browser/loader.spec.ts",
+          "line": 168,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"\u001b[7mskipp\u001b[27med\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mcomplet\u001b[27med\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"pending\">\u2026</html>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    3 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"playing\" data-signature-intro-mode=\"brief\" data-signature-intro-started=\"829.20\" data-signature-intro-fallback=\"late-start\">\u2026</html>\u001b[22m\n\u001b[2m      - unexpected value \"playing\"\u001b[22m\n\u001b[2m    16 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"2522.20\" data-signature-intro-started=\"829.20\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 320px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: page.evaluate: Error: Missing live intro clock\n    at eval (eval at evaluate (:370:30), <anonymous>:30:51)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 390px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 2\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[32m-   true,\u001b[39m\n\u001b[32m-   true,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m  ]\u001b[22m"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 768px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 2\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[32m-   true,\u001b[39m\n\u001b[32m-   true,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[2m    true,\u001b[22m\n\u001b[2m  ]\u001b[22m"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m2840.2\u001b[39m\nReceived:   \u001b[31m2840.2\u001b[39m"
+          ]
+        }
+      ],
+      "stats": {
+        "startTime": "2026-11-19T02:06:43.911Z",
+        "duration": 81406.04800000001,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 7,
+        "flaky": 0
+      },
+      "failedChecks": [
+        {
+          "title": "real rendered 1440px loop features all five scenes, wordmark and return in fourteen seconds",
+          "file": "browser/services-hero.spec.ts",
+          "line": 95,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m15\u001b[39m\nReceived:   \u001b[31m14\u001b[39m"
+          ]
+        },
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m3000\u001b[39m\nReceived:   \u001b[31m1804.8999999999069\u001b[39m"
+          ]
+        },
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m20\u001b[39m\nReceived:   \u001b[31m4\u001b[39m"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 320px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m896.3\u001b[39m\nReceived:   \u001b[31m896.3\u001b[39m"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 390px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: page.evaluate: Error: Missing live intro clock\n    at eval (eval at evaluate (:370:30), <anonymous>:30:51)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 768px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: page.evaluate: Error: Missing live intro clock\n    at eval (eval at evaluate (:370:30), <anonymous>:30:51)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+          ]
+        },
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[32m-   true,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m  ]\u001b[22m"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "baseline",
+      "suite": "gradient-dev",
+      "workingDirectory": "/workspace/drawnout-motion-quality",
+      "command": [
+        "npx",
+        "playwright",
+        "test",
+        "--config",
+        "playwright.motion-gradient.config.ts",
+        "--grep",
+        "right\\-side\\ fluid\\ shader\\ evolves\\ at\\ 0/2/5/8s\\ after\\ the\\ loader\\ at\\ 320px\\ and\\ pauses\\ offscreen|right\\-side\\ fluid\\ shader\\ evolves\\ at\\ 0/2/5/8s\\ after\\ the\\ loader\\ at\\ 390px\\ and\\ pauses\\ offscreen|right\\-side\\ fluid\\ shader\\ evolves\\ at\\ 0/2/5/8s\\ after\\ the\\ loader\\ at\\ 768px\\ and\\ pauses\\ offscreen|right\\-side\\ fluid\\ shader\\ evolves\\ at\\ 0/2/5/8s\\ after\\ the\\ loader\\ at\\ 1440px\\ and\\ pauses\\ offscreen|WebGL\\ context\\ failure\\ selects\\ animated\\ CSS\\ and\\ a\\ live\\ preference\\ change\\ restores\\ static\\ artwork",
+        "--reporter=list,json",
+        "--output",
+        "/workspace/motion-completion-review/baseline-gradient-dev-results"
+      ],
+      "report": "baseline-gradient-dev-tests.json",
+      "exitCode": 1,
+      "durationSeconds": 87.502,
+      "initialFailedChecks": [
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 320px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-living-gradient]')\nExpected: \u001b[32m\"\u001b[7mfals\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mtru\u001b[27me\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-living-gradient]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-living-gradient]')\u001b[22m\n\u001b[2m    26 \u00d7 locator resolved to <div aria-hidden=\"true\" class=\"living-gradient\" data-living-gradient=\"\" data-astro-cid-ljhi7hne=\"\" data-gradient-active=\"true\" data-gradient-renderer=\"webgl\">\u2026</div>\u001b[22m\n\u001b[2m       - unexpected value \"true\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 390px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    25 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1933.60\" data-signature-intro-started=\"769.40\" data-signature-intro-fallback=\"late-start\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 768px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    23 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1973.50\" data-signature-intro-started=\"873.10\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    23 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"3047.30\" data-signature-intro-started=\"1109.20\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "WebGL context failure selects animated CSS and a live preference change restores static artwork",
+          "file": "signature-gradient.spec.ts",
+          "line": 278,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"matrix(0.990271, -0.31373, 0.13915, 0.96574, 28.9374, 138.122)\"\u001b[39m"
+          ]
+        }
+      ],
+      "stats": {
+        "startTime": "2026-11-19T02:08:07.193Z",
+        "duration": 85506.92,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "failedChecks": [
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 768px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    25 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"1970.50\" data-signature-intro-started=\"794.90\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"playing\"\u001b[39m\nReceived: \u001b[31m\"completed\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    25 \u00d7 locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\" data-hero-entrance=\"static\" data-signature-intro=\"completed\" data-signature-intro-mode=\"brief\" data-signature-intro-ended=\"3422.00\" data-signature-intro-started=\"1329.30\" data-signature-intro-fallback=\"asset-delay\" data-signature-intro-reason=\"brief-complete\">\u2026</html>\u001b[22m\n\u001b[2m       - unexpected value \"completed\"\u001b[22m\n"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "baseline",
+      "suite": "about-premium",
+      "workingDirectory": "/workspace/drawnout-motion-quality",
+      "command": [
+        "npx",
+        "playwright",
+        "test",
+        "--config",
+        "playwright.about-premium.config.ts",
+        "--grep",
+        "portrait,\\ approved\\ plaque,\\ atmosphere\\ and\\ copy\\ arrive\\ in\\ order\\ within\\ four\\ seconds\\ at\\ 1440px|localized\\ atmosphere\\ visibly\\ moves\\ after\\ arrival\\ and\\ pauses\\ offscreen\\ at\\ 1440px|early\\ scroll\\ settles\\ the\\ entrance\\ without\\ blocking\\ content|changing\\ motion\\ preferences\\ during\\ arrival\\ releases\\ the\\ full\\ composition\\ immediately|portrait\\ arrival\\ leaves\\ navigation\\ pointer\\ targets\\ immediately\\ usable\\ at\\ 390px|early\\ resize\\ and\\ rapid\\ internal\\ navigation\\ cannot\\ leave\\ stale\\ arrival\\ transforms",
+        "--reporter=list,json",
+        "--output",
+        "/workspace/motion-completion-review/baseline-about-premium-results"
+      ],
+      "report": "baseline-about-premium-tests.json",
+      "exitCode": 1,
+      "durationSeconds": 74.231,
+      "initialFailedChecks": [
+        {
+          "title": "portrait, approved plaque, atmosphere and copy arrive in order within four seconds at 1440px",
+          "file": "about.spec.ts",
+          "line": 274,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    22 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"644.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+          "file": "about.spec.ts",
+          "line": 367,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    22 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"818.20\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "early scroll settles the entrance without blocking content",
+          "file": "about.spec.ts",
+          "line": 454,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"null\"\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    18 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-ended-at=\"1514.10\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-asset\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "changing motion preferences during arrival releases the full composition immediately",
+          "file": "about.spec.ts",
+          "line": 511,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"815.00\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "portrait arrival leaves navigation pointer targets immediately usable at 390px",
+          "file": "services-hero-about.spec.ts",
+          "line": 125,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"null\"\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    19 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"678.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "early resize and rapid internal navigation cannot leave stale arrival transforms",
+          "file": "services-hero-about.spec.ts",
+          "line": 201,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"pending\"\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"boot-deadline\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    19 \u00d7 unexpected value \"static\"\u001b[22m\n\u001b[2m       - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"806.90\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"static\"\u001b[22m\n"
+          ]
+        }
+      ],
+      "stats": {
+        "startTime": "2026-11-19T02:09:34.613Z",
+        "duration": 72435.746,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 4,
+        "flaky": 0
+      },
+      "failedChecks": [
+        {
+          "title": "localized atmosphere visibly moves after arrival and pauses offscreen at 1440px",
+          "file": "about.spec.ts",
+          "line": 367,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"s\u001b[7mettled\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"s\u001b[7mtatic\u001b[27m\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    23 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"786.40\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "early scroll settles the entrance without blocking content",
+          "file": "about.spec.ts",
+          "line": 454,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    - locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" aria-labelledby=\"about-title\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m    - unexpected value \"null\"\u001b[22m\n\u001b[2m    3 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    17 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" aria-labelledby=\"about-title\" data-about-ended-at=\"1490.50\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "changing motion preferences during arrival releases the full composition immediately",
+          "file": "about.spec.ts",
+          "line": 511,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    21 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"804.50\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        },
+        {
+          "title": "early resize and rapid internal navigation cannot leave stale arrival transforms",
+          "file": "services-hero-about.spec.ts",
+          "line": 201,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('[data-about-hero]')\nExpected: \u001b[32m\"running\"\u001b[39m\nReceived: \u001b[31m\"static\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('[data-about-hero]') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-about-hero]')\u001b[22m\n\u001b[2m    2 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" data-about-prepaint=\"\" data-about-boot=\"pending\" class=\"premium-about-hero\" data-about-ambient=\"running\" aria-labelledby=\"about-title\" data-about-entrance=\"pending\" data-about-hero-phase=\"arrival\" data-about-arrival-scene=\"portrait\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m      - unexpected value \"pending\"\u001b[22m\n\u001b[2m    20 \u00d7 locator resolved to <section data-theme=\"dark\" data-about-hero=\"\" class=\"premium-about-hero\" data-about-boot=\"released\" data-about-ambient=\"running\" data-about-entrance=\"static\" data-about-ended-at=\"726.70\" aria-labelledby=\"about-title\" data-about-hero-phase=\"settled\" data-about-arrival-scene=\"settled\" data-about-settle-reason=\"late-init\" data-about-emblem-status=\"approved-raster-prototype\">\u2026</section>\u001b[22m\n\u001b[2m       - unexpected value \"static\"\u001b[22m\n"
+          ]
+        }
+      ]
+    }
+  ],
+  "completedAt": "2026-11-19T02:10:47.126862+00:00"
+}

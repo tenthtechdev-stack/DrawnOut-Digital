@@ -1,0 +1,35 @@
+{
+  "baseline": "e9a4b74fc1ebfb2d082c78a218883c9252a8ee3b",
+  "method": "Read-only byte comparison of original PR20 production dist and current production dist homepage external client entrypoints. This proves unchanged entrypoint bytes, not equivalent runtime timing. Full source preservation is separately tested.",
+  "matchingEntrypoints": [
+    {
+      "path": "_astro/LivingGradient.astro_astro_type_script_index_0_lang.D-RZ8zoY.js",
+      "sha256": "88e8c068625364914ea78c00932ad26d93295990c7cb60182dda2cf37bb0af77",
+      "bytes": 6983
+    },
+    {
+      "path": "_astro/MediaSlot.astro_astro_type_script_index_0_lang.BgSL_myp.js",
+      "sha256": "07c8a7221f23caff4731e8d67db21c7e257c6adbf43794540638ded55a68d34d",
+      "bytes": 5206
+    },
+    {
+      "path": "_astro/ProjectCard.astro_astro_type_script_index_0_lang.LlsAtLR8.js",
+      "sha256": "ff37b792818a93284f9e56ae71f41f718d1f6c3f5e6feaa8a2931e3fe990653b",
+      "bytes": 39
+    },
+    {
+      "path": "_astro/SiteFooter.astro_astro_type_script_index_0_lang.Cp2ZLkIX.js",
+      "sha256": "30eec92a592efd7e5845758dcc273da316851f8ccacadde609fbb3a280c944d3",
+      "bytes": 2292
+    },
+    {
+      "path": "_astro/MotionEnhancement.astro_astro_type_script_index_0_lang.Zi03bqeJ.js",
+      "sha256": "4e1a438510ca23ee3906238fe34a02ed0bacca75093e41970123893bc43702ba",
+      "bytes": 10975
+    }
+  ],
+  "homepageBytes": {
+    "baseline": 133300,
+    "current": 133753
+  }
+}
