@@ -151,8 +151,24 @@ async function wheelTo(page, requested) {
 async function thoughtState(page) {
   return page.locator('[data-first-thought]').evaluate((node) => {
     const box = node.getBoundingClientRect();
+    const drawing = node.querySelector('svg').getBoundingClientRect();
+    const hitTests = [0.2, 0.5, 0.8].map((fraction) => {
+      const x = drawing.left + drawing.width * fraction;
+      const y = drawing.top + drawing.height / 2;
+      const hit = document.elementFromPoint(x, y);
+      return {
+        x,
+        y,
+        inViewport: x >= 0 && x < innerWidth && y >= 0 && y < innerHeight,
+        unobstructed: Boolean(hit && node.contains(hit)),
+        hitTag: hit?.tagName,
+        hitClass: hit?.getAttribute('class'),
+      };
+    });
     return {
       at: performance.now(),
+      globalArrivalOverlayCount: document.querySelectorAll('[data-signature-intro-overlay]').length,
+      hitTests,
       state: node.dataset.thoughtState,
       phase: node.dataset.thoughtPhase,
       time: Number(node.dataset.thoughtTime),
@@ -233,12 +249,22 @@ async function captureAnimation(browser, width) {
       document.querySelector('[data-first-thought]')?.getAttribute('data-thought-state') ===
       'playing',
   );
+  assert.equal(
+    await page.locator('[data-signature-intro-overlay]').count(),
+    0,
+    'Cold Contact must expose its content without the global arrival overlay.',
+  );
   const observed = new Set();
   const samples = [];
   const began = Date.now();
   while (Date.now() - began < 12_000) {
     const state = await thoughtState(page);
     samples.push(state);
+    assert.equal(state.globalArrivalOverlayCount, 0, 'Unexpected Contact arrival overlay.');
+    assert(
+      state.hitTests.every((hit) => hit.inViewport && hit.unobstructed),
+      `The actual ${width}px ${state.phase} artwork is occluded: ${JSON.stringify(state.hitTests)}`,
+    );
     const name =
       state.state === 'settled'
         ? 'settled'
@@ -254,6 +280,8 @@ async function captureAnimation(browser, width) {
         phase: state.phase,
         lifecycleState: state.state,
         sampledAnimationTime: state.time,
+        hitTests: state.hitTests,
+        globalArrivalOverlayCount: state.globalArrivalOverlayCount,
       });
       observed.add(name);
     }

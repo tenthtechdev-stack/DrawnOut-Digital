@@ -9,6 +9,7 @@ async function openContact(page: Page, width = 1440) {
   await page.setViewportSize({ width, height: width < 640 ? 844 : 900 });
   await page.goto('/contact', { waitUntil: 'commit' });
   await expect(page.locator(thought)).toBeVisible();
+  await expect(page.locator('[data-signature-intro-overlay]')).toHaveCount(0);
   await expect(page.locator('[data-enquiry-form]')).toHaveAttribute('data-enhanced', 'true');
 }
 
@@ -26,11 +27,26 @@ async function visualState(page: Page) {
     const stroke = root.querySelector('[data-thought-stroke]');
     const style = stroke ? getComputedStyle(stroke) : null;
     const box = root.getBoundingClientRect();
+    const drawing = root.querySelector('svg')!.getBoundingClientRect();
+    const hitTests = [0.2, 0.5, 0.8].map((fraction) => {
+      const x = drawing.left + drawing.width * fraction;
+      const y = drawing.top + drawing.height / 2;
+      const hit = document.elementFromPoint(x, y);
+      return {
+        x,
+        y,
+        inViewport: x >= 0 && x < innerWidth && y >= 0 && y < innerHeight,
+        unobstructed: Boolean(hit && root.contains(hit)),
+        hitTag: hit?.tagName,
+        hitClass: hit?.getAttribute('class'),
+      };
+    });
     return {
       state: root.getAttribute('data-thought-state'),
       phase: root.getAttribute('data-thought-phase'),
       time: Number(root.getAttribute('data-thought-time')),
       reason: root.getAttribute('data-thought-reason'),
+      hitTests,
       dash: style?.strokeDashoffset,
       opacity: style?.opacity,
       box: { left: box.left, top: box.top, width: box.width, height: box.height },
@@ -160,6 +176,45 @@ for (const width of sizes) {
 }
 
 for (const width of [390, 1440]) {
+  test(`a cold normal-motion ${width}px Contact visit exposes artwork and accepts immediate pointer input`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await openContact(page, width);
+    await playing(page);
+    const arrival = await visualState(page);
+    expect(arrival.time).toBeLessThan(1.15);
+    expect(arrival.hitTests.every((hit) => hit.inViewport && hit.unobstructed)).toBe(true);
+    const anchor = page.locator('main a[href="#enquiry"]').first();
+    const target = await anchor.evaluate((node) => {
+      const box = node.getBoundingClientRect();
+      const x = box.left + box.width / 2;
+      const y = box.top + box.height / 2;
+      return { x, y, unobstructed: node.contains(document.elementFromPoint(x, y)) };
+    });
+    expect(target.unobstructed).toBe(true);
+    // Raw pointer input has no locator actionability wait that could hide an arrival overlay.
+    await page.mouse.click(target.x, target.y);
+    await expect(page).toHaveURL(/\/contact#enquiry$/, { timeout: 1000 });
+    const name = page.locator('[data-enquiry-form] [name="name"]');
+    await name.scrollIntoViewIfNeeded({ timeout: 1000 });
+    const input = await name.evaluate((node) => {
+      const box = node.getBoundingClientRect();
+      const x = box.left + box.width / 2;
+      const y = box.top + box.height / 2;
+      return { x, y, unobstructed: document.elementFromPoint(x, y) === node };
+    });
+    expect(input.unobstructed).toBe(true);
+    await page.mouse.click(input.x, input.y);
+    await page.keyboard.type('An immediate first thought');
+    await expect(name).toBeFocused();
+    await expect(name).toHaveValue('An immediate first thought');
+    await settled(page);
+    await expect(page.locator('[data-form-status]')).toBeEmpty();
+  });
+}
+
+for (const width of [390, 1440]) {
   test(`the actual ${width}px drawing has distinct phases, finishes once and leaves the form available`, async ({
     page,
   }) => {
@@ -174,6 +229,9 @@ for (const width of [390, 1440]) {
       await page.waitForTimeout(80);
     }
     await settled(page);
+    await expect(page.locator('[data-signature-intro-overlay]')).toHaveCount(0);
+    for (const sample of samples)
+      expect(sample.hitTests.every((hit) => hit.inViewport && hit.unobstructed)).toBe(true);
     const phases = new Set(samples.map((sample) => sample.phase));
     expect(phases.has('thought')).toBe(true);
     expect(phases.has('connection')).toBe(true);
