@@ -70,7 +70,7 @@ async function curatedProjects(page: Page, route: '/' | '/work', width: number) 
       await video.scrollIntoViewIfNeeded();
       await expect(video).not.toHaveAttribute('src', /.+/);
       await expect(video).toHaveAttribute('data-motion-state', 'poster');
-      await expect(page.locator(`[data-motion-toggle="${prefix}-motion-${slug}"]`)).toBeHidden();
+      await expect(page.locator('[data-motion-toggle], .portfolio-motion-controls')).toHaveCount(0);
       const poster = video.locator('..').locator('picture img');
       await expect(poster).toBeVisible();
       expect(await poster.getAttribute('alt')).toBeTruthy();
@@ -138,13 +138,13 @@ for (const width of [390, 768]) {
   });
 }
 
-test('keyboard pause control stays separate from project links and preserves a descriptive poster', async ({
+test('global keyboard motion preference stays separate from project links and preserves a descriptive poster', async ({
   page,
 }) => {
   await page.goto('/work#main');
   const video = page.locator('#work-motion-sol-community-center');
   await playing(video);
-  const button = page.locator('[data-motion-toggle="work-motion-sol-community-center"]');
+  const button = page.locator('[data-portfolio-motion-preference]');
   expect(await button.evaluate((element) => Boolean(element.closest('a')))).toBe(false);
   await button.focus();
   expect(await button.evaluate((element) => getComputedStyle(element).outlineStyle)).not.toBe(
@@ -152,7 +152,8 @@ test('keyboard pause control stays separate from project links and preserves a d
   );
   expect((await button.boundingBox())!.height).toBeGreaterThanOrEqual(44);
   await page.keyboard.press('Enter');
-  await expect(button).toHaveAttribute('aria-pressed', 'true');
+  await expect(button).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.locator('html')).toHaveAttribute('data-portfolio-motion', 'off');
   await expect(video).toHaveAttribute('data-motion-state', 'poster');
   await expect(video).not.toHaveAttribute('src', /.+/);
   const poster = video.locator('..').locator('picture img');
@@ -162,7 +163,9 @@ test('keyboard pause control stays separate from project links and preserves a d
   await playing(video);
 });
 
-test('document visibility changes release decoders and visible cards resume', async ({ page }) => {
+test('document visibility suspends playback and visible cards resume without a source restart', async ({
+  page,
+}) => {
   await page.goto('/work#main');
   const video = page.locator('#work-motion-sol-community-center');
   await playing(video);
@@ -171,13 +174,21 @@ test('document visibility changes release decoders and visible cards resume', as
     Object.defineProperty(document, 'hidden', { configurable: true, get: () => true });
     document.dispatchEvent(new Event('visibilitychange'));
   });
-  await expect(page.locator('[data-portfolio-video][src]')).toHaveCount(0);
+  await expect(video).toHaveAttribute('data-motion-state', 'paused');
   expect(await video.evaluate((element: HTMLVideoElement) => element.paused)).toBe(true);
+  const held = await video.evaluate((element: HTMLVideoElement) => ({
+    source: element.currentSrc,
+    time: element.currentTime,
+  }));
+  await page.waitForTimeout(180);
+  expect(await video.evaluate((element: HTMLVideoElement) => element.currentTime)).toBe(held.time);
+  expect(await video.getAttribute('src')).toBeTruthy();
   await page.evaluate(() => {
     Reflect.deleteProperty(document, 'hidden');
     document.dispatchEvent(new Event('visibilitychange'));
   });
   await playing(video);
+  expect(await video.evaluate((element: HTMLVideoElement) => element.currentSrc)).toBe(held.source);
 });
 
 for (const mode of ['reduced-motion', 'save-data', 'autoplay-blocked'] as const) {
@@ -284,7 +295,7 @@ test('filters curate the visible sequence, release hidden footage and preserve p
     );
   const churros = page.locator('#work-motion-churros');
   await expect(churros).not.toHaveAttribute('src', /.+/);
-  await expect(page.locator('[data-motion-toggle="work-motion-churros"]')).toBeHidden();
+  await expect(page.locator('[data-motion-toggle], .portfolio-motion-controls')).toHaveCount(0);
   await playing(page.locator('#work-motion-bunzo'));
   await page.locator('[data-filter="print"]').click();
   await expect(page.locator('#work-motion-bunzo')).not.toHaveAttribute('src', /.+/);

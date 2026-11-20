@@ -169,10 +169,12 @@ const mobileSources = mobilePoster
     height: 100%;
     object-fit: contain;
     opacity: 0;
+    transition: none;
     pointer-events: none;
   }
-  .portfolio-motion-video[data-motion-state='playing'] {
+  .portfolio-motion-video[data-motion-frame='presented'] {
     opacity: 1;
+    transition: opacity 180ms ease-out;
   }
   @media (prefers-reduced-motion: reduce) {
     .portfolio-motion-video {

@@ -1,4 +1,4 @@
-/** Portrait → approved raster plaque → atmosphere → story. All content is static-first. */
+/** Native scroll-linked editorial motion, independent of the parser-owned hero arrival. */
 import { allowsMotion } from '../lib/motion-policy';
 
 type Connection = EventTarget & { saveData?: boolean };
@@ -9,7 +9,6 @@ type Trigger = ReturnType<ScrollTriggerPlugin['create']>;
 
 const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const connection = (navigator as Navigator & { connection?: Connection }).connection;
-const visited = new WeakSet<HTMLElement>();
 const lifecycle = new AbortController();
 let activePage: HTMLElement | undefined;
 let dispose: (() => void) | undefined;
@@ -44,25 +43,13 @@ async function initialize() {
   const { signal } = controller;
   const animations = new Set<Animation>();
   const triggers = new Set<Trigger>();
-  const timers = new Set<ReturnType<typeof setTimeout>>();
   const hero = page.querySelector<HTMLElement>('[data-about-hero]');
   const process = page.querySelector<HTMLElement>('[data-about-process-system]');
   const phases = [...page.querySelectorAll<HTMLElement>('[data-about-process-phase]')];
   let context: Context | undefined;
   let observer: IntersectionObserver | undefined;
-  let atmosphereObserver: IntersectionObserver | undefined;
   let disposed = false;
   let refreshFrame = 0;
-  let settleHero = (reason: string) => {
-    if (!hero) return;
-    hero.dispatchEvent(new Event('about:boot-release'));
-    hero.removeAttribute('data-about-prepaint');
-    hero.dataset.aboutEntrance = 'static';
-    hero.dataset.aboutHeroPhase = 'settled';
-    hero.dataset.aboutArrivalScene = 'settled';
-    hero.dataset.aboutSettleReason = reason;
-    hero.dataset.aboutEndedAt = performance.now().toFixed(2);
-  };
 
   const staticProcess = () => {
     for (const phase of phases) {
@@ -78,12 +65,8 @@ async function initialize() {
   dispose = () => {
     if (disposed) return;
     disposed = true;
-    settleHero('cleanup');
     controller.abort();
     observer?.disconnect();
-    atmosphereObserver?.disconnect();
-    if (hero) hero.dataset.aboutAmbient = 'paused';
-    for (const timer of timers) clearTimeout(timer);
     for (const animation of animations) animation.cancel();
     animations.clear();
     cancelAnimationFrame(refreshFrame);
@@ -96,253 +79,20 @@ async function initialize() {
     triggers: [...triggers].map((trigger) => String(trigger.vars.id)),
     hero: hero?.dataset.aboutEntrance ?? 'static',
   });
-  const schedule = (callback: () => void, delay: number) => {
-    const timer = setTimeout(() => {
-      timers.delete(timer);
-      if (!disposed) callback();
-    }, delay);
-    timers.add(timer);
-    return timer;
-  };
   const animate = (target: Element, keyframes: Keyframe[], options: KeyframeAnimationOptions) => {
     const animation = target.animate(keyframes, { fill: 'both', ...options });
     animations.add(animation);
     return animation;
   };
 
-  const firstVisit = !visited.has(page);
-  visited.add(page);
+  // The parser-local hero controller owns its finite arrival and atmosphere.
+  // Editorial GSAP loading cannot delay, restart or cancel that choreography.
   if (!allowed() || document.hidden) {
     page.dataset.aboutMotion = preference.matches ? 'reduced' : 'static';
-    if (hero) hero.dataset.aboutAmbient = 'paused';
     staticProcess();
-    settleHero(document.hidden ? 'hidden' : preference.matches ? 'reduced-motion' : 'save-data');
     return;
   }
   page.dataset.aboutMotion = 'loading';
-
-  // Only bounded, transform-driven gradient layers animate. They pause outside
-  // the hero, in a hidden page, and for either motion preference.
-  if (hero) {
-    const updateAtmosphere = () => {
-      const box = hero.getBoundingClientRect();
-      hero.dataset.aboutAmbient =
-        !disposed && allowed() && !document.hidden && box.bottom > 0 && box.top < innerHeight
-          ? 'running'
-          : 'paused';
-    };
-    if (typeof IntersectionObserver === 'function') {
-      atmosphereObserver = new IntersectionObserver(updateAtmosphere, { threshold: 0 });
-      atmosphereObserver.observe(hero);
-    } else window.addEventListener('scroll', updateAtmosphere, { passive: true, signal });
-    window.addEventListener('resize', updateAtmosphere, { passive: true, signal });
-    updateAtmosphere();
-  }
-
-  const artwork = hero?.querySelector<HTMLElement>('[data-about-artwork]');
-  const raster = hero?.querySelector<SVGImageElement>('[data-about-portrait-raster]');
-  const plaque = hero?.querySelector<HTMLElement>('[data-about-plaque]');
-  if (
-    hero &&
-    artwork &&
-    raster &&
-    plaque &&
-    firstVisit &&
-    typeof Element.prototype.animate === 'function'
-  ) {
-    const heroController = new AbortController();
-    const heroSignal = heroController.signal;
-    const heroAnimations = new Set<Animation>();
-    const heroTimers = new Set<ReturnType<typeof setTimeout>>();
-    const arrival = Number(page.dataset.aboutArrivalAt ?? 0);
-    const initializedAt = performance.now();
-    const navigation = performance.getEntriesByType('navigation')[0] as
-      PerformanceNavigationTiming | undefined;
-    let finished = false;
-    let started = false;
-    const scheduleHero = (callback: () => void, delay: number) => {
-      const timer = schedule(() => {
-        heroTimers.delete(timer);
-        if (!finished) callback();
-      }, delay);
-      heroTimers.add(timer);
-      return timer;
-    };
-    settleHero = (reason) => {
-      if (finished) return;
-      finished = true;
-      hero.dispatchEvent(new Event('about:boot-release'));
-      hero.removeAttribute('data-about-prepaint');
-      hero.dataset.aboutEntrance = started ? 'settled' : 'static';
-      hero.dataset.aboutHeroPhase = 'settled';
-      hero.dataset.aboutArrivalScene = 'settled';
-      hero.dataset.aboutSettleReason = reason;
-      hero.dataset.aboutEndedAt = performance.now().toFixed(2);
-      heroController.abort();
-      for (const timer of heroTimers) {
-        clearTimeout(timer);
-        timers.delete(timer);
-      }
-      heroTimers.clear();
-      for (const animation of heroAnimations) {
-        animation.cancel();
-        animations.delete(animation);
-      }
-      heroAnimations.clear();
-    };
-    hero.dataset.aboutEntrance = 'pending';
-    const input = (event: Event) => {
-      if (event.type === 'scroll' && window.scrollY === 0 && window.scrollX === 0) return;
-      settleHero('input');
-    };
-    window.addEventListener('wheel', input, { passive: true, signal: heroSignal });
-    window.addEventListener('touchstart', input, { passive: true, signal: heroSignal });
-    window.addEventListener('pointerdown', input, {
-      passive: true,
-      capture: true,
-      signal: heroSignal,
-    });
-    window.addEventListener('keydown', input, { capture: true, signal: heroSignal });
-    window.addEventListener('scroll', input, { passive: true, signal: heroSignal });
-    document.addEventListener('focusin', input, { signal: heroSignal });
-    window.addEventListener('resize', () => settleHero('resize'), { signal: heroSignal });
-    const exclusion =
-      hero.dataset.aboutBoot === 'released' || hero.dataset.aboutBoot === 'skipped'
-        ? 'boot-released'
-        : location.hash || window.scrollY > 0
-          ? 'restored-scroll'
-          : navigation?.type === 'back_forward'
-            ? 'history'
-            : !arrival || initializedAt - arrival > 550
-              ? 'late-init'
-              : document.activeElement instanceof HTMLElement &&
-                  document.activeElement !== document.body
-                ? 'focused'
-                : undefined;
-    if (exclusion) settleHero(exclusion);
-    else {
-      const startHero = () => {
-        if (finished || started || disposed || !allowed() || document.hidden) return;
-        if (hero.dataset.aboutBoot === 'released' || performance.now() - arrival > 550) {
-          settleHero('late-init');
-          return;
-        }
-        if (performance.now() - initializedAt > 450) {
-          settleHero('late-asset');
-          return;
-        }
-        try {
-          clearTimeout(readyDeadline);
-          heroTimers.delete(readyDeadline);
-          timers.delete(readyDeadline);
-          // The complete grid remains in normal flow throughout. Only opacity
-          // and small decoration transforms change; no center-to-side jump.
-          hero.dispatchEvent(new Event('about:boot-handoff'));
-          hero.removeAttribute('data-about-prepaint');
-          scheduleHero(
-            () => settleHero('deadline'),
-            Math.max(0, arrival + 4050 - performance.now()),
-          );
-          hero.dataset.aboutStartedAt = performance.now().toFixed(2);
-          hero.dataset.aboutEntrance = 'running';
-          hero.dataset.aboutHeroPhase = 'arrival';
-          hero.dataset.aboutArrivalScene = 'portrait';
-          started = true;
-          const clock = document.timeline.currentTime;
-          const play = (target: Element, frames: Keyframe[], options: KeyframeAnimationOptions) => {
-            const animation = animate(target, frames, options);
-            heroAnimations.add(animation);
-            if (typeof clock === 'number') animation.startTime = clock;
-          };
-          const enter = (
-            target: Element,
-            delay: number,
-            duration: number,
-            travel: number,
-            tilt = 0,
-          ) => {
-            const base = getComputedStyle(target).transform;
-            const final = base === 'none' ? '' : base;
-            play(
-              target,
-              [
-                {
-                  opacity: 0,
-                  transform: `translateY(${travel}px) rotate(${tilt}deg) ${final}`.trim(),
-                },
-                { opacity: 1, transform: final || 'none' },
-              ],
-              { delay, duration, easing: 'cubic-bezier(.22,.7,.22,1)' },
-            );
-          };
-          enter(artwork, 0, 900, 22);
-          // This is the approved source-pixel plaque, layered in 2.5D. It is
-          // deliberately not described or treated as a newly rigged 3D object.
-          enter(plaque, 700, 900, -26, -3);
-          const gradient = hero.querySelector<HTMLElement>('[data-about-gradient]');
-          if (gradient)
-            play(
-              gradient,
-              [
-                { opacity: 0, transform: 'scale(.93)' },
-                { opacity: 1, transform: 'scale(1)' },
-              ],
-              { delay: 1200, duration: 1100, easing: 'cubic-bezier(.22,.7,.22,1)' },
-            );
-          scheduleHero(() => {
-            hero.dataset.aboutArrivalScene = 'plaque';
-          }, 700);
-          scheduleHero(() => {
-            hero.dataset.aboutArrivalScene = 'atmosphere';
-          }, 1200);
-          scheduleHero(() => {
-            hero.dataset.aboutHeroPhase = 'transition';
-            hero.dataset.aboutArrivalScene = 'copy';
-          }, 2000);
-          hero.querySelectorAll('[data-about-headline]').forEach((headline, index) => {
-            enter(headline, 2000 + index * 90, 740, 28);
-          });
-          hero.querySelectorAll('[data-about-hero-paragraph]').forEach((copy, index) => {
-            enter(copy, 2500 + index * 100, 650, 12);
-          });
-          for (const detail of hero.querySelectorAll(
-            '[data-about-caption], [data-about-signoff]',
-          )) {
-            play(detail, [{ opacity: 0 }, { opacity: 1 }], { delay: 2700, duration: 650 });
-          }
-          scheduleHero(() => settleHero('complete'), 3500);
-        } catch {
-          settleHero('failure');
-        }
-      };
-      // Match the actual displayed sources. A slow or failed asset leaves the
-      // static readable composition rather than delaying navigation or copy.
-      const plaqueImage = plaque.querySelector<HTMLImageElement>('img');
-      const sources = [raster.getAttribute('href'), plaqueImage?.currentSrc || plaqueImage?.src];
-      const readyDeadline = scheduleHero(() => settleHero('late-asset'), 450);
-      const decodeAsset = (source: string | null | undefined) =>
-        new Promise<void>((resolve, reject) => {
-          if (!source) {
-            reject(new Error('Missing About artwork'));
-            return;
-          }
-          const image = new Image();
-          let decoding = false;
-          const loaded = () => {
-            if (decoding) return;
-            decoding = true;
-            if (typeof image.decode === 'function')
-              void image.decode().then(() => resolve(), reject);
-            else resolve();
-          };
-          image.addEventListener('error', reject, { once: true, signal: heroSignal });
-          image.addEventListener('load', loaded, { once: true, signal: heroSignal });
-          image.src = source;
-          if (image.complete && image.naturalWidth > 0) loaded();
-        });
-      void Promise.all(sources.map(decodeAsset)).then(startHero, () => settleHero('asset-failure'));
-    }
-  } else settleHero(firstVisit ? 'unsupported' : 'already-seen');
 
   // A focused control must never wait for a decorative reveal around it.
   document.addEventListener(
@@ -482,7 +232,6 @@ async function initialize() {
     });
     window.addEventListener('orientationchange', refresh, { signal });
   } catch {
-    settleHero('failure');
     context?.revert();
     triggers.clear();
     staticProcess();

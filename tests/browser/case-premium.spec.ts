@@ -256,7 +256,7 @@ async function playVisible(video: Locator) {
 }
 
 for (const width of [390, 1440]) {
-  test(`existing case footage plays only when visible and pause controls work at ${width}px`, async ({
+  test(`existing case footage plays only when visible and the global motion preference works at ${width}px`, async ({
     page,
   }) => {
     await page.setViewportSize(viewportFor(width));
@@ -273,10 +273,10 @@ for (const width of [390, 1440]) {
       await expect(video).toHaveCount(1);
       await playVisible(video);
       await expect(page.locator('[data-portfolio-video][src]')).toHaveCount(1);
-      const toggle = rootFor(page).locator('[data-motion-toggle]');
+      const toggle = page.locator('[data-portfolio-motion-preference]');
       await toggle.focus();
       await page.keyboard.press('Enter');
-      await expect(toggle).toHaveAttribute('aria-pressed', 'true');
+      await expect(toggle).toHaveAttribute('aria-pressed', 'false');
       await expect(video).not.toHaveAttribute('src', /.+/);
       await expect(video.locator('..').locator('picture img')).toBeVisible();
       await page.keyboard.press('Enter');

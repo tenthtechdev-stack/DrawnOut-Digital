@@ -113,7 +113,7 @@ for (const width of [320, 390, 768, 1440, 1920]) {
     await expect(
       page
         .getByRole('button', { name: /play|watch/i })
-        .and(page.locator(':not([data-motion-toggle])')),
+        .and(page.locator(':not([data-portfolio-motion-preference])')),
     ).toHaveCount(0);
     await loadPortfolioPosters(page);
     for (const [project, mobilePoster, widePoster] of [

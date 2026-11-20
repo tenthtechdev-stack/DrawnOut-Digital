@@ -75,7 +75,6 @@ const ordinal = projects.findIndex((entry) => entry.data.slug === data.slug) + 1
     <PremiumCaseGallery
       images={primary}
       slug={data.slug}
-      title={data.title}
       motion={data.motion}
       wideLead={wideLead}
     />
@@ -100,7 +99,7 @@ const ordinal = projects.findIndex((entry) => entry.data.slug === data.slug) + 1
 
   {details.length > 0 && (
     <div class="cp-detail-stage page-frame">
-      <PremiumCaseGallery images={details} slug={data.slug} title={data.title} details />
+      <PremiumCaseGallery images={details} slug={data.slug} details />
     </div>
   )}
 

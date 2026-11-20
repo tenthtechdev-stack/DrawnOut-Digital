@@ -245,6 +245,11 @@ test('only approved motion exports ship, and cards defer video sources until vis
       assert.match(video, /\bmuted\b/);
       assert.match(video, /\bplaysinline\b/);
     }
-    assert.equal((html.match(/<button\b[^>]*data-motion-toggle=/g) ?? []).length, 6);
+    assert.equal((html.match(/<button\b[^>]*data-motion-toggle=/g) ?? []).length, 0);
+    assert.doesNotMatch(html, /portfolio-motion-controls|portfolio-motion-toggle/);
+    assert.equal(
+      (html.match(/<button\b[^>]*data-portfolio-motion-preference(?:\s|=|>)/g) ?? []).length,
+      1,
+    );
   }
 });

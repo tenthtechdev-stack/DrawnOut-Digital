@@ -91,101 +91,260 @@ const headline = ['Two twins.', 'One idea.', 'A whole lot', 'of creativity.'];
 </section>
 
 <script is:inline>
-  // Static HTML is complete. This short gate owns its own fail-open deadline,
-  // so a delayed/failed external module cannot leave the composition hidden.
+  // The finite native arrival starts beside its markup. It must not race a
+  // heavyweight shared module or a second image decode to a prepaint deadline.
   (() => {
     const hero = document.currentScript?.previousElementSibling;
     const page = hero?.closest('[data-about-page]');
     if (!hero?.matches('[data-about-hero]') || !page) return;
     page.dataset.aboutArrivalAt = String(performance.now());
-    let deadline;
-    let controller;
-    const clean = () => {
-      clearTimeout(deadline);
-      controller?.abort();
-      hero.removeAttribute('data-about-prepaint');
+    const controller = new AbortController();
+    const { signal } = controller;
+    const animations = new Set();
+    const timers = new Set();
+    let observer;
+    let bootDeadline;
+    let finished = false;
+    let started = false;
+    let suspended = false;
+    const preference = matchMedia('(prefers-reduced-motion: reduce)');
+    const connection = Reflect.get(navigator, 'connection');
+    const allowed = () => !preference.matches && !connection?.saveData;
+    const schedule = (callback, delay) => {
+      const timer = setTimeout(() => {
+        timers.delete(timer);
+        if (!finished) callback();
+      }, delay);
+      timers.add(timer);
+      return timer;
     };
-    const release = (reason) => {
-      if (hero.dataset.aboutBoot !== 'pending') return;
-      clean();
-      hero.dataset.aboutBoot = 'released';
-      hero.dataset.aboutEntrance = 'static';
+    const settle = (reason) => {
+      if (finished) return;
+      finished = true;
+      clearTimeout(bootDeadline);
+      for (const timer of timers) clearTimeout(timer);
+      timers.clear();
+      for (const animation of animations) animation.cancel();
+      animations.clear();
+      hero.removeAttribute('data-about-prepaint');
+      hero.dataset.aboutEntrance = started ? 'settled' : 'static';
       hero.dataset.aboutHeroPhase = 'settled';
       hero.dataset.aboutArrivalScene = 'settled';
-      hero.dataset.aboutSettleReason = `boot-${reason}`;
+      hero.dataset.aboutSettleReason = reason;
+      hero.dataset.aboutEndedAt = performance.now().toFixed(2);
+      if (hero.dataset.aboutBoot === 'pending') hero.dataset.aboutBoot = 'released';
+    };
+    const updateAtmosphere = () => {
+      const box = hero.getBoundingClientRect();
+      hero.dataset.aboutAmbient =
+        !suspended && allowed() && !document.hidden && box.bottom > 0 && box.top < innerHeight
+          ? 'running'
+          : 'paused';
+    };
+    const dispose = (event) => {
+      settle('navigation');
+      suspended = true;
+      hero.dataset.aboutAmbient = 'paused';
+      // Keep the lightweight observer/listeners with a cached document, so its
+      // atmosphere resumes on return while the finite arrival stays settled.
+      if (event?.type === 'pagehide' && event.persisted) return;
+      controller.abort();
+      observer?.disconnect();
     };
     try {
-      const preference = matchMedia('(prefers-reduced-motion: reduce)');
-      const connection = Reflect.get(navigator, 'connection');
       const navigation = performance.getEntriesByType('navigation')[0];
-      if (
-        preference.matches ||
-        connection?.saveData ||
-        document.hidden ||
-        location.hash ||
-        scrollY > 0 ||
-        navigation?.type === 'back_forward' ||
-        typeof Element.prototype.animate !== 'function' ||
-        (document.activeElement && document.activeElement !== document.body)
-      ) {
-        hero.dataset.aboutBoot = 'skipped';
-        return;
+      const exclusion = !allowed()
+        ? preference.matches
+          ? 'reduced-motion'
+          : 'save-data'
+        : document.hidden
+          ? 'hidden'
+          : location.hash || scrollY > 0
+            ? 'restored-scroll'
+            : navigation?.type === 'back_forward'
+              ? 'history'
+              : typeof Element.prototype.animate !== 'function' ||
+                  typeof IntersectionObserver !== 'function'
+                ? 'unsupported'
+                : document.activeElement && document.activeElement !== document.body
+                  ? 'focused'
+                  : undefined;
+      if (typeof IntersectionObserver === 'function') {
+        observer = new IntersectionObserver(updateAtmosphere, { threshold: 0 });
+        observer.observe(hero);
       }
-      controller = new AbortController();
-      const { signal } = controller;
       const input = (event) => {
         if (event.type === 'scroll' && scrollX === 0 && scrollY === 0) return;
-        release('input');
+        settle('input');
       };
       window.addEventListener('wheel', input, { passive: true, signal });
       window.addEventListener('touchstart', input, { passive: true, signal });
       window.addEventListener('pointerdown', input, { capture: true, passive: true, signal });
       window.addEventListener('keydown', input, { capture: true, signal });
       window.addEventListener('scroll', input, { passive: true, signal });
-      window.addEventListener('resize', () => release('resize'), { signal });
-      window.addEventListener('pagehide', () => release('navigation'), { signal });
+      window.addEventListener(
+        'resize',
+        () => {
+          settle('resize');
+          updateAtmosphere();
+        },
+        { passive: true, signal },
+      );
+      window.addEventListener('pagehide', dispose, { signal });
+      window.addEventListener(
+        'pageshow',
+        () => {
+          suspended = false;
+          updateAtmosphere();
+        },
+        { signal },
+      );
+      document.addEventListener('astro:before-swap', dispose, { signal });
       document.addEventListener('focusin', input, { signal });
       document.addEventListener(
         'visibilitychange',
         () => {
-          if (document.hidden) release('hidden');
+          if (document.hidden) settle('hidden');
+          updateAtmosphere();
         },
         { signal },
       );
-      preference.addEventListener(
-        'change',
-        () => {
-          if (preference.matches) release('reduced-motion');
+      const preferenceChanged = () => {
+        if (!allowed()) settle(preference.matches ? 'reduced-motion' : 'save-data');
+        updateAtmosphere();
+      };
+      preference.addEventListener('change', preferenceChanged, { signal });
+      connection?.addEventListener?.('change', preferenceChanged, { signal });
+      hero.addEventListener(
+        'about:arrival-release',
+        (event) => {
+          settle(event.detail?.reason || 'cleanup');
         },
         { signal },
       );
-      connection?.addEventListener?.(
-        'change',
-        () => {
-          if (connection.saveData) release('save-data');
-        },
-        { signal },
-      );
-      hero.addEventListener('about:boot-release', () => release('module'), { signal });
       hero.addEventListener(
         'about:boot-handoff',
         () => {
-          clean();
+          if (hero.dataset.aboutBoot !== 'pending' || finished) return;
+          clearTimeout(bootDeadline);
           hero.dataset.aboutBoot = 'handed-off';
         },
         { signal },
       );
-      deadline = setTimeout(() => release('deadline'), 550);
+      updateAtmosphere();
+      if (exclusion) {
+        hero.dataset.aboutBoot = 'skipped';
+        settle(exclusion);
+        return;
+      }
+      const artwork = hero.querySelector('[data-about-artwork]');
+      const raster = hero.querySelector('[data-about-portrait-raster]');
+      const plaque = hero.querySelector('[data-about-plaque]');
+      if (!artwork || !raster || !plaque) throw new Error('Missing About artwork');
+      // A separate no-import entry acknowledges this controller. If every
+      // external bundle is delayed or blocked the original550ms fail-open
+      // still settles all content; an expired arrival can never re-hide later.
       hero.dataset.aboutBoot = 'pending';
+      bootDeadline = setTimeout(() => settle('boot-deadline'), 550);
+      hero.setAttribute('data-about-prepaint', '');
+      const clock = document.timeline.currentTime;
+      const play = (target, frames, options) => {
+        const animation = target.animate(frames, { fill: 'both', ...options });
+        animations.add(animation);
+        if (typeof clock === 'number') animation.startTime = clock;
+      };
+      const enter = (target, delay, duration, travel, tilt = 0) => {
+        const base = getComputedStyle(target).transform;
+        const final = base === 'none' ? '' : base;
+        play(
+          target,
+          [
+            { opacity: 0, transform: `translateY(${travel}px) rotate(${tilt}deg) ${final}`.trim() },
+            { opacity: 1, transform: final || 'none' },
+          ],
+          { delay, duration, easing: 'cubic-bezier(.22,.7,.22,1)' },
+        );
+      };
+      enter(artwork, 0, 900, 22);
+      // Approved raster plaque in2.5D; never described as a new rigged3D asset.
+      enter(plaque, 700, 900, -26, -3);
+      const gradient = hero.querySelector('[data-about-gradient]');
+      if (gradient)
+        play(
+          gradient,
+          [
+            { opacity: 0, transform: 'scale(.93)' },
+            { opacity: 1, transform: 'scale(1)' },
+          ],
+          { delay: 1200, duration: 1100, easing: 'cubic-bezier(.22,.7,.22,1)' },
+        );
+      hero.querySelectorAll('[data-about-headline]').forEach((line, index) => {
+        enter(line, 2000 + index * 90, 740, 28);
+      });
+      hero.querySelectorAll('[data-about-hero-paragraph]').forEach((copy, index) => {
+        enter(copy, 2500 + index * 100, 650, 12);
+      });
+      for (const detail of hero.querySelectorAll('[data-about-caption], [data-about-signoff]')) {
+        play(detail, [{ opacity: 0 }, { opacity: 1 }], { delay: 2700, duration: 650 });
+      }
+      hero.removeAttribute('data-about-prepaint');
+      started = true;
+      hero.dataset.aboutStartedAt = performance.now().toFixed(2);
+      hero.dataset.aboutEntrance = 'running';
       hero.dataset.aboutHeroPhase = 'arrival';
       hero.dataset.aboutArrivalScene = 'portrait';
-      hero.setAttribute('data-about-prepaint', '');
+      schedule(() => {
+        hero.dataset.aboutArrivalScene = 'plaque';
+      }, 700);
+      schedule(() => {
+        hero.dataset.aboutArrivalScene = 'atmosphere';
+      }, 1200);
+      schedule(() => {
+        hero.dataset.aboutHeroPhase = 'transition';
+        hero.dataset.aboutArrivalScene = 'copy';
+      }, 2000);
+      schedule(() => settle('complete'), 3500);
+
+      // Watch the displayed responsive plaque directly. The SVG portrait's
+      // preloadedURL uses one cache-coalesced load probe, without a second
+      // image.decode or an alternative responsive-source request.
+      const plaqueImage = plaque.querySelector('img');
+      const portraitSource = raster.getAttribute('href');
+      if (!plaqueImage || !portraitSource) {
+        settle('asset-failure');
+        return;
+      }
+      let pending = 2;
+      const assetDeadline = schedule(() => settle('late-asset'), 450);
+      const watch = (image) => {
+        let loaded = false;
+        const ready = () => {
+          if (loaded) return;
+          loaded = true;
+          pending -= 1;
+          if (!pending) {
+            clearTimeout(assetDeadline);
+            timers.delete(assetDeadline);
+          }
+        };
+        image.addEventListener('error', () => settle('asset-failure'), { once: true, signal });
+        image.addEventListener('load', ready, { once: true, signal });
+        return () => {
+          if (image.complete && image.naturalWidth > 0) ready();
+          else if (image.complete) settle('asset-failure');
+        };
+      };
+      const portraitProbe = new Image();
+      const portraitReady = watch(portraitProbe);
+      portraitProbe.src = portraitSource;
+      portraitReady();
+      watch(plaqueImage)();
     } catch {
-      clean();
       hero.dataset.aboutBoot = 'released';
-      hero.dataset.aboutHeroPhase = 'settled';
-      hero.dataset.aboutArrivalScene = 'settled';
-      hero.dataset.aboutSettleReason = 'boot-failure';
+      settle('boot-failure');
     }
   })();
+</script>
+<script>
+  import '../../scripts/about-arrival';
 </script>

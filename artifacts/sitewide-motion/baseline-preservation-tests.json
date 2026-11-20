@@ -1,0 +1,290 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-contact-signature/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.motion-preservation.config.ts",
+      "--grep",
+      "(?:optimized\\ production\\ visibly\\ plays\\ full\\ cold/refresh/Home\\ journeys\\ at\\ 390px$|optimized\\ production\\ visibly\\ plays\\ full\\ cold/refresh/Home\\ journeys\\ at\\ 1440px$)",
+      "--reporter=list,json",
+      "--output",
+      "/workspace/drawnout-sitewide-motion/test-results/sitewide-baseline-preservation"
+    ],
+    "configFile": "/workspace/drawnout-contact-signature/playwright.motion-preservation.config.ts",
+    "rootDir": "/workspace/drawnout-contact-signature/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-baseline-preservation",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-contact-signature/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/browser/services.spec.ts",
+          "**/browser/services-hero.spec.ts",
+          "**/browser/services-overview.spec.ts",
+          "**/browser/signature-accessibility.spec.ts",
+          "**/production-browser/loader.spec.ts",
+          "**/production-browser/signature-squares.spec.ts"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-baseline-preservation",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-contact-signature/tests",
+        "snapshotDir": "/workspace/drawnout-contact-signature/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/browser/services.spec.ts",
+          "**/browser/services-hero.spec.ts",
+          "**/browser/services-overview.spec.ts",
+          "**/browser/signature-accessibility.spec.ts",
+          "**/production-browser/loader.spec.ts",
+          "**/production-browser/signature-squares.spec.ts"
+        ],
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4453",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": [
+              "--use-gl=angle",
+              "--use-angle=swiftshader",
+              "--enable-unsafe-swiftshader"
+            ]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4453",
+      "url": "http://127.0.0.1:4453",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "production-browser/loader.spec.ts",
+      "file": "production-browser/loader.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 28355,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"internal-navigation\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    27 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"internal-navigation\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    27 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n\n    at /workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts:150:44",
+                    "location": {
+                      "file": "/workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts",
+                      "column": 44,
+                      "line": 150
+                    },
+                    "snippet": "  148 |         await expect(page).toHaveURL(route);\n  149 |         await expect(page.locator(overlay)).toBeHidden();\n> 150 |         await expect(page.locator('html')).toHaveAttribute(\n      |                                            ^\n  151 |           'data-signature-intro-reason',\n  152 |           'internal-navigation',\n  153 |         );"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts",
+                        "column": 44,
+                        "line": 150
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"internal-navigation\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    27 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n\n\n  148 |         await expect(page).toHaveURL(route);\n  149 |         await expect(page.locator(overlay)).toBeHidden();\n> 150 |         await expect(page.locator('html')).toHaveAttribute(\n      |                                            ^\n  151 |           'data-signature-intro-reason',\n  152 |           'internal-navigation',\n  153 |         );\n    at /workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts:150:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:50:11.064Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-sitewide-motion/test-results/sitewide-baseline-preservation/production-browser-loader--5171b-resh-Home-journeys-at-390px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-sitewide-motion/test-results/sitewide-baseline-preservation/production-browser-loader--5171b-resh-Home-journeys-at-390px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-sitewide-motion/test-results/sitewide-baseline-preservation/production-browser-loader--5171b-resh-Home-journeys-at-390px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts",
+                    "column": 44,
+                    "line": 150
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "179e946b00b4ff7f27a2-3b4c630671d759d65f50",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "column": 3
+        },
+        {
+          "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 28710,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"internal-navigation\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    27 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"internal-navigation\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    27 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n\n    at /workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts:150:44",
+                    "location": {
+                      "file": "/workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts",
+                      "column": 44,
+                      "line": 150
+                    },
+                    "snippet": "  148 |         await expect(page).toHaveURL(route);\n  149 |         await expect(page.locator(overlay)).toBeHidden();\n> 150 |         await expect(page.locator('html')).toHaveAttribute(\n      |                                            ^\n  151 |           'data-signature-intro-reason',\n  152 |           'internal-navigation',\n  153 |         );"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts",
+                        "column": 44,
+                        "line": 150
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('html')\nExpected: \u001b[32m\"internal-navigation\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('html') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('html')\u001b[22m\n\u001b[2m    27 × locator resolved to <html lang=\"en\" data-motion-saver=\"false\" data-motion-state=\"ready\" data-astro-cid-tq46r5sz=\"\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n\n\n  148 |         await expect(page).toHaveURL(route);\n  149 |         await expect(page.locator(overlay)).toBeHidden();\n> 150 |         await expect(page.locator('html')).toHaveAttribute(\n      |                                            ^\n  151 |           'data-signature-intro-reason',\n  152 |           'internal-navigation',\n  153 |         );\n    at /workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts:150:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T18:50:41.238Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-sitewide-motion/test-results/sitewide-baseline-preservation/production-browser-loader--2d64a-esh-Home-journeys-at-1440px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-sitewide-motion/test-results/sitewide-baseline-preservation/production-browser-loader--2d64a-esh-Home-journeys-at-1440px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-sitewide-motion/test-results/sitewide-baseline-preservation/production-browser-loader--2d64a-esh-Home-journeys-at-1440px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-contact-signature/tests/production-browser/loader.spec.ts",
+                    "column": 44,
+                    "line": 150
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "179e946b00b4ff7f27a2-050f63fb69dbe97e32be",
+          "file": "production-browser/loader.spec.ts",
+          "line": 120,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-19T18:50:07.786Z",
+    "duration": 63142.634,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

@@ -3,19 +3,27 @@ import { selectMotionCandidates, selectPortfolioRhythm } from '../lib/portfolio-
 type Connection = EventTarget & { saveData?: boolean };
 type Entry = {
   video: HTMLVideoElement;
-  button?: HTMLButtonElement;
   ratio: number;
-  paused: boolean;
+  centerDistance: number;
   failed: boolean;
   eligible: boolean;
+  selected: boolean;
+  starting: boolean;
   source?: string;
+  resumeTime?: number;
   generation: number;
+  releaseTimer?: number;
+  videoFrame?: number;
+  paintFrame?: number;
 };
 
 const lifecycle = new AbortController();
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const mobile = matchMedia('(max-width: 767px), (pointer: coarse)');
 const connection = (navigator as Navigator & { connection?: Connection }).connection;
+const offscreenGrace = 1500;
+const backgroundGrace = 15000;
+const playheads = new WeakMap<HTMLVideoElement, number>();
 let cleanup: (() => void) | undefined;
 let activeRoot: Element | null;
 let activeVideos: HTMLVideoElement[] = [];
@@ -25,13 +33,13 @@ function stop() {
   cleanup = undefined;
   activeRoot = null;
   activeVideos = [];
+  delete document.documentElement.dataset.portfolioMotionAvailable;
 }
 
 function initialize() {
   const root = document.querySelector('main');
   const videos = [...document.querySelectorAll<HTMLVideoElement>('[data-portfolio-video]')];
-  // Astro may announce an already initialized document. Keep its playback,
-  // pause choices and observers instead of unloading the same media nodes.
+  // An already initialized Astro document keeps its media nodes and playheads.
   if (
     cleanup &&
     root === activeRoot &&
@@ -47,30 +55,31 @@ function initialize() {
   const { signal } = controller;
   const entries: Entry[] = videos.map((video) => ({
     video,
-    button:
-      document.querySelector<HTMLButtonElement>(`[data-motion-toggle="${CSS.escape(video.id)}"]`) ??
-      undefined,
     ratio: 0,
-    paused: false,
+    centerDistance: Infinity,
     failed: false,
     eligible: false,
+    selected: false,
+    starting: false,
+    resumeTime: playheads.get(video),
     generation: 0,
   }));
-  let footerVisible = false;
   let disposed = false;
   let scrollFrame = 0;
   const groups = [...document.querySelectorAll<HTMLElement>('[data-portfolio-rhythm]')].map(
     (group) => [...group.querySelectorAll<HTMLElement>('[data-portfolio-card]')],
   );
-  const footer = document.querySelector('[data-site-footer]');
 
-  function visibleRatio(element: Element) {
-    if (element.closest('[hidden]')) return 0;
-    const bounds = element.getBoundingClientRect();
-    if (!bounds.width || !bounds.height) return 0;
+  function measure(entry: Entry) {
+    const bounds = entry.video.getBoundingClientRect();
+    entry.centerDistance = Math.abs(bounds.top + bounds.height / 2 - innerHeight / 2);
+    if (entry.video.closest('[hidden]') || !bounds.width || !bounds.height) {
+      entry.ratio = 0;
+      return;
+    }
     const width = Math.max(0, Math.min(bounds.right, innerWidth) - Math.max(bounds.left, 0));
     const height = Math.max(0, Math.min(bounds.bottom, innerHeight) - Math.max(bounds.top, 0));
-    return (width * height) / (bounds.width * bounds.height);
+    entry.ratio = (width * height) / (bounds.width * bounds.height);
   }
 
   function curate() {
@@ -82,7 +91,6 @@ function initialize() {
           visible.map((card) => ({
             id: card.dataset.projectSlug!,
             hasMotion: Boolean(card.querySelector('[data-portfolio-video]')),
-            // SOL remains the prominent animated choice in its approved order.
             priority: card.dataset.projectSlug === 'sol-community-center' ? 1 : 0,
           })),
         ),
@@ -94,129 +102,224 @@ function initialize() {
         if (animated && video) eligible.add(video);
       }
     }
-    for (const entry of entries) {
-      entry.eligible = eligible.has(entry.video);
-      // Filtering changes geometry synchronously; an old observer ratio must
-      // not briefly start a newly shown but now offscreen card.
-      entry.ratio = visibleRatio(entry.video);
+    for (const entry of entries) entry.eligible = eligible.has(entry.video);
+  }
+
+  function cancelRelease(entry: Entry) {
+    clearTimeout(entry.releaseTimer);
+    entry.releaseTimer = undefined;
+  }
+
+  function cancelPresentation(entry: Entry) {
+    if (
+      entry.videoFrame !== undefined &&
+      typeof entry.video.cancelVideoFrameCallback === 'function'
+    )
+      entry.video.cancelVideoFrameCallback(entry.videoFrame);
+    if (entry.paintFrame !== undefined) cancelAnimationFrame(entry.paintFrame);
+    entry.videoFrame = undefined;
+    entry.paintFrame = undefined;
+  }
+
+  function pause(entry: Entry) {
+    if (entry.starting || !entry.video.paused) {
+      entry.generation += 1;
+      cancelPresentation(entry);
+      entry.starting = false;
     }
-    footerVisible = footer ? visibleRatio(footer) > 0 : false;
+    // Also clear the browser's pending-autoplay flag while still loading.
+    // pause() is idempotent and never removes/reloads a warm source.
+    entry.video.pause();
+    if (entry.source) entry.video.dataset.motionState = 'paused';
+    // Keep the last decoded frame and the paused playhead during ordinary
+    // visibility/intro/background interruptions. There is no poster flash.
   }
 
   function release(entry: Entry) {
-    if (!entry.source && entry.video.dataset.motionState === 'poster') return;
+    cancelRelease(entry);
+    pause(entry);
+    cancelPresentation(entry);
     entry.generation += 1;
-    entry.video.pause();
     entry.video.dataset.motionState = 'poster';
-    // Pausing alone retains a decoder and buffered media. Releasing src keeps
-    // the budget meaningful as visitors move through all six projects.
-    if (entry.source) {
-      entry.video.removeAttribute('src');
-      entry.video.load();
-      entry.source = undefined;
+    delete entry.video.dataset.motionFrame;
+    if (!entry.source) return;
+    if (Number.isFinite(entry.video.currentTime)) {
+      entry.resumeTime = entry.video.currentTime;
+      playheads.set(entry.video, entry.resumeTime);
     }
+    entry.video.removeAttribute('src');
+    entry.video.load();
+    entry.source = undefined;
   }
 
-  function controls(entry: Entry, allowed: boolean) {
-    if (!entry.button) return;
-    entry.button.hidden = !allowed;
-    const paused = entry.paused || entry.failed;
-    const action = paused ? 'Play' : 'Pause';
-    entry.button.setAttribute('aria-pressed', String(entry.paused));
-    entry.button.setAttribute(
-      'aria-label',
-      `${action} ${entry.button.dataset.motionTitle} animation`,
-    );
-    const label = entry.button.querySelector('[data-motion-control-label]');
-    if (label && label.textContent !== `${action} animation`)
-      label.textContent = `${action} animation`;
+  function deferRelease(entry: Entry, delay: number) {
+    if (!entry.source || entry.releaseTimer !== undefined) return;
+    entry.releaseTimer = window.setTimeout(() => {
+      entry.releaseTimer = undefined;
+      if (!disposed && !entry.selected && (document.hidden || entry.ratio < 0.2 || !entry.eligible))
+        release(entry);
+    }, delay);
+  }
+
+  function present(entry: Entry, generation: number) {
+    if (disposed || !entry.selected || entry.generation !== generation) return;
+    entry.starting = false;
+    entry.video.dataset.motionFrame = 'presented';
+    entry.video.dataset.motionState = 'playing';
+  }
+
+  function awaitPresentedFrame(entry: Entry, generation: number) {
+    if (entry.videoFrame !== undefined || entry.paintFrame !== undefined) return;
+    const valid = () => !disposed && entry.selected && entry.generation === generation;
+    if (typeof entry.video.requestVideoFrameCallback === 'function') {
+      entry.videoFrame = entry.video.requestVideoFrameCallback(() => {
+        entry.videoFrame = undefined;
+        if (!valid()) return;
+        if (entry.video.seeking) awaitPresentedFrame(entry, generation);
+        else present(entry, generation);
+      });
+      return;
+    }
+    // Older engines still wait for decoded current data and two browser paint
+    // opportunities. This finite startup check is not a perpetual video ticker.
+    const video = entry.video;
+    const afterPaint = () => {
+      entry.paintFrame = undefined;
+      if (!valid()) return;
+      if (video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA || video.paused || video.seeking)
+        return;
+      entry.paintFrame = requestAnimationFrame(() => {
+        entry.paintFrame = undefined;
+        present(entry, generation);
+      });
+    };
+    entry.paintFrame = requestAnimationFrame(afterPaint);
+  }
+
+  function start(entry: Entry) {
+    cancelRelease(entry);
+    const bounds = entry.video.parentElement!.getBoundingClientRect();
+    const ratio = bounds.width / bounds.height;
+    // Container orientation has its own small deadband during responsive resize.
+    const portrait =
+      entry.source === entry.video.dataset.portrait
+        ? ratio < 1.18
+        : entry.source === entry.video.dataset.landscape
+          ? ratio < 1.02
+          : ratio < 1.1;
+    const source = portrait ? entry.video.dataset.portrait : entry.video.dataset.landscape;
+    if (!source) return;
+    if (entry.source !== source) {
+      release(entry);
+      entry.source = source;
+      const poster = portrait
+        ? entry.video.dataset.portraitPoster
+        : entry.video.dataset.landscapePoster;
+      if (poster) entry.video.poster = poster;
+      entry.video.src = source;
+      entry.video.dataset.motionState = 'loading';
+    }
+    if (entry.starting || (!entry.video.paused && entry.video.dataset.motionState === 'playing'))
+      return;
+    entry.video.muted = true;
+    entry.video.defaultMuted = true;
+    entry.starting = true;
+    const generation = ++entry.generation;
+    void entry.video
+      .play()
+      .then(() => {
+        if (disposed || !entry.selected || entry.generation !== generation) return;
+        if (entry.video.dataset.motionFrame === 'presented') present(entry, generation);
+        else awaitPresentedFrame(entry, generation);
+      })
+      .catch((error: unknown) => {
+        if (disposed || entry.generation !== generation) return;
+        entry.starting = false;
+        if (error instanceof DOMException && error.name === 'AbortError') return;
+        entry.failed = true;
+        release(entry);
+      });
   }
 
   function update() {
     if (disposed) return;
-    const allowed = !reduced.matches && !connection?.saveData;
+    for (const entry of entries) measure(entry);
+    const available = entries.some((entry) => entry.eligible && entry.ratio >= 0.2);
+    document.documentElement.dataset.portfolioMotionAvailable = String(available);
+    const allowed =
+      !reduced.matches &&
+      !connection?.saveData &&
+      document.documentElement.dataset.portfolioMotion !== 'off';
     const intro = document.documentElement.dataset.signatureIntro;
-    const suspended =
-      !allowed || document.hidden || footerVisible || ['pending', 'playing'].includes(intro ?? '');
+    const suspended = document.hidden || ['pending', 'playing'].includes(intro ?? '');
     const selected = new Set(
-      suspended
+      !allowed || suspended
         ? []
         : selectMotionCandidates(
             entries.map((entry) => ({
               id: entry.video.id,
               ratio: entry.ratio,
-              centerDistance: Math.abs(
-                entry.video.getBoundingClientRect().top +
-                  entry.video.getBoundingClientRect().height / 2 -
-                  innerHeight / 2,
-              ),
-              disabled:
-                !entry.eligible ||
-                entry.paused ||
-                entry.failed ||
-                Boolean(entry.video.closest('[hidden]')),
+              centerDistance: entry.centerDistance,
+              active: Boolean(entry.source),
+              disabled: !entry.eligible || entry.failed || Boolean(entry.video.closest('[hidden]')),
             })),
             mobile.matches,
           ),
     );
-    // Free unselected decoders before starting any replacement.
     for (const entry of entries) {
-      controls(entry, allowed && entry.eligible);
-      if (!selected.has(entry.video.id)) release(entry);
-    }
-    for (const entry of entries) {
-      if (!selected.has(entry.video.id)) continue;
-      const bounds = entry.video.parentElement!.getBoundingClientRect();
-      const portrait = bounds.width / bounds.height < 1.1;
-      const source = portrait ? entry.video.dataset.portrait : entry.video.dataset.landscape;
-      if (!source || (entry.source === source && !entry.video.paused)) continue;
-      if (entry.source !== source) {
-        release(entry);
-        entry.source = source;
-        const poster = portrait
-          ? entry.video.dataset.portraitPoster
-          : entry.video.dataset.landscapePoster;
-        if (poster) entry.video.poster = poster;
-        entry.video.src = source;
+      entry.selected = selected.has(entry.video.id);
+      if (entry.selected) cancelRelease(entry);
+      else if (!allowed || !entry.eligible || entry.video.closest('[hidden]')) release(entry);
+      else {
+        pause(entry);
+        if (document.hidden) deferRelease(entry, backgroundGrace);
+        else if (entry.ratio < 0.2) deferRelease(entry, offscreenGrace);
+        else cancelRelease(entry);
       }
-      entry.video.muted = true;
-      entry.video.defaultMuted = true;
-      const generation = ++entry.generation;
-      void entry.video
-        .play()
-        .then(() => {
-          if (entry.generation !== generation || disposed) return;
-          entry.video.dataset.motionState = 'playing';
-        })
-        .catch((error: unknown) => {
-          if (entry.generation !== generation || disposed) return;
-          if (error instanceof DOMException && error.name === 'AbortError') return;
-          entry.failed = true;
-          release(entry);
-          controls(entry, allowed && entry.eligible);
-        });
     }
+
+    // Warm, paused media also count toward the decoder budget. Evict the least
+    // visible warm lease before loading a replacement, never after starting it.
+    const budget = mobile.matches ? 1 : 2;
+    const unloadedSelected = entries.filter((entry) => entry.selected && !entry.source).length;
+    const warm = entries
+      .filter((entry) => entry.source && !entry.selected)
+      .sort((a, b) => a.ratio - b.ratio || b.centerDistance - a.centerDistance);
+    let leases = entries.filter((entry) => entry.source).length;
+    while (leases + unloadedSelected > budget && warm.length) {
+      release(warm.shift()!);
+      leases -= 1;
+    }
+    for (const entry of entries) if (entry.selected) start(entry);
   }
 
-  const observer = new IntersectionObserver(
-    (observations) => {
-      for (const observation of observations) {
-        const entry = entries.find(({ video }) => video === observation.target);
-        if (entry) entry.ratio = observation.isIntersecting ? observation.intersectionRatio : 0;
-        else footerVisible = observation.isIntersecting;
-      }
-      update();
-    },
-    { threshold: [0, 0.1, 0.35, 0.5, 0.75, 1] },
-  );
+  const observer = new IntersectionObserver(() => update(), {
+    threshold: [0, 0.1, 0.2, 0.35, 0.5, 0.75, 1],
+  });
   for (const entry of entries) {
     observer.observe(entry.video);
-    entry.button?.addEventListener(
-      'click',
+    for (const name of ['playing', 'loadeddata', 'seeked'])
+      entry.video.addEventListener(
+        name,
+        () => {
+          if (entry.starting && entry.selected && !entry.video.paused)
+            awaitPresentedFrame(entry, entry.generation);
+        },
+        { signal },
+      );
+    entry.video.addEventListener(
+      'loadedmetadata',
       () => {
-        entry.paused = entry.failed ? false : !entry.paused;
-        entry.failed = false;
-        update();
+        if (!entry.source || entry.resumeTime === undefined) return;
+        const duration = entry.video.duration;
+        if (Number.isFinite(duration) && duration > 0 && entry.resumeTime > 0) {
+          try {
+            entry.video.currentTime = entry.resumeTime % duration;
+          } catch {
+            // A non-seekable/failed stream still retains its real poster.
+          }
+        }
+        entry.resumeTime = undefined;
       },
       { signal },
     );
@@ -226,16 +329,14 @@ function initialize() {
         if (!entry.source) return;
         entry.failed = true;
         release(entry);
-        controls(entry, entry.eligible && !reduced.matches && !connection?.saveData);
       },
       { signal },
     );
   }
-  if (footer) observer.observe(footer);
   const entrance = new MutationObserver(update);
   entrance.observe(document.documentElement, {
     attributes: true,
-    attributeFilter: ['data-signature-intro'],
+    attributeFilter: ['data-signature-intro', 'data-portfolio-motion'],
   });
   document.addEventListener(
     'portfolio:filterchange',
@@ -245,22 +346,29 @@ function initialize() {
     },
     { signal },
   );
-  document.addEventListener('visibilitychange', update, { signal });
-  window.addEventListener('resize', update, { passive: true, signal });
-  window.addEventListener(
-    'scroll',
+  document.addEventListener(
+    'portfolio:motion-change',
     () => {
-      if (scrollFrame || disposed) return;
-      scrollFrame = requestAnimationFrame(() => {
-        scrollFrame = 0;
-        update();
-      });
+      for (const entry of entries) entry.failed = false;
+      update();
     },
-    { passive: true, signal },
+    { signal },
   );
+  document.addEventListener('visibilitychange', update, { signal });
+  window.addEventListener('resize', requestUpdate, { passive: true, signal });
+  window.addEventListener('scroll', requestUpdate, { passive: true, signal });
   reduced.addEventListener('change', update, { signal });
   mobile.addEventListener('change', update, { signal });
   connection?.addEventListener?.('change', update, { signal });
+
+  function requestUpdate() {
+    if (scrollFrame || disposed) return;
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = 0;
+      update();
+    });
+  }
+
   curate();
   update();
   cleanup = () => {

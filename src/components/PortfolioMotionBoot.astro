@@ -1,0 +1,16 @@
+<script is:inline>
+  (() => {
+    // Apply the public preference before any portfolio video can acquire a source.
+    // Storage can be unavailable in private/restricted contexts; motion remains optional.
+    let choice = null;
+    try {
+      choice = localStorage.getItem('drawnout:portfolio-motion');
+    } catch {
+      /* session-only choice */
+    }
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const saver = Boolean(Reflect.get(navigator, 'connection')?.saveData);
+    document.documentElement.dataset.portfolioMotion =
+      reduced || saver || choice === 'off' ? 'off' : 'on';
+  })();
+</script>

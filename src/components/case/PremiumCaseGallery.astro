@@ -2,16 +2,14 @@
 import type { CollectionEntry } from 'astro:content';
 import type { CaseImage } from '../../lib/case-presentation';
 import MediaSlot from '../MediaSlot.astro';
-import PortfolioMotionToggle from '../PortfolioMotionToggle.astro';
 interface Props {
   images: CaseImage[];
   slug: string;
-  title: string;
   motion?: CollectionEntry<'projects'>['data']['motion'];
   details?: boolean;
   wideLead?: boolean;
 }
-const { images, slug, title, motion, details = false, wideLead = false } = Astro.props;
+const { images, slug, motion, details = false, wideLead = false } = Astro.props;
 const motionId = `case-motion-${slug}`;
 const variant = Math.min(images.length, 4);
 ---
@@ -61,7 +59,6 @@ const variant = Math.min(images.length, 4);
         <span aria-hidden="true">{String(index + (details ? 5 : 1)).padStart(2, '0')}</span>
         <span>{image.caption}</span>
       </figcaption>
-      {index === 0 && !details && motion && <PortfolioMotionToggle id={motionId} title={title} />}
     </figure>
   ))}
 </section>

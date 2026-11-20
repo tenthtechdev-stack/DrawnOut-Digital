@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import MediaSlot from '../MediaSlot.astro';
-import PortfolioMotionToggle from '../PortfolioMotionToggle.astro';
 import Arrow from '../Arrow.astro';
 import { projectCategoryLabels } from '../../lib/portfolio';
 import { canPublish } from '../../lib/project-schema';
@@ -86,9 +85,6 @@ const titleId = `index-project-${data.slug}`;
         </span>
       </div>
     </a>
-    <div class="work-controls-reservation">
-      {motion && <PortfolioMotionToggle id={motionId} title={data.title} />}
-    </div>
   </article>
 </li>
 
@@ -110,7 +106,7 @@ const titleId = `index-project-${data.slug}`;
     --work-corner: 94px;
     position: relative;
     min-width: 0;
-    height: calc(var(--work-caption-height) + var(--work-frame-height) + 52px);
+    height: calc(var(--work-caption-height) + var(--work-frame-height));
   }
   .work-item[data-project-presentation='animated'] {
     --work-frame-ratio: 1.77777778;
@@ -258,10 +254,6 @@ const titleId = `index-project-${data.slug}`;
   .work-card-link:focus-visible .work-open :global(svg),
   .work-card-link:hover .work-view :global(svg) {
     transform: translate(2px, -2px);
-  }
-  .work-controls-reservation {
-    min-height: 52px;
-    padding-inline: 4px;
   }
   @media (max-width: 1023px) {
     .work-item {

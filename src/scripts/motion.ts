@@ -11,6 +11,7 @@ interface Scene {
   id: number;
   media: HTMLElement;
   image: HTMLImageElement;
+  video?: HTMLVideoElement;
   frame: HTMLElement;
   timeline: Timeline;
   trigger: Trigger;
@@ -528,9 +529,12 @@ async function initialize(force = false) {
           const media = frame.querySelector<HTMLElement>('.media-slot');
           const image = media?.querySelector<HTMLImageElement>('img');
           if (!media || !image || registered.has(media)) continue;
+          const video =
+            media.querySelector<HTMLVideoElement>('[data-portfolio-video]') ?? undefined;
+          const artwork = video ? [image, video] : [image];
           registered.add(media);
           remember(media);
-          remember(image);
+          for (const layer of artwork) remember(layer);
           const profile = expansionProfile(
             window.innerWidth,
             image.width / image.height,
@@ -548,7 +552,8 @@ async function initialize(force = false) {
               invalidateOnRefresh: true,
               onToggle: (trigger) => {
                 media.style.willChange = trigger.isActive ? 'clip-path' : '';
-                image.style.willChange = trigger.isActive ? 'transform' : '';
+                for (const layer of artwork)
+                  layer.style.willChange = trigger.isActive ? 'transform' : '';
               },
             },
           });
@@ -562,17 +567,31 @@ async function initialize(force = false) {
               0,
             )
             .fromTo(
-              image,
+              // The decoded loop replaces the poster inside this same frame.
+              // Both layers must share its crop/translation throughout the fade.
+              artwork,
               { scale: profile.scale, yPercent: profile.drift },
               { scale: 1, yPercent: 0, ease: 'none', duration: 1 },
               0,
             );
           const trigger = timeline.scrollTrigger!;
-          const scene: Scene = { id, frame, media, image, timeline, trigger, focused: false };
+          const scene: Scene = {
+            id,
+            frame,
+            media,
+            image,
+            video,
+            timeline,
+            trigger,
+            focused: false,
+          };
           timeline.eventCallback('onUpdate', () => {
             if (scene.focused) {
               gsap.set(scene.media, { clipPath: 'inset(0% 0% 0% 0% round 0px)' });
-              gsap.set(scene.image, { scale: 1, yPercent: 0 });
+              gsap.set(scene.video ? [scene.image, scene.video] : scene.image, {
+                scale: 1,
+                yPercent: 0,
+              });
               return;
             }
             syncProgress(scene);
@@ -609,6 +628,7 @@ async function initialize(force = false) {
             scenes.delete(scene);
             restore(scene.media);
             restore(scene.image);
+            if (scene.video) restore(scene.video);
             delete scene.media.dataset.motionScene;
             delete scene.media.dataset.motionProgress;
           }
@@ -635,7 +655,10 @@ async function initialize(force = false) {
           scene.focused = true;
           scene.timeline.pause();
           gsap.set(scene.media, { clipPath: 'inset(0% 0% 0% 0% round 0px)' });
-          gsap.set(scene.image, { scale: 1, yPercent: 0 });
+          gsap.set(scene.video ? [scene.image, scene.video] : scene.image, {
+            scale: 1,
+            yPercent: 0,
+          });
           scene.media.dataset.motionProgress = '1.0000';
         }
       },

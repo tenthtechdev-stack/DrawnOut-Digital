@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
+import PortfolioMotionBoot from '../components/PortfolioMotionBoot.astro';
+import PortfolioMotionPreference from '../components/PortfolioMotionPreference.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import MotionEnhancement from '../components/MotionEnhancement.astro';
 import SignatureIntro from '../components/SignatureIntro.astro';
@@ -57,6 +59,7 @@ replayURL.searchParams.set('showIntro', '1');
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <title>{title}</title>
+    {motionEnabled && <PortfolioMotionBoot />}
     {motionEnabled && <SignatureIntroBoot enableIntro={loaderEnabled} />}
     {motionEnabled && Astro.url.pathname === '/' && <script is:inline>
       (() => {
@@ -149,6 +152,7 @@ replayURL.searchParams.set('showIntro', '1');
       <slot />
     </main>
     <SiteFooter />
+    {motionEnabled && <PortfolioMotionPreference />}
     {motionEnabled && <MotionEnhancement />}
   </body>
 </html>

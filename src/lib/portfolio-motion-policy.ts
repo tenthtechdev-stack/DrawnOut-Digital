@@ -3,6 +3,8 @@ export interface MotionCandidate {
   ratio: number;
   disabled: boolean;
   centerDistance?: number;
+  /** Retain a selected visible loop through small clipping/center changes. */
+  active?: boolean;
 }
 
 export interface PortfolioRhythmProject {
@@ -34,14 +36,24 @@ export function selectPortfolioRhythm(projects: readonly PortfolioRhythmProject[
   return projects.filter((_, index) => selected.has(index)).map(({ id }) => id);
 }
 
-/** A small deterministic decoder budget, shared with behavioral unit tests. */
+/**
+ * A small deterministic decoder budget. New loops enter at 35% visibility;
+ * selected loops may remain down to 20%, with an 8% switching margin. This
+ * prevents an intersection threshold or near-tied neighbour restarting media.
+ */
 export function selectMotionCandidates(candidates: readonly MotionCandidate[], mobile: boolean) {
   return candidates
-    .filter((candidate) => !candidate.disabled && candidate.ratio >= 0.35)
+    .filter(
+      (candidate) =>
+        !candidate.disabled &&
+        Number.isFinite(candidate.ratio) &&
+        candidate.ratio >= (candidate.active ? 0.2 : 0.35),
+    )
     .sort(
       (a, b) =>
         // Ignore sub-percent clipping noise when several cards fit on screen.
-        Math.round(b.ratio * 100) - Math.round(a.ratio * 100) ||
+        Math.round((b.ratio + (b.active ? 0.08 : 0)) * 100) -
+          Math.round((a.ratio + (a.active ? 0.08 : 0)) * 100) ||
         (a.centerDistance ?? Infinity) - (b.centerDistance ?? Infinity) ||
         a.id.localeCompare(b.id),
     )

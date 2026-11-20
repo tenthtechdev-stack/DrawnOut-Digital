@@ -254,8 +254,9 @@ test('an early native pointer gesture can pause SOL while its visual arrival is 
   await page.setViewportSize(viewport(390));
   await page.goto('/work/sol-community-center', { waitUntil: 'domcontentloaded' });
   const figure = page.locator('[data-case-hero]');
-  const control = page.locator('[data-motion-toggle="case-motion-sol-community-center"]');
-  await control.scrollIntoViewIfNeeded();
+  const control = page.locator('[data-portfolio-motion-preference]');
+  await figure.scrollIntoViewIfNeeded();
+  await expect(control).toBeVisible();
   await expect(figure).toHaveAttribute('data-case-reveal-state', 'running');
   await control.evaluate((node: HTMLElement) => {
     node.dataset.testClickCount = '0';
@@ -266,15 +267,15 @@ test('an early native pointer gesture can pause SOL while its visual arrival is 
   const before = (await control.boundingBox())!;
   await page.mouse.move(before.x + before.width / 2, before.y + before.height / 2);
   await page.mouse.down();
-  // Native mousedown focuses the control. Focus deliberately settles the
-  // artwork, but its button must retain the same hit target until pointerup.
-  await expect(figure).toHaveAttribute('data-case-reveal-state', 'complete');
+  // The global preference sits outside the moving artwork. Its native hit
+  // target must stay stable through pointerup; focusing it no longer settles
+  // a figure ancestor because the per-artwork button has been removed.
   const focused = (await control.boundingBox())!;
   expect(Math.abs(focused.x - before.x)).toBeLessThan(0.5);
   expect(Math.abs(focused.y - before.y)).toBeLessThan(0.5);
   await page.mouse.up();
   await expect(control).toHaveAttribute('data-test-click-count', '1');
-  await expect(control).toHaveAttribute('aria-pressed', 'true');
+  await expect(control).toHaveAttribute('aria-pressed', 'false');
   await expect(page.locator('[data-portfolio-video]')).not.toHaveAttribute('src', /.+/);
 });
 
@@ -467,16 +468,16 @@ for (const width of [390, 1440]) {
       expect(await page.locator('[data-portfolio-video][src]').count()).toBeLessThanOrEqual(
         width < 768 ? 1 : 2,
       );
-      const control = page.locator(`[data-motion-toggle="case-motion-${slug}"]`);
+      const control = page.locator('[data-portfolio-motion-preference]');
       await control.focus();
       await control.press('Enter');
-      await expect(control).toHaveAttribute('aria-pressed', 'true');
+      await expect(control).toHaveAttribute('aria-pressed', 'false');
       await expect(video).not.toHaveAttribute('src', /.+/);
       await expect(video).toHaveAttribute('data-motion-state', 'poster');
       await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
       await showVideo();
       await expect(video).not.toHaveAttribute('src', /.+/);
-      await expect(control).toHaveAttribute('aria-pressed', 'true');
+      await expect(control).toHaveAttribute('aria-pressed', 'false');
       await control.focus();
       await control.press('Enter');
       await expect(video).toHaveAttribute('data-motion-state', 'playing');
@@ -486,7 +487,7 @@ for (const width of [390, 1440]) {
   });
 }
 
-test('actual completion footage releases on document visibility and resumes when visible', async ({
+test('actual completion footage pauses on document visibility and resumes its warm source', async ({
   page,
 }) => {
   await page.setViewportSize(viewport(390));
@@ -504,8 +505,14 @@ test('actual completion footage releases on document visibility and resumes when
       Object.defineProperty(document, 'hidden', { configurable: true, get: () => true });
       document.dispatchEvent(new Event('visibilitychange'));
     });
-    await expect(video).not.toHaveAttribute('src', /.+/);
-    await expect(video).toHaveAttribute('data-motion-state', 'poster');
+    await expect(video).toHaveAttribute('data-motion-state', 'paused');
+    expect(await video.evaluate((node: HTMLVideoElement) => node.paused)).toBe(true);
+    const held = await video.evaluate((node: HTMLVideoElement) => ({
+      source: node.currentSrc,
+      time: node.currentTime,
+    }));
+    await page.waitForTimeout(180);
+    expect(await video.evaluate((node: HTMLVideoElement) => node.currentTime)).toBe(held.time);
     await page.evaluate(() => {
       Reflect.deleteProperty(document, 'hidden');
       document.dispatchEvent(new Event('visibilitychange'));
@@ -514,6 +521,7 @@ test('actual completion footage releases on document visibility and resumes when
     await expect
       .poll(() => video.evaluate((node: HTMLVideoElement) => node.currentTime))
       .toBeGreaterThan(0);
+    expect(await video.evaluate((node: HTMLVideoElement) => node.currentSrc)).toBe(held.source);
     expect(await page.locator('[data-portfolio-video][src]').count()).toBeLessThanOrEqual(1);
   }
 });
@@ -626,7 +634,7 @@ test('completion matching-poster assets and videos remain unfetched under Save D
       await expect(video).not.toHaveAttribute('src', /.+/);
       await expect(video).not.toHaveAttribute('poster', /.+/);
       await expect(video.locator('..').locator('picture img')).toBeVisible();
-      await expect(page.locator('[data-motion-toggle]')).toBeHidden();
+      await expect(page.locator('[data-motion-toggle], .portfolio-motion-controls')).toHaveCount(0);
     }
     expect(mediaRequests, mode).toEqual([]);
     await context.close();
