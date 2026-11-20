@@ -87,6 +87,9 @@ function initialize() {
     } catch {
       /* preserve memory choice */
     }
+    const existingContainer = button?.closest<HTMLElement>('[data-portfolio-preference-container]');
+    if (button?.isConnected && existingContainer && !existingContainer.hidden)
+      document.documentElement.dataset.portfolioMotionReady = 'true';
     update();
   };
   update();

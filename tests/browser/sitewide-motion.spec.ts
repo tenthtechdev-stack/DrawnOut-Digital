@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import sharp from 'sharp';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Locator, type Page } from '@playwright/test';
 
@@ -494,8 +495,48 @@ test('an actual native loop advances decoded frames without reloading its source
   await page.goto('/work/sol-community-center#main');
   const video = page.locator('[data-portfolio-video]');
   await decoded(video);
+  await expect(page.locator('[data-case-hero]')).toHaveAttribute(
+    'data-case-reveal-state',
+    'complete',
+  );
+  await decoded(video);
   await probe(video);
-  const result = await video.evaluate(async (node: HTMLVideoElement) => {
+
+  // Use an unchanging green patch in the actual approved SOL composition.
+  // Derive its expected colour from the matching immutable poster rather than
+  // inventing a background value or substituting a test image for the artwork.
+  const presentation = await video.evaluate((node: HTMLVideoElement) => {
+    const box = node.getBoundingClientRect();
+    const scale = Math.min(box.width / node.videoWidth, box.height / node.videoHeight);
+    const source = { x: 40, y: Math.floor(node.videoHeight * 0.45) };
+    const screen = {
+      x: box.x + (box.width - node.videoWidth * scale) / 2 + (source.x + 1) * scale,
+      y: box.y + (box.height - node.videoHeight * scale) / 2 + (source.y + 1) * scale,
+    };
+    return {
+      source,
+      screen,
+      poster: node.poster,
+      videoSource: node.currentSrc,
+      unobscured: node.parentElement!.contains(document.elementFromPoint(screen.x, screen.y)),
+    };
+  });
+  const averageRGB = (data: Buffer, channels: number) =>
+    [0, 1, 2].map((channel) => {
+      let sum = 0;
+      for (let index = channel; index < data.length; index += channels) sum += data[index]!;
+      return sum / (data.length / channels);
+    });
+  const posterResponse = await page.request.get(presentation.poster);
+  expect(posterResponse.ok()).toBe(true);
+  const posterPatch = await sharp(await posterResponse.body())
+    .extract({ left: presentation.source.x, top: presentation.source.y, width: 3, height: 3 })
+    .removeAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  const expectedRGB = averageRGB(posterPatch.data, posterPatch.info.channels);
+
+  const sampling = video.evaluate(async (node: HTMLVideoElement) => {
     const samples: { at: number; time: number; frames: number; ready: number }[] = [];
     const before = node.getVideoPlaybackQuality();
     const startedAt = performance.now();
@@ -525,6 +566,9 @@ test('an actual native loop advances decoded frames without reloading its source
         .slice(1)
         .filter((sample, index) => sample.time < samples[index]!.time).length,
       presentedSamples: samples.length,
+      presentedFrameCounterAdvances: samples.every(
+        (sample, index) => index === 0 || sample.frames > samples[index - 1]!.frames,
+      ),
       decodedFrameDelta: after.totalVideoFrames - before.totalVideoFrames,
       droppedFrameDelta: after.droppedVideoFrames - before.droppedVideoFrames,
       callbackIntervalMs: {
@@ -533,27 +577,98 @@ test('an actual native loop advances decoded frames without reloading its source
         max: intervals.at(-1),
       },
       allVisibleSamplesDecoded: samples.every((sample) => sample.ready >= 2),
+      samplesBelowCurrentData: samples.filter((sample) => sample.ready < 2).length,
       readinessBoundarySamples: samples.filter(
         (sample, index) =>
           sample.ready < 2 || (index > 0 && sample.time < samples[index - 1]!.time),
       ),
     };
   });
+  // Keep an earlier screenshot/wait failure from turning a later page-close
+  // rejection into an unhandled promise; awaiting below still surfaces errors.
+  void sampling.catch(() => undefined);
+  await page.waitForFunction(() => {
+    const node = document.querySelector<HTMLVideoElement>('[data-portfolio-video]');
+    return node && node.currentTime > node.duration - 0.65;
+  });
+  const compositorSamples = [];
+  for (let index = 0; index < 14; index += 1) {
+    const before = await video.evaluate((node: HTMLVideoElement) => ({
+      time: node.currentTime,
+      ready: node.readyState,
+      seeking: node.seeking,
+      opacity: getComputedStyle(node).opacity,
+    }));
+    const imagePath = testInfo.outputPath(
+      `native-loop-compositor-${String(index).padStart(2, '0')}.png`,
+    );
+    const image = await page.screenshot({ path: imagePath, scale: 'css', animations: 'allow' });
+    const patch = await sharp(image)
+      .extract({
+        left: Math.floor(presentation.screen.x) - 1,
+        top: Math.floor(presentation.screen.y) - 1,
+        width: 3,
+        height: 3,
+      })
+      .removeAlpha()
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+    const screenRGB = averageRGB(patch.data, patch.info.channels);
+    const after = await video.evaluate((node: HTMLVideoElement) => ({
+      time: node.currentTime,
+      ready: node.readyState,
+      seeking: node.seeking,
+    }));
+    compositorSamples.push({
+      imagePath,
+      before,
+      after,
+      screenRGB,
+      delta: screenRGB.map((value, channel) => Math.abs(value - expectedRGB[channel]!)),
+    });
+    await testInfo.attach(`native-loop-compositor-${String(index).padStart(2, '0')}`, {
+      path: imagePath,
+      contentType: 'image/png',
+    });
+  }
+  const result = await sampling;
   const lifecycle = await observations(video);
+  const compositorObservedWrap = compositorSamples.some(
+    (sample, index) =>
+      sample.after.time < sample.before.time ||
+      (index > 0 && sample.before.time < compositorSamples[index - 1]!.after.time),
+  );
   await testInfo.attach('actual-loop-and-software-browser-frame-observations', {
     body: JSON.stringify({
       ...result,
       lifecycle,
+      compositor: {
+        presentation,
+        expectedRGB,
+        toleranceRGB: 5,
+        observedWrap: compositorObservedWrap,
+        samples: compositorSamples,
+      },
+      criterion:
+        'Strictly advancing compositor-submitted frame counters plus fourteen real viewport images spanning a native loop, each matching the immutable SOL poster patch within five RGB levels. readyState remains diagnostic: a queued frame callback can observe metadata-only readiness during the native loop seek without identifying the painted surface.',
       limitation:
-        'Measured Chromium/SwiftShader callback cadence; not physical-device GPU/FPS certification.',
+        'Measured Chromium/SwiftShader with finite screenshot work; callback cadence is not a physical-device GPU/FPS benchmark. Earlier readiness-proxy failures remain recorded.',
     }),
     contentType: 'application/json',
   });
   expect(result.observedLoopWraps).toBeGreaterThanOrEqual(1);
   expect(result.decodedFrameDelta).toBeGreaterThan(0);
   expect(result.presentedSamples).toBeGreaterThan(0);
-  expect(result.allVisibleSamplesDecoded).toBe(true);
+  expect(result.presentedFrameCounterAdvances).toBe(true);
+  expect(presentation.unobscured).toBe(true);
+  expect(compositorSamples).toHaveLength(14);
+  expect(compositorObservedWrap).toBe(true);
+  for (const sample of compositorSamples) {
+    expect(sample.before.opacity).toBe('1');
+    for (const delta of sample.delta) expect(delta).toBeLessThanOrEqual(5);
+  }
   expect(lifecycle.loads).toBe(0);
+  expect(lifecycle.plays).toBe(0);
   expect(lifecycle.sourceMutations).toBe(0);
   expect(lifecycle.emptied).toBe(0);
 });
@@ -640,4 +755,27 @@ test('failure of only the preference enhancement leaves static artwork instead o
     }),
     contentType: 'application/json',
   });
+});
+
+test('before-swap teardown followed by same-DOM page-load restores the working preference and eligible playback', async ({
+  page,
+}) => {
+  await page.goto('/work/sol-community-center#main');
+  const video = page.locator('[data-portfolio-video]');
+  await decoded(video);
+  await expect(page.locator('html')).toHaveAttribute('data-portfolio-motion-ready', 'true');
+  // Exercise both real lifecycle handlers in order while preserving their DOM
+  // nodes. This is distinct from an idempotent page-load with no prior teardown.
+  await page.evaluate(() => document.dispatchEvent(new Event('astro:before-swap')));
+  await expect(page.locator('html')).toHaveAttribute('data-portfolio-motion-ready', 'false');
+  await expect(video).not.toHaveAttribute('src', /.+/);
+  await page.evaluate(() => document.dispatchEvent(new Event('astro:page-load')));
+  await expect(page.locator('html')).toHaveAttribute('data-portfolio-motion-ready', 'true');
+  await expect(preference(page)).toHaveAttribute('aria-pressed', 'true');
+  await decoded(video);
+  await preference(page).focus();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('html')).toHaveAttribute('data-portfolio-motion', 'off');
+  await expect(preference(page)).toHaveAttribute('aria-pressed', 'false');
+  await expect(video).not.toHaveAttribute('src', /.+/);
 });
