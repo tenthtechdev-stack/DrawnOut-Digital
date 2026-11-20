@@ -39,7 +39,7 @@ for (const name of [
   'src/scripts/services-hero.ts',
   'src/scripts/enquiry-puzzle.ts',
   'src/scripts/signature-footer.ts',
-  ...(mode === 'after' ? ['src/scripts/about-arrival.ts'] : []),
+  ...(mode === 'after' ? ['public/scripts/about-arrival.js'] : []),
 ]) {
   const bytes = await readFile(path.join(sourceRoot, name));
   assert.equal(
@@ -89,13 +89,11 @@ async function facts(page, label, width) {
             plaque: transform(hero.querySelector('[data-about-plaque]')),
             gradient: transform(hero.querySelector('[data-about-gradient]')),
             headline: transform(hero.querySelector('[data-about-headline]')),
-            nativeAnimations: hero
-              .getAnimations({ subtree: true })
-              .map((a) => ({
-                state: a.playState,
-                currentTime: a.currentTime,
-                effectDuration: a.effect?.getTiming().duration,
-              })),
+            nativeAnimations: hero.getAnimations({ subtree: true }).map((a) => ({
+              state: a.playState,
+              currentTime: a.currentTime,
+              effectDuration: a.effect?.getTiming().duration,
+            })),
             images: [...hero.querySelectorAll('img')].map((i) => ({
               complete: i.complete,
               width: i.naturalWidth,
