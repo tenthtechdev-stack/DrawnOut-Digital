@@ -2,7 +2,7 @@
   "archivedAt": "2026-11-20T16:46:23.781341+00:00",
   "sourceCommit": "b2d8c4248b44ba19907525945331ee25a65d3b07",
   "productionContactHTMLSHA256": "29394dd445ee6f6835baf8fcc84ee07db744672f045668b56873596100f7bdd2",
-  "report": "final-sitewide-tests.json",
+  "report": "pre-external-sitewide-tests.json",
   "method": "Original current-test browser viewport PNGs copied byte-for-byte from Playwright attachments. No resizing, retouching or re-encoding. Expected RGB derives from matching immutable SOL poster; raw readiness/cadence/source observations retained.",
   "images": [
     {
@@ -484,5 +484,6 @@
     "criterion": "Strictly advancing compositor-submitted frame counters plus fourteen real viewport images spanning a native loop, each matching the immutable SOL poster patch within five RGB levels. readyState remains diagnostic: a queued frame callback can observe metadata-only readiness during the native loop seek without identifying the painted surface.",
     "limitation": "Measured Chromium/SwiftShader with finite screenshot work; callback cadence is not a physical-device GPU/FPS benchmark. Earlier readiness-proxy failures remain recorded."
   },
-  "retainedImages": 14
+  "retainedImages": 14,
+  "effectiveRuntimeInputsVerifiedBy": "external-ack-compiled-comparison.json"
 }

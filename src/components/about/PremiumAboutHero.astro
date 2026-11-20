@@ -104,6 +104,7 @@ const headline = ['Two twins.', 'One idea.', 'A whole lot', 'of creativity.'];
     const timers = new Set();
     let observer;
     let bootDeadline;
+    let startFrame;
     let finished = false;
     let started = false;
     let suspended = false;
@@ -122,6 +123,7 @@ const headline = ['Two twins.', 'One idea.', 'A whole lot', 'of creativity.'];
       if (finished) return;
       finished = true;
       clearTimeout(bootDeadline);
+      cancelAnimationFrame(startFrame);
       for (const timer of timers) clearTimeout(timer);
       timers.clear();
       for (const animation of animations) animation.cancel();
@@ -247,11 +249,11 @@ const headline = ['Two twins.', 'One idea.', 'A whole lot', 'of creativity.'];
       hero.dataset.aboutBoot = 'pending';
       bootDeadline = setTimeout(() => settle('boot-deadline'), 550);
       hero.setAttribute('data-about-prepaint', '');
-      const clock = document.timeline.currentTime;
       const play = (target, frames, options) => {
         const animation = target.animate(frames, { fill: 'both', ...options });
+        animation.pause();
+        animation.currentTime = 0;
         animations.add(animation);
-        if (typeof clock === 'number') animation.startTime = clock;
       };
       const enter = (target, delay, duration, travel, tilt = 0) => {
         const base = getComputedStyle(target).transform;
@@ -287,23 +289,42 @@ const headline = ['Two twins.', 'One idea.', 'A whole lot', 'of creativity.'];
       for (const detail of hero.querySelectorAll('[data-about-caption], [data-about-signoff]')) {
         play(detail, [{ opacity: 0 }, { opacity: 1 }], { delay: 2700, duration: 650 });
       }
-      hero.removeAttribute('data-about-prepaint');
-      started = true;
-      hero.dataset.aboutStartedAt = performance.now().toFixed(2);
-      hero.dataset.aboutEntrance = 'running';
-      hero.dataset.aboutHeroPhase = 'arrival';
-      hero.dataset.aboutArrivalScene = 'portrait';
-      schedule(() => {
-        hero.dataset.aboutArrivalScene = 'plaque';
-      }, 700);
-      schedule(() => {
-        hero.dataset.aboutArrivalScene = 'atmosphere';
-      }, 1200);
-      schedule(() => {
-        hero.dataset.aboutHeroPhase = 'transition';
-        hero.dataset.aboutArrivalScene = 'copy';
-      }, 2000);
-      schedule(() => settle('complete'), 3500);
+      // Layout work can advance the document clock before its first paint.
+      // Hold the prepared cohort at zero, then start effects AND scene timers
+      // on one fresh browser frame. Never catch up from a parser-time clock.
+      startFrame = requestAnimationFrame((clock) => {
+        startFrame = undefined;
+        if (finished) return;
+        if (!allowed() || document.hidden) {
+          settle(document.hidden ? 'hidden' : 'motion-preference');
+          return;
+        }
+        try {
+          for (const animation of animations) {
+            animation.play();
+            animation.startTime = clock;
+          }
+          hero.removeAttribute('data-about-prepaint');
+          started = true;
+          hero.dataset.aboutStartedAt = performance.now().toFixed(2);
+          hero.dataset.aboutEntrance = 'running';
+          hero.dataset.aboutHeroPhase = 'arrival';
+          hero.dataset.aboutArrivalScene = 'portrait';
+          schedule(() => {
+            hero.dataset.aboutArrivalScene = 'plaque';
+          }, 700);
+          schedule(() => {
+            hero.dataset.aboutArrivalScene = 'atmosphere';
+          }, 1200);
+          schedule(() => {
+            hero.dataset.aboutHeroPhase = 'transition';
+            hero.dataset.aboutArrivalScene = 'copy';
+          }, 2000);
+          schedule(() => settle('complete'), 3500);
+        } catch {
+          settle('initialization-failure');
+        }
+      });
 
       // Watch the displayed responsive plaque directly. The SVG portrait's
       // preloadedURL uses one cache-coalesced load probe, without a second
