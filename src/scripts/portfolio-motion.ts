@@ -247,6 +247,7 @@ function initialize() {
     const available = entries.some((entry) => entry.eligible && entry.ratio >= 0.2);
     document.documentElement.dataset.portfolioMotionAvailable = String(available);
     const allowed =
+      document.documentElement.dataset.portfolioMotionReady === 'true' &&
       !reduced.matches &&
       !connection?.saveData &&
       document.documentElement.dataset.portfolioMotion !== 'off';
@@ -336,7 +337,11 @@ function initialize() {
   const entrance = new MutationObserver(update);
   entrance.observe(document.documentElement, {
     attributes: true,
-    attributeFilter: ['data-signature-intro', 'data-portfolio-motion'],
+    attributeFilter: [
+      'data-signature-intro',
+      'data-portfolio-motion',
+      'data-portfolio-motion-ready',
+    ],
   });
   document.addEventListener(
     'portfolio:filterchange',

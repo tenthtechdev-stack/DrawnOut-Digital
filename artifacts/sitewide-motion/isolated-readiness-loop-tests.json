@@ -1,0 +1,209 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-sitewide-motion/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.sitewide-motion.config.ts",
+      "--grep",
+      "an actual native loop|failure of only the preference",
+      "--reporter=list,json",
+      "--output=test-results/sitewide-isolated-readiness-loop"
+    ],
+    "configFile": "/workspace/drawnout-sitewide-motion/playwright.sitewide-motion.config.ts",
+    "rootDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-isolated-readiness-loop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "sitewide-motion.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-isolated-readiness-loop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "snapshotDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "testIgnore": [],
+        "testMatch": "sitewide-motion.spec.ts",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4480",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": [
+              "--use-gl=angle",
+              "--use-angle=swiftshader",
+              "--enable-unsafe-swiftshader"
+            ]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4480",
+      "url": "http://127.0.0.1:4480",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "sitewide-motion.spec.ts",
+      "file": "sitewide-motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "an actual native loop advances decoded frames without reloading its source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11757,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T01:25:53.605Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-loop-and-software-browser-frame-observations",
+                      "contentType": "application/json",
+                      "body": "eyJkdXJhdGlvbiI6Ny41LCJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0ODAvbWVkaWEvcG9ydGZvbGlvL3NvbC1jb21tdW5pdHktY2VudGVyLXBvcnRyYWl0Lm1wNCIsInNhbXBsZWRTZWNvbmRzIjo4LjYzMywib2JzZXJ2ZWRMb29wV3JhcHMiOjEsInByZXNlbnRlZFNhbXBsZXMiOjIwMiwiZGVjb2RlZEZyYW1lRGVsdGEiOjIwOSwiZHJvcHBlZEZyYW1lRGVsdGEiOjcsImNhbGxiYWNrSW50ZXJ2YWxNcyI6eyJtZWRpYW4iOjQ5Ljg5OTk5OTk5OTk5OTYzNiwicDk1Ijo2Ni42OTk5OTk5OTk5OTk4MiwibWF4IjoxODMuMjk5OTk5OTk5OTk5NzN9LCJhbGxWaXNpYmxlU2FtcGxlc0RlY29kZWQiOnRydWUsInJlYWRpbmVzc0JvdW5kYXJ5U2FtcGxlcyI6W3siYXQiOjkxNjUsInRpbWUiOjAsImZyYW1lcyI6MTcxLCJyZWFkeSI6NH1dLCJsaWZlY3ljbGUiOnsibG9hZHMiOjAsInBsYXlzIjowLCJzb3VyY2VNdXRhdGlvbnMiOjAsInNlZWtpbmciOjEsImVtcHRpZWQiOjB9LCJsaW1pdGF0aW9uIjoiTWVhc3VyZWQgQ2hyb21pdW0vU3dpZnRTaGFkZXIgY2FsbGJhY2sgY2FkZW5jZTsgbm90IHBoeXNpY2FsLWRldmljZSBHUFUvRlBTIGNlcnRpZmljYXRpb24uIn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f045da8221b7552cd843-dd921d640c7f65353b34",
+          "file": "sitewide-motion.spec.ts",
+          "line": 491,
+          "column": 1
+        },
+        {
+          "title": "failure of only the preference enhancement leaves static artwork instead of uncontrolled autoplay",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2499,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T01:26:05.967Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "isolated-preference-module-failure",
+                      "contentType": "application/json",
+                      "body": "eyJleGNsdWRlZFByZWZlcmVuY2VNb2R1bGVzIjoxLCJtZXRob2QiOiJSZWFsIENTUCBoYXNoIHBvbGljeSBleGNsdWRlcyBvbmx5IGNvbXBpbGVkIGlubGluZSBwcmVmZXJlbmNlIGVuaGFuY2VyOyBpbmRlcGVuZGVudCBtZWRpYSBjb250cm9sbGVyIHN0aWxsIGNvbXB1dGVzIHZpc2libGUgYXZhaWxhYmlsaXR5LiBObyBIVE1ML3N0YXRlIHJld3JpdGluZy4ifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f045da8221b7552cd843-841ee2ef4e5b3743e00a",
+          "file": "sitewide-motion.spec.ts",
+          "line": 561,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-20T01:25:49.169Z",
+    "duration": 19480.526,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

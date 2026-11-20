@@ -91,7 +91,10 @@ function initialize() {
   };
   update();
   const container = document.querySelector<HTMLElement>('[data-portfolio-preference-container]');
-  if (container) container.hidden = false;
+  if (container) {
+    container.hidden = false;
+    document.documentElement.dataset.portfolioMotionReady = 'true';
+  }
   cleanup = () => abort.abort();
 }
 function htmlEnabled() {
@@ -99,9 +102,17 @@ function htmlEnabled() {
 }
 initialize();
 document.addEventListener('astro:page-load', initialize, { signal: lifecycle.signal });
+document.addEventListener(
+  'astro:before-swap',
+  () => {
+    document.documentElement.dataset.portfolioMotionReady = 'false';
+  },
+  { signal: lifecycle.signal },
+);
 window.addEventListener('pageshow', initialize, { capture: true, signal: lifecycle.signal });
 if (import.meta.hot)
   import.meta.hot.dispose(() => {
+    document.documentElement.dataset.portfolioMotionReady = 'false';
     cleanup?.();
     lifecycle.abort();
   });

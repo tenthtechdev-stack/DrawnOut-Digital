@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Locator, type Page } from '@playwright/test';
 
@@ -532,22 +533,110 @@ test('an actual native loop advances decoded frames without reloading its source
         max: intervals.at(-1),
       },
       allVisibleSamplesDecoded: samples.every((sample) => sample.ready >= 2),
+      readinessBoundarySamples: samples.filter(
+        (sample, index) =>
+          sample.ready < 2 || (index > 0 && sample.time < samples[index - 1]!.time),
+      ),
     };
   });
-  expect(result.observedLoopWraps).toBeGreaterThanOrEqual(1);
-  expect(result.decodedFrameDelta).toBeGreaterThan(0);
-  expect(result.presentedSamples).toBeGreaterThan(0);
-  expect(result.allVisibleSamplesDecoded).toBe(true);
   const lifecycle = await observations(video);
-  expect(lifecycle.loads).toBe(0);
-  expect(lifecycle.sourceMutations).toBe(0);
-  expect(lifecycle.emptied).toBe(0);
   await testInfo.attach('actual-loop-and-software-browser-frame-observations', {
     body: JSON.stringify({
       ...result,
       lifecycle,
       limitation:
         'Measured Chromium/SwiftShader callback cadence; not physical-device GPU/FPS certification.',
+    }),
+    contentType: 'application/json',
+  });
+  expect(result.observedLoopWraps).toBeGreaterThanOrEqual(1);
+  expect(result.decodedFrameDelta).toBeGreaterThan(0);
+  expect(result.presentedSamples).toBeGreaterThan(0);
+  expect(result.allVisibleSamplesDecoded).toBe(true);
+  expect(lifecycle.loads).toBe(0);
+  expect(lifecycle.sourceMutations).toBe(0);
+  expect(lifecycle.emptied).toBe(0);
+});
+
+test('failure of only the preference enhancement leaves static artwork instead of uncontrolled autoplay', async ({
+  page,
+}, testInfo) => {
+  let excludedPreferenceModules = 0;
+  await page.route('**/work/sol-community-center', async (route) => {
+    const response = await route.fetch();
+    const html = await response.text();
+    const inlineScripts = [...html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)].filter(
+      (match) => !/\bsrc=/.test(match[1]!),
+    );
+    const allowedHashes = inlineScripts.flatMap((match) => {
+      const source = match[2]!;
+      if (source.includes('data-portfolio-motion-preference')) {
+        excludedPreferenceModules += 1;
+        return [];
+      }
+      return [`'sha256-${createHash('sha256').update(source).digest('base64')}'`];
+    });
+    // The production optimizer inlines this small module. A restrictive real
+    // CSP blocks just its unlisted hash while preserving every other inline
+    // module plus same-origin external bundles; no HTML or application state
+    // is rewritten to manufacture the failure fallback.
+    await route.fulfill({
+      response,
+      headers: {
+        ...response.headers(),
+        'content-security-policy': `script-src 'self' 'unsafe-eval' ${allowedHashes.join(' ')}`,
+      },
+    });
+  });
+  await page.goto('/work/sol-community-center#main');
+  expect(excludedPreferenceModules).toBe(1);
+  const video = page.locator('[data-portfolio-video]');
+  await center(video);
+  // Availability is maintained by the independent portfolio controller. This
+  // prevents an all-JavaScript-blocked page from trivially passing the test.
+  await expect(page.locator('html')).toHaveAttribute('data-portfolio-motion-available', 'true');
+  await expect(page.locator('[data-case-hero]')).toHaveAttribute(
+    'data-case-reveal-state',
+    'complete',
+  );
+  await center(video);
+  // Source assignment is synchronous when the independent controller sees
+  // eligibility. Hold a stable, actually visible composition through several
+  // observer/paint turns rather than passing on an initial empty src.
+  await page.waitForTimeout(650);
+  const steady = await video.evaluate((node: HTMLVideoElement) => {
+    const box = node.getBoundingClientRect();
+    const width = Math.max(0, Math.min(box.right, innerWidth) - Math.max(box.left, 0));
+    const height = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
+    return {
+      visibleRatio: (width * height) / (box.width * box.height),
+      source: node.getAttribute('src'),
+      state: node.dataset.motionState,
+      frame: node.dataset.motionFrame,
+      rootPreference: document.documentElement.dataset.portfolioMotion,
+      ready: document.documentElement.dataset.portfolioMotionReady,
+      available: document.documentElement.dataset.portfolioMotionAvailable,
+    };
+  });
+  await testInfo.attach('steady-isolated-preference-failure-state', {
+    body: JSON.stringify(steady),
+    contentType: 'application/json',
+  });
+  expect(steady.visibleRatio).toBeGreaterThan(0.5);
+  await expect(preference(page)).toBeHidden();
+  await expect(video).not.toHaveAttribute('src', /.+/);
+  await expect(video).not.toHaveAttribute('data-motion-frame', 'presented');
+  await expect(video.locator('..').locator('picture img')).toBeVisible();
+  const next = page.locator('[data-case-next]');
+  await expect(next).toHaveAttribute('href', /\/work\//);
+  const destination = (await next.getAttribute('href'))!;
+  await next.click();
+  await expect(page).toHaveURL(destination);
+  await testInfo.attach('isolated-preference-module-failure', {
+    body: JSON.stringify({
+      excludedPreferenceModules,
+      method:
+        'Real CSP hash policy excludes only compiled inline preference enhancer; independent media controller still computes visible availability. No HTML/state rewriting.',
     }),
     contentType: 'application/json',
   });

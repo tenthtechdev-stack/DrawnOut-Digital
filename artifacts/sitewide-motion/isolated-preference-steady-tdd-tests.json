@@ -1,0 +1,208 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-sitewide-motion/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.sitewide-motion.config.ts",
+      "--grep",
+      "failure of only the preference",
+      "--reporter=list,json",
+      "--output=test-results/sitewide-preference-steady-tdd"
+    ],
+    "configFile": "/workspace/drawnout-sitewide-motion/playwright.sitewide-motion.config.ts",
+    "rootDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-preference-steady-tdd",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "sitewide-motion.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-preference-steady-tdd",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "snapshotDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "testIgnore": [],
+        "testMatch": "sitewide-motion.spec.ts",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4480",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": [
+              "--use-gl=angle",
+              "--use-angle=swiftshader",
+              "--enable-unsafe-swiftshader"
+            ]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4480",
+      "url": "http://127.0.0.1:4480",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "sitewide-motion.spec.ts",
+      "file": "sitewide-motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "failure of only the preference enhancement leaves static artwork instead of uncontrolled autoplay",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 16315,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-portfolio-video]')\nExpected pattern: not \u001b[32m/.+/\u001b[39m\nReceived string: \u001b[31m\"\u001b[7m/media/portfolio/sol-community-center-portrait.mp4\u001b[27m\"\u001b[39m\nTimeout: 12000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveAttribute\" locator('[data-portfolio-video]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-portfolio-video]')\u001b[22m\n\u001b[2m    28 × locator resolved to <video loop=\"\" muted=\"\" autoplay=\"\" width=\"1440\" height=\"810\" tabindex=\"-1\" playsinline=\"\" preload=\"none\" aria-hidden=\"true\" data-portfolio-video=\"\" data-astro-cid-ntmezohh=\"\" data-motion-state=\"playing\" data-motion-frame=\"presented\" class=\"portfolio-motion-video\" id=\"case-motion-sol-community-center\" src=\"/media/portfolio/sol-community-center-portrait.mp4\" data-portrait=\"/media/portfolio/sol-community-center-portrait.mp4\" poster=\"/_astro/sol-community-center-portrait-poster.BZp3ce-V.webp\" data-lands…></video>\u001b[22m\n\u001b[2m       - unexpected value \"/media/portfolio/sol-community-center-portrait.mp4\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-portfolio-video]')\nExpected pattern: not \u001b[32m/.+/\u001b[39m\nReceived string: \u001b[31m\"\u001b[7m/media/portfolio/sol-community-center-portrait.mp4\u001b[27m\"\u001b[39m\nTimeout: 12000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveAttribute\" locator('[data-portfolio-video]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-portfolio-video]')\u001b[22m\n\u001b[2m    28 × locator resolved to <video loop=\"\" muted=\"\" autoplay=\"\" width=\"1440\" height=\"810\" tabindex=\"-1\" playsinline=\"\" preload=\"none\" aria-hidden=\"true\" data-portfolio-video=\"\" data-astro-cid-ntmezohh=\"\" data-motion-state=\"playing\" data-motion-frame=\"presented\" class=\"portfolio-motion-video\" id=\"case-motion-sol-community-center\" src=\"/media/portfolio/sol-community-center-portrait.mp4\" data-portrait=\"/media/portfolio/sol-community-center-portrait.mp4\" poster=\"/_astro/sol-community-center-portrait-poster.BZp3ce-V.webp\" data-lands…></video>\u001b[22m\n\u001b[2m       - unexpected value \"/media/portfolio/sol-community-center-portrait.mp4\"\u001b[22m\n\n    at /workspace/drawnout-sitewide-motion/tests/browser/sitewide-motion.spec.ts:627:27",
+                    "location": {
+                      "file": "/workspace/drawnout-sitewide-motion/tests/browser/sitewide-motion.spec.ts",
+                      "column": 27,
+                      "line": 627
+                    },
+                    "snippet": "  625 |   expect(steady.visibleRatio).toBeGreaterThan(0.5);\n  626 |   await expect(preference(page)).toBeHidden();\n> 627 |   await expect(video).not.toHaveAttribute('src', /.+/);\n      |                           ^\n  628 |   await expect(video).not.toHaveAttribute('data-motion-frame', 'presented');\n  629 |   await expect(video.locator('..').locator('picture img')).toBeVisible();\n  630 |   const next = page.locator('[data-case-next]');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-sitewide-motion/tests/browser/sitewide-motion.spec.ts",
+                        "column": 27,
+                        "line": 627
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-portfolio-video]')\nExpected pattern: not \u001b[32m/.+/\u001b[39m\nReceived string: \u001b[31m\"\u001b[7m/media/portfolio/sol-community-center-portrait.mp4\u001b[27m\"\u001b[39m\nTimeout: 12000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveAttribute\" locator('[data-portfolio-video]') with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-portfolio-video]')\u001b[22m\n\u001b[2m    28 × locator resolved to <video loop=\"\" muted=\"\" autoplay=\"\" width=\"1440\" height=\"810\" tabindex=\"-1\" playsinline=\"\" preload=\"none\" aria-hidden=\"true\" data-portfolio-video=\"\" data-astro-cid-ntmezohh=\"\" data-motion-state=\"playing\" data-motion-frame=\"presented\" class=\"portfolio-motion-video\" id=\"case-motion-sol-community-center\" src=\"/media/portfolio/sol-community-center-portrait.mp4\" data-portrait=\"/media/portfolio/sol-community-center-portrait.mp4\" poster=\"/_astro/sol-community-center-portrait-poster.BZp3ce-V.webp\" data-lands…></video>\u001b[22m\n\u001b[2m       - unexpected value \"/media/portfolio/sol-community-center-portrait.mp4\"\u001b[22m\n\n\n  625 |   expect(steady.visibleRatio).toBeGreaterThan(0.5);\n  626 |   await expect(preference(page)).toBeHidden();\n> 627 |   await expect(video).not.toHaveAttribute('src', /.+/);\n      |                           ^\n  628 |   await expect(video).not.toHaveAttribute('data-motion-frame', 'presented');\n  629 |   await expect(video.locator('..').locator('picture img')).toBeVisible();\n  630 |   const next = page.locator('[data-case-next]');\n    at /workspace/drawnout-sitewide-motion/tests/browser/sitewide-motion.spec.ts:627:27"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T01:28:37.669Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "steady-isolated-preference-failure-state",
+                      "contentType": "application/json",
+                      "body": "eyJ2aXNpYmxlUmF0aW8iOjEsInNvdXJjZSI6Ii9tZWRpYS9wb3J0Zm9saW8vc29sLWNvbW11bml0eS1jZW50ZXItcG9ydHJhaXQubXA0Iiwic3RhdGUiOiJwbGF5aW5nIiwiZnJhbWUiOiJwcmVzZW50ZWQiLCJyb290UHJlZmVyZW5jZSI6Im9uIiwiYXZhaWxhYmxlIjoidHJ1ZSJ9"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-sitewide-motion/test-results/sitewide-preference-steady-tdd/sitewide-motion-failure-of-20702-ad-of-uncontrolled-autoplay/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-sitewide-motion/test-results/sitewide-preference-steady-tdd/sitewide-motion-failure-of-20702-ad-of-uncontrolled-autoplay/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-sitewide-motion/test-results/sitewide-preference-steady-tdd/sitewide-motion-failure-of-20702-ad-of-uncontrolled-autoplay/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-sitewide-motion/tests/browser/sitewide-motion.spec.ts",
+                    "column": 27,
+                    "line": 627
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f045da8221b7552cd843-841ee2ef4e5b3743e00a",
+          "file": "sitewide-motion.spec.ts",
+          "line": 561,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-20T01:28:34.236Z",
+    "duration": 21531.122000000003,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

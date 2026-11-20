@@ -1,0 +1,169 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-sitewide-motion/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.sitewide-motion.config.ts",
+      "--grep",
+      "failure of only the preference",
+      "--reporter=list,json",
+      "--output=test-results/sitewide-preference-strong-tdd"
+    ],
+    "configFile": "/workspace/drawnout-sitewide-motion/playwright.sitewide-motion.config.ts",
+    "rootDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-preference-strong-tdd",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "sitewide-motion.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-preference-strong-tdd",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "snapshotDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "testIgnore": [],
+        "testMatch": "sitewide-motion.spec.ts",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4480",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": [
+              "--use-gl=angle",
+              "--use-angle=swiftshader",
+              "--enable-unsafe-swiftshader"
+            ]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4480",
+      "url": "http://127.0.0.1:4480",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "sitewide-motion.spec.ts",
+      "file": "sitewide-motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "failure of only the preference enhancement leaves static artwork instead of uncontrolled autoplay",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3155,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T01:27:58.698Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "isolated-preference-module-failure",
+                      "contentType": "application/json",
+                      "body": "eyJleGNsdWRlZFByZWZlcmVuY2VNb2R1bGVzIjoxLCJtZXRob2QiOiJSZWFsIENTUCBoYXNoIHBvbGljeSBleGNsdWRlcyBvbmx5IGNvbXBpbGVkIGlubGluZSBwcmVmZXJlbmNlIGVuaGFuY2VyOyBpbmRlcGVuZGVudCBtZWRpYSBjb250cm9sbGVyIHN0aWxsIGNvbXB1dGVzIHZpc2libGUgYXZhaWxhYmlsaXR5LiBObyBIVE1ML3N0YXRlIHJld3JpdGluZy4ifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f045da8221b7552cd843-841ee2ef4e5b3743e00a",
+          "file": "sitewide-motion.spec.ts",
+          "line": 561,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-20T01:27:55.629Z",
+    "duration": 6888.183,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

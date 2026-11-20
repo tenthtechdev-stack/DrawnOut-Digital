@@ -2,6 +2,7 @@
   (() => {
     // Apply the public preference before any portfolio video can acquire a source.
     // Storage can be unavailable in private/restricted contexts; motion remains optional.
+    document.documentElement.dataset.portfolioMotionReady = 'false';
     let choice = null;
     try {
       choice = localStorage.getItem('drawnout:portfolio-motion');
