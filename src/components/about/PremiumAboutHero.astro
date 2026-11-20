@@ -292,7 +292,7 @@ const headline = ['Two twins.', 'One idea.', 'A whole lot', 'of creativity.'];
       // Layout work can advance the document clock before its first paint.
       // Hold the prepared cohort at zero, then start effects AND scene timers
       // on one fresh browser frame. Never catch up from a parser-time clock.
-      startFrame = requestAnimationFrame((clock) => {
+      startFrame = requestAnimationFrame(() => {
         startFrame = undefined;
         if (finished) return;
         if (!allowed() || document.hidden) {
@@ -300,6 +300,9 @@ const headline = ['Two twins.', 'One idea.', 'A whole lot', 'of creativity.'];
           return;
         }
         try {
+          // rAF's argument is the shared frame-start time; earlier callbacks
+          // can spend time in layout. Use this actual execution-time epoch.
+          const clock = performance.now();
           for (const animation of animations) {
             animation.play();
             animation.startTime = clock;
