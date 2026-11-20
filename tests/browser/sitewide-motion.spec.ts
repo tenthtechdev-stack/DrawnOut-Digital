@@ -591,7 +591,13 @@ test('an actual native loop advances decoded frames without reloading its source
     const node = document.querySelector<HTMLVideoElement>('[data-portfolio-video]');
     return node && node.currentTime > node.duration - 0.65;
   });
-  const compositorSamples = [];
+  const compositorSamples: {
+    imagePath: string;
+    before: { time: number; ready: number; seeking: boolean; opacity: string };
+    after: { time: number; ready: number; seeking: boolean };
+    screenRGB: number[];
+    delta: number[];
+  }[] = [];
   for (let index = 0; index < 14; index += 1) {
     const before = await video.evaluate((node: HTMLVideoElement) => ({
       time: node.currentTime,
