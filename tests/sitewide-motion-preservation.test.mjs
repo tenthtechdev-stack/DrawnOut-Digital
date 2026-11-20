@@ -30,7 +30,6 @@ const approvedNewSource = new Set([
   'src/components/PortfolioMotionPreference.astro',
   'src/lib/portfolio-motion-preference.ts',
   'src/scripts/portfolio-motion-preference.ts',
-  'src/scripts/about-arrival.ts',
 ]);
 const parentFiles = execFileSync('git', ['ls-tree', '-r', '--name-only', '-z', parent])
   .toString()
@@ -101,6 +100,10 @@ test('all public pages retain noindex, official contact fallback and one motion 
       /data-motion-toggle=|portfolio-motion-controls|work-controls-reservation/,
     );
   }
+  const about = await readFile('dist/about/index.html', 'utf8');
+  assert.match(about, /<script[^>]*src="\/scripts\/about-arrival\.js"/);
+  assert.match(await readFile('dist/scripts/about-arrival.js', 'utf8'), /about:boot-handoff/);
+  await assert.rejects(access('src/scripts/about-arrival.ts'));
   const contact = await readFile('dist/contact/index.html', 'utf8');
   assert.match(contact, /data-form-state="unconfigured"/);
   assert.doesNotMatch(contact, /formspree\.io\/f\//);
