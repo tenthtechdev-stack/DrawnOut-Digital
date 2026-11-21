@@ -1,0 +1,211 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-contact-signature/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.motion-preservation.config.ts",
+      "tests/production-browser/signature-squares.spec.ts",
+      "--grep",
+      "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px$",
+      "--reporter=list,json",
+      "--output",
+      "test-results/sitewide-square-comparison-parent"
+    ],
+    "configFile": "/workspace/drawnout-contact-signature/playwright.motion-preservation.config.ts",
+    "rootDir": "/workspace/drawnout-contact-signature/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-contact-signature/test-results/sitewide-square-comparison-parent",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-contact-signature/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/browser/services.spec.ts",
+          "**/browser/services-hero.spec.ts",
+          "**/browser/services-overview.spec.ts",
+          "**/browser/signature-accessibility.spec.ts",
+          "**/production-browser/loader.spec.ts",
+          "**/production-browser/signature-squares.spec.ts"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-contact-signature/test-results/sitewide-square-comparison-parent",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-contact-signature/tests",
+        "snapshotDir": "/workspace/drawnout-contact-signature/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/browser/services.spec.ts",
+          "**/browser/services-hero.spec.ts",
+          "**/browser/services-overview.spec.ts",
+          "**/browser/signature-accessibility.spec.ts",
+          "**/production-browser/loader.spec.ts",
+          "**/production-browser/signature-squares.spec.ts"
+        ],
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4453",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [["list"], ["json"]],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4453",
+      "url": "http://127.0.0.1:4453",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "production-browser/signature-squares.spec.ts",
+      "file": "production-browser/signature-squares.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6609,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[32m-   true,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m  ]\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[32m-   true,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m  ]\u001b[22m\n    at /workspace/drawnout-contact-signature/tests/production-browser/signature-squares.spec.ts:207:35",
+                    "location": {
+                      "file": "/workspace/drawnout-contact-signature/tests/production-browser/signature-squares.spec.ts",
+                      "column": 35,
+                      "line": 207
+                    },
+                    "snippet": "  205 |       expect(image.source).toContain(approvedPosters[index]!.basename);\n  206 |     });\n> 207 |     expect(evidence.sawEmptyTile).toEqual([true, true, true, true, true, true]);\n      |                                   ^\n  208 |     expect(evidence.sawMixedReveal).toBe(true);\n  209 |     expect(evidence.connectingWaveCount).toBe(0);\n  210 |     expect(evidence.artworkAfterHandEntrance).toBe(false);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/drawnout-contact-signature/tests/production-browser/signature-squares.spec.ts",
+                        "column": 35,
+                        "line": 207
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[32m-   true,\u001b[39m\n\u001b[31m+   false,\u001b[39m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m    true,\u001b[22m\n\u001b[2m  ]\u001b[22m\n\n  205 |       expect(image.source).toContain(approvedPosters[index]!.basename);\n  206 |     });\n> 207 |     expect(evidence.sawEmptyTile).toEqual([true, true, true, true, true, true]);\n      |                                   ^\n  208 |     expect(evidence.sawMixedReveal).toBe(true);\n  209 |     expect(evidence.connectingWaveCount).toBe(0);\n  210 |     expect(evidence.artworkAfterHandEntrance).toBe(false);\n    at /workspace/drawnout-contact-signature/tests/production-browser/signature-squares.spec.ts:207:35"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-21T11:08:34.784Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "project-squares-1440",
+                      "contentType": "application/json",
+                      "body": "eyJzbHVncyI6WyJidW56byIsInRyaWFyY2giLCJzb2wtY29tbXVuaXR5LWNlbnRlciIsImNodXJyb3MiLCJieS10ZWNoLWdyb3VwIiwiY2FwdHVyZSJdLCJpbWFnZXMiOlt7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQ1My9fYXN0cm8vYnVuem8tYXBwbGljYXRpb25zLkM3aGR5d2ZCXzJIS2wyLndlYnAiLCJsb2FkZWQiOnRydWUsIndpZHRoIjoyODAsImhlaWdodCI6MjgwLCJmaXQiOiJjb3ZlciJ9LHsic291cmNlIjoiaHR0cDovLzEyNy4wLjAuMTo0NDUzL19hc3Ryby90cmlhcmNoLWJ1c2luZXNzLWNhcmQuQTZnb2xsb2JfT0QwbU4ud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjI4MCwiaGVpZ2h0IjoyODAsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0NTMvX2FzdHJvL3NvbC1jb21tdW5pdHktc2lnbmFnZS5CQnU5cUExR19aUndHbnQud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjI4MCwiaGVpZ2h0IjoxNzEsImZpdCI6ImNvbnRhaW4ifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQ1My9fYXN0cm8vY2h1cnJvcy1hcHBsaWNhdGlvbnMuQjVNeWxNZVlfWTJITlMud2VicCIsImxvYWRlZCI6dHJ1ZSwid2lkdGgiOjI4MCwiaGVpZ2h0IjoyODAsImZpdCI6ImNvdmVyIn0seyJzb3VyY2UiOiJodHRwOi8vMTI3LjAuMC4xOjQ0NTMvX2FzdHJvL2J5LXRlY2gtYXBwbGljYXRpb25zLkJGdGl3OU1OX1p1MDY0SS53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MjgwLCJoZWlnaHQiOjI4MCwiZml0IjoiY292ZXIifSx7InNvdXJjZSI6Imh0dHA6Ly8xMjcuMC4wLjE6NDQ1My9fYXN0cm8vY2FwdHVyZS1hcHBsaWNhdGlvbnMuRE8zdXljbXVfWjFSWWNEcy53ZWJwIiwibG9hZGVkIjp0cnVlLCJ3aWR0aCI6MjgwLCJoZWlnaHQiOjI4MCwiZml0IjoiY292ZXIifV0sImNvbm5lY3RpbmdXYXZlQ291bnQiOjAsImFydHdvcmtBZnRlckhhbmRFbnRyYW5jZSI6ZmFsc2UsInN0eWxlcyI6W3siYm9yZGVyIjowLCJyYWRpdXMiOjE0fSx7ImJvcmRlciI6MCwicmFkaXVzIjoxNH0seyJib3JkZXIiOjAsInJhZGl1cyI6MTR9LHsiYm9yZGVyIjowLCJyYWRpdXMiOjE0fSx7ImJvcmRlciI6MCwicmFkaXVzIjoxNH0seyJib3JkZXIiOjAsInJhZGl1cyI6MTR9XSwiYXJ0d29ya1RpbWluZ3MiOlt7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6NjAwLCJlbmQiOjg4MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0Ijo4NDAsImVuZCI6MTEyMCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxMDgwLCJlbmQiOjEzNjAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifSx7ImNsb2NrT2Zmc2V0IjowLCJzdGFydCI6MTMyMCwiZW5kIjoxNjAwLCJmcm9tT3BhY2l0eSI6MCwidG9PcGFjaXR5IjoxLCJmaW5hbENsaXAiOiJpbnNldCgwcHgpIn0seyJjbG9ja09mZnNldCI6MCwic3RhcnQiOjE1NjAsImVuZCI6MTg0MCwiZnJvbU9wYWNpdHkiOjAsInRvT3BhY2l0eSI6MSwiZmluYWxDbGlwIjoiaW5zZXQoMHB4KSJ9LHsiY2xvY2tPZmZzZXQiOjAsInN0YXJ0IjoxODAwLCJlbmQiOjIwODAsImZyb21PcGFjaXR5IjowLCJ0b09wYWNpdHkiOjEsImZpbmFsQ2xpcCI6Imluc2V0KDBweCkifV0sInNhd0VtcHR5VGlsZSI6W3RydWUsdHJ1ZSxmYWxzZSx0cnVlLHRydWUsdHJ1ZV0sInJldmVhbFN0YXJ0cyI6WzEyOTAuMTAwMDAwMDAwMDAwMSwxMjkwLjEwMDAwMDAwMDAwMDEsMTI5MC4xMDAwMDAwMDAwMDAxLDE2MjMuNTAwMDAwMDAwMDAwMiwxNjIzLjUwMDAwMDAwMDAwMDIsMTk5MC4xMDAwMDAwMDAwMDAxXSwibGFzdFVucmV2ZWFsZWQiOlsyMjMuNTAwMDAwMDAwMDAwMDMsMjIzLjUwMDAwMDAwMDAwMDAzLDIyMy41MDAwMDAwMDAwMDAwMywxMjkwLjEwMDAwMDAwMDAwMDEsMTI5MC4xMDAwMDAwMDAwMDAxLDE3NzMuNV0sImxhc3RJbmNvbXBsZXRlIjoyMDIzLjUwMDAwMDAwMDAwMDIsIm1heGltdW1TYW1wbGVHYXAiOjEwNjYuNjAwMDAwMDAwMDAwMSwic2F3TWl4ZWRSZXZlYWwiOnRydWUsImZ1bGx5VmlzaWJsZUF0IjoyMDkwLjA5OTk5OTk5OTk5OTUsImdlb21ldHJ5Ijp7ImZyYW1lcyI6W3sibGVmdCI6MzQ1LjEwMTU2MjUsInJpZ2h0Ijo1NDQuMDIzNDM3NSwidG9wIjozMDIuMzgyODEyNSwiYm90dG9tIjo1MDEuMzA0Njg3NSwid2lkdGgiOjE5OC45MjE4NzUsImhlaWdodCI6MTk4LjkyMTg3NX0seyJsZWZ0IjozNDUuMTAxNTYyNSwicmlnaHQiOjU0NC4wMjM0Mzc1LCJ0b3AiOjkyLjQ0NTMxMjUsImJvdHRvbSI6MjkxLjM2NzE4NzUsIndpZHRoIjoxOTguOTIxODc1LCJoZWlnaHQiOjE5OC45MjE4NzV9LHsibGVmdCI6NjEwLjk3NjU2MjUsInJpZ2h0Ijo4MjkuMDIzNDM3NSwidG9wIjo4Mi44ODI4MTI1LCJib3R0b20iOjMwMC45Mjk2ODc1LCJ3aWR0aCI6MjE4LjA0Njg3NSwiaGVpZ2h0IjoyMTguMDQ2ODc1fSx7ImxlZnQiOjYyMC41MzkwNjI1LCJyaWdodCI6ODE5LjQ2MDkzNzUsInRvcCI6MzE5LjUyMzQzNzUsImJvdHRvbSI6NTE4LjQ0NTMxMjUsIndpZHRoIjoxOTguOTIxODc1LCJoZWlnaHQiOjE5OC45MjE4NzV9LHsibGVmdCI6ODk1Ljk2MDkzNzUsInJpZ2h0IjoxMDk0Ljg4MjgxMjUsInRvcCI6MzAyLjM4MjgxMjUsImJvdHRvbSI6NTAxLjMwNDY4NzUsIndpZHRoIjoxOTguOTIxODc1LCJoZWlnaHQiOjE5OC45MjE4NzV9LHsibGVmdCI6ODk1LjY4NjE1NzIyNjU2MjUsInJpZ2h0IjoxMDk1LjE1NzU5Mjc3MzQzNzUsInRvcCI6OTIuMTcwNTI0NTk3MTY3OTcsImJvdHRvbSI6MjkxLjY0MTk2MDE0NDA0Mjk3LCJ3aWR0aCI6MTk5LjQ3MTQzNTU0Njg3NSwiaGVpZ2h0IjoxOTkuNDcxNDM1NTQ2ODc1fV0sInNsb3RXaWR0aHMiOlsxOTguOTIxODc1LDE5OC45MjE4NzUsMjE4LjA0Njg3NSwxOTguOTIxODc1LDE5OC45MjE4NzUsMTk4LjkyMTg3NV0sImdyb3VwV2lkdGgiOjc2NS4wOTM3NSwid29yZG1hcmsiOnsibGVmdCI6NjAuNDY4NzUsInJpZ2h0IjoxMDg3LjM5MDYyNSwidG9wIjo1NDcuMjAzMTI1LCJib3R0b20iOjc5Miwid2lkdGgiOjEwMjYuOTIxODc1LCJoZWlnaHQiOjI0NC43OTY4NzV9LCJza2lwIjp7ImxlZnQiOjEyNDkuMDMxMjUsInJpZ2h0IjoxMzc5LjUzMTI1LCJ0b3AiOjgzMSwiYm90dG9tIjo4NzUsIndpZHRoIjoxMzAuNSwiaGVpZ2h0Ijo0NH19LCJlbmRlZCI6NDY0My40LCJyZWFzb24iOiJjb21wbGV0ZSIsIm92ZXJmbG93IjpmYWxzZX0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/drawnout-contact-signature/test-results/sitewide-square-comparison-parent/production-browser-signatu-fe3a8-eep-SOL-prominent-at-1440px/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/drawnout-contact-signature/test-results/sitewide-square-comparison-parent/production-browser-signatu-fe3a8-eep-SOL-prominent-at-1440px/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/drawnout-contact-signature/test-results/sitewide-square-comparison-parent/production-browser-signatu-fe3a8-eep-SOL-prominent-at-1440px/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/drawnout-contact-signature/tests/production-browser/signature-squares.spec.ts",
+                    "column": 35,
+                    "line": 207
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "7ca29255cf042bcd47a2-9244b7ba16dcbce4dda7",
+          "file": "production-browser/signature-squares.spec.ts",
+          "line": 33,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-21T11:08:32.044Z",
+    "duration": 10032.777,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

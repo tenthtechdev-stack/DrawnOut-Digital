@@ -1,0 +1,55 @@
+{
+  "sourceCommit": "1569b260dce67216444a4f0fe96cfe95ebb2905e",
+  "completedAt": "2026-11-21T11:05:41.151277+00:00",
+  "existingScopeTotals": {
+    "expected": 241,
+    "unexpected": 3,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "comparisonMethod": "Exact failing assertions and observations, not merely matching titles. Parent full233/244 was historical; exact11title bounded reproduction6pass5fail is also preserved. No final retry. Three final failures must remain reported.",
+  "formerlyFailedTitlesNowPassing": 9,
+  "failures": [
+    {
+      "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+      "file": "tests/production-browser/loader.spec.ts",
+      "line": 150,
+      "classification": "Same assertion as historical parent and immutable-parent bounded reproduction",
+      "expected": "html data-signature-intro-reason=internal-navigation",
+      "received": "attribute absent on Contact navigation",
+      "context": "Contact deliberately opts out of homepage intro. Navigation succeeds. Assertion unchanged; not fixed in this milestone."
+    },
+    {
+      "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+      "file": "tests/production-browser/loader.spec.ts",
+      "line": 103,
+      "classification": "Previously failing title, different final assertion; not an exact reproduced parent failure",
+      "expected": "visible sampled introduction duration >3000ms",
+      "received": 2395.2999999998137,
+      "historicalAssertion": "line102 visibleFrames >20, received20",
+      "immutableParentReproductionAssertion": "line150 internal-navigation attribute absent",
+      "context": "A strict real-frame timing failure. Intro implementation unchanged. The available comparisons do not establish whether this different failure is pre-existing or caused by this milestone."
+    },
+    {
+      "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+      "file": "tests/production-browser/signature-squares.spec.ts",
+      "line": 230,
+      "classification": "Newly observed final failure; absent from parent historical failures, baseline provenance not established",
+      "expected": "strictly increasing first-observed reveal frame timestamps",
+      "receivedFirstTwoStartsMs": [1041.4999999999998, 1041.4999999999998],
+      "maximumSampleGapMs": 583.2999999999997,
+      "declaredFirstTwoAnimationStartsMs": [600, 840],
+      "lastUnrevealedFirstTwoMs": [458.2, 458.2],
+      "sawMixedReveal": true,
+      "allVisibleAtMs": 2124.8,
+      "introEndedAtMs": 4516.6,
+      "overflow": false,
+      "observationReport": "artifacts/sitewide-motion/regression-square-1440-observations.json",
+      "context": "Both first two reveals were first sampled at1041.5ms after a583.3ms sample gap. Declared sequence starts remain600/840ms and mixed reveal was observed, but the strict real-frame test failed. Do not count it as passing or claim it is proven baseline."
+    }
+  ],
+  "sourceAndTestChangesDuringFinalRun": false,
+  "infrastructureEvent": "An initial zero-test startup attempt was blocked by HTTP proxy403 responses to loopback URLs. Reports retained under startup-proxy-*. Task-local localhost NO_PROXY corrected the runner environment. Not counted as executed test failures.",
+  "retries": 0,
+  "remainingLimitation": "The full existing244check scope is not green:241pass3fail. New24sitewide, unchanged29About and42Contact focused checks passed separately with documented byte-identical runtime reuse."
+}

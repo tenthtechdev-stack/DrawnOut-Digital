@@ -1,0 +1,446 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-sitewide-motion/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.motion-gradient.config.ts",
+      "--reporter=list,json",
+      "--output",
+      "test-results/sitewide-regression-gradient-dev"
+    ],
+    "configFile": "/workspace/drawnout-sitewide-motion/playwright.motion-gradient.config.ts",
+    "rootDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-regression-gradient-dev",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "testIgnore": [],
+        "testMatch": ["signature-gradient.spec.ts"],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-regression-gradient-dev",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "snapshotDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "testIgnore": [],
+        "testMatch": "signature-gradient.spec.ts",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4461",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [["list"], ["json"]],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --port 4461",
+      "url": "http://127.0.0.1:4461",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "signature-gradient.spec.ts",
+      "file": "signature-gradient.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 320px and pauses offscreen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16875,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-21T11:04:19.326Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fluid-gradient-320",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzIwLCJmcmFtZXMiOlt7ImVsYXBzZWRNcyI6MCwic3RhdGUiOnsicmVuZGVyZXIiOiJ3ZWJnbCIsImFjdGl2ZSI6dHJ1ZSwiZnJhbWVzIjoyLCJ0aW1lIjowLjA2NjY5OTk5OTk5OTk5OTgxLCJ3aWR0aCI6MzIwLCJoZWlnaHQiOjYxMCwicG9pbnRlciI6eyJ4IjowLCJ5IjowfSwidGFyZ2V0Ijp7IngiOjAsInkiOjB9fX0seyJlbGFwc2VkTXMiOjIwMTEsInN0YXRlIjp7InJlbmRlcmVyIjoid2ViZ2wiLCJhY3RpdmUiOnRydWUsImZyYW1lcyI6NjEsInRpbWUiOjIuMTAzMjk5OTk5OTk5OTk4LCJ3aWR0aCI6MzIwLCJoZWlnaHQiOjYxMCwicG9pbnRlciI6eyJ4IjowLCJ5IjowfSwidGFyZ2V0Ijp7IngiOjAsInkiOjB9fX0seyJlbGFwc2VkTXMiOjUwMTYsInN0YXRlIjp7InJlbmRlcmVyIjoid2ViZ2wiLCJhY3RpdmUiOnRydWUsImZyYW1lcyI6MTUxLCJ0aW1lIjo1LjEwMzE5OTk5OTk5OTk5OSwid2lkdGgiOjMyMCwiaGVpZ2h0Ijo2MTAsInBvaW50ZXIiOnsieCI6MCwieSI6MH0sInRhcmdldCI6eyJ4IjowLCJ5IjowfX19LHsiZWxhcHNlZE1zIjo4MDIxLCJzdGF0ZSI6eyJyZW5kZXJlciI6IndlYmdsIiwiYWN0aXZlIjp0cnVlLCJmcmFtZXMiOjI0MCwidGltZSI6OC4wODY0MDAwMDAwMDAwMTIsIndpZHRoIjozMjAsImhlaWdodCI6NjEwLCJwb2ludGVyIjp7IngiOjAsInkiOjB9LCJ0YXJnZXQiOnsieCI6MCwieSI6MH19fV0sImNoYW5nZXMiOlt7ImVsYXBzZWRNcyI6MjAxMSwiY29sb3VyZnVsRnJhY3Rpb24iOjAuNDI1NTg1OTM3NSwid2FybVNoYXJlIjowLjk5NjE3NTYxNTcyNTg2ODEsImxlZnQiOnsibWVhbkNoYW5uZWxDaGFuZ2UiOjAsImNvbG91cmZ1bEZyYWN0aW9uIjowfSwicmlnaHQiOnsibWVhbkNoYW5uZWxDaGFuZ2UiOjE5LjExMjQxMzE5NDQ0NDUsImNvbG91cmZ1bEZyYWN0aW9uIjowLjkyODM4NTQxNjY2NjY2NjYsImhhbHZlcyI6WzAuNzU0MDUwOTI1OTI1OTI1OSwwLjg0ODM3OTYyOTYyOTYyOTddfX0seyJlbGFwc2VkTXMiOjUwMTYsImNvbG91cmZ1bEZyYWN0aW9uIjowLjQzMTE4NDg5NTgzMzMzMzM2LCJ3YXJtU2hhcmUiOjAuOTk5NTQ3MDMzMDY2NTg2MSwibGVmdCI6eyJtZWFuQ2hhbm5lbENoYW5nZSI6MCwiY29sb3VyZnVsRnJhY3Rpb24iOjB9LCJyaWdodCI6eyJtZWFuQ2hhbm5lbENoYW5nZSI6MjQuNzAzMjIxNDUwNjE3MzA2LCJjb2xvdXJmdWxGcmFjdGlvbiI6MC45NDExMTY4OTgxNDgxNDgxLCJoYWx2ZXMiOlswLjgwMDA1Nzg3MDM3MDM3MDMsMC44OTM1MTg1MTg1MTg1MTg1XX19LHsiZWxhcHNlZE1zIjo4MDIxLCJjb2xvdXJmdWxGcmFjdGlvbiI6MC40Mjk2MjIzOTU4MzMzMzMzNCwid2FybVNoYXJlIjoxLCJsZWZ0Ijp7Im1lYW5DaGFubmVsQ2hhbmdlIjowLCJjb2xvdXJmdWxGcmFjdGlvbiI6MH0sInJpZ2h0Ijp7Im1lYW5DaGFubmVsQ2hhbmdlIjoyNC43Mjg4NzczMTQ4MTQ3MjgsImNvbG91cmZ1bEZyYWN0aW9uIjowLjkzODM2ODA1NTU1NTU1NTYsImhhbHZlcyI6WzAuOTQ3OTE2NjY2NjY2NjY2NiwwLjg0MjMwMzI0MDc0MDc0MDddfX1dfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-0c19f3288edffaa1c579",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "column": 3
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 390px and pauses offscreen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11717,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-21T11:04:36.547Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fluid-gradient-390",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzkwLCJmcmFtZXMiOlt7ImVsYXBzZWRNcyI6MCwic3RhdGUiOnsicmVuZGVyZXIiOiJ3ZWJnbCIsImFjdGl2ZSI6dHJ1ZSwiZnJhbWVzIjoyLCJ0aW1lIjowLjAzMzI5OTk5OTk5OTk5OTcyNiwid2lkdGgiOjM5MCwiaGVpZ2h0Ijo2MzUsInBvaW50ZXIiOnsieCI6MCwieSI6MH0sInRhcmdldCI6eyJ4IjowLCJ5IjowfX19LHsiZWxhcHNlZE1zIjoyMDExLCJzdGF0ZSI6eyJyZW5kZXJlciI6IndlYmdsIiwiYWN0aXZlIjp0cnVlLCJmcmFtZXMiOjYxLCJ0aW1lIjoyLjA0OTg5OTk5OTk5OTk5ODcsIndpZHRoIjozOTAsImhlaWdodCI6NjM1LCJwb2ludGVyIjp7IngiOjAsInkiOjB9LCJ0YXJnZXQiOnsieCI6MCwieSI6MH19fSx7ImVsYXBzZWRNcyI6NTAxNSwic3RhdGUiOnsicmVuZGVyZXIiOiJ3ZWJnbCIsImFjdGl2ZSI6dHJ1ZSwiZnJhbWVzIjoxNTAsInRpbWUiOjUuMDQ5Njk5OTk5OTk5OTk2LCJ3aWR0aCI6MzkwLCJoZWlnaHQiOjYzNSwicG9pbnRlciI6eyJ4IjowLCJ5IjowfSwidGFyZ2V0Ijp7IngiOjAsInkiOjB9fX0seyJlbGFwc2VkTXMiOjgwMTMsInN0YXRlIjp7InJlbmRlcmVyIjoid2ViZ2wiLCJhY3RpdmUiOnRydWUsImZyYW1lcyI6MjQwLCJ0aW1lIjo4LjA0OTYwMDAwMDAwMDAwNywid2lkdGgiOjM5MCwiaGVpZ2h0Ijo2MzUsInBvaW50ZXIiOnsieCI6MCwieSI6MH0sInRhcmdldCI6eyJ4IjowLCJ5IjowfX19XSwiY2hhbmdlcyI6W3siZWxhcHNlZE1zIjoyMDExLCJjb2xvdXJmdWxGcmFjdGlvbiI6MC40MjMxMTE5NzkxNjY2NjY2NSwid2FybVNoYXJlIjowLjk5NTM4MzkwNTIxNjE4NzEsImxlZnQiOnsibWVhbkNoYW5uZWxDaGFuZ2UiOjAsImNvbG91cmZ1bEZyYWN0aW9uIjowfSwicmlnaHQiOnsibWVhbkNoYW5uZWxDaGFuZ2UiOjE4LjkwNjEwNTMyNDA3NDAzNywiY29sb3VyZnVsRnJhY3Rpb24iOjAuOTI1MDU3ODcwMzcwMzcwMywiaGFsdmVzIjpbMC43NDk3MTA2NDgxNDgxNDgxLDAuODQ5MjQ3Njg1MTg1MTg1Ml19fSx7ImVsYXBzZWRNcyI6NTAxNSwiY29sb3VyZnVsRnJhY3Rpb24iOjAuNDI5NjIyMzk1ODMzMzMzMzQsIndhcm1TaGFyZSI6MC45OTkwOTA3NzEzMjg5ODkzLCJsZWZ0Ijp7Im1lYW5DaGFubmVsQ2hhbmdlIjowLCJjb2xvdXJmdWxGcmFjdGlvbiI6MH0sInJpZ2h0Ijp7Im1lYW5DaGFubmVsQ2hhbmdlIjoyNC45NDI2NjAxMDgwMjQ3OTYsImNvbG91cmZ1bEZyYWN0aW9uIjowLjkzOTM4MDc4NzAzNzAzNzEsImhhbHZlcyI6WzAuODA2MTM0MjU5MjU5MjU5MywwLjg5NDY3NTkyNTkyNTkyNTldfX0seyJlbGFwc2VkTXMiOjgwMTMsImNvbG91cmZ1bEZyYWN0aW9uIjowLjQyODI1NTIwODMzMzMzMzM2LCJ3YXJtU2hhcmUiOjEsImxlZnQiOnsibWVhbkNoYW5uZWxDaGFuZ2UiOjAsImNvbG91cmZ1bEZyYWN0aW9uIjowfSwicmlnaHQiOnsibWVhbkNoYW5uZWxDaGFuZ2UiOjI0Ljc5Nzk4NDE4MjA5ODg5LCJjb2xvdXJmdWxGcmFjdGlvbiI6MC45MzYzNDI1OTI1OTI1OTI2LCJoYWx2ZXMiOlswLjkzOTIzNjExMTExMTExMTIsMC44NDgwOTAyNzc3Nzc3Nzc4XX19XX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-ae0bf098dfb405a85ef8",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "column": 3
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 768px and pauses offscreen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12652,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-21T11:04:48.287Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fluid-gradient-768",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6NzY4LCJmcmFtZXMiOlt7ImVsYXBzZWRNcyI6MCwic3RhdGUiOnsicmVuZGVyZXIiOiJ3ZWJnbCIsImFjdGl2ZSI6dHJ1ZSwiZnJhbWVzIjowLCJ0aW1lIjowLCJ3aWR0aCI6NzIwLCJoZWlnaHQiOjY0NywicG9pbnRlciI6eyJ4IjowLCJ5IjowfSwidGFyZ2V0Ijp7IngiOjAsInkiOjB9fX0seyJlbGFwc2VkTXMiOjIwMjYsInN0YXRlIjp7InJlbmRlcmVyIjoid2ViZ2wiLCJhY3RpdmUiOnRydWUsImZyYW1lcyI6NTMsInRpbWUiOjEuOTA2NTk5OTk5OTk5OTk5NCwid2lkdGgiOjcyMCwiaGVpZ2h0Ijo2NDcsInBvaW50ZXIiOnsieCI6MCwieSI6MH0sInRhcmdldCI6eyJ4IjowLCJ5IjowfX19LHsiZWxhcHNlZE1zIjo1MDMwLCJzdGF0ZSI6eyJyZW5kZXJlciI6IndlYmdsIiwiYWN0aXZlIjp0cnVlLCJmcmFtZXMiOjE0MCwidGltZSI6NC45MDk5LCJ3aWR0aCI6NzIwLCJoZWlnaHQiOjY0NywicG9pbnRlciI6eyJ4IjowLCJ5IjowfSwidGFyZ2V0Ijp7IngiOjAsInkiOjB9fX0seyJlbGFwc2VkTXMiOjgwMTAsInN0YXRlIjp7InJlbmRlcmVyIjoid2ViZ2wiLCJhY3RpdmUiOnRydWUsImZyYW1lcyI6MjI3LCJ0aW1lIjo3Ljg5MzEwMDAwMDAwMDAxMiwid2lkdGgiOjcyMCwiaGVpZ2h0Ijo2NDcsInBvaW50ZXIiOnsieCI6MCwieSI6MH0sInRhcmdldCI6eyJ4IjowLCJ5IjowfX19XSwiY2hhbmdlcyI6W3siZWxhcHNlZE1zIjoyMDI2LCJjb2xvdXJmdWxGcmFjdGlvbiI6MC40MTk0MDEwNDE2NjY2NjY2NCwid2FybVNoYXJlIjowLjk5NTY1MzUyMzc1MDM4ODEsImxlZnQiOnsibWVhbkNoYW5uZWxDaGFuZ2UiOjAsImNvbG91cmZ1bEZyYWN0aW9uIjowfSwicmlnaHQiOnsibWVhbkNoYW5uZWxDaGFuZ2UiOjE4LjA2OTAxMDQxNjY2NjY5MywiY29sb3VyZnVsRnJhY3Rpb24iOjAuOTE4OTgxNDgxNDgxNDgxNSwiaGFsdmVzIjpbMC43MjY1NjI1LDAuODQwNTY3MTI5NjI5NjI5N119fSx7ImVsYXBzZWRNcyI6NTAzMCwiY29sb3VyZnVsRnJhY3Rpb24iOjAuNDI4OTcxMzU0MTY2NjY2NjUsIndhcm1TaGFyZSI6MC45OTg3ODU4NTUyMTMyMzQyLCJsZWZ0Ijp7Im1lYW5DaGFubmVsQ2hhbmdlIjowLCJjb2xvdXJmdWxGcmFjdGlvbiI6MH0sInJpZ2h0Ijp7Im1lYW5DaGFubmVsQ2hhbmdlIjoyNS43MjU0NTMzMTc5MDExOTUsImNvbG91cmZ1bEZyYWN0aW9uIjowLjk0MDI0ODg0MjU5MjU5MjYsImhhbHZlcyI6WzAuODI1NTIwODMzMzMzMzMzNCwwLjkxOTg0OTUzNzAzNzAzNzFdfX0seyJlbGFwc2VkTXMiOjgwMTAsImNvbG91cmZ1bEZyYWN0aW9uIjowLjQyOTU1NzI5MTY2NjY2NjcsIndhcm1TaGFyZSI6MSwibGVmdCI6eyJtZWFuQ2hhbm5lbENoYW5nZSI6MCwiY29sb3VyZnVsRnJhY3Rpb24iOjB9LCJyaWdodCI6eyJtZWFuQ2hhbm5lbENoYW5nZSI6MjUuMDU5NjU0NzA2NzkwMjIzLCJjb2xvdXJmdWxGcmFjdGlvbiI6MC45NDAxMDQxNjY2NjY2NjY2LCJoYWx2ZXMiOlswLjkyNzA4MzMzMzMzMzMzMzQsMC44NjgzNDQ5MDc0MDc0MDc0XX19XX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-cdcca5797f6f62872516",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "column": 3
+        },
+        {
+          "title": "right-side fluid shader evolves at 0/2/5/8s after the loader at 1440px and pauses offscreen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13143,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-21T11:05:00.964Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fluid-gradient-1440",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwiZnJhbWVzIjpbeyJlbGFwc2VkTXMiOjAsInN0YXRlIjp7InJlbmRlcmVyIjoid2ViZ2wiLCJhY3RpdmUiOnRydWUsImZyYW1lcyI6MSwidGltZSI6MCwid2lkdGgiOjcyMCwiaGVpZ2h0IjozNjksInBvaW50ZXIiOnsieCI6MCwieSI6MH0sInRhcmdldCI6eyJ4IjowLCJ5IjowfX19LHsiZWxhcHNlZE1zIjoyMDE0LCJzdGF0ZSI6eyJyZW5kZXJlciI6IndlYmdsIiwiYWN0aXZlIjp0cnVlLCJmcmFtZXMiOjQ2LCJ0aW1lIjoxLjk5MzE5OTk5OTk5OTk5OTQsIndpZHRoIjo3MjAsImhlaWdodCI6MzY5LCJwb2ludGVyIjp7IngiOjAsInkiOjB9LCJ0YXJnZXQiOnsieCI6MCwieSI6MH19fSx7ImVsYXBzZWRNcyI6NTAzNSwic3RhdGUiOnsicmVuZGVyZXIiOiJ3ZWJnbCIsImFjdGl2ZSI6dHJ1ZSwiZnJhbWVzIjoxMTgsInRpbWUiOjQuOTYyOTk5OTk5OTk5OTk3LCJ3aWR0aCI6NzIwLCJoZWlnaHQiOjM2OSwicG9pbnRlciI6eyJ4IjowLCJ5IjowfSwidGFyZ2V0Ijp7IngiOjAsInkiOjB9fX0seyJlbGFwc2VkTXMiOjgwMTIsInN0YXRlIjp7InJlbmRlcmVyIjoid2ViZ2wiLCJhY3RpdmUiOnRydWUsImZyYW1lcyI6MTg5LCJ0aW1lIjo3Ljk2NjIwMDAwMDAwMDAwMSwid2lkdGgiOjcyMCwiaGVpZ2h0IjozNjksInBvaW50ZXIiOnsieCI6MCwieSI6MH0sInRhcmdldCI6eyJ4IjowLCJ5IjowfX19XSwiY2hhbmdlcyI6W3siZWxhcHNlZE1zIjoyMDE0LCJjb2xvdXJmdWxGcmFjdGlvbiI6MC40MjEzNTQxNjY2NjY2NjY2NCwid2FybVNoYXJlIjowLjk5NTk4MjY5NDY4NDc5NiwibGVmdCI6eyJtZWFuQ2hhbm5lbENoYW5nZSI6MCwiY29sb3VyZnVsRnJhY3Rpb24iOjB9LCJyaWdodCI6eyJtZWFuQ2hhbm5lbENoYW5nZSI6MTguMzEwNzYzODg4ODg4OTMsImNvbG91cmZ1bEZyYWN0aW9uIjowLjkyMjMwOTAyNzc3Nzc3NzgsImhhbHZlcyI6WzAuNzMyNjM4ODg4ODg4ODg4OCwwLjg0NDkwNzQwNzQwNzQwNzRdfX0seyJlbGFwc2VkTXMiOjUwMzUsImNvbG91cmZ1bEZyYWN0aW9uIjowLjQyOTc1MjYwNDE2NjY2NjY2LCJ3YXJtU2hhcmUiOjAuOTk4Nzg4MDYyNDE0Nzg1NywibGVmdCI6eyJtZWFuQ2hhbm5lbENoYW5nZSI6MCwiY29sb3VyZnVsRnJhY3Rpb24iOjB9LCJyaWdodCI6eyJtZWFuQ2hhbm5lbENoYW5nZSI6MjUuMDMyNDU1NjMyNzE2MDc2LCJjb2xvdXJmdWxGcmFjdGlvbiI6MC45NDAxMDQxNjY2NjY2NjY2LCJoYWx2ZXMiOlswLjgwNjQyMzYxMTExMTExMTIsMC45MDE2MjAzNzAzNzAzNzAzXX19LHsiZWxhcHNlZE1zIjo4MDEyLCJjb2xvdXJmdWxGcmFjdGlvbiI6MC40Mjg5NzEzNTQxNjY2NjY2NSwid2FybVNoYXJlIjoxLCJsZWZ0Ijp7Im1lYW5DaGFubmVsQ2hhbmdlIjowLCJjb2xvdXJmdWxGcmFjdGlvbiI6MH0sInJpZ2h0Ijp7Im1lYW5DaGFubmVsQ2hhbmdlIjoyNC43NjQ0Njc1OTI1OTI1MzUsImNvbG91cmZ1bEZyYWN0aW9uIjowLjkzODM2ODA1NTU1NTU1NTYsImhhbHZlcyI6WzAuOTM2MzQyNTkyNTkyNTkyNiwwLjg2MjU1Nzg3MDM3MDM3MDNdfX1dfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-9d8c9795561ccd28d49b",
+          "file": "signature-gradient.spec.ts",
+          "line": 149,
+          "column": 3
+        },
+        {
+          "title": "desktop pointer response eases towards the cursor while mobile touch preserves autonomous motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6363,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-21T11:05:14.134Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-c7a7f8fa7b07679340df",
+          "file": "signature-gradient.spec.ts",
+          "line": 220,
+          "column": 1
+        },
+        {
+          "title": "visibility suspension pauses the shader clock and resumes without a time jump",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4263,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-21T11:05:20.515Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-bef52fd6a6fd4240bb66",
+          "file": "signature-gradient.spec.ts",
+          "line": 250,
+          "column": 1
+        },
+        {
+          "title": "WebGL context failure selects animated CSS and a live preference change restores static artwork",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5244,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-21T11:05:24.805Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-5c90dbc5293138c57955",
+          "file": "signature-gradient.spec.ts",
+          "line": 278,
+          "column": 1
+        },
+        {
+          "title": "unavailable GPU uses visibly flowing CSS without adding a rendering loop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6352,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-21T11:05:30.074Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-eba760341c85349797bb",
+          "file": "signature-gradient.spec.ts",
+          "line": 301,
+          "column": 1
+        },
+        {
+          "title": "initial reduced motion and data saving never initialize GPU rendering",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4210,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-21T11:05:36.447Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3016574ccaf92acfcd-10e5c15c9762ac6ef64f",
+          "file": "signature-gradient.spec.ts",
+          "line": 325,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-21T11:04:12.311Z",
+    "duration": 88563.48,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

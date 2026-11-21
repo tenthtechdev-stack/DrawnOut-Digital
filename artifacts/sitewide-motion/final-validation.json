@@ -1,0 +1,120 @@
+{
+  "preparedAt": "2026-11-21T11:13:57.207974+00:00",
+  "branch": "feature/sitewide-motion-polish",
+  "draftPR": "https://github.com/tenthtech/drawnout-digital/pull/24",
+  "baseBranch": "feature/contact-signature-experience",
+  "parentCommit": "b1c7db29a186c7413cad0bc5cdb59d62d5200f66",
+  "validatedReviewSourceCommit": "1569b260dce67216444a4f0fe96cfe95ebb2905e",
+  "applicationCodeCommit": "d8cd4451582fb7936a20edc028575f429f65e6e0",
+  "focused": {
+    "sitewide": {
+      "passed": 24,
+      "failed": 0,
+      "reuse": "Identical served non-About inputs and unchangedtest/config; originalb2d8c42 execution retained"
+    },
+    "about": {
+      "passed": 29,
+      "failed": 0
+    },
+    "contact": {
+      "passed": 42,
+      "failed": 0
+    },
+    "report": "final-browser-validation.json"
+  },
+  "existingBrowser": {
+    "passed": 241,
+    "failed": 3,
+    "skipped": 0,
+    "flaky": 0,
+    "report": "regression-summary.json",
+    "failures": [
+      {
+        "title": "optimized production visibly plays full cold/refresh/Home journeys at 390px",
+        "location": {
+          "file": "/workspace/drawnout-sitewide-motion/tests/production-browser/loader.spec.ts",
+          "column": 44,
+          "line": 150
+        }
+      },
+      {
+        "title": "optimized production visibly plays full cold/refresh/Home journeys at 1440px",
+        "location": {
+          "file": "/workspace/drawnout-sitewide-motion/tests/production-browser/loader.spec.ts",
+          "column": 34,
+          "line": 103
+        }
+      },
+      {
+        "title": "six enlarged borderless project posters reveal progressively and keep SOL prominent at 1440px",
+        "location": {
+          "file": "/workspace/drawnout-sitewide-motion/tests/production-browser/signature-squares.spec.ts",
+          "column": 44,
+          "line": 230
+        }
+      }
+    ],
+    "newSquareExactParentFailureEstablished": false,
+    "boundedComparison": "new-square-parent-comparison.json"
+  },
+  "core": {
+    "build": "passed",
+    "typescript": {
+      "files": 232,
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "lint": "passed",
+    "unit": {
+      "passed": 58,
+      "failed": 0
+    },
+    "buildOutput": {
+      "passed": 6,
+      "failed": 0
+    },
+    "publication": {
+      "passed": 1,
+      "failed": 0
+    },
+    "mediaAndCurrentPreservation": {
+      "passed": 21,
+      "failed": 0,
+      "protectedFiles": 434
+    },
+    "unchangedHistoricalScopeAudits": {
+      "passed": 3,
+      "failed": 3,
+      "qualification": "Earlier milestone allowlists reject newly authorized changes; exact failures retained."
+    },
+    "report": "core-validation.json"
+  },
+  "sourceAndTestChangesDuringFinalBrowserRun": false,
+  "evidence": {
+    "capturedPNGs": 90,
+    "loopProofPNGs": 28,
+    "recordings": 12,
+    "fullyDecoded": true,
+    "captureReviewCommit": "1569b260dce67216444a4f0fe96cfe95ebb2905e",
+    "report": "evidence-summary.json"
+  },
+  "remainingLimitations": [
+    "Threefull-suitebrowserfailures remain; exactnewdesktop square failure not established onparent",
+    "Native hidden-tab state not observed in virtualbrowser; controlledfixturespass",
+    "Physicaldevices/hardwareFPS not certified",
+    "Hand/emblemfooter remainsrasterprototype",
+    "Formspree endpoint/account/recipient/privacy/inbox/ReplyTo not activated/verified"
+  ],
+  "optionalToolingReviewFailure": {
+    "command": "apt-get download xvfb",
+    "executed": false,
+    "reason": "Automaticapprovalreviewcouldnotcompletebecauseusage limit; not anunsafeactiondetermination"
+  },
+  "merged": false,
+  "deployed": false,
+  "netlifyMirrorPushed": false,
+  "liveFormActivated": false,
+  "allTestsGreen": false,
+  "formattingReport": "format-validation.json"
+}

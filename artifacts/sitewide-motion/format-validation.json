@@ -1,0 +1,24 @@
+{
+  "completedAt": "2026-11-21T11:24:18.721072+00:00",
+  "sourceCheckpoint": "5378d66e813b9dabd9a1a5ba57cbc1cd05514e68",
+  "steps": [
+    {
+      "command": ["npm", "run", "format:check"],
+      "exitCode": 0,
+      "stdout": "\n> drawnout-digital@0.1.0 format:check\n> prettier --check .\n\nChecking formatting...\nAll matched files use Prettier code style!\n",
+      "stderr": ""
+    },
+    {
+      "command": ["git", "diff", "--check"],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "applicationSourceChanged": false,
+  "earlierFormattingFailure": {
+    "corrected": true,
+    "description": "The first final formatting check flagged five newly copied browser failure-context Markdown files. Prettier formatted those files; no assertion or diagnostic was removed."
+  },
+  "reportFileCheck": "This new JSON report is separately formatted and checked after recording the full repository check."
+}

@@ -2,12 +2,8 @@
   "method": "Complete emitted HTML/JS/CSS byte comparison after About external-ack and first-frame clock fixes, relative to passing24 sitewide run. All24test routes excludeAbout; no test/config change. About must be tested freshly.",
   "beforeSourceCommit": "b2d8c4248b44ba19907525945331ee25a65d3b07",
   "afterSourceCommit": "d8cd4451582fb7936a20edc028575f429f65e6e0",
-  "differentOrRemoved": [
-    "about/index.html"
-  ],
-  "new": [
-    "scripts/about-arrival.js"
-  ],
+  "differentOrRemoved": ["about/index.html"],
+  "new": ["scripts/about-arrival.js"],
   "nonAboutExistingInputsIdentical": true,
   "beforeFiles": {
     "index.html": "015d2925a474eb578fb846bed4eb15b59efdd3e0afa03369f08f11e85174ee87",

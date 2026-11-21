@@ -12,7 +12,7 @@ The current captures use review commit `1569b260dce67216444a4f0fe96cfe95ebb2905e
 
 The focused checks are **24/24 new motion, 29/29 unchanged About and 42/42 unchanged Contact passing**. About and Contact ran freshly on `1569b26`. The 24 motion results retain their original `b2d8c42` run: [complete emitted-file comparison](external-ack-compiled-comparison.json) proves that their test/config files and all existing non-About HTML/JS/CSS inputs are identical in the final build. Only About HTML and its dedicated acknowledgement asset changed, so no fresh run of those 24 is claimed. [Focused result provenance](final-browser-validation.json).
 
-The broader regression suite is reported separately in the [final validation report](../../docs/sitewide-motion/VALIDATION.md). Passing focused checks must not be read as an all-green full suite. [Performance findings and limitations](../../docs/sitewide-motion/PERFORMANCE.md) · [Implementation](../../docs/sitewide-motion/IMPLEMENTATION.md) · [Test mapping and retained failures](../../docs/sitewide-motion/TEST_MAPPING.md).
+**Final existing browser result: 241/244 pass, 3 fail.** The three retained loader/square failures and the bounded parent comparison are reported in the [final validation report](../../docs/sitewide-motion/VALIDATION.md). Passing focused checks must not be read as an all-green full suite. [Performance findings and limitations](../../docs/sitewide-motion/PERFORMANCE.md) · [Implementation](../../docs/sitewide-motion/IMPLEMENTATION.md) · [Test mapping and retained failures](../../docs/sitewide-motion/TEST_MAPPING.md).
 
 ## Before and after — complete browsing journeys
 

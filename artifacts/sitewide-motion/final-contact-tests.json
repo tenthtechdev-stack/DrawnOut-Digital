@@ -37,10 +37,7 @@
         "name": "",
         "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
         "testIgnore": [],
-        "testMatch": [
-          "contact.spec.ts",
-          "contact-signature.spec.ts"
-        ],
+        "testMatch": ["contact.spec.ts", "contact-signature.spec.ts"],
         "timeout": 90000
       }
     ],
@@ -58,10 +55,7 @@
         "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
         "snapshotDir": "/workspace/drawnout-sitewide-motion/tests/browser",
         "testIgnore": [],
-        "testMatch": [
-          "contact.spec.ts",
-          "contact-signature.spec.ts"
-        ],
+        "testMatch": ["contact.spec.ts", "contact-signature.spec.ts"],
         "timeout": 90000,
         "use": {
           "baseURL": "http://127.0.0.1:4470",
@@ -71,11 +65,7 @@
           },
           "launchOptions": {
             "executablePath": "/usr/bin/chromium",
-            "args": [
-              "--use-gl=angle",
-              "--use-angle=swiftshader",
-              "--enable-unsafe-swiftshader"
-            ]
+            "args": ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
           },
           "screenshot": "only-on-failure",
           "trace": "retain-on-failure"
@@ -86,14 +76,7 @@
       }
     ],
     "quiet": false,
-    "reporter": [
-      [
-        "list"
-      ],
-      [
-        "json"
-      ]
-    ],
+    "reporter": [["list"], ["json"]],
     "reportSlowTests": {
       "max": 5,
       "threshold": 300000

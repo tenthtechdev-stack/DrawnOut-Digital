@@ -1,0 +1,7 @@
+{
+  "reason": "Managed HTTP_PROXY and HTTPS_PROXY were present without NO_PROXY after environment restart. Playwright preview preflight received proxy HTTP 403 for unused localhost ports, falsely reporting URL already used.",
+  "testsExecuted": 0,
+  "proof": "ss showed no listener; curl via proxy returned envoy403; curl --noproxy star returned connection refused.",
+  "correction": "Set NO_PROXY and no_proxy for127.0.0.1,localhost,::1 only in external runner subprocess environment. Source, tests, config and build unchanged.",
+  "preservedReportsPrefix": "startup-proxy-"
+}
