@@ -1,0 +1,1560 @@
+{
+  "verifiedAt": "2026-11-20T17:23:27.243982+00:00",
+  "afterSourceCommit": "1569b260dce67216444a4f0fe96cfe95ebb2905e",
+  "beforeSourceCommit": "b1c7db29a186c7413cad0bc5cdb59d62d5200f66",
+  "captureCommands": "evidence-run.json",
+  "sourceManifests": {
+    "before-capture.json": "b1c7db29a186c7413cad0bc5cdb59d62d5200f66",
+    "before-scenes-capture.json": "b1c7db29a186c7413cad0bc5cdb59d62d5200f66",
+    "after-capture.json": "1569b260dce67216444a4f0fe96cfe95ebb2905e",
+    "after-scenes-capture.json": "1569b260dce67216444a4f0fe96cfe95ebb2905e"
+  },
+  "capturedPNGCount": 90,
+  "capturedMP4Count": 12,
+  "allRecordingFilesFullyDecodedByCaptureHelpers": true,
+  "verification": "Every declared screenshot/recording exists, matches its saved SHA256, has valid PNG/MP4 magic, and PNG dimensions match the capture record. Source bytes match manifest and committed source; no second redundant video decode is claimed.",
+  "pageErrors": [],
+  "failedRequests": [],
+  "aboutNaturalSamples": [
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 1440,
+      "label": "About cold markup available",
+      "at": 527.1999999997206,
+      "state": "pending",
+      "scene": "portrait",
+      "reason": null,
+      "startedAt": null,
+      "endedAt": null,
+      "artworkOpacity": "0",
+      "plaqueOpacity": "0",
+      "gradientOpacity": "0",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 1440,
+      "label": "About natural opening startup sample (target 180ms from real start)",
+      "at": 721.2999999998137,
+      "state": "running",
+      "scene": "portrait",
+      "reason": null,
+      "startedAt": "592.20",
+      "endedAt": null,
+      "artworkOpacity": "0.364553",
+      "plaqueOpacity": "0",
+      "gradientOpacity": "0",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 1440,
+      "label": "About natural plaque startup sample (target 900ms from real start)",
+      "at": 1677.1999999997206,
+      "state": "running",
+      "scene": "plaque",
+      "reason": null,
+      "startedAt": "592.20",
+      "endedAt": null,
+      "artworkOpacity": "1",
+      "plaqueOpacity": "0.907088",
+      "gradientOpacity": "0",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 1440,
+      "label": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "at": 2380.5999999996275,
+      "state": "running",
+      "scene": "atmosphere",
+      "reason": null,
+      "startedAt": "592.20",
+      "endedAt": null,
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "0.930797",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 1440,
+      "label": "About natural copy startup sample (target 2250ms from real start)",
+      "at": 2912.399999999907,
+      "state": "running",
+      "scene": "copy",
+      "reason": null,
+      "startedAt": "592.20",
+      "endedAt": null,
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "0.872584"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 1440,
+      "label": "About natural settled startup sample (target 3950ms from real start)",
+      "at": 4487.5,
+      "state": "settled",
+      "scene": "settled",
+      "reason": "complete",
+      "startedAt": "592.20",
+      "endedAt": "4100.20",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 1440,
+      "label": "About native scroll into the story after settled arrival",
+      "at": 7623.5,
+      "state": "settled",
+      "scene": "settled",
+      "reason": "complete",
+      "startedAt": "592.20",
+      "endedAt": "4100.20",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 390,
+      "label": "About cold markup available",
+      "at": 339.60000000009313,
+      "state": "static",
+      "scene": "settled",
+      "reason": "boot-released",
+      "startedAt": null,
+      "endedAt": "313.60",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 390,
+      "label": "About natural opening startup sample (target 180ms from real start)",
+      "at": 527.5,
+      "state": "static",
+      "scene": "settled",
+      "reason": "boot-released",
+      "startedAt": null,
+      "endedAt": "313.60",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 390,
+      "label": "About natural plaque startup sample (target 900ms from real start)",
+      "at": 1246.7999999998137,
+      "state": "static",
+      "scene": "settled",
+      "reason": "boot-released",
+      "startedAt": null,
+      "endedAt": "313.60",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 390,
+      "label": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "at": 1796.6000000000931,
+      "state": "static",
+      "scene": "settled",
+      "reason": "boot-released",
+      "startedAt": null,
+      "endedAt": "313.60",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 390,
+      "label": "About natural copy startup sample (target 2250ms from real start)",
+      "at": 2592.899999999907,
+      "state": "static",
+      "scene": "settled",
+      "reason": "boot-released",
+      "startedAt": null,
+      "endedAt": "313.60",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 390,
+      "label": "About natural settled startup sample (target 3950ms from real start)",
+      "at": 4294.299999999814,
+      "state": "static",
+      "scene": "settled",
+      "reason": "boot-released",
+      "startedAt": null,
+      "endedAt": "313.60",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "width": 390,
+      "label": "About native scroll into the story after settled arrival",
+      "at": 6435.799999999814,
+      "state": "static",
+      "scene": "settled",
+      "reason": "boot-released",
+      "startedAt": null,
+      "endedAt": "313.60",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 1440,
+      "label": "About cold markup available",
+      "at": 433.29999999981374,
+      "state": "running",
+      "scene": "portrait",
+      "reason": null,
+      "startedAt": "349.00",
+      "endedAt": null,
+      "artworkOpacity": "0.268687",
+      "plaqueOpacity": "0",
+      "gradientOpacity": "0",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 1440,
+      "label": "About natural opening startup sample (target 180ms from real start)",
+      "at": 532.7999999998137,
+      "state": "running",
+      "scene": "portrait",
+      "reason": null,
+      "startedAt": "349.00",
+      "endedAt": null,
+      "artworkOpacity": "0.591521",
+      "plaqueOpacity": "0",
+      "gradientOpacity": "0",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 1440,
+      "label": "About natural plaque startup sample (target 900ms from real start)",
+      "at": 1325.7999999998137,
+      "state": "running",
+      "scene": "plaque",
+      "reason": null,
+      "startedAt": "349.00",
+      "endedAt": null,
+      "artworkOpacity": "1",
+      "plaqueOpacity": "0.730148",
+      "gradientOpacity": "0",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 1440,
+      "label": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "at": 1820.5,
+      "state": "running",
+      "scene": "atmosphere",
+      "reason": null,
+      "startedAt": "349.00",
+      "endedAt": null,
+      "artworkOpacity": "1",
+      "plaqueOpacity": "0.995133",
+      "gradientOpacity": "0.675011",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 1440,
+      "label": "About natural copy startup sample (target 2250ms from real start)",
+      "at": 2623.7999999998137,
+      "state": "running",
+      "scene": "copy",
+      "reason": null,
+      "startedAt": "349.00",
+      "endedAt": null,
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "0.99915",
+      "headlineOpacity": "0.777435"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 1440,
+      "label": "About natural settled startup sample (target 3950ms from real start)",
+      "at": 4322.899999999907,
+      "state": "settled",
+      "scene": "settled",
+      "reason": "complete",
+      "startedAt": "349.00",
+      "endedAt": "3852.60",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 1440,
+      "label": "About native scroll into the story after settled arrival",
+      "at": 8029.700000000186,
+      "state": "settled",
+      "scene": "settled",
+      "reason": "complete",
+      "startedAt": "349.00",
+      "endedAt": "3852.60",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 390,
+      "label": "About cold markup available",
+      "at": 407.70000000018626,
+      "state": "running",
+      "scene": "portrait",
+      "reason": null,
+      "startedAt": "172.10",
+      "endedAt": null,
+      "artworkOpacity": "0.712954",
+      "plaqueOpacity": "0",
+      "gradientOpacity": "0",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 390,
+      "label": "About natural opening startup sample (target 180ms from real start)",
+      "at": 492.20000000018626,
+      "state": "running",
+      "scene": "portrait",
+      "reason": null,
+      "startedAt": "172.10",
+      "endedAt": null,
+      "artworkOpacity": "0.788404",
+      "plaqueOpacity": "0",
+      "gradientOpacity": "0",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 390,
+      "label": "About natural plaque startup sample (target 900ms from real start)",
+      "at": 1074.7000000001863,
+      "state": "running",
+      "scene": "plaque",
+      "reason": null,
+      "startedAt": "172.10",
+      "endedAt": null,
+      "artworkOpacity": "0.999998",
+      "plaqueOpacity": "0.646632",
+      "gradientOpacity": "0",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 390,
+      "label": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "at": 1627,
+      "state": "running",
+      "scene": "atmosphere",
+      "reason": null,
+      "startedAt": "172.10",
+      "endedAt": null,
+      "artworkOpacity": "1",
+      "plaqueOpacity": "0.994356",
+      "gradientOpacity": "0.657841",
+      "headlineOpacity": "0"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 390,
+      "label": "About natural copy startup sample (target 2250ms from real start)",
+      "at": 2426.100000000093,
+      "state": "running",
+      "scene": "copy",
+      "reason": null,
+      "startedAt": "172.10",
+      "endedAt": null,
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "0.999595",
+      "headlineOpacity": "0.812242"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 390,
+      "label": "About natural settled startup sample (target 3950ms from real start)",
+      "at": 4139.700000000186,
+      "state": "settled",
+      "scene": "settled",
+      "reason": "complete",
+      "startedAt": "172.10",
+      "endedAt": "3673.00",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "width": 390,
+      "label": "About native scroll into the story after settled arrival",
+      "at": 6372.299999999814,
+      "state": "settled",
+      "scene": "settled",
+      "reason": "complete",
+      "startedAt": "172.10",
+      "endedAt": "3673.00",
+      "artworkOpacity": "1",
+      "plaqueOpacity": "1",
+      "gradientOpacity": "1",
+      "headlineOpacity": "1"
+    }
+  ],
+  "playbackObservations": [
+    {
+      "manifest": "before-capture.json",
+      "width": 1440,
+      "sourceStableAcrossFullLoop": true,
+      "decodedFrameDelta": 196,
+      "droppedFrameDelta": 4,
+      "startMediaTime": 3.399208,
+      "endMediaTime": 4.090227,
+      "duration": 7.5,
+      "lastState": "playing",
+      "maximumLoadedSourcesInSnapshots": 1,
+      "maximumPlayingInSnapshots": 1,
+      "limitation": "Production Chromium/SwiftShader viewport recording observations, not a controlled physical-device FPS benchmark."
+    },
+    {
+      "manifest": "before-capture.json",
+      "width": 390,
+      "sourceStableAcrossFullLoop": true,
+      "decodedFrameDelta": 190,
+      "droppedFrameDelta": 9,
+      "startMediaTime": 2.790471,
+      "endMediaTime": 3.153613,
+      "duration": 7.5,
+      "lastState": "playing",
+      "maximumLoadedSourcesInSnapshots": 1,
+      "maximumPlayingInSnapshots": 1,
+      "limitation": "Production Chromium/SwiftShader viewport recording observations, not a controlled physical-device FPS benchmark."
+    },
+    {
+      "manifest": "after-capture.json",
+      "width": 1440,
+      "sourceStableAcrossFullLoop": true,
+      "decodedFrameDelta": 194,
+      "droppedFrameDelta": 10,
+      "startMediaTime": 2.870993,
+      "endMediaTime": 3.464412,
+      "duration": 7.5,
+      "lastState": "playing",
+      "maximumLoadedSourcesInSnapshots": 1,
+      "maximumPlayingInSnapshots": 1,
+      "limitation": "Production Chromium/SwiftShader viewport recording observations, not a controlled physical-device FPS benchmark."
+    },
+    {
+      "manifest": "after-capture.json",
+      "width": 390,
+      "sourceStableAcrossFullLoop": true,
+      "decodedFrameDelta": 190,
+      "droppedFrameDelta": 0,
+      "startMediaTime": 2.879473,
+      "endMediaTime": 3.274272,
+      "duration": 7.5,
+      "lastState": "playing",
+      "maximumLoadedSourcesInSnapshots": 1,
+      "maximumPlayingInSnapshots": 1,
+      "limitation": "Production Chromium/SwiftShader viewport recording observations, not a controlled physical-device FPS benchmark."
+    }
+  ],
+  "nativeBackground": {
+    "platformSupported": true,
+    "nativeHiddenObserved": false,
+    "widths": [
+      {
+        "width": 1440,
+        "hiddenObserved": false,
+        "returnVisible": true,
+        "limitation": "This display backend did not expose a native hidden document on ordinary tab activation. No hidden-tab proof is claimed."
+      },
+      {
+        "width": 390,
+        "hiddenObserved": false,
+        "returnVisible": true,
+        "limitation": "This display backend did not expose a native hidden document on ordinary tab activation. No hidden-tab proof is claimed."
+      }
+    ],
+    "interpretation": "Both ordinary headless captures and headed Chromium using Ozone headless display kept document.hidden=false after real tab activation. These videos prove visible continuity/return only; no actual hidden-tab suspension proof is claimed. Deterministic hidden-lifecycle tests are separate fixtures."
+  },
+  "mobileEvidence": "Chromium touch/viewport emulation. No physical Safari/iOS/Android GPU certification.",
+  "footerAssetStatus": "Unchanged approved-source raster/2.5D prototype, not newly completed realistic3D.",
+  "formDeliveryStatus": "Unconfigured; synthetic typing only. No enquiry/provider request sent or inbox delivery claimed.",
+  "screenshots": [
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-home.png",
+      "bytes": 382234,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "048473957bd89fb254ffa36ba0c199f241bd96c72ae3b9e55f6e17fc90b6f5a0"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-home-sol.png",
+      "bytes": 458456,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "1e09e7ee0250689ad8cf236769a9078203ec47127442de0ddb232aec48231f17"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-work-bunzo-initial.png",
+      "bytes": 475001,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "2d909d4d29966f638c66c7c4ebe1147f1a7b83095aa776e3278690ca7f5db18c"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-work-bunzo-middle.png",
+      "bytes": 559074,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "4d58c43aac3051db287de7526a23acfd007ee2cab0dfd936558e7b914a0fae81"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-work-bunzo-expanded.png",
+      "bytes": 686898,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "d7f44211be12ba25a5ec10a7db2d0e39b3812edb7b0f1751feca6eaef7d3e96c"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-work-sol-community-center-initial.png",
+      "bytes": 257687,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "bfe7b2a3a4b915c6059d2c5efd8e0e84c9735dbf3b793bde1c7bbd67dac33bca"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-work-sol-community-center-middle.png",
+      "bytes": 341398,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "402baa65033d685956def7b0a0f2899e5832103a918a70b0e3aa91954d7d3822"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-work-sol-community-center-expanded.png",
+      "bytes": 849250,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "d9369f06d18490fbdaab50182039acc01bd7c58d3fe7fb911c7299ebaae98447"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-case-sol.png",
+      "bytes": 803018,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "324abf6d31d8f94701dd1390ec3aeaa1e0219f68610e5196fa8d619efc0817c0"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-contact.png",
+      "bytes": 92617,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "e9add601196c56e0192c0e16fd2060727a5af7ccebdb2c51d8e23aa8abaf949e"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-contact-form.png",
+      "bytes": 78451,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "98e36da0926faf0e25897200af0cf611ee3329f774e78ed992f5ac106bd5ec6b"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-home.png",
+      "bytes": 165968,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "118ef3b78c61432959df0ea0b1a1c5e5cfc54a2779ff93a87a0b50425fa1bf3c"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-home-sol.png",
+      "bytes": 163150,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "a141c0eaf3909863d4c2b361d20510db74160f9d92cce0defea318b0a9a5db50"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-work-bunzo-initial.png",
+      "bytes": 114375,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "2721f92b13bc38e8dc0c9aabc041db8b738dd43c2e469a5bcc0dc24f2a6b5c03"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-work-bunzo-middle.png",
+      "bytes": 132325,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "84bd3e8405d478d4784ed3845608ae5b1c0d58b72efcda517280bd0cf55909fa"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-work-bunzo-expanded.png",
+      "bytes": 156903,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "4e07e79867abdf0f20b19f62ec2c7c5222814825f4dbd5c3ad1283b529f66782"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-work-sol-community-center-initial.png",
+      "bytes": 113265,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "9ca4e95f643f1081d25dfde91f83f6c7509a841ce0d3f3041153fb1fb41d2c67"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-work-sol-community-center-middle.png",
+      "bytes": 62165,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "887522f3340caab8d9e8042e1347457520eed275796d916039d173350f135921"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-work-sol-community-center-expanded.png",
+      "bytes": 149125,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "454923ed24f9c69276cbfcfb678033d177a2a422dd39e2fe8c90a824d2d34049"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-case-sol.png",
+      "bytes": 179621,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "f4f464b646f282dde5a20780b9f0461d4f33fb26245dbc5cd315fb65db0eec4c"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-contact.png",
+      "bytes": 49175,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "132ebb80124afc132d94e3494b2027c5fccbaf6a5161ca79f5030717254b63dc"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-contact-form.png",
+      "bytes": 34813,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "9698a5f0b274d1995169a6d280a5951c7ca9e16e221b4b33df47c426d56845de"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-1440-about-opening.png",
+      "bytes": 484968,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "a6a9c4828ac702252bf1d500cb7c25ccea1fc2c5a0d7f340974bef6bc7597628"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-1440-about-plaque.png",
+      "bytes": 510470,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "89db9182769b7b06aa8e7567fefdb5ba1183df0b3d91a60c4424c7ac6b367313"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-1440-about-atmosphere.png",
+      "bytes": 582046,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "86b57434ccccbd047afc2167c472eeedb852d0d103b7bed7c50ef187e489acf1"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-1440-about-copy.png",
+      "bytes": 638067,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "5248029a8682f037ea345f8fe33b824dd038d4405d1407b1268fdd635ac0df54"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-1440-about-settled.png",
+      "bytes": 669341,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "0a4a065ecf4b43d1e5e5ea3d8ecf501f7e7a5172da3409a83d55d756a114068c"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-1440-about-story.png",
+      "bytes": 173982,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "c1d06a58b69516bdf839300b37e962068d55f10931d4d1f0ab2d0f03681ddcbc"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-390-about-opening.png",
+      "bytes": 239640,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "15ea1a18dfce8f0d58f0514e9abdda8eadb9a2962d755ab0e4531d869cc9761f"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-390-about-plaque.png",
+      "bytes": 239309,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "7098d382104ca798b79e7483c0c5c5e23e607eb9c2ef76893b9dca5c3ffc5203"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-390-about-atmosphere.png",
+      "bytes": 238343,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "ebff0b0c2429a22021f2f98a7affe467a4b6a8272e55e13bf089d4ac66774de1"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-390-about-copy.png",
+      "bytes": 238824,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "137ffc9f64071486b4885e1e8e3804b5e428b98b0450ece24373869d1e4d9813"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-390-about-settled.png",
+      "bytes": 238361,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "be75c1080fec6f2aad95a7a97bcc0b08f12320a18baa9aebdcdc3f2aed3ab74d"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-390-about-story.png",
+      "bytes": 164162,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "4c96e990da555037d20c26c183a4bebfc55bdf6a5db70965cf137ff1d59ee3f0"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-home.png",
+      "bytes": 381689,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "0b30587d5ef133a09e5cc7ba44767c5b382ea762b4f9bbfc9f7950b37c09ccec"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-home-sol.png",
+      "bytes": 705630,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "a63a5afe604636e45d2f73ec291588f6eaa5960282a8ac5cbbc78ee6539067d8"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-work-bunzo-initial.png",
+      "bytes": 475001,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "2d909d4d29966f638c66c7c4ebe1147f1a7b83095aa776e3278690ca7f5db18c"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-work-bunzo-middle.png",
+      "bytes": 559074,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "4d58c43aac3051db287de7526a23acfd007ee2cab0dfd936558e7b914a0fae81"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-work-bunzo-expanded.png",
+      "bytes": 706201,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "eba3999b973dcd23c621aed17cdbb321bdfec54126d2cc457dcf64fe1286dec2"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-work-sol-community-center-initial.png",
+      "bytes": 348865,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "2e2f59a414253b2062a59a76f76b8077a00273518e1aee966b6acb0304e485a9"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-work-sol-community-center-middle.png",
+      "bytes": 168752,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "b60eb5c8e4ea1878d017ab1df8a07a2c5786c245e3d368c6cc650dd632f36fd6"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-work-sol-community-center-expanded.png",
+      "bytes": 845865,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "f3c4ba4bfbc4fa547ac382ae6eef0a828f9545855f9e724130617bcb43ecec3f"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-case-sol.png",
+      "bytes": 766207,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "4f6192d0d36afca75ec31b25db56082c3f92aef91934a7fcc6166493c7080553"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-motion-off.png",
+      "bytes": 844003,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "f47e122760f1dd6bda0b202eda9e3aaabcb4f2bc30e8058c101f39da0c59b87a"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-motion-on.png",
+      "bytes": 861966,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "9b594dd20cc0a5dc868dcf4af9d09125069dfa6d5b1ff395512edee5fc49ece4"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-contact.png",
+      "bytes": 92617,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "e9add601196c56e0192c0e16fd2060727a5af7ccebdb2c51d8e23aa8abaf949e"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-contact-form.png",
+      "bytes": 78451,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "98e36da0926faf0e25897200af0cf611ee3329f774e78ed992f5ac106bd5ec6b"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-home.png",
+      "bytes": 164834,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "999336fa017b68feb641e56eaa1641037ea2683c8270232fa1d74af5d200d5ee"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-home-sol.png",
+      "bytes": 211768,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "eb4514553cc85db3c0e44e88c4eaa3da77d986f1488ec241548f077cbf877ce9"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-work-bunzo-initial.png",
+      "bytes": 114972,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "a49c79f63251e3fc4d6bffcb927b9f1958344295edc83892b2500fca0cb298f3"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-work-bunzo-middle.png",
+      "bytes": 146580,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "50bf28a9f286734cef3f1763d7eab4027845805b7e329806e68f1f2a6328e441"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-work-bunzo-expanded.png",
+      "bytes": 167986,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "d759e24e31d94f96aabe93192e38dec7dd47147b05ee22d91ce3f38910353803"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-work-sol-community-center-initial.png",
+      "bytes": 147910,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "e0337958f258a08fef6860462bea0f8b5a9e47f23cd259a7c2e4dbfc9235837d"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-work-sol-community-center-middle.png",
+      "bytes": 99362,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "0d8ce37afbe0081aee0a18749b86a9d33d64ed32a1d79ece8b5d03a99b4982c0"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-work-sol-community-center-expanded.png",
+      "bytes": 145066,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "c880edf8b36ef97599c7c389be04ee6c74e83d62e0494be78c2635ef752aed8e"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-case-sol.png",
+      "bytes": 201375,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "6acfc3d5b2097e3426a49eb5b784a02f79fd4aae6bb9b9fe39cca970e32dfeaa"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-motion-off.png",
+      "bytes": 214026,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "91c19686889815fb5d10db4c31081c5e0e7818adb254d97a0d6cb6e8a631594b"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-motion-on.png",
+      "bytes": 230756,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "3282dbb4101abcd3706505258a2f862cec45fd72fec92c2e1d1fc328befdb02f"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-contact.png",
+      "bytes": 49175,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "132ebb80124afc132d94e3494b2027c5fccbaf6a5161ca79f5030717254b63dc"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-contact-form.png",
+      "bytes": 34813,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "9698a5f0b274d1995169a6d280a5951c7ca9e16e221b4b33df47c426d56845de"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-about-opening.png",
+      "bytes": 439595,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "25251e3aef46922c286242ac899b4bf29eb5dc092812fe2b406690591a3b1630"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-about-plaque.png",
+      "bytes": 499367,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "4b8ec8600718f2490c0d50904374a27ceb555d877547112a4aae308a1fc26635"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-about-atmosphere.png",
+      "bytes": 567699,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "80766a83fc912496108b3cf2d84a2ac03a77a01ba92fd7151ae35b4c98526016"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-about-copy.png",
+      "bytes": 637389,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "cee3faa4566ff1deb236e3d7e8af02a2c56413cfd269f016188a4229574fbe8f"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-about-settled.png",
+      "bytes": 669400,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "f06e9f3ebfc9289b3cca46bda9e10bcd559e982928d535de8a5caaab616b16ed"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-about-story.png",
+      "bytes": 173852,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "8bf2cc1839d1f577bf4a31c83ceb50711df23f335f2a4e99eebaa9ef6ecbe128"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-services-opening.png",
+      "bytes": 75600,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "5705428d219eceb74d98540893f435d56d76f8c953d30f0d32cc51688ac8a43e"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-services-middle.png",
+      "bytes": 102116,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "bd571852ea2dcbe27205ed2091cb678c3b1ff7bc42ffc6aa25513f22adb0649c"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-services-completed-cycle.png",
+      "bytes": 98702,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "b4c55f59aed51df8b36a1894034284c3c19cdf60c07bc6f5784d029272bb6821"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-puzzle-early.png",
+      "bytes": 99888,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "2acb094d10ac3da2e1011225455017554753dec0ed13266e3b160b9d2a24aa34"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-puzzle-composed.png",
+      "bytes": 98947,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "82c744d759c9fcd623b5971c826db85616bd35942a2ff60118787d12957f62b5"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-footer-arrive.png",
+      "bytes": 96521,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "e2378f0deaa7aa4e1a3f811eeaa1000644a2857a1db3cfa02378639daef56f31"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-footer-expanded.png",
+      "bytes": 680147,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "c84678bdcd46a0524f2c7dc1e91d5be46b765eea924a9d1dfc364201e9017ef7"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-footer-reverse.png",
+      "bytes": 157461,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "1bd75364032fdcc9704e0ea04364d7b643974d106ab08e61a00d6fc87f184569"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-about-opening.png",
+      "bytes": 159116,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "6feca8be231c4503bedd0b4744d9e9a7c2f6b7affa6d72dd6406345548f5c7a0"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-about-plaque.png",
+      "bytes": 178195,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "1baeea1c32a8ba947c7d48a8dea232d2a80f0942fc29bae461597a6835465d98"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-about-atmosphere.png",
+      "bytes": 206882,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "12c1bf8ea06613fcecb5694f157a9f27919db135fa5b6b91ac0336492adfdacc"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-about-copy.png",
+      "bytes": 228613,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "203545e403ac3d72e23481e2a7a76697bb7b8bc252f1dcf51bf046d34f1cd360"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-about-settled.png",
+      "bytes": 238430,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "dbb864f1ffed9adb33825a9a814861c0846cdf4ea94221080c9cdced1695d8d1"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-about-story.png",
+      "bytes": 164144,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "d2ce3341e754a1be32630c9268de3c972c5c64737480fec969f3be85569bbe5b"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-services-opening.png",
+      "bytes": 45072,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "4d90ac6283969673bc15e97ad85c3cfc8520d73674c7fc77f88f3fe9338d9c8c"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-services-middle.png",
+      "bytes": 53956,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "2a236daee7c2d4b9e721736e309db797be2e404aac815793853c8e8e09a2e44b"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-services-completed-cycle.png",
+      "bytes": 41410,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "ab234818ac7f92e86fa48af2bd3b475e9c67bbbf3e94f0cea7ad4e220c3c4bc7"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-puzzle-early.png",
+      "bytes": 38530,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "9cdbe9e8025deec5142a3ff8a0d3c2c55fa60f9abb9a0ab35ab4684f30bddc0f"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-puzzle-composed.png",
+      "bytes": 37858,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "911c04becd712209329c780b4bcf6817206c51f8b3a841a6842acbfa53a25a2e"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-footer-arrive.png",
+      "bytes": 48145,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "49ae6a54a874e112378868ef0d6409e47522aebba6b0aab18cab4206d65ed259"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-footer-expanded.png",
+      "bytes": 218472,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "bd4aebdf9fc8f4f305844a2fa8589b3e16e9733db6300f85e898ddf8475bdd21"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-footer-reverse.png",
+      "bytes": 86546,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "b622345681ef7e6c43d6cb056e461969bec80fd24cd6f78c3f49e7aa33324b66"
+    },
+    {
+      "manifest": "native-background-capture.json",
+      "file": "native-background-1440-returned.png",
+      "bytes": 435210,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "30bea2fa5374f43f38e6cfe1324d5f871b2dfa67e4d5ba04f6d8662727d02cfc"
+    },
+    {
+      "manifest": "native-background-capture.json",
+      "file": "native-background-390-returned.png",
+      "bytes": 95727,
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "096ce5c48218f843ce87941ad5f7ed40f03fe89613ee430de69674ed3f6506f3"
+    }
+  ],
+  "recordings": [
+    {
+      "manifest": "before-capture.json",
+      "file": "before-1440-journey.mp4",
+      "width": 1440,
+      "height": 900,
+      "durationSeconds": 54.56,
+      "bytes": 5500159,
+      "sha256": "11b02c21d400ef557ca426bf69f8958ad4bc3b1c155865bc3142a28ee9dba413",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native/page@bc4109baa8184ec1bc28ea9406102801.webm"
+    },
+    {
+      "manifest": "before-capture.json",
+      "file": "before-390-journey.mp4",
+      "width": 390,
+      "height": 844,
+      "durationSeconds": 41.64,
+      "bytes": 1964933,
+      "sha256": "166cfb9ffc6bb390ab9d878c1a27cd247ec9976636a542197e495668ac743728",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native/page@1d31856beb47690da6a7dd6850b68639.webm"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-1440-about-startup.mp4",
+      "width": 1440,
+      "height": 900,
+      "description": "Cold About startup, real ordered scenes/static fallback, settled composition and native scroll",
+      "durationSeconds": 7.52,
+      "bytes": 806169,
+      "sha256": "e93207d4e05d3d74194f0e8dbb5a5891ae10e1b42142d549fb21d91b05979fe3",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@20037e9b559fa72358de20a2121ccc19.webm"
+    },
+    {
+      "manifest": "before-scenes-capture.json",
+      "file": "before-390-about-startup.mp4",
+      "width": 390,
+      "height": 844,
+      "description": "Cold About startup, real ordered scenes/static fallback, settled composition and native scroll",
+      "durationSeconds": 7,
+      "bytes": 218522,
+      "sha256": "c0367aa23d06018726c5acf4caed584400c608006fe26f40446ffadd323a5807",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@65dff44c2222b6962b583df4f215687b.webm"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-1440-journey.mp4",
+      "width": 1440,
+      "height": 900,
+      "durationSeconds": 53.48,
+      "bytes": 5816047,
+      "sha256": "12e6f00dba635d6901d0aa02d251a5ab2a5b09d4a3446631b82a43ad9d4c4c1f",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native/page@79a695e72feaffd5fa24b9ce41ac6a06.webm"
+    },
+    {
+      "manifest": "after-capture.json",
+      "file": "after-390-journey.mp4",
+      "width": 390,
+      "height": 844,
+      "durationSeconds": 43.44,
+      "bytes": 2415823,
+      "sha256": "29931eb3a7e3344ea8b099078d0987f85a608b3d96707535056a3399fea96720",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native/page@22872ce99214eaec202d4ce2b4ee54dd.webm"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-about-startup.mp4",
+      "width": 1440,
+      "height": 900,
+      "description": "Cold About startup, real ordered scenes/static fallback, settled composition and native scroll",
+      "durationSeconds": 7.96,
+      "bytes": 887669,
+      "sha256": "e46e8efe11ab0d7c852b91f571588cd14c0fba3697e88bbf151efccb0057eede",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@748ff5b7864741c5bcd249d41949a6a3.webm"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-1440-preserved-services-footer.mp4",
+      "width": 1440,
+      "height": 900,
+      "description": "Preserved Services cycle, real Brand Identity navigation/puzzle and forward/reverse raster footer",
+      "durationSeconds": 51.08,
+      "bytes": 3118649,
+      "sha256": "f268dfe1cc5a6d4a411b67ba346b16236d6f903b626bccaf8032ad93843d6df7",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@c1f56261e25d623aa1d2ded093e0a41e.webm"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-about-startup.mp4",
+      "width": 390,
+      "height": 844,
+      "description": "Cold About startup, real ordered scenes/static fallback, settled composition and native scroll",
+      "durationSeconds": 6.92,
+      "bytes": 340065,
+      "sha256": "ab00bf31b69eaf744e40ee8bd25e138dc430ba3cc4f86d27b5af9666b1671951",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@181089b0ec9617a409aecb20cf2d21c7.webm"
+    },
+    {
+      "manifest": "after-scenes-capture.json",
+      "file": "after-390-preserved-services-footer.mp4",
+      "width": 390,
+      "height": 844,
+      "description": "Preserved Services cycle, real Brand Identity navigation/puzzle and forward/reverse raster footer",
+      "durationSeconds": 35.4,
+      "bytes": 1241341,
+      "sha256": "2021d3daa690e1a5d580cf760d2457a1be5f64039036927859843ac448e23a18",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@3b34ec6fd276e23892249d296c9ea798.webm"
+    },
+    {
+      "manifest": "native-background-capture.json",
+      "width": 1440,
+      "file": "native-background-1440.mp4",
+      "durationSeconds": 10.48,
+      "bytes": 963895,
+      "sha256": "f91140fde889670690a1905ad2114e3146ef4fab3c7b217bee1d536923e0d6e2",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-background/page@6888708a0661c74e071d4ecdfbe0a784.webm"
+    },
+    {
+      "manifest": "native-background-capture.json",
+      "width": 390,
+      "file": "native-background-390.mp4",
+      "durationSeconds": 8.48,
+      "bytes": 372357,
+      "sha256": "ad4bbc5bcd1e9e94f645aa160e841c381691475861478a5dee1373e8d03c3a45",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-background/page@74cf739944cc0cd57125f52ac3fd9260.webm"
+    }
+  ]
+}

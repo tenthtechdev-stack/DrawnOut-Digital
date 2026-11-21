@@ -1,0 +1,5499 @@
+{
+  "capturedAt": "2026-11-20T17:19:32.724Z",
+  "mode": "after",
+  "sourceCommit": "1569b260dce67216444a4f0fe96cfe95ebb2905e",
+  "sourceFiles": {
+    "src/components/about/PremiumAboutHero.astro": "5bf94b271a9823e6080210456a6b6315c78faefec4c1ce533cd6ba666140982c",
+    "src/scripts/about-motion.ts": "731abcf08ed00a1ffe844a0f87616f862ff1590d981cd3a1bc4e87facb242a6e",
+    "src/styles/about-premium-hero.css": "221a0ffb30ca9c2509dfa164f773dfad2dae76c7c97c47269739e6bd0056fc1c",
+    "src/scripts/services-hero.ts": "67f3763760a9483891773a4bc01ee7622c7d7cccb93e04d038bb4158ca52bd55",
+    "src/scripts/enquiry-puzzle.ts": "13b4216c2f9590f6a7392a3249a3ed57ac1d1127c261bf18734a7b39f3b008fd",
+    "src/scripts/signature-footer.ts": "739b613f73ead31eee5adcef08a8e7eee7f43ffe3e0b319936cd1611e7c61903",
+    "public/scripts/about-arrival.js": "8611eeab92e0aab20d3b576ffc20fbd0fbc303ff790ef6215220e078800335ff"
+  },
+  "baseURL": "http://127.0.0.1:4480",
+  "productionAboutHTMLSHA256": "9b82b0a926bef304ec54196940fa5527856f607cbc28a33061579c2ed9cafe45",
+  "method": "Actual production Chromium viewport recordings and unretouched PNGs. About is a cold direct visit; phase samples follow the real startup clock without timeline seeks or altered attributes/styles. The actual observed entrance/scene/state/reason and image/animation state accompany every scheduled sample, including any parent static fallback. Native wheel input and an ordinary service link reach the preserved Services hero, Brand Identity puzzle and reversible raster footer. Mobile is Chromium touch/viewport emulation, not a physical-device benchmark.",
+  "browser": "154.0.8037.57",
+  "screenshots": [
+    {
+      "file": "after-1440-about-opening.png",
+      "width": 1440,
+      "description": "About natural opening startup sample (target 180ms from real start)",
+      "bytes": 439595,
+      "sha256": "25251e3aef46922c286242ac899b4bf29eb5dc092812fe2b406690591a3b1630",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 532.7999999998137,
+      "actualTimeAfter": 1307.3999999999069
+    },
+    {
+      "file": "after-1440-about-plaque.png",
+      "width": 1440,
+      "description": "About natural plaque startup sample (target 900ms from real start)",
+      "bytes": 499367,
+      "sha256": "4b8ec8600718f2490c0d50904374a27ceb555d877547112a4aae308a1fc26635",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 1325.7999999998137,
+      "actualTimeAfter": 1648.3999999999069
+    },
+    {
+      "file": "after-1440-about-atmosphere.png",
+      "width": 1440,
+      "description": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "bytes": 567699,
+      "sha256": "80766a83fc912496108b3cf2d84a2ac03a77a01ba92fd7151ae35b4c98526016",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 1820.5,
+      "actualTimeAfter": 2281.899999999907
+    },
+    {
+      "file": "after-1440-about-copy.png",
+      "width": 1440,
+      "description": "About natural copy startup sample (target 2250ms from real start)",
+      "bytes": 637389,
+      "sha256": "cee3faa4566ff1deb236e3d7e8af02a2c56413cfd269f016188a4229574fbe8f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 2623.7999999998137,
+      "actualTimeAfter": 3154.7999999998137
+    },
+    {
+      "file": "after-1440-about-settled.png",
+      "width": 1440,
+      "description": "About natural settled startup sample (target 3950ms from real start)",
+      "bytes": 669400,
+      "sha256": "f06e9f3ebfc9289b3cca46bda9e10bcd559e982928d535de8a5caaab616b16ed",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 4322.899999999907,
+      "actualTimeAfter": 4888.200000000186
+    },
+    {
+      "file": "after-1440-about-story.png",
+      "width": 1440,
+      "description": "About native scroll into the story after settled arrival",
+      "bytes": 173852,
+      "sha256": "8bf2cc1839d1f577bf4a31c83ceb50711df23f335f2a4e99eebaa9ef6ecbe128",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 8029.700000000186,
+      "actualTimeAfter": 8244.899999999907
+    },
+    {
+      "file": "after-1440-services-opening.png",
+      "width": 1440,
+      "description": "Preserved Services live opening sample",
+      "bytes": 75600,
+      "sha256": "5705428d219eceb74d98540893f435d56d76f8c953d30f0d32cc51688ac8a43e",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 1593.5,
+      "actualTimeAfter": 1915
+    },
+    {
+      "file": "after-1440-services-middle.png",
+      "width": 1440,
+      "description": "Preserved Services live middle sample",
+      "bytes": 102116,
+      "sha256": "bd571852ea2dcbe27205ed2091cb678c3b1ff7bc42ffc6aa25513f22adb0649c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 7107.699999999721,
+      "actualTimeAfter": 7429.399999999907
+    },
+    {
+      "file": "after-1440-services-completed-cycle.png",
+      "width": 1440,
+      "description": "Preserved Services live completed-cycle sample",
+      "bytes": 98702,
+      "sha256": "b4c55f59aed51df8b36a1894034284c3c19cdf60c07bc6f5784d029272bb6821",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 15290.69999999972,
+      "actualTimeAfter": 15701.099999999627
+    },
+    {
+      "file": "after-1440-puzzle-early.png",
+      "width": 1440,
+      "description": "Preserved Brand Identity enquiry puzzle after native arrival",
+      "bytes": 99888,
+      "sha256": "2acb094d10ac3da2e1011225455017554753dec0ed13266e3b160b9d2a24aa34",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 4344,
+      "actualTimeAfter": 4752.100000000093
+    },
+    {
+      "file": "after-1440-puzzle-composed.png",
+      "width": 1440,
+      "description": "Preserved enquiry puzzle after its natural complete cycle",
+      "bytes": 98947,
+      "sha256": "82c744d759c9fcd623b5971c826db85616bd35942a2ff60118787d12957f62b5",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 11975.600000000093,
+      "actualTimeAfter": 12317
+    },
+    {
+      "file": "after-1440-footer-arrive.png",
+      "width": 1440,
+      "description": "Existing raster footer prototype: native arrival",
+      "bytes": 96521,
+      "sha256": "e2378f0deaa7aa4e1a3f811eeaa1000644a2857a1db3cfa02378639daef56f31",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 16145.399999999907,
+      "actualTimeAfter": 16254.399999999907
+    },
+    {
+      "file": "after-1440-footer-expanded.png",
+      "width": 1440,
+      "description": "Existing raster footer prototype: expanded settled composition, contact and navigation",
+      "bytes": 680147,
+      "sha256": "c84678bdcd46a0524f2c7dc1e91d5be46b765eea924a9d1dfc364201e9017ef7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 23700.600000000093,
+      "actualTimeAfter": 24072.5
+    },
+    {
+      "file": "after-1440-footer-reverse.png",
+      "width": 1440,
+      "description": "Existing raster footer prototype: native reverse scroll",
+      "bytes": 157461,
+      "sha256": "1bd75364032fdcc9704e0ea04364d7b643974d106ab08e61a00d6fc87f184569",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 30832.5,
+      "actualTimeAfter": 30962
+    },
+    {
+      "file": "after-390-about-opening.png",
+      "width": 390,
+      "description": "About natural opening startup sample (target 180ms from real start)",
+      "bytes": 159116,
+      "sha256": "6feca8be231c4503bedd0b4744d9e9a7c2f6b7affa6d72dd6406345548f5c7a0",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 492.20000000018626,
+      "actualTimeAfter": 732.2000000001863
+    },
+    {
+      "file": "after-390-about-plaque.png",
+      "width": 390,
+      "description": "About natural plaque startup sample (target 900ms from real start)",
+      "bytes": 178195,
+      "sha256": "1baeea1c32a8ba947c7d48a8dea232d2a80f0942fc29bae461597a6835465d98",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 1074.7000000001863,
+      "actualTimeAfter": 1138.2999999998137
+    },
+    {
+      "file": "after-390-about-atmosphere.png",
+      "width": 390,
+      "description": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "bytes": 206882,
+      "sha256": "12c1bf8ea06613fcecb5694f157a9f27919db135fa5b6b91ac0336492adfdacc",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 1627,
+      "actualTimeAfter": 1732.7000000001863
+    },
+    {
+      "file": "after-390-about-copy.png",
+      "width": 390,
+      "description": "About natural copy startup sample (target 2250ms from real start)",
+      "bytes": 228613,
+      "sha256": "203545e403ac3d72e23481e2a7a76697bb7b8bc252f1dcf51bf046d34f1cd360",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 2426.100000000093,
+      "actualTimeAfter": 2614.7000000001863
+    },
+    {
+      "file": "after-390-about-settled.png",
+      "width": 390,
+      "description": "About natural settled startup sample (target 3950ms from real start)",
+      "bytes": 238430,
+      "sha256": "dbb864f1ffed9adb33825a9a814861c0846cdf4ea94221080c9cdced1695d8d1",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 4139.700000000186,
+      "actualTimeAfter": 4276.399999999907
+    },
+    {
+      "file": "after-390-about-story.png",
+      "width": 390,
+      "description": "About native scroll into the story after settled arrival",
+      "bytes": 164144,
+      "sha256": "d2ce3341e754a1be32630c9268de3c972c5c64737480fec969f3be85569bbe5b",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 6372.299999999814,
+      "actualTimeAfter": 6462.200000000186
+    },
+    {
+      "file": "after-390-services-opening.png",
+      "width": 390,
+      "description": "Preserved Services live opening sample",
+      "bytes": 45072,
+      "sha256": "4d90ac6283969673bc15e97ad85c3cfc8520d73674c7fc77f88f3fe9338d9c8c",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 1460.3999999999069,
+      "actualTimeAfter": 1633.8999999999069
+    },
+    {
+      "file": "after-390-services-middle.png",
+      "width": 390,
+      "description": "Preserved Services live middle sample",
+      "bytes": 53956,
+      "sha256": "2a236daee7c2d4b9e721736e309db797be2e404aac815793853c8e8e09a2e44b",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 6955.299999999814,
+      "actualTimeAfter": 7077.5
+    },
+    {
+      "file": "after-390-services-completed-cycle.png",
+      "width": 390,
+      "description": "Preserved Services live completed-cycle sample",
+      "bytes": 41410,
+      "sha256": "ab234818ac7f92e86fa48af2bd3b475e9c67bbbf3e94f0cea7ad4e220c3c4bc7",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 15153.100000000093,
+      "actualTimeAfter": 15219.5
+    },
+    {
+      "file": "after-390-puzzle-early.png",
+      "width": 390,
+      "description": "Preserved Brand Identity enquiry puzzle after native arrival",
+      "bytes": 38530,
+      "sha256": "9cdbe9e8025deec5142a3ff8a0d3c2c55fa60f9abb9a0ab35ab4684f30bddc0f",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 3037.3000000002794,
+      "actualTimeAfter": 3125.3000000002794
+    },
+    {
+      "file": "after-390-puzzle-composed.png",
+      "width": 390,
+      "description": "Preserved enquiry puzzle after its natural complete cycle",
+      "bytes": 37858,
+      "sha256": "911c04becd712209329c780b4bcf6817206c51f8b3a841a6842acbfa53a25a2e",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 10345.80000000028,
+      "actualTimeAfter": 10474.700000000186
+    },
+    {
+      "file": "after-390-footer-arrive.png",
+      "width": 390,
+      "description": "Existing raster footer prototype: native arrival",
+      "bytes": 48145,
+      "sha256": "49ae6a54a874e112378868ef0d6409e47522aebba6b0aab18cab4206d65ed259",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 11631.900000000373,
+      "actualTimeAfter": 11685.80000000028
+    },
+    {
+      "file": "after-390-footer-expanded.png",
+      "width": 390,
+      "description": "Existing raster footer prototype: expanded settled composition, contact and navigation",
+      "bytes": 218472,
+      "sha256": "bd4aebdf9fc8f4f305844a2fa8589b3e16e9733db6300f85e898ddf8475bdd21",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 15370.200000000186,
+      "actualTimeAfter": 15501.400000000373
+    },
+    {
+      "file": "after-390-footer-reverse.png",
+      "width": 390,
+      "description": "Existing raster footer prototype: native reverse scroll",
+      "bytes": 86546,
+      "sha256": "b622345681ef7e6c43d6cb056e461969bec80fd24cd6f78c3f49e7aa33324b66",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 17531.80000000028,
+      "actualTimeAfter": 17603.600000000093
+    }
+  ],
+  "recordings": [
+    {
+      "file": "after-1440-about-startup.mp4",
+      "width": 1440,
+      "height": 900,
+      "description": "Cold About startup, real ordered scenes/static fallback, settled composition and native scroll",
+      "durationSeconds": 7.96,
+      "bytes": 887669,
+      "sha256": "e46e8efe11ab0d7c852b91f571588cd14c0fba3697e88bbf151efccb0057eede",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@748ff5b7864741c5bcd249d41949a6a3.webm"
+    },
+    {
+      "file": "after-1440-preserved-services-footer.mp4",
+      "width": 1440,
+      "height": 900,
+      "description": "Preserved Services cycle, real Brand Identity navigation/puzzle and forward/reverse raster footer",
+      "durationSeconds": 51.08,
+      "bytes": 3118649,
+      "sha256": "f268dfe1cc5a6d4a411b67ba346b16236d6f903b626bccaf8032ad93843d6df7",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@c1f56261e25d623aa1d2ded093e0a41e.webm"
+    },
+    {
+      "file": "after-390-about-startup.mp4",
+      "width": 390,
+      "height": 844,
+      "description": "Cold About startup, real ordered scenes/static fallback, settled composition and native scroll",
+      "durationSeconds": 6.92,
+      "bytes": 340065,
+      "sha256": "ab00bf31b69eaf744e40ee8bd25e138dc430ba3cc4f86d27b5af9666b1671951",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@181089b0ec9617a409aecb20cf2d21c7.webm"
+    },
+    {
+      "file": "after-390-preserved-services-footer.mp4",
+      "width": 390,
+      "height": 844,
+      "description": "Preserved Services cycle, real Brand Identity navigation/puzzle and forward/reverse raster footer",
+      "durationSeconds": 35.4,
+      "bytes": 1241341,
+      "sha256": "2021d3daa690e1a5d580cf760d2457a1be5f64039036927859843ac448e23a18",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@3b34ec6fd276e23892249d296c9ea798.webm"
+    }
+  ],
+  "measurements": [
+    {
+      "label": "About cold markup available",
+      "width": 1440,
+      "at": 433.29999999981374,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "portrait",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 16.0889)",
+          "opacity": "0.268687"
+        },
+        "plaque": {
+          "transform": "matrix(0.99863, -0.052336, 0.052336, 0.99863, 0, -26)",
+          "opacity": "0"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 19000
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 73.42600000000004,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural opening startup sample (target 180ms from real start)",
+      "width": 1440,
+      "at": 532.7999999998137,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "portrait",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 8.98653)",
+          "opacity": "0.591521"
+        },
+        "plaque": {
+          "transform": "matrix(0.99863, -0.052336, 0.052336, 0.99863, 0, -26)",
+          "opacity": "0"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 19000
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 173.42200000000008,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural opening startup sample (target 180ms from real start) captured",
+      "width": 1440,
+      "at": 1307.3999999999069,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "plaque",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(0.9999, -0.014129, 0.014129, 0.9999, 0, -7.01616)",
+          "opacity": "0.730148"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 583.3539999999098,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 583.3539999999098,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 583.3539999999098,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural plaque startup sample (target 900ms from real start)",
+      "width": 1440,
+      "at": 1325.7999999998137,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "plaque",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(0.9999, -0.014129, 0.014129, 0.9999, 0, -7.01616)",
+          "opacity": "0.730148"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 583.3539999999098,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 583.3539999999098,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 583.3539999999098,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 940.0999999999999,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural plaque startup sample (target 900ms from real start) captured",
+      "width": 1440,
+      "at": 1648.3999999999069,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "atmosphere",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(0.999998, -0.00191466, 0.00191466, 0.999998, 0, -0.95075)",
+          "opacity": "0.963433"
+        },
+        "gradient": {
+          "transform": "matrix(0.941799, 0, 0, 0.941799, 0, 0)",
+          "opacity": "0.168558"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 899.9539999999098,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 899.9539999999098,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 899.9539999999098,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1256.6999999999998,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1256.6999999999998,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 1256.6999999999998,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1256.6999999999998,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1256.6999999999998,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1256.6999999999998,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1256.6999999999998,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1256.6999999999998,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1256.6999999999998,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1256.6999999999998,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1256.6999999999998,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "width": 1440,
+      "at": 1820.5,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "atmosphere",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, -0.000254833, 0.000254833, 1, 0, -0.126541)",
+          "opacity": "0.995133"
+        },
+        "gradient": {
+          "transform": "matrix(0.977251, 0, 0, 0.977251, 0, 0)",
+          "opacity": "0.675011"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 1099.95399999991,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 1099.95399999991,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 1099.95399999991,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1456.7,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1456.7,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 1456.7,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1456.7,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1456.7,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1456.7,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1456.7,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1456.7,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1456.7,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1456.7,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1456.7,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural atmosphere startup sample (target 1450ms from real start) captured",
+      "width": 1440,
+      "at": 2281.899999999907,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "atmosphere",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "matrix(0.996756, 0, 0, 0.996756, 0, 0)",
+          "opacity": "0.953661"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 1483.2539999999099,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 1483.2539999999099,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 1483.2539999999099,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 1600,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1840,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 1840,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1840,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1840,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1840,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1840,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1840,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1840,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1840,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1840,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural copy startup sample (target 2250ms from real start)",
+      "width": 1440,
+      "at": 2623.7999999998137,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "transition",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "copy",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "matrix(0.99994, 0, 0, 0.99994, 0, 0)",
+          "opacity": "0.99915"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 6.23182)",
+          "opacity": "0.777435"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 1866.65399999991,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 1866.65399999991,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 1866.65399999991,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 1600,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 2223.3999999999996,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 2223.3999999999996,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2223.3999999999996,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2223.3999999999996,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2223.3999999999996,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2223.3999999999996,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2223.3999999999996,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2223.3999999999996,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2223.3999999999996,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2223.3999999999996,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural copy startup sample (target 2250ms from real start) captured",
+      "width": 1440,
+      "at": 3154.7999999998137,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "transition",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "copy",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 2383.25399999991,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 2383.25399999991,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 2383.25399999991,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 1600,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 2300,
+            "effectDuration": 1100
+          },
+          {
+            "state": "finished",
+            "currentTime": 2740,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2740,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2740,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2740,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2740,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2740,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2740,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2740,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2740,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural settled startup sample (target 3950ms from real start)",
+      "width": 1440,
+      "at": 4322.899999999907,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "settled",
+        "aboutArrivalScene": "settled",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "3852.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 3583.15399999991,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 3583.15399999991,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 3583.15399999991,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural settled startup sample (target 3950ms from real start) captured",
+      "width": 1440,
+      "at": 4888.200000000186,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "settled",
+        "aboutArrivalScene": "settled",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "3852.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 4116.45399999991,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 4116.45399999991,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 4116.45399999991,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About native scroll into the story after settled arrival",
+      "width": 1440,
+      "at": 8029.700000000186,
+      "route": "/about",
+      "scrollY": 650,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "settled",
+        "aboutArrivalScene": "settled",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "3852.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 7283.05399999991,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 7283.05399999991,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 7283.05399999991,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About native scroll into the story after settled arrival captured",
+      "width": 1440,
+      "at": 8244.899999999907,
+      "route": "/about",
+      "scrollY": 650,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "349.00",
+        "aboutEntrance": "settled",
+        "aboutArrivalScene": "settled",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "3852.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 7483.05399999991,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 7483.05399999991,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 7483.05399999991,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live opening sample",
+      "width": 1440,
+      "at": 1593.5,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "0",
+        "servicesPhase": "sweep",
+        "servicesTime": "0.351",
+        "servicesCycle": "0",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live opening sample captured",
+      "width": 1440,
+      "at": 1915,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "0",
+        "servicesPhase": "sweep",
+        "servicesTime": "0.662",
+        "servicesCycle": "0",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live middle sample",
+      "width": 1440,
+      "at": 7107.699999999721,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "2",
+        "servicesPhase": "service",
+        "servicesTime": "5.844",
+        "servicesCycle": "0",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live middle sample captured",
+      "width": 1440,
+      "at": 7429.399999999907,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "2",
+        "servicesPhase": "service",
+        "servicesTime": "6.123",
+        "servicesCycle": "0",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live completed-cycle sample",
+      "width": 1440,
+      "at": 15290.69999999972,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "0",
+        "servicesPhase": "reset",
+        "servicesTime": "13.987",
+        "servicesCycle": "0",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live completed-cycle sample captured",
+      "width": 1440,
+      "at": 15701.099999999627,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "0",
+        "servicesPhase": "sweep",
+        "servicesTime": "0.428",
+        "servicesCycle": "1",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Brand Identity enquiry puzzle after native arrival",
+      "width": 1440,
+      "at": 4344,
+      "route": "/services/brand-identity",
+      "scrollY": 2481,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "playing",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "",
+        "enquiryCycle": "0",
+        "enquiryTime": "2.448",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.99365, -0.11255, 0.11255, 0.99365, -35.2944, -0.21248)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98799, 0.15452, -0.15452, 0.98799, 59.9133, -96.9725)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1026, 8.42414)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.8678, 103.205)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4538, 71.6189)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Brand Identity enquiry puzzle after native arrival captured",
+      "width": 1440,
+      "at": 4752.100000000093,
+      "route": "/services/brand-identity",
+      "scrollY": 2481,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "playing",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "",
+        "enquiryCycle": "0",
+        "enquiryTime": "2.921",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(1, -0.00024, 0.00024, 1, -0.07786, -0.00316)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.99957, 0.0292, -0.0292, 0.99957, 10.3231, -18.6089)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99205, 0.12583, -0.12583, 0.99205, 29.8052, 7.28248)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13916, 0.13916, 0.99027, -19.8657, 103.198)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4538, 71.6189)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved enquiry puzzle after its natural complete cycle",
+      "width": 1440,
+      "at": 11975.600000000093,
+      "route": "/services/brand-identity",
+      "scrollY": 2481,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "playing",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "",
+        "enquiryCycle": "1",
+        "enquiryTime": "2.264",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.98445, -0.17565, 0.17565, 0.98445, -54.2586, 0.51191)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98769, 0.15643, -0.15643, 0.98769, 60.7383, -98.149)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1026, 8.42414)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.8678, 103.205)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4538, 71.6189)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved enquiry puzzle after its natural complete cycle captured",
+      "width": 1440,
+      "at": 12317,
+      "route": "/services/brand-identity",
+      "scrollY": 2481,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "playing",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "",
+        "enquiryCycle": "1",
+        "enquiryTime": "2.623",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.99957, -0.02919, 0.02919, 0.99957, -9.34019, -0.2469)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.99048, 0.13769, -0.13769, 0.99048, 52.7388, -86.5886)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13914, -0.13914, 0.99027, 33.0959, 8.42304)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.8678, 103.205)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4538, 71.6189)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: native arrival",
+      "width": 1440,
+      "at": 16145.399999999907,
+      "route": "/services/brand-identity",
+      "scrollY": 3097,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "3.622",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(1, 1e-05, -1e-05, 1, 0.00168, 0.001)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.9999, -0.01447, 0.01447, 0.9999, -2.55622, 10.3883)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99741, -0.07197, 0.07197, 0.99741, -39.3971, 58.859)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.1126",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.8316, 0, 0, 0.8316, 25.1287, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 424.397)",
+          "opacity": "0.4642"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -725.943)",
+          "opacity": "0.2346"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: native arrival captured",
+      "width": 1440,
+      "at": 16254.399999999907,
+      "route": "/services/brand-identity",
+      "scrollY": 3097,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "3.622",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(1, 1e-05, -1e-05, 1, 0.00168, 0.001)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.9999, -0.01447, 0.01447, 0.9999, -2.55622, 10.3883)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99741, -0.07197, 0.07197, 0.99741, -39.3971, 58.859)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.1126",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.8316, 0, 0, 0.8316, 25.1287, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 424.397)",
+          "opacity": "0.4642"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -725.943)",
+          "opacity": "0.2346"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: expanded settled composition, contact and navigation",
+      "width": 1440,
+      "at": 23700.600000000093,
+      "route": "/services/brand-identity",
+      "scrollY": 3976,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "3.622",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(1, 1e-05, -1e-05, 1, 0.00168, 0.001)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.9999, -0.01447, 0.01447, 0.9999, -2.55622, 10.3883)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99741, -0.07197, 0.07197, 0.99741, -39.3971, 58.859)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "1.0000",
+        "footerPhase": "expand",
+        "signature": {
+          "transform": "matrix(1.38, 0, 0, 1.38, -65.6637, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: expanded settled composition, contact and navigation captured",
+      "width": 1440,
+      "at": 24072.5,
+      "route": "/services/brand-identity",
+      "scrollY": 3976,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "3.622",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(1, 1e-05, -1e-05, 1, 0.00168, 0.001)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.9999, -0.01447, 0.01447, 0.9999, -2.55622, 10.3883)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99741, -0.07197, 0.07197, 0.99741, -39.3971, 58.859)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "1.0000",
+        "footerPhase": "expand",
+        "signature": {
+          "transform": "matrix(1.38, 0, 0, 1.38, -65.6637, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: native reverse scroll",
+      "width": 1440,
+      "at": 30832.5,
+      "route": "/services/brand-identity",
+      "scrollY": 3187,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "3.622",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(1, 1e-05, -1e-05, 1, 0.00168, 0.001)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.9999, -0.01447, 0.01447, 0.9999, -2.55622, 10.3883)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99741, -0.07197, 0.07197, 0.99741, -39.3971, 58.859)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.2065",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.8746, 0, 0, 0.8746, 18.7101, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 315.986)",
+          "opacity": "0.6011"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -540.501)",
+          "opacity": "0.4301"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: native reverse scroll captured",
+      "width": 1440,
+      "at": 30962,
+      "route": "/services/brand-identity",
+      "scrollY": 3187,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "3.622",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(1, 1e-05, -1e-05, 1, 0.00168, 0.001)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.9999, -0.01447, 0.01447, 0.9999, -2.55622, 10.3883)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99741, -0.07197, 0.07197, 0.99741, -39.3971, 58.859)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.2065",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.8746, 0, 0, 0.8746, 18.7101, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 315.986)",
+          "opacity": "0.6011"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -540.501)",
+          "opacity": "0.4301"
+        }
+      }
+    },
+    {
+      "label": "About cold markup available",
+      "width": 390,
+      "at": 407.70000000018626,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "portrait",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 6.31501)",
+          "opacity": "0.712954"
+        },
+        "plaque": {
+          "transform": "matrix(0.99863, -0.052336, 0.052336, 0.99863, 0, -26)",
+          "opacity": "0"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 19000
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 230.0639999999069,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "static",
+        "signature": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        }
+      }
+    },
+    {
+      "label": "About natural opening startup sample (target 180ms from real start)",
+      "width": 390,
+      "at": 492.20000000018626,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "portrait",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 4.6551)",
+          "opacity": "0.788404"
+        },
+        "plaque": {
+          "transform": "matrix(0.99863, -0.052336, 0.052336, 0.99863, 0, -26)",
+          "opacity": "0"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 19000
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 280.0619999999069,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural opening startup sample (target 180ms from real start) captured",
+      "width": 390,
+      "at": 732.2000000001863,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "portrait",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0.865509)",
+          "opacity": "0.960659"
+        },
+        "plaque": {
+          "transform": "matrix(0.99863, -0.052336, 0.052336, 0.99863, 0, -26)",
+          "opacity": "0"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 300.0200000000303,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 300.0200000000303,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 300.0200000000303,
+            "effectDuration": 19000
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 546.6999999999069,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural plaque startup sample (target 900ms from real start)",
+      "width": 390,
+      "at": 1074.7000000001863,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "plaque",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 5.17814e-05)",
+          "opacity": "0.999998"
+        },
+        "plaque": {
+          "transform": "matrix(0.999829, -0.0185012, 0.0185012, 0.999829, 0, -9.18756)",
+          "opacity": "0.646632"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 649.9200000000302,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 649.9200000000302,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 649.9200000000302,
+            "effectDuration": 19000
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 896.5999999999068,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural plaque startup sample (target 900ms from real start) captured",
+      "width": 390,
+      "at": 1138.2999999998137,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "plaque",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(0.999925, -0.0122625, 0.0122625, 0.999925, 0, -6.08927)",
+          "opacity": "0.765797"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 716.6200000000302,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 716.6200000000302,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 716.6200000000302,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 963.2999999999067,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 963.2999999999067,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 963.2999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 963.2999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 963.2999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 963.2999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 963.2999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 963.2999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 963.2999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 963.2999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 963.2999999999067,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "width": 390,
+      "at": 1627,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "atmosphere",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, -0.000295528, 0.000295528, 1, 0, -0.146748)",
+          "opacity": "0.994356"
+        },
+        "gradient": {
+          "transform": "matrix(0.976049, 0, 0, 0.976049, 0, 0)",
+          "opacity": "0.657841"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 1199.9200000000303,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 1199.9200000000303,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 1199.9200000000303,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1446.599999999907,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1446.599999999907,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 1446.599999999907,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1446.599999999907,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1446.599999999907,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1446.599999999907,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1446.599999999907,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1446.599999999907,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1446.599999999907,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1446.599999999907,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1446.599999999907,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural atmosphere startup sample (target 1450ms from real start) captured",
+      "width": 390,
+      "at": 1732.7000000001863,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "atmosphere",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, -3.20117e-05, 3.20117e-05, 1, 0, -0.0158958)",
+          "opacity": "0.999389"
+        },
+        "gradient": {
+          "transform": "matrix(0.9855, 0, 0, 0.9855, 0, 0)",
+          "opacity": "0.792851"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 1299.92000000003,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 1299.92000000003,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 1299.92000000003,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1546.5999999999067,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1546.5999999999067,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 1546.5999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1546.5999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1546.5999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1546.5999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1546.5999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1546.5999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1546.5999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1546.5999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1546.5999999999067,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural copy startup sample (target 2250ms from real start)",
+      "width": 390,
+      "at": 2426.100000000093,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "transition",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "copy",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "matrix(0.999972, 0, 0, 0.999972, 0, 0)",
+          "opacity": "0.999595"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 5.25722)",
+          "opacity": "0.812242"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 1999.92000000003,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 1999.92000000003,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 1999.92000000003,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 1600,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 2246.5999999999067,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 2246.5999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2246.5999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2246.5999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2246.5999999999067,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2246.5999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2246.5999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2246.5999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2246.5999999999067,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2246.5999999999067,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural copy startup sample (target 2250ms from real start) captured",
+      "width": 390,
+      "at": 2614.7000000001863,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "transition",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "running",
+        "aboutArrivalScene": "copy",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 1.49791)",
+          "opacity": "0.946503"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 2166.6200000000304,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 2166.6200000000304,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 2166.6200000000304,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 1600,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 2300,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 2413.299999999907,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2413.299999999907,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2413.299999999907,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2413.299999999907,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2413.299999999907,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2413.299999999907,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2413.299999999907,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2413.299999999907,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2413.299999999907,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural settled startup sample (target 3950ms from real start)",
+      "width": 390,
+      "at": 4139.700000000186,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "settled",
+        "aboutArrivalScene": "settled",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "3673.00",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 3683.12000000003,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 3683.12000000003,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 3683.12000000003,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural settled startup sample (target 3950ms from real start) captured",
+      "width": 390,
+      "at": 4276.399999999907,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "settled",
+        "aboutArrivalScene": "settled",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "3673.00",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 3849.8200000000306,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 3849.8200000000306,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 3849.8200000000306,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About native scroll into the story after settled arrival",
+      "width": 390,
+      "at": 6372.299999999814,
+      "route": "/about",
+      "scrollY": 500,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "settled",
+        "aboutArrivalScene": "settled",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "3673.00",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 5949.82000000003,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 5949.82000000003,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 5949.82000000003,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About native scroll into the story after settled arrival captured",
+      "width": 390,
+      "at": 6462.200000000186,
+      "route": "/about",
+      "scrollY": 500,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutAmbient": "running",
+        "aboutBoot": "handed-off",
+        "aboutStartedAt": "172.10",
+        "aboutEntrance": "settled",
+        "aboutArrivalScene": "settled",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "3673.00",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 6033.02000000003,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 6033.02000000003,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 6033.02000000003,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live opening sample",
+      "width": 390,
+      "at": 1460.3999999999069,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "0",
+        "servicesPhase": "service",
+        "servicesTime": "1.047",
+        "servicesCycle": "0",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live opening sample captured",
+      "width": 390,
+      "at": 1633.8999999999069,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "0",
+        "servicesPhase": "service",
+        "servicesTime": "1.229",
+        "servicesCycle": "0",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live middle sample",
+      "width": 390,
+      "at": 6955.299999999814,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "2",
+        "servicesPhase": "service",
+        "servicesTime": "6.546",
+        "servicesCycle": "0",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live middle sample captured",
+      "width": 390,
+      "at": 7077.5,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "2",
+        "servicesPhase": "service",
+        "servicesTime": "6.662",
+        "servicesCycle": "0",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live completed-cycle sample",
+      "width": 390,
+      "at": 15153.100000000093,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "0",
+        "servicesPhase": "sweep",
+        "servicesTime": "0.745",
+        "servicesCycle": "1",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Services live completed-cycle sample captured",
+      "width": 390,
+      "at": 15219.5,
+      "route": "/services",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": null,
+      "services": {
+        "servicesHero": "",
+        "servicesActive": "0",
+        "servicesPhase": "sweep",
+        "servicesTime": "0.812",
+        "servicesCycle": "1",
+        "servicesMode": "animated",
+        "servicesPauseReasons": "",
+        "servicesState": "playing",
+        "visibleScene": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Brand Identity enquiry puzzle after native arrival",
+      "width": 390,
+      "at": 3037.3000000002794,
+      "route": "/services/brand-identity",
+      "scrollY": 3316,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "playing",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "",
+        "enquiryCycle": "0",
+        "enquiryTime": "1.899",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.98163, -0.19081, 0.19081, 0.98163, -58.7961, 0.77745)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98769, 0.15643, -0.15643, 0.98769, 60.8011, -98.2595)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1571, 8.32559)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.9163, 103.192)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4811, 71.6059)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved Brand Identity enquiry puzzle after native arrival captured",
+      "width": 390,
+      "at": 3125.3000000002794,
+      "route": "/services/brand-identity",
+      "scrollY": 3316,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "playing",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "",
+        "enquiryCycle": "0",
+        "enquiryTime": "1.978",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.98163, -0.19078, 0.19078, 0.98163, -58.786, 0.77822)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98769, 0.15643, -0.15643, 0.98769, 60.8011, -98.2595)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1571, 8.32559)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.9163, 103.192)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4811, 71.6059)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved enquiry puzzle after its natural complete cycle",
+      "width": 390,
+      "at": 10345.80000000028,
+      "route": "/services/brand-identity",
+      "scrollY": 3316,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "playing",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "",
+        "enquiryCycle": "1",
+        "enquiryTime": "1.413",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.98163, -0.19081, 0.19081, 0.98163, -58.7961, 0.77745)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98769, 0.15643, -0.15643, 0.98769, 60.8011, -98.2595)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1571, 8.32559)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.9163, 103.192)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4811, 71.6059)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Preserved enquiry puzzle after its natural complete cycle captured",
+      "width": 390,
+      "at": 10474.700000000186,
+      "route": "/services/brand-identity",
+      "scrollY": 3316,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "playing",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "",
+        "enquiryCycle": "1",
+        "enquiryTime": "1.546",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.98163, -0.19081, 0.19081, 0.98163, -58.7961, 0.77745)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98769, 0.15643, -0.15643, 0.98769, 60.8011, -98.2595)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1571, 8.32559)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.9163, 103.192)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4811, 71.6059)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: native arrival",
+      "width": 390,
+      "at": 11631.900000000373,
+      "route": "/services/brand-identity",
+      "scrollY": 3724,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "1.894",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.98163, -0.19081, 0.19081, 0.98163, -58.7961, 0.77745)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98769, 0.15643, -0.15643, 0.98769, 60.8011, -98.2595)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1571, 8.32559)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.9163, 103.192)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4811, 71.6059)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.1472",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.8475, 0, 0, 0.8475, 12.1124, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 204.562)",
+          "opacity": "0.5147"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -349.909)",
+          "opacity": "0.3067"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: native arrival captured",
+      "width": 390,
+      "at": 11685.80000000028,
+      "route": "/services/brand-identity",
+      "scrollY": 3724,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "1.894",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.98163, -0.19081, 0.19081, 0.98163, -58.7961, 0.77745)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98769, 0.15643, -0.15643, 0.98769, 60.8011, -98.2595)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1571, 8.32559)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.9163, 103.192)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4811, 71.6059)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.1472",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.8475, 0, 0, 0.8475, 12.1124, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 204.562)",
+          "opacity": "0.5147"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -349.909)",
+          "opacity": "0.3067"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: expanded settled composition, contact and navigation",
+      "width": 390,
+      "at": 15370.200000000186,
+      "route": "/services/brand-identity",
+      "scrollY": 4375,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "1.894",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.98163, -0.19081, 0.19081, 0.98163, -58.7961, 0.77745)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98769, 0.15643, -0.15643, 0.98769, 60.8011, -98.2595)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1571, 8.32559)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.9163, 103.192)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4811, 71.6059)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.9460",
+        "footerPhase": "expand",
+        "signature": {
+          "transform": "matrix(1.1716, 0, 0, 1.1716, -29.9791, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: expanded settled composition, contact and navigation captured",
+      "width": 390,
+      "at": 15501.400000000373,
+      "route": "/services/brand-identity",
+      "scrollY": 4375,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "1.894",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.98163, -0.19081, 0.19081, 0.98163, -58.7961, 0.77745)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98769, 0.15643, -0.15643, 0.98769, 60.8011, -98.2595)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1571, 8.32559)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.9163, 103.192)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4811, 71.6059)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.9460",
+        "footerPhase": "expand",
+        "signature": {
+          "transform": "matrix(1.1716, 0, 0, 1.1716, -29.9791, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: native reverse scroll",
+      "width": 390,
+      "at": 17531.80000000028,
+      "route": "/services/brand-identity",
+      "scrollY": 3808,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "1.894",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.98163, -0.19081, 0.19081, 0.98163, -58.7961, 0.77745)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98769, 0.15643, -0.15643, 0.98769, 60.8011, -98.2595)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1571, 8.32559)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.9163, 103.192)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4811, 71.6059)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.2503",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.8947, 0, 0, 0.8947, 8.36073, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 141.202)",
+          "opacity": "0.665"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -241.53)",
+          "opacity": "0.5215"
+        }
+      }
+    },
+    {
+      "label": "Existing raster footer prototype: native reverse scroll captured",
+      "width": 390,
+      "at": 17603.600000000093,
+      "route": "/services/brand-identity",
+      "scrollY": 3808,
+      "overflow": false,
+      "hero": null,
+      "services": null,
+      "puzzle": {
+        "enquiryPuzzle": "",
+        "enquiryState": "paused",
+        "enquiryPhase": "connect",
+        "enquiryPauseReasons": "offscreen",
+        "enquiryCycle": "1",
+        "enquiryTime": "1.894",
+        "pieces": [
+          {
+            "name": "identity",
+            "transform": "matrix(0.98163, -0.19081, 0.19081, 0.98163, -58.7961, 0.77745)",
+            "opacity": "1"
+          },
+          {
+            "name": "audience",
+            "transform": "matrix(0.98769, 0.15643, -0.15643, 0.98769, 60.8011, -98.2595)",
+            "opacity": "1"
+          },
+          {
+            "name": "message",
+            "transform": "matrix(0.99027, 0.13917, -0.13917, 0.99027, 33.1571, 8.32559)",
+            "opacity": "1"
+          },
+          {
+            "name": "direction",
+            "transform": "matrix(0.99027, -0.13917, 0.13917, 0.99027, -19.9163, 103.192)",
+            "opacity": "1"
+          },
+          {
+            "name": "design",
+            "transform": "matrix(0.99619, -0.08716, 0.08716, 0.99619, -47.4811, 71.6059)",
+            "opacity": "1"
+          }
+        ]
+      },
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.2503",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.8947, 0, 0, 0.8947, 8.36073, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 141.202)",
+          "opacity": "0.665"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -241.53)",
+          "opacity": "0.5215"
+        }
+      }
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [],
+  "completedAt": "2026-11-20T17:21:28.341Z"
+}

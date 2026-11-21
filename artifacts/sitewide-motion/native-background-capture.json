@@ -1,0 +1,214 @@
+{
+  "capturedAt": "2026-11-20T17:21:28.884Z",
+  "sourceCommit": "1569b260dce67216444a4f0fe96cfe95ebb2905e",
+  "baseURL": "http://127.0.0.1:4480",
+  "method": "Separate headed Chromium launched with the real headless Ozone display backend (without Chrome --headless). Ordinary new-tab creation and bringToFront attempt native visibility changes; measurements report actual document.hidden/visibilityState, source, currentTime, decoded-frame counts and original page state. No browser/application state, visibility accessor, attributes, clocks or timelines are rewritten. This platform probe is separate from the main headless before/after movies and is not a physical-device performance benchmark.",
+  "platformSupported": true,
+  "browser": "154.0.8037.57",
+  "attempts": [
+    {
+      "width": 1440,
+      "snapshots": [
+        {
+          "label": "visible playing before ordinary tab switch",
+          "at": 5011.399999999907,
+          "wallClock": 1795195294592,
+          "hidden": false,
+          "visibilityState": "visible",
+          "route": "/work/sol-community-center",
+          "videos": [
+            {
+              "id": "case-motion-sol-community-center",
+              "state": "playing",
+              "frame": "presented",
+              "source": "/media/portfolio/sol-community-center-portrait.mp4",
+              "time": 4.20046,
+              "paused": false,
+              "readyState": 4,
+              "totalVideoFrames": 106,
+              "droppedVideoFrames": 31
+            }
+          ]
+        },
+        {
+          "label": "alternate tab active,650ms",
+          "at": 5839.399999999907,
+          "wallClock": 1795195295420,
+          "hidden": false,
+          "visibilityState": "visible",
+          "route": "/work/sol-community-center",
+          "videos": [
+            {
+              "id": "case-motion-sol-community-center",
+              "state": "playing",
+              "frame": "presented",
+              "source": "/media/portfolio/sol-community-center-portrait.mp4",
+              "time": 5.028478,
+              "paused": false,
+              "readyState": 4,
+              "totalVideoFrames": 126,
+              "droppedVideoFrames": 36
+            }
+          ]
+        },
+        {
+          "label": "alternate tab active,3050ms",
+          "at": 8263.5,
+          "wallClock": 1795195297844,
+          "hidden": false,
+          "visibilityState": "visible",
+          "route": "/work/sol-community-center",
+          "videos": [
+            {
+              "id": "case-motion-sol-community-center",
+              "state": "playing",
+              "frame": "presented",
+              "source": "/media/portfolio/sol-community-center-portrait.mp4",
+              "time": 7.452482,
+              "paused": false,
+              "readyState": 4,
+              "totalVideoFrames": 180,
+              "droppedVideoFrames": 36
+            }
+          ]
+        },
+        {
+          "label": "returned to recorded tab",
+          "at": 9883.799999999814,
+          "wallClock": 1795195299464,
+          "hidden": false,
+          "visibilityState": "visible",
+          "route": "/work/sol-community-center",
+          "videos": [
+            {
+              "id": "case-motion-sol-community-center",
+              "state": "playing",
+              "frame": "presented",
+              "source": "/media/portfolio/sol-community-center-portrait.mp4",
+              "time": 1.554905,
+              "paused": false,
+              "readyState": 4,
+              "totalVideoFrames": 221,
+              "droppedVideoFrames": 36
+            }
+          ]
+        }
+      ],
+      "visibilityChanged": false,
+      "limitation": "This display backend did not expose a native hidden document on ordinary tab activation. No hidden-tab proof is claimed.",
+      "returnVisible": true,
+      "recording": {
+        "file": "native-background-1440.mp4",
+        "durationSeconds": 10.48,
+        "bytes": 963895,
+        "sha256": "f91140fde889670690a1905ad2114e3146ef4fab3c7b217bee1d536923e0d6e2",
+        "fullyDecoded": true,
+        "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-background/page@6888708a0661c74e071d4ecdfbe0a784.webm"
+      }
+    },
+    {
+      "width": 390,
+      "snapshots": [
+        {
+          "label": "visible playing before ordinary tab switch",
+          "at": 2863,
+          "wallClock": 1795195305959,
+          "hidden": false,
+          "visibilityState": "visible",
+          "route": "/work/sol-community-center",
+          "videos": [
+            {
+              "id": "case-motion-sol-community-center",
+              "state": "playing",
+              "frame": "presented",
+              "source": "/media/portfolio/sol-community-center-portrait.mp4",
+              "time": 2.354885,
+              "paused": false,
+              "readyState": 4,
+              "totalVideoFrames": 60,
+              "droppedVideoFrames": 13
+            }
+          ]
+        },
+        {
+          "label": "alternate tab active,650ms",
+          "at": 3659.5,
+          "wallClock": 1795195306755,
+          "hidden": false,
+          "visibilityState": "visible",
+          "route": "/work/sol-community-center",
+          "videos": [
+            {
+              "id": "case-motion-sol-community-center",
+              "state": "playing",
+              "frame": "presented",
+              "source": "/media/portfolio/sol-community-center-portrait.mp4",
+              "time": 3.151406,
+              "paused": false,
+              "readyState": 4,
+              "totalVideoFrames": 79,
+              "droppedVideoFrames": 16
+            }
+          ]
+        },
+        {
+          "label": "alternate tab active,3050ms",
+          "at": 6064.799999999814,
+          "wallClock": 1795195309161,
+          "hidden": false,
+          "visibilityState": "visible",
+          "route": "/work/sol-community-center",
+          "videos": [
+            {
+              "id": "case-motion-sol-community-center",
+              "state": "playing",
+              "frame": "presented",
+              "source": "/media/portfolio/sol-community-center-portrait.mp4",
+              "time": 5.55673,
+              "paused": false,
+              "readyState": 4,
+              "totalVideoFrames": 137,
+              "droppedVideoFrames": 16
+            }
+          ]
+        },
+        {
+          "label": "returned to recorded tab",
+          "at": 7679.899999999907,
+          "wallClock": 1795195310776,
+          "hidden": false,
+          "visibilityState": "visible",
+          "route": "/work/sol-community-center",
+          "videos": [
+            {
+              "id": "case-motion-sol-community-center",
+              "state": "playing",
+              "frame": "presented",
+              "source": "/media/portfolio/sol-community-center-portrait.mp4",
+              "time": 7.171835,
+              "paused": false,
+              "readyState": 4,
+              "totalVideoFrames": 176,
+              "droppedVideoFrames": 16
+            }
+          ]
+        }
+      ],
+      "visibilityChanged": false,
+      "limitation": "This display backend did not expose a native hidden document on ordinary tab activation. No hidden-tab proof is claimed.",
+      "returnVisible": true,
+      "recording": {
+        "file": "native-background-390.mp4",
+        "durationSeconds": 8.48,
+        "bytes": 372357,
+        "sha256": "ad4bbc5bcd1e9e94f645aa160e841c381691475861478a5dee1373e8d03c3a45",
+        "fullyDecoded": true,
+        "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-background/page@74cf739944cc0cd57125f52ac3fd9260.webm"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "launchError": null,
+  "executionError": null,
+  "completedAt": "2026-11-20T17:21:51.964Z"
+}

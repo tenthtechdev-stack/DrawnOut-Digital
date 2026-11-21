@@ -1,0 +1,2809 @@
+{
+  "capturedAt": "2026-11-20T17:17:19.285Z",
+  "mode": "before",
+  "sourceCommit": "b1c7db29a186c7413cad0bc5cdb59d62d5200f66",
+  "sourceFiles": {
+    "src/components/about/PremiumAboutHero.astro": "c9fc4a13a3229412b951e953c5d239a80f463c01584fec0329662dd61fbbba49",
+    "src/scripts/about-motion.ts": "571570e310ce7b0c33ba19181784315d26ae3bcb9a080eec3ff5d639b2688102",
+    "src/styles/about-premium-hero.css": "221a0ffb30ca9c2509dfa164f773dfad2dae76c7c97c47269739e6bd0056fc1c",
+    "src/scripts/services-hero.ts": "67f3763760a9483891773a4bc01ee7622c7d7cccb93e04d038bb4158ca52bd55",
+    "src/scripts/enquiry-puzzle.ts": "13b4216c2f9590f6a7392a3249a3ed57ac1d1127c261bf18734a7b39f3b008fd",
+    "src/scripts/signature-footer.ts": "739b613f73ead31eee5adcef08a8e7eee7f43ffe3e0b319936cd1611e7c61903"
+  },
+  "baseURL": "http://127.0.0.1:4480",
+  "productionAboutHTMLSHA256": "c5baea257b9be7b58723926cc913c7c43f4a4112c02c84af547e7ba0513157ac",
+  "method": "Actual production Chromium viewport recordings and unretouched PNGs. About is a cold direct visit; phase samples follow the real startup clock without timeline seeks or altered attributes/styles. The actual observed entrance/scene/state/reason and image/animation state accompany every scheduled sample, including any parent static fallback. Native wheel input and an ordinary service link reach the preserved Services hero, Brand Identity puzzle and reversible raster footer. Mobile is Chromium touch/viewport emulation, not a physical-device benchmark.",
+  "browser": "154.0.8037.57",
+  "screenshots": [
+    {
+      "file": "before-1440-about-opening.png",
+      "width": 1440,
+      "description": "About natural opening startup sample (target 180ms from real start)",
+      "bytes": 484968,
+      "sha256": "a6a9c4828ac702252bf1d500cb7c25ccea1fc2c5a0d7f340974bef6bc7597628",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 721.2999999998137,
+      "actualTimeAfter": 1640.2999999998137
+    },
+    {
+      "file": "before-1440-about-plaque.png",
+      "width": 1440,
+      "description": "About natural plaque startup sample (target 900ms from real start)",
+      "bytes": 510470,
+      "sha256": "89db9182769b7b06aa8e7567fefdb5ba1183df0b3d91a60c4424c7ac6b367313",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 1677.1999999997206,
+      "actualTimeAfter": 2343.2999999998137
+    },
+    {
+      "file": "before-1440-about-atmosphere.png",
+      "width": 1440,
+      "description": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "bytes": 582046,
+      "sha256": "86b57434ccccbd047afc2167c472eeedb852d0d103b7bed7c50ef187e489acf1",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 2380.5999999996275,
+      "actualTimeAfter": 2842.0999999996275
+    },
+    {
+      "file": "before-1440-about-copy.png",
+      "width": 1440,
+      "description": "About natural copy startup sample (target 2250ms from real start)",
+      "bytes": 638067,
+      "sha256": "5248029a8682f037ea345f8fe33b824dd038d4405d1407b1268fdd635ac0df54",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 2912.399999999907,
+      "actualTimeAfter": 3283.399999999907
+    },
+    {
+      "file": "before-1440-about-settled.png",
+      "width": 1440,
+      "description": "About natural settled startup sample (target 3950ms from real start)",
+      "bytes": 669341,
+      "sha256": "0a4a065ecf4b43d1e5e5ea3d8ecf501f7e7a5172da3409a83d55d756a114068c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 4487.5,
+      "actualTimeAfter": 4986.899999999907
+    },
+    {
+      "file": "before-1440-about-story.png",
+      "width": 1440,
+      "description": "About native scroll into the story after settled arrival",
+      "bytes": 173982,
+      "sha256": "c1d06a58b69516bdf839300b37e962068d55f10931d4d1f0ab2d0f03681ddcbc",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "actualTimeBefore": 7623.5,
+      "actualTimeAfter": 7867.5
+    },
+    {
+      "file": "before-390-about-opening.png",
+      "width": 390,
+      "description": "About natural opening startup sample (target 180ms from real start)",
+      "bytes": 239640,
+      "sha256": "15ea1a18dfce8f0d58f0514e9abdda8eadb9a2962d755ab0e4531d869cc9761f",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 527.5,
+      "actualTimeAfter": 835.7000000001863
+    },
+    {
+      "file": "before-390-about-plaque.png",
+      "width": 390,
+      "description": "About natural plaque startup sample (target 900ms from real start)",
+      "bytes": 239309,
+      "sha256": "7098d382104ca798b79e7483c0c5c5e23e607eb9c2ef76893b9dca5c3ffc5203",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 1246.7999999998137,
+      "actualTimeAfter": 1415.7000000001863
+    },
+    {
+      "file": "before-390-about-atmosphere.png",
+      "width": 390,
+      "description": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "bytes": 238343,
+      "sha256": "ebff0b0c2429a22021f2f98a7affe467a4b6a8272e55e13bf089d4ac66774de1",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 1796.6000000000931,
+      "actualTimeAfter": 1928
+    },
+    {
+      "file": "before-390-about-copy.png",
+      "width": 390,
+      "description": "About natural copy startup sample (target 2250ms from real start)",
+      "bytes": 238824,
+      "sha256": "137ffc9f64071486b4885e1e8e3804b5e428b98b0450ece24373869d1e4d9813",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 2592.899999999907,
+      "actualTimeAfter": 2761.399999999907
+    },
+    {
+      "file": "before-390-about-settled.png",
+      "width": 390,
+      "description": "About natural settled startup sample (target 3950ms from real start)",
+      "bytes": 238361,
+      "sha256": "be75c1080fec6f2aad95a7a97bcc0b08f12320a18baa9aebdcdc3f2aed3ab74d",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 4294.299999999814,
+      "actualTimeAfter": 4477.899999999907
+    },
+    {
+      "file": "before-390-about-story.png",
+      "width": 390,
+      "description": "About native scroll into the story after settled arrival",
+      "bytes": 164162,
+      "sha256": "4c96e990da555037d20c26c183a4bebfc55bdf6a5db70965cf137ff1d59ee3f0",
+      "dimensions": [
+        390,
+        844
+      ],
+      "actualTimeBefore": 6435.799999999814,
+      "actualTimeAfter": 6531.600000000093
+    }
+  ],
+  "recordings": [
+    {
+      "file": "before-1440-about-startup.mp4",
+      "width": 1440,
+      "height": 900,
+      "description": "Cold About startup, real ordered scenes/static fallback, settled composition and native scroll",
+      "durationSeconds": 7.52,
+      "bytes": 806169,
+      "sha256": "e93207d4e05d3d74194f0e8dbb5a5891ae10e1b42142d549fb21d91b05979fe3",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@20037e9b559fa72358de20a2121ccc19.webm"
+    },
+    {
+      "file": "before-390-about-startup.mp4",
+      "width": 390,
+      "height": 844,
+      "description": "Cold About startup, real ordered scenes/static fallback, settled composition and native scroll",
+      "durationSeconds": 7,
+      "bytes": 218522,
+      "sha256": "c0367aa23d06018726c5acf4caed584400c608006fe26f40446ffadd323a5807",
+      "fullyDecoded": true,
+      "nativeBrowserVideo": "/workspace/sitewide-motion-review/native-scenes/page@65dff44c2222b6962b583df4f215687b.webm"
+    }
+  ],
+  "measurements": [
+    {
+      "label": "About cold markup available",
+      "width": 1440,
+      "at": 527.1999999997206,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "pending",
+        "aboutArrivalScene": "portrait",
+        "aboutPrepaint": "",
+        "aboutAmbient": "running",
+        "aboutEntrance": "pending",
+        "artwork": {
+          "transform": "none",
+          "opacity": "0"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "0"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural opening startup sample (target 180ms from real start)",
+      "width": 1440,
+      "at": 721.2999999998137,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "portrait",
+        "aboutAmbient": "running",
+        "aboutEntrance": "running",
+        "aboutStartedAt": "592.20",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 13.9798)",
+          "opacity": "0.364553"
+        },
+        "plaque": {
+          "transform": "matrix(0.99863, -0.052336, 0.052336, 0.99863, 0, -26)",
+          "opacity": "0"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 33.295999999950475,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 33.295999999950475,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 33.295999999950475,
+            "effectDuration": 19000
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 99.89999999999999,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural opening startup sample (target 180ms from real start) captured",
+      "width": 1440,
+      "at": 1640.2999999998137,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "plaque",
+        "aboutAmbient": "running",
+        "aboutEntrance": "running",
+        "aboutStartedAt": "592.20",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(0.999978, -0.00659652, 0.00659652, 0.999978, 0, -3.27561)",
+          "opacity": "0.874015"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 999.8959999999504,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 999.8959999999504,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 999.8959999999504,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1066.5,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1066.5,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 1066.5,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1066.5,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1066.5,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1066.5,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1066.5,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1066.5,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1066.5,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1066.5,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1066.5,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural plaque startup sample (target 900ms from real start)",
+      "width": 1440,
+      "at": 1677.1999999997206,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "plaque",
+        "aboutAmbient": "running",
+        "aboutEntrance": "running",
+        "aboutStartedAt": "592.20",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(0.999988, -0.00486485, 0.00486485, 0.999988, 0, -2.41572)",
+          "opacity": "0.907088"
+        },
+        "gradient": {
+          "transform": "matrix(0.93, 0, 0, 0.93, 0, 0)",
+          "opacity": "0"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 1049.9959999999505,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 1049.9959999999505,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 1049.9959999999505,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1116.6000000000001,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1116.6000000000001,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 1116.6000000000001,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1116.6000000000001,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1116.6000000000001,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1116.6000000000001,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1116.6000000000001,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1116.6000000000001,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1116.6000000000001,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1116.6000000000001,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1116.6000000000001,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural plaque startup sample (target 900ms from real start) captured",
+      "width": 1440,
+      "at": 2343.2999999998137,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "atmosphere",
+        "aboutAmbient": "running",
+        "aboutEntrance": "running",
+        "aboutStartedAt": "592.20",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "matrix(0.995156, 0, 0, 0.995156, 0, 0)",
+          "opacity": "0.930797"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 1699.8959999999506,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 1699.8959999999506,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 1699.8959999999506,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 1600,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "width": 1440,
+      "at": 2380.5999999996275,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "arrival",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "atmosphere",
+        "aboutAmbient": "running",
+        "aboutEntrance": "running",
+        "aboutStartedAt": "592.20",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "matrix(0.995156, 0, 0, 0.995156, 0, 0)",
+          "opacity": "0.930797"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 28)",
+          "opacity": "0"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 1699.8959999999506,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 1699.8959999999506,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 1699.8959999999506,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 1600,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 1766.5000000000002,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural atmosphere startup sample (target 1450ms from real start) captured",
+      "width": 1440,
+      "at": 2842.0999999996275,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "transition",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "copy",
+        "aboutAmbient": "running",
+        "aboutEntrance": "running",
+        "aboutStartedAt": "592.20",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "matrix(0.999896, 0, 0, 0.999896, 0, 0)",
+          "opacity": "0.998514"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 7.42261)",
+          "opacity": "0.734907"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 2133.195999999951,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 2133.195999999951,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 2133.195999999951,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 1600,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 2199.8,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 2199.8,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2199.8,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2199.8,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2199.8,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2199.8,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2199.8,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2199.8,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2199.8,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2199.8,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural copy startup sample (target 2250ms from real start)",
+      "width": 1440,
+      "at": 2912.399999999907,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "transition",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "copy",
+        "aboutAmbient": "running",
+        "aboutEntrance": "running",
+        "aboutStartedAt": "592.20",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 3.56765)",
+          "opacity": "0.872584"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 2233.1959999999503,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 2233.1959999999503,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 2233.1959999999503,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 1600,
+            "effectDuration": 900
+          },
+          {
+            "state": "running",
+            "currentTime": 2299.7999999999997,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 2299.7999999999997,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2299.7999999999997,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2299.7999999999997,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2299.7999999999997,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2299.7999999999997,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2299.7999999999997,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2299.7999999999997,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2299.7999999999997,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2299.7999999999997,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural copy startup sample (target 2250ms from real start) captured",
+      "width": 1440,
+      "at": 3283.399999999907,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "transition",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "copy",
+        "aboutAmbient": "running",
+        "aboutEntrance": "running",
+        "aboutStartedAt": "592.20",
+        "artwork": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0.0498746)",
+          "opacity": "0.998219"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 2599.8959999999506,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 2599.8959999999506,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 2599.8959999999506,
+            "effectDuration": 19000
+          },
+          {
+            "state": "finished",
+            "currentTime": 900,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 1600,
+            "effectDuration": 900
+          },
+          {
+            "state": "finished",
+            "currentTime": 2300,
+            "effectDuration": 1100
+          },
+          {
+            "state": "running",
+            "currentTime": 2666.5,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2666.5,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2666.5,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2666.5,
+            "effectDuration": 740
+          },
+          {
+            "state": "running",
+            "currentTime": 2666.5,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2666.5,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2666.5,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2666.5,
+            "effectDuration": 650
+          },
+          {
+            "state": "running",
+            "currentTime": 2666.5,
+            "effectDuration": 650
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural settled startup sample (target 3950ms from real start)",
+      "width": 1440,
+      "at": 4487.5,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "settled",
+        "aboutAmbient": "running",
+        "aboutEntrance": "settled",
+        "aboutStartedAt": "592.20",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "4100.20",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 3833.1959999999503,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 3833.1959999999503,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 3833.1959999999503,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural settled startup sample (target 3950ms from real start) captured",
+      "width": 1440,
+      "at": 4986.899999999907,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "settled",
+        "aboutAmbient": "running",
+        "aboutEntrance": "settled",
+        "aboutStartedAt": "592.20",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "4100.20",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 4333.19599999995,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 4333.19599999995,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 4333.19599999995,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About native scroll into the story after settled arrival",
+      "width": 1440,
+      "at": 7623.5,
+      "route": "/about",
+      "scrollY": 650,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "settled",
+        "aboutAmbient": "running",
+        "aboutEntrance": "settled",
+        "aboutStartedAt": "592.20",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "4100.20",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 6999.79599999995,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 6999.79599999995,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 6999.79599999995,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About native scroll into the story after settled arrival captured",
+      "width": 1440,
+      "at": 7867.5,
+      "route": "/about",
+      "scrollY": 650,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "handed-off",
+        "aboutArrivalScene": "settled",
+        "aboutAmbient": "running",
+        "aboutEntrance": "settled",
+        "aboutStartedAt": "592.20",
+        "aboutSettleReason": "complete",
+        "aboutEndedAt": "4100.20",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 7216.395999999951,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 7216.395999999951,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 7216.395999999951,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 440,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 32.8319, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 554.491)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -948.472)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About cold markup available",
+      "width": 390,
+      "at": 339.60000000009313,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "static",
+        "signature": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        }
+      }
+    },
+    {
+      "label": "About natural opening startup sample (target 180ms from real start)",
+      "width": 390,
+      "at": 527.5,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 0,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural opening startup sample (target 180ms from real start) captured",
+      "width": 390,
+      "at": 835.7000000001863,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 316.69700000005906,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 316.69700000005906,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 316.69700000005906,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural plaque startup sample (target 900ms from real start)",
+      "width": 390,
+      "at": 1246.7999999998137,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 733.2970000000591,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 733.2970000000591,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 733.2970000000591,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural plaque startup sample (target 900ms from real start) captured",
+      "width": 390,
+      "at": 1415.7000000001863,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 899.997000000059,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 899.997000000059,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 899.997000000059,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural atmosphere startup sample (target 1450ms from real start)",
+      "width": 390,
+      "at": 1796.6000000000931,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 1299.897000000059,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 1299.897000000059,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 1299.897000000059,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural atmosphere startup sample (target 1450ms from real start) captured",
+      "width": 390,
+      "at": 1928,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 1416.5970000000589,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 1416.5970000000589,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 1416.5970000000589,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural copy startup sample (target 2250ms from real start)",
+      "width": 390,
+      "at": 2592.899999999907,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 2083.297000000059,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 2083.297000000059,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 2083.297000000059,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural copy startup sample (target 2250ms from real start) captured",
+      "width": 390,
+      "at": 2761.399999999907,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 2249.897000000059,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 2249.897000000059,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 2249.897000000059,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural settled startup sample (target 3950ms from real start)",
+      "width": 390,
+      "at": 4294.299999999814,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 3783.0970000000593,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 3783.0970000000593,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 3783.0970000000593,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About natural settled startup sample (target 3950ms from real start) captured",
+      "width": 390,
+      "at": 4477.899999999907,
+      "route": "/about",
+      "scrollY": 0,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 3949.8970000000586,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 3949.8970000000586,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 3949.8970000000586,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About native scroll into the story after settled arrival",
+      "width": 390,
+      "at": 6435.799999999814,
+      "route": "/about",
+      "scrollY": 500,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 5933.097000000059,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 5933.097000000059,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 5933.097000000059,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    },
+    {
+      "label": "About native scroll into the story after settled arrival captured",
+      "width": 390,
+      "at": 6531.600000000093,
+      "route": "/about",
+      "scrollY": 500,
+      "overflow": false,
+      "hero": {
+        "aboutHero": "",
+        "theme": "dark",
+        "aboutHeroPhase": "settled",
+        "aboutEmblemStatus": "approved-raster-prototype",
+        "aboutBoot": "released",
+        "aboutArrivalScene": "settled",
+        "aboutEntrance": "static",
+        "aboutSettleReason": "boot-released",
+        "aboutAmbient": "running",
+        "aboutEndedAt": "313.60",
+        "artwork": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "plaque": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "gradient": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "headline": {
+          "transform": "none",
+          "opacity": "1"
+        },
+        "nativeAnimations": [
+          {
+            "state": "running",
+            "currentTime": 6033.097000000059,
+            "effectDuration": 17000
+          },
+          {
+            "state": "running",
+            "currentTime": 6033.097000000059,
+            "effectDuration": 21000
+          },
+          {
+            "state": "running",
+            "currentTime": 6033.097000000059,
+            "effectDuration": 19000
+          }
+        ],
+        "images": [
+          {
+            "complete": true,
+            "width": 214,
+            "source": "http://127.0.0.1:4480/_astro/emblem-plaque.CwFSxarI_ZwBY80.webp"
+          }
+        ]
+      },
+      "services": null,
+      "puzzle": null,
+      "footer": {
+        "siteFooter": "",
+        "theme": "dark",
+        "astroCidNns7i3if": "",
+        "footerMotion": "ready",
+        "footerProgress": "0.0000",
+        "footerPhase": "arrive",
+        "signature": {
+          "transform": "matrix(0.78, 0, 0, 0.78, 17.4719, 0)",
+          "opacity": "1"
+        },
+        "hand": {
+          "transform": "matrix(1, 0, 0, 1, 0, 295.076)",
+          "opacity": "0.3"
+        },
+        "plaque": {
+          "transform": "matrix(1, 0, 0, 1, 0, -504.735)",
+          "opacity": "0"
+        }
+      }
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [],
+  "completedAt": "2026-11-20T17:17:37.648Z"
+}

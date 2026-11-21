@@ -1,0 +1,1616 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/drawnout-sitewide-motion/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.contact-signature.config.ts",
+      "--reporter=list,json",
+      "--output",
+      "test-results/sitewide-final-contact-performance-epoch"
+    ],
+    "configFile": "/workspace/drawnout-sitewide-motion/playwright.contact-signature.config.ts",
+    "rootDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-final-contact-performance-epoch",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "contact.spec.ts",
+          "contact-signature.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/drawnout-sitewide-motion/test-results/sitewide-final-contact-performance-epoch",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "snapshotDir": "/workspace/drawnout-sitewide-motion/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "contact.spec.ts",
+          "contact-signature.spec.ts"
+        ],
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4470",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "launchOptions": {
+            "executablePath": "/usr/bin/chromium",
+            "args": [
+              "--use-gl=angle",
+              "--use-angle=swiftshader",
+              "--enable-unsafe-swiftshader"
+            ]
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --ignore-lock --port 4470",
+      "url": "http://127.0.0.1:4470",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "contact-signature.spec.ts",
+      "file": "contact-signature.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Contact introduction, artwork, labels and direct methods are usable at 320px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3364,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:25:56.565Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contact-layout-320",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzIwLCJpbnB1dERvY3VtZW50VG9wIjo4MzEuNDA2MjUsImRyYXdpbmciOnsieCI6MTgyLjc5Njg3NSwieSI6MzI4LjU0Njg3NSwid2lkdGgiOjExNS4yMDMxMjUsImhlaWdodCI6NjkuOTM3NX0sImhlYWRpbmciOnsidGV4dCI6IkhhdmUgc29tZXRoaW5naW4gbWluZD8iLCJmb250U2l6ZSI6IjQyLjRweCIsIndpZHRoIjoyNzYsImhlaWdodCI6MTM2LjA3ODEyNX19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-676ce4879565bb7a8ba8",
+          "file": "contact-signature.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "Contact introduction, artwork, labels and direct methods are usable at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2511,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:00.402Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contact-layout-390",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MzkwLCJpbnB1dERvY3VtZW50VG9wIjo3NzEuMTQwNjI1LCJkcmF3aW5nIjp7IngiOjIyMS4yOTY4NzUsInkiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjg5LjA2MjV9LCJoZWFkaW5nIjp7InRleHQiOiJIYXZlIHNvbWV0aGluZ2luIG1pbmQ/IiwiZm9udFNpemUiOiI0NC40NnB4Iiwid2lkdGgiOjM0NiwiaGVpZ2h0Ijo5NS4xMjV9fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-5f7951f62829887cffdc",
+          "file": "contact-signature.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "Contact introduction, artwork, labels and direct methods are usable at 768px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2519,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:02.927Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contact-layout-768",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6NzY4LCJpbnB1dERvY3VtZW50VG9wIjo5MTUuMzQzNzUsImRyYXdpbmciOnsieCI6NDMxLjc2NTYyNSwieSI6MzM0LjY4NzUsIndpZHRoIjozMDMuOTg0Mzc1LCJoZWlnaHQiOjE4NH0sImhlYWRpbmciOnsidGV4dCI6IkhhdmUgc29tZXRoaW5naW4gbWluZD8iLCJmb250U2l6ZSI6IjY3LjU4NHB4Iiwid2lkdGgiOjcwMy41LCJoZWlnaHQiOjEzOS4xODc1fX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-f4d82f5d495893849529",
+          "file": "contact-signature.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "Contact introduction, artwork, labels and direct methods are usable at 1024px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2467,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:05.463Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contact-layout-1024",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTAyNCwiaW5wdXREb2N1bWVudFRvcCI6ODgxLjMyODEyNSwiZHJhd2luZyI6eyJ4Ijo2MzMuOTg0Mzc1LCJ5IjoyMjUuODI4MTI1LCJ3aWR0aCI6MzQ3LCJoZWlnaHQiOjIxMC42NzE4NzV9LCJoZWFkaW5nIjp7InRleHQiOiJIYXZlIHNvbWV0aGluZ2luIG1pbmQ/IiwiZm9udFNpemUiOiI3Ny44MjRweCIsIndpZHRoIjo1MzkuNzk2ODc1LCJoZWlnaHQiOjE2MC4zMTI1fX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-9ba4b4768e3dd022fba5",
+          "file": "contact-signature.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "Contact introduction, artwork, labels and direct methods are usable at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2542,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:07.945Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contact-layout-1440",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwiaW5wdXREb2N1bWVudFRvcCI6MTAyMC41MzEyNSwiZHJhd2luZyI6eyJ4Ijo4OTEuNTQ2ODc1LCJ5IjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjI5Ni4yNjU2MjV9LCJoZWFkaW5nIjp7InRleHQiOiJIYXZlIHNvbWV0aGluZ2luIG1pbmQ/IiwiZm9udFNpemUiOiIxMDkuNDRweCIsIndpZHRoIjo3NTkuMDc4MTI1LCJoZWlnaHQiOjIyNS40Mzc1fX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-09ade68a0398591b35f1",
+          "file": "contact-signature.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "Contact introduction, artwork, labels and direct methods are usable at 1920px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2807,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:10.500Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contact-layout-1920",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTkyMCwiaW5wdXREb2N1bWVudFRvcCI6MTA0Mi4xMjUsImRyYXdpbmciOnsieCI6MTE0Ny42ODc1LCJ5IjoyMzMuMDc4MTI1LCJ3aWR0aCI6NTMxLjY3MTg3NSwiaGVpZ2h0IjozMjIuNzk2ODc1fSwiaGVhZGluZyI6eyJ0ZXh0IjoiSGF2ZSBzb21ldGhpbmdpbiBtaW5kPyIsImZvbnRTaXplIjoiMTE2cHgiLCJ3aWR0aCI6ODI3LjA2MjUsImhlaWdodCI6MjM4LjkzNzV9fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-b34381ec07d728966a60",
+          "file": "contact-signature.spec.ts",
+          "line": 104,
+          "column": 3
+        },
+        {
+          "title": "a cold normal-motion 390px Contact visit exposes artwork and accepts immediate pointer input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1231,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:13.334Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-8f8119cb8b579af01003",
+          "file": "contact-signature.spec.ts",
+          "line": 179,
+          "column": 3
+        },
+        {
+          "title": "a cold normal-motion 1440px Contact visit exposes artwork and accepts immediate pointer input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1687,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:14.581Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-8908fd046a1ccd8851de",
+          "file": "contact-signature.spec.ts",
+          "line": 179,
+          "column": 3
+        },
+        {
+          "title": "the actual 390px drawing has distinct phases, finishes once and leaves the form available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6611,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:16.303Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-contact-drawing-390",
+                      "contentType": "application/json",
+                      "body": "eyJtZXRob2QiOiJOYXR1cmFsIHByb2R1Y3Rpb24gcGxheWJhY2s7IG5vIGFuaW1hdGlvbiBzZWVraW5nIiwic2FtcGxlcyI6W3sic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJ0aG91Z2h0IiwidGltZSI6MC4xNjMsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6MjUwLjYzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjI5NC42NDg0Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjozMzguNjU5Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiODQ0LjQ0OXB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6MjIxLjI5Njg3NSwidG9wIjoyNzYuNjI1LCJ3aWR0aCI6MTQ2LjcwMzEyNSwiaGVpZ2h0IjoxNDEuMDYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJ0aG91Z2h0IiwidGltZSI6MC4yODYsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6MjUwLjYzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjI5NC42NDg0Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjozMzguNjU5Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiODM2LjY2NnB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6MjIxLjI5Njg3NSwidG9wIjoyNzYuNjI1LCJ3aWR0aCI6MTQ2LjcwMzEyNSwiaGVpZ2h0IjoxNDEuMDYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJ0aG91Z2h0IiwidGltZSI6MC40NDUsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6MjUwLjYzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjI5NC42NDg0Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjozMzguNjU5Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiODE4LjYyOHB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6MjIxLjI5Njg3NSwidG9wIjoyNzYuNjI1LCJ3aWR0aCI6MTQ2LjcwMzEyNSwiaGVpZ2h0IjoxNDEuMDYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJ0aG91Z2h0IiwidGltZSI6MC41NTUsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6MjUwLjYzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjI5NC42NDg0Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjozMzguNjU5Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiODAyLjgxMnB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6MjIxLjI5Njg3NSwidG9wIjoyNzYuNjI1LCJ3aWR0aCI6MTQ2LjcwMzEyNSwiaGVpZ2h0IjoxNDEuMDYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJ0aG91Z2h0IiwidGltZSI6MC42NywicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI3ODUuNDM2cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6InRob3VnaHQiLCJ0aW1lIjowLjc2OSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI3NzEuMzI2cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6InRob3VnaHQiLCJ0aW1lIjowLjg4NiwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI3NTcuNDIycHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6InRob3VnaHQiLCJ0aW1lIjoxLjAwMiwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI3NDguMTYzcHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6InRob3VnaHQiLCJ0aW1lIjoxLjExOSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI3NDQuNTEycHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoxLjI1NCwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI3NDIuMjg5cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoxLjM1MywicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI3MzYuMTE4cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoxLjUxOSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI3MTYuODM5cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoxLjYxOSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI2OTkuODI0cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoxLjcxOSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI2NzguNzQ4cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoxLjgzNiwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI2NDguOTM1cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoxLjk1MiwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI2MTMuODg4cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoyLjA1MywicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI1NzguOTI0cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoyLjE2OSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI1MzMuNjU1cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoyLjI3MywicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI0ODguNDI0cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoyLjM4NiwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI0MzQuM3B4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6MjIxLjI5Njg3NSwidG9wIjoyNzYuNjI1LCJ3aWR0aCI6MTQ2LjcwMzEyNSwiaGVpZ2h0IjoxNDEuMDYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb25uZWN0aW9uIiwidGltZSI6Mi41MjMsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6MjUwLjYzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjI5NC42NDg0Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjozMzguNjU5Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiMzY3Ljg3cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoyLjYzNiwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIzMTguNzQ3cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoyLjc1MiwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIyNzMuNzE0cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoyLjg1MywicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIyMzguOTU0cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoyLjk2OSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIyMDQuMTQ0cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjozLjA2OSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIxNzguNTJweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjIyMS4yOTY4NzUsInRvcCI6Mjc2LjYyNSwid2lkdGgiOjE0Ni43MDMxMjUsImhlaWdodCI6MTQxLjA2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjMuMTg2LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjI1MC42Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoyOTQuNjQ4NDM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MzM4LjY1OTM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjE1My42OTVweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjIyMS4yOTY4NzUsInRvcCI6Mjc2LjYyNSwid2lkdGgiOjE0Ni43MDMxMjUsImhlaWdodCI6MTQxLjA2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjMuMjg2LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjI1MC42Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoyOTQuNjQ4NDM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MzM4LjY1OTM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjEzNi44ODNweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjIyMS4yOTY4NzUsInRvcCI6Mjc2LjYyNSwid2lkdGgiOjE0Ni43MDMxMjUsImhlaWdodCI6MTQxLjA2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjMuNDAyLCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjI1MC42Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoyOTQuNjQ4NDM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MzM4LjY1OTM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjEyMi40NjlweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjIyMS4yOTY4NzUsInRvcCI6Mjc2LjYyNSwid2lkdGgiOjE0Ni43MDMxMjUsImhlaWdodCI6MTQxLjA2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjMuNTE5LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjI1MC42Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoyOTQuNjQ4NDM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MzM4LjY1OTM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjExMy40NjVweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjIyMS4yOTY4NzUsInRvcCI6Mjc2LjYyNSwid2lkdGgiOjE0Ni43MDMxMjUsImhlaWdodCI6MTQxLjA2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjMuNjM2LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjI1MC42Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoyOTQuNjQ4NDM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MzM4LjY1OTM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjExMC4wMjFweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjIyMS4yOTY4NzUsInRvcCI6Mjc2LjYyNSwid2lkdGgiOjE0Ni43MDMxMjUsImhlaWdodCI6MTQxLjA2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29udmVyc2F0aW9uIiwidGltZSI6My43NjksInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6MjUwLjYzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjI5NC42NDg0Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjozMzguNjU5Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiNzYuNjcwMnB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6MjIxLjI5Njg3NSwidG9wIjoyNzYuNjI1LCJ3aWR0aCI6MTQ2LjcwMzEyNSwiaGVpZ2h0IjoxNDEuMDYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb252ZXJzYXRpb24iLCJ0aW1lIjozLjg2OSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI0Mi41NjY4cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbnZlcnNhdGlvbiIsInRpbWUiOjMuOTY5LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjI1MC42Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoyOTQuNjQ4NDM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MzM4LjY1OTM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjIxLjM0NzNweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjIyMS4yOTY4NzUsInRvcCI6Mjc2LjYyNSwid2lkdGgiOjE0Ni43MDMxMjUsImhlaWdodCI6MTQxLjA2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29udmVyc2F0aW9uIiwidGltZSI6NC4wODksInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6MjUwLjYzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjI5NC42NDg0Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjozMzguNjU5Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiNy42NjE0M3B4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6MjIxLjI5Njg3NSwidG9wIjoyNzYuNjI1LCJ3aWR0aCI6MTQ2LjcwMzEyNSwiaGVpZ2h0IjoxNDEuMDYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb252ZXJzYXRpb24iLCJ0aW1lIjo0LjIwMiwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIyLjExNzU1cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbnZlcnNhdGlvbiIsInRpbWUiOjQuMzE5LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjI1MC42Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoyOTQuNjQ4NDM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MzM4LjY1OTM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjAuMjg4NDg4cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbnZlcnNhdGlvbiIsInRpbWUiOjQuNDM3LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjI1MC42Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoyOTQuNjQ4NDM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MzM4LjY1OTM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjAuMDA0MjMwMDNweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjIyMS4yOTY4NzUsInRvcCI6Mjc2LjYyNSwid2lkdGgiOjE0Ni43MDMxMjUsImhlaWdodCI6MTQxLjA2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29udmVyc2F0aW9uIiwidGltZSI6NC41NTIsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6MjUwLjYzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjI5NC42NDg0Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjozMzguNjU5Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiMHB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6MjIxLjI5Njg3NSwidG9wIjoyNzYuNjI1LCJ3aWR0aCI6MTQ2LjcwMzEyNSwiaGVpZ2h0IjoxNDEuMDYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb252ZXJzYXRpb24iLCJ0aW1lIjo0LjY3LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjI1MC42Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoyOTQuNjQ4NDM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MzM4LjY1OTM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjBweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjIyMS4yOTY4NzUsInRvcCI6Mjc2LjYyNSwid2lkdGgiOjE0Ni43MDMxMjUsImhlaWdodCI6MTQxLjA2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29udmVyc2F0aW9uIiwidGltZSI6NC43NywicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4IjoyNTAuNjM3NSwieSI6MzIxLjE1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6Mjk0LjY0ODQzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjMzOC42NTkzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIwcHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0IjoyMjEuMjk2ODc1LCJ0b3AiOjI3Ni42MjUsIndpZHRoIjoxNDYuNzAzMTI1LCJoZWlnaHQiOjE0MS4wNjI1fX0seyJzdGF0ZSI6InNldHRsZWQiLCJwaGFzZSI6ImNvbnZlcnNhdGlvbiIsInRpbWUiOjQuOCwicmVhc29uIjoiY29tcGxldGUiLCJoaXRUZXN0cyI6W3sieCI6MjUwLjYzNzUsInkiOjMyMS4xNTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjI5NC42NDg0Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjozMzguNjU5Mzc1LCJ5IjozMjEuMTU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiMHB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6MjIxLjI5Njg3NSwidG9wIjoyNzYuNjI1LCJ3aWR0aCI6MTQ2LjcwMzEyNSwiaGVpZ2h0IjoxNDEuMDYyNX19XX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-848ec2fd383147454231",
+          "file": "contact-signature.spec.ts",
+          "line": 218,
+          "column": 3
+        },
+        {
+          "title": "the actual 1440px drawing has distinct phases, finishes once and leaves the form available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6908,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:22.939Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-contact-drawing-1440",
+                      "contentType": "application/json",
+                      "body": "eyJtZXRob2QiOiJOYXR1cmFsIHByb2R1Y3Rpb24gcGxheWJhY2s7IG5vIGFuaW1hdGlvbiBzZWVraW5nIiwic2FtcGxlcyI6W3sic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJ0aG91Z2h0IiwidGltZSI6MC4xOTYsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiODQyLjk3OXB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoidGhvdWdodCIsInRpbWUiOjAuMzUsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiODMwLjMyNXB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoidGhvdWdodCIsInRpbWUiOjAuNDk0LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjgxMS43OTVweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjg5MS41NDY4NzUsInRvcCI6MjM5LjU5Mzc1LCJ3aWR0aCI6NDg3Ljk4NDM3NSwiaGVpZ2h0IjozMjcuNzY1NjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6InRob3VnaHQiLCJ0aW1lIjowLjcwOSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4Ijo5ODkuMTQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTEzNS41MzkwNjI1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjEyODEuOTM0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI3NzkuNzA1cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0Ijo4OTEuNTQ2ODc1LCJ0b3AiOjIzOS41OTM3NSwid2lkdGgiOjQ4Ny45ODQzNzUsImhlaWdodCI6MzI3Ljc2NTYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJ0aG91Z2h0IiwidGltZSI6MC44MzEsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiNzYzLjQ3OHB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoidGhvdWdodCIsInRpbWUiOjAuOTMzLCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6Ijc1My4wNXB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoidGhvdWdodCIsInRpbWUiOjEuMDg4LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6Ijc0NC44ODZweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjg5MS41NDY4NzUsInRvcCI6MjM5LjU5Mzc1LCJ3aWR0aCI6NDg3Ljk4NDM3NSwiaGVpZ2h0IjozMjcuNzY1NjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoxLjIxNCwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4Ijo5ODkuMTQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTEzNS41MzkwNjI1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjEyODEuOTM0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI3NDMuNjU0cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0Ijo4OTEuNTQ2ODc1LCJ0b3AiOjIzOS41OTM3NSwid2lkdGgiOjQ4Ny45ODQzNzUsImhlaWdodCI6MzI3Ljc2NTYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb25uZWN0aW9uIiwidGltZSI6MS4zMjEsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiNzM4LjU0OHB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjEuNDc3LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjcyMi43NzRweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjg5MS41NDY4NzUsInRvcCI6MjM5LjU5Mzc1LCJ3aWR0aCI6NDg3Ljk4NDM3NSwiaGVpZ2h0IjozMjcuNzY1NjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoxLjYwNCwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4Ijo5ODkuMTQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTEzNS41MzkwNjI1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjEyODEuOTM0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI3MDIuNjM1cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0Ijo4OTEuNTQ2ODc1LCJ0b3AiOjIzOS41OTM3NSwid2lkdGgiOjQ4Ny45ODQzNzUsImhlaWdodCI6MzI3Ljc2NTYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb25uZWN0aW9uIiwidGltZSI6MS43MzksInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiNjc0LjA0NnB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjEuODczLCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjYzOC4zNXB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjIuMDcxLCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjU3Mi4yNTdweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjg5MS41NDY4NzUsInRvcCI6MjM5LjU5Mzc1LCJ3aWR0aCI6NDg3Ljk4NDM3NSwiaGVpZ2h0IjozMjcuNzY1NjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoyLjIyMSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4Ijo5ODkuMTQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTEzNS41MzkwNjI1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjEyODEuOTM0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI1MTEuNTg4cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0Ijo4OTEuNTQ2ODc1LCJ0b3AiOjIzOS41OTM3NSwid2lkdGgiOjQ4Ny45ODQzNzUsImhlaWdodCI6MzI3Ljc2NTYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb25uZWN0aW9uIiwidGltZSI6Mi4zNywicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4Ijo5ODkuMTQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTEzNS41MzkwNjI1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjEyODEuOTM0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiI0NDIuMjc4cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0Ijo4OTEuNTQ2ODc1LCJ0b3AiOjIzOS41OTM3NSwid2lkdGgiOjQ4Ny45ODQzNzUsImhlaWdodCI6MzI3Ljc2NTYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb25uZWN0aW9uIiwidGltZSI6Mi40ODEsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiMzg3LjQ1cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0Ijo4OTEuNTQ2ODc1LCJ0b3AiOjIzOS41OTM3NSwid2lkdGgiOjQ4Ny45ODQzNzUsImhlaWdodCI6MzI3Ljc2NTYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb25uZWN0aW9uIiwidGltZSI6Mi41OTMsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiMzM2LjgyOXB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjIuNzIyLCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjI4NC44MzdweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjg5MS41NDY4NzUsInRvcCI6MjM5LjU5Mzc1LCJ3aWR0aCI6NDg3Ljk4NDM3NSwiaGVpZ2h0IjozMjcuNzY1NjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjoyLjgzMiwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4Ijo5ODkuMTQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTEzNS41MzkwNjI1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjEyODEuOTM0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIyNDUuODQxcHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0Ijo4OTEuNTQ2ODc1LCJ0b3AiOjIzOS41OTM3NSwid2lkdGgiOjQ4Ny45ODQzNzUsImhlaWdodCI6MzI3Ljc2NTYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb25uZWN0aW9uIiwidGltZSI6Mi45NzYsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiMjAyLjIxN3B4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjMuMTEsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiMTY5LjE4OHB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjMuMjMsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiMTQ1Ljc5N3B4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjMuNDA1LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjEyMi4xNjhweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjg5MS41NDY4NzUsInRvcCI6MjM5LjU5Mzc1LCJ3aWR0aCI6NDg3Ljk4NDM3NSwiaGVpZ2h0IjozMjcuNzY1NjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbm5lY3Rpb24iLCJ0aW1lIjozLjQ5NSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4Ijo5ODkuMTQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTEzNS41MzkwNjI1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjEyODEuOTM0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIxMTQuODU5cHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0Ijo4OTEuNTQ2ODc1LCJ0b3AiOjIzOS41OTM3NSwid2lkdGgiOjQ4Ny45ODQzNzUsImhlaWdodCI6MzI3Ljc2NTYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb25uZWN0aW9uIiwidGltZSI6My42MTQsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiMTEwLjI0NHB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29ubmVjdGlvbiIsInRpbWUiOjMuNzI0LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6Ijk3LjM2NTJweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjg5MS41NDY4NzUsInRvcCI6MjM5LjU5Mzc1LCJ3aWR0aCI6NDg3Ljk4NDM3NSwiaGVpZ2h0IjozMjcuNzY1NjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbnZlcnNhdGlvbiIsInRpbWUiOjMuODc1LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjQwLjk3MTJweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjg5MS41NDY4NzUsInRvcCI6MjM5LjU5Mzc1LCJ3aWR0aCI6NDg3Ljk4NDM3NSwiaGVpZ2h0IjozMjcuNzY1NjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbnZlcnNhdGlvbiIsInRpbWUiOjMuOTc4LCJyZWFzb24iOiJ2aXNpYmxlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjE5LjkzNjFweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjg5MS41NDY4NzUsInRvcCI6MjM5LjU5Mzc1LCJ3aWR0aCI6NDg3Ljk4NDM3NSwiaGVpZ2h0IjozMjcuNzY1NjI1fX0seyJzdGF0ZSI6InBsYXlpbmciLCJwaGFzZSI6ImNvbnZlcnNhdGlvbiIsInRpbWUiOjQuMTEsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiNi4yMTEzOHB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29udmVyc2F0aW9uIiwidGltZSI6NC4yMjMsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiMS41ODExOXB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29udmVyc2F0aW9uIiwidGltZSI6NC4zNSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4Ijo5ODkuMTQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTEzNS41MzkwNjI1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjEyODEuOTM0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIwLjEzNjIwN3B4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29udmVyc2F0aW9uIiwidGltZSI6NC40ODgsInJlYXNvbiI6InZpc2libGUiLCJoaXRUZXN0cyI6W3sieCI6OTg5LjE0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjExMzUuNTM5MDYyNSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMjgxLjkzNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In1dLCJkYXNoIjoiMHB4Iiwib3BhY2l0eSI6IjEiLCJib3giOnsibGVmdCI6ODkxLjU0Njg3NSwidG9wIjoyMzkuNTkzNzUsIndpZHRoIjo0ODcuOTg0Mzc1LCJoZWlnaHQiOjMyNy43NjU2MjV9fSx7InN0YXRlIjoicGxheWluZyIsInBoYXNlIjoiY29udmVyc2F0aW9uIiwidGltZSI6NC41OSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4Ijo5ODkuMTQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTEzNS41MzkwNjI1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjEyODEuOTM0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIwcHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0Ijo4OTEuNTQ2ODc1LCJ0b3AiOjIzOS41OTM3NSwid2lkdGgiOjQ4Ny45ODQzNzUsImhlaWdodCI6MzI3Ljc2NTYyNX19LHsic3RhdGUiOiJwbGF5aW5nIiwicGhhc2UiOiJjb252ZXJzYXRpb24iLCJ0aW1lIjo0LjcxNSwicmVhc29uIjoidmlzaWJsZSIsImhpdFRlc3RzIjpbeyJ4Ijo5ODkuMTQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTEzNS41MzkwNjI1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifSx7IngiOjEyODEuOTM0Mzc1LCJ5IjozODcuNzI2NTYyNSwiaW5WaWV3cG9ydCI6dHJ1ZSwidW5vYnN0cnVjdGVkIjp0cnVlLCJoaXRUYWciOiJGSUdVUkUiLCJoaXRDbGFzcyI6ImZpcnN0LXRob3VnaHQifV0sImRhc2giOiIwcHgiLCJvcGFjaXR5IjoiMSIsImJveCI6eyJsZWZ0Ijo4OTEuNTQ2ODc1LCJ0b3AiOjIzOS41OTM3NSwid2lkdGgiOjQ4Ny45ODQzNzUsImhlaWdodCI6MzI3Ljc2NTYyNX19LHsic3RhdGUiOiJzZXR0bGVkIiwicGhhc2UiOiJjb252ZXJzYXRpb24iLCJ0aW1lIjo0LjgsInJlYXNvbiI6ImNvbXBsZXRlIiwiaGl0VGVzdHMiOlt7IngiOjk4OS4xNDM3NSwieSI6Mzg3LjcyNjU2MjUsImluVmlld3BvcnQiOnRydWUsInVub2JzdHJ1Y3RlZCI6dHJ1ZSwiaGl0VGFnIjoiRklHVVJFIiwiaGl0Q2xhc3MiOiJmaXJzdC10aG91Z2h0In0seyJ4IjoxMTM1LjUzOTA2MjUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9LHsieCI6MTI4MS45MzQzNzUsInkiOjM4Ny43MjY1NjI1LCJpblZpZXdwb3J0Ijp0cnVlLCJ1bm9ic3RydWN0ZWQiOnRydWUsImhpdFRhZyI6IkZJR1VSRSIsImhpdENsYXNzIjoiZmlyc3QtdGhvdWdodCJ9XSwiZGFzaCI6IjBweCIsIm9wYWNpdHkiOiIxIiwiYm94Ijp7ImxlZnQiOjg5MS41NDY4NzUsInRvcCI6MjM5LjU5Mzc1LCJ3aWR0aCI6NDg3Ljk4NDM3NSwiaGVpZ2h0IjozMjcuNzY1NjI1fX1dfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-f7813455667f5a551006",
+          "file": "contact-signature.spec.ts",
+          "line": 218,
+          "column": 3
+        },
+        {
+          "title": "focusing a real form input during 390px motion settles artwork without displacing the field",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1863,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:29.871Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-75e72a503ea832efcee8",
+          "file": "contact-signature.spec.ts",
+          "line": 275,
+          "column": 3
+        },
+        {
+          "title": "focusing a real form input during 1440px motion settles artwork without displacing the field",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2292,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:31.753Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-4a44f8cc67ec7c2fae5d",
+          "file": "contact-signature.spec.ts",
+          "line": 275,
+          "column": 3
+        },
+        {
+          "title": "reduced shows the complete static drawing and usable Contact content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 770,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:34.066Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-e4fa5ca1a9df0e0e9c5f",
+          "file": "contact-signature.spec.ts",
+          "line": 300,
+          "column": 3
+        },
+        {
+          "title": "save-data shows the complete static drawing and usable Contact content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 765,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:34.854Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-0bcfa5a82e89c8f329fe",
+          "file": "contact-signature.spec.ts",
+          "line": 300,
+          "column": 3
+        },
+        {
+          "title": "no-javascript shows the complete static drawing and usable Contact content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 732,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:35.632Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-bef5e8c6375b24510a84",
+          "file": "contact-signature.spec.ts",
+          "line": 300,
+          "column": 3
+        },
+        {
+          "title": "failed decorative script loading leaves the settled drawing and independent enquiry enhancement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1042,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:36.382Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-b4f52c10d2629a23f1cc",
+          "file": "contact-signature.spec.ts",
+          "line": 336,
+          "column": 1
+        },
+        {
+          "title": "native input remains usable before delayed motion initialization and cannot trigger a late replay",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1843,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:37.455Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-bbd2975eb0f299bbfee1",
+          "file": "contact-signature.spec.ts",
+          "line": 352,
+          "column": 1
+        },
+        {
+          "title": "a live reduced-motion change settles the drawing without changing enquiry state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 972,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:39.315Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-313371bc7f744c024d40",
+          "file": "contact-signature.spec.ts",
+          "line": 380,
+          "column": 1
+        },
+        {
+          "title": "the visibility handler pauses active drawing time and resumes without a restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6456,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:40.306Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-cea7b9e5b05b3f437fe3",
+          "file": "contact-signature.spec.ts",
+          "line": 396,
+          "column": 1
+        },
+        {
+          "title": "native offscreen scrolling pauses the decorative clock without holding the page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6796,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:46.782Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-16ae250eb95db392493d",
+          "file": "contact-signature.spec.ts",
+          "line": 421,
+          "column": 1
+        },
+        {
+          "title": "native early anchor navigation reaches the enquiry while the artwork is active",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1007,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:53.590Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-db319cf1fd96676d97b8",
+          "file": "contact-signature.spec.ts",
+          "line": 440,
+          "column": 1
+        },
+        {
+          "title": "a genuine intercepted provider acknowledgement alone permits the confirmation accent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2275,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:54.618Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-adbb980c58ab50eed07a",
+          "file": "contact-signature.spec.ts",
+          "line": 456,
+          "column": 1
+        },
+        {
+          "title": "provider rejection cannot show the confirmation accent or erase submitted input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1915,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:56.910Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-a1bdc8623a42b0a2fbd0",
+          "file": "contact-signature.spec.ts",
+          "line": 492,
+          "column": 3
+        },
+        {
+          "title": "ambiguous successful HTTP cannot show the confirmation accent or erase submitted input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1864,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:26:58.844Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-c9b9c88530d25606f100",
+          "file": "contact-signature.spec.ts",
+          "line": 492,
+          "column": 3
+        },
+        {
+          "title": "contradictory acknowledgement cannot show the confirmation accent or erase submitted input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1850,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:00.729Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "66ad3138840306941f18-27074577c44a27266d1c",
+          "file": "contact-signature.spec.ts",
+          "line": 492,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "contact.spec.ts",
+      "file": "contact.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Contact is responsive and accessible at 390px with official contact links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2961,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:02.623Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-e5eb0487f0203ff54b4e",
+          "file": "contact.spec.ts",
+          "line": 56,
+          "column": 3
+        },
+        {
+          "title": "Contact is responsive and accessible at 768px with official contact links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3270,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:05.606Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-3f1a66f8861d14b61c88",
+          "file": "contact.spec.ts",
+          "line": 56,
+          "column": 3
+        },
+        {
+          "title": "Contact is responsive and accessible at 1440px with official contact links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3133,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:08.901Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-81c6a66c60a95360c2ad",
+          "file": "contact.spec.ts",
+          "line": 56,
+          "column": 3
+        },
+        {
+          "title": "an unconfigured form never posts or reports success and offers email instead",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1463,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:12.055Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-a4281db761e49f61331d",
+          "file": "contact.spec.ts",
+          "line": 105,
+          "column": 1
+        },
+        {
+          "title": "no JavaScript leaves the unconfigured form safe and direct contact usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1696,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:13.558Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-c29f492e4f7912f2cf81",
+          "file": "contact.spec.ts",
+          "line": 125,
+          "column": 1
+        },
+        {
+          "title": "required fields announce errors, focus the summary and link back to controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3024,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:15.276Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-077d07bf4e5c46620939",
+          "file": "contact.spec.ts",
+          "line": 150,
+          "column": 1
+        },
+        {
+          "title": "a configured form has a native POST fallback without JavaScript",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1757,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:18.325Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-6c07e2c7131ffd572bcd",
+          "file": "contact.spec.ts",
+          "line": 182,
+          "column": 1
+        },
+        {
+          "title": "whitespace-only values and malformed email are rejected without a request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1728,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:20.101Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-563c4f074167099eff3e",
+          "file": "contact.spec.ts",
+          "line": 213,
+          "column": 1
+        },
+        {
+          "title": "input limits and the honeypot reject oversized or automated submissions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2603,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:21.852Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-d3bcc18cb178011c7929",
+          "file": "contact.spec.ts",
+          "line": 232,
+          "column": 1
+        },
+        {
+          "title": "provider acceptance is announced honestly and duplicate submissions stay blocked",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2410,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:24.482Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-73891df14cfe72c6b6e7",
+          "file": "contact.spec.ts",
+          "line": 265,
+          "column": 1
+        },
+        {
+          "title": "http provider failure keeps the enquiry and never announces success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2105,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:26.909Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-dfec40b0b3235d5a2283",
+          "file": "contact.spec.ts",
+          "line": 314,
+          "column": 3
+        },
+        {
+          "title": "network provider failure keeps the enquiry and never announces success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2014,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:29.051Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-bea453489f64432ae6f7",
+          "file": "contact.spec.ts",
+          "line": 314,
+          "column": 3
+        },
+        {
+          "title": "malformed provider failure keeps the enquiry and never announces success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1730,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:31.082Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-ef06c4dd022762008a30",
+          "file": "contact.spec.ts",
+          "line": 314,
+          "column": 3
+        },
+        {
+          "title": "not-accepted provider failure keeps the enquiry and never announces success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1690,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:32.837Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-051c6858f4dd87fcc5e9",
+          "file": "contact.spec.ts",
+          "line": 314,
+          "column": 3
+        },
+        {
+          "title": "conflicting-error provider failure keeps the enquiry and never announces success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1729,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:34.541Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-216dd320f2c0c7ef9b67",
+          "file": "contact.spec.ts",
+          "line": 314,
+          "column": 3
+        },
+        {
+          "title": "a timed-out request reports uncertainty without an automatic retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1591,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:36.280Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-3765db83ce3ebd2da17b",
+          "file": "contact.spec.ts",
+          "line": 341,
+          "column": 1
+        },
+        {
+          "title": "correcting errors and explicitly retrying a rejected submission preserves a valid enquiry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2104,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:27:37.903Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-fcc397cc40ec3d945627",
+          "file": "contact.spec.ts",
+          "line": 361,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-20T17:25:53.592Z",
+    "duration": 106644.90299999999,
+    "expected": 42,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

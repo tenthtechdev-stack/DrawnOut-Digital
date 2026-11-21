@@ -1,0 +1,81 @@
+{
+  "startedAt": "2026-11-20T17:17:16.966947+00:00",
+  "expectedAfterSourceCommit": "1569b260dce67216444a4f0fe96cfe95ebb2905e",
+  "parentCommit": "b1c7db29a186c7413cad0bc5cdb59d62d5200f66",
+  "method": "Sequential real-browser capture only after final build freeze and exclusive GPU permission; separate parent/current production servers. No builds, source changes, timeline seeking, image retouching or visibility overrides.",
+  "steps": [
+    {
+      "label": "before-about-capture",
+      "command": [
+        "node",
+        "scripts/capture-sitewide-scenes.mjs",
+        "--mode",
+        "before",
+        "--source-root",
+        "/workspace/drawnout-contact-signature",
+        "--base-url",
+        "http://127.0.0.1:4480",
+        "--sections",
+        "about"
+      ],
+      "exitCode": 0,
+      "optionalPlatformProbe": false,
+      "durationSeconds": 19.239,
+      "log": "/workspace/sitewide-motion-review/before-about-capture.log",
+      "fullOutput": "{\"mode\":\"before\",\"sourceCommit\":\"b1c7db29a186c7413cad0bc5cdb59d62d5200f66\",\"screenshots\":12,\"recordings\":2,\"pageErrors\":0}\n"
+    },
+    {
+      "label": "after-journey-capture",
+      "command": [
+        "node",
+        "scripts/capture-sitewide-motion.mjs",
+        "--mode",
+        "after",
+        "--source-root",
+        "/workspace/drawnout-sitewide-motion",
+        "--base-url",
+        "http://127.0.0.1:4480"
+      ],
+      "exitCode": 0,
+      "optionalPlatformProbe": false,
+      "durationSeconds": 113.264,
+      "log": "/workspace/sitewide-motion-review/after-journey-capture.log",
+      "fullOutput": "{\"mode\":\"after\",\"sourceCommit\":\"1569b260dce67216444a4f0fe96cfe95ebb2905e\",\"screenshots\":26,\"recordings\":2,\"pageErrors\":0,\"background\":[{\"width\":1440,\"hidden\":false,\"returnVisible\":true,\"limitation\":\"Headless Chromium kept the recorded tab visible after ordinary second-tab activation. This movie does not establish hidden-tab suspension; separate browser lifecycle tests must cover that behavior.\"},{\"width\":390,\"hidden\":false,\"returnVisible\":true,\"limitation\":\"Headless Chromium kept the recorded tab visible after ordinary second-tab activation. This movie does not establish hidden-tab suspension; separate browser lifecycle tests must cover that behavior.\"}]}\n"
+    },
+    {
+      "label": "after-scenes-capture",
+      "command": [
+        "node",
+        "scripts/capture-sitewide-scenes.mjs",
+        "--mode",
+        "after",
+        "--source-root",
+        "/workspace/drawnout-sitewide-motion",
+        "--base-url",
+        "http://127.0.0.1:4480",
+        "--sections",
+        "about,preserved"
+      ],
+      "exitCode": 0,
+      "optionalPlatformProbe": false,
+      "durationSeconds": 116.19,
+      "log": "/workspace/sitewide-motion-review/after-scenes-capture.log",
+      "fullOutput": "{\"mode\":\"after\",\"sourceCommit\":\"1569b260dce67216444a4f0fe96cfe95ebb2905e\",\"screenshots\":28,\"recordings\":4,\"pageErrors\":0}\n"
+    },
+    {
+      "label": "native-background-probe",
+      "command": [
+        "node",
+        "scripts/capture-native-background.mjs",
+        "--base-url",
+        "http://127.0.0.1:4480"
+      ],
+      "exitCode": 0,
+      "optionalPlatformProbe": true,
+      "durationSeconds": 23.602,
+      "log": "/workspace/sitewide-motion-review/native-background-probe.log",
+      "fullOutput": "{\"platformSupported\":true,\"browser\":\"154.0.8037.57\",\"hiddenObserved\":[{\"width\":1440,\"hidden\":false},{\"width\":390,\"hidden\":false}],\"launchError\":null,\"executionError\":null,\"pageErrors\":[]}\n"
+    }
+  ],
+  "completedAt": "2026-11-20T17:21:51.983068+00:00"
+}
